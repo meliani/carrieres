@@ -1,0 +1,33 @@
+<?php
+
+use Illuminate\Http\Request;
+
+/*
+|--------------------------------------------------------------------------
+| API Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register API routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| is assigned the "api" middleware group. Enjoy building your API!
+|
+*/
+
+Route::middleware('auth:api')->get('/user', function (Request $request) {
+    return $request->user();
+});
+
+
+Route::get('admin/offres_de_stages', 'Admin\offresDeStagesAPIController@index');
+Route::post('admin/offres_de_stages', 'Admin\offresDeStagesAPIController@store');
+Route::get('admin/offres_de_stages/{offres_de_stages}', 'Admin\offresDeStagesAPIController@show');
+Route::put('admin/offres_de_stages/{offres_de_stages}', 'Admin\offresDeStagesAPIController@update');
+Route::patch('admin/offres_de_stages/{offres_de_stages}', 'Admin\offresDeStagesAPIController@update');
+Route::delete('admin/offres_de_stages{offres_de_stages}', 'Admin\offresDeStagesAPIController@destroy');
+
+Route::get('admin/postulers', 'Admin\PostulerAPIController@index');
+Route::post('admin/postulers', 'Admin\PostulerAPIController@store');
+Route::get('admin/postulers/{postulers}', 'Admin\PostulerAPIController@show');
+Route::put('admin/postulers/{postulers}', 'Admin\PostulerAPIController@update');
+Route::patch('admin/postulers/{postulers}', 'Admin\PostulerAPIController@update');
+Route::delete('admin/postulers{postulers}', 'Admin\PostulerAPIController@destroy');
