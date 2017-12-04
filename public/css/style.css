@@ -17,13 +17,20 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column;
+  
 }
-
+body,html{background-color:#EDEDED!important;}
 main {
   flex: 1 0 auto;
 }
 
 .offre .card
 {
-	text-align: center;
+	text-align: left;
+}
+
+
+nav
+{
+margin-bottom: 30px;
 }

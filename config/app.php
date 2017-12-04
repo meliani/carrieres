@@ -2,7 +2,7 @@
 
 return [
 
-    'canRegister' => 1,
+    'canRegister' => 0,
     'imagespath' => 'uploads/',
     /*
     |--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://newlife.dev'),
+    'url' => env('APP_URL', 'http://carrieres.inpt.ac.ma'),
 
     /*
     |--------------------------------------------------------------------------

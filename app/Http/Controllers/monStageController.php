@@ -134,7 +134,7 @@ class monStageController extends Controller
         $roles = $request['roles'];
         
         $permission->save();*/
-        
+        return redirect(route('monStage.index'));
     }
 
 }

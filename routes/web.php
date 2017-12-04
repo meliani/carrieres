@@ -73,8 +73,8 @@ Route::middleware(['auth'])->group(function () {
     });
     
 
-    Route::post('offresStages', ['as'=> 'offresStages.store', 'uses' => 'offresDeStagesController@store']);
-    Route::get('offresStages/create', ['as'=> 'offresStages.create', 'uses' => 'offresDeStagesController@create']);
+    Route::post('offresStages', ['as'=> 'offresDeStages.store', 'uses' => 'offresDeStagesController@store']);
+    Route::get('offresStages', ['as'=> 'offresDeStages.create', 'uses' => 'offresDeStagesController@create']);
     Route::post('offresDeStages', ['as'=> 'offresStages.store', 'uses' => 'offresDeStagesController@store']);
     Route::get('offresDeStages/create', ['as'=> 'offresStages.create', 'uses' => 'offresDeStagesController@create']);
     

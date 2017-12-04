@@ -23,35 +23,35 @@
 
 @foreach ($offresDeStages as $offre)
   @if($offre->is_valid)
-        <div class="offre col s12 m4">
+        <div class="offre col s12 m6 l6 xl6">
           <div class="card hoverable">
             <div class="card-content">
             <img src="/images/badges/pfe.svg" width="64" height="64">
             <ul class="collapsible">
               <li class="active">
-                <div class="collapsible-header"><i class="mdi-av-web"></i>{{  str_limit($offre->intitule_sujet,10) }}</div>
-                <div class="collapsible-body"><p>{{  $offre->intitule_sujet }}</p></div>
-              </li>
-              <li>
-                <div class="collapsible-header"><i class="mdi-editor-format-align-justify"></i>Détails et Prérequis</div>
-                <div class="collapsible-body"><p>{{  $offre->descriptif }}</p></div>
-              </li>
-              <li>
-                <div class="collapsible-header"><i class="mdi-av-play-shopping-bag"></i>Entreprise & lieu</div>
-                <div class="collapsible-body">
-                  <p>{{  $offre->raison_sociale }}</p>
-                  <p>{{  $offre->lieu_de_stage }}</p>
+				<li>
+                <div class="collapsible-header"><h5 class='header5 blue-grey-text textlighten-5'><i class="small material-icons blue-grey-text textlighten-5">business</i>{!!  $offre->raison_sociale !!}</h5></div>
+                <div class="collapsible-body"><p><i class="small material-icons blue-grey-text textlighten-5">place</i> {!! $offre->lieu_de_stage !!}</p>
                 </div>
+				</li>
+				<li>
+                <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">subject</i>{!!  str_limit($offre->intitule_sujet,50) !!}</div>
+                <div class="collapsible-body"><p>{!!  $offre->intitule_sujet !!}</p></div>
               </li>
               <li>
-                <div class="collapsible-header"><i class="mdi-editor-insert-comment"></i>Keywords</div>
-                <div class="collapsible-body"><p>{{  $offre->mots_cles }}</p></div>
+                <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">queue</i>Détails et Prérequis</div>
+                <div class="collapsible-body"><p>{!!  $offre->descriptif !!}</p></div>
+              </li>
+
+              <li>
+                <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">local_offer</i>Keywords</div>
+                <div class="collapsible-body"><p>{!!  $offre->mots_cles !!}</p></div>
               </li>
 
               @if($offre->document_offre)
               <li>
-              <div class="collapsible-header"><i class="mdi-editor-insert-comment"></i>Pièce jointe</div>
-              <div class="collapsible-body"><p>{{  Html::link($offre->document_offre) }}</p></div>
+              <div class="collapsible-header">Pièce jointe</div>
+              <div class="collapsible-body"><p>{!!  Html::link($offre->document_offre) !!}</p></div>
               </li>
               @endif
             </ul>

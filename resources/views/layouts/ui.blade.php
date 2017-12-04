@@ -17,25 +17,11 @@
 <body>
 <header>
 <!--Main Navigation-->
- @include('layouts.ui_menu')
-
+  @include('layouts.ui_menu')
 </header>
 
 <main>
-<div class="container">
-  
-@include('flash::message')
-@if(Session::has('flash_message'))
-  <div class="card-panel">
-    <div class="card-content">
-    {!! session('flash_message') !!}
-    </div>
-  </div>
-@endif          
-@include ('errors.list') {{-- Including error file --}}
-
-@yield('content')
-</div>
+  @yield('content')
 </main>
 
 <footer class="page-footer blue-grey lighten-5 blue-grey-text text-lighten-3">

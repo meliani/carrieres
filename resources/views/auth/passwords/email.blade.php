@@ -1,9 +1,9 @@
-@extends('layouts.app')
+@extends('layouts.ui')
 
 @section('content')
-<div class="container">
+<div class="card-panel">
     <div class="row">
-        <div class="col-md-8 col-md-offset-2">
+        <div class="col m8">
             <div class="panel panel-default">
                 <div class="panel-heading">Reset Password</div>
 
@@ -34,7 +34,7 @@
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
                                 <button type="submit" class="btn btn-primary">
-                                    Send Password Reset Link
+                                    Envoyer le lien de redifinition de mot de passe
                                 </button>
                             </div>
                         </div>

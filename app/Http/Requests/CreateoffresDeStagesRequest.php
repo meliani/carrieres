@@ -3,7 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use App\Models\offresDeStages;
+use App\Models\offreDeStage;
 
 class CreateoffresDeStagesRequest extends FormRequest
 {
@@ -25,6 +25,6 @@ class CreateoffresDeStagesRequest extends FormRequest
      */
     public function rules()
     {
-        return offresDeStages::$rules;
+        return offreDeStage::$rules;
     }
 }
