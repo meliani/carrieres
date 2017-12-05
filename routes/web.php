@@ -48,6 +48,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('monStage/postuler/{monStage}', ['as'=> 'monStage.store', 'uses' => 'monStageController@store']);
     //Route::('monStage', 'monStageController');
 
+    //Route::get('monStage/edocs', ['as'=> 'monStage.edocs', 'uses' => 'monStageController@edocs']);
     Route::get('monStage/edocs',['as'=> 'monStage.edocs'], function () {
         return view('monStage.edocs');
     });
@@ -57,6 +58,10 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('offresDeStages', ['as'=> 'offresDeStages.index', 'uses' => 'offresDeStagesController@index']);
     
+    Route::get('edocs', ['as'=> 'edocs.index', 'uses' => 'edocsController@index']);
+
+
+
 });
 
     

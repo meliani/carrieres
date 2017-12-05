@@ -27,8 +27,7 @@ class offresDeStagesRepository extends BaseRepository
         'telephone',
         'email',
         'intitules_sujets',
-        'mots_cles',
-        'document_offre'
+        'mots_cles'
     ];
 
     /**

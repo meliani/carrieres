@@ -30,23 +30,25 @@
           <div class="card hoverable">
             <div class="card-content">
             <img src="/images/badges/pfe.svg" width="64" height="64">
-                          @if(isset($offre->expire_at)) 
+              @if(isset($offre->expire_at)) 
                 <span class="new badge orange" data-badge-caption="urgent"></span>
               @endif
             <ul class="collapsible">
               <li class="active">
-				<li>
+				      <li>
                 <div class="collapsible-header">
-                <h5 class='header5 blue-grey-text textlighten-5'>
-                <i class="small material-icons blue-grey-text textlighten-5">business</i>
-                {!!  $offre->raison_sociale !!}</h5>
-
-
+                  <h5 class='header5 blue-grey-text textlighten-5'>
+                  <i class="small material-icons blue-grey-text textlighten-5">business</i>
+                  {!!  $offre->raison_sociale !!}
+                  </h5>
                 </div>
-                <div class="collapsible-body"><p><i class="small material-icons blue-grey-text textlighten-5">place</i> {!! $offre->lieu_de_stage !!}</p>
+                <div class="collapsible-body">
+                <p><i class="small material-icons blue-grey-text textlighten-5">place</i> 
+                {!! $offre->lieu_de_stage !!}
+                </p>
                 </div>
-				</li>
-				<li>
+				      </li>
+				      <li>
                 <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">subject</i>{!!  str_limit($offre->intitule_sujet,50) !!}</div>
                 <div class="collapsible-body"><p>{!!  $offre->intitule_sujet !!}</p></div>
               </li>

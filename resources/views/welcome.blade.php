@@ -6,8 +6,6 @@
   <div class="section no-pad-bot z-depth-1" id="index-banner">
   <img class="responsive-img sticky" src="images/home/relation_entreprises.jpg">
     <div class="container">
- 
-
       <div class="row center">
         <h5 class="header col s12 light">"Nous accompagnons vos premiers pas vers l’entreprise"</h5>
       </div>
@@ -47,8 +45,8 @@
             <p class="light">Le programme de formation de l’INPT 
               impose aux étudiants le passage au sein des entreprises partenaires. 
               Ceci dit, les élèves ingénieurs sont amenés à faire :</p>
-              <li class="light">Un stage ouvrier en première année</li>
-              <li class="light">Un stage Technique en deuxième année</li>
+              <li class="light">Stage ouvrier en première année</li>
+              <li class="light">Stage Technique en deuxième année</li>
               <li class="light">Le Projet de fin d’études (PFE) en troisième année.</li>
             
           </div>
