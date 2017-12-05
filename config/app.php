@@ -4,6 +4,7 @@ return [
 
     'canRegister' => 0,
     'imagespath' => 'uploads/',
+    'offers_storage_path' => 'uploads/Stages/Offres/',
     /*
     |--------------------------------------------------------------------------
     | Application Name

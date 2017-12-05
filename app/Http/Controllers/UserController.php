@@ -14,7 +14,7 @@ class UserController extends Controller
 {
     public function __construct() 
     {
-        $this->middleware(['auth', 'isAdmin']);
+        $this->middleware(['isAdmin']);
     }
     
     /**
@@ -108,10 +108,12 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $this->validate($request, [
             'name'=>'required|max:120',
-            'email'=>'required|email|unique:users,email,'.$id,
-            'password'=>'required|min:6|confirmed'
+            'email'=>'required|email|unique:users,email,'.$id
+            //'password'=>'required|min:6|confirmed'
         ]);
-
+            if(!isset($request->password))
+        $input = $request->only(['name', 'email']);
+            else
         $input = $request->only(['name', 'email', 'password']);
         $roles = $request['roles'];
         $user->fill($input)->save();

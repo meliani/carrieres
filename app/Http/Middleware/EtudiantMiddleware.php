@@ -19,7 +19,7 @@ class EtudiantMiddleware {
         }
 
         if ($request->is('monStage/')) {
-            if (!Auth::user()->hasPermissionTo('Use frontend')) {
+            if (!Auth::user()->hasPermissionTo('Use Frontend')) {
                 abort('401');
             } else {
                 return $next($request);

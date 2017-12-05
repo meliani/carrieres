@@ -1,13 +1,14 @@
-@extends('layouts.app')
+@extends('layouts.ui')
 
 @section('content')
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
+            <div class="section">
+                
 
-                <div class="panel-body">
+                <div class="container">
+                <div class="header"><h5>Votre nouveau code d'accès</h5></div>
                     <form class="form-horizontal" method="POST" action="{{ route('password.request') }}">
                         {{ csrf_field() }}
 

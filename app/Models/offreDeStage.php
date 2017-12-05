@@ -41,7 +41,8 @@ class offreDeStage extends Model
         'mots_cles',
         'document_offre',
         'is_valid',
-        'status'
+        'status',
+        'expire_at'
     ];
 
     /**
@@ -61,7 +62,8 @@ class offreDeStage extends Model
         'mots_cles'=> 'string',
         'document_offre' => 'string',
         'is_valid' => 'boolean',
-        'status' => 'integer'
+        'status' => 'integer',
+        'expire_at' => 'timestamp'
     ];
 
     /**
@@ -81,7 +83,8 @@ class offreDeStage extends Model
         'mots_cles'=> 'required',
         'document_offre' => 'nullable',
         'is_valid' => 'nullable',
-        'status' => 'nullable'
+        'status' => 'nullable',
+        'expire_at' => 'nullable'
     ];
 
 	public function users()

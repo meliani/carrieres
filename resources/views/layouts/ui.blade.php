@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Carrieres.inpt.ac.ma') }}</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/google/material_icons.css">
     <link href="{{ asset('css/materialize.min.css') }}" media="screen,projection" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" media="screen,projection" rel="stylesheet">
 </head>
@@ -24,7 +24,7 @@
   @yield('content')
 </main>
 
-<footer class="page-footer blue-grey lighten-5 blue-grey-text text-lighten-3">
+<footer class="page-footer blue-grey lighten-3 blue-grey-text text-darken-3 z-depth-1">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
@@ -40,16 +40,18 @@ Votre carrière se construit dès aujourd'hui, nous sommes là pour vous aider �
               </div>
             </div>
           </div>
-          <div class="footer-copyright blue-grey lighten-3">
+          <div class="footer-copyright blue-grey lighten-1">
             <div class="container">
             © 2017 DASRE INPT
-            <a class="grey-text text-lighten-4 right" href="#!">Contact</a>
+            <a class="grey-text text-lighten-5 right" href="#!">Contact</a>
             </div>
           </div>
         </footer>
     <!-- Scripts -->
-    <script src="{{ url('https://code.jquery.com/jquery-3.2.1.min.js') }}"></script>
-    <script src="{{ asset('js/materialize.min.js') }}"></script>
+    <script src="js/jquery-3.2.1.js"></script>
+    <script>if (!window.jQuery) { document.write('<script src="js/jquery-3.2.1.js"><\/script>'); }
+    </script>
+    <script src="{{ asset('js/materialize.js') }}"></script>
     <script src="{{ asset('js/init.js') }}"></script>
     
 </body>

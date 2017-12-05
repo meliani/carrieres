@@ -1,6 +1,6 @@
 @role('Admin')
 <li><a href="{{ route('users.index') }}">Adminisration</a></li>
-<li class="divider"></li>
+
 @endrole
 
 @role('Etudiant')
@@ -11,6 +11,7 @@
 @guest
   <li class="{{ Request::is('login*') ? 'active' : '' }}"><a class="blue-grey-text text-darken-1" href="{{ route('login') }}">Login</a></li>
 @else
+<li class="divider"></li>
 <li><a href="{{ route('logout') }}"
     onclick="event.preventDefault();
             document.getElementById('logout-form').submit();">

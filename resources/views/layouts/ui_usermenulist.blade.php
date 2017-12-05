@@ -9,6 +9,7 @@
     <li class="{{ Request::is('monStage.guide') ? 'active' : '' }}"><a class="blue-grey-text text-darken-1" href="{{ route('monStage.edocs') }}">Mes documents</a></li>
     <li class="{{ Request::is('monStage.edocs') ? 'active' : '' }}"><a class="blue-grey-text text-darken-1" href="{{ route('monStage.guide') }}">Guide</a></li>
     @endrole
+    <li class="divider"></li>
     <li><a href="{{ route('logout') }}"
         onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();">

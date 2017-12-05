@@ -37,7 +37,7 @@ class RegisterController extends Controller
     public function __construct()
     {
         //$this->middleware('guest');
-    if(config('canRegister'))
+    if(config('app.canRegister')==0)
         $this->middleware('auth');
     else
         $this->middleware('guest');

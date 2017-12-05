@@ -64,7 +64,7 @@ class offresDeStagesController extends AppBaseController
             $doc = $request->file('document_offre');
             if ($doc->isValid())
             {
-                $path = $doc->storeAs('uploads/Stages/PFE/',Carbon::now()->format('ymd_hi') .'-'. $doc->getClientOriginalName(),'public');      
+                $path = $doc->storeAs('uploads/Stages/Offres/',Carbon::now()->format('ymd_hi') .'-'. $doc->getClientOriginalName(),'public');      
                 //$path = Storage::disk('uploads')->put('', $doc);
                 $input['document_offre'] = 'storage/'.$path;
             }elseif($doc->getError()!='UPLOADERROK')

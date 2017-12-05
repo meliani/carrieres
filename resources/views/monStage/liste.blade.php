@@ -18,19 +18,28 @@
 </div>
 @else
 <div class="section">
-  <h5>Stages disponibles</h5>
+  <h5>Offres de stages PFE</h5>
   <div class="row">
 
 @foreach ($offresDeStages as $offre)
   @if($offre->is_valid)
-        <div class="offre col s12 m6 l6 xl6">
+        <div class="offre col s12 m4 l4 xl3">
           <div class="card hoverable">
             <div class="card-content">
             <img src="/images/badges/pfe.svg" width="64" height="64">
             <ul class="collapsible">
               <li class="active">
 				<li>
-                <div class="collapsible-header"><h5 class='header5 blue-grey-text textlighten-5'><i class="small material-icons blue-grey-text textlighten-5">business</i>{!!  $offre->raison_sociale !!}</h5></div>
+                <div class="collapsible-header">
+                <h5 class='header5 blue-grey-text textlighten-5'>
+                <i class="small material-icons blue-grey-text textlighten-5">business</i>
+                {!!  $offre->raison_sociale !!}</h5>
+                @if(isset($offre->expire_at)) 
+
+                  <span class="new badge orange" data-badge-caption="urgent"></span>
+
+                @endif
+                </div>
                 <div class="collapsible-body"><p><i class="small material-icons blue-grey-text textlighten-5">place</i> {!! $offre->lieu_de_stage !!}</p>
                 </div>
 				</li>
@@ -51,7 +60,7 @@
               @if($offre->document_offre)
               <li>
               <div class="collapsible-header">Pièce jointe</div>
-              <div class="collapsible-body"><p>{!!  Html::link($offre->document_offre) !!}</p></div>
+              <div class="collapsible-body"><p>{!!  Html::link('storage/uploads/Stages/Offres/'.$offre->document_offre) !!}</p></div>
               </li>
               @endif
             </ul>
@@ -59,6 +68,10 @@
             </div>
             <div class="card-action">
               <a href="{{ route('monStage.postuler', $offre->id) }}">Postuler</a>
+              @role('Admin')
+              <a href="{{ route('admin.offresDeStages.edit', $offre->id) }}" class="right btn-floating btn halfway-fab waves-effect waves-light white">
+              <i class="tiny material-icons blue-grey-text textlighten-5">edit</i></a>
+              @endrole
             </div>
           </div>
         </div>

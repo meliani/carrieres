@@ -10,6 +10,7 @@ use App\Repositories\Admin\offresDeStagesRepository;
 use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
+use Carbon\Carbon;
 
 class offresDeStagesController extends AppBaseController
 {
@@ -52,6 +53,18 @@ class offresDeStagesController extends AppBaseController
     public function store(CreateoffresDeStagesRequest $request)
     {
         $input = $request->all();
+
+        if($request->hasFile('document_offre'))
+        {
+            $doc = $request->file('document_offre');
+            if ($doc->isValid())
+            {
+                $path = $doc->storeAs(config('app.offers_storage_path'),Carbon::now()->format('ymd_hi') .'-'. $doc->getClientOriginalName(),'public');      
+                //$path = Storage::disk('uploads')->put('', $doc);
+                $input['document_offre'] = $path;
+            }elseif($doc->getError()!='UPLOADERROK')
+            Flash::error($doc->getErrorMessage());
+        }
 
         $offresDeStages = $this->offresDeStagesRepository->create($input);
 
@@ -118,6 +131,23 @@ class offresDeStagesController extends AppBaseController
             return redirect(route('admin.offresDeStages.index'));
         }
 
+        if($request->hasFile('document_offre'))
+        {
+            $doc = $request->file('document_offre');
+            
+            if ($doc->isValid())
+            {
+                $file_name = Carbon::now()->format('ymd_hi') .'-'. $doc->getClientOriginalName();
+                $request->replace(array('document_offre' => '$file_name'));
+                $doc->storeAs(config('app.offers_storage_path'),$file_name,'public');      
+                //$path = Storage::disk('uploads')->put('', $doc);
+                //$input['document_offre'] = 'storage/'.$path;
+                //dd($file_name);
+                
+            }elseif($doc->getError()!='UPLOADERROK')
+            Flash::error($doc->getErrorMessage());
+        }
+//dd($request);
         $offresDeStages = $this->offresDeStagesRepository->update($request->all(), $id);
 
         Flash::success('Offres De Stages updated successfully.');

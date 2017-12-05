@@ -61,7 +61,7 @@
 <!-- Document Offre Field -->
 <div class="form-group">
     {!! Form::label('document_offre', 'Document Offre:') !!}
-    <p>{!! Html::link($offresDeStages->document_offre) !!}</p>
+    <p>{!! Html::link(config('offers_storage_path').$offresDeStages->document_offre) !!}</p>
 </div>
 
 <!-- Created At Field -->

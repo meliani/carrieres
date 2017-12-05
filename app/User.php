@@ -6,6 +6,8 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
 
+use Illuminate\Support\Facades\Hash;
+
 class User extends Authenticatable
 {
     use HasRoles;
@@ -31,7 +33,7 @@ class User extends Authenticatable
 
     public function setPasswordAttribute($password)
     {   
-        $this->attributes['password'] = bcrypt($password);
+        $this->attributes['password'] = $password;
     }
 
     public function applications()
