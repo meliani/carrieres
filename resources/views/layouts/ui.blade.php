@@ -10,7 +10,7 @@
     <title>{{ config('app.name', 'Carrieres.inpt.ac.ma') }}</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="css/google/material_icons.css">
+    <link rel="stylesheet" href="{{ asset('css/google/material_icons.css') }}">
     <link href="{{ asset('css/materialize.min.css') }}" media="screen,projection" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" media="screen,projection" rel="stylesheet">
 </head>

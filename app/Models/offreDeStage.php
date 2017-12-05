@@ -42,7 +42,8 @@ class offreDeStage extends Model
         'document_offre',
         'is_valid',
         'status',
-        'expire_at'
+        'expire_at',
+        'applyable'
     ];
 
     /**
@@ -63,7 +64,8 @@ class offreDeStage extends Model
         'document_offre' => 'string',
         'is_valid' => 'boolean',
         'status' => 'integer',
-        'expire_at' => 'timestamp'
+        'expire_at' => 'timestamp',
+        'applyable' => 'integer'
     ];
 
     /**
@@ -84,7 +86,8 @@ class offreDeStage extends Model
         'document_offre' => 'nullable',
         'is_valid' => 'nullable',
         'status' => 'nullable',
-        'expire_at' => 'nullable'
+        'expire_at' => 'nullable',
+        'applyable' => 'nullable'
     ];
 
 	public function users()

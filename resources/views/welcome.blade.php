@@ -6,14 +6,14 @@
   <div class="section no-pad-bot z-depth-1" id="index-banner">
   <img class="responsive-img sticky" src="images/home/relation_entreprises.jpg">
     <div class="container">
-      <br><br>
-      <h1 class="header center"></h1>
+ 
+
       <div class="row center">
         <h5 class="header col s12 light">"Nous accompagnons vos premiers pas vers l’entreprise"</h5>
       </div>
       <div class="row center">
       </div>
-      <br><br>
+
 
     </div>
   </div>

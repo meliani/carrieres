@@ -63,7 +63,7 @@ class monStageController extends Controller
             return redirect(route('monStage.index'));
         }
 
-        return view('monStage.show')->with('offresDeStages', $offresDeStages);
+        return view('monStage.show')->with('offre', $offresDeStages);
     }
     /**
      * Display the specified offresDeStages.
