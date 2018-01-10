@@ -7,7 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@lang('messages.titlePrefix') | @yield('title')</title>
+    <title>@lang('messages.titlePrefix') @yield('title')</title>
 
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/google/material_icons.css') }}">
@@ -35,7 +35,7 @@ Votre carrière se construit dès aujourd'hui, nous sommes là pour vous aider �
               <div class="col l4 offset-l2 s12">
                 <h5>Liens</h5>
                 <ul>
-                  <li><a href="#!">Soumettre une proposition de stage.</a></li>
+                  <li><a href="#!">Conditions d'utilisation.</a></li>
                 </ul>
               </div>
             </div>
@@ -48,8 +48,8 @@ Votre carrière se construit dès aujourd'hui, nous sommes là pour vous aider �
           </div>
         </footer>
     <!-- Scripts -->
-    <script src="js/jquery-3.2.1.js"></script>
-    <script>if (!window.jQuery) { document.write('<script src="js/jquery-3.2.1.js"><\/script>'); }
+    <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
+    <script>if (!window.jQuery) { document.write('<script src="{{ asset('js/jquery-3.2.1.js') }}"><\/script>'); }
     </script>
     <script src="{{ asset('js/materialize.js') }}"></script>
     <script src="{{ asset('js/init.js') }}"></script>

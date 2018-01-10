@@ -22,6 +22,7 @@
   <div class="row center">
   <h5 class="header col s12 light">Offres de stages PFE</h5>
   </div>
+  <a href="{{ route('monStage.index', 'Date') }}">Trier par date</a>
   <div class="row">
 
 @foreach ($offresDeStages as $offre)

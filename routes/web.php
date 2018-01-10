@@ -40,7 +40,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('monStage/postuler/{monStage}', ['as'=> 'monStage.postuler', 'uses' => 'monStageController@postuler']);
     Route::post('monStage/postuler/{monStage}', ['as'=> 'monStage.store', 'uses' => 'monStageController@store']);
     //Route::('monStage', 'monStageController');
-
+    
     //Route::get('monStage/edocs', ['as'=> 'monStage.edocs', 'uses' => 'monStageController@edocs']);
     Route::get('monStage/edocs',['as'=> 'monStage.edocs'], function () {
         return view('monStage.edocs');
@@ -53,7 +53,7 @@ Route::middleware(['auth'])->group(function () {
     
     Route::get('edocs', ['as'=> 'edocs.index', 'uses' => 'edocsController@index']);
 
-
+    Route::resource('internship', 'InternshipController');
 
 });
 

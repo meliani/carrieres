@@ -8,6 +8,7 @@
 
 $(document).ready(function(){
   $('.collapsible').collapsible();
-
+  $('select').select();
+  $('.datepicker').datepicker();
 });
     
