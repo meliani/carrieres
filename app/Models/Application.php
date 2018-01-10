@@ -21,12 +21,15 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Application extends Model
 {
-    use SoftDeletes;
+    //use SoftDeletes;
 
     public $table = 'applications';
     
 
-    protected $dates = ['deleted_at'];
+    protected $dates = [
+        'created_at',
+        'updated_at'
+    ];
 
 
     public $fillable = [
@@ -63,6 +66,10 @@ class Application extends Model
     public function offresDeStages()
     {
         return $this->morphedByMany('App\Models\offreDeStage', 'applyable');
+    }
+    public function applyable()
+    {
+        return $this->morphTo();
     }
 
 }

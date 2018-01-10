@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
-
+use App\Http\Controllers\AppBaseController;
 use App\User;
 use Auth;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Session;
 
-class UserController extends Controller
+class UserController extends AppBaseController
 {
     public function __construct() 
     {
@@ -26,7 +26,7 @@ class UserController extends Controller
     {
         $users = User::all();
 
-        return view('users.index')->with('users', $users);
+        return view('admin.users.index')->with('users', $users);
     }
 
     /**
@@ -37,7 +37,7 @@ class UserController extends Controller
     public function create()
     {
         $roles = Role::get();
-        return view('users.create', ['roles'=>$roles]);
+        return view('admin.users.create', ['roles'=>$roles]);
     }
 
     /**
@@ -66,7 +66,7 @@ class UserController extends Controller
             }
         }        
 
-        return redirect()->route('users.index')
+        return redirect()->route('admin.users.index')
             ->with('flash_message',
              'User successfully added.');
     }
@@ -93,7 +93,7 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $roles = Role::get();
 
-        return view('users.edit', compact('user', 'roles'));
+        return view('admin.users.edit', compact('user', 'roles'));
     }
 
     /**
@@ -124,7 +124,7 @@ class UserController extends Controller
         else {
             $user->roles()->detach();
         }
-        return redirect()->route('users.index')
+        return redirect()->route('admin.users.index')
             ->with('flash_message',
              'User successfully edited.');
     }
@@ -140,7 +140,7 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $user->delete();
 
-        return redirect()->route('users.index')
+        return redirect()->route('admin.users.index')
             ->with('flash_message',
              'User successfully deleted.');
     }

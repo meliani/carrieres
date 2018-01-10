@@ -12,15 +12,8 @@
 */
 
 Route::middleware(['isAdmin'])->group(function () {
-    Route::get('admin/postulers', ['as'=> 'admin.postulers.index', 'uses' => 'Admin\PostulerController@index']);
-    Route::post('admin/postulers', ['as'=> 'admin.postulers.store', 'uses' => 'Admin\PostulerController@store']);
-    Route::get('admin/postulers/create', ['as'=> 'admin.postulers.create', 'uses' => 'Admin\PostulerController@create']);
-    Route::put('admin/postulers/{postulers}', ['as'=> 'admin.postulers.update', 'uses' => 'Admin\PostulerController@update']);
-    Route::patch('admin/postulers/{postulers}', ['as'=> 'admin.postulers.update', 'uses' => 'Admin\PostulerController@update']);
-    Route::delete('admin/postulers/{postulers}', ['as'=> 'admin.postulers.destroy', 'uses' => 'Admin\PostulerController@destroy']);
-    Route::get('admin/postulers/{postulers}', ['as'=> 'admin.postulers.show', 'uses' => 'Admin\PostulerController@show']);
-    Route::get('admin/postulers/{postulers}/edit', ['as'=> 'admin.postulers.edit', 'uses' => 'Admin\PostulerController@edit']);
-    
+    Route::get('admin/applications', ['as'=> 'admin.applications.index', 'uses' => 'Admin\applicationsController@index']);
+
     Route::get('admin/offresDeStages', ['as'=> 'admin.offresDeStages.index', 'uses' => 'Admin\offresDeStagesController@index']);
     Route::post('admin/offresDeStages', ['as'=> 'admin.offresDeStages.store', 'uses' => 'Admin\offresDeStagesController@store']);
     Route::get('admin/offresDeStages/create', ['as'=> 'admin.offresDeStages.create', 'uses' => 'Admin\offresDeStagesController@create']);
@@ -31,7 +24,7 @@ Route::middleware(['isAdmin'])->group(function () {
     Route::get('admin/offresDeStages/{offresDeStages}/edit', ['as'=> 'admin.offresDeStages.edit', 'uses' => 'Admin\offresDeStagesController@edit']);
     Route::post('admin/offresDeStages/{offresDeStages}/activate', ['as'=> 'admin.offresDeStages.activate', 'uses' => 'Admin\offresDeStagesController@activate']);
     
-    Route::resource('users', 'UserController');
+    Route::resource('users', 'Admin\UserController');
     
     Route::resource('roles', 'RoleController');
     
@@ -69,7 +62,7 @@ Route::middleware(['auth'])->group(function () {
     
     Route::get('welcome/{locale}', function ($locale) {
         App::setLocale($locale);
-    
+        return view('welcome');
         //
     });
     

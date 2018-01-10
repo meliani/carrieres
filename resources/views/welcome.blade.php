@@ -1,13 +1,14 @@
 @extends('layouts.ui')
+@section('title') welcome @endsection
 
 @section('content')
 
 
   <div class="section no-pad-bot z-depth-1" id="index-banner">
-  <img class="responsive-img sticky" src="images/home/relation_entreprises.jpg">
+  <img class="responsive-img sticky" src="{{ asset('images/home/relation_entreprises.jpg') }}">
     <div class="container">
       <div class="row center">
-        <h5 class="header col s12 light">"Nous accompagnons vos premiers pas vers l’entreprise"</h5>
+        <h5 class="header col s12 light">@lang('messages.welcome')</h5>
       </div>
       <div class="row center">
       </div>
