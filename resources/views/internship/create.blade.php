@@ -1,4 +1,5 @@
 @extends('layouts.ui')
+@section('title')| Déclarer mon stage @endsection
 
 @section('content')
 <div class="container">

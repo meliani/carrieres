@@ -28,10 +28,10 @@
             <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
             <h5 class="center">Mon espace</h5>
 
-            <p class="light">        
-              Cet espace sécurisé est réservé aux étudiants 
-              de l'INPT ayant rempli au préalable le formulaire <a href="https://docs.google.com/forms/d/e/1FAIpQLScSCtdQQnrthS9fUu7rSBO3J2e4RVDK687vUTm3lEY3gVCwwA/viewform">"Mieux vous connaître"</a> et verifié par l'administration.
-            </p>
+            <p class="light">
+                Cet espace sécurisé est réservé aux étudiants 
+                de l'INPT ayant rempli au préalable le formulaire "Mieux vous connaître" et vérifié par l'administration.
+          </p>
             <p class="light">
               Afin de récupérer votre mot de passe, veuillez utiliser la même adresse email renseignée et cliquer sur <a href="{{ route('password.request') }}">"redéfinir ?"</a>". 
               Vous aller recevoir un message pour réinitialiser votre login et pouvoir accéder aux offres PFE 2018.   

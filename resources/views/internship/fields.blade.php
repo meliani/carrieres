@@ -39,6 +39,8 @@
         <!-- parrain -------------------------------------------------------------------------->
         <div class = "row">
             <h4 class="header col s12 light center blue-text text-lighten-1">Parrain</h4>
+            <h6 class="col s12 light center blue-text text-lighten-1">Encadrant externe ou représentant de l'entreprise</h6>
+
             <!-- titre parrain Field -->
             <div class = "input-field col m2 s4">
                 <select name="parrain_titre">
@@ -171,7 +173,7 @@
        
         <!-- Co Encadrant int ---------------------------------------------------------->
         <div class = "row">
-            <h4 class="header col s12 light center blue-text text-lighten-1">Co-encadrant interne</h4>
+            <h4 class="header col s12 light center blue-text text-lighten-1">Co-encadrant interne (Optionnel)</h4>
             <!-- titre parrain Field -->
             <div class = "input-field col m2 s4">
                 <select name="co_encadrant_int_titre">
