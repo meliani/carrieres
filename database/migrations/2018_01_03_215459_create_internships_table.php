@@ -42,8 +42,8 @@ class CreateInternshipsTable extends Migration
             $table->string('intitule');
             $table->text('descriptif');
             $table->string('keywords');
-            $table->timestamp('date_debut');
-            $table->timestamp('date_fin');
+            $table->date('date_debut');
+            $table->date('date_fin');
             $table->integer('foreign')->nullable();
             $table->integer('remuneration')->nullable();
             $table->integer('charge')->nullable();
