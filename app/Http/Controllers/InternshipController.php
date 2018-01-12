@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Internship;
+use App\Models\Internship;
 use Illuminate\Http\Request;
 
 class InternshipController extends Controller
@@ -40,7 +40,7 @@ class InternshipController extends Controller
         //dd($request->user()->id);
         $internship = Internship::create($input);
 
-        Flash::success('Votre déclaration a été bien enregistrée.');
+        //Flash::success('Votre déclaration a été bien enregistrée.');
 
         return redirect(route('internship.create'))->with('message', 'Votre déclaration a été bien enregistrée.');
     

@@ -39,12 +39,11 @@
         <!-- parrain -------------------------------------------------------------------------->
         <div class = "row">
             <h4 class="header col s12 light center blue-text text-lighten-1">Parrain</h4>
-            <h6 class="col s12 light center blue-text text-lighten-1">Encadrant externe ou représentant de l'entreprise</h6>
+            <h6 class="col s12 light center blue-text text-lighten-1">Représentant de l'entreprise</h6>
 
             <!-- titre parrain Field -->
             <div class = "input-field col m2 s4">
                 <select name="parrain_titre">
-                    <option value="" disabled selected>Civilité</option>
                     <option value="1">Mr</option>
                     <option value="2">Mme</option>
                 </select>
@@ -88,7 +87,6 @@
             <!-- titre field -->
             <div class = "input-field col m2 s4">
                 <select name="encadrant_ext_titre">
-                    <option value="" disabled selected>Civilité</option>
                     <option value="1">Mr</option>
                     <option value="2">Mme</option>
                 </select>
@@ -132,7 +130,6 @@
             <!-- titre parrain Field -->
             <div class = "input-field col m2 s4">
                 <select name="encadrant_int_titre">
-                        <option value="" disabled selected>Civilité</option>
                         <option value="1">Mr</option>
                         <option value="2">Mme</option>
                 </select>
@@ -177,7 +174,6 @@
             <!-- titre parrain Field -->
             <div class = "input-field col m2 s4">
                 <select name="co_encadrant_int_titre">
-                        <option value="" disabled selected>Civilité</option>
                         <option value="1">Mr</option>
                         <option value="2">Mme</option>
                 </select>
@@ -254,12 +250,12 @@
         <!-- Mail Field --> 
         <div class = "input-field col m4 s12">
             <i class="material-icons prefix">charge</i>
-            {!! Form::label('charge', 'charge horaire') !!}
+            {!! Form::label('charge', 'Charge horaire Heures/semaine') !!}
             {!! Form::text('charge') !!}
         </div>
         </div>
 
-
+        <input type="hidden" name="user_id" value={{ Auth::user()->id }}>
     </div>
     <div class="card-action">
     <!-- Submit Field -->

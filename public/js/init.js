@@ -9,6 +9,6 @@
 $(document).ready(function(){
   $('.collapsible').collapsible();
   $('select').select();
-  $('.datepicker').datepicker();
+  $('.datepicker').datepicker({format: 'yyyy-mm-dd'});
 });
     
