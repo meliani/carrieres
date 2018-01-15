@@ -35,7 +35,7 @@ class InternshipController extends Controller
      */
     public function store(Request $request)
     {   
-        dump($request);
+        //dump($request);
         $input = $request->all();
         //dd($request->user()->id);
         $internship = Internship::create($input);

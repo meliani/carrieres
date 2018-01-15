@@ -217,8 +217,8 @@
             <div class = "input-field col s12">
             <!-- Intitule Sujet Field -->
             <i class = "material-icons prefix">mode_edit</i>
-                {!! Form::label('intitule_sujet', 'Intitule du sujet:') !!}
-                {!! Form::textarea('intitule_sujet', null, ['class' => 'materialize-textarea validate','required']) !!}
+                {!! Form::label('intitule', 'Intitule du sujet:') !!}
+                {!! Form::textarea('intitule', null, ['class' => 'materialize-textarea validate','required']) !!}
             </div>
             <div class = "input-field col s12">
                 <!-- Descriptif Field -->
