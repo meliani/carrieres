@@ -3,5 +3,7 @@
 @section('content')
 
                     @include('monStage.liste')
-
+                    <div class="center">
+                    {{ $links }}
+                    </div>
 @endsection

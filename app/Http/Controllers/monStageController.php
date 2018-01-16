@@ -36,13 +36,14 @@ class monStageController extends Controller
     public function index()
     {
         //$this->offresDeStagesRepository->pushCriteria(new RequestCriteria($request));
-        $offresDeStages = $this->offresDeStagesRepository->all();
+        $offresDeStages = $this->offresDeStagesRepository->paginate(10);
+        $links = $offresDeStages->render();
         //$offresDeStages = offreDeStage::orderby('created_at', 'desc');//->paginate(5);
           //dd($offresDeStages);
-          return view('monStage.index')
-            ->with('offresDeStages', $offresDeStages);
+          /*return view('monStage.index')
+            ->with('offresDeStages', $offresDeStages);*/
            
-            //return view('monStage.index', compact('offresDeStages'));
+            return view('monStage.index', compact('offresDeStages','links'));
     }
 
 
@@ -121,19 +122,9 @@ class monStageController extends Controller
         ]);
 
         $offresDeStages = offreDeStage::find($request->monStage);
-        //$request->user()->applications()->attach($request->user()->id);
-               //dd($request->user()->id); 
-        //$application = 
+
         $offresDeStages->applications()->attach($application->id);//, ['cv' => $cv,'lettre_de_motivation' => $lettre_de_motivation ]);
-        //dd($offresDeStages);    
 
-        /*$name = $request['name'];
-        $permission = new Permission();
-        $permission->name = $name;
-
-        $roles = $request['roles'];
-        
-        $permission->save();*/
         return redirect(route('monStage.index'));
     }
 
