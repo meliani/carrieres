@@ -33,17 +33,28 @@ class monStageController extends Controller
      * @param Request $request
      * @return Response
      */
-    public function index($offersPerPage=10)
+    public function index($offersPerPage=20)
     {
         //$this->offresDeStagesRepository->pushCriteria(new RequestCriteria($request));
-        $offresDeStages = $this->offresDeStagesRepository->paginate($offersPerPage);
-        $links = $offresDeStages->render();
+        
+        $offresDeStages = $this->offresDeStagesRepository
+                                ->orderBy('created_at', 'desc')
+                                ->paginate($offersPerPage);//->get();
+        
+        //$links = $offresDeStages->render();
+
+        //$offresDeStages = $this->offresDeStagesRepository->all();
+
+        //$offresDeStages = $offresDeStages->sortByDesc("created_at");
+        
+        //$offresDeStages = $offresDeStages->paginate($offersPerPage);
+
         //$offresDeStages = offreDeStage::orderby('created_at', 'desc');//->paginate(5);
           //dd($offresDeStages);
           /*return view('monStage.index')
             ->with('offresDeStages', $offresDeStages);*/
            
-            return view('monStage.index', compact('offresDeStages','links'));
+            return view('monStage.index', compact('offresDeStages'));
     }
 
 

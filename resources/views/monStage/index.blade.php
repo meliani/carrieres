@@ -20,6 +20,6 @@
 
     @include('monStage.liste')
     <div class="center">
-        {{ $links }}
+        {{ $offresDeStages->appends(['sort' => 'raison_sociale'])->links() }}
     </div>
 @endsection
