@@ -10,5 +10,6 @@ $(document).ready(function(){
   $('.collapsible').collapsible();
   $('select').select();
   $('.datepicker').datepicker({format: 'yyyy-mm-dd'});
+  $('.tooltipped').tooltip();
 });
     

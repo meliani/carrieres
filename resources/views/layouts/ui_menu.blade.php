@@ -13,6 +13,7 @@
         <ul class="sidenav" id="mobile-demo">
           @include('layouts.ui_menumobile')
         </ul>
+        @yield('users_buttons')
       </div>
     </div>
   </div>

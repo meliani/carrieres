@@ -33,10 +33,10 @@ class monStageController extends Controller
      * @param Request $request
      * @return Response
      */
-    public function index()
+    public function index($offersPerPage=10)
     {
         //$this->offresDeStagesRepository->pushCriteria(new RequestCriteria($request));
-        $offresDeStages = $this->offresDeStagesRepository->paginate(10);
+        $offresDeStages = $this->offresDeStagesRepository->paginate($offersPerPage);
         $links = $offresDeStages->render();
         //$offresDeStages = offreDeStage::orderby('created_at', 'desc');//->paginate(5);
           //dd($offresDeStages);
