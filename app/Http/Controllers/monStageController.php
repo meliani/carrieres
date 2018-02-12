@@ -33,13 +33,14 @@ class monStageController extends Controller
      * @param Request $request
      * @return Response
      */
-    public function index($offersPerPage=20)
+    public function index($offersPerPage=20,$sort='created_at')
     {
         //$this->offresDeStagesRepository->pushCriteria(new RequestCriteria($request));
         
         $offresDeStages = $this->offresDeStagesRepository
-                                ->orderBy('created_at', 'desc')
+                                ->orderBy($sort, 'desc')
                                 ->paginate($offersPerPage);//->get();
+        //where expired_at is now -10 days
         
         //$links = $offresDeStages->render();
 
@@ -139,6 +140,6 @@ class monStageController extends Controller
         return redirect(route('monStage.index'));
     }
 
-
+    
 }
 

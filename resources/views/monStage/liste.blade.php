@@ -82,7 +82,7 @@
                       @if($offre->applyable==0) 
                         <a href="{{ route('monStage.show', $offre->id) }}">Voir l'offre</a>
                       @endif
-                    @else
+                      @else
                         <a href="{{ route('monStage.postuler', $offre->id) }}">Postuler</a>
                     @endif
                     
