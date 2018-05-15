@@ -13,7 +13,7 @@ use Response;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 
-class offresDeStagesController extends AppBaseController
+class offreDeStageController extends AppBaseController
 {
     /** @var  offresDeStagesRepository */
     private $offresDeStagesRepository;
@@ -34,7 +34,7 @@ class offresDeStagesController extends AppBaseController
         $this->offresDeStagesRepository->pushCriteria(new RequestCriteria($request));
         $offresStages = $this->offresDeStagesRepository->all();
 
-        return view('offres_stages.create')
+        return view('offreDeStage.create')
             ->with('offresStages', $offresStages);
     }
 
@@ -45,7 +45,7 @@ class offresDeStagesController extends AppBaseController
      */
     public function create()
     {
-        return view('offres_stages.create');
+        return view('offreDeStage.create');
     }
 
     /**
@@ -75,7 +75,7 @@ class offresDeStagesController extends AppBaseController
 
         Flash::success('Offre de stage bien enregistrée.');
 
-        return redirect(route('offresStages.create'))->with('message', 'Votre proposition a été bien enregistrée');
+        return redirect(route('offreDeStage.create'))->with('message', 'Votre proposition a été bien enregistrée');
     }
 
     /**

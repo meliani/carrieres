@@ -11,7 +11,7 @@
 |
 */
 
-Route::middleware(['isAdmin'])->group(function () {
+    Route::middleware(['isAdmin'])->group(function () {
     Route::get('admin/applications', ['as'=> 'admin.applications.index', 'uses' => 'Admin\applicationsController@index']);
 
     Route::get('admin/offresDeStages', ['as'=> 'admin.offresDeStages.index', 'uses' => 'Admin\offresDeStagesController@index']);
@@ -71,9 +71,12 @@ Route::middleware(['auth'])->group(function () {
     });
     
 
-    Route::post('offresStages', ['as'=> 'offresDeStages.store', 'uses' => 'offresDeStagesController@store']);
-    Route::get('offresStages', ['as'=> 'offresDeStages.create', 'uses' => 'offresDeStagesController@create']);
-    Route::post('offresDeStages', ['as'=> 'offresStages.store', 'uses' => 'offresDeStagesController@store']);
-    Route::get('offresDeStages/create', ['as'=> 'offresStages.create', 'uses' => 'offresDeStagesController@create']);
-    
+    Route::post('offresStages', ['as'=> 'offresDeStages.store', 'uses' => 'offresDeStagesPFEController@store']);
+    Route::get('offresStages', ['as'=> 'offresDeStages.create', 'uses' => 'offresDeStagesPFEController@create']);
+    Route::post('offresDeStages', ['as'=> 'offresStages.store', 'uses' => 'offresDeStagesPFEController@store']);
+    Route::get('offresDeStages/create', ['as'=> 'offresStages.create', 'uses' => 'offresDeStagesPFEController@create']);
+ 
+    Route::post('offreDeStage', ['as'=> 'offreDeStage.store', 'uses' => 'offreDeStageController@store']);
+    Route::get('offreDeStage/create', ['as'=> 'offreDeStage.create', 'uses' => 'offreDeStageController@create']);
+   
 Auth::routes();

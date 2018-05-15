@@ -74,15 +74,15 @@ class offreDeStage extends Model
      * @var array
      */
     public static $rules = [
-        'nom_responsable' => 'required',
+        'nom_responsable' => 'nullable',
         'raison_sociale' => 'required',
-        'lieu_de_stage' => 'required',
-        'fonction' => 'required',
-        'telephone' => 'required|numeric',
-        'email' => 'required|email',
-        'intitule_sujet'=> 'required',
-        'descriptif'=> 'required',
-        'mots_cles'=> 'required',
+        'lieu_de_stage' => 'nullable',
+        'fonction' => 'nullable',
+        'telephone' => 'nullable|numeric',
+        'email' => 'nullable|email',
+        'intitule_sujet'=> 'nullable',
+        'descriptif'=> 'nullable',
+        'mots_cles'=> 'nullable',
         'document_offre' => 'nullable',
         'is_valid' => 'nullable',
         'status' => 'nullable',
