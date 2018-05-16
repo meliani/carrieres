@@ -73,7 +73,7 @@ class offreDeStageController extends AppBaseController
 
         $offresStages = $this->offresDeStagesRepository->create($input);
 
-        Flash::success('Offre de stage bien enregistrée.');
+        Flash::success('Offre de stage bien enregistrée. elle sera transmise aux ayants droit après vérification et validation.');
 
         return redirect(route('offreDeStage.create'))->with('message', 'Votre proposition a été bien enregistrée');
     }
