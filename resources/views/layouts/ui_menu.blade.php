@@ -1,7 +1,7 @@
 @include('layouts.ui_usermenulist')
 
 <nav>
-  <div class="nav-wrapper blue-grey lighten-5 z-depth-1">
+  <div class="nav-wrapper white z-depth-1">
     <div class="container">
       <div class="col s12 m12 l12">
         <a href="/" class="brand-logo left"><img src="/images/logos/logo_colors.png"></a>

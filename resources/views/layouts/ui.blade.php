@@ -24,26 +24,26 @@
   @yield('content')
 </main>
 
-<footer class="page-footer blue-grey lighten-3 blue-grey-text text-darken-3 z-depth-1">
+<footer class="page-footer light-blue darken-1 white-text z-depth-1">
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
                 <h5>"Nous accompagnons vos premiers pas vers l’entreprise"</h5>
-                <p>L'équipe de la direction adjointe des stages et relations entreprises vous accompagne dans vos premiers pas vers l'entreprise. 
-Votre carrière se construit dès aujourd'hui, nous sommes là pour vous aider à mettre en valeur vos atouts pour bien la démarrer.</p>  
+                <p>L'équipe de la direction adjointe des stages et relations entreprises vous accompagne dans vos premiers pas vers l'entreprise.
+Votre carrière se construit dès aujourd'hui, nous sommes là pour vous aider à mettre en valeur vos atouts pour bien la démarrer.</p>
             </div>
               <div class="col l4 offset-l2 s12">
                 <h5>Liens</h5>
                 <ul>
-                  <li><a href="#!">Conditions d'utilisation.</a></li>
+                  <li><a class="light-blue-text text-lighten-5" href="#!">Conditions d'utilisation.</a></li>
                 </ul>
               </div>
             </div>
           </div>
-          <div class="footer-copyright blue-grey lighten-1">
+          <div class="footer-copyright light-blue darken-3 z-depth-2">
             <div class="container">
             © 2017 DASRE INPT
-            <a class="grey-text text-lighten-5 right" href="#!">Contact</a>
+            <a class="light-blue-text text-lighten-5 right" href="#!">Contact</a>
             </div>
           </div>
         </footer>
@@ -53,6 +53,6 @@ Votre carrière se construit dès aujourd'hui, nous sommes là pour vous aider �
     </script>
     <script src="{{ asset('js/materialize.js') }}"></script>
     <script src="{{ asset('js/init.js') }}"></script>
-    
+
 </body>
 </html>
