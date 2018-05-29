@@ -6,6 +6,9 @@
  * Made By MaterializeCSS.com
  */
 
+
+
+
 .icon-block {
   padding: 0 15px;
 }
@@ -19,7 +22,7 @@ body {
   flex-direction: column;
   
 }
-body,html{background-color:#EDEDED!important;}
+body,html{background-color:#FFFFFF!important;}
 main {
   flex: 1 0 auto;
 }
@@ -52,9 +55,9 @@ p {
   line-height: 2rem;
 }
 
-.button-collapse {
+/* .button-collapse {
   color: #26a69a;
-}
+} */
 
 .parallax-container {
   min-height: 380px;
