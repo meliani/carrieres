@@ -1,7 +1,8 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Database\Migrations\Migration;
 
 class CreatePermissionTables extends Migration
 {
@@ -29,7 +30,7 @@ class CreatePermissionTables extends Migration
         });
 
         Schema::create($tableNames['model_has_permissions'], function (Blueprint $table) use ($tableNames) {
-            $table->integer('permission_id')->unsigned();
+            $table->unsignedInteger('permission_id');
             $table->morphs('model');
 
             $table->foreign('permission_id')
@@ -41,7 +42,7 @@ class CreatePermissionTables extends Migration
         });
 
         Schema::create($tableNames['model_has_roles'], function (Blueprint $table) use ($tableNames) {
-            $table->integer('role_id')->unsigned();
+            $table->unsignedInteger('role_id');
             $table->morphs('model');
 
             $table->foreign('role_id')
@@ -53,8 +54,8 @@ class CreatePermissionTables extends Migration
         });
 
         Schema::create($tableNames['role_has_permissions'], function (Blueprint $table) use ($tableNames) {
-            $table->integer('permission_id')->unsigned();
-            $table->integer('role_id')->unsigned();
+            $table->unsignedInteger('permission_id');
+            $table->unsignedInteger('role_id');
 
             $table->foreign('permission_id')
                 ->references('id')
@@ -68,7 +69,7 @@ class CreatePermissionTables extends Migration
 
             $table->primary(['permission_id', 'role_id']);
 
-            Artisan::call('cache:forget', ['key' => 'spatie.permission.cache']);
+            app('cache')->forget('spatie.permission.cache');
         });
     }
 
