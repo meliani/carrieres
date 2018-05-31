@@ -23,13 +23,13 @@
     Route::get('admin/offresDeStages/{offresDeStages}', ['as'=> 'admin.offresDeStages.show', 'uses' => 'Admin\offresDeStagesController@show']);
     Route::get('admin/offresDeStages/{offresDeStages}/edit', ['as'=> 'admin.offresDeStages.edit', 'uses' => 'Admin\offresDeStagesController@edit']);
     Route::post('admin/offresDeStages/{offresDeStages}/activate', ['as'=> 'admin.offresDeStages.activate', 'uses' => 'Admin\offresDeStagesController@activate']);
-    
+
     Route::resource('users', 'Admin\UserController');
-    
+
     Route::resource('roles', 'RoleController');
-    
+
     Route::resource('permissions', 'PermissionController');
-    
+
     Route::resource('posts', 'PostController');
 });
 
@@ -40,7 +40,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('monStage/postuler/{monStage}', ['as'=> 'monStage.postuler', 'uses' => 'monStageController@postuler']);
     Route::post('monStage/postuler/{monStage}', ['as'=> 'monStage.store', 'uses' => 'monStageController@store']);
     //Route::('monStage', 'monStageController');
-    
+
     //Route::get('monStage/edocs', ['as'=> 'monStage.edocs', 'uses' => 'monStageController@edocs']);
     Route::get('monStage/edocs',['as'=> 'monStage.edocs'], function () {
         return view('monStage.edocs');
@@ -50,32 +50,32 @@ Route::middleware(['auth'])->group(function () {
     });
 
     Route::get('offresDeStages', ['as'=> 'offresDeStages.index', 'uses' => 'offresDeStagesController@index']);
-    
+
     Route::get('edocs', ['as'=> 'edocs.index', 'uses' => 'edocsController@index']);
 
     Route::resource('internship', 'InternshipController');
 
 });
 
-    
+
     Route::get('/home', 'HomeController@index')->name('home');
-    
+
     Route::get('welcome/{locale}', function ($locale) {
         App::setLocale($locale);
         return view('welcome');
         //
     });
-    
+
     Route::get('/', function () {
         return view('welcome');
     });
-    
+
 
     Route::post('offresStages', ['as'=> 'offresDeStages.store', 'uses' => 'offresDeStagesPFEController@store']);
     Route::get('offresStages', ['as'=> 'offresDeStages.create', 'uses' => 'offresDeStagesPFEController@create']);
     Route::post('offresDeStages', ['as'=> 'offresStages.store', 'uses' => 'offresDeStagesPFEController@store']);
     Route::get('offresDeStages/create', ['as'=> 'offresStages.create', 'uses' => 'offresDeStagesPFEController@create']);
- 
+
     Route::post('offreDeStage', ['as'=> 'offreDeStage.store', 'uses' => 'offreDeStageController@store']);
     Route::get('offreDeStage/create', ['as'=> 'offreDeStage.create', 'uses' => 'offreDeStageController@create']);
     Route::get('stageTechnique2018', ['as'=> 'offreDeStage.create', 'uses' => 'offreDeStageController@create']);
