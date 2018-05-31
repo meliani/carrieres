@@ -24,7 +24,7 @@ class offreDeStage extends Model
     use SoftDeletes;
 
     public $table = 'offres_de_stages';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -64,6 +64,7 @@ class offreDeStage extends Model
         'document_offre' => 'string',
         'is_valid' => 'boolean',
         'status' => 'integer',
+        'internship_category_id' => 'nullable',
         'expire_at' => 'timestamp',
         'applyable' => 'integer'
     ];
@@ -86,6 +87,7 @@ class offreDeStage extends Model
         'document_offre' => 'nullable',
         'is_valid' => 'nullable',
         'status' => 'nullable',
+        'internship_category_id' => 'nullable',
         'expire_at' => 'nullable',
         'applyable' => 'nullable'
     ];
@@ -93,8 +95,8 @@ class offreDeStage extends Model
 	public function users()
 	{
 		return $this->belongsToMany('App\Models\Application');
-	} 
-    
+	}
+
     public function applications()
     {
         return $this->morphToMany('App\Models\Application', 'applyable');

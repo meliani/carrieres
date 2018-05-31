@@ -1,6 +1,6 @@
 <ul id="dropdown1" class="dropdown-content">
     @role('Admin')
-    <li><a href="{{ route('users.index') }}">Adminisration</a></li>
+    <li><a href="{{ route('admin.offresDeStages.index') }}">Adminisration</a></li>
     <li class="divider"></li>
     @endrole
 
@@ -21,4 +21,3 @@
         </form>
     </li>
 </ul>
-
