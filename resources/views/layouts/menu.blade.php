@@ -5,4 +5,7 @@
 </li>
 <li class="{{ Request::is('applications*') ? 'active' : '' }}">
     <a href="{!! route('admin.applications.index') !!}"><i class="fa fa-edit"></i><span>Offers tracking</span></a>
+</li><li class="{{ Request::is('reportSubmissions*') ? 'active' : '' }}">
+    <a href="{!! route('admin.reportSubmissions.index') !!}"><i class="fa fa-edit"></i><span>Report Submissions</span></a>
 </li>
+

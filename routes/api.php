@@ -31,3 +31,10 @@ Route::get('admin/postulers/{postulers}', 'Admin\PostulerAPIController@show');
 Route::put('admin/postulers/{postulers}', 'Admin\PostulerAPIController@update');
 Route::patch('admin/postulers/{postulers}', 'Admin\PostulerAPIController@update');
 Route::delete('admin/postulers{postulers}', 'Admin\PostulerAPIController@destroy');
+
+Route::get('admin/report_submissions', 'Admin\reportSubmissionAPIController@index');
+Route::post('admin/report_submissions', 'Admin\reportSubmissionAPIController@store');
+Route::get('admin/report_submissions/{report_submissions}', 'Admin\reportSubmissionAPIController@show');
+Route::put('admin/report_submissions/{report_submissions}', 'Admin\reportSubmissionAPIController@update');
+Route::patch('admin/report_submissions/{report_submissions}', 'Admin\reportSubmissionAPIController@update');
+Route::delete('admin/report_submissions{report_submissions}', 'Admin\reportSubmissionAPIController@destroy');

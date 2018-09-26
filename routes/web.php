@@ -81,3 +81,19 @@ Route::middleware(['auth'])->group(function () {
     Route::get('stageTechnique2018', ['as'=> 'offreDeStage.create', 'uses' => 'offreDeStageController@create']);
 
 Auth::routes();
+
+
+Route::get('admin/reportSubmissions', ['as'=> 'admin.reportSubmissions.index', 'uses' => 'Admin\reportSubmissionController@index']);
+Route::post('admin/reportSubmissions', ['as'=> 'admin.reportSubmissions.store', 'uses' => 'Admin\reportSubmissionController@store']);
+Route::get('admin/reportSubmissions/create', ['as'=> 'admin.reportSubmissions.create', 'uses' => 'Admin\reportSubmissionController@create']);
+Route::put('admin/reportSubmissions/{reportSubmissions}', ['as'=> 'admin.reportSubmissions.update', 'uses' => 'Admin\reportSubmissionController@update']);
+Route::patch('admin/reportSubmissions/{reportSubmissions}', ['as'=> 'admin.reportSubmissions.update', 'uses' => 'Admin\reportSubmissionController@update']);
+Route::delete('admin/reportSubmissions/{reportSubmissions}', ['as'=> 'admin.reportSubmissions.destroy', 'uses' => 'Admin\reportSubmissionController@destroy']);
+Route::get('admin/reportSubmissions/{reportSubmissions}', ['as'=> 'admin.reportSubmissions.show', 'uses' => 'Admin\reportSubmissionController@show']);
+Route::get('admin/reportSubmissions/{reportSubmissions}/edit', ['as'=> 'admin.reportSubmissions.edit', 'uses' => 'Admin\reportSubmissionController@edit']);
+
+
+Route::get('rapport', ['as'=> 'reportSubmissions.index', 'uses' => 'reportSubmissionController@index']);
+Route::post('reportSubmissions', ['as'=> 'reportSubmissions.store', 'uses' => 'reportSubmissionController@store']);
+Route::get('reportSubmissions/create', ['as'=> 'reportSubmissions.create', 'uses' => 'reportSubmissionController@create']);
+
