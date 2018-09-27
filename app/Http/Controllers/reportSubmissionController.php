@@ -60,7 +60,7 @@ class reportSubmissionController extends AppBaseController
             $doc = $request->file('doc_rapport');
             if ($doc->isValid())
             {
-                $path = $doc->storeAs('uploads/Stages/remise/'.Carbon::now()->format('Y').'/rapports',$input['nom'].' '.$input['prenom'].' - '.Carbon::now()->format('dM-hi').'.'.$doc->getClientOriginalExtension(),'public');      
+                $path = $doc->storeAs('uploads/Stages/remise/'.Carbon::now()->format('Y').'/rapports',$input['nom'].' '.$input['prenom'].' - '.Carbon::now()->format('d-M h.i').'.'.$doc->getClientOriginalExtension(),'public');      
                 $input['doc_rapport'] = 'storage/'.$path;
             }elseif($doc->getError()!='UPLOADERROK')
             Flash::error($doc->getErrorMessage());
@@ -70,7 +70,7 @@ class reportSubmissionController extends AppBaseController
             $doc = $request->file('doc_fiche_evaluation');
             if ($doc->isValid())
             {
-                $path = $doc->storeAs('uploads/Stages/remise/'.Carbon::now()->format('Y').'/fiche_evaluation',$input['nom'].' '.$input['prenom'].' - '.Carbon::now()->format('dM-hi').'.'.$doc->getClientOriginalExtension(),'public');      
+                $path = $doc->storeAs('uploads/Stages/remise/'.Carbon::now()->format('Y').'/fiche_evaluation',$input['nom'].' '.$input['prenom'].' - '.Carbon::now()->format('d-M h.i').'.'.$doc->getClientOriginalExtension(),'public');      
                 $input['doc_fiche_evaluation'] = 'storage/'.$path;
             }elseif($doc->getError()!='UPLOADERROK')
             Flash::error($doc->getErrorMessage());
@@ -80,7 +80,7 @@ class reportSubmissionController extends AppBaseController
             $doc = $request->file('doc_convention');
             if ($doc->isValid())
             {
-                $path = $doc->storeAs('uploads/Stages/remise/'.Carbon::now()->format('Y').'/conventions',$input['nom'].' '.$input['prenom'].' - '.Carbon::now()->format('dM-hi').'.'.$doc->getClientOriginalExtension(),'public');      
+                $path = $doc->storeAs('uploads/Stages/remise/'.Carbon::now()->format('Y').'/conventions',$input['nom'].' '.$input['prenom'].' - '.Carbon::now()->format('d-M h.i').'.'.$doc->getClientOriginalExtension(),'public');      
                 $input['doc_convention'] = 'storage/'.$path;
             }elseif($doc->getError()!='UPLOADERROK')
             Flash::error($doc->getErrorMessage());
@@ -90,7 +90,7 @@ class reportSubmissionController extends AppBaseController
             $doc = $request->file('doc_attestation');
             if ($doc->isValid())
             {
-                $path = $doc->storeAs('uploads/Stages/remise/'.Carbon::now()->format('Y').'/attestations',$input['nom'].' '.$input['prenom'].' - '.Carbon::now()->format('dM-hi').'.'.$doc->getClientOriginalExtension(),'public');      
+                $path = $doc->storeAs('uploads/Stages/remise/'.Carbon::now()->format('Y').'/attestations',$input['nom'].' '.$input['prenom'].' - '.Carbon::now()->format('d-M h.i').'.'.$doc->getClientOriginalExtension(),'public');      
                 $input['doc_attestation'] = 'storage/'.$path;
             }elseif($doc->getError()!='UPLOADERROK')
             Flash::error($doc->getErrorMessage());

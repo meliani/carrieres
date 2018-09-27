@@ -87,7 +87,7 @@ class reportSubmission extends Model
         'nom_responsable_stage' => 'required',
         //'email_responsable' => 'email',
         'doc_rapport' => 'required',
-        'doc_fiche_evaluation' => 'required',
+        //'doc_fiche_evaluation' => 'required',
         'doc_convention' => 'required',
         'doc_attestation' => 'required'
     ];

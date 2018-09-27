@@ -70,13 +70,7 @@ class reportSubmissionDataTable extends DataTable
             'email_autre',
             'titre_rapport',
             'entreprise',
-            'ville',
-            'nom_responsable_stage',
-            'email_responsable',
-            'doc_rapport',
-            'doc_fiche_evaluation',
-            'doc_convention',
-            'doc_attestation'
+            'ville'
         ];
     }
 
