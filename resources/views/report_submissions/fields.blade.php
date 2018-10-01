@@ -6,6 +6,7 @@
     <option value="stage technique">Stage technique</option>
 </select>
 </div>
+<div class="clearfix"></div>
 
 <!-- Nom Field -->
 <div class="form-group col-sm-6">
@@ -24,6 +25,7 @@
     {!! Form::label('email_inpt', 'Email INPT :') !!}
     {!! Form::text('email_inpt', null, ['class' => 'form-control']) !!}
 </div>
+<div class="clearfix"></div>
 
 <!-- Email Autre Field -->
 <div class="form-group col-sm-6">
@@ -31,7 +33,9 @@
     {!! Form::text('email_autre', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Email Autre Field -->
+<div class="clearfix"></div>
+
+<!-- tel Autre Field -->
 <div class="form-group col-sm-6">
     {!! Form::label('telephone', 'Téléphone (*) :') !!}
     {!! Form::text('telephone', null, ['class' => 'form-control']) !!}
@@ -55,43 +59,6 @@
     {!! Form::text('ville', null, ['class' => 'form-control']) !!}
 </div>
 
-<div class='col-sm-6'>
-    <div class='col-sm-6'>
-        <div class="form-group">
-                <label>Date de début (*) :</label>
-            <div class='input-group date' id='date_debut'>
-                <input type='text' name='date_debut' class="form-control" placeholder='AAAA-MM-JJ'/>
-                <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                </span>
-            </div>
-        </div>
-    </div>
-    <script type="text/javascript">
-        $(function () {
-            $('#date_debut').datetimepicker();
-        });
-    </script>
-
-<div class='col-sm-6'>
-    <div class="form-group">
-            <label>Date de fin (*) :</label>
-        <div class='input-group date' id='date_fin'>
-            <input type='text' name='date_fin' class="form-control" placeholder='AAAA-MM-JJ' />
-            <span class="input-group-addon">
-                <span class="glyphicon glyphicon-calendar"></span>
-            </span>
-        </div>
-    </div>
-</div>
-<script type="text/javascript">
-    $(function () {
-        $('#date_fin').datetimepicker();
-    });
-</script>
-</div>
-
-<div class="clearfix"></div>
 
 
 <!-- Nom Responsable Stage Field -->
@@ -107,19 +74,57 @@
 </div>
 <div class="clearfix"></div>
 
-<div class='row'>
+
+<div class='col-sm-6'>
+        <div class='col-sm-6'>
+            <div class="form-group">
+                    <label>Date de début (*) :</label>
+                <div class='input-group date' id='date_debut'>
+                    <input type='text' name='date_debut' class="form-control" placeholder='AAAA-MM-JJ'/>
+                    <span class="input-group-addon">
+                        <span class="glyphicon glyphicon-calendar"></span>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('#date_debut').datetimepicker();
+            });
+        </script>
+    
+    <div class='col-sm-6'>
+        <div class="form-group">
+                <label>Date de fin (*) :</label>
+            <div class='input-group date' id='date_fin'>
+                <input type='text' name='date_fin' class="form-control" placeholder='AAAA-MM-JJ' />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('#date_fin').datetimepicker();
+        });
+    </script>
+</div>
+    
+    <div class="clearfix"></div>
+
 <!-- Doc Rapport Field -->
-<div class="form-group col-sm-3">
+<div class="form-group col-sm-4">
     {!! Form::label('doc_rapport', 'Rapport de stage (*) :') !!}
     {!! Form::file('doc_rapport') !!}
 </div>
 <!-- Doc Convention Field -->
-<div class="form-group col-sm-3">
+<div class="form-group col-sm-4">
     {!! Form::label('doc_convention', 'Convention de stage dûment signée par l\'entreprise, le représentant de l\'INPT et l\'élève ingénieur (*) :') !!}
     {!! Form::file('doc_convention') !!}
 </div>
 <!-- Doc Attestation Field -->
-<div class="form-group col-sm-3">
+<div class="form-group col-sm-4">
     {!! Form::label('doc_attestation', 'Attestation de stage (*) :') !!}
     {!! Form::file('doc_attestation') !!}
 </div>
@@ -130,5 +135,4 @@
 <div class="form-group col-sm-12">
     {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
     <a href="{!! route('admin.reportSubmissions.create') !!}" class="btn btn-default">Cancel</a>
-</div>
 </div>
