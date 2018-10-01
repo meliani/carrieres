@@ -27,7 +27,7 @@ class CreatereportSubmissionsTable extends Migration
             $table->date('date_debut');
             $table->date('date_fin');
             $table->string('nom_responsable_stage');
-            $table->string('email_responsable');
+            $table->string('email_responsable')->nullable();
             $table->text('doc_rapport');
             $table->text('doc_convention');
             $table->text('doc_attestation');

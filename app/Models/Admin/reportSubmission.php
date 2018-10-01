@@ -91,6 +91,8 @@ class reportSubmission extends Model
         'ville' => 'required',
         'nom_responsable_stage' => 'required',
         //'email_responsable' => 'email',
+        'date_debut' => 'required',
+        'date_fin' => 'required',
         'doc_rapport' => 'required',
         //'doc_fiche_evaluation' => 'required',
         'doc_convention' => 'required',
