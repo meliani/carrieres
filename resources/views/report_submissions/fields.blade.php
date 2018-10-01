@@ -129,10 +129,23 @@
     {!! Form::file('doc_attestation') !!}
 </div>
 <div class="clearfix"></div>
-
-
+<div class="form-group col-sm-12">
+<p>
+Dans une deuxième étape, seuls les élèves ingénieurs ayant remis une version électronique pourront remettre le dossier complet de leur stage. 
+Le dossier de stage doit être remis avant le <b>Jeudi 15 Novembre 2018 à 15H00.</b> Il doit être composé de :
+</p>
+<ul>
+<li>Rapport du stage version papier (identique à la version numérique),</li>
+<li>Attestation de stage (copie + originale qui vous sera retournée) ;</li>
+<li>Fiche d’évaluation de l’entreprise (remise sous plis cacheté). Cette fiche peut être transmise par fax ou par mail à entreprise@inpt.ac.ma</li>
+</ul>
+<p>
+Il appartient à l’élève-ingénieur de faire le nécessaire pour que son dossier soit complet lors de la remise du dossier du stage.
+Le non-respect des délais ci-dessus entraine le non validation du stage.
+</p>
+</div>
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
-    {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-    <a href="{!! route('admin.reportSubmissions.create') !!}" class="btn btn-default">Cancel</a>
+    {!! Form::submit('Valider mes informations', ['class' => 'btn btn-primary']) !!}
+    <a href="{!! route('admin.reportSubmissions.create') !!}" class="btn btn-default">Annuler</a>
 </div>

@@ -6,8 +6,7 @@
 
   <div class="section no-pad-bot z-depth-0" id="index-banner">
   <img class="responsive-img sticky" src="{{ asset('images/home/office.png') }}">
-  <a href="https://carrieres.inpt.ac.ma/rapport" class="btn-floating center btn-large blue pulse"><i class="material-icons">book</i></a>
-  Soumettre votre rapport de stage ici... 
+
   <div class="container">
       <div class="row center">
         <h5 class="header col s12 light">@lang('messages.welcome')</h5>
@@ -53,6 +52,12 @@
               <li class="light">Le Projet de fin d’études (PFE) en troisième année.</li>
 
           </div>
+          <p class="center">
+          <a href="https://carrieres.inpt.ac.ma/rapport" class="btn-floating btn-medium blue pulse"><i class="material-icons">book</i></a>
+          </p>
+          <p class="center">
+          Soumettre votre rapport de stage ici...   
+        </p>
         </div>
 
         <div class="col s12 m4">

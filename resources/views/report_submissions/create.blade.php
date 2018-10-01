@@ -5,6 +5,9 @@
         <h1>
             Soumission de rapport de stage
         </h1>
+        <h4>
+                La version numérique doit être transmise avant le Mercredi 31 Octobre 2018 à 23:59
+        </h4>
     </section>
     <div class="content">
         @include('adminlte-templates::common.errors')
