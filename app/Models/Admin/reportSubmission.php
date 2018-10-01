@@ -35,17 +35,20 @@ class reportSubmission extends Model
 
 
     public $fillable = [
+        'type_stage',
         'nom',
         'prenom',
-        'email',
+        'email_inpt',
         'email_autre',
+        'telephone',
         'titre_rapport',
         'entreprise',
         'ville',
+        'date_debut',
+        'date_fin',
         'nom_responsable_stage',
         'email_responsable',
         'doc_rapport',
-        'doc_fiche_evaluation',
         'doc_convention',
         'doc_attestation'
     ];
@@ -56,17 +59,19 @@ class reportSubmission extends Model
      * @var array
      */
     protected $casts = [
+        'type_stage' => 'string',
         'nom' => 'string',
         'prenom' => 'string',
-        'email' => 'string',
+        'email_inpt' => 'string',
         'email_autre' => 'string',
         'titre_rapport' => 'string',
         'entreprise' => 'string',
         'ville' => 'string',
+        'date_debut' => 'date',
+        'date_fin' => 'date',
         'nom_responsable_stage' => 'string',
         'email_responsable' => 'string',
         'doc_rapport' => 'string',
-        'doc_fiche_evaluation' => 'string',
         'doc_convention' => 'string',
         'doc_attestation' => 'string'
     ];
@@ -80,7 +85,7 @@ class reportSubmission extends Model
         'nom' => 'required',
         'prenom' => 'required',
         //'email' => 'email',
-        //'email_autre' => 'email,required',
+        'email_autre' => 'email',
         'titre_rapport' => 'required',
         'entreprise' => 'required',
         'ville' => 'required',

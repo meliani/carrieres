@@ -15,17 +15,20 @@ class CreatereportSubmissionsTable extends Migration
     {
         Schema::create('report_submissions', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('type_stage');
             $table->string('nom');
             $table->string('prenom');
-            $table->string('email');
+            $table->string('email_inpt')->nullable();
             $table->string('email_autre');
+            $table->string('telephone');
             $table->text('titre_rapport');
             $table->string('entreprise');
             $table->string('ville');
+            $table->date('date_debut');
+            $table->date('date_fin');
             $table->string('nom_responsable_stage');
             $table->string('email_responsable');
             $table->text('doc_rapport');
-            $table->text('doc_fiche_evaluation');
             $table->text('doc_convention');
             $table->text('doc_attestation');
             $table->timestamps();
