@@ -66,7 +66,7 @@ class reportSubmissionDataTable extends DataTable
         return [
             'nom',
             'prenom',
-            'email',
+            'email_inpt',
             'email_autre',
             'titre_rapport',
             'entreprise',
