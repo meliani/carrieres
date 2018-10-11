@@ -38,6 +38,7 @@ class monStageController extends Controller
         //$this->offresDeStagesRepository->pushCriteria(new RequestCriteria($request));
         
         $offresDeStages = $this->offresDeStagesRepository
+                                //->where('status','!=','-1')
                                 ->orderBy($sort, 'desc')
                                 ->paginate($offersPerPage);//->get();
         //where expired_at is now -10 days

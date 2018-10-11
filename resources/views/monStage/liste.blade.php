@@ -25,7 +25,7 @@
   <div class="section">
     <div class="row">
       @foreach ($offresDeStages as $offre)
-        @if($offre->is_valid)
+        @if($offre->is_valid && $offre->status!='-1')
               <div class="offre col s12 m4 l4 xl3">
                 <div class="card hoverable">
                   <div class="card-content">

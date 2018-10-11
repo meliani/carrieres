@@ -8,7 +8,7 @@
 
 $(document).ready(function(){
   $('.collapsible').collapsible();
-  $('select').select();
+  $('select').formSelect();
   $('.datepicker').datepicker({format: 'yyyy-mm-dd'});
   $('.tooltipped').tooltip();
 });

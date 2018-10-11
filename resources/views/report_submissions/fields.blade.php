@@ -89,7 +89,7 @@
         </div>
         <script type="text/javascript">
             $(function () {
-                $('#date_debut').datetimepicker();
+                $('.date').datetimepicker();
             });
         </script>
     
