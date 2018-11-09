@@ -64,7 +64,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('edocs', ['as'=> 'edocs.index', 'uses' => 'edocsController@index']);
 
     Route::resource('internship', 'InternshipController');
-
+    Route::resource('profile', 'ProfileController');
 });
 
 
