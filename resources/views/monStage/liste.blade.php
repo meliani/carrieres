@@ -54,7 +54,7 @@
                     </li>
                     <li>
                       <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">queue</i>Détails et Prérequis</div>
-                      <div class="collapsible-body"><p>{!!  $offre->descriptif !!}</p></div>
+                      <div class="collapsible-body"><p>{!!  nl2br($offre->descriptif) !!}</p></div>
                     </li>
 
                     <li>
