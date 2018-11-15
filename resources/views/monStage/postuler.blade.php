@@ -34,7 +34,9 @@
               <li class="active">
 				<li>
                 <div class="collapsible-header"><h5 class='header5 blue-grey-text textlighten-5'><i class="small material-icons blue-grey-text textlighten-5">business</i>{!!  $offre->raison_sociale !!}</h5></div>
-                <div class="collapsible-body"><p><i class="small material-icons blue-grey-text textlighten-5">place</i> {!! $offre->lieu_de_stage !!}</p>
+                <div class="collapsible-body"><p><i class="small material-icons blue-grey-text textlighten-5">place</i> 
+                  {!! nl2br($offre->lieu_de_stage) !!}
+                </p>
                 </div>
 				</li>
 				<li>
@@ -43,7 +45,7 @@
               </li>
               <li>
                 <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">queue</i>Détails et Prérequis</div>
-                <div class="collapsible-body"><p>{!!  $offre->descriptif !!}</p></div>
+                <div class="collapsible-body"><p>{!!  nl2br($offre->descriptif) !!}</p></div>
               </li>
 
               <li>
@@ -54,7 +56,7 @@
               @if($offre->document_offre)
               <li>
               <div class="collapsible-header">Pièce jointe</div>
-              <div class="collapsible-body"><p>{!!  Html::link($offre->document_offre) !!}</p></div>
+              <div class="collapsible-body"><p>{!!  Html::link('storage/uploads/Stages/Offres/'.$offre->document_offre,"Voir le document") !!}</p></div>
               </li>
               @endif
             </ul>

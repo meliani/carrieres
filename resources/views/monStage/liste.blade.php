@@ -44,7 +44,7 @@
                       </div>
                       <div class="collapsible-body">
                       <p><i class="small material-icons blue-grey-text textlighten-5">place</i> 
-                      {!! $offre->lieu_de_stage !!}
+                      {!! nl2br($offre->lieu_de_stage) !!}
                       </p>
                       </div>
                     </li>
@@ -65,7 +65,7 @@
                     @if($offre->document_offre)
                     <li>
                     <div class="collapsible-header">Pièce jointe</div>
-                    <div class="collapsible-body"><p>{!!  Html::link('storage/uploads/Stages/Offres/'.$offre->document_offre) !!}</p></div>
+                    <div class="collapsible-body"><p>{!!  Html::link('storage/uploads/Stages/Offres/'.$offre->document_offre,"Voir le document") !!}</p></div>
                     </li>
                     @endif
                   </ul>

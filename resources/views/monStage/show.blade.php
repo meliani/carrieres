@@ -11,14 +11,14 @@
                         {!!  $offre->raison_sociale !!}
                         </h5>
                   <p><i class="small material-icons blue-grey-text textlighten-5">place</i>
-                  {!! $offre->lieu_de_stage !!}
+                  {!! nl2br($offre->lieu_de_stage) !!}
                   </p>
                   </li>
                   <li  class="collection-item">
                   <i class="small material-icons blue-grey-text textlighten-5">queue</i>
                   Détails et Prérequis
                   <p>
-                  {!!  $offre->descriptif !!}
+                  {!!  nl2br($offre->descriptif) !!}
                   </p>
                   </li>
                   <li  class="collection-item">
@@ -33,7 +33,7 @@
               @if($offre->document_offre)
               <li>
               <div class="collection-item">Pièce jointe</div>
-              <div class="collection-item"><p>{!!  Html::link('storage/uploads/Stages/Offres/'.$offre->document_offre) !!}</p></div>
+              <div class="collection-item"><p>{!!  Html::link('storage/uploads/Stages/Offres/'.$offre->document_offre,"Voir le document") !!}</p></div>
               </li>
               @endif
             </ul>
