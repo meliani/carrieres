@@ -145,7 +145,7 @@ class offreDeStage extends Model
         $elapse=$expired->diffInHours();
         if($elapse>0)
             //if expiring diffInHours ->diffForHumans()
-            return "A expiré ".$expired->diffForHumans();
+            return "Expiration ".$expired->diffForHumans();
         elseif($elapse<0)
             return "Expire ".$expired->diffForHumans();
             //Here have to carbon now - expire_at in days
