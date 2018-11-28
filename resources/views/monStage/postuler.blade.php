@@ -35,7 +35,7 @@
 				<li>
                 <div class="collapsible-header"><h5 class='header5 blue-grey-text textlighten-5'><i class="small material-icons blue-grey-text textlighten-5">business</i>{!!  $offre->raison_sociale !!}</h5></div>
                 <div class="collapsible-body"><p><i class="small material-icons blue-grey-text textlighten-5">place</i> 
-                  {!! nl2br($offre->lieu_de_stage) !!}
+                  {!! $offre->lieu_de_stage !!}
                 </p>
                 </div>
 				</li>
@@ -45,7 +45,7 @@
               </li>
               <li>
                 <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">queue</i>Détails et Prérequis</div>
-                <div class="collapsible-body"><p>{!!  nl2br($offre->descriptif) !!}</p></div>
+                <div class="collapsible-body"><p>{!!  $offre->descriptif !!}</p></div>
               </li>
 
               <li>

@@ -142,12 +142,12 @@ class offreDeStage extends Model
     {
         //Carbon::now();
         $expired=Carbon::parse($this->attributes['expire_at']);
-        $elapse=$expired->diffInHours();
-        if($elapse>0)
+        $elapse=$expired->diffInDays();
+        if(Carbon::now()<$expired)
             //if expiring diffInHours ->diffForHumans()
-            return "Expiration ".$expired->diffForHumans();
-        elseif($elapse<0)
             return "Expire ".$expired->diffForHumans();
+        elseif(Carbon::now()>$expired)
+            return "Expiré";
             //Here have to carbon now - expire_at in days
             //if expired echo expired
         else
