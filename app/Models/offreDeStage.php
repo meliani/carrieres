@@ -141,14 +141,15 @@ class offreDeStage extends Model
     public function getExpireAtAttribute()
     {
         //Carbon::now();
-        if(isset($this->attributes['expire_at']))
+        $date=$this->attributes['expire_at'];
+        if(isset($date))
         {
-        $expired=Carbon::parse($this->attributes['expire_at']);
-        $elapse=$expired->diffInDays();
-        if(Carbon::now()<$expired)
+        $expired_at=Carbon::parse($date);
+        $elapse=$expired_at->diffInDays();
+        if(Carbon::now()<$expired_at)
             //if expiring diffInHours ->diffForHumans()
-            return "Expire ".$expired->diffForHumans();
-        elseif(Carbon::now()>$expired)
+            return "Expire ".$expired_at->diffForHumans();
+        elseif(Carbon::now()>$expired_at)
             return "Expiré";
             //Here have to carbon now - expire_at in days
             //if expired echo expired
