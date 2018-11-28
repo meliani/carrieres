@@ -141,6 +141,8 @@ class offreDeStage extends Model
     public function getExpireAtAttribute()
     {
         //Carbon::now();
+        if(isset($this->attributes['expire_at']))
+        {
         $expired=Carbon::parse($this->attributes['expire_at']);
         $elapse=$expired->diffInDays();
         if(Carbon::now()<$expired)
@@ -152,6 +154,10 @@ class offreDeStage extends Model
             //if expired echo expired
         else
             return NULL;
+        }
+        else {
+            return NULL;
+        }
     }
     /*
     public function getAttribute()
