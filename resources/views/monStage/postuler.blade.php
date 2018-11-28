@@ -56,7 +56,7 @@
               @if($offre->document_offre)
               <li>
               <div class="collapsible-header">Pièce jointe</div>
-              <div class="collapsible-body"><p>{!!  Html::link('storage/uploads/Stages/Offres/'.$offre->document_offre,"Voir le document") !!}</p></div>
+              <div class="collapsible-body"><p>{!!  Html::link($offre->document_offre,"Voir le document") !!}</p></div>
               </li>
               @endif
             </ul>

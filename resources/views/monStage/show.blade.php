@@ -10,17 +10,20 @@
                         <i class="small material-icons blue-grey-text textlighten-5">business</i>
                         {!!  $offre->raison_sociale !!}
                         </h5>
+                        @if($offre->lieu_de_stage)
                   <p><i class="small material-icons blue-grey-text textlighten-5">place</i>
-                  {!! nl2br($offre->lieu_de_stage) !!}
+                  {!! $offre->lieu_de_stage !!}
                   </p>
+                  @endif
                   </li>
                   <li  class="collection-item">
                   <i class="small material-icons blue-grey-text textlighten-5">queue</i>
                   Détails et Prérequis
                   <p>
-                  {!!  nl2br($offre->descriptif) !!}
+                  {!!  $offre->descriptif !!}
                   </p>
                   </li>
+                  @if($offre->mots_cles)
                   <li  class="collection-item">
                   <i class="small material-icons blue-grey-text textlighten-5">local_offer</i>
                   Keywords
@@ -28,12 +31,12 @@
                   {!!  $offre->mots_cles !!}
                   </p>
                   </li>
-
+                  @endif
 
               @if($offre->document_offre)
               <li>
               <div class="collection-item">Pièce jointe</div>
-              <div class="collection-item"><p>{!!  Html::link('storage/uploads/Stages/Offres/'.$offre->document_offre,"Voir le document") !!}</p></div>
+              <div class="collection-item"><p>{!!  Html::link($offre->document_offre,"Voir le document") !!}</p></div>
               </li>
               @endif
             </ul>

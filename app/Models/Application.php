@@ -10,14 +10,10 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @package App\Models
  * @version November 14, 2017, 11:11 am UTC
  *
- * @property string nom_responsable
- * @property string raison_sociale
- * @property string lieu_de_stage
- * @property string fonction
- * @property string telephone
- * @property string email
- * @property string intitules_sujets
- * @property string mots_cles
+ * @property string user_id
+ *       'offre_de_stage_id',
+ *       'cv',
+ *       'lettre_de_motivation'
  */
 class Application extends Model
 {

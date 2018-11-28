@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use Carbon\Carbon;
+
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -25,8 +27,12 @@ class offreDeStage extends Model
 
     public $table = 'offres_de_stages';
 
-
-    protected $dates = ['deleted_at'];
+    protected $dateFormat = 'YYYY-MM-DD';
+    protected $dates = [
+            'deleted_at',
+            'expire_at'
+                        
+    ];
 
 
     public $fillable = [
@@ -65,8 +71,8 @@ class offreDeStage extends Model
         'is_valid' => 'boolean',
         'status' => 'integer',
         'internship_category_id' => 'nullable',
-        'expire_at' => 'timestamp',
-        'applyable' => 'integer'
+        'expire_at' => 'date',
+        'applyable' => 'boolean'
     ];
 
     /**
@@ -92,6 +98,12 @@ class offreDeStage extends Model
         'applyable' => 'nullable'
     ];
 
+
+
+/**
+ * Model Relations
+ */
+
 	public function users()
 	{
 		return $this->belongsToMany('App\Models\Application');
@@ -101,4 +113,49 @@ class offreDeStage extends Model
     {
         return $this->morphToMany('App\Models\Application', 'applyable');
     }
+/**
+ * Assecors end Mutators
+ */
+
+    public function getNomResponsableAttribute($value)
+    {
+        return ucfirst($value);
+    }
+
+    public function getDescriptifAttribute($value)
+    {
+        return nl2br($value);
+    }
+    
+    public function getLieuDeStageAttribute($value)
+    {
+        return nl2br($value);
+    }
+    public function getDocumentOffreAttribute($value)
+    {
+        if($value!=NULL)
+            return "storage/uploads/Stages/Offres/".$value;
+        else
+            return NULL;
+    }
+    public function getExpireAtAttribute()
+    {
+        Carbon::now();
+        $expired=Carbon::parse($this->attributes['expire_at']);
+        $elapse=$expired->diffInHours();
+        if($elapse>0)
+            //if expiring diffInHours ->diffForHumans()
+            return $expired->diffForHumans();
+            //Here have to carbon now - expire_at in days
+            //if expired echo expired
+        else
+            return NULL;
+    }
+    /*
+    public function getAttribute()
+    {
+        return NULL;
+    }
+*/
+
 }

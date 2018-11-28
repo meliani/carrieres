@@ -31,7 +31,7 @@
                   <div class="card-content">
                   <img src="/images/badges/pfe.svg" width="64" height="64">
                     @if(isset($offre->expire_at)) 
-                      <span class="new badge orange" data-badge-caption="urgent"></span>
+                      <span class="new badge orange" data-badge-caption="{{$offre->expire_at}}"></span>
                     @endif
                   <ul class="collapsible">
                     <li class="active">
@@ -42,11 +42,13 @@
                         {!!  $offre->raison_sociale !!}
                         </h5>
                       </div>
+                      @if($offre->lieu_de_stage)
                       <div class="collapsible-body">
                       <p><i class="small material-icons blue-grey-text textlighten-5">place</i> 
-                      {!! nl2br($offre->lieu_de_stage) !!}
+                      {!! $offre->lieu_de_stage !!}
                       </p>
                       </div>
+                      @endif
                     </li>
                     <li>
                       <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">subject</i>{!!  str_limit($offre->intitule_sujet,50) !!}</div>
@@ -54,18 +56,18 @@
                     </li>
                     <li>
                       <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">queue</i>Détails et Prérequis</div>
-                      <div class="collapsible-body"><p>{!!  nl2br($offre->descriptif) !!}</p></div>
+                      <div class="collapsible-body"><p>{!!  $offre->descriptif !!}</p></div>
                     </li>
-
+                    @if($offre->mots_cles)
                     <li>
                       <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">local_offer</i>Keywords</div>
                       <div class="collapsible-body"><p>{!!  $offre->mots_cles !!}</p></div>
                     </li>
-
+                    @endif
                     @if($offre->document_offre)
                     <li>
                     <div class="collapsible-header">Pièce jointe</div>
-                    <div class="collapsible-body"><p>{!!  Html::link('storage/uploads/Stages/Offres/'.$offre->document_offre,"Voir le document") !!}</p></div>
+                    <div class="collapsible-body"><p>{!!  Html::link($offre->document_offre,"Voir le document") !!}</p></div>
                     </li>
                     @endif
                   </ul>
