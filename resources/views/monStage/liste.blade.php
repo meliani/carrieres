@@ -19,9 +19,7 @@
 @else
 
 <div class="section">
-  <div class="row center">
-  <h5 class="header col s12 light">Offres de stages PFE</h5>
-  </div>
+
   <div class="section">
     <div class="row">
       @foreach ($offres as $offre)

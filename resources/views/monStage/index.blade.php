@@ -16,6 +16,10 @@
 @endsection       
 @section('content')
 
+        <div class="row center">
+        <h4 class="header col s12 light">Offres de stages PFE</h4>
+        </div>
+
     <div class="center">
         {{ $offres->links('vendor.pagination.default') }}
     </div>
