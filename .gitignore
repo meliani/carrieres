@@ -5,7 +5,6 @@
 /vendor
 /.idea
 /.vagrant
-/00_FutureAssets
 /public/files
 Homestead.json
 Homestead.yaml
