@@ -37,10 +37,12 @@ class monStageController extends Controller
     {
         //$this->offresDeStagesRepository->pushCriteria(new RequestCriteria($request));
         
-        $offresDeStages = $this->offresDeStagesRepository
-                                //->whereRaw('status!=-1')
+        $offres =  $this->offresDeStagesRepository->getActiveOffers();
+        /* $offresDeStages = $this->offresDeStagesRepository
+                                ->('status','=',NULL)
                                 ->orderBy($sort, 'desc')
                                 ->paginate($offersPerPage);//->get();
+                                */
         //where expired_at is now -10 days
         
         //$links = $offresDeStages->render();
@@ -56,7 +58,7 @@ class monStageController extends Controller
           /*return view('monStage.index')
             ->with('offresDeStages', $offresDeStages);*/
            
-            return view('monStage.index', compact('offresDeStages'));
+            return view('monStage.index', compact('offres'));
     }
 
 

@@ -28,15 +28,13 @@ class applicationsController extends Controller
      */
     public function index()
     {
-        //withCount('')->get()
-        $applications = Application::all();
-        $offers = offreDeStage::all();
+        //withCount('')->get() paginate(15)
+        $applications = Application::paginate(50)->where('OffresDeStages.status', '=', NULL );
+        //$offers = offreDeStage::all();
         //dump($applications);
         //dd($applications->offresDeStages);
         return view('admin.applications.index')->with([
-            'applications' => $applications,
-            'offres' => $offers
-        
+            'applications' => $applications
         ]);
     }
 

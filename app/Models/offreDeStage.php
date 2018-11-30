@@ -106,12 +106,14 @@ class offreDeStage extends Model
 
 	public function users()
 	{
-		return $this->belongsToMany('App\Models\Application');
+		return $this->belongsToMany('App\Models\User');
 	}
 
     public function applications()
     {
         return $this->morphToMany('App\Models\Application', 'applyable');
+        //return $this->hasMany('App\Models\Application', 'offre_de_stage_id', 'id');
+
     }
 /**
  * Assecors end Mutators

@@ -31,9 +31,9 @@ class People extends Model
 
     ];
 
-    public function users()
+    public function user()
 	{
-		return $this->belongsTo('App\Models\Application');
+		return $this->HasOne('App\User');
 	}
 
     /* public function options()

@@ -67,5 +67,13 @@ class Application extends Model
     {
         return $this->morphTo();
     }
+    public function user()
+    {
+        return $this->BelongsTo('App\User');
+    }
+    public function offreDeStage()
+    {
+        return $this->BelongsTo('App\Models\offreDeStage','offre_de_stage_id','id');
+    }
 
 }

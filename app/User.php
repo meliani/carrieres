@@ -39,5 +39,11 @@ class User extends Authenticatable
     public function applications()
     {
         return $this->morphToMany('App\Models\Application', 'applyable');
+        //return $this->hasMany('App\Models\Application', 'user_id', 'id');
     }
+    public function profile()
+    {
+        return $this->hasOne('App\Models\Profile');
+    }
+
 }
