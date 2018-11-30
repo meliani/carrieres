@@ -5,7 +5,7 @@
   @endrole
 @endsection
 {{-- dd($offresDeStages) --}}
-@if(!isset($offresDeStages))
+@if(!isset($offres))
 <div class="offre col s12 m12">
   <div class="card">
     <div class="card-content">
@@ -24,12 +24,11 @@
   </div>
   <div class="section">
     <div class="row">
-      @foreach ($offresDeStages as $offre)
-        @if($offre->is_valid && $offre->status!='-1')
-              <div class="offre col s12 m4 l4 xl3">
+      @foreach ($offres as $offre)
+              <div class="offre col s12 m6 l4 xl4">
                 <div class="card hoverable">
                   <div class="card-content">
-                  <img src="/images/badges/pfe.svg" width="64" height="64">
+                  <img src="/images/badges/pfe.svg" width="100pt">
                     @if(isset($offre->expire_at)) 
                       <span class="new badge orange" data-badge-caption="{{$offre->expire_at}}"></span>
                     @endif
@@ -95,7 +94,6 @@
                   </div>
                 </div>
               </div>
-          @endif
         @endforeach
       @endif
     </div>

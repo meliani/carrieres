@@ -6,34 +6,29 @@
                 <tr>
                   <th>Raison sociale</th>
                   <th>intitulé de sujet</th>
-                  <th>Platform(s)</th>
-                  <th>Engine version</th>
-                  <th>CSS grade</th>
+                  <th>Nom et prenom</th>
+                  <th>Filiere</th>
+                  <th>Nom responsable</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($applications as $application)
-                
-                    @foreach($application->offresDeStages as $offer )
-                    
                         <tr>
-                        <td>{{ $offer->raison_sociale }}</td>
-                        <td>{{ $offer->intitule_sujet }}
-                        </td>
-                        <td>Win 95+</td>
-                        <td> 4</td>
-                        <td>X</td>
+                        <td>{{ $application->offreDeStage()->pluck('raison_sociale') }}</td>
+                        <td>{{ $application->offreDeStage()->pluck('intitule_sujet') }}</td>
+                        <td>{{ $application->user()->pluck('name') }}</td>
+                        <td>{{ $application->offreDeStage()->pluck('raison_sociale') }}</td>
+                        <td></td>
                         </tr>
-                    @endforeach
                 @endforeach
                 </tbody>
                 <tfoot>
                 <tr>
                   <th>Raison sociale</th>
                   <th>intitulé de sujet</th>
-                  <th>Platform(s)</th>
-                  <th>Engine version</th>
-                  <th>CSS grade</th>
+                  <th>Nom et prenom</th>
+                  <th>Filiere</th>
+                  <th>Nom responsable</th>
                 </tr>
                 </tfoot>
               </table>
@@ -42,14 +37,13 @@
     @include('layouts.datatables_js')
     <script>
   $(function () {
-    $('#example1').DataTable()
-    $('#example2').DataTable({
+    $('#example1').DataTable({
       'paging'      : true,
-      'lengthChange': false,
-      'searching'   : false,
+      'lengthChange': true,
+      'searching'   : true,
       'ordering'    : true,
       'info'        : true,
-      'autoWidth'   : false
+      'autoWidth'   : true
     })
   })
 </script>

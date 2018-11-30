@@ -16,10 +16,15 @@
 @endsection       
 @section('content')
 
+    <div class="center">
+        {{ $offres->links('vendor.pagination.default') }}
+    </div>
 
 
     @include('monStage.liste')
+
+
     <div class="center">
-        {{ $offresDeStages->appends(['sort' => 'raison_sociale'])->links() }}
+        {{ $offres->links('vendor.pagination.default') }}
     </div>
 @endsection

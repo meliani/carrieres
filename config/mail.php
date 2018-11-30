@@ -57,7 +57,7 @@ return [
 
     'from' => [
         'address' => env('MAIL_FROM_ADDRESS', 'entreprises@inpt.ac.ma'),
-        'name' => env('MAIL_FROM_NAME', 'carrières.inpt.ac.ma'),
+        'name' => env('MAIL_FROM_NAME', 'Portail Carrières'),
     ],
 
     /*
