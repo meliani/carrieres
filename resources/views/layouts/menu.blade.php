@@ -9,3 +9,7 @@
     <a href="{!! route('admin.reportSubmissions.index') !!}"><i class="fa fa-edit"></i><span>Report Submissions</span></a>
 </li>
 
+<li class="{{ Request::is('internships*') ? 'active' : '' }}">
+    <a href="{!! route('admin.internships.index') !!}"><i class="fa fa-edit"></i><span>Internships</span></a>
+</li>
+

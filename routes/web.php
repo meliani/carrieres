@@ -100,3 +100,13 @@ Route::get('rapport', ['as'=> 'reportSubmissions.index', 'uses' => 'reportSubmis
 Route::post('reportSubmissions', ['as'=> 'reportSubmissions.store', 'uses' => 'reportSubmissionController@store']);
 Route::get('reportSubmissions/create', ['as'=> 'reportSubmissions.create', 'uses' => 'reportSubmissionController@create']);
 
+
+
+Route::get('admin/internships', ['as'=> 'admin.internships.index', 'uses' => 'Admin\InternshipsController@index']);
+Route::post('admin/internships', ['as'=> 'admin.internships.store', 'uses' => 'Admin\InternshipsController@store']);
+Route::get('admin/internships/create', ['as'=> 'admin.internships.create', 'uses' => 'Admin\InternshipsController@create']);
+Route::put('admin/internships/{internships}', ['as'=> 'admin.internships.update', 'uses' => 'Admin\InternshipsController@update']);
+Route::patch('admin/internships/{internships}', ['as'=> 'admin.internships.update', 'uses' => 'Admin\InternshipsController@update']);
+Route::delete('admin/internships/{internships}', ['as'=> 'admin.internships.destroy', 'uses' => 'Admin\InternshipsController@destroy']);
+Route::get('admin/internships/{internships}', ['as'=> 'admin.internships.show', 'uses' => 'Admin\InternshipsController@show']);
+Route::get('admin/internships/{internships}/edit', ['as'=> 'admin.internships.edit', 'uses' => 'Admin\InternshipsController@edit']);
