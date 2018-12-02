@@ -53,7 +53,7 @@ class InternshipsDataTable extends DataTable
                 'nowrap' => true,
                 'columnDefs' => [
                      ['visible' => false,
-                     'targets' => [1,25,24,23]],
+                     'targets' => [1,25,24,23,26,27,28,29,30,31]],
                 ],
                 'buttons' => [
                     'create',
