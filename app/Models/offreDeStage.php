@@ -27,8 +27,9 @@ class offreDeStage extends Model
 
     public $table = 'offres_de_stages';
 
-    protected $dateFormat = 'YYYY-MM-DD';
     protected $dates = [
+        'created_at',
+        'updated_at',
             'deleted_at',
             'expire_at'
                         
