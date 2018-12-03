@@ -40,6 +40,6 @@ class offresDeStagesRepository extends BaseRepository
     }
     public function getActiveOffers()
     {
-        return $this->model->where('status', NULL)->orderBy('created_at', 'desc')->paginate(16);
+        return $this->model->where(['status'=> NULL,'is_valid'=>1])->orderBy('created_at', 'desc')->paginate(16);
     }
 }
