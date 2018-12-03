@@ -110,21 +110,21 @@ class reportSubmission extends Model
     public function getDocRapportAttribute($value)
     {
         if($value!=NULL)
-            return "https://carrieres.inpt.ac.ma".$value;
+            return "https://carrieres.inpt.ac.ma/".$value;
         else
             return NULL;
     }
     public function getDocConventionAttribute($value)
     {
         if($value!=NULL)
-            return "https://carrieres.inpt.ac.ma".$value;
+            return "https://carrieres.inpt.ac.ma/".$value;
         else
             return NULL;
     }
     public function getDocAttestationAttribute($value)
     {
         if($value!=NULL)
-            return "https://carrieres.inpt.ac.ma".$value;
+            return "https://carrieres.inpt.ac.ma/".$value;
         else
             return NULL;
     }
