@@ -48,6 +48,7 @@ class offreDeStage extends Model
         'document_offre',
         'is_valid',
         'status',
+        'internship_category_id',
         'expire_at',
         'applyable'
     ];

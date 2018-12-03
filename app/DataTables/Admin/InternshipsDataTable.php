@@ -47,7 +47,6 @@ class InternshipsDataTable extends DataTable
                 'dom'     => 'lBfrtip',
                 'order'   => [[0, 'desc']],
                 'iDisplayLength' => 5,
-                'columnDefs' => [],
                 'responsive' => true,
                 'scrollX' => true,
                 'nowrap' => true,

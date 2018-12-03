@@ -30,9 +30,9 @@ class reportSubmission extends Model
 
     public $table = 'report_submissions';
     
-
-    protected $dates = ['deleted_at'];
-
+    protected $dates = [
+        'deleted_at'
+    ];
 
     public $fillable = [
         'type_stage',
@@ -99,5 +99,33 @@ class reportSubmission extends Model
         'doc_attestation' => 'required'
     ];
 
-    
+    public function getDateDebutAttribute($value)
+    {
+        return $value;
+    }
+    public function getDateFinAttribute($value)
+    {
+        return $value;
+    }
+    public function getDocRapportAttribute($value)
+    {
+        if($value!=NULL)
+            return "https://carrieres.inpt.ac.ma".$value;
+        else
+            return NULL;
+    }
+    public function getDocConventionAttribute($value)
+    {
+        if($value!=NULL)
+            return "https://carrieres.inpt.ac.ma".$value;
+        else
+            return NULL;
+    }
+    public function getDocAttestationAttribute($value)
+    {
+        if($value!=NULL)
+            return "https://carrieres.inpt.ac.ma".$value;
+        else
+            return NULL;
+    }
 }

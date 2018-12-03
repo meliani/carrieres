@@ -46,6 +46,13 @@ class offresDeStagesDataTable extends DataTable
             ->parameters([
                 'dom'     => 'Bfrtip',
                 'order'   => [[0, 'desc']],
+                'iDisplayLength' => 5,
+                'responsive' => true,
+                'scrollX' => true,
+                'columnDefs' => [
+                    ['visible' => false,
+                    'targets' => [6,7,8,9,11,12,13]],
+               ],
                 'buttons' => [
                     'create',
                     'export',
@@ -70,7 +77,14 @@ class offresDeStagesDataTable extends DataTable
             'fonction',
             'telephone',
             'email',
+            'intitule_sujet',
+            'descriptif',
+            'mots_cles',
+            'document_offre',
             'is_valid',
+            'status',
+            'expire_at',
+            'applyable',
             'created_at'
         ];
     }
@@ -82,6 +96,6 @@ class offresDeStagesDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'offres_de_stagesdatatable_' . time();
+        return 'offres_de_stages_export_' . time();
     }
 }

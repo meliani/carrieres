@@ -44,8 +44,15 @@ class reportSubmissionDataTable extends DataTable
             ->minifiedAjax()
             ->addAction(['width' => '80px'])
             ->parameters([
-                'dom'     => 'Bfrtip',
+                'dom'     => 'lBfrtip',
                 'order'   => [[0, 'desc']],
+                'iDisplayLength' => 5,
+                'responsive' => true,
+                'scrollX' => true,
+                'columnDefs' => [
+                    ['visible' => false,
+                    'targets' => [3,4,5,6,12]],
+               ],
                 'buttons' => [
                     'create',
                     'export',
@@ -64,13 +71,22 @@ class reportSubmissionDataTable extends DataTable
     protected function getColumns()
     {
         return [
+            'type_stage',
             'nom',
             'prenom',
             'email_inpt',
             'email_autre',
+            'telephone',
             'titre_rapport',
             'entreprise',
-            'ville'
+            'ville',
+            'date_debut',
+            'date_fin',
+            'nom_responsable_stage',
+            'email_responsable',
+            'doc_rapport',
+            'doc_convention',
+            'doc_attestation'
         ];
     }
 
@@ -81,6 +97,6 @@ class reportSubmissionDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'report_submissionsdatatable_' . time();
+        return 'report_submissions_export_' . time();
     }
 }
