@@ -29,7 +29,7 @@ class applicationsController extends Controller
     public function index()
     {
         //withCount('')->get() paginate(15)
-        $applications = Application::paginate(50)->where('OffresDeStages.status', '=', NULL );
+        $applications = Application::all()->where('OffresDeStages.status', '==', NULL );
         //$offers = offreDeStage::all();
         //dump($applications);
         //dd($applications->offresDeStages);
