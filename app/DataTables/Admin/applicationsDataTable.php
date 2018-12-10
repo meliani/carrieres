@@ -76,6 +76,6 @@ class applicationsDataTable extends DataTable
      */
     protected function filename()
     {
-        return 'applicationsdatatable_' . time();
+        return 'applications_data_' . time();
     }
 }
