@@ -19,6 +19,7 @@ class InternshipsController extends AppBaseController
     public function __construct(InternshipsRepository $internshipsRepo)
     {
         $this->internshipsRepository = $internshipsRepo;
+        $this->middleware(['auth','isAdmin']);
     }
 
     /**

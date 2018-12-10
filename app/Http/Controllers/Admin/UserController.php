@@ -14,7 +14,7 @@ class UserController extends AppBaseController
 {
     public function __construct() 
     {
-        $this->middleware(['isAdmin']);
+        $this->middleware(['auth','isAdmin']);
     }
     
     /**
