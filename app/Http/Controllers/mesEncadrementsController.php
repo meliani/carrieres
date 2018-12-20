@@ -12,7 +12,8 @@ class mesEncadrementsController extends Controller
     {
         $encadrements = DB::table('internshipsview')
         ->select('*')
-        ->paginate(15); // you were missing the get method
+        ->orderBy('created_at', 'DESC')
+        ->paginate(10); // you were missing the get method
 
     return view('mesEncadrements.index', compact('encadrements'));
     }
