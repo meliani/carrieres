@@ -12,7 +12,7 @@ class mesEncadrementsController extends Controller
     {
         $encadrements = DB::table('internshipsview')
         ->select('*')
-        ->paginate(); // you were missing the get method
+        ->paginate(15); // you were missing the get method
 
     return view('mesEncadrements.index', compact('encadrements'));
     }
