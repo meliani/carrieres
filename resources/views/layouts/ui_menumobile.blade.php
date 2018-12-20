@@ -8,7 +8,6 @@
 @role('Etudiant')
 <li class="{{ Request::is('monStage.index') ? 'active' : '' }}"><a class="blue-grey-text text-darken-1" href="{{ route('monStage.index') }}">Voir les offres</a></li>
 <li class="{{ Request::is('monStage.guide') ? 'active' : '' }}"><a class="blue-grey-text text-darken-1" href="{{ route('edocs.index') }}">Mes documents</a></li>
-<li class="{{ Request::is('edocs.index') ? 'active' : '' }}"><a class="blue-grey-text text-darken-1" href="{{ route('monStage.guide') }}">Guide</a></li>
 <li class="{{ Request::is('internship.create') ? 'active' : '' }}"><a class="blue-grey-text text-darken-1" href="{{ route('internship.create') }}">Declarer mon stage</a></li>
 
 @endrole
