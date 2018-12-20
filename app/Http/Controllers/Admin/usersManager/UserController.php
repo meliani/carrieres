@@ -37,7 +37,7 @@ class UserController extends AppBaseController
     public function create()
     {
         $roles = Role::get();
-        return view('admin.users.create', ['roles'=>$roles]);
+        return view('admin.usersManager.users.create', ['roles'=>$roles]);
     }
 
     /**
