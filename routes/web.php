@@ -65,6 +65,8 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('internship', 'InternshipController');
     Route::resource('profile', 'ProfileController');
+    Route::get('mesEncadrements', ['as'=> 'mesEncadrements.index', 'uses' => 'mesEncadrementsController@index']);
+
 });
 
 
