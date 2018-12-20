@@ -7,6 +7,7 @@
           <th>Entreprise</th>
           <th>Titre du PFE</th>
           <th>Date de déclaration</th>
+          <th>Actions</th>
       </tr>
     </thead>
 
@@ -18,6 +19,7 @@
         <td>{{ $pfe->raison_sociale }}</td>
         <td>{{ $pfe->intitule }}</td>
         <td>{{ $pfe->created_at }}</td>
+        <td>Encadrement {{ $pfe->id }}</td>
       </tr>
       @endforeach
     </tbody>
