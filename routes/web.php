@@ -24,11 +24,11 @@
     Route::get('admin/offresDeStages/{offresDeStages}/edit', ['as'=> 'admin.offresDeStages.edit', 'uses' => 'Admin\offresDeStagesController@edit']);
     Route::post('admin/offresDeStages/{offresDeStages}/activate', ['as'=> 'admin.offresDeStages.activate', 'uses' => 'Admin\offresDeStagesController@activate']);
 
-    Route::resource('users', 'Admin\UserController');
+    Route::resource('users', 'Admin\usersManager\UserController');
 
-    Route::resource('roles', 'RoleController');
+    Route::resource('roles', 'Admin\usersManager\RoleController');
 
-    Route::resource('permissions', 'PermissionController');
+    Route::resource('permissions', 'Admin\usersManager\PermissionController');
 
     Route::resource('posts', 'PostController');
 
@@ -40,6 +40,9 @@
     Route::delete('admin/reportSubmissions/{reportSubmissions}', ['as'=> 'admin.reportSubmissions.destroy', 'uses' => 'Admin\reportSubmissionController@destroy']);
     Route::get('admin/reportSubmissions/{reportSubmissions}', ['as'=> 'admin.reportSubmissions.show', 'uses' => 'Admin\reportSubmissionController@show']);
     Route::get('admin/reportSubmissions/{reportSubmissions}/edit', ['as'=> 'admin.reportSubmissions.edit', 'uses' => 'Admin\reportSubmissionController@edit']);
+
+    Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
+
 
 });
 

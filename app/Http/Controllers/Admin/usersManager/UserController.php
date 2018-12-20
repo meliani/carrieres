@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\usersManager;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\AppBaseController;
@@ -24,9 +24,9 @@ class UserController extends AppBaseController
      */
     public function index()
     {
-        $users = User::all();
+        $users = User::paginate(5);
 
-        return view('admin.users.index')->with('users', $users);
+        return view('admin.usersManager.users.index')->with('users', $users);
     }
 
     /**
@@ -66,7 +66,7 @@ class UserController extends AppBaseController
             }
         }        
 
-        return redirect()->route('admin.users.index')
+        return redirect()->route('users.index')
             ->with('flash_message',
              'User successfully added.');
     }
@@ -93,7 +93,7 @@ class UserController extends AppBaseController
         $user = User::findOrFail($id);
         $roles = Role::get();
 
-        return view('admin.users.edit', compact('user', 'roles'));
+        return view('admin.usersManager.users.edit', compact('user', 'roles'));
     }
 
     /**
@@ -124,7 +124,7 @@ class UserController extends AppBaseController
         else {
             $user->roles()->detach();
         }
-        return redirect()->route('admin.users.index')
+        return redirect()->route('users.index')
             ->with('flash_message',
              'User successfully edited.');
     }
@@ -140,7 +140,7 @@ class UserController extends AppBaseController
         $user = User::findOrFail($id);
         $user->delete();
 
-        return redirect()->route('admin.users.index')
+        return redirect()->route('users.index')
             ->with('flash_message',
              'User successfully deleted.');
     }

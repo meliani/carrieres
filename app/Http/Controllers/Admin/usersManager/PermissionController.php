@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin\usersManager;
 
+use App\Http\Controllers\controller;
 use Illuminate\Http\Request;
 
 use Auth;
@@ -25,7 +26,7 @@ class PermissionController extends Controller
     {
         $permissions = Permission::all();
 
-        return view('permissions.index')->with('permissions', $permissions);
+        return view('Admin.usersManager.permissions.index')->with('permissions', $permissions);
     }
 
     /**
@@ -37,7 +38,7 @@ class PermissionController extends Controller
     {
         $roles = Role::get();
 
-        return view('permissions.create')->with('roles', $roles);
+        return view('Admin.usersManager.permissions.create')->with('roles', $roles);
     }
 
     /**
@@ -70,7 +71,7 @@ class PermissionController extends Controller
             }
         }
 
-        return redirect()->route('permissions.index')
+        return redirect()->route('Admin.usersManager.permissions.index')
             ->with('flash_message',
              'Permission'. $permission->name.' added!');
     }
@@ -96,7 +97,7 @@ class PermissionController extends Controller
     {
         $permission = Permission::find($id);
         
-        return view('permissions.edit', compact('permission'));
+        return view('Admin.usersManager.permissions.edit', compact('permission'));
     }
 
     /**
