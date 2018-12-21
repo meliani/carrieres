@@ -3,9 +3,14 @@
 @section('content')
 <div class="card-panel">
     <div class="row">
+        @if ($errors->has('email'))
+        <div class="card-panel scale-transition scale-in">
+            <strong>{{ $errors->first('email') }}</strong>
+        </div>
+        @endif
         <div class="col m8">
             <div class="panel panel-default">
-                <div class="panel-heading">Reset Password</div>
+                <div class="panel-heading"><h4>Redéfinition de mot de passe</h4></div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -18,16 +23,10 @@
                         {{ csrf_field() }}
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                            <label for="email" class="col-md-4 control-label">Addresse email</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
                             </div>
                         </div>
 

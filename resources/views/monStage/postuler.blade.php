@@ -22,7 +22,7 @@
 </div>
 @else
 <div class="section">
-  <h5>Postuler pour ce stage</h5>
+  <h5>Postuler pour cette offre de stage</h5>
   <div class="row">
 
   @if($offre->is_valid)

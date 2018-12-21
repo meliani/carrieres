@@ -1,5 +1,5 @@
 <div class="container offre col s12 m12">
-  <table>
+  <table class="responsive-table centered highlight scale-transition scale-in">
     <thead>
       <tr>
           <th>Nom et prénom</th>
@@ -19,7 +19,7 @@
         <td>{{ $pfe->raison_sociale }}</td>
         <td>{{ $pfe->intitule }}</td>
         <td>{{ $pfe->created_at }}</td>
-        <td>Encadrement {{ $pfe->id }}</td>
+        <td>{{ $pfe->id }}</td>
       </tr>
       @endforeach
     </tbody>
