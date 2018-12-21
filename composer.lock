@@ -1,10 +1,12 @@
+<<<<<<< Updated upstream
+=======
 {
     "_readme": [
         "This file locks the dependencies of your project to a known state",
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "94524ba9eeafcec2ef595ac70e3390b4",
+    "content-hash": "16149bee57e3801325df028be6ac783c",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -2946,16 +2948,16 @@
         },
         {
             "name": "infyomlabs/adminlte-templates",
-            "version": "5.6.x-dev",
+            "version": "dev-master",
             "source": {
                 "type": "git",
                 "url": "https://github.com/InfyOmLabs/adminlte-templates.git",
-                "reference": "eb2571f1f40e4602867e747952d8aa838cf8be47"
+                "reference": "51a671d525c87ffcb69af6c1b98a0f7c75362392"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/InfyOmLabs/adminlte-templates/zipball/eb2571f1f40e4602867e747952d8aa838cf8be47",
-                "reference": "eb2571f1f40e4602867e747952d8aa838cf8be47",
+                "url": "https://api.github.com/repos/InfyOmLabs/adminlte-templates/zipball/51a671d525c87ffcb69af6c1b98a0f7c75362392",
+                "reference": "51a671d525c87ffcb69af6c1b98a0f7c75362392",
                 "shasum": ""
             },
             "require": {
@@ -2963,13 +2965,6 @@
                 "php": ">=5.5.9"
             },
             "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "\\InfyOm\\AdminLTETemplates\\AdminLTETemplatesServiceProvider"
-                    ]
-                }
-            },
             "autoload": {
                 "psr-4": {
                     "InfyOm\\AdminLTETemplates\\": "src/"
@@ -2994,7 +2989,7 @@
                 "laravel",
                 "templates"
             ],
-            "time": "2018-06-05T18:07:48+00:00"
+            "time": "2016-08-20T20:49:41+00:00"
         },
         {
             "name": "infyomlabs/laravel-generator",
@@ -5629,3 +5624,4 @@
     },
     "platform-dev": []
 }
+>>>>>>> Stashed changes

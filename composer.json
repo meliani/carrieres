@@ -16,7 +16,7 @@
         "doctrine/dbal": "~2.3",
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
-        "infyomlabs/adminlte-templates": "5.6.x-dev",
+        "infyomlabs/adminlte-templates": "dev-master",
         "infyomlabs/laravel-generator": "5.6.x-dev",
         "laravelcollective/html": "^5.6.0",
         "mockery/mockery": "~1.0",
