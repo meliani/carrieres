@@ -5,10 +5,13 @@
 @section('content')
 
 <div class="col-lg-10 col-lg-offset-1">
-    <h1><i class="fa fa-users"></i> User Administration <a href="{{ route('roles.index') }}" class="btn btn-default pull-right">Roles</a>
+    <h1><i class="fa fa-users"></i>Administration des membres<a href="{{ route('roles.index') }}" class="btn btn-default pull-right">Roles</a>
     <a href="{{ route('permissions.index') }}" class="btn btn-default pull-right">Permissions</a></h1>
     <hr>
     <div class="table-responsive">
+            <div class="center">
+                    {{ $users->links() }}
+                </div>
         <table class="table table-bordered table-striped">
 
             <thead>
@@ -31,10 +34,10 @@
                     <td>{{  $user->roles()->pluck('name')->implode(' ') }}</td>{{-- Retrieve array of roles associated to a user and convert to string --}}
 
                     <td>
-                    <a href="{{ route('users.edit', $user->id) }}" class="btn btn-info pull-left" style="margin-right: 3px;">Edit</a>
+                    <a href="{{ route('users.edit', $user->id) }}" class="btn fa fa-edit btn-info pull-left" style="margin-right: 3px;"></a>
 
                     {!! Form::open(['method' => 'DELETE', 'route' => ['users.destroy', $user->id] ]) !!}
-                    {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+                    {!! Form::submit('X', ['class' => 'btn fa fa-remove btn-danger']) !!}
                     {!! Form::close() !!}
 
                     </td>
