@@ -19,7 +19,9 @@
         <td>{{ $pfe->raison_sociale }}</td>
         <td>{{ $pfe->intitule }}</td>
         <td>{{ $pfe->created_at }}</td>
-        <td>{{ $pfe->id }}</td>
+        <td>
+        <a class="btn-floating btn-small waves-effect waves-light red" href="{{ $pfe->id }}"><i class="material-icons">supervisor_account</i></a>
+        </td>
       </tr>
       @endforeach
     </tbody>
