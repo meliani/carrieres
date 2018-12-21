@@ -6,12 +6,14 @@
         <!-- Sidebar user panel (optional) -->
         <div class="user-panel">
             <div class="pull-left image">
+                <a href="/home">
                 <img src="/images/logo.png" class="img-circle"
                      alt="User Image"/>
+                </a>
             </div>
             <div class="pull-left info">
                 @if (Auth::guest())
-                <p>InfyOm</p>
+                <p>INPT</p>
                 @else
                     <p>{{ Auth::user()->name}}</p>
                 @endif
