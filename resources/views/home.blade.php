@@ -5,7 +5,10 @@
     <div class="row">
         <div class="col s12 m4">
             <div class="card">
-                <div class="card-content">Dashboard</div>
+                <div class="card-content">
+                    
+
+                </div>
 
                 <div class="panel-body">
                     @if (session('status'))
@@ -13,8 +16,6 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    You are logged in!
                 </div>
             </div>
         </div>

@@ -8,11 +8,24 @@
     <h1><i class="fa fa-users"></i>Administration des membres<a href="{{ route('roles.index') }}" class="btn btn-default pull-right">Roles</a>
     <a href="{{ route('permissions.index') }}" class="btn btn-default pull-right">Permissions</a></h1>
     <hr>
-    <div class="table-responsive">
-            <div class="center">
-                    {{ $users->links() }}
+    
+    <div class="box">
+            <div class="box-header">
+              <h3 class="box-title">Liste des utilisateurs</h3>
+
+              <div class="box-tools">
+                <div class="input-group input-group-sm" style="width: 150px;">
+                  <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
+
+                  <div class="input-group-btn">
+                    <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
+                  </div>
                 </div>
-        <table class="table table-bordered table-striped">
+              </div>
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body table-responsive no-padding">
+              <table class="table table-hover">
 
             <thead>
                 <tr>
@@ -47,6 +60,10 @@
 
         </table>
     </div>
+    {{ $users->links() }}
+    <!-- /.box-body -->
+  </div>
+  <!-- /.box -->
 
     <a href="{{ route('users.create') }}" class="btn btn-success">Add User</a>
 

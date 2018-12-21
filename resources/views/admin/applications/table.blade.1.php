@@ -8,17 +8,17 @@
                   <th>intitulé de sujet</th>
                   <th>Nom et prenom</th>
                   <th>Filiere</th>
-                  <th>Date de candidature</th>
+                  <th>Nom responsable</th>
                 </tr>
                 </thead>
                 <tbody>
                 @foreach($applications as $application)
                         <tr>
-                        <td>{{ $application->raison_sociale }}</td>
-                        <td>{{ $application->intitule_sujet }}</td>
-                        <td>{{ $application->name }}</td>
-                        <td>{{ $application->options }}</td>
-                        <td>{{ $application->created_at }}</td>
+                        <td>{{ $application->offreDeStage()->pluck('raison_sociale') }}</td>
+                        <td>{{ $application->offreDeStage()->pluck('intitule_sujet') }}</td>
+                        <td>{{ $application->user()->pluck('name') }}</td>
+                        <td>{{ $application->offreDeStage()->pluck('raison_sociale') }}</td>
+                        <td></td>
                         </tr>
                 @endforeach
                 </tbody>
@@ -28,7 +28,7 @@
                   <th>intitulé de sujet</th>
                   <th>Nom et prenom</th>
                   <th>Filiere</th>
-                  <th>Date de candidature</th>
+                  <th>Nom responsable</th>
                 </tr>
                 </tfoot>
               </table>

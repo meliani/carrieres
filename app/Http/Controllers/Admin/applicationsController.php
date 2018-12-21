@@ -2,6 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Illuminate\Support\Facades\DB;
+
+
+
 use App\Models\Application;
 use App\Models\offreDeStage;
 use App\Http\Requests\Admin;
@@ -29,7 +33,17 @@ class applicationsController extends Controller
     public function index()
     {
         //withCount('')->get() paginate(15)
-        $applications = Application::all()->where('OffreDeStage.status', '<>', -1 );
+        /** temporary disabled but we gonna see
+        $applications = Application::paginate(100);
+        */
+        /** the new waaaaaaaay */
+        $applications = DB::table('ApplicationsView')
+        ->select('*')
+        ->orderBy('created_at', 'DESC')
+        ->get();
+
+        /** just do it simple at first */
+        //->where('OffreDeStage.status', 'is', null);
         //$offers = offreDeStage::all();
         //dump($applications);
         //dd($applications->offresDeStages);
