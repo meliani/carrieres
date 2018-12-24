@@ -41,7 +41,6 @@ class mesEncadrementsController extends Controller
         $queries = DB::table('school_profs')
         ->select('departement_id','id','name')
         //->groupBy('departement_id')
-        ->orderBy('departement_id')
         ->get();
         $results = array();
         foreach ($queries as $query)
