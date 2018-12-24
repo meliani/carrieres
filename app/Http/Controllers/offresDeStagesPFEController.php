@@ -75,7 +75,7 @@ class offresDeStagesPFEController extends AppBaseController
 
         Flash::success('Offre de stage bien enregistrée.');
 
-        return redirect(route('offresStages.create'))->with('message', 'Votre proposition a été bien enregistrée');
+        return redirect(route('offresStages.thanks'))->with('message', 'Votre proposition a été bien enregistrée');
     }
 
     /**

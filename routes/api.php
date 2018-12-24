@@ -25,13 +25,6 @@ Route::put('admin/offres_de_stages/{offres_de_stages}', 'Admin\offresDeStagesAPI
 Route::patch('admin/offres_de_stages/{offres_de_stages}', 'Admin\offresDeStagesAPIController@update');
 Route::delete('admin/offres_de_stages{offres_de_stages}', 'Admin\offresDeStagesAPIController@destroy');
 
-Route::get('admin/postulers', 'Admin\PostulerAPIController@index');
-Route::post('admin/postulers', 'Admin\PostulerAPIController@store');
-Route::get('admin/postulers/{postulers}', 'Admin\PostulerAPIController@show');
-Route::put('admin/postulers/{postulers}', 'Admin\PostulerAPIController@update');
-Route::patch('admin/postulers/{postulers}', 'Admin\PostulerAPIController@update');
-Route::delete('admin/postulers{postulers}', 'Admin\PostulerAPIController@destroy');
-
 Route::get('admin/report_submissions', 'Admin\reportSubmissionAPIController@index');
 Route::post('admin/report_submissions', 'Admin\reportSubmissionAPIController@store');
 Route::get('admin/report_submissions/{report_submissions}', 'Admin\reportSubmissionAPIController@show');

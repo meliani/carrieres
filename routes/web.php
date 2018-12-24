@@ -62,13 +62,15 @@ Route::middleware(['auth'])->group(function () {
         return view('monStage.guide');
     });
 
-    Route::get('offresDeStages', ['as'=> 'offresDeStages.index', 'uses' => 'offresDeStagesController@index']);
 
     Route::get('edocs', ['as'=> 'edocs.index', 'uses' => 'edocsController@index']);
 
     Route::resource('internship', 'InternshipController');
     Route::resource('profile', 'ProfileController');
     Route::get('mesEncadrements', ['as'=> 'mesEncadrements.index', 'uses' => 'mesEncadrementsController@index']);
+    Route::get('mesEncadrements/{pfe}', ['as'=> 'mesEncadrements.show', 'uses' => 'mesEncadrementsController@show']);
+    Route::post('mesEncadrements/{pfe}', [ 'uses' => 'mesEncadrementsController@encadrer']);
+    Route::resource('mesEncadrements', 'mesEncadrementsController');
 
 });
 
@@ -90,6 +92,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('offresStages', ['as'=> 'offresDeStages.create', 'uses' => 'offresDeStagesPFEController@create']);
     Route::post('offresDeStages', ['as'=> 'offresStages.store', 'uses' => 'offresDeStagesPFEController@store']);
     Route::get('offresDeStages/create', ['as'=> 'offresStages.create', 'uses' => 'offresDeStagesPFEController@create']);
+    Route::get('offresStages/thanks');
 
     Route::post('offreDeStage', ['as'=> 'offreDeStage.store', 'uses' => 'offreDeStageController@store']);
     Route::get('offreDeStage/create', ['as'=> 'offreDeStage.create', 'uses' => 'offreDeStageController@create']);

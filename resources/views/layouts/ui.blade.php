@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="{{ asset('css/google/material_icons.css') }}">
     <link href="{{ asset('css/materialize.min.css') }}" media="screen,projection" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" media="screen,projection" rel="stylesheet">
+    @yield('css')
 </head>
 <body>
 <header>
@@ -53,6 +54,6 @@ Votre carrière se construit dès aujourd'hui, nous sommes là pour vous aider �
     </script>
     <script src="{{ asset('js/materialize.js') }}"></script>
     <script src="{{ asset('js/init.js') }}"></script>
-
+  @yield('scripts')
 </body>
 </html>

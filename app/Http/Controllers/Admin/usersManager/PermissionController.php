@@ -71,7 +71,7 @@ class PermissionController extends Controller
             }
         }
 
-        return redirect()->route('Admin.usersManager.permissions.index')
+        return redirect()->route('permissions.index')
             ->with('flash_message',
              'Permission'. $permission->name.' added!');
     }
