@@ -1,5 +1,5 @@
 <div class="container offre col s12 m12">
-  <table class="responsive-table centered highlight scale-transition scale-in">
+  <table class="responsive-table highlight scale-transition scale-in">
     <thead>
       <tr>
           <th>Nom et prénom</th>

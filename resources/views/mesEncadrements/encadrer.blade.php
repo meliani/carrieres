@@ -18,10 +18,13 @@
                             <strong>Encadrement bien enregistré.</strong>
                             <div class="divider"></div>
                             <div class="col s12">
-                                Ce PFE est actuellement encadré/examiné par :
-                                <ul>
+                                
+                                <ul class="collection">
+                                    <li class="collection-header">
+                                        <h4>Ce PFE est actuellement encadré/examiné par :</h4>
+                                    </li>
                                 @foreach ($encadrants as $item)
-                                    <li>{{$item->name}}</li>
+                                    <li class="collection-item">{{$item->name}}</li>
                                 @endforeach
                                 </ul>
                               <div class="row">
@@ -29,7 +32,7 @@
                             </div>
                         </div>
                         <div class="card-action">
-                                <a href="{!! route('mesEncadrements.index') !!}" class="waves-effect waves-teal btn-flat">Retour</a>
+                                <a href="{!! route('mesEncadrements.index') !!}" class="waves-effect waves-teal btn">Retour</a>
                         </div>
                     </div>
                 </div>
@@ -40,7 +43,6 @@
 @endsection
 
 @section('scripts')
-<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
 
 <script>
 
