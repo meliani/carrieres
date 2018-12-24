@@ -36,7 +36,7 @@
                                   {!! Form::open(['action' => ['mesEncadrementsController@encadrer', $encadrements[0]->id], 'method' => 'post', 'files' => false]) !!}
                                 <div class="input-field col s12">
                                   <i class="material-icons prefix">supervisor_account</i>
-                                  {{ Form::select('profs_advisor[]',$profs,array('multiple'=>true)) }}
+                                  {{ Form::select('profs_advisor[]',$profs,$advisors,array('multiple'=>true,'class'=>'form-control')) }}
                                   <input type="hidden" name="pfe_id" value={{ $encadrements[0]->id }}>
                                   {!! Form::submit('Envoyer', ['class' => 'btn waves-effect waves-light']) !!}
                                   {!! Form::close() !!}
