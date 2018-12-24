@@ -23,7 +23,11 @@ class HomeController extends Controller
      */
     public function index()
     {
-        //return view('home');
-        return redirect(route('monStage.index'));
+        return view('home');
+        /*if(Auth::user()->can('encadrer'))
+            return redirect(route('mesEcadrements.index'));
+        else
+            return redirect(route('monStage.index'));*/
+
     }
 }
