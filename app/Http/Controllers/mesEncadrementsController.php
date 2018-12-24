@@ -43,10 +43,17 @@ class mesEncadrementsController extends Controller
         //->groupBy('departement_id')
         ->get();
         $results = array();
+        $dept = null;
         foreach ($queries as $query)
         {
-            //$results[] = [ $query->departement_id => [$query->id => $query->name] ] ;
-            $results[] = [ $query->id => $query->name ] ;
+                        //$results[] = [ $query->departement_id => [$query->id => $query->name] ] ;
+
+            if($dept!=$query->departement_id){
+            $dept=$query->departement_id;
+            $results[] = [$dept => [$query->id=>$query->name]];
+            }
+            else
+            $results[] = [$query->id=>$query->name];
         }
 
         return $results;
