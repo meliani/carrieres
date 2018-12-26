@@ -8,11 +8,10 @@
         <div class="divider"></div>
         <div class="col s6 m5">    
             <p>
-                Cet espace sécurisé est réservé aux étudiants 
-                de l'INPT ayant rempli au préalable le formulaire "Mieux vous connaître" et vérifié par l'administration.
+                Cet espace sécurisé est réservé aux étudiants et enseignants de l'INPT.
                 </p>
-             <p>    Afin de récupérer votre mot de passe, veuillez utiliser la même adresse email renseignée et cliquer sur <a href="{{ route('password.request') }}">"redéfinir ?"</a>". 
-                Vous aller recevoir un message pour réinitialiser votre login et pouvoir accéder aux offres PFE 2018.
+             <p>    Afin de récupérer votre mot de passe, veuillez utiliser la même adresse email INPT et cliquer sur <a href="{{ route('password.request') }}">"redéfinir ?"</a>". 
+                Vous aller recevoir un message pour réinitialiser votre mot de passe et pouvoir accéder aux services de la plateforme carrières.
              </p>
         <div class="card-content">
             <form method="POST" action="{{ route('login') }}">

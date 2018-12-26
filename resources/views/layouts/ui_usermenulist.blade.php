@@ -3,7 +3,7 @@
     <li><a href="{{ route('admin.offresDeStages.index') }}">Adminisration</a></li>
     <li class="divider"></li>
     @endrole
-    @can('Encadrer')
+    @can('see advisors')
     <li><a href="{{ route('mesEncadrements.index') }}">Mes encadrements</a></li>
     <li class="divider"></li>
     @endcan
