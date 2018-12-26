@@ -34,7 +34,7 @@ class RoleController extends Controller
     {
         $permissions = Permission::all();
 
-        return view('Admin.usersManager.roles.create', ['permissions'=>$permissions]);
+        return view('admin.usersManager.roles.create', ['permissions'=>$permissions]);
     }
 
     /**
@@ -92,7 +92,7 @@ class RoleController extends Controller
         $role = Role::findOrFail($id);
         $permissions = Permission::all();
 
-        return view('Admin.usersManager.roles.edit', compact('role', 'permissions'));
+        return view('admin.usersManager.roles.edit', compact('role', 'permissions'));
     }
 
     /**

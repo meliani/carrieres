@@ -38,7 +38,7 @@ class PermissionController extends Controller
     {
         $roles = Role::get();
 
-        return view('Admin.usersManager.permissions.create')->with('roles', $roles);
+        return view('admin.usersManager.permissions.create')->with('roles', $roles);
     }
 
     /**
