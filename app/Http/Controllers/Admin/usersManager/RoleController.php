@@ -22,7 +22,7 @@ class RoleController extends Controller
     {
         $roles = Role::all();
 
-        return view('Admin.usersManager.roles.index')->with('roles', $roles);
+        return view('admin.usersManager.roles.index')->with('roles', $roles);
     }
 
     /**

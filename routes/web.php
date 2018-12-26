@@ -30,8 +30,6 @@
 
     Route::resource('permissions', 'Admin\usersManager\PermissionController');
 
-    Route::resource('posts', 'PostController');
-
     Route::get('admin/reportSubmissions', ['as'=> 'admin.reportSubmissions.index', 'uses' => 'Admin\reportSubmissionController@index']);
     Route::post('admin/reportSubmissions', ['as'=> 'admin.reportSubmissions.store', 'uses' => 'Admin\reportSubmissionController@store']);
     Route::get('admin/reportSubmissions/create', ['as'=> 'admin.reportSubmissions.create', 'uses' => 'Admin\reportSubmissionController@create']);

@@ -26,7 +26,7 @@ class PermissionController extends Controller
     {
         $permissions = Permission::all();
 
-        return view('Admin.usersManager.permissions.index')->with('permissions', $permissions);
+        return view('admin.usersManager.permissions.index')->with('permissions', $permissions);
     }
 
     /**
