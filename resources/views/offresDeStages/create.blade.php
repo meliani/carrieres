@@ -14,7 +14,7 @@
             
                     @include ('errors.list') {{-- Including error file --}}
 
-            <div class="card-panel grey lighten-4">
+            <div class="card-panel white">
                 <div class="card-content">
                     <div class="section"><h3 class="header light center blue-text text-lighten-1">Nouvelle offre de stage</h3></div>
 
