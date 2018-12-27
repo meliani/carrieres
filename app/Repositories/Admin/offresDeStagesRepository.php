@@ -2,7 +2,7 @@
 
 namespace App\Repositories\Admin;
 
-use App\Models\Admin\offresDeStages;
+use App\Models\offreDeStage;
 use InfyOm\Generator\Common\BaseRepository;
 
 /**
@@ -37,6 +37,6 @@ class offresDeStagesRepository extends BaseRepository
      **/
     public function model()
     {
-        return offresDeStages::class;
+        return offreDeStage::class;
     }
 }

@@ -2,7 +2,7 @@
 
 namespace App\DataTables\Admin;
 
-use App\Models\Admin\offresDeStages;
+use App\Models\offreDeStage;
 use Yajra\DataTables\Services\DataTable;
 use Yajra\DataTables\EloquentDataTable;
 
@@ -27,7 +27,7 @@ class offresDeStagesDataTable extends DataTable
      * @param \App\Models\Post $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
-    public function query(offresDeStages $model)
+    public function query(offreDeStage $model)
     {
         return $model->newQuery();
     }

@@ -11,6 +11,7 @@ use Flash;
 use App\Http\Controllers\AppBaseController;
 use Response;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
 
 class offresDeStagesController extends AppBaseController
 {
@@ -61,7 +62,7 @@ class offresDeStagesController extends AppBaseController
             {
                 $path = $doc->storeAs(config('app.offers_storage_path'),Carbon::now()->format('ymd_hi') .'-'. $doc->getClientOriginalName(),'public');      
                 //$path = Storage::disk('uploads')->put('', $doc);
-                $input['document_offre'] = $path;
+                $input['document_offre'] = basename($path);
             }elseif($doc->getError()!='UPLOADERROK')
             Flash::error($doc->getErrorMessage());
         }
@@ -126,29 +127,30 @@ class offresDeStagesController extends AppBaseController
         $offresDeStages = $this->offresDeStagesRepository->findWithoutFail($id);
 
         if (empty($offresDeStages)) {
-            Flash::error('Offres De Stages not found');
+            Flash::error('Offres De Stages non trouvée');
 
             return redirect(route('admin.offresDeStages.index'));
         }
-
         if($request->hasFile('document_offre'))
         {
             $doc = $request->file('document_offre');
-            
             if ($doc->isValid())
             {
-                $file_name = Carbon::now()->format('ymd_hi') .'-'. $doc->getClientOriginalName();
-                $request->replace(array('document_offre' => '$file_name'));
-                $doc->storeAs(config('app.offers_storage_path'),$file_name,'public');      
+                $path = $doc->storeAs(config('app.offers_storage_path'),Carbon::now()->format('ymd_hi') .'-'. $doc->getClientOriginalName(),'public');      
                 //$path = Storage::disk('uploads')->put('', $doc);
-                //$input['document_offre'] = 'storage/'.$path;
-                //dd($file_name);
-                
+                //$path = Storage::disk('local')->put(config('app.offers_storage_path').Carbon::now()->format('ymd_hi').'Document stage', $doc);
+                //$request->merge(['document_offre' => 'basename($path)']);
+                $request->document_offre = basename($path);
+                $offresDeStages->document_offre = basename($path);
+                //dd($request->document_offre);
             }elseif($doc->getError()!='UPLOADERROK')
             Flash::error($doc->getErrorMessage());
         }
+        
 //dd($request);
-        $offresDeStages = $this->offresDeStagesRepository->update($request->all(), $id);
+        $offres = $this->offresDeStagesRepository->update($request->all(), $id);
+
+        $offresDeStages->save();
 
         Flash::success('Offres De Stages updated successfully.');
 

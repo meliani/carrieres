@@ -52,10 +52,30 @@
     {!! Form::text('mots_cles', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- is valid Field -->
+<div class="form-group col-sm-6">
+        {!! Form::label('is_valid', 'Publier l\'offre:') !!}
+        {{ Form::select('is_valid',[1 => 'oui',null => 'non'],null,array('class'=>'form-control','id'=>'is_valid')) }}
+</div>
+<!-- status Field -->
+<div class="form-group col-sm-6">
+        {!! Form::label('status', 'Archiver :') !!}
+        {{ Form::select('status',[-1 => 'oui',null => 'non'],null,array('class'=>'form-control','id'=>'status')) }}
+</div>
+<!-- applyable Field -->
+<div class="form-group col-sm-6">
+        {!! Form::label('applyable', 'Type candidature :') !!}
+        {{ Form::select('applyable',[null => 'A travers carrières',0 => 'Directe'],null,array('class'=>'form-control','id'=>'applyable')) }}
+</div>
+<!-- expire_at Field -->
+<div class="form-group col-sm-6">
+        {!! Form::label('expire_at', 'Expire le :') !!}
+        {{ Form::date('expire_at',null,array('class'=>'form-control','id'=>'applyable')) }}
+</div>
 <!-- Document Offre Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('document_offre', 'Document Offre:') !!}
-    {!! Form::file('document_offre') !!}
+        {!! Form::label('document_offre', 'Attacher un document') !!}
+        {!! Form::file('document_offre') !!}
 </div>
 <div class="clearfix"></div>
 
