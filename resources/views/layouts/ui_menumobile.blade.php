@@ -1,10 +1,10 @@
 @role('Admin')
 <li><a href="{{ route('admin.offresDeStages.index') }}">Adminisration</a></li>
 @endrole
-@role('Examinateur')
+@can('see advisors')
 <li><a href="{{ route('mesEncadrements.index') }}">Mes encadrements</a></li>
 <li class="divider"></li>
-@endrole
+@endcan
 @role('Etudiant')
 <li class="{{ Request::is('monStage.index') ? 'active' : '' }}"><a class="blue-grey-text text-darken-1" href="{{ route('monStage.index') }}">Voir les offres</a></li>
 <li class="{{ Request::is('monStage.guide') ? 'active' : '' }}"><a class="blue-grey-text text-darken-1" href="{{ route('edocs.index') }}">Mes documents</a></li>
