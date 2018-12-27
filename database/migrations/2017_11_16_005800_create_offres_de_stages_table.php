@@ -27,6 +27,8 @@ class CreateoffresDeStagesTable extends Migration
             $table->string('document_offre');
             $table->boolean('is_valid');
             $table->integer('status');
+            $table->date('expire_at');
+            $table->integer('applyable')->unsigned()->nullable();
             $table->timestamps();
             $table->softDeletes();
         });

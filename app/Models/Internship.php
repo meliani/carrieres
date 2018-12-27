@@ -48,7 +48,8 @@ class Internship extends Model
         'foreign',
         'remuneration',
         'charge',
-        'user_id'
+        'user_id',
+        'nbr_advisors'
     ];
 
     protected $casts = [

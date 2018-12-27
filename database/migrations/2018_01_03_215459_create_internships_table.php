@@ -47,6 +47,7 @@ class CreateInternshipsTable extends Migration
             $table->integer('remuneration')->nullable();
             $table->integer('charge')->nullable();
             $table->integer('user_id')->unsigned()->nullable();            
+            $table->integer('nbr_advisors')->unsigned()->nullable();            
 
             $table->timestamps();
 

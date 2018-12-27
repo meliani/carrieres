@@ -49,7 +49,6 @@ class offreDeStage extends Model
         'document_offre',
         'is_valid',
         'status',
-        'internship_category_id',
         'expire_at',
         'applyable'
     ];
@@ -72,7 +71,6 @@ class offreDeStage extends Model
         'document_offre' => 'string',
         'is_valid' => 'boolean',
         'status' => 'integer',
-        'internship_category_id' => 'nullable',
         'expire_at' => 'date',
         'applyable' => 'boolean'
     ];
@@ -95,7 +93,6 @@ class offreDeStage extends Model
         'document_offre' => 'nullable',
         'is_valid' => 'nullable',
         'status' => 'nullable',
-        'internship_category_id' => 'nullable',
         'expire_at' => 'nullable',
         'applyable' => 'nullable'
     ];
@@ -105,12 +102,12 @@ class offreDeStage extends Model
 /**
  * Model Relations
  */
-
-	public function users()
-	{
-		return $this->belongsToMany('App\Models\User');
-	}
-
+/**
+*	public function users()
+*	{
+*		return $this->belongsToMany('App\Models\User');
+*	}
+*/
     public function applications()
     {
         return $this->morphToMany('App\Models\Application', 'applyable');
