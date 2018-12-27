@@ -24,7 +24,6 @@
     <div class="row">
       @foreach ($offres as $offre)
               <div class="offre col s12 m6 l4 xl4">
-                <div class="row">
                   <div class="card hoverable">
                     <div class="card-content">
                     <img src="/images/badges/pfe.svg" width="100pt">
@@ -92,7 +91,6 @@
                       @endrole
                     </div>
                   </div>
-                </div>
               </div>
         @endforeach
       @endif
