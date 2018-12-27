@@ -1,5 +1,5 @@
 @role('Admin')
-<li><a href="{{ route('users.index') }}">Adminisration</a></li>
+<li><a href="{{ route('admin.offresDeStages.index') }}">Adminisration</a></li>
 @endrole
 @can('see advisors')
 <li><a href="{{ route('mesEncadrements.index') }}">Mes encadrements</a></li>
