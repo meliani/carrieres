@@ -18,6 +18,11 @@
                 <div class="card-content">
                     <div class="section"><h3 class="header light center blue-text text-lighten-1">Nouvelle offre de stage</h3></div>
 
+                                {!! Form::open(['route' => 'offresDeStages.store', 'files' => true]) !!}
+
+                                    @include('offresDeStages.fields')
+
+                                {!! Form::close() !!}
                     </div>
                 </div>
             </div>

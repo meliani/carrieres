@@ -80,20 +80,22 @@ Route::middleware(['auth'])->group(function () {
         return view('welcome');
         //
     });
-
+    Route::get('welcome', function () {
+        return view('welcome');
+    })->name('welcome');
     Route::get('/', function () {
         return view('welcome');
     });
 
 
-    Route::post('offresStages', ['as'=> 'offresDeStages.store', 'uses' => 'offresDeStagesPFEController@store']);
-    Route::get('offresStages', ['as'=> 'offresDeStages.create', 'uses' => 'offresDeStagesPFEController@create']);
-    Route::post('offresDeStages', ['as'=> 'offresStages.store', 'uses' => 'offresDeStagesPFEController@store']);
-    Route::get('offresDeStages/create', ['as'=> 'offresStages.create', 'uses' => 'offresDeStagesPFEController@create']);
-    Route::get('offresStages/thanks');
+    //Route::post('offresStages', ['as'=> 'offresDeStages.store', 'uses' => 'offresDeStagesPFEController@store']);
+    Route::get('offresDeStages', ['as'=> 'offresDeStages.create', 'uses' => 'offresDeStagesPFEController@create']);
+    Route::post('offresDeStages', ['as'=> 'offresDeStages.store', 'uses' => 'offresDeStagesPFEController@store']);
+    Route::get('offresDeStages/create', ['as'=> 'offresDeStages.create', 'uses' => 'offresDeStagesPFEController@create']);
+    Route::get('offresDeStages/thanks', ['as'=> 'offresDeStages.thanks', 'uses' => 'offresDeStagesPFEController@thanks']);
 
-    Route::post('offreDeStage', ['as'=> 'offreDeStage.store', 'uses' => 'offreDeStageController@store']);
-    Route::get('offreDeStage/create', ['as'=> 'offreDeStage.create', 'uses' => 'offreDeStageController@create']);
+    //Route::post('offreDeStage', ['as'=> 'offreDeStage.store', 'uses' => 'offreDeStageController@store']);
+    //Route::get('offreDeStage/create', ['as'=> 'offreDeStage.create', 'uses' => 'offreDeStageController@create']);
     Route::get('stageTechnique2018', ['as'=> 'offreDeStage.create', 'uses' => 'offreDeStageController@create']);
 
 Auth::routes();

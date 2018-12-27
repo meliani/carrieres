@@ -34,7 +34,7 @@ class offresDeStagesPFEController extends AppBaseController
         $this->offresDeStagesRepository->pushCriteria(new RequestCriteria($request));
         $offresStages = $this->offresDeStagesRepository->all();
 
-        return view('offres_stages.create')
+        return view('offresDeStages.create')
             ->with('offresStages', $offresStages);
     }
 
@@ -45,7 +45,7 @@ class offresDeStagesPFEController extends AppBaseController
      */
     public function create()
     {
-        return view('offres_stages.create');
+        return view('offresDeStages.create');
     }
 
     /**
@@ -75,7 +75,7 @@ class offresDeStagesPFEController extends AppBaseController
 
         Flash::success('Offre de stage bien enregistrée.');
 
-        return redirect(route('offresStages.thanks'))->with('message', 'Votre proposition a été bien enregistrée');
+        return redirect(route('offresDeStages.thanks'))->with('message', 'Votre proposition a été bien enregistrée');
     }
 
     /**
@@ -92,10 +92,10 @@ class offresDeStagesPFEController extends AppBaseController
         if (empty($offresStages)) {
             Flash::error('Offres Stages not found');
 
-            return redirect(route('offresStages.index'));
+            return redirect(route('offresDeStages.index'));
         }
 
-        return view('offres_stages.show')->with('offresStages', $offresStages);
+        return view('offresDeStages.show')->with('offresStages', $offresStages);
     }
 
     /**
@@ -112,10 +112,10 @@ class offresDeStagesPFEController extends AppBaseController
         if (empty($offresStages)) {
             Flash::error('Offres Stages not found');
 
-            return redirect(route('offresStages.index'));
+            return redirect(route('offresDeStages.index'));
         }
 
-        return view('offres_stages.edit')->with('offresStages', $offresStages);
+        return view('offresDeStages.edit')->with('offresStages', $offresStages);
     }
 
     /**
@@ -133,14 +133,14 @@ class offresDeStagesPFEController extends AppBaseController
         if (empty($offresStages)) {
             Flash::error('Offres Stages not found');
 
-            return redirect(route('offresStages.index'));
+            return redirect(route('offresDeStages.index'));
         }
 
         $offresStages = $this->offresDeStagesRepository->update($request->all(), $id);
 
         Flash::success('Offres Stages updated successfully.');
 
-        return redirect(route('offresStages.index'));
+        return redirect(route('offresDeStages.index'));
     }
 
     /**
@@ -157,14 +157,18 @@ class offresDeStagesPFEController extends AppBaseController
         if (empty($offresStages)) {
             Flash::error('Offres Stages not found');
 
-            return redirect(route('offresStages.index'));
+            return redirect(route('offresDeStages.index'));
         }
 
         $this->offresDeStagesRepository->delete($id);
 
         Flash::success('Offres Stages deleted successfully.');
 
-        return redirect(route('offresStages.index'));
+        return redirect(route('offresDeStages.index'));
+    }
+    public function thanks()
+    {
+        return view('offresDeStages.thanks');
     }
 }
 

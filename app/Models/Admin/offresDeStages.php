@@ -28,7 +28,10 @@ class offresDeStages extends Model
     public $table = 'offres_de_stages';
     
 
-    protected $dates = ['deleted_at'];
+    protected $dates = [
+        'deleted_at',
+        'expire_at'
+        ];
 
 
     public $fillable = [
@@ -41,7 +44,10 @@ class offresDeStages extends Model
         'intitule_sujet',
         'descriptif',
         'mots_cles',
-        'document_offre'
+        'document_offre',
+        'is_valid',
+        'status',
+        'applyable'
     ];
 
     /**
@@ -59,7 +65,10 @@ class offresDeStages extends Model
         'intitule_sujet' => 'string',
         'descriptif' => 'string',
         'mots_cles' => 'string',
-        'document_offre' => 'string'
+        'document_offre' => 'string',
+        'is_valid' => 'boolean',
+        'status' => 'int',
+        'applyable' => 'boolean'
     ];
 
     /**
@@ -83,10 +92,12 @@ class offresDeStages extends Model
  * Model Relations
  */
 
-public function users()
-{
-    return $this->belongsToMany('App\Models\User');
-}
+/**
+ * public function users()
+ *  {
+ *   return $this->belongsToMany('App\Models\User');
+ *  }
+*/
 
 public function applications()
 {

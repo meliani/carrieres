@@ -16,13 +16,13 @@
 
             <div class="card-panel grey lighten-4">
                 <div class="card-content">
-                    <div class="section"><h3 class="header light center blue-text text-lighten-1">Nouvelle offre de stage</h3></div>
-
-                                {!! Form::open(['route' => 'offreDeStage.store', 'files' => true]) !!}
-
-                                    @include('offreDeStage.fields')
-
-                                {!! Form::close() !!}
+                    <div class="section"><h3 class="header light center blue-text text-lighten-1">Votre offre de stage est bien enregistrée.</h3></div>
+                    </div>
+                </div>
+                <div class="card-action">
+                    <div class = "input-field">
+                        {!! Html::link('/offresDeStages','Reposter une autre offre', ['class' => 'btn waves-effect waves-light blue lighten-1']) !!}
+                        <a href="{!! route('welcome') !!}" class="waves-effect waves-blue btn-flat">Retour à l'accueil</a>
                     </div>
                 </div>
             </div>
