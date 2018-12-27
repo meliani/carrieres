@@ -4,7 +4,7 @@
 
 @section('buttons')
   @role('Admin')
-  <a href="{{ route('offresStages.create') }}" class="left btn-floating btn-large halfway-fab waves-effect waves-light white">
+  <a href="{{ route('offresDeStages.create') }}" class="left btn-floating btn-large halfway-fab waves-effect waves-light white">
   <i class="tiny material-icons blue-grey-text textlighten-5">add</i></a>
   @endrole
 @endsection
