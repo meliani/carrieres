@@ -22,7 +22,7 @@
         <td>{{ $pfe->raison_sociale }}</td>
         <td class="sub">{{  str_limit($pfe->intitule, 100) }}</td>
          {{-- Limit teaser to 100 characters --}}
-         <td>{{ $pfe->created_at }}</td>   
+         <td>{{ str_limit($pfe->created_at,10) }}</td>   
          <td>
           @if ($pfe->nbr_advisors>0)
           <ul class="small collection">
@@ -39,7 +39,7 @@
         @can('edit advisors')
         <td>
           <!-- <a class="btn-floating btn-small waves-effect waves-light red" href={{ route('mesEncadrements.show', $pfe->id) }}><i class="material-icons">remove_red_eye</i></a> -->
-          <a class="btn-floating btn-small waves-effect waves-light red" href={{ route('mesEncadrements.show', $pfe->id) }}><i class="material-icons">supervisor_account</i></a>
+          <a class="btn-floating btn-small waves-effect waves-light @if ($pfe->nbr_advisors>=3) disabled @endif" href={{ route('mesEncadrements.show', $pfe->id) }}><i class="material-icons">supervisor_account</i></a>
         </td>
         @endcan
       </tr>
