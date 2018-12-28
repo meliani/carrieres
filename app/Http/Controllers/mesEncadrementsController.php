@@ -63,7 +63,8 @@ class mesEncadrementsController extends Controller
         foreach ($request->profs_advisor as $advisor)
         {
         //attach to model
-        DB::update('update internships set nbr_advisors = ? where id = ?', [$request->nbr_advisors=$request->nbr_advisors+1,$request->pfe_id]);
+        DB::update('update internships set nbr_advisors = nbr_advisors + 1 where id = ?', [$request->pfe_id]);
+        //DB::table('internships')->increment('nbr_advisors', 1, ['id' => $request->pfe_id]);
         DB::insert('insert into encadrements set id_internship='.$request->pfe_id.', id_prof='.$advisor);
         }
         $encadrants=mesEncadrementsController::getAdvisors($request->pfe_id);
