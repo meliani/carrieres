@@ -21,8 +21,9 @@ class mesEncadrementsController extends Controller
         ->select('*')
         ->orderBy('created_at', 'DESC')
         ->paginate(10);
+        $encadrants=mesEncadrementsController::getAllAdvisors();
 
-    return view('mesEncadrements.index', compact('encadrements'));
+    return view('mesEncadrements.index', compact('encadrements','encadrants'));
     }
     public function show($id)
     {
@@ -47,7 +48,6 @@ class mesEncadrementsController extends Controller
         foreach ($queries as $query)
         {
                         //$results[] = [ $query->departement_id => [$query->id => $query->name] ] ;
-
             if($dept!=$query->departement_id){
             $dept=$query->departement_id;
             $results[] = [$dept => [$query->id=>$query->name]];
@@ -63,6 +63,7 @@ class mesEncadrementsController extends Controller
         foreach ($request->profs_advisor as $advisor)
         {
         //attach to model
+        DB::update('update internships set nbr_advisors = ? where id = ?', [$request->nbr_advisors=$request->nbr_advisors+1,$request->pfe_id]);
         DB::insert('insert into encadrements set id_internship='.$request->pfe_id.', id_prof='.$advisor);
         }
         $encadrants=mesEncadrementsController::getAdvisors($request->pfe_id);
@@ -85,6 +86,14 @@ class mesEncadrementsController extends Controller
         $encadrants = DB::table('viewencadrants')
         ->select('*')
         ->where('id','=',$id_pfe)
+        ->get();
+
+        return $encadrants;
+    }
+    public function getAllAdvisors()
+    {
+        $encadrants = DB::table('viewencadrants')
+        ->select('*')
         ->get();
 
         return $encadrants;
