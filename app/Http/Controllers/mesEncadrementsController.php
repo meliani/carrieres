@@ -21,9 +21,9 @@ class mesEncadrementsController extends Controller
         ->select('*')
         ->orderBy('created_at', 'DESC')
         ->paginate(10);
-        $encadrants=mesEncadrementsController::getAllAdvisors();
+        $advisors=mesEncadrementsController::getAllAdvisors();
 
-    return view('mesEncadrements.index', compact('encadrements','encadrants'));
+    return view('mesEncadrements.index', compact('encadrements','advisors'));
     }
     public function show($id)
     {
