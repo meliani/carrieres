@@ -29,7 +29,7 @@
            @foreach ($encadrants as $advisor)
             @if ($pfe->id==$advisor->id)
               <li class="collection-item light-blue-text text-lighten-1">{{ str_limit($advisor->name,17) }}
-              <span class="new badge xs blue" data-badge-caption="{{  str_limit($advisor->created_at, 10) }}"></span>
+              <span class="new badge blue" data-badge-caption="{{  str_limit($advisor->created_at, 10) }}"></span>
             </li>
             @endif
            @endforeach
@@ -37,9 +37,9 @@
           @endif
           </td>
         @can('edit advisors')
-        <td>
+        <td class="center">
           <!-- <a class="btn-floating btn-small waves-effect waves-light red" href={{ route('mesEncadrements.show', $pfe->id) }}><i class="material-icons">remove_red_eye</i></a> -->
-          <a class="btn-floating btn-small waves-effect waves-light @if ($pfe->nbr_advisors>=3) disabled @endif" href={{ route('mesEncadrements.show', $pfe->id) }}><i class="material-icons">supervisor_account</i></a>
+          <a class="btn-floating btn-small waves-effect waves-light blue @if ($pfe->nbr_advisors>=3) disabled @endif" href={{ route('mesEncadrements.show', $pfe->id) }}><i class="material-icons">group_add</i></a>
         </td>
         @endcan
       </tr>

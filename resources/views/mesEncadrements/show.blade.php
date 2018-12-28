@@ -42,7 +42,8 @@
                                   <i class="material-icons prefix">supervisor_account</i>
                                   {{ Form::select('profs_advisor[]',$profs,null,array('multiple','id'=>'profs')) }}
                                   <input type="hidden" name="pfe_id" value={{ $encadrements[0]->id }}>
-                                  {!! Form::submit('Envoyer', ['class' => 'btn waves-effect waves-light']) !!}
+                                  <p class="divider"></p>
+                                  {!! Form::submit('Envoyer', ['class' => 'btn waves-effect waves-light white-text blue']) !!}
                                   {!! Form::close() !!}
 
                                 </div>
