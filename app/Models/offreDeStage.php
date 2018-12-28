@@ -102,12 +102,12 @@ class offreDeStage extends Model
 /**
  * Model Relations
  */
-/**
-*	public function users()
-*	{
-*		return $this->belongsToMany('App\Models\User');
-*	}
-*/
+
+	public function users()
+	{
+		return $this->belongsToMany('App\Models\User');
+	}
+
     public function applications()
     {
         return $this->morphToMany('App\Models\Application', 'applyable');
