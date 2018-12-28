@@ -12,6 +12,7 @@
 */
 
     Route::middleware(['isAdmin'])->group(function () {
+        
     Route::get('admin/applications', ['as'=> 'admin.applications.index', 'uses' => 'Admin\applicationsController@index']);
 
     Route::get('admin/offresDeStages', ['as'=> 'admin.offresDeStages.index', 'uses' => 'Admin\offresDeStagesController@index']);
