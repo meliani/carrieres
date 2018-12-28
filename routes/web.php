@@ -25,11 +25,11 @@
     Route::get('admin/offresDeStages/{offresDeStages}/edit', ['as'=> 'admin.offresDeStages.edit', 'uses' => 'Admin\offresDeStagesController@edit']);
     Route::post('admin/offresDeStages/{offresDeStages}/activate', ['as'=> 'admin.offresDeStages.activate', 'uses' => 'Admin\offresDeStagesController@activate']);
 
-    Route::resource('users', 'Admin\usersManager\UserController');
+    Route::resource('users', 'admin\usersManager\UserController');
 
-    Route::resource('roles', 'Admin\usersManager\RoleController');
+    Route::resource('roles', 'admin\usersManager\RoleController');
 
-    Route::resource('permissions', 'Admin\usersManager\PermissionController');
+    Route::resource('permissions', 'admin\usersManager\PermissionController');
 
     Route::get('admin/reportSubmissions', ['as'=> 'admin.reportSubmissions.index', 'uses' => 'Admin\reportSubmissionController@index']);
     Route::post('admin/reportSubmissions', ['as'=> 'admin.reportSubmissions.store', 'uses' => 'Admin\reportSubmissionController@store']);
