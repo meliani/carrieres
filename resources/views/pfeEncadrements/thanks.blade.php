@@ -32,7 +32,7 @@
                             </div>
                         </div>
                         <div class="card-action">
-                                <a href="{!! route('mesEncadrements.index') !!}" class="waves-effect waves-teal btn">Retour</a>
+                                <a href="{!! route('pfeEncadrements.index') !!}" class="waves-effect waves-teal btn">Retour</a>
                         </div>
                     </div>
                 </div>

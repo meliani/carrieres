@@ -11,7 +11,7 @@
     </div>
 
 
-    @include('mesEncadrements.liste')
+    @include('pfeEncadrements.liste')
 
 
     <div class="center">

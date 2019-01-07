@@ -8,34 +8,26 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\View;
 
-class mesEncadrementsController extends Controller
+class pfeEncadrementsController extends Controller
 {
     public function __construct()
     {
         $this->middleware(['Teacher']);        
     }
 
-    public function index()
+    public function index($prof_id='*')
     {
         $encadrements = DB::table('internshipsview')
-        ->select('*')
+        ->select($prof_id)
         ->orderBy('created_at', 'DESC')
         ->paginate(10);
-        $advisors=mesEncadrementsController::getAllAdvisors();
+        $advisors=pfeEncadrementsController::getAllAdvisors();
 
-    return view('mesEncadrements.index', compact('encadrements','advisors'));
+    return view('pfeEncadrements.index', compact('encadrements','advisors'));
     }
     public function show($id)
     {
-        $encadrements = DB::table('internshipsview')
-        ->select('*')
-        ->where('id','=',$id)
-        ->get();
-        $profs=mesEncadrementsController::getProfs();
-        //dd($profs);
-        $encadrants = mesEncadrementsController::getAdvisors($id);
-        $NbAdvisors = mesEncadrementsController::getNbAdvisors($id);
-    return view('mesEncadrements.show', compact('encadrements','profs','encadrants','NbAdvisors'));
+
     }
     public function getProfs()
     {
@@ -58,7 +50,20 @@ class mesEncadrementsController extends Controller
 
         return $results;
     }
-    public function encadrer(Request $request)
+    public function create(Request $request)
+    {
+        $id=$request->pfe_id;
+        $encadrements = DB::table('internshipsview')
+        ->select('*')
+        ->where('id','=',$id)
+        ->get();
+        $profs=pfeEncadrementsController::getProfs();
+        //dd($profs);
+        $encadrants = pfeEncadrementsController::getAdvisors($id);
+        $NbAdvisors = pfeEncadrementsController::getNbAdvisors($id);
+    return view('pfeEncadrements.create', compact('encadrements','profs','encadrants','NbAdvisors'));
+    }
+    public function store(Request $request)
     {
         foreach ($request->profs_advisor as $advisor)
         {
@@ -67,9 +72,10 @@ class mesEncadrementsController extends Controller
         //DB::table('internships')->increment('nbr_advisors', 1, ['id' => $request->pfe_id]);
         DB::insert('insert into encadrements set id_internship='.$request->pfe_id.', id_prof='.$advisor);
         }
-        $encadrants=mesEncadrementsController::getAdvisors($request->pfe_id);
-        return view('mesEncadrements.encadrer', compact('request','encadrants'));
+        $encadrants=pfeEncadrementsController::getAdvisors($request->pfe_id);
+        return view('pfeEncadrements.thanks', compact('request','encadrants'));
     }
+    
 
     public function getNbAdvisors($id_pfe)
     {

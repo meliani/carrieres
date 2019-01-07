@@ -3,7 +3,7 @@
 <li class="divider"></li>
 @endrole
 @can('see advisors')
-<li><a href="{{ route('mesEncadrements.index') }}">Mes encadrements</a></li>
+<li><a href="{{ route('pfeEncadrements.index') }}">Mes encadrements</a></li>
 <li class="divider"></li>
 @endcan
 @role('Etudiant')

@@ -66,10 +66,11 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('internship', 'InternshipController');
     Route::resource('profile', 'ProfileController');
-    Route::get('mesEncadrements', ['as'=> 'mesEncadrements.index', 'uses' => 'mesEncadrementsController@index']);
-    Route::get('mesEncadrements/{pfe}', ['as'=> 'mesEncadrements.show', 'uses' => 'mesEncadrementsController@show'])->middleware(['superTeacher']);;
-    Route::post('mesEncadrements/{pfe}', [ 'uses' => 'mesEncadrementsController@encadrer'])->middleware(['superTeacher']);
-    Route::resource('mesEncadrements', 'mesEncadrementsController');
+    Route::resource('pfeEncadrements', 'pfeEncadrementsController');
+/** Route::get('mesEncadrements', ['as'=> 'mesEncadrements.index', 'uses' => 'mesEncadrementsController@index']);
+*   Route::get('mesEncadrements/{pfe}', ['as'=> 'mesEncadrements.show', 'uses' => 'mesEncadrementsController@show'])->middleware(['superTeacher']);;
+*   Route::post('mesEncadrements/{pfe}', [ 'uses' => 'mesEncadrementsController@encadrer'])->middleware(['superTeacher']);
+*/
 
 });
 
