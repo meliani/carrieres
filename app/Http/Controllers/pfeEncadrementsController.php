@@ -40,7 +40,7 @@ class pfeEncadrementsController extends Controller
         $dept = null;
         foreach ($queries as $query)
         {
-                        //$results[] = [ $query->departement_id => [$query->id => $query->name] ] ;
+            //$results[] = [ $query->departement_id => [$query->id => $query->name] ] ;
             if($dept!=$query->departement_id){
             $dept=$query->departement_id;
             $results[] = [$dept => [$query->id=>$query->name]];
@@ -58,7 +58,7 @@ class pfeEncadrementsController extends Controller
         ->select('*')
         ->where('id','=',$id)
         ->get();
-        $profs=pfeEncadrementsController::getProfs();
+        $profs=pfeEncadrementsController::getProfessors();
         //dd($profs);
         $encadrants = pfeEncadrementsController::getAdvisors($id);
         $NbAdvisors = pfeEncadrementsController::getNbAdvisors($id);
@@ -76,7 +76,23 @@ class pfeEncadrementsController extends Controller
         $encadrants=pfeEncadrementsController::getAdvisors($request->pfe_id);
         return view('pfeEncadrements.thanks', compact('request','encadrants'));
     }
-    
+    public function getProfessors()
+    {
+        $queries = DB::table('users')
+        ->select('id','name')
+        ->where('is_professor','=',1)
+        //->groupBy('departement_id')
+        ->get();
+        $results = array();
+        $dept = null;
+        foreach ($queries as $query)
+        {
+            //$results[] = [ $query->departement_id => [$query->id => $query->name] ] ;
+            $results[] = [$query->id=>$query->name];
+        }
+
+        return $results;
+    }
 
     public function getNbAdvisors($id_pfe)
     {
