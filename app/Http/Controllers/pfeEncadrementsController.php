@@ -15,16 +15,17 @@ class pfeEncadrementsController extends Controller
         $this->middleware(['Teacher']);        
     }
 
-    public function index($prof_id='*')
+    public function index()
     {
         $encadrements = DB::table('internshipsview')
-        ->select($prof_id)
+        ->select('*')
         ->orderBy('created_at', 'DESC')
         ->paginate(10);
         $advisors=pfeEncadrementsController::getAllAdvisors();
 
     return view('pfeEncadrements.index', compact('encadrements','advisors'));
-    }
+    }    
+
     public function show($id)
     {
 

@@ -3,5 +3,8 @@
 @else
 
   <li><a class='dropdown-trigger blue-grey-text text-darken-1' href="#" data-target ='dropdown1'>{{ Auth::user()->name }}<i class="material-icons right">arrow_drop_down</i></a></li>
-
+  @can('see advisors')
+  <li><a href="{{ route('mesEncadrements.index') }}"><i class="material-icons left">view_module</i>Mes encadrements</a></li>
+  <li class="divider"></li>
+  @endcan
 @endguest
