@@ -18,7 +18,7 @@
 <body>
 <header>
 <!--Main Navigation-->
-  @include('layouts.ui_menu')
+  @include('layouts.ui_navbar')
 </header>
 
 <main>
