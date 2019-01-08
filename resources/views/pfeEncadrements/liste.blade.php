@@ -28,7 +28,7 @@
           <ul class="small collection">
            @foreach ($advisors as $advisor)
             @if ($pfe->id==$advisor->id)
-              <li class="collection-item light-blue-text text-lighten-1">{{ str_limit($advisor->name,17) }}
+              <li class="collection-item light-blue-text text-lighten-1">{{ str_limit($advisor->advisorName,17) }}
               <span class="new badge blue" data-badge-caption="{{  str_limit($advisor->created_at, 10) }}"></span>
             </li>
             @endif

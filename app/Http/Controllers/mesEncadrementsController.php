@@ -20,7 +20,7 @@ class mesEncadrementsController extends Controller
     {
         $encadrements = DB::table('viewencadrants')
         ->select('*')
-        ->where('name','like',Auth::user()->name)
+        ->where('advisorName','like',Auth::user()->name)
         ->orderBy('created_at', 'DESC')
         ->paginate(10);
 //dd($encadrements);

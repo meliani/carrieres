@@ -69,6 +69,9 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('pfeEncadrements', 'pfeEncadrementsController');
     Route::resource('mesEncadrements', 'mesEncadrementsController');
 
+
+    Route::resource('Encadrements/mesEncadrements', 'Encadrement\EncadrementsController');
+
 /** Route::get('mesEncadrements', ['as'=> 'mesEncadrements.index', 'uses' => 'mesEncadrementsController@index']);
 *   Route::get('mesEncadrements/{pfe}', ['as'=> 'mesEncadrements.show', 'uses' => 'mesEncadrementsController@show'])->middleware(['superTeacher']);;
 *   Route::post('mesEncadrements/{pfe}', [ 'uses' => 'mesEncadrementsController@encadrer'])->middleware(['superTeacher']);
