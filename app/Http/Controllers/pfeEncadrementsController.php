@@ -3,6 +3,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Exports\StagesExport;
+use Maatwebsite\Excel\Facades\Excel;
+use App\Models\Stage;
+
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
@@ -22,8 +26,9 @@ class pfeEncadrementsController extends Controller
         ->orderBy('created_at', 'DESC')
         ->paginate(10);
         $advisors=pfeEncadrementsController::getAllAdvisors();
+        $export = new pfeEncadrementsController;
 
-    return view('pfeEncadrements.index', compact('encadrements','advisors'));
+    return view('pfeEncadrements.index', compact('encadrements','advisors','export'));
     }    
 
     public function show($id)
@@ -122,4 +127,21 @@ class pfeEncadrementsController extends Controller
 
         return $encadrants;
     }
+    public function export() 
+    {
+        return Excel::download(new StagesExport, 'Declarations.xlsx');
+    }
+    public function downloadExcel($type)
+    {
+        return Excel::download(new StagesExport, 'Declarations.xlsx');
+
+        /*
+        return Excel::create('itsolutionstuff_example', function($excel) use ($data) {
+            $excel->sheet('mySheet', function($sheet) use ($data)
+            {
+                $sheet->fromArray($data);
+            });
+        })->download($type);*/
+    }
+
 }
