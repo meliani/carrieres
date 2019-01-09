@@ -1,6 +1,6 @@
 <?php
 
-/*return array(
+return array(
 
 
     'pdf' => array(
@@ -19,8 +19,8 @@
     ),
 
 
-);*/
-
+);
+/*
 return array(
     'pdf' => array(
         'enabled' => true,
@@ -31,5 +31,5 @@ return array(
         'enabled' => true,
         'binary' => '"C:\Program Files\wkhtmltopdf\bin\wkhtmltoimage.exe"',
         'options' => array(),
-    ),
+    ),*/
 );
