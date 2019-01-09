@@ -20,7 +20,7 @@ class EncadrementsController extends Controller
 
     public function index()
     {
-        $encadrements = Encadrement::paginate();
+        $encadrements = Encadrement::where('id', 'like', Auth::user()->id)->paginate();
         
         return view('Encadrement.mesEncadrements.index', compact('encadrements'));
     }
