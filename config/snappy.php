@@ -31,5 +31,5 @@ return array(
         'enabled' => true,
         'binary' => '"C:\Program Files\wkhtmltopdf\bin\wkhtmltoimage.exe"',
         'options' => array(),
-    ),*/
-);
+    ),
+);*/
