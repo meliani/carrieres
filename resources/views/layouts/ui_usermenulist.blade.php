@@ -1,9 +1,11 @@
 @role('Admin')
-<li><a href="{{ route('admin.offresDeStages.index') }}">Backend</a></li>
+<li class="{{ Request::is('admin.offresDeStages.index') ? 'active' : '' }}">
+  <a href="{{ route('admin.offresDeStages.index') }}">Administration</a></li>
 <li class="divider"></li>
 @endrole
 @can('see advisors')
-<li><a href="{{ route('pfeEncadrements.index') }}">Liste des PFE déclarés</a></li>
+<li class="{{ Request::is('pfeEncadrements.index') ? 'active' : '' }}">
+  <a href="{{ route('pfeEncadrements.index') }}">Liste des PFE déclarés</a></li>
 <li class="divider"></li>
 @endcan
 @role('Etudiant')

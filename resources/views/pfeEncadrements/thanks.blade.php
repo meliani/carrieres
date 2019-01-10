@@ -24,7 +24,7 @@
                                         <h4>Ce PFE est actuellement encadré/examiné par :</h4>
                                     </li>
                                 @foreach ($encadrants as $item)
-                                    <li class="collection-item">{{$item->name}}</li>
+                                    <li class="collection-item">{{$item->advisorName}}</li>
                                 @endforeach
                                 </ul>
                               <div class="row">
