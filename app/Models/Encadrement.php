@@ -30,6 +30,7 @@ class Encadrement extends Model
     public $fillable = [
         'id',
         'id_prof',
+        'studentName',
         'advisorName',
         'raison_sociale',
         'pays',
@@ -46,7 +47,7 @@ class Encadrement extends Model
      * @var array
      */
     protected $casts = [
-
+        
     ];
 
     /**
@@ -57,5 +58,4 @@ class Encadrement extends Model
     public static $rules = [
 
     ];
-
 }
