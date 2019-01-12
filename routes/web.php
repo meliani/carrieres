@@ -69,7 +69,7 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('pfeEncadrements', 'pfeEncadrementsController');
     Route::resource('mesEncadrements', 'mesEncadrementsController');
     //Route::get('pfeEncadrements/downloadExcel3', 'pfeEncadrementsController@export');
-    Route::get('pfeEncadrements/downloadExcel/{type}','StagesController@downloadExcel')->middleware(['Teacher','superTeacher','isAdmin']);
+    Route::get('pfeEncadrements/downloadExcel/{type}','StagesController@downloadExcel')->middleware(['Teacher']);
 
     Route::resource('Encadrements/mesEncadrements', 'Encadrement\EncadrementsController');
 
