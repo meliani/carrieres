@@ -9,6 +9,8 @@ use App\Models\Stage;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\View;
 
@@ -75,7 +77,7 @@ class pfeEncadrementsController extends Controller
         //attach to model
         DB::update('update internships set nbr_advisors = nbr_advisors + 1 where id = ?', [$request->pfe_id]);
         //DB::table('internships')->increment('nbr_advisors', 1, ['id' => $request->pfe_id]);
-        DB::insert('insert into encadrements set id_internship='.$request->pfe_id.', id_prof='.$advisor);
+        DB::insert('insert into encadrements set id_internship='.$request->pfe_id.', id_prof='.$advisor.',user_id='.Auth::user()->id);
         }
         $encadrants=pfeEncadrementsController::getAdvisors($request->pfe_id);
         return view('pfeEncadrements.thanks', compact('request','encadrants'));
