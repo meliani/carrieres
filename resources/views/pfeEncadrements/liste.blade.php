@@ -2,10 +2,10 @@
   <table class="responsive-table highlight scale-transition scale-in">
     <thead>
       <tr>
-          <th width="15%">Nom et prénom</th>
+          <th width="20%">Nom et prénom</th>
           <th width="10%">Entreprise</th>
-          <th width="30%">Titre du PFE</th>
-          <th width="10%">Date de déclaration</th>
+          <th width="35%">Titre du PFE</th>
+          <th width="15%">Date de déclaration</th>
           <th width="20%">Encadrants / Examinateurs</th>   
           @can('edit advisors')
           <th width="5%">Ajouter Encadrant / Examinateur</th>   
@@ -16,7 +16,12 @@
     <tbody>
       @foreach ($encadrements as $pfe)
       <tr>
-        <td>{{ $pfe->name }} {{ ( !empty($pfe->option_text)? '('.$pfe->option_text.')':'' ) }}</td>
+        <td><div class="">{{ $pfe->name }}</div>
+          @if ($pfe->option_text)
+          <span class="new badge blue lighten-3 white-text" data-badge-caption="{{ ( !empty($pfe->option_text)? $pfe->option_text:'' ) }}"></span>
+          @endif
+          
+        </td>
         <td>{{ $pfe->raison_sociale }}</td>
         <td class="sub">{{  str_limit($pfe->intitule, 100) }}</td>
          {{-- Limit intitulé to 100 characters --}}
@@ -27,7 +32,7 @@
            @foreach ($advisors as $advisor)
             @if ($pfe->id==$advisor->id)
               <li class="collection-item light-blue-text text-lighten-1">{{ $advisor->advisorName }}
-              <span class="new badge blue right" data-badge-caption="{{  \Carbon\Carbon::parse($advisor->created_at)->format('d M') }}"></span>
+              <span class="new badge blue right lighten-5 blue-text" data-badge-caption="{{  \Carbon\Carbon::parse($advisor->created_at)->format('d M') }}"></span>
             </li>
             @endif
            @endforeach

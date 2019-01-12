@@ -10,8 +10,9 @@ class Internship extends Model
     public $table = 'internships';
     
 
-    protected $dates = ['created_at',
-                        'updated_at'
+    protected $dates = [
+        'created_at',
+        'updated_at'
     ];
     
     public $fillable = [
@@ -55,4 +56,9 @@ class Internship extends Model
     protected $casts = [
 
     ];
+    public function user()
+	{
+		return $this->HasOne('App\User');
+	}
+
 }
