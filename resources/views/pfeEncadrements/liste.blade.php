@@ -2,12 +2,11 @@
   <table class="responsive-table highlight scale-transition scale-in">
     <thead>
       <tr>
-          <th width="20%">Nom et prénom</th>
-          <th width="10%">Option</th>
+          <th width="15%">Nom et prénom</th>
           <th width="10%">Entreprise</th>
-          <th width="30em">Titre du PFE</th>
-          <th width="20%">Date de déclaration</th>
-          <th width="20%">Encadrants/Examinateurs</th>   
+          <th width="30%">Titre du PFE</th>
+          <th width="10%">Date de déclaration</th>
+          <th width="20%">Encadrants / Examinateurs</th>   
           @can('edit advisors')
           <th width="5%">Ajouter Encadrant / Examinateur</th>   
           @endcan
@@ -17,19 +16,18 @@
     <tbody>
       @foreach ($encadrements as $pfe)
       <tr>
-        <td>{{ $pfe->name }}</td>
-        <td>{{ $pfe->option_text }}</td>
+        <td>{{ $pfe->name }} {{ ( !empty($pfe->option_text)? '('.$pfe->option_text.')':'' ) }}</td>
         <td>{{ $pfe->raison_sociale }}</td>
         <td class="sub">{{  str_limit($pfe->intitule, 100) }}</td>
-         {{-- Limit teaser to 100 characters --}}
-         <td>{{ str_limit($pfe->created_at,10) }}</td>   
+         {{-- Limit intitulé to 100 characters --}}
+         <td>{{ \Carbon\Carbon::parse($pfe->created_at)->format('d M Y') }}</td>   
          <td>
           @if ($pfe->nbr_advisors>0)
           <ul class="small collection">
            @foreach ($advisors as $advisor)
             @if ($pfe->id==$advisor->id)
-              <li class="collection-item light-blue-text text-lighten-1">{{ str_limit($advisor->advisorName,17) }}
-              <span class="new badge blue" data-badge-caption="{{  str_limit($advisor->created_at, 10) }}"></span>
+              <li class="collection-item light-blue-text text-lighten-1">{{ $advisor->advisorName }}
+              <span class="new badge blue right" data-badge-caption="{{  \Carbon\Carbon::parse($advisor->created_at)->format('d M') }}"></span>
             </li>
             @endif
            @endforeach

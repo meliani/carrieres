@@ -14,19 +14,20 @@
         <table class="responsive-table highlight scale-transition scale-in">
           <thead>
             <tr>
-                <th width="10%">Raison sociale</th>
-                <th width="10%">localisation</th>
-                <th width="10%">Encadrant externe</th>
-                <th width="20%">Titre du PFE</th>
-                <th width="10%">Affecté le</th>
+              <th width="10%">Etudiant</th>
+              <th width="10%">Raison sociale</th>
+              <th width="10%">localisation</th>
+              <th width="10%">Encadrant externe</th>
+              <th width="20%">Titre du PFE</th>
+              <th width="10%">Affecté le</th>
             </tr>
           </thead>
           <tbody>
             @foreach ($encadrements as $pfe)
             <tr>
+              <td>{{ $pfe->studentName }}</td>
               <td>{{ $pfe->raison_sociale }}</td>
-              <td>{{ $pfe->ville }}, {{ $pfe->pays }}
-              </td>
+              <td>{{ $pfe->ville }}, {{ $pfe->pays }}</td>
               <td>
                 <ul>
                   <li>
@@ -38,7 +39,7 @@
                 </ul>
                 </td>
               <td>{{ $pfe->intitule }}</td>
-              <td>{{ $pfe->created_at }}</td>
+              <td>{{ $pfe->created_at->format('d M Y') }}</td>
             </tr>
             @endforeach
           </tbody>
