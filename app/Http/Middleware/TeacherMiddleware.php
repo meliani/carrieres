@@ -19,7 +19,7 @@ class TeacherMiddleware
     {
         $user = User::all()->count();
         if (!($user == 1)) {
-            if (!Auth::user()->hasPermissionTo('see advisors')) {
+            if (!Auth::user()->hasRole('Teacher')) {
                 abort('401');
             }
         }

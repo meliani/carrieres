@@ -26,9 +26,8 @@ class pfeEncadrementsController extends Controller
         ->orderBy('created_at', 'DESC')
         ->paginate(10);
         $advisors=pfeEncadrementsController::getAllAdvisors();
-        $export = new pfeEncadrementsController;
 
-    return view('pfeEncadrements.index', compact('encadrements','advisors','export'));
+    return view('pfeEncadrements.index', compact('encadrements','advisors'));
     }    
 
     public function show($id)
