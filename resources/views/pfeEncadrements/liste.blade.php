@@ -42,7 +42,7 @@
         @can('edit advisors')
         <td class="center">
           <!-- <a class="btn-floating btn-small waves-effect waves-light red" href={{ route('pfeEncadrements.create', $pfe->id) }}><i class="material-icons">remove_red_eye</i></a> -->
-          <a class="btn-floating btn-small waves-effect waves-light blue @if ($pfe->nbr_advisors>=3) disabled @endif" href={{ route('pfeEncadrements.create', ['pfe_id' => $pfe->id]) }}><i class="material-icons">group_add</i></a>
+          <a class="btn-floating btn-small waves-effect waves-light blue @if ($pfe->nbr_advisors>=2) disabled @endif" href={{ route('pfeEncadrements.create', ['pfe_id' => $pfe->id]) }}><i class="material-icons">group_add</i></a>
         </td>
         @endcan
       </tr>
