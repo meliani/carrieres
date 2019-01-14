@@ -62,4 +62,14 @@ class Handler extends ExceptionHandler
 
         return redirect()->guest(route('login'));
     }
+    /*
+    public function render($request, Exception $e)
+    {
+        if($e instanceof \PDOException)
+        {
+            return response()->view('errors.pdo', [], 500);
+        }
+        return parent::render($request, $e);
+    }
+    */
 }

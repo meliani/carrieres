@@ -28,7 +28,7 @@
                         <ul class="collection">
                         <li class="collection-header"><h4>Liste des encadrants existants</h4></li>
                         @foreach ($encadrants as $item)
-                            <li class="collection-item">{{$item->name}}</li>
+                            <li class="collection-item">{{$item->advisorName}}</li>
                             <?php  $advisors[]=['value'=>$item->id_prof] ?>
                         @endforeach
                         </ul>
