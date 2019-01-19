@@ -169,17 +169,17 @@ return [
         Collective\Html\HtmlServiceProvider::class,
         Laracasts\Flash\FlashServiceProvider::class,
         Prettus\Repository\Providers\RepositoryServiceProvider::class,
+        /*
+         * Package Service Providers...
+         */
         \InfyOm\Generator\InfyOmGeneratorServiceProvider::class,
         \InfyOm\AdminLTETemplates\AdminLTETemplatesServiceProvider::class,
         Yajra\DataTables\DataTablesServiceProvider::class,
         Yajra\DataTables\ButtonsServiceProvider::class,
         Spatie\Permission\PermissionServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
-
-        /*
-         * Package Service Providers...
-         */
-
+        Barryvdh\DomPDF\ServiceProvider::class,
+        PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -244,6 +244,9 @@ return [
         'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
         'Image' => Barryvdh\Snappy\Facades\SnappyImage::class,
+        //this was named PDF but i changed it to DomPDF for confusion
+        'DomPDF' => Barryvdh\DomPDF\Facade::class,
+        'Tracker' => PragmaRX\Tracker\Vendor\Laravel\Facade::class,
     ],
 
 ];
