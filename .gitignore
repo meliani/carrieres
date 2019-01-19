@@ -13,3 +13,4 @@ yarn-error.log
 .env
 .lock
 /composer.lock
+/storage/backups/*.sql
