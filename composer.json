@@ -14,7 +14,8 @@
         "laravel/tinker": "~1.0",
         "maatwebsite/excel": "^3.1",
         "pragmarx/tracker": "^3.3",
-        "rap2hpoutre/laravel-log-viewer": "^0.22.1"
+        "rap2hpoutre/laravel-log-viewer": "^0.22.1",
+        "yajra/laravel-datatables-oracle": "~8.0"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1",
@@ -27,9 +28,8 @@
         "mockery/mockery": "~1.0",
         "phpunit/phpunit": "~6.0",
         "spatie/laravel-permission": "^2.7",
-        "yajra/laravel-datatables": "^1.4.0",
-        "yajra/laravel-datatables-buttons": "^4.5",
-        "yajra/laravel-datatables-oracle": "~8.0"
+        "yajra/laravel-datatables": "dev-master",
+        "yajra/laravel-datatables-buttons": "^4.5"
     },
     "autoload": {
         "classmap": [
