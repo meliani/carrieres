@@ -37,13 +37,16 @@ Votre carrière se construit dès aujourd'hui, nous sommes là pour vous aider �
                 <h5>Liens</h5>
                 <ul>
                   <li><a class="light-blue-text text-lighten-5" href="#!">Conditions d'utilisation.</a></li>
+                  
                 </ul>
               </div>
             </div>
           </div>
           <div class="footer-copyright light-blue darken-3 z-depth-2">
             <div class="container">
+                <span>{{ Tracker::onlineUsers() }} users online</span>
                 <time datetime="00:00:00 | date: '2019'">&copy; 2018 DASRE INPT</time>
+
             <a class="light-blue-text text-lighten-5 right" href="#!">Contact</a>
             </div>
           </div>
@@ -55,5 +58,6 @@ Votre carrière se construit dès aujourd'hui, nous sommes là pour vous aider �
     <script src="{{ asset('js/materialize.js') }}"></script>
     <script src="{{ asset('js/init.js') }}"></script>
   @yield('scripts')
+
 </body>
 </html>
