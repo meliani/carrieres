@@ -16,7 +16,7 @@
     <tbody>
       @foreach ($encadrements as $pfe)
       <tr>
-        <td><div class="">{{ $pfe->name }}</div>
+        <td><div class="">{{ $pfe->student_name }}</div>
           @if ($pfe->option_text)
           <span class="new badge blue lighten-3 white-text" data-badge-caption="{{ ( !empty($pfe->option_text)? $pfe->option_text:'' ) }}"></span>
           @endif
