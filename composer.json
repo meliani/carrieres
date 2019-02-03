@@ -29,7 +29,7 @@
         "phpunit/phpunit": "~6.0",
         "spatie/laravel-permission": "^2.7",
         "yajra/laravel-datatables": "dev-master",
-        "yajra/laravel-datatables-buttons": "^4.5"
+        "yajra/laravel-datatables-buttons": "dev-master"
     },
     "autoload": {
         "classmap": [
@@ -68,7 +68,7 @@
         "sort-packages": true,
         "optimize-autoloader": true,
         "minimum-stability": "dev",
-        "prefer-stable": true
+        "prefer-stable": false
     }
 
 }
