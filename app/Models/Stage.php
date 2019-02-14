@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Stage extends Model
 {
 
-    public $table = 'internshipsview';
+    public $table = 'viewpfe';
     
 
     protected $dates = ['created_at'];
@@ -17,9 +17,8 @@ class Stage extends Model
         'name',
         'option_text',
         'raison_sociale',
-        'intitule',
-        'nbr_advisors'
-    ];
+        'intitule'
+		];
 
     protected $casts = [
 

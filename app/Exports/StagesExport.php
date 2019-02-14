@@ -17,16 +17,22 @@ class StagesExport implements FromCollection, ShouldAutoSize, WithHeadings
     {
         return Stage::all();
     }
-    public function headings(): array
+  
+	public function headings(): array
     {
         return [
-            '#',          
-            'Nom et prénom',
-            'Option',
-            'Entreprise',
-            'Titre du PFE',
-            'Date de déclaration',
-            'Nombre d\'encadrants'
+		'ID PFE',
+		'Nom et prénom de l’étudiant',
+		'Coordonnées de l’étudiant',
+		'Option de l’étudiant',
+		'Organisme d’accueil',
+		'Intitulé du PFE',
+		'pays',
+		'Nom et prénom de l’encadrant externe',
+		'Email et tél de l’encadrant externe',
+		'Date de déclaration de stage',
+		'Encadrant interne',
         ];
     }
+	
 }
