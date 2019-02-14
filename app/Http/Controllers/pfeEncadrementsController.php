@@ -102,9 +102,10 @@ class pfeEncadrementsController extends Controller
 
     public function getNbAdvisors($id_pfe)
     {
-        $NbAdvisors = DB::table('viewencadrants')
+
+        $NbAdvisors = DB::table('encadrements')
         ->select('*')
-        ->where('id','=',$id_pfe)
+        ->where('id_internship','=',$id_pfe)
         ->count();
         if($NbAdvisors>0)
         return $NbAdvisors;

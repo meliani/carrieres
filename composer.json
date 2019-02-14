@@ -9,6 +9,7 @@
         "barryvdh/laravel-dompdf": "^0.8.3",
         "barryvdh/laravel-snappy": "^0.4.3",
         "fideloper/proxy": "~4.0",
+        "geoip2/geoip2": "~2.0",
         "laravel/framework": "5.7.*",
         "laravel/telescope": "^1.0",
         "laravel/tinker": "~1.0",
