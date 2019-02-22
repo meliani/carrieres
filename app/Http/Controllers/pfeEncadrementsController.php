@@ -21,10 +21,13 @@ class pfeEncadrementsController extends Controller
         $this->middleware(['Teacher']);        
     }
 
-    public function index()
+    public function index(Request $request)
     {
+        //dd($request->s);
+        $s=$request->s;
         $encadrements = DB::table('internshipsview')
         ->select('*')
+        ->where('student_name','like','%'.$s.'%')
         ->orderBy('created_at', 'DESC')
         ->paginate(10);
         $advisors=pfeEncadrementsController::getAllAdvisors();
