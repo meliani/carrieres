@@ -18,6 +18,7 @@ class AdminMiddleware
     public function handle($request, Closure $next)
     {
         $user = User::all()->count();
+
         if (!($user == 1)) {
             if (!Auth::user()->hasPermissionTo('Administer roles & permissions')) {
                 abort('401');
@@ -25,5 +26,7 @@ class AdminMiddleware
         }
         
         return $next($request);
+
+        
     }
 }
