@@ -12,7 +12,11 @@
 */
 
     Route::middleware(['isAdmin'])->group(function () {
-        
+
+    Route::get('extractions', function () {
+        return view('extractions.index');
+    })->name('extractions');
+    
     Route::get('admin/applications', ['as'=> 'admin.applications.index', 'uses' => 'Admin\applicationsController@index']);
 
     Route::get('admin/offresDeStages', ['as'=> 'admin.offresDeStages.index', 'uses' => 'Admin\offresDeStagesController@index']);
@@ -80,6 +84,7 @@ Route::middleware(['auth'])->group(function () {
 
 });
 
+    
 
     Route::get('/home', 'HomeController@index')->name('home');
 
