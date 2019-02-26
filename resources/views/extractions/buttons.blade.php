@@ -1,34 +1,24 @@
 <div class="container">
   <ul class="collection">
+
     <li class="collection-item avatar">
-      <img src="images/yuna.jpg" alt="" class="circle">
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle">folder</i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
+      <i class="material-icons circle green">insert_chart</i>
+      <span class="title">Les candidatures</span>
+      <p><a href="extractions/OffersApplications/xlsx">Telecharger les candidatures</a>
       </p>
       <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
     </li>
     <li class="collection-item avatar">
       <i class="material-icons circle green">insert_chart</i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
+      <span class="title">Les offres</span>
+      <p><a href="#">Telecharger les offres</a>
       </p>
       <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
     </li>
     <li class="collection-item avatar">
-      <i class="material-icons circle red">play_arrow</i>
-      <span class="title">Title</span>
-      <p>First Line <br>
-         Second Line
+      <i class="material-icons circle green">insert_chart</i>
+      <span class="title">Les encadrements</span>
+      <p><a href="#">Telecharger les encadrements</a>
       </p>
       <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
     </li>

@@ -46,6 +46,9 @@
 
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
+    // Extraction routes :
+    Route::get('extractions/OffersApplications/{type}','extractions\OffersApplicationsController@downloadExcel')->middleware(['Teacher']);
+
 
 });
 
