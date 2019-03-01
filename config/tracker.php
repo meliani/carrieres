@@ -131,12 +131,12 @@ return [
      *
      * Log must be enabled for this option to work.
      */
-    'log_sql_queries_bindings' => false,
+    'log_sql_queries_bindings' => true,
 
     /*
      * Log events?
      */
-    'log_events' => false,
+    'log_events' => true,
 
     /*
      * Which events do you want to log exactly?
@@ -181,7 +181,7 @@ return [
      *     sudo apt-get purge php5-geoip
      *
      */
-    'log_geoip' => false,
+    'log_geoip' => true,
 
     /*
      * Do you wish to log the user agent?
@@ -237,7 +237,7 @@ return [
     /*
      * If you are storing cookies, you better change it to a name you of your own.
      */
-    'tracker_cookie_name' => 'some_ai_for_this_app',
+    'tracker_cookie_name' => 'career_center',
 
     /*
      * Internal tracker session name.
