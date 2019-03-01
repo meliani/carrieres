@@ -11,26 +11,26 @@
         "fideloper/proxy": "~4.0",
         "geoip2/geoip2": "~2.0",
         "laravel/framework": "5.7.*",
-        "laravel/telescope": "^1.0",
         "laravel/tinker": "~1.0",
         "maatwebsite/excel": "^3.1",
         "pragmarx/tracker": "^3.3",
         "rap2hpoutre/laravel-log-viewer": "^0.22.1",
-        "yajra/laravel-datatables-oracle": "~8.0"
+        "yajra/laravel-datatables-oracle": "~8.0",
+        "laravelcollective/html": "^5.7.0",
+        "mockery/mockery": "~1.0",
+        "phpunit/phpunit": "~6.0",
+        "spatie/laravel-permission": "^2.7",
+        "yajra/laravel-datatables": "dev-master",
+        "yajra/laravel-datatables-buttons": "dev-master",
+        "infyomlabs/adminlte-templates": "dev-master",
+        "infyomlabs/laravel-generator": "dev-master"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.1",
         "doctrine/dbal": "~2.3",
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
-        "infyomlabs/adminlte-templates": "dev-master",
-        "infyomlabs/laravel-generator": "dev-master",
-        "laravelcollective/html": "^5.7.0",
-        "mockery/mockery": "~1.0",
-        "phpunit/phpunit": "~6.0",
-        "spatie/laravel-permission": "^2.7",
-        "yajra/laravel-datatables": "dev-master",
-        "yajra/laravel-datatables-buttons": "dev-master"
+        "laravel/telescope": "^1.0"
     },
     "autoload": {
         "classmap": [
@@ -67,7 +67,7 @@
     "config": {
         "preferred-install": "dist",
         "sort-packages": true,
-        "optimize-autoloader": true,
+        "optimize-autoloader": false,
         "minimum-stability": "dev",
         "prefer-stable": false
     }
