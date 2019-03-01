@@ -18,7 +18,6 @@
         "yajra/laravel-datatables-oracle": "~8.0",
         "laravelcollective/html": "^5.7.0",
         "mockery/mockery": "~1.0",
-        "phpunit/phpunit": "~6.0",
         "spatie/laravel-permission": "^2.7",
         "yajra/laravel-datatables": "dev-master",
         "yajra/laravel-datatables-buttons": "dev-master",
@@ -30,6 +29,7 @@
         "doctrine/dbal": "~2.3",
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
+        "phpunit/phpunit": "~6.0",
         "laravel/telescope": "^1.0"
     },
     "autoload": {
