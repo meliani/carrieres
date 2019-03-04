@@ -8,7 +8,7 @@ use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
 
-class StagesExport implements FromCollection, ShouldAutoSize, WithHeadings
+class StagesExportAdvanced implements FromCollection, ShouldAutoSize, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection
@@ -33,6 +33,9 @@ class StagesExport implements FromCollection, ShouldAutoSize, WithHeadings
 		'Date de déclaration de stage',
 		'Encadrant interne 1',
 		'Encadrant interne 2',
+		'Examinateur 1',
+		'Examinateur 2',
+		'Examinateur 3',
         ];
     }
 	
