@@ -31,7 +31,8 @@ class StagesExport implements FromCollection, ShouldAutoSize, WithHeadings
 		'Nom et prénom de l’encadrant externe',
 		'Email et tél de l’encadrant externe',
 		'Date de déclaration de stage',
-		'Encadrant interne',
+		'Encadrant interne 1',
+		'Encadrant interne 2',
         ];
     }
 	
