@@ -8,7 +8,7 @@ use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithHeadings;
 
 
-class StagesExportAdvanced implements FromCollection, ShouldAutoSize, WithHeadings
+class AdvancedStagesExport implements FromCollection, ShouldAutoSize, WithHeadings
 {
     /**
     * @return \Illuminate\Support\Collection
