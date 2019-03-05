@@ -10,7 +10,7 @@ return [
     /*
      * Enable cache?
      */
-    'cache_enabled' => true,
+    'cache_enabled' => false,
 
     /*
      * Deffer booting for middleware use
@@ -88,7 +88,7 @@ return [
      *
      * Log must be enabled for this option to work.
      */
-    'log_sql_queries' => true,
+    'log_sql_queries' => false,
 
     /*
      * If you prefer to store Tracker data on a different database or connection,
@@ -136,7 +136,7 @@ return [
     /*
      * Log events?
      */
-    'log_events' => true,
+    'log_events' => false,
 
     /*
      * Which events do you want to log exactly?
@@ -211,12 +211,12 @@ return [
     /*
      * Do you wish to log url paths?
      */
-    'log_paths' => true,
+    'log_paths' => false,
 
     /*
      * Do you wish to log url queries and query arguments?
      */
-    'log_queries' => true,
+    'log_queries' => false,
 
     /*
      * Do you wish to log routes and route parameters?
@@ -226,7 +226,7 @@ return [
     /*
      * Log errors and exceptions?
      */
-    'log_exceptions' => true,
+    'log_exceptions' => false,
 
     /*
      * A cookie may be created on your visitor device, so you can have information
