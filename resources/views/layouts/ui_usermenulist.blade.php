@@ -4,8 +4,8 @@
 <li class="divider"></li>
 @endrole
 @can('see advisors')
-<li class="{{ Request::is('pfeEncadrements.index') ? 'active' : '' }}">
-  <a href="{{ route('pfeEncadrements.index') }}">Liste des PFE déclarés</a></li>
+<li class="{{ Request::is('Project') ? 'active' : '' }}">
+  <a href="{{ url('Internship/Advising/Project') }}">Liste des PFE déclarés</a></li>
 <li class="divider"></li>
 @endcan
 @role('Etudiant')
