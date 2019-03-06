@@ -1,6 +1,6 @@
 @if(Session::has('message'))
-<div class="card-panel green lighten-4">
-        <div class="card-content"><h8 class="light center green-text"><em> {!! session('message') !!}</em></h5>
-    </div>
+<div class="container materialert {{ Session::get('alert-class', '') }}">
+    <i class="material-icons">check_circle</i> <span>{!! session('message') !!}</span>
+    <button type="button" class="close-alert">×</button>
 </div>
 @endif

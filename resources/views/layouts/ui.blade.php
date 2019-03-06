@@ -12,6 +12,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/google/material_icons.css') }}">
     <link href="{{ asset('css/materialize.min.css') }}" media="screen,projection" rel="stylesheet">
+    <link href="{{ asset('css/materialert.css') }}" media="screen,projection" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" media="screen,projection" rel="stylesheet">
     @yield('css')
 </head>
@@ -22,6 +23,7 @@
 </header>
 
 <main>
+  @include('partials.messages')
   @yield('content')
 </main>
 
