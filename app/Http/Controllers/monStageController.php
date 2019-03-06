@@ -35,28 +35,8 @@ class monStageController extends Controller
      */
     public function index($offersPerPage=20,$sort='created_at')
     {
-        //$this->offresDeStagesRepository->pushCriteria(new RequestCriteria($request));
         
         $offres =  $this->offresDeStagesRepository->getActiveOffers();
-        /* $offresDeStages = $this->offresDeStagesRepository
-                                ->('status','=',NULL)
-                                ->orderBy($sort, 'desc')
-                                ->paginate($offersPerPage);//->get();
-                                */
-        //where expired_at is now -10 days
-        
-        //$links = $offresDeStages->render();
-
-        //$offresDeStages = $this->offresDeStagesRepository->all();
-
-        //$offresDeStages = $offresDeStages->sortByDesc("created_at");
-        
-        //$offresDeStages = $offresDeStages->paginate($offersPerPage);
-
-        //$offresDeStages = offreDeStage::orderby('created_at', 'desc');//->paginate(5);
-          //dd($offresDeStages);
-          /*return view('monStage.index')
-            ->with('offresDeStages', $offresDeStages);*/
            
             return view('monStage.index', compact('offres'));
     }
@@ -143,6 +123,9 @@ class monStageController extends Controller
         return redirect(route('monStage.index'));
     }
 
-    
+    public function eDocs()
+    {
+        return view('edocs.index');
+    }
 }
 
