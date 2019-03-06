@@ -5,8 +5,6 @@
     <div class="row">
         <div class="col s12 m12">
 
-
-            @include ('partials.messages')
             @include ('errors.list') {{-- Including error file --}}
 
             <div class="card-panel white">
