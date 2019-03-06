@@ -66,7 +66,7 @@
 		</div>
     @endif
 @endif
-{!! Form::open(['action' => ['monStageController@store', $offre], 'files' => true]) !!}
+{!! Form::open(['action' => ['Student\monStageController@store', $offre], 'files' => true]) !!}
 
 <div class="offre col s12 m7">
 <div class="card-panel">
