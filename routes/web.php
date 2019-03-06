@@ -126,3 +126,10 @@ Auth::routes();
 
         });
     });
+
+    Route::namespace('Internship')->group(function () {
+        // Controllers Within The "App\Http\Controllers\Admin" Namespace
+        Route::prefix('Internship/Advising')->group(function () {
+            Route::resource('Project', 'AdvisingController');
+        });
+    });

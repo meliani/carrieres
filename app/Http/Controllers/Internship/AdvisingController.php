@@ -1,8 +1,9 @@
 <?php
 
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Internship;
 
+use App\Http\Controllers\Controller;
 use App\Exports\StagesExport;
 use Maatwebsite\Excel\Facades\Excel;
 use App\Models\Stage;
@@ -14,7 +15,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\View;
 
-class pfeEncadrementsController extends Controller
+class AdvisingController extends Controller
 {
     public function __construct()
     {
@@ -30,7 +31,7 @@ class pfeEncadrementsController extends Controller
         ->where('student_name','like','%'.$s.'%')
         ->orderBy('created_at', 'DESC')
         ->paginate(10);
-        $advisors=pfeEncadrementsController::getAllAdvisors();
+        $advisors=AdvisingController::getAllAdvisors();
 
     return view('pfeEncadrements.index', compact('encadrements','advisors'));
     }    
@@ -67,10 +68,10 @@ class pfeEncadrementsController extends Controller
         ->select('*')
         ->where('id','=',$id)
         ->get();
-        $profs=pfeEncadrementsController::getProfessors();
+        $profs=AdvisingController::getProfessors();
         //dd($profs);
-        $encadrants = pfeEncadrementsController::getAdvisors($id);
-        $NbAdvisors = pfeEncadrementsController::getNbAdvisors($id);
+        $encadrants = AdvisingController::getAdvisors($id);
+        $NbAdvisors = AdvisingController::getNbAdvisors($id);
     return view('pfeEncadrements.create', compact('encadrements','profs','encadrants','NbAdvisors'));
     }
     public function store(Request $request)
@@ -82,7 +83,7 @@ class pfeEncadrementsController extends Controller
         DB::insert('insert into encadrements set id_internship='.$request->pfe_id.', id_prof='.$advisor.',user_id='.Auth::user()->id);
         DB::update('update internships set nbr_advisors = nbr_advisors + 1 where id = ?', [$request->pfe_id]);
         }
-        $encadrants=pfeEncadrementsController::getAdvisors($request->pfe_id);
+        $encadrants=AdvisingController::getAdvisors($request->pfe_id);
         return view('pfeEncadrements.thanks', compact('request','encadrants'));
     }
     public function getProfessors()

@@ -1,12 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Student;
 
+use App\Http\Controllers\Controller;
 use App\Http\Requests\CreateoffresDeStagesRequest;
 use App\Http\Requests\UpdateoffresDeStagesRequest;
 use App\Repositories\offresDeStagesRepository;
 use Illuminate\Http\Request;
 use Flash;
+use Session;
+
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use Carbon\Carbon;
@@ -119,7 +122,9 @@ class monStageController extends Controller
         $offresDeStages = offreDeStage::find($request->monStage);
 
         $offresDeStages->applications()->attach($application->id);//, ['cv' => $cv,'lettre_de_motivation' => $lettre_de_motivation ]);
-
+        
+        Session::flash('message', 'Candidature bien enregistrée!'); 
+        Session::flash('alert-class', 'success');
         return redirect(route('monStage.index'));
     }
 
