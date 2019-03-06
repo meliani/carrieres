@@ -19,7 +19,7 @@
         </div>
     {!! Form::close() !!}
 
-    @include('spaces.internships.advising.list')
+    @include('space.internship.advising.list')
 
 
     <div class="center">

@@ -32,8 +32,9 @@ class AdvisingController extends Controller
         ->orderBy('created_at', 'DESC')
         ->paginate(10);
         $advisors=AdvisingController::getAllAdvisors();
+        
+    return view('space.internship.advising.index', compact('encadrements','advisors'));
 
-    return view('pfeEncadrements.index', compact('encadrements','advisors'));
     }    
 
     public function show($id)
