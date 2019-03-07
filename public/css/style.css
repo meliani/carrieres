@@ -114,3 +114,33 @@ footer.page-footer {
     width: 85%;
   }
 }
+
+.home .col
+{
+	margin-bottom: 24px;
+}
+
+.home h5
+{
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 15px;
+}
+
+.home h6
+{
+	text-align: center;
+	text-transform: uppercase;
+	margin-bottom: 45px;
+}
+
+.home hr
+{
+	width: 40px;
+	margin-bottom: 45px;
+}
+
+.home .card
+{
+	text-align: center;
+}
