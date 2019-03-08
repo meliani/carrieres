@@ -11,51 +11,50 @@
 |
 */
 
-    Route::middleware(['isAdmin'])->group(function () {
+Route::middleware(['isAdmin'])->group(function () {
 
-    Route::view('extractions','extractions.index')->name('extractions');
+Route::view('extractions','extractions.index')->name('extractions');
+
+Route::namespace('Admin')->group(function () {
+    // Controllers Within The "App\Http\Controllers\Admin" Namespace
+    Route::prefix('admin')->group(function () {
+        Route::get('applications', ['as'=> 'admin.applications.index', 'uses' => 'applicationsController@index']);
+
+        Route::get('offresDeStages', ['as'=> 'admin.offresDeStages.index', 'uses' => 'offresDeStagesController@index']);
+        Route::post('offresDeStages', ['as'=> 'admin.offresDeStages.store', 'uses' => 'offresDeStagesController@store']);
+        Route::get('offresDeStages/create', ['as'=> 'admin.offresDeStages.create', 'uses' => 'offresDeStagesController@create']);
+        Route::put('offresDeStages/{offresDeStages}', ['as'=> 'admin.offresDeStages.update', 'uses' => 'offresDeStagesController@update']);
+        Route::patch('offresDeStages/{offresDeStages}', ['as'=> 'admin.offresDeStages.update', 'uses' => 'offresDeStagesController@update']);
+        Route::delete('offresDeStages/{offresDeStages}', ['as'=> 'admin.offresDeStages.destroy', 'uses' => 'offresDeStagesController@destroy']);
+        Route::get('offresDeStages/{offresDeStages}', ['as'=> 'admin.offresDeStages.show', 'uses' => 'offresDeStagesController@show']);
+        Route::get('offresDeStages/{offresDeStages}/edit', ['as'=> 'admin.offresDeStages.edit', 'uses' => 'offresDeStagesController@edit']);
+        Route::post('offresDeStages/{offresDeStages}/activate', ['as'=> 'admin.offresDeStages.activate', 'uses' => 'offresDeStagesController@activate']);
     
-    Route::namespace('Admin')->group(function () {
-        // Controllers Within The "App\Http\Controllers\Admin" Namespace
-        Route::prefix('admin')->group(function () {
-            Route::get('applications', ['as'=> 'admin.applications.index', 'uses' => 'applicationsController@index']);
-
-            Route::get('offresDeStages', ['as'=> 'admin.offresDeStages.index', 'uses' => 'offresDeStagesController@index']);
-            Route::post('offresDeStages', ['as'=> 'admin.offresDeStages.store', 'uses' => 'offresDeStagesController@store']);
-            Route::get('offresDeStages/create', ['as'=> 'admin.offresDeStages.create', 'uses' => 'offresDeStagesController@create']);
-            Route::put('offresDeStages/{offresDeStages}', ['as'=> 'admin.offresDeStages.update', 'uses' => 'offresDeStagesController@update']);
-            Route::patch('offresDeStages/{offresDeStages}', ['as'=> 'admin.offresDeStages.update', 'uses' => 'offresDeStagesController@update']);
-            Route::delete('offresDeStages/{offresDeStages}', ['as'=> 'admin.offresDeStages.destroy', 'uses' => 'offresDeStagesController@destroy']);
-            Route::get('offresDeStages/{offresDeStages}', ['as'=> 'admin.offresDeStages.show', 'uses' => 'offresDeStagesController@show']);
-            Route::get('offresDeStages/{offresDeStages}/edit', ['as'=> 'admin.offresDeStages.edit', 'uses' => 'offresDeStagesController@edit']);
-            Route::post('offresDeStages/{offresDeStages}/activate', ['as'=> 'admin.offresDeStages.activate', 'uses' => 'offresDeStagesController@activate']);
-        
-            Route::resource('users', 'usersManager\UserController');
-        
-            Route::resource('roles', 'usersManager\RoleController');
-        
-            Route::resource('permissions', 'usersManager\PermissionController');
-        
-            Route::get('reportSubmissions', ['as'=> 'admin.reportSubmissions.index', 'uses' => 'reportSubmissionController@index']);
-            Route::post('reportSubmissions', ['as'=> 'admin.reportSubmissions.store', 'uses' => 'reportSubmissionController@store']);
-            Route::get('reportSubmissions/create', ['as'=> 'admin.reportSubmissions.create', 'uses' => 'reportSubmissionController@create']);
-            Route::put('reportSubmissions/{reportSubmissions}', ['as'=> 'admin.reportSubmissions.update', 'uses' => 'reportSubmissionController@update']);
-            Route::patch('reportSubmissions/{reportSubmissions}', ['as'=> 'admin.reportSubmissions.update', 'uses' => 'reportSubmissionController@update']);
-            Route::delete('reportSubmissions/{reportSubmissions}', ['as'=> 'admin.reportSubmissions.destroy', 'uses' => 'reportSubmissionController@destroy']);
-            Route::get('reportSubmissions/{reportSubmissions}', ['as'=> 'admin.reportSubmissions.show', 'uses' => 'reportSubmissionController@show']);
-            Route::get('reportSubmissions/{reportSubmissions}/edit', ['as'=> 'admin.reportSubmissions.edit', 'uses' => 'reportSubmissionController@edit']);
-        
-            Route::get('internships', ['as'=> 'admin.internships.index', 'uses' => 'InternshipsController@index']);
-            Route::post('internships', ['as'=> 'admin.internships.store', 'uses' => 'InternshipsController@store']);
-            Route::get('internships/create', ['as'=> 'admin.internships.create', 'uses' => 'InternshipsController@create']);
-            Route::put('internships/{internships}', ['as'=> 'admin.internships.update', 'uses' => 'InternshipsController@update']);
-            Route::patch('internships/{internships}', ['as'=> 'admin.internships.update', 'uses' => 'InternshipsController@update']);
-            Route::delete('internships/{internships}', ['as'=> 'admin.internships.destroy', 'uses' => 'InternshipsController@destroy']);
-            Route::get('internships/{internships}', ['as'=> 'admin.internships.show', 'uses' => 'InternshipsController@show']);
-            Route::get('internships/{internships}/edit', ['as'=> 'admin.internships.edit', 'uses' => 'InternshipsController@edit']);
-        
-        });
+        Route::resource('users', 'usersManager\UserController');
+    
+        Route::resource('roles', 'usersManager\RoleController');
+    
+        Route::resource('permissions', 'usersManager\PermissionController');
+    
+        Route::get('reportSubmissions', ['as'=> 'admin.reportSubmissions.index', 'uses' => 'reportSubmissionController@index']);
+        Route::post('reportSubmissions', ['as'=> 'admin.reportSubmissions.store', 'uses' => 'reportSubmissionController@store']);
+        Route::get('reportSubmissions/create', ['as'=> 'admin.reportSubmissions.create', 'uses' => 'reportSubmissionController@create']);
+        Route::put('reportSubmissions/{reportSubmissions}', ['as'=> 'admin.reportSubmissions.update', 'uses' => 'reportSubmissionController@update']);
+        Route::patch('reportSubmissions/{reportSubmissions}', ['as'=> 'admin.reportSubmissions.update', 'uses' => 'reportSubmissionController@update']);
+        Route::delete('reportSubmissions/{reportSubmissions}', ['as'=> 'admin.reportSubmissions.destroy', 'uses' => 'reportSubmissionController@destroy']);
+        Route::get('reportSubmissions/{reportSubmissions}', ['as'=> 'admin.reportSubmissions.show', 'uses' => 'reportSubmissionController@show']);
+        Route::get('reportSubmissions/{reportSubmissions}/edit', ['as'=> 'admin.reportSubmissions.edit', 'uses' => 'reportSubmissionController@edit']);
+    
+        Route::get('internships', ['as'=> 'admin.internships.index', 'uses' => 'InternshipsController@index']);
+        Route::post('internships', ['as'=> 'admin.internships.store', 'uses' => 'InternshipsController@store']);
+        Route::get('internships/create', ['as'=> 'admin.internships.create', 'uses' => 'InternshipsController@create']);
+        Route::put('internships/{internships}', ['as'=> 'admin.internships.update', 'uses' => 'InternshipsController@update']);
+        Route::patch('internships/{internships}', ['as'=> 'admin.internships.update', 'uses' => 'InternshipsController@update']);
+        Route::delete('internships/{internships}', ['as'=> 'admin.internships.destroy', 'uses' => 'InternshipsController@destroy']);
+        Route::get('internships/{internships}', ['as'=> 'admin.internships.show', 'uses' => 'InternshipsController@show']);
+        Route::get('internships/{internships}/edit', ['as'=> 'admin.internships.edit', 'uses' => 'InternshipsController@edit']);
     });
+});
  
 
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
@@ -71,7 +70,7 @@ Route::middleware(['auth'])->group(function () {
 
     Route::resource('internship', 'InternshipController');
     Route::resource('profile', 'ProfileController');
-    Route::resource('pfeEncadrements', 'pfeEncadrementsController');
+    //Route::resource('pfeEncadrements', 'pfeEncadrementsController');
     Route::resource('mesEncadrements', 'mesEncadrementsController');
 
     Route::get('pfeEncadrements/downloadExcel/{type}','StagesController@downloadExcel')->middleware(['Teacher']);
@@ -97,10 +96,10 @@ Route::middleware(['auth'])->group(function () {
     });
 
 
-    Route::get('offresDeStages', ['as'=> 'offresDeStages.create', 'uses' => 'offresDeStagesPFEController@create']);
-    Route::post('offresDeStages', ['as'=> 'offresDeStages.store', 'uses' => 'offresDeStagesPFEController@store']);
-    Route::get('offresDeStages/create', ['as'=> 'offresDeStages.create', 'uses' => 'offresDeStagesPFEController@create']);
-    Route::get('offresDeStages/thanks', ['as'=> 'offresDeStages.thanks', 'uses' => 'offresDeStagesPFEController@thanks']);
+Route::get('offresDeStages', ['as'=> 'offresDeStages.create', 'uses' => 'offresDeStagesPFEController@create']);
+Route::post('offresDeStages', ['as'=> 'offresDeStages.store', 'uses' => 'offresDeStagesPFEController@store']);
+Route::get('offresDeStages/create', ['as'=> 'offresDeStages.create', 'uses' => 'offresDeStagesPFEController@create']);
+Route::get('offresDeStages/thanks', ['as'=> 'offresDeStages.thanks', 'uses' => 'offresDeStagesPFEController@thanks']);
 
 Auth::routes();
 
@@ -108,28 +107,27 @@ Auth::routes();
 
 
 
-    Route::get('rapport', ['as'=> 'reportSubmissions.index', 'uses' => 'reportSubmissionController@index']);
-    Route::post('reportSubmissions', ['as'=> 'reportSubmissions.store', 'uses' => 'reportSubmissionController@store']);
-    Route::get('reportSubmissions/create', ['as'=> 'reportSubmissions.create', 'uses' => 'reportSubmissionController@create']);
+Route::get('rapport', ['as'=> 'reportSubmissions.index', 'uses' => 'reportSubmissionController@index']);
+Route::post('reportSubmissions', ['as'=> 'reportSubmissions.store', 'uses' => 'reportSubmissionController@store']);
+Route::get('reportSubmissions/create', ['as'=> 'reportSubmissions.create', 'uses' => 'reportSubmissionController@create']);
 
-    Route::namespace('Student')->group(function () {
-        // Controllers Within The "App\Http\Controllers\Admin" Namespace
-        Route::prefix('student')->group(function () {
-            Route::get('eDocs', 'monStageController@eDocs');
-            Route::get('monStage', ['as'=> 'monStage.index', 'uses' => 'monStageController@index']);
-            Route::get('monStage/{monStage}', ['as'=> 'monStage.show', 'uses' => 'monStageController@show']);
-            Route::get('monStage/postuler/{monStage}', ['as'=> 'monStage.postuler', 'uses' => 'monStageController@postuler']);
-            Route::post('monStage/postuler/{monStage}', ['as'=> 'monStage.postuler', 'uses' => 'monStageController@postuler']);
-            Route::post('monStage/postuler/{monStage}', ['as'=> 'monStage.store', 'uses' => 'monStageController@store']);
-        
-        
-
-        });
+Route::namespace('Student')->group(function () {
+    // Controllers Within The "App\Http\Controllers\Admin" Namespace
+    Route::prefix('student')->group(function () {
+        Route::get('eDocs', 'monStageController@eDocs');
+        Route::get('monStage', ['as'=> 'monStage.index', 'uses' => 'monStageController@index']);
+        Route::get('monStage/{monStage}', ['as'=> 'monStage.show', 'uses' => 'monStageController@show']);
+        Route::get('monStage/postuler/{monStage}', ['as'=> 'monStage.postuler', 'uses' => 'monStageController@postuler']);
+        Route::post('monStage/postuler/{monStage}', ['as'=> 'monStage.postuler', 'uses' => 'monStageController@postuler']);
+        Route::post('monStage/postuler/{monStage}', ['as'=> 'monStage.store', 'uses' => 'monStageController@store']);
     });
+});
 
-    Route::namespace('Internship')->group(function () {
-        // Controllers Within The "App\Http\Controllers\Admin" Namespace
-        Route::prefix('Internship/Advising')->group(function () {
-            Route::resource('Project', 'AdvisingController');
-        });
+Route::namespace('Internship')->group(function () {
+    // Controllers Within The "App\Http\Controllers\Admin" Namespace
+    Route::prefix('Internship/Advising')->group(function () {
+        Route::resource('Project', 'AdvisingController');
+        Route::resource('Jury', 'JuryController');
     });
+});
+Route::resource('Pepole', 'PeopleController');

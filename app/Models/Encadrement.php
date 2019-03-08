@@ -20,7 +20,7 @@ class Encadrement extends Model
     //use SoftDeletes;
 
     public $table = 'viewencadrants';
-    
+
 
     protected $dates = [
         'created_at'

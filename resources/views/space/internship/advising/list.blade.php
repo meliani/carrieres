@@ -9,6 +9,7 @@
           <th width="10%">Encadrant 1</th>   
           <th width="10%">Encadrant 2</th>   
           @can('edit advisors')
+          <th width="10%">Jury</th>            
           @endcan
       </tr>
     </thead>
@@ -16,9 +17,9 @@
     <tbody>
       @foreach ($encadrements as $pfe)
       <tr>
-        <td><div class="">{{ $pfe->student_name }}</div>
-          @if ($pfe->option_text)
-          <span class="new badge blue lighten-3 white-text" data-badge-caption="{{ ( !empty($pfe->option_text)? $pfe->option_text:'' ) }}"></span>
+        <td><div class="">{{ $pfe->user->name }}</div>
+          @if ($pfe->user->people->option_text)
+          <span class="new badge blue lighten-3 white-text" data-badge-caption="{{ ( !empty($pfe->user->people->option_text)? $pfe->user->people->option_text:'' ) }}"></span>
           @endif
           
         </td>
@@ -27,13 +28,22 @@
          {{-- Limit intitulé to 100 characters --}}
          <td>{{ \Carbon\Carbon::parse($pfe->created_at)->format('d M Y') }}</td>   
          <td class="center">
-            <a href={{ route('pfeEncadrements.create', ['pfe_id' => $pfe->id]) }}><i class="tiny material-icons">add</i></a>
-
+           @if(isset($pfe->adviser->adviser1))
+            {{ $pfe->adviser->adviser1['name']}}
+          @else
+            <a href={{ route('Project.create', ['pfe_id' => $pfe->id,'advisor' => '1' ]) }}><i class="tiny material-icons">add</i></a>
+          @endif
           </td>
           <td class="center">
-            <a href={{ route('pfeEncadrements.create', ['pfe_id' => $pfe->id]) }}><i class="tiny material-icons">add</i></a>
+          @if(isset($pfe->adviser->adviser2))  
+            {{ $pfe->adviser->adviser2['name']}}
+          @else
+            <a href={{ route('Project.create', ['pfe_id' => $pfe->id,'advisor' => '2' ]) }}><i class="tiny material-icons">add</i></a>
+          @endif
           </td>
-
+          <td class="center">
+          @include('space.internship.advising.jury',$pfe)
+          </td>
       </tr>
       @endforeach
     </tbody>

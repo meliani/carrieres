@@ -1,18 +1,26 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\School\Internship;
 
 use Illuminate\Database\Eloquent\Model;
+use App\User;
+use App\Models\School\Internship\Adviser;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\School\Profile\People;
+
 
 class Internship extends Model
 {
+
+    use SoftDeletes;
 
     public $table = 'internships';
     
 
     protected $dates = [
         'created_at',
-        'updated_at'
+        'updated_at',
+        'deleted_at'
     ];
     
     public $fillable = [
@@ -58,7 +66,15 @@ class Internship extends Model
     ];
     public function user()
 	{
-		return $this->HasOne('App\User');
-	}
+		return $this->BelongsTo(User::class);
+    }
+    public function adviser()
+    {
+        return $this->hasOne(Adviser::class,'id_internship');
+    }
+    public function people()
+    {
+        return $this->BelongsTo(People::class,'user_id')->where('scholar_year','=','2018-2019');
+    }
 
 }

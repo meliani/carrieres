@@ -12,7 +12,7 @@
         {{ $encadrements->links('vendor.pagination.default') }}
     </div>
 
-    {!! Form::open(['method'=>'GET','url'=>'pfeEncadrements','class'=>'navbar-form navbar-left','role'=>'search'])  !!}
+    {!! Form::open(['method'=>'GET','url'=>'Project','class'=>'navbar-form navbar-left','role'=>'search'])  !!}
 
         <div class="input-group custom-search-form">
             <input type="text" class="form-control" name="s" placeholder="Chercher par Etudiant...">
