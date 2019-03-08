@@ -74,7 +74,7 @@ class Internship extends Model
     }
     public function people()
     {
-        return $this->BelongsTo(People::class,'user_id')->where('scholar_year','=','2018-2019');
+        return $this->BelongsTo(People::class,'user_id','user_id')->where('scholar_year','=','2018-2019');
     }
 
 }
