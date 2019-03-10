@@ -47,20 +47,21 @@ class User extends Authenticatable
     }
     public function people()
     {
-        return $this->hasOne(People::class);
+        return $this->hasOne(People::class,'user_id','id');
     }
     public function internship()
     {
-        return $this->hasMany(Internship::class);
+        return $this->hasOne(Internship::class);
     }
     public function adviser()
     {
-        return $this->hasMany(Adviser::class);
+        return $this->hasOne(Adviser::class,'id_prof');
     }
+
     
     
     public function getIsAdminAttribute()
     {
-        return true;
+        return $this->attributes['is_admin'];
     }
 }

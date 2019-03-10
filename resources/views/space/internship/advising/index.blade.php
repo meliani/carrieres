@@ -9,10 +9,10 @@
         </div>
 
     <div class="center">
-        {{ $encadrements->links('vendor.pagination.default') }}
+        {{ $trainees->links('vendor.pagination.default') }}
     </div>
 
-    {!! Form::open(['method'=>'GET','url'=>'Project','class'=>'navbar-form navbar-left','role'=>'search'])  !!}
+    {!! Form::open(['method'=>'GET','url'=>'Internship/Advising/Project','class'=>'navbar-form navbar-left','role'=>'search'])  !!}
 
         <div class="input-group custom-search-form">
             <input type="text" class="form-control" name="s" placeholder="Chercher par Etudiant...">
@@ -23,6 +23,6 @@
 
 
     <div class="center">
-        {{ $encadrements->links('vendor.pagination.default') }}
+        {{ $trainees->links('vendor.pagination.default') }}
     </div>
 @endsection

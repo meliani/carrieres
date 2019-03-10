@@ -66,7 +66,7 @@ class Internship extends Model
     ];
     public function user()
 	{
-		return $this->BelongsTo(User::class);
+		return $this->BelongsTo(User::class,'user_id','id');
     }
     public function adviser()
     {

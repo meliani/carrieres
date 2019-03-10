@@ -28,14 +28,33 @@ class AdvisingController extends Controller
 
     public function index(Request $request)
     {
-        //dd($request->s);
         $s=$request->s;
+        /*->with(['user' => function ($query,$s) {
+            $query->where('name', 'like', '%'.$s.'%');
+        }])
+        where('fname', 'like', '%'.$s.'%')
+        ->orWhere('lname', 'like', '%'.$s.'%')
+        ->->with(['internship'])
+        */
+        $trainees = People::where('is_active',true)
+        
+        
+        ->with(['internship'])->has('internship')->orderBy('created_at', 'DESC')
+        ->Paginate();
 
-        $encadrements = Internship::has('people')
-        ->orderBy('created_at', 'DESC')
-        ->paginate();
-        $students = People::where('scholar_year','=','2018-2019');
-    return view('space.internship.advising.index', compact('encadrements','students'));
+
+        /*->with(['people' => function ($query) {
+            $query->where('scholar_year', '=', '2018-2019');
+        }])
+        ->has('internship')
+
+        ->paginate();*/
+        /*$internships = Internship::has('people')
+        ->orderBy('created_at', 'DESC');*/
+
+
+        $people = People::where('scholar_year','=','2018-2019');
+    return view('space.internship.advising.index', compact('trainees'));
 
     }    
 
