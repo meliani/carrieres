@@ -7,10 +7,11 @@
         <div class="row center">
         <h4 class="header light center blue-text text-lighten-1">Liste des encadrements</h4>
         </div>
-
+    @if($trainees instanceof \Illuminate\Pagination\LengthAwarePaginator )
     <div class="center">
         {{ $trainees->links('vendor.pagination.default') }}
     </div>
+    @endif
 
     {!! Form::open(['method'=>'GET','url'=>'Internship/Advising/Project','class'=>'navbar-form navbar-left','role'=>'search'])  !!}
 
@@ -21,8 +22,9 @@
 
     @include('space.internship.advising.list')
 
-
+    @if($trainees instanceof \Illuminate\Pagination\LengthAwarePaginator )
     <div class="center">
         {{ $trainees->links('vendor.pagination.default') }}
     </div>
+    @endif
 @endsection

@@ -43,6 +43,8 @@ class People extends Model
 	{
 		return $this->attributes['fname'].' '.$this->attributes['lname'];
     }
+
+
     public function user()
 	{
 		return $this->BelongsTo(User::class,'id','user_id');
@@ -50,8 +52,12 @@ class People extends Model
 
     public function internship()
     {
-        return $this->hasOne(Internship::class,'user_id','user_id');
+        return $this->hasOne(Internship::class,'user_id','user_id')
+        ->latest();
     }
+
+
+
     public static function getProfessors()
     {
         $queries = User::select('id','name')->where('is_professor','=',1)->get();

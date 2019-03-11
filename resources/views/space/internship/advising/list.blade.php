@@ -30,17 +30,17 @@
          {{-- Limit intitulé to 100 characters --}}
          <td>{{ \Carbon\Carbon::parse($trainee->internship['created_at'])->format('d M Y') }}</td>   
          <td class="center">
-           @if(isset($trainee->adviser->adviser1))
-            {{ $trainee->adviser->adviser1['name']}}
+           @if(isset($trainee->internship->adviser->adviser1))
+            {{ $trainee->internship->adviser->adviser1['name']}}
           @else
             <a href={{ route('Project.create', ['pfe_id' => $trainee->internship['id'],'advisor' => '1' ]) }}><i class="tiny material-icons">add</i></a>
           @endif
           </td>
           <td class="center">
-          @if(isset($trainee->adviser->adviser2))  
-            {{ $trainee->adviser->adviser2['name']}}
+          @if(isset($trainee->internship->adviser->adviser2))  
+            {{ $trainee->internship->adviser->adviser2['name']}}
           @else
-            <a href={{ route('Project.create', ['pfe_id' => $trainee->id,'advisor' => '2' ]) }}><i class="tiny material-icons">add</i></a>
+            <a href={{ route('Project.create', ['pfe_id' => $trainee->internship['id'],'advisor' => '2' ]) }}><i class="tiny material-icons">add</i></a>
           @endif
           </td>
           <td class="center">

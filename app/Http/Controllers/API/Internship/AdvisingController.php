@@ -1,17 +1,18 @@
 <?php
 
 
-namespace App\Http\Controllers\Internship;
+namespace App\Http\Controllers\API\Internship;
 
+// Models
 use App\Models\School\Internship\Internship;
 use App\Models\School\Internship\Adviser;
 use App\Models\School\Profile\People;
+use App\Models\Stage;
+use App\User;
 
 use App\Http\Controllers\Controller;
 use App\Exports\StagesExport;
 use Maatwebsite\Excel\Facades\Excel;
-use App\Models\Stage;
-use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -28,7 +29,7 @@ class AdvisingController extends Controller
 
     public function index(Request $request)
     {
-        
+        $s=$request->s;
         /*->with(['user' => function ($query,$s) {
             $query->where('name', 'like', '%'.$s.'%');
         }])
@@ -36,19 +37,12 @@ class AdvisingController extends Controller
         ->orWhere('lname', 'like', '%'.$s.'%')
         ->->with(['internship'])
         */
-        if(!isset($request->s)){
-        $trainees = People::where('is_active',true)
-        ->with(['internship'])->has('internship')->orderBy('created_at', 'DESC')
+        $trainees = People::where('fname', 'like', '%'.$s.'%')
+        ->orWhere('lname', 'like', '%'.$s.'%')->where('is_active',true)
+        ->with(['internship'])->has('internship')
         ->Paginate();
-        }else{
-        $s=$request->s;
+        
 
-        $trainees = People::with('internship')->has('internship')
-        ->where('is_active',true)
-        ->where('fname', 'like', '%'.$s.'%')
-        ->orWhere('lname', 'like', '%'.$s.'%')
-        ->get();
-        }
         /*->with(['people' => function ($query) {
             $query->where('scholar_year', '=', '2018-2019');
         }])
@@ -59,7 +53,7 @@ class AdvisingController extends Controller
         ->orderBy('created_at', 'DESC');*/
 
 
-        $people = People::where('scholar_year','=','2018-2019');
+        //$people = People::where('scholar_year','=','2018-2019');
     return view('space.internship.advising.index', compact('trainees'));
 
     }    
@@ -72,10 +66,7 @@ class AdvisingController extends Controller
     public function create(Request $request)
     {
         $id=$request->pfe_id;
-        $encadrements = DB::table('internshipsview')
-            ->select('*')
-            ->where('id','=',$id)
-            ->get();
+
             //
             $profs = AdvisingController::getProfessors();
             //dd($profs);

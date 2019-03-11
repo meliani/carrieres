@@ -22,9 +22,9 @@
                 {!! Form::open(['action' => ['Internship\AdvisingController@store', 'pfe_id' => request()->pfe_id], 'method' => 'post', 'files' => false]) !!}
                 <div class="input-field col s12">
                     <i class="material-icons prefix">supervisor_account</i>
-                    {{ Form::select('id_exami1',$profs,null,array('single','id'=>'profs')) }}
-                    {{ Form::select('id_exami2',$profs,null,array('single','id'=>'profs')) }}
-                    {{ Form::select('id_exami3',$profs,null,array('single','id'=>'profs')) }}
+                    {{ Form::select('id_exami1',[null=>'Please Select','NULL'=>'Désactiver']+$profs,null,array('single','id'=>'profs')) }}
+                    {{ Form::select('id_exami2',[null=>'Please Select','NULL'=>'Désactiver']+$profs,null,array('single','id'=>'profs')) }}
+                    {{ Form::select('id_exami3',[null=>'Please Select','NULL'=>'Désactiver']+$profs,null,array('single','id'=>'profs')) }}
                     <input type="hidden" name="pfe_id" value={{ request()->pfe_id }}>
                     {!! Form::submit('Envoyer', ['class' => 'btn waves-effect waves-light white-text blue']) !!}
                     {!! Form::close() !!}
