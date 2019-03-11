@@ -24,7 +24,7 @@ class InternshipsDataTable extends DataTable
     /**
      * Get query source of dataTable.
      *
-     * @param \App\Models\Post $model
+     * @param \App\Models\ $model
      * @return \Illuminate\Database\Eloquent\Builder
      */
     public function query(Internships $model)

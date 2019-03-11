@@ -18,7 +18,7 @@
 {!! Form::button('<i class="glyphicon glyphicon-thumbs-up"></i>', [
         'type' => 'submit',
         'value' => 'activate',
-        'class' => 'btn btn-success btn-xs',
+        'class' => 'btn btn-success btn-xs'
     ]) 
     
     !!}
