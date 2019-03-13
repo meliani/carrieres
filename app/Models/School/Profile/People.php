@@ -52,7 +52,7 @@ class People extends Model
 
     public function internship()
     {
-        return $this->hasOne(Internship::class,'user_id','user_id')
+        return $this->hasOne(Internship::class,'user_id','user_id')->with('adviser')
         ->latest();
     }
 

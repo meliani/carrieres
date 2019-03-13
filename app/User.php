@@ -34,10 +34,18 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
+    
+    public function getIsAdminAttribute()
+    {
+        return $this->attributes['is_admin'];
+    }
     public function setPasswordAttribute($password)
     {   
         $this->attributes['password'] = $password;
+    }
+    public static function getProfessors()
+    {
+        return User::where('is_professor',1)->orderBy('name')->get(['id','name'])->pluck('name','id')->all();
     }
 
     public function applications()
@@ -58,10 +66,4 @@ class User extends Authenticatable
         return $this->hasOne(Adviser::class,'id_prof');
     }
 
-    
-    
-    public function getIsAdminAttribute()
-    {
-        return $this->attributes['is_admin'];
-    }
 }

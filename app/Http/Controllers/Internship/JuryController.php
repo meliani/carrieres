@@ -6,6 +6,7 @@ use App\Models\School\Profile\People;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\User;
 
 class JuryController extends Controller
 {
@@ -26,7 +27,7 @@ class JuryController extends Controller
      */
     public function create(Request $request)
     {
-        $profs = People::getProfessors();
+        $profs = User::getProfessors();
         return view('space.internship.examine.create',compact('profs'));
 
     }

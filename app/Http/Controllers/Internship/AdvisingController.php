@@ -37,9 +37,13 @@ class AdvisingController extends Controller
         ->->with(['internship'])
         */
         if(!isset($request->s)){
-        $trainees = People::where('is_active',true)
-        ->with(['internship'])->has('internship')->orderBy('created_at', 'DESC')
-        ->Paginate();
+        $trainees = People::has('internship')->where('is_active',true)
+        ->with(['internship' => function ($q) {
+            $q->orderBy('created_at', 'desc');
+          }])->latest()
+        ->paginate();
+        //$trainees = People::isActive();
+        //dd($trainees);
         }else{
         $s=$request->s;
 
@@ -59,7 +63,7 @@ class AdvisingController extends Controller
         ->orderBy('created_at', 'DESC');*/
 
 
-        $people = People::where('scholar_year','=','2018-2019');
+        //$people = People::where('scholar_year','=','2018-2019');
     return view('space.internship.advising.index', compact('trainees'));
 
     }    
@@ -77,7 +81,7 @@ class AdvisingController extends Controller
             ->where('id','=',$id)
             ->get();
             //
-            $profs = AdvisingController::getProfessors();
+            $profs = User::getProfessors();
             //dd($profs);
     return view('space.internship.advising.create', compact('encadrements','profs'));
     }
@@ -86,6 +90,7 @@ class AdvisingController extends Controller
         //$request->advisor;
         //dd($request);
         //$input = $request->only('pfe_id', 'advisor');
+        $request['user_id']=auth()->user()->id;
         $newAdviser=collect([
             'id_internship' => $request->pfe_id,
             'id_prof' => $request->advisor1,
@@ -93,12 +98,16 @@ class AdvisingController extends Controller
             'id_exami1' => $request->id_exami1,
             'id_exami2' => $request->id_exami2,
             'id_exami3' => $request->id_exami3,
-            'user_id' => Auth::User()->id
+            'user_id' => auth()->user()->id
         ]);
 
 
         //$adviser = Adviser::firstOrCreate(['id_internship' => $request->pfe_id]);
-        $adviser = Adviser::updateOrCreate(['id_internship' => $request->pfe_id],$newAdviser->filter()->all());
+        $adviser = Adviser::updateOrCreate(
+            ['id_internship' => $request->pfe_id],
+            $newAdviser->filter()
+            ->all()
+            );
 
         //dd($adviser->all());
         //$adviser->update($newAdviser->filter()->all());
@@ -114,17 +123,6 @@ class AdvisingController extends Controller
     {
         return Excel::download(new StagesExport, 'Declarations.xlsx');
     }
-    public function getProfessors()
-    {
-        $queries = User::select('id','name')->where('is_professor','=',1)->get();
 
-        $results = array();
-        foreach ($queries as $query)
-        {
-            $results[$query->id] = $query->name;
-        }
-
-        return $results;
-    }
 
 }

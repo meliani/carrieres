@@ -254,7 +254,9 @@ return [
      * You can use your own model for every single table Tracker has.
      */
 
-    'session_model' => 'App\Tracker\Session',
+    //'session_model' => 'App\Tracker\Session',
+
+    'session_model' => 'PragmaRX\Tracker\Vendor\Laravel\Models\Session',
 
     'log_model' => 'PragmaRX\Tracker\Vendor\Laravel\Models\Log',
 
