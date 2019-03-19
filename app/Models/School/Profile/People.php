@@ -28,6 +28,7 @@ class People extends Model
     'email',
     'phone',
     'cv',
+    'lm',
     'photo',
     'option_id',
     'gender_id',

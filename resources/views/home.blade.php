@@ -11,7 +11,7 @@
 </div>
 <div class="container home">
     <div class="row">
-        @include('partials.cards')
+        @include('partials.cards',$person)
     </div>
 </div>
 @endsection

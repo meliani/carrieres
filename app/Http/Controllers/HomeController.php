@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\School\Profile\People;
+
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,7 +25,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $person = People::find(auth()->user()->id);
+        return view('home',compact('person'));
         /*if(Auth::user()->can('encadrer'))
             return redirect(route('mesEcadrements.index'));
         else

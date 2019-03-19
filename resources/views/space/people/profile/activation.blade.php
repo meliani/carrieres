@@ -25,7 +25,7 @@
         @include('space.people.profile.details')
     </div>
 @endif
-{!! Form::model($person, ['route' => ['profile.update', $person->id], 'method' => 'patch']) !!}
+{!! Form::model($person, ['route' => ['People.update', 'id' => $person->id], 'method' => 'patch','files' => true]) !!}
 <div class="col s12 m7">
 @include('space.people.profile.fields')
 
