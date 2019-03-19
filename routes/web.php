@@ -130,4 +130,6 @@ Route::namespace('Internship')->group(function () {
         Route::resource('Jury', 'JuryController');
     });
 });
-Route::resource('Pepole', 'PeopleController');
+Route::resource('People', 'School\PeopleController');
+
+Route::get('Activation', ['as'=> 'people.activate', 'uses' => 'School\PeopleController@activate']);

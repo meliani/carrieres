@@ -1,21 +1,21 @@
 <?php
 
-
 namespace App\Http\Controllers\Internship;
 
+// Models
 use App\Models\School\Internship\Internship;
 use App\Models\School\Internship\Adviser;
 use App\Models\School\Profile\People;
+use App\Models\Stage;
+use App\User;
 
 use App\Http\Controllers\Controller;
 use App\Exports\StagesExport;
+
 use Maatwebsite\Excel\Facades\Excel;
-use App\Models\Stage;
-use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\View;
 
@@ -29,6 +29,38 @@ class AdvisingController extends Controller
     public function index(Request $request)
     {
         
+        $trainees = People::has('internship')
+        ->where('is_active',true)
+        ->latest();
+        
+        $trainees = $trainees->with(['internship' => function ($q) {
+            $q->latest();
+        }])->paginate();
+        
+        if(!isset($request->r)){
+            $trainees = People::has('internship')->where('is_active',true)
+            ->with(['internship' => function ($q) {
+                $q->orderBy('updated_at', 'desc');
+            }])
+            ->paginate();
+        }else{
+            $s=$request->s;
+            $trainees = People::with('internship')->has('internship')
+            ->where('is_active',true)
+            ->where('fname', 'like', '%'.$s.'%')
+            ->orWhere('lname', 'like', '%'.$s.'%')
+            ->get();
+        }
+
+        //$trainees = People::isActive();
+        //dd($trainees);
+        /*->with(['people' => function ($query) {
+            $query->where('scholar_year', '=', '2018-2019');
+        }])
+        ->has('internship')
+        ->paginate();*/
+        /*$internships = Internship::has('people')
+        ->orderBy('created_at', 'DESC');*/
         /*->with(['user' => function ($query,$s) {
             $query->where('name', 'like', '%'.$s.'%');
         }])
@@ -36,34 +68,8 @@ class AdvisingController extends Controller
         ->orWhere('lname', 'like', '%'.$s.'%')
         ->->with(['internship'])
         */
-        if(!isset($request->s)){
-        $trainees = People::has('internship')->where('is_active',true)
-        ->with(['internship' => function ($q) {
-            $q->orderBy('created_at', 'desc');
-          }])->latest()
-        ->paginate();
-        //$trainees = People::isActive();
-        //dd($trainees);
-        }else{
-        $s=$request->s;
-
-        $trainees = People::with('internship')->has('internship')
-        ->where('is_active',true)
-        ->where('fname', 'like', '%'.$s.'%')
-        ->orWhere('lname', 'like', '%'.$s.'%')
-        ->get();
-        }
-        /*->with(['people' => function ($query) {
-            $query->where('scholar_year', '=', '2018-2019');
-        }])
-        ->has('internship')
-
-        ->paginate();*/
-        /*$internships = Internship::has('people')
-        ->orderBy('created_at', 'DESC');*/
-
-
         //$people = People::where('scholar_year','=','2018-2019');
+        
     return view('space.internship.advising.index', compact('trainees'));
 
     }    
@@ -78,7 +84,7 @@ class AdvisingController extends Controller
         $id=$request->pfe_id;
         $encadrements = DB::table('internshipsview')
             ->select('*')
-            ->where('id','=',$id)
+            ->where('id',$id)
             ->get();
             //
             $profs = User::getProfessors();

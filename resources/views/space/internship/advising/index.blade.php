@@ -1,5 +1,8 @@
 @extends('layouts.ui')
 
+@section('users_buttons')
+    @include('partials.sorting_buttons')
+@endsection  
 
 @section('content')
 <a href="{!! URL::to('pfeEncadrements/downloadExcel/xlsx') !!}" class="waves-effect waves-teal btn">Exporter vers excel</a>

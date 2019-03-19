@@ -39,11 +39,9 @@ class InternshipController extends Controller
         $input = $request->all();
         //dd($request->user()->id);
         $internship = Internship::create($input);
-
         //Flash::success('Votre déclaration a été bien enregistrée.');
-
-        return redirect(route('internship.create'))->with('message', 'Votre déclaration a été bien enregistrée.');
-    
+        return redirect(route('internship.create'))
+        ->with('message', 'Votre déclaration a été bien enregistrée.');
     }
 
     /**

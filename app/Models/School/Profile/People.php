@@ -10,7 +10,9 @@ class People extends Model
 {
     public $table = 'people';
     protected $primaryKey = "user_id";
-
+    protected $appends = [
+        'name',
+     ];
     protected $dates = [
         'updated_at',
         'created_at'
@@ -43,8 +45,11 @@ class People extends Model
 	{
 		return $this->attributes['fname'].' '.$this->attributes['lname'];
     }
-
-
+    
+    public function activate(){
+        $this->is_active=true;
+        $this->save();
+    }
     public function user()
 	{
 		return $this->BelongsTo(User::class,'id','user_id');
@@ -52,11 +57,8 @@ class People extends Model
 
     public function internship()
     {
-        return $this->hasOne(Internship::class,'user_id','user_id')->with('adviser')
-        ->latest();
+        return $this->hasOne(Internship::class,'user_id','user_id')->with('adviser');
     }
-
-
 
     public static function getProfessors()
     {
@@ -70,4 +72,11 @@ class People extends Model
 
         return $results;
     }
+
+
+    /** Scopes */
+    public function scopeActive($query) {
+        return $query->where('is_active', true);
+     }
+
 }
