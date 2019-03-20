@@ -32,12 +32,14 @@
          <td class="center">
            @if(isset($trainee->internship->adviser->adviser1))
             {{ $trainee->internship->adviser->adviser1['name']}}
+            <a class="left" href={{ route('Project.create', ['pfe_id' => $trainee->internship['id'],'advisor' => '1' ]) }}><i class="tiny material-icons">edit</i></a>
           @else
             <a href={{ route('Project.create', ['pfe_id' => $trainee->internship['id'],'advisor' => '1' ]) }}><i class="tiny material-icons">add</i></a>
           @endif
           </td>
           <td class="center">
           @if(isset($trainee->internship->adviser->adviser2))  
+          <a class="left" href={{ route('Project.create', ['pfe_id' => $trainee->internship['id'],'advisor' => '2' ]) }}><i class="tiny material-icons">edit</i></a>
             {{ $trainee->internship->adviser->adviser2['name']}}
           @else
             <a href={{ route('Project.create', ['pfe_id' => $trainee->internship['id'],'advisor' => '2' ]) }}><i class="tiny material-icons">add</i></a>
