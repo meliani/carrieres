@@ -32,14 +32,12 @@
                     </div>
                 </div>    
                 <div class = "row">
-
-
-                    <div class="input-field col s2 m3">
+                    <div class="input-field col s4 m3">
                         <button type="submit" class="btn waves-effect waves-light">
                             Login
                         </button>
                     </div>
-                    <div class="input-field col s2 m3">
+                    <div class="input-field col s4 m3">
                         <a class="btn btn-link waves-effect waves-teal btn-flat" href="{{ route('password.request') }}">Redéfinir ?</a>
                     </div>
                 </div>    
