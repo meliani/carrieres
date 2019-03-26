@@ -7,6 +7,27 @@
  */
 
 
+/**
+* Table surcharging style
+*
+*/
+.table td{
+  font-size: 0.9em;
+  line-height: 1.3rem;
+}
+.table p{
+  margin: 0.5em 0;
+  padding: 0 0 0 0;
+  font-size: 0.9em;
+  line-height: 0.8rem;
+}
+.table .strong{
+ font-weight: bold;
+}
+/**
+* General styles
+*
+*/
  h1 {
   font-size: 1.5em;
   margin: 0.67em 0;

@@ -3,14 +3,14 @@
     <thead>
       <tr>
         <th width="5%">id</th>
-        <th width="20%">Nom et prénom</th>
+        <th width="10%">Nom et prénom</th>
         <th width="10%">Entreprise</th>
-          <th width="35%">Titre du PFE</th>
+          <th width="25%">Titre du PFE</th>
           <th width="10%">Date de déclaration</th>
           <th width="10%">Encadrant 1</th>   
           <th width="10%">Encadrant 2</th>   
           @can('edit advisors')
-          <th width="15%">Jury</th>            
+          <th width="25%">Membres du jury</th>            
           @endcan
       </tr>
     </thead>
@@ -19,8 +19,8 @@
       @foreach ($trainees as $trainee)
 
       <tr>
-        <td>{{ $trainee->pfe_id }}</td>
-        <td><div class="">{{ $trainee->name }}</div>
+        <td class="strong">{{ $trainee->pfe_id }}</td>
+        <td><div class="sub strong">{{ $trainee->name }}</div>
           @if ($trainee['option_text'])
           <span class="new badge blue lighten-3 white-text" 
           data-badge-caption="{{ ( !empty($trainee['option_text'])? $trainee['option_text']:'' ) }}">
@@ -28,7 +28,7 @@
           @endif
           
         </td>
-        <td>{{ $trainee->internship['raison_sociale'] }}</td>
+        <td class="strong">{{ $trainee->internship['raison_sociale'] }}</td>
         <td class="sub">{{  str_limit($trainee->internship['intitule'], 100) }}</td>
          {{-- Limit intitulé to 100 characters --}}
          <td>{{ \Carbon\Carbon::parse($trainee->internship['created_at'])->format('d M Y') }}</td>   
@@ -48,7 +48,7 @@
             <a href={{ route('Project.create', ['pfe_id' => $trainee->internship['id'],'advisor' => '2' ]) }}><i class="tiny material-icons">add</i></a>
           @endif
           </td>
-          <td class="center">
+          <td class="multiline">
           @include('space.internship.advising.jury',$trainee)
           </td>
       </tr>
