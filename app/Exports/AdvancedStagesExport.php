@@ -15,7 +15,7 @@ class AdvancedStagesExport implements FromCollection, ShouldAutoSize, WithHeadin
     */
     public function collection()
     {
-        return Stage::all();
+        return \App\Models\School\Internship\Internship::with('people')->get()->flatten(1)->values();
     }
   
 	public function headings(): array

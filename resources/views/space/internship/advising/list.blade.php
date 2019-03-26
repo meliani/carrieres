@@ -3,15 +3,13 @@
     <thead>
       <tr>
         <th width="5%">id</th>
-        <th width="10%">Nom et prénom</th>
-        <th width="10%">Entreprise</th>
+        <th width="13%">Nom et prénom</th>
+        <th width="15%">Entreprise</th>
           <th width="25%">Titre du PFE</th>
           <th width="10%">Date de déclaration</th>
           <th width="10%">Encadrant 1</th>   
           <th width="10%">Encadrant 2</th>   
-          @can('edit advisors')
           <th width="25%">Membres du jury</th>            
-          @endcan
       </tr>
     </thead>
 
@@ -28,7 +26,7 @@
           @endif
           
         </td>
-        <td class="strong">{{ $trainee->internship['raison_sociale'] }}</td>
+        <td class="strong">{{ str_limit($trainee->internship['raison_sociale'],30) }}</td>
         <td class="sub">{{  str_limit($trainee->internship['intitule'], 100) }}</td>
          {{-- Limit intitulé to 100 characters --}}
          <td>{{ \Carbon\Carbon::parse($trainee->internship['created_at'])->format('d M Y') }}</td>   
