@@ -12,9 +12,11 @@ class StatsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $r)
     {
-        $professors=\App\User::where('is_professor',1)->get();
+        $professors=\App\User::where('is_professor',1)
+        ->Where('name','like','%'.$r['s'].'%')
+        ->get();
         return view("space.internship.stats.index",compact('professors'));
     }
 

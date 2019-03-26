@@ -30,7 +30,8 @@ class LoginController extends Controller
 
     public function redirectTo(){
         $person = People::find(auth()->user()->id);
-        if(!$person->activate()){
+
+        if(isset($person) && $person->active()){
             return '/home';
         }else{
             return '/welcome';

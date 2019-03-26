@@ -10,8 +10,10 @@
     @endif
 </div>
 <div class="container home">
+    @if(isset($person))
     <div class="row">
         @include('partials.cards',$person)
     </div>
+    @endif
 </div>
 @endsection

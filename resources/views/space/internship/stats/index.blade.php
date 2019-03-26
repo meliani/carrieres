@@ -12,7 +12,7 @@
         </div>
 
 
-    {!! Form::open(['method'=>'GET','url'=>'Internship/Advising/Project','class'=>'navbar-form navbar-left','role'=>'search'])  !!}
+    {!! Form::open(['method'=>'GET','url'=>'Internship/Advising/Stats','class'=>'navbar-form navbar-left','role'=>'search'])  !!}
 
         <div class="input-group custom-search-form">
             <input type="text" class="form-control" name="s" placeholder="Chercher par Professeur...">
