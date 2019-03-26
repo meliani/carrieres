@@ -37,7 +37,7 @@ class AdvisingController extends Controller
             $q->latest();
         }])->paginate();
         
-        if(!isset($request->r)){
+        if(!isset($request->s)){
             $trainees = People::has('internship')->where('is_active',true)
             ->with(['internship' => function ($q) {
                 $q->orderBy('updated_at', 'desc');
