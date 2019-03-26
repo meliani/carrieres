@@ -1,9 +1,10 @@
 <div class="container col s12 m12">
-  <table class="responsive-table highlight scale-transition scale-in">
+  <table class="table highlight scale-transition scale-in">
     <thead>
       <tr>
-          <th width="20%">Nom et prénom</th>
-          <th width="10%">Entreprise</th>
+        <th width="5%">id</th>
+        <th width="20%">Nom et prénom</th>
+        <th width="10%">Entreprise</th>
           <th width="35%">Titre du PFE</th>
           <th width="10%">Date de déclaration</th>
           <th width="10%">Encadrant 1</th>   
@@ -16,7 +17,9 @@
 
     <tbody>
       @foreach ($trainees as $trainee)
+
       <tr>
+        <td>{{ $trainee->pfe_id }}</td>
         <td><div class="">{{ $trainee->name }}</div>
           @if ($trainee['option_text'])
           <span class="new badge blue lighten-3 white-text" 
