@@ -6,6 +6,7 @@ namespace App\Http\Controllers\extractions;
 use App\Http\Controllers\Controller;
 use App\Exports\AdvancedStagesExport;
 use App\Exports\OffersApplicationsExport;
+use App\Exports\AdvisingStatsExport;
 
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -27,11 +28,13 @@ class AdminExportsController extends Controller
     public function AdvancedStagesExport($type)
     {
         return Excel::download(new AdvancedStagesExport, 'StagesPFEExportAdvanced.xlsx');
-
     }
     public function OffersApplicationsExport($type)
     {
         return Excel::download(new OffersApplicationsExport, 'OffersApplications.xlsx');
     }
-
+    public function AdvisingStatsExport($type)
+    {
+        return Excel::download(new AdvisingStatsExport, 'AdvisingStats.xlsx');
+    }
 }

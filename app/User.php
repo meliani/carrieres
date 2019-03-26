@@ -61,9 +61,24 @@ class User extends Authenticatable
     {
         return $this->hasOne(Internship::class);
     }
-    public function adviser()
+    public function adviser1()
     {
-        return $this->hasOne(Adviser::class,'id_prof');
+        return $this->hasMany(Adviser::class,'id_prof');
     }
-
+    public function adviser2()
+    {
+        return $this->hasMany(Adviser::class,'id_encad2');
+    }
+    public function examiner1()
+    {
+        return $this->hasMany(Adviser::class,'id_exami1');
+    }
+    public function examiner2()
+    {
+        return $this->hasMany(Adviser::class,'id_exami2');
+    }
+    public function examiner3()
+    {
+        return $this->hasMany(Adviser::class,'id_exami3');
+    }
 }

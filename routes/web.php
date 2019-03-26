@@ -62,6 +62,7 @@ Route::namespace('Admin')->group(function () {
     // Admin Extraction routes :
     Route::get('extractions/OffersApplications/{type}','extractions\AdminExportsController@OffersApplicationsExport')->middleware(['Teacher']);
     Route::get('extractions/StagesExportAdvanced/{type}','extractions\AdminExportsController@AdvancedStagesExport')->middleware(['Teacher']);
+    Route::get('extractions/AdvisingStatsExport/{type}','extractions\AdminExportsController@AdvisingStatsExport')->middleware(['Teacher']);
 
 
 });
@@ -131,5 +132,6 @@ Route::namespace('Internship')->group(function () {
     });
 });
 Route::resource('People', 'School\PeopleController');
+Route::resource('Internship/Advising/Stats', 'Internship\StatsController');
 
 Route::get('Activation', ['as'=> 'people.activate', 'uses' => 'School\PeopleController@activate']);

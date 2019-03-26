@@ -19,7 +19,7 @@
       <i class="material-icons circle green">insert_chart</i>
       <span class="title">Les encadrements</span>
       <p><a href="extractions/StagesExportAdvanced/xlsx">Telecharger les encadrements</a></p>
-      <p><a href="extractions/StagesExportStats/xlsx">Statistiques</a></p>
+      <p><a href="extractions/AdvisingStatsExport/xlsx">Statistiques</a></p>
       <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
     </li>
   </ul>
