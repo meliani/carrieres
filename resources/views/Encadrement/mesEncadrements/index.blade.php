@@ -3,7 +3,7 @@
 @section('content')
 
         <div class="row center">
-        <h4 class="header light center blue-text text-lighten-1">Mes encadrements</h4>
+        <h4 class="header light center blue-text text-lighten-1">Encadrant 1</h4>
         </div>
 
     <div class="center">
@@ -46,7 +46,7 @@
         </table>
       </div>
 
-
+@include('Encadrement.mesEncadrements.list2')
     <div class="center">
         {{ $encadrements->links('vendor.pagination.default') }}
     </div>

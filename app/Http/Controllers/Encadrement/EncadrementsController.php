@@ -21,8 +21,9 @@ class EncadrementsController extends Controller
     public function index()
     {
         $encadrements = Encadrement::where('id_prof', '=', Auth::user()->id)->paginate();
-        
-        return view('Encadrement.mesEncadrements.index', compact('encadrements'));
+        $encadrements2 = Encadrement::where('id_encad2', '=', Auth::user()->id)->paginate();
+
+        return view('Encadrement.mesEncadrements.index', compact('encadrements','encadrements2'));
     }
 
 }
