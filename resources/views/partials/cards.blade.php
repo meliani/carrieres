@@ -1,5 +1,5 @@
 @include('partials.cards.welcome')
-@if(!$person->active())
+@if($person->is_active)
 @include('partials.cards.profile')
 @endif
 @if($person->ine=='2')
