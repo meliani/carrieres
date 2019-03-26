@@ -49,6 +49,7 @@ class AdvisingController extends Controller
             ->where('is_active',true)
             ->where('fname', 'like', '%'.$s.'%')
             ->orWhere('lname', 'like', '%'.$s.'%')
+            ->orWhere('pfe_id', 'like', '%'.$s.'%')
             ->get();
         }
 
