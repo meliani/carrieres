@@ -1,9 +1,9 @@
 @include('partials.cards.welcome')
 @if(isset($person))
     @if($person->active())
-    @include('partials.cards.profile')
+        @include('partials.cards.profile')
     @endif
     @if($person->ine=='2')
-    @include('partials.cards.stage')
+        @include('partials.cards.stage')
     @endif
 @endif

@@ -12,7 +12,7 @@
 <div class="container home">
     @if(isset($person))
     <div class="row">
-        @include('partials.cards',$person)
+        @include('partials.cards.cards',$person)
     </div>
     @endif
 </div>

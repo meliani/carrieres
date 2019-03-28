@@ -23,7 +23,7 @@
 </header>
 
 <main>
-  @include('partials.messages')
+  @include('partials.messages.messages')
   @yield('content')
 </main>
 
