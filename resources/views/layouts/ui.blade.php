@@ -15,6 +15,7 @@
     <link href="{{ asset('css/materialert.css') }}" media="screen,projection" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" media="screen,projection" rel="stylesheet">
     @yield('css')
+    @yield('page-css')
 </head>
 <body>
 <header>
@@ -53,6 +54,8 @@ Votre carrière se construit dès aujourd'hui, nous sommes là pour vous aider �
             </div>
           </div>
         </footer>
+        @yield('floating-buttons')
+
     <!-- Scripts -->
     <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
     <script>if (!window.jQuery) { document.write('<script src="{{ asset('js/jquery-3.2.1.js') }}"><\/script>'); }
@@ -60,6 +63,7 @@ Votre carrière se construit dès aujourd'hui, nous sommes là pour vous aider �
     <script src="{{ asset('js/materialize.js') }}"></script>
     <script src="{{ asset('js/init.js') }}"></script>
   @yield('scripts')
+  @yield('page-script')
 
 </body>
 </html>

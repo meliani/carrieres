@@ -21,7 +21,6 @@
 
     @include('pfeEncadrements.liste')
 
-
     <div class="center">
         {{ $encadrements->links('vendor.pagination.default') }}
     </div>

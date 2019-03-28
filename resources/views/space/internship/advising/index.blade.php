@@ -25,9 +25,13 @@
 
     @include('space.internship.advising.list')
 
+
     @if($trainees instanceof \Illuminate\Pagination\LengthAwarePaginator )
     <div class="center">
         {{ $trainees->links('vendor.pagination.default') }}
     </div>
     @endif
+@endsection
+@section('floating-buttons')
+    @include('partials.floating_buttons.wrapper')
 @endsection

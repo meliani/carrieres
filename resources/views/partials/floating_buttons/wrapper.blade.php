@@ -1,7 +1,3 @@
-$(document).ready(function(){
-    $('.fixed-action-btn').floatingActionButton();
-  });
-
 <div class="fixed-action-btn">
     <a class="btn-floating btn-large red">
         <i class="large material-icons">mode_edit</i>
@@ -11,6 +7,7 @@ $(document).ready(function(){
     </ul>
 </div>
 
-@section('scripts')
+@section('page-script')
+    @parent
     @include('partials.floating_buttons.script')
 @stop
