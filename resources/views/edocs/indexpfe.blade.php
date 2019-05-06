@@ -40,7 +40,7 @@
           <ul>     
             <!-- Les documents au titre de l'année 2019 sont en cours de préparation pour des raisons d'actualisation du réglement. 
                 -->
-            <li><a href="{{ url('student/myDocuments') }}">Convention de stages type Maroc et autres pays</a></li>
+            <li><a href="https://carrieres.inpt.ac.ma/Files/1819/Docs/1 - Conv type st au Maroc et autres pays que la France.docx">Convention de stages type Maroc et autres pays</a></li>
             <li><a href="https://carrieres.inpt.ac.ma/Files/1819/Docs/2 - Conv type st en France.docx">Convention de stages type France</a></li>
             <li><a href="https://carrieres.inpt.ac.ma/Files/1819/Docs/3 - Conv type TELECOM SudParis.doc">Convention de stages type Télécom SudParis</a></li>
             <li><a href="https://carrieres.inpt.ac.ma/Files/1819/Docs/4 - Conv type Télécom ParisTech.doc">Convention de stages type Télécom ParisTech</a></li>
