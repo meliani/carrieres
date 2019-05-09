@@ -116,6 +116,7 @@ Route::namespace('Student')->group(function () {
     // Controllers Within The "App\Http\Controllers\Admin" Namespace
     Route::prefix('student')->group(function () {
         Route::get('eDocs', 'monStageController@eDocs');
+        Route::get('myDocuments/', 'myDocumentsController@index');
         Route::get('monStage', ['as'=> 'monStage.index', 'uses' => 'monStageController@index']);
         Route::get('monStage/{monStage}', ['as'=> 'monStage.show', 'uses' => 'monStageController@show']);
         Route::get('monStage/postuler/{monStage}', ['as'=> 'monStage.postuler', 'uses' => 'monStageController@postuler']);
