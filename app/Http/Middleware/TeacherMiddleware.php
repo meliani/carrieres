@@ -17,12 +17,21 @@ class TeacherMiddleware
      */
     public function handle($request, Closure $next)
     {
-        $user = User::all()->count();
+        /*$user = User::all()->count();
         if (!($user == 1)) {
             if (!Auth::user()->hasRole('Teacher')) {
                 abort('401');
             }
         }
         return $next($request);
+        in_array(
+        */
+        if (Auth::check() && $request->user()->hasRole('Teacher')) {
+
+            return $next($request);
+
+        }
+
+        return abort('401');
     }
 }
