@@ -1,7 +1,7 @@
 @extends('layouts.ui')
 
 @section('users_buttons')
-    @include('partials.buttons.buttons_wrapper')
+    @include(Button::user_buttons())
 @endsection  
 
 @section('content')
@@ -33,5 +33,5 @@
     @endif
 @endsection
 @section('floating-buttons')
-    @include('partials.floating_buttons.wrapper')
+    @include(Button::page_action_buttons())
 @endsection

@@ -1,7 +1,7 @@
 @extends('layouts.ui')
 
 @section('users_buttons')
-    @include('partials.buttons.buttons_wrapper')
+    @include(Button::user_buttons())
 @endsection
 
 @section('content')
