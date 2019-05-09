@@ -246,6 +246,8 @@ return [
         //this was named PDF but i changed it to DomPDF for confusion
         'DomPDF' => Barryvdh\DomPDF\Facade::class,
         'Tracker' => PragmaRX\Tracker\Vendor\Laravel\Facade::class,
+        'Nav' => App\Http\Controllers\Core\MenuController::class,
+        'Button' => App\Http\Controllers\Core\ButtonController::class,
     ],
 
 ];
