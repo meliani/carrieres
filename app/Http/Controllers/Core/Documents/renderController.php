@@ -21,7 +21,7 @@ class renderController extends Controller
         $footer = view()->make('edocs.pdf.footerINPT')->render();
         //return PDF::loadFile('file:///C:/Users/Cosmos/Desktop/projects/newlife/documents/Convention Stage Ouvrier/ConventionStageOuvrier.html')->inline('github.pdf');
         //$pdf->loadView('edocs.pdfConvention')
-        $pdf->loadView('edocs.pdf.templates.ine'.auth()->user()->people->ine.'.ContenuConvention')
+        $pdf->loadView('edocs.pdf.templates.ine'.auth()->user()->people->ine.'.contenuConvention')
         ->setOption('margin-top', '25mm')
         ->setOption('margin-bottom', '29mm')
         ->setOption('margin-left', '10mm')
