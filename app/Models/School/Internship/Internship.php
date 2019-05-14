@@ -20,7 +20,9 @@ class Internship extends Model
     protected $dates = [
         'created_at',
         'updated_at',
-        'deleted_at'
+        'deleted_at',
+        'date_debut',
+        'date_fin'
     ];
     
     public $fillable = [
@@ -60,9 +62,10 @@ class Internship extends Model
         'user_id',
         'nbr_advisors'
     ];
-
+    protected $dateFormat = 'm/d/Y';
     protected $casts = [
-
+        'date_debut' => 'date',
+        'date_fin' => 'date',
     ];
     public function user()
 	{
@@ -77,4 +80,25 @@ class Internship extends Model
         return $this->BelongsTo(People::class,'user_id','user_id');
     }
 
+    public function getParrainNameAttribute()
+	{
+		return $this->getTitle($this->parrain_titre).' '.$this->parrain_nom.' '.$this->parrain_prenom;
+    }
+    public function getEncadrantExtNameAttribute()
+	{
+		return $this->getTitle($this->encadrant_ext_titre).' '.$this->encadrant_ext_nom.' '.$this->encadrant_ext_prenom;
+    }
+    public function getTitle($gender)
+	{
+        if($gender==1)
+        return "Mr.";
+        else
+        return "Mme.";
+    }
+    public function getDureeAttribute($gender)
+	{
+        //return $this->date_fin->diffForHumans($this->date_debut);
+        return $this->date_fin->longAbsoluteDiffForHumans($this->date_debut);
+    }
+    
 }

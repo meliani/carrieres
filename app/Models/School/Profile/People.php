@@ -51,7 +51,13 @@ class People extends Model implements HasMedia
 	{
 		return $this->attributes['fname'].' '.$this->attributes['lname'];
     }
-    
+   public function getTitleAttribute($value)
+	{
+        if($this->attributes['gender_id']==0)
+		return "Mme.";
+        else
+		return "Mr.";
+    }    
     public function activate(){
         $this->is_active=true;
         $this->save();
