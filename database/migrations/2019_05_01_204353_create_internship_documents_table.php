@@ -15,13 +15,13 @@ class CreateInternshipDocumentsTable extends Migration
     {
         Schema::create('internship_documents', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('collection_name');
+            $table->string('collection_name')->nullable();
             $table->string('name');
             $table->string('file_name');
             $table->string('mime_type')->nullable();
-            $table->unsignedInteger('size');
-            $table->unsignedInteger('internship_type_id');
-            $table->json('custom_properties');
+            $table->unsignedInteger('size')->nullable();
+            $table->unsignedInteger('internship_type_id')->nullable();
+            $table->json('custom_properties')->nullable();
             $table->unsignedInteger('order_column')->nullable();
             $table->nullableTimestamps();
             $table->softDeletes();

@@ -18,7 +18,7 @@ class CreateMenusTable extends Migration
             $table->string('name');
             $table->string('url');
             $table->string('url_type');
-            $table->string('icon');
+            $table->string('icon')->nullable();
             $table->unsignedInteger('parent_id')->nullable();
             $table->unsignedInteger('profile_type')->nullable();
             $table->unsignedInteger('order')->nullable();
