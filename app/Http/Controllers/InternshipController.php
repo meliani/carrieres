@@ -24,7 +24,7 @@ class InternshipController extends Controller
      */
     public function create()
     {
-        return view('internship.create');
+        return view('space.internship.submit.create');
     }
 
     /**
@@ -36,11 +36,19 @@ class InternshipController extends Controller
     public function store(Request $request)
     {   
         //dump($request);
+        $request->validate([
+            'raison_sociale' => 'required|max:191',
+            'intitule' => 'required|max:191',
+            'descriptif' => 'required|max:191',
+            'keywords' => 'required|max:191',
+            'date_debut' => 'required|date',
+            'date_fin' => 'required|date',
+        ]);
         $input = $request->all();
         //dd($request->user()->id);
         $internship = Internship::create($input);
         //Flash::success('Votre déclaration a été bien enregistrée.');
-        return redirect(route('internship.create'))
+        return redirect(route('submit.create'))
         ->with('message', 'Votre déclaration a été bien enregistrée.');
     }
 
