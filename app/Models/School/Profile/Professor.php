@@ -4,6 +4,7 @@ namespace App\Models\School\Profile;
 use App\User;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\School\Profile\People;
 
 class Professor extends Model
 {
@@ -12,7 +13,7 @@ class Professor extends Model
     ];
     public function getNameAttribute($value)
     {
-        return $this->attributes['first_name'].' '.$this->attributes['last_name'];
+        return strtoupper($this->attributes['first_name']).' '.$this->attributes['last_name'];
     }
 
     // ******************** LOVE LETTERS (SCOPES) ************************ //
@@ -26,4 +27,8 @@ class Professor extends Model
 	{
 		return $this->BelongsTo(User::class,'id','id');
     }
+    public function people()
+	{
+		return $this->BelongsTo(People::class,'user_id','id');
+    }   
 }
