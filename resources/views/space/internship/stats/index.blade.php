@@ -5,6 +5,7 @@
 @endsection  
 
 @section('content')
+
 <a href="{!! URL::to('extractions/AdvisingStatsExport/xlsx') !!}" class="waves-effect waves-teal btn">Exporter vers excel</a>
 
         <div class="row center">
