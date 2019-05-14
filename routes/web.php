@@ -135,3 +135,4 @@ Route::resource('People', 'School\PeopleController');
 Route::resource('Internship/Advising/Stats', 'Internship\StatsController');
 
 Route::get('Activation', ['as'=> 'people.activate', 'uses' => 'School\PeopleController@activate']);
+Route::resource('Authentic', 'Core\authenticDocumentController');
