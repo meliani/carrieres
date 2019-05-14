@@ -4,9 +4,14 @@ namespace App\Http\Controllers\Internship;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\School\Profile\Professor;
 
 class StatsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware(['auth','Teacher']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -17,7 +22,18 @@ class StatsController extends Controller
         $professors=\App\User::where('is_professor',1)
         ->Where('name','like','%'.$r['s'].'%')
         ->get();
-        return view("space.internship.stats.index",compact('professors'));
+
+        $departement_list=Professor::lists('department_id','department_id');
+
+        $professors = Professor::Where('first_name','like','%'.$r['s'].'%')
+        ->orWhere('last_name','like','%'.$r['s'].'%')
+        ->get();
+
+        if($r['department'])
+        $professors = Professor::Where('department_id','like','%'.$r['department'].'%')
+        ->get();
+
+        return view("space.internship.stats.index",compact('professors','department_list'));
     }
 
     /**
