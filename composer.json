@@ -20,6 +20,7 @@
         "mockery/mockery": "~1.0",
         "pragmarx/tracker": "dev-master",
         "rap2hpoutre/laravel-log-viewer": "^0.22.1",
+        "simplesoftwareio/simple-qrcode": "^2.0",
         "spatie/laravel-collection-macros": "^5.0",
         "spatie/laravel-medialibrary": "^7.0.0",
         "spatie/laravel-permission": "^2.7",
