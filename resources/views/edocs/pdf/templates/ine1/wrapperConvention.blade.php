@@ -33,5 +33,5 @@ h3, h3 span{
 }
 </style>
 <div class="canvas">
-    @include('edocs.pdfConvention')
+    @include('.contenuConvention')
 </div>
