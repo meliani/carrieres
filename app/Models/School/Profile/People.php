@@ -5,9 +5,14 @@ namespace App\Models\School\Profile;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\School\Internship\Internship;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use App\Models\School\Profile\Professor;
+use App\Models\School\Profile\Student;
 
-class People extends Model
+class People extends Model implements HasMedia
 {
+    use HasMediaTrait;
     public $table = 'people';
     protected $primaryKey = "user_id";
     protected $appends = [
@@ -60,7 +65,14 @@ class People extends Model
     {
         return $this->hasOne(Internship::class,'user_id','user_id')->with('adviser');
     }
-
+    public function professor()
+    {
+        return $this->hasOne(Professor::class,'id','user_id');
+    }
+    public function student()
+    {
+        return $this->hasOne(Student::class,'id','user_id');
+    }
     public static function getProfessors()
     {
         $queries = User::select('id','name')->where('is_professor','=',1)->get();
@@ -80,4 +92,11 @@ class People extends Model
         return $query->where('is_active', true);
      }
 
+
+     public function registerMediaCollections()
+     {
+         $this
+            ->addMediaCollection('internship')
+            ->useDisk('userfiles');
+     }
 }

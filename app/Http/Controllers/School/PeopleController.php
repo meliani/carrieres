@@ -119,11 +119,15 @@ class PeopleController extends Controller
     {
         if ($file->isValid())
         {
-            $path = $file->storeAs($basePath,Carbon::now()->format('ymd_hi') .'-'. $file->getClientOriginalName(),'public');      
+            $path = $file->storeAs(
+            $basePath,
+            Carbon::now()->format('ymd_hi') .'-'. $file->getClientOriginalName(),
+            'public'
+            );      
             //$path = Storage::disk('uploads')->put('', $doc);
             $path = 'storage/'.$path;
         }elseif($file->getError()!='UPLOADERROK')
         Flash::error($file->getErrorMessage());
-        //return back();
+        return back();
         }
     }
