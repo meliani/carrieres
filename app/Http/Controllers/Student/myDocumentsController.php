@@ -9,6 +9,11 @@ use App\Http\Controllers\Documents\renderController;
 
 class myDocumentsController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware(['auth','Etudiant']);
+    }
     /**
      * Display a listing of the resource.
      *
@@ -16,10 +21,26 @@ class myDocumentsController extends Controller
      */
     public function index(Request $r)
     {
-        $pdf = new renderController;
-        if($r->doc){
-        return $pdf->toPdf();
+        if(!auth()->user()->people->internship()->exists()){
+            return view('edocs.partials.fillforms');
+        }else{
+        if(isset($r->action)){
+        if(in_array('delete',$r->action)){
+            auth()->user()->people->clearMediaCollection('internship');
+        }
+        if(in_array('render',$r->action)){
+            $pdf = new renderController;
+                $pdf->convention();
+                $pdf->recommendation_letter();
+            }
+        }
+        if(auth()->user()->people->hasMedia('internship')){
+            $documents = auth()->user()->people->getMedia('internship');
+            return view('edocs.index', compact('documents'));
+        }
+        else return view('edocs.partials.nodocs');
     }
+
     }
 
     /**
