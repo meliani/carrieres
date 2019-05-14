@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Student;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-use App\Http\Controllers\Documents\renderController;
+use App\Http\Controllers\Core\Documents\renderController;
 
 class myDocumentsController extends Controller
 {
