@@ -17,7 +17,7 @@
 </head>
 <body class="container" style="border: 0px solid blue;margin-left: 0px;margin-right: 0px;padding:0px">
 <div class="header">
-    <img src="https://www.inpt.ac.ma/sites/default/files/logo.png" height="70px">
+    <img src="{{ storage_path('app/assets/pdf/logo_inpt.png') }}" height="70px">
 </div>
 </body>
 

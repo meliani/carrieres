@@ -1,7 +1,6 @@
 @extends('layouts.ui')
 
 @section('content')
-
 <div class="container">
   <ul class="collection">
     <li class="collection-item avatar">
@@ -13,6 +12,7 @@
       <p>
         <a href="{{ $doc->getUrl() }}">
           {{ $doc->name }}
+          
         </a>
       </p>
       @endforeach

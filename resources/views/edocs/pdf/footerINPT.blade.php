@@ -18,7 +18,9 @@
         }
         </style>
 </head>
-<body class="footer">
+
+<body>
+<div class="footer">
     <hr>
         <p><span>Av. Allal El Fassi,</span></p>
         <p><span>Madinat Al Irfane,</span></p>
@@ -28,6 +30,7 @@
         <p><span>
             <a href="http://www.inpt.ac.ma">
             http://www.inpt.ac.ma</a></span></p>
+    </div>
 </body>
 
 </html>
