@@ -69,8 +69,7 @@ Route::namespace('Admin')->group(function () {
 
 Route::middleware(['auth'])->group(function () {
 
-    Route::resource('internship', 'InternshipController');
-    Route::resource('profile', 'ProfileController');
+    Route::resource('space/internship/submit', 'InternshipController');
     //Route::resource('pfeEncadrements', 'pfeEncadrementsController');
     Route::resource('mesEncadrements', 'mesEncadrementsController');
 
