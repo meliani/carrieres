@@ -1,5 +1,5 @@
 <div style="float:right;">
-{!! QrCode::size(180)->generate(url('Authentic?code=STAGE OUVRIER/'.
+{!! QrCode::size(180)->generate(url('Authentic?code=V1/STAGE OUVRIER/'.
 auth()->user()->people->internship->raison_sociale.'/'.
 encrypt(
 auth()->user()->id.'/'.auth()->user()->people->internship->id

@@ -1,8 +1,10 @@
 <b>Informations sur la convention :</b>
 </br>
-Type de stage : {{ $a[0] }}
+Cryptage : {{ $a[0] }}
 </br>
-Raison sociale de l'Entreprise : {{ $a[1] }}
+Type de stage : {{ $a[1] }}
+</br>
+Raison sociale de l'Entreprise : {{ $a[2] }}
 </br>
 Id utlisateur : {{ $b[0] }}
 </br>
@@ -11,6 +13,7 @@ Id declaration de stage : {{ $b[1] }}
 Date debut : {{ $b[2] }}
 </br>
 Date fin : {{ $b[3] }}
+</br>
 </br>
 
 <b>Informations sur la plateforme</b>

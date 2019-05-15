@@ -18,10 +18,17 @@ class authenticDocumentController extends Controller
      */
     public function index(Request $r)
     {
+
         $a = explode('/',$r['code']);
-        //dd($r['code']);
-        $b = explode('/',decrypt($a[2]));
-        return view('space.verification.documents', compact('a','b'));    }
+        if($a[0]=='V1'){
+        $b = explode('/',decrypt($a[3]));
+            return view('space.verification.documents', compact('a','b'));
+        }
+        else{
+            return view('space.verification.not_supported',compact('a'));
+        }
+    
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -52,9 +59,7 @@ class authenticDocumentController extends Controller
      */
     public function show(Request $r)
     {
-        $a = explode('/',$r->code);
-        $b = explode('/',decrypt($a[2]));
-        return view('space.verification.documents', compact('a','b'));
+
     }
 
     /**
