@@ -25,10 +25,10 @@
 </head>
 
 <body class="canvas" lang="fr-FR" text="#000000" link="#0000ff" vlink="#800000" dir="ltr">
-<p lang="en-US" class="western" align="right" style="margin-bottom: 0cm; line-height: 100%">
-<font face="Times New Roman, serif"><span lang="fr-FR">Rabat, le :
+<p lang="en-US" class="western" align="right" style="margin-bottom: 0cm; line-height: 100%; text-align:right;">
+<font face="Times New Roman, serif">Rabat, le :
 		{{ Carbon\Carbon::now()->isoFormat('dddd Do MMMM YYYY') }}
-	</span></font></p>
+	</font></p>
 <p class="western" align="center" style="margin-bottom: 0cm; line-height: 100%">
 <br/>
 
