@@ -62,7 +62,7 @@ class Internship extends Model
         'user_id',
         'nbr_advisors'
     ];
-    protected $dateFormat = 'm/d/Y';
+    //protected $dateFormat = 'm/d/Y';
     protected $casts = [
         'date_debut' => 'date',
         'date_fin' => 'date',

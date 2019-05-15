@@ -18,11 +18,23 @@ Date fin : {{ $b[3] }}
 
 <b>Informations sur la plateforme</b>
 <?php 
-$person = App\User::findOrFail($b[0])->people;
+$user = App\User::findOrFail($b[0]);
+$person = $user->people;
 ?>
 </br>
-Nom : {{ $person->name }}
+Nom de l'etudiant : {{ $person->title }}{{ $person->name }}
 </br>
 Telepone : {{ $person->phone }}
 </br>
-Email : {{ $person->email }}
+Email INPT : {{ $user->email }}
+</br>
+Email autre : {{ $person->email }}
+</br>
+<b>Stage</b>
+</br>Sujet : {{ $person->internship->intitule }}
+</br>Entreprise : {{ $person->internship->raison_sociale }}
+</br>Date de declaration : {{ $person->internship->created_at }}
+</br>parrain : {{ $person->internship->parrain_name }}
+</br>telephone parrain : {{ $person->internship->parrain_tel }}
+</br>encadrant ext : {{ $person->internship->encadrant_ext_name }}
+</br>telephone encadrant ext : {{ $person->internship->encadrant_ext_tel }}
