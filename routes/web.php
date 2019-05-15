@@ -11,7 +11,7 @@
 |
 */
 
-Route::middleware(['isAdmin'])->group(function () {
+Route::middleware(['auth','isAdmin'])->group(function () {
 
 Route::view('extractions','extractions.index')->name('extractions');
 
