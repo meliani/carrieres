@@ -7,6 +7,9 @@ use App\Http\Controllers\Controller;
 use App\Exports\AdvancedStagesExport;
 use App\Exports\OffersApplicationsExport;
 use App\Exports\AdvisingStatsExport;
+use App\Exports\InternshipsExport;
+
+use Carbon\Carbon;
 
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -28,6 +31,10 @@ class AdminExportsController extends Controller
     public function AdvancedStagesExport($type)
     {
         return Excel::download(new AdvancedStagesExport, 'StagesPFEExportAdvanced.xlsx');
+    }
+    public function InternshipsExport($type)
+    {
+        return Excel::download(new InternshipsExport, 'Internships global'.Carbon::now()->format('dMY his').'.xlsx');
     }
     public function OffersApplicationsExport($type)
     {
