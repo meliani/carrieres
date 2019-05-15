@@ -11,7 +11,15 @@ Id declaration de stage : {{ $b[1] }}
 Date debut : {{ $b[2] }}
 </br>
 Date fin : {{ $b[3] }}
-<b>Informations sur la plateforme</b>
 </br>
-Nom : {{ User::getById($b[0])->name }}
-Telepone : {{ User::getById($b[0])->people->phone }}
+
+<b>Informations sur la plateforme</b>
+<?php 
+$person = App\User::findOrFail($b[0])->people;
+?>
+</br>
+Nom : {{ $person->name }}
+</br>
+Telepone : {{ $person->phone }}
+</br>
+Email : {{ $person->email }}
