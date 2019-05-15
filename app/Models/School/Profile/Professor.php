@@ -13,7 +13,7 @@ class Professor extends Model
     ];
     public function getNameAttribute($value)
     {
-        return strtoupper($this->attributes['first_name']).' '.$this->attributes['last_name'];
+        return strtoupper($this->attributes['last_name']).' '.strtoupper($this->attributes['first_name']);
     }
 
     // ******************** LOVE LETTERS (SCOPES) ************************ //

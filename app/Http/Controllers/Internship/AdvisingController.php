@@ -8,6 +8,7 @@ use App\Models\School\Internship\Adviser;
 use App\Models\School\Profile\People;
 use App\Models\Stage;
 use App\User;
+use App\Models\School\Profile\Professor;
 
 use App\Http\Controllers\Controller;
 use App\Exports\StagesExport;
@@ -88,7 +89,9 @@ class AdvisingController extends Controller
             ->where('id',$id)
             ->get();
             //
-            $profs = User::getProfessors();
+            $profs = Professor::active()->orderBy('last_name')
+            ->get(['id','first_name','last_name'])
+            ->pluck('name','id')->all();
             //dd($profs);
     return view('space.internship.advising.create', compact('encadrements','profs'));
     }
