@@ -1,19 +1,3 @@
-<div class = "input-field col m2 s4">
-  {!! Form::open(['url' => ['Internship/Advising/Stats'], 
-  'method' => 'get', 'files' => false]) !!}
-  <div class="input-field col s12">
-      <i class="material-icons prefix">supervisor_account</i>
-      {!! Form::select('department',
-      $profs=$professors->unique('department_id')->pluck('department_id','department_id')->all(),
-      array('department_id' => 'department_id')
-      ) !!}
-      {{ Form::label('department', 'Departement') }}
-  
-  </div>
-  
-  {!! Form::submit('Envoyer', ['class' => 'btn waves-effect waves-light white-text blue']) !!}
-  {!! Form::close() !!}
-</div>
 <table class="table highlight scale-transition scale-in">
   <thead>
     <tr>

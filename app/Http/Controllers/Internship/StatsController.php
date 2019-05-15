@@ -23,7 +23,7 @@ class StatsController extends Controller
         ->Where('name','like','%'.$r['s'].'%')
         ->get();
 
-        $departement_list=Professor::lists('department_id','department_id');
+        $department_list=Professor::get()->unique('department_id')->pluck('department_id','department_id')->all();
 
         $professors = Professor::Where('first_name','like','%'.$r['s'].'%')
         ->orWhere('last_name','like','%'.$r['s'].'%')
