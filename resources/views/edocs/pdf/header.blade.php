@@ -17,7 +17,7 @@
 </head>
 <body class="container" style="border: 0px solid blue;margin-left: 0px;margin-right: 0px;padding:0px">
 <div class="header">
-    <img src="{{ storage_path('app/assets/pdf/logo_inpt.png') }}" height="70px">
+    <img src="{{ public_path('templates/pdf/images/logo_inpt.png') }}" height="70px">
 </div>
 </body>
 
