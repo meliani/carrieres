@@ -12,13 +12,12 @@ use App\Exports\InternshipsExport;
 use Carbon\Carbon;
 
 use Maatwebsite\Excel\Facades\Excel;
+use Maatwebsite\Excel\Concerns\FromView;
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\View;
-
-use Maatwebsite\Excel\Concerns\FromView;
 
 class AdminExportsController extends Controller
 {

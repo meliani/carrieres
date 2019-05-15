@@ -4,6 +4,7 @@ namespace App\Exports;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Concerns\FromCollection;
+use App\Models\School\Profile\Professor;
 
 class AdvisingStatsExport implements FromView
 {
@@ -18,7 +19,7 @@ class AdvisingStatsExport implements FromView
     public function view(): View
     {
         return view('space.internship.stats.list', [
-            'professors' => \App\User::where('is_professor',1)->get()
+            'professors' => Professor::all()
         ]);
     }
 }
