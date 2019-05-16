@@ -24,7 +24,7 @@ class AdvisingController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['Teacher']);        
+        $this->middleware(['auth','Teacher']);        
     }
 
     public function index(Request $request)
