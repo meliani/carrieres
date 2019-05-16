@@ -1,12 +1,29 @@
 <?php
+namespace App\Http\Controllers\Frontend\Internship;
 
-namespace App\Http\Controllers;
 
-use App\Models\School\Internship\internshipOffer;
+
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Flash;
+use Session;
+
+use Prettus\Repository\Criteria\RequestCriteria;
+use Response;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Storage;
+/** --------- Models ----------- */
+use App\Models\Application;
+use App\User;
+use App\Models\School\Internship\internshipOffer as Offer;
 
 class InternshipOfferController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware(['auth','isAdmin']);        
+    }
     /**
      * Display a listing of the resource.
      *
@@ -14,7 +31,9 @@ class InternshipOfferController extends Controller
      */
     public function index()
     {
-        //
+        $offres = Offer::published()->valid()->get();
+        return view('frontend.internships.my_internship.index', compact('offres'));
+
     }
 
     /**

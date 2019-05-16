@@ -141,3 +141,22 @@ Route::get('test', function(){
     return view('edocs.excel.templates.internships');
     }
 );
+Route::get('test2', function(){
+    return view('backend.internship.advising.index');
+    
+    });
+
+/** ----------- New nomenclature for routes ------------- */
+Route::namespace('Frontend')->group(function () {
+    // Controllers Within The "App\Http\Controllers\Admin" Namespace
+    Route::namespace('Internship')->group(function () {
+        Route::prefix('Internship')->group(function () {
+            Route::get('myInternship', ['as'=> 'InternshipOffer.index', 'uses' => 'InternshipOfferController@index']);
+            Route::get('myInternship/{myInternship}', ['as'=> 'InternshipOffer.show', 'uses' => 'InternshipOfferController@show']);
+            Route::get('myInternship/postuler/{myInternship}', ['as'=> 'InternshipOffer.postuler', 'uses' => 'InternshipOfferController@postuler']);
+            Route::post('myInternship/postuler/{myInternship}', ['as'=> 'InternshipOffer.postuler', 'uses' => 'InternshipOfferController@postuler']);
+            Route::post('myInternship/postuler/{myInternship}', ['as'=> 'InternshipOffer.store', 'uses' => 'InternshipOfferController@store']);
+        });
+    });
+}
+);
