@@ -23,4 +23,10 @@ class modelTemplate extends Model
     ];
 
     //protected $casts = [];
+    /**
+     * Validation rules
+     *
+     * @var array
+     */
+    public static $rules = [];
 }
