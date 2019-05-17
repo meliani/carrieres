@@ -10,8 +10,7 @@ class baseModel extends Model
             return $query->where('is_active', true);
     }
     public function scopeValid($query) {
-        return $query->where('is_valid', true)
-                    ->where('status', null);
+        return $query->where('is_valid', true);
     }
     public function scopePublished($query) {
         return $query->where('status', null);
