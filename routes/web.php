@@ -70,7 +70,6 @@ Route::namespace('Admin')->group(function () {
 
 Route::middleware(['auth'])->group(function () {
 
-    Route::resource('space/internship/submit', 'InternshipController');
     //Route::resource('pfeEncadrements', 'pfeEncadrementsController');
     Route::resource('mesEncadrements', 'mesEncadrementsController');
 
@@ -143,20 +142,20 @@ Route::get('test', function(){
 );
 Route::get('test2', function(){
     return view('backend.internship.advising.index');
-    
     });
 
-/** ----------- New nomenclature for routes ------------- */
-Route::namespace('Frontend')->group(function () {
-    // Controllers Within The "App\Http\Controllers\Admin" Namespace
-    Route::namespace('Internship')->group(function () {
-        Route::prefix('Internship')->group(function () {
-            Route::get('myInternship', ['as'=> 'InternshipOffer.index', 'uses' => 'InternshipOfferController@index']);
-            Route::get('myInternship/{myInternship}', ['as'=> 'InternshipOffer.show', 'uses' => 'InternshipOfferController@show']);
-            Route::get('myInternship/postuler/{myInternship}', ['as'=> 'InternshipOffer.postuler', 'uses' => 'InternshipOfferController@postuler']);
-            Route::post('myInternship/postuler/{myInternship}', ['as'=> 'InternshipOffer.postuler', 'uses' => 'InternshipOfferController@postuler']);
-            Route::post('myInternship/postuler/{myInternship}', ['as'=> 'InternshipOffer.store', 'uses' => 'InternshipOfferController@store']);
+   /** ----------- New nomenclature for routes ------------- */
+
+    Route::namespace('Frontend')->group(function () {
+        // Controllers Within The "App\Http\Controllers\Frontend" Namespace
+        Route::resource('internship', 'Internship\myInternshipController');
+        Route::namespace('Internship')->group(function () {
+        Route::prefix('internship')->group(function () {
+            Route::resource('offer', 'InternshipOfferController');
+            Route::prefix('offer')->group(function () {
+                Route::resource('application', 'InternshipApplicationController');
+                }); 
+            });
         });
-    });
-}
+    }
 );
