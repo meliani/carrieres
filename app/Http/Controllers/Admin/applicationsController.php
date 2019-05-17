@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\DB;
 
 
 
-use App\Models\Application;
+use App\Models\School\Internship\Application;
 use App\Models\offreDeStage;
 use App\Http\Requests\Admin;
 use Flash;
