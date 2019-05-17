@@ -12,9 +12,9 @@
         </div>
         @include ('errors.list') {{-- Including error file --}}
 
-                    {!! Form::open(['action' => 'myInternshipController@store']) !!}
+                    {!! Form::open(['action' => 'Frontend\Internship\myInternshipController@store']) !!}
 
-                        @include('space.internship.submit.fields')
+                        @include('frontend.internships.internship.fields')
 
                     {!! Form::close() !!}
         </div>
