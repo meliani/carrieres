@@ -12,7 +12,7 @@ class renderController extends Controller
     
     public function __construct()
     {
-        $this->middleware(['auth','Etudiant']);
+        $this->middleware(['auth','Student']);
     }
     private $file_path;
     public function convention(){
