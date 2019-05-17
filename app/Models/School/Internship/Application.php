@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models;
+namespace App\Models\School\Internship;
 
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -58,10 +58,10 @@ class Application extends Model
         'cv' => 'nullable',
         'lettre_de_motivation' => 'nullable'
     ];
-
-    public function offresDeStages()
+    // !!!!!!! what is this relation ???
+    public function offers()
     {
-        return $this->morphedByMany('App\Models\offreDeStage', 'applyable');
+        return $this->morphedByMany('App\Models\School\Internship\internshipOffer', 'applyable');
     }
     public function applyable()
     {
@@ -71,9 +71,9 @@ class Application extends Model
     {
         return $this->BelongsTo('App\User');
     }
-    public function offreDeStage()
+    public function offer()
     {
-        return $this->BelongsTo('App\Models\offreDeStage','offre_de_stage_id','id');
+        return $this->BelongsTo('App\Models\School\Internship\internshipOffer','offre_de_stage_id','id');
     }
 
 }
