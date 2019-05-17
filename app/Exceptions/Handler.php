@@ -3,6 +3,7 @@
 namespace App\Exceptions;
 
 use Exception;
+use Session;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
@@ -42,9 +43,26 @@ class Handler extends ExceptionHandler
      * @param  \Exception  $exception
      * @return \Illuminate\Http\Response
      */
-    public function render($request, Exception $exception)
+    public function render($request, Exception $e)
     {
-        return parent::render($request, $exception);
+        if($e instanceof \PDOException)
+        {
+            $dbCode = trim($e->getCode());
+            //Codes specific to mysql errors
+            switch ($dbCode)
+            {
+                case 23000:
+                    $errorMessage = 'Duplicate entry !';
+                    break;
+                default:
+                    $errorMessage = 'database error !';
+            }
+            //return response()->view('errors.pdo', [], 500);
+            Session::flash('message', $errorMessage); 
+            Session::flash('alert-class', 'error');
+            return back();
+        }
+        return parent::render($request, $e);
     }
 
     /**
@@ -62,14 +80,4 @@ class Handler extends ExceptionHandler
 
         return redirect()->guest(route('login'));
     }
-    /*
-    public function render($request, Exception $e)
-    {
-        if($e instanceof \PDOException)
-        {
-            return response()->view('errors.pdo', [], 500);
-        }
-        return parent::render($request, $e);
-    }
-    */
 }
