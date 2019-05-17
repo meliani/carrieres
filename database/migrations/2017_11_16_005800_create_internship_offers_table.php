@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateoffresDeStagesTable extends Migration
+class CreateInternshipOffersTable extends Migration
 {
 
     /**
@@ -13,7 +13,7 @@ class CreateoffresDeStagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('offres_de_stages', function (Blueprint $table) {
+        Schema::create('internship_offers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nom_responsable');
             $table->string('raison_sociale');
@@ -41,6 +41,6 @@ class CreateoffresDeStagesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('offres_de_stages');
+        Schema::drop('internship_offers');
     }
 }
