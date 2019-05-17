@@ -18,6 +18,12 @@ class ButtonController extends Controller
     {
         return 'partials.buttons.buttons_wrapper';
     }
+    
+    public static function home_button()
+    {
+        return 'partials.buttons.home_wrapper';
+    }    
+    
     public static function page_action_buttons()
     {
         return 'partials.floating_buttons.wrapper';
