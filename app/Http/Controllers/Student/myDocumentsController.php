@@ -12,7 +12,7 @@ class myDocumentsController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['auth','Etudiant']);
+        $this->middleware(['auth','Student']);
     }
     /**
      * Display a listing of the resource.

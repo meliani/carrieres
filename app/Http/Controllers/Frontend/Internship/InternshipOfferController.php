@@ -13,9 +13,9 @@ use Response;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 /** --------- Models ----------- */
-use App\Models\Application;
-use App\User;
+use App\Models\School\Internship\Application;
 use App\Models\School\Internship\internshipOffer as Offer;
+use App\User;
 
 class InternshipOfferController extends Controller
 {
@@ -31,8 +31,8 @@ class InternshipOfferController extends Controller
      */
     public function index()
     {
-        $offres = Offer::published()->valid()->get();
-        return view('frontend.internships.my_internship.index', compact('offres'));
+        $offres = Offer::published()->valid()->paginate();
+        return view('frontend.internships.internship_offers.index', compact('offres'));
 
     }
 
@@ -60,21 +60,23 @@ class InternshipOfferController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\School\Internship\internshipOffer  $internshipOffer
+     * @param  \App\Models\School\Internship\Offer  $Offer
      * @return \Illuminate\Http\Response
      */
-    public function show(internshipOffer $internshipOffer)
+    public function show(Offer $Offer)
     {
-        //
+        return view('frontend.internships.internship_offers.show')
+        ->with('offre', $Offer);
+
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\School\Internship\internshipOffer  $internshipOffer
+     * @param  \App\Models\School\Internship\Offer  $Offer
      * @return \Illuminate\Http\Response
      */
-    public function edit(internshipOffer $internshipOffer)
+    public function edit(Offer $Offer)
     {
         //
     }
@@ -83,10 +85,10 @@ class InternshipOfferController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\School\Internship\internshipOffer  $internshipOffer
+     * @param  \App\Models\School\Internship\Offer  $Offer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, internshipOffer $internshipOffer)
+    public function update(Request $request, Offer $Offer)
     {
         //
     }
@@ -94,10 +96,10 @@ class InternshipOfferController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\School\Internship\internshipOffer  $internshipOffer
+     * @param  \App\Models\School\Internship\Offer  $Offer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(internshipOffer $internshipOffer)
+    public function destroy(Offer $Offer)
     {
         //
     }

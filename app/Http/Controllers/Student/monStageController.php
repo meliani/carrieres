@@ -15,7 +15,7 @@ use Response;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 use App\Models\offreDeStage;
-use App\Models\Application;
+use App\Models\School\Internship\Application;
 use App\User;
 
 
