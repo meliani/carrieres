@@ -22,3 +22,25 @@ class ControllerTemplate extends Controller
         $this->middleware(['Teacher']);
         $this->middleware('auth');
     }
+
+    /** ------ playing with files -------- */
+
+    $file = $request->file('photo');
+    //File Name
+    $file->getClientOriginalName();
+
+    //Display File Extension
+    $file->getClientOriginalExtension();
+
+    //Display File Real Path
+    $file->getRealPath();
+
+    
+    $file->getSize();//Display File Size
+
+    
+    $file->getMimeType(); //Display File Mime Type
+
+    //Move Uploaded File
+    $destinationPath = 'uploads';
+    $file->move($destinationPath,$file->getClientOriginalName());
