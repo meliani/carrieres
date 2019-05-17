@@ -110,8 +110,8 @@ class offreDeStage extends Model
 
     public function applications()
     {
-        return $this->morphToMany('App\Models\Application', 'applyable');
-        //return $this->hasMany('App\Models\Application', 'offre_de_stage_id', 'id');
+        return $this->morphToMany('App\Models\School\Internship\Application', 'applyable');
+        //return $this->hasMany('App\Models\School\Internship\Application', 'offre_de_stage_id', 'id');
 
     }
 /**

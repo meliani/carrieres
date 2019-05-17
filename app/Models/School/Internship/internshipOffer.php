@@ -11,7 +11,7 @@ class internshipOffer extends baseModel
 {
     use SoftDeletes;
 
-
+    //protected $morphClass = 'internshipOffer';
     protected $dates = [
         'created_at',
         'updated_at',
@@ -88,16 +88,18 @@ class internshipOffer extends baseModel
  * Model Relations
  */
 
-	public function users()
+	public function user()
 	{
-		return $this->belongsToMany('App\Models\User');
+		return $this->belongsTo('App\User');
 	}
-
+    public function application()
+    {
+        return $this->hasMany('App\Models\School\Internship\Application', 'offre_de_stage_id', 'id');
+    }
     public function applications()
     {
-        return $this->morphToMany('App\Models\Application', 'applyable');
-        //return $this->hasMany('App\Models\Application', 'offre_de_stage_id', 'id');
-
+        return $this->morphToMany('App\Models\School\Internship\Application', 'applyable');
+        //return $this->hasMany('App\Models\School\Internship\Application', 'offre_de_stage_id', 'id');
     }
 /**
  * Assecors end Mutators
