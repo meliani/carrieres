@@ -44,3 +44,5 @@ class ControllerTemplate extends Controller
     //Move Uploaded File
     $destinationPath = 'uploads';
     $file->move($destinationPath,$file->getClientOriginalName());
+
+    route('route name')
