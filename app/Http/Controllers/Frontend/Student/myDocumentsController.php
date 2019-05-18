@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Student;
+namespace App\Http\Controllers\Frontend\Student;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -22,7 +22,7 @@ class myDocumentsController extends Controller
     public function index(Request $r)
     {
         if(!auth()->user()->people->internship()->exists()){
-            return view('internships.documents.partials.fillforms');
+            return view('frontend.documents.partials.fillforms');
         }else{
         if(isset($r->action)){
         if(in_array('delete',$r->action)){
@@ -36,9 +36,9 @@ class myDocumentsController extends Controller
         }
         if(auth()->user()->people->hasMedia('internship')){
             $documents = auth()->user()->people->getMedia('internship');
-            return view('internships.documents.index', compact('documents'));
+            return view('frontend.documents.index', compact('documents'));
         }
-        else return view('internships.documents.partials.nodocs');
+        else return view('frontend.documents.partials.nodocs');
     }
 
     }

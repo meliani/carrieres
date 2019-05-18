@@ -17,11 +17,11 @@ class renderController extends Controller
     private $file_path;
     public function convention(){
         $pdf = app('snappy.pdf.wrapper');
-        $header = view()->make('internships.documents.pdf.header')->render();
-        $footer = view()->make('internships.documents.pdf.footerINPT')->render();
+        $header = view()->make('frontend.documents.pdf.header')->render();
+        $footer = view()->make('frontend.documents.pdf.footerINPT')->render();
         //return PDF::loadFile('file:///C:/Users/Cosmos/Desktop/projects/newlife/documents/Convention Stage Ouvrier/ConventionStageOuvrier.html')->inline('github.pdf');
-        //$pdf->loadView('internships.documents.pdfConvention')
-        $pdf->loadView('internships.documents.pdf.templates.ine'.auth()->user()->people->ine.'.contenuConvention')
+        //$pdf->loadView('frontend.documents.pdfConvention')
+        $pdf->loadView('frontend.documents.pdf.templates.ine'.auth()->user()->people->ine.'.contenuConvention')
         ->setOption('margin-top', '25mm')
         ->setOption('margin-bottom', '29mm')
         ->setOption('margin-left', '10mm')
@@ -37,11 +37,11 @@ class renderController extends Controller
     }
     public function recommendation_letter(){
         $pdf = app('snappy.pdf.wrapper');
-        $header = view()->make('internships.documents.pdf.header')->render();
-        $footer = view()->make('internships.documents.pdf.footerINPT')->render();
+        $header = view()->make('frontend.documents.pdf.header')->render();
+        $footer = view()->make('frontend.documents.pdf.footerINPT')->render();
         //return PDF::loadFile('file:///C:/Users/Cosmos/Desktop/projects/newlife/documents/Convention Stage Ouvrier/ConventionStageOuvrier.html')->inline('github.pdf');
-        //$pdf->loadView('internships.documents.pdfConvention')
-        $pdf->loadView('internships.documents.pdf.templates.ine'.auth()->user()->people->ine.'.pdfLettreRecommendation')
+        //$pdf->loadView('frontend.documents.pdfConvention')
+        $pdf->loadView('frontend.documents.pdf.templates.ine'.auth()->user()->people->ine.'.pdfLettreRecommendation')
         ->setOption('margin-top', '25mm')
         ->setOption('margin-bottom', '29mm')
         ->setOption('margin-left', '10mm')

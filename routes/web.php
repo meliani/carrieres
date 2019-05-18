@@ -111,18 +111,7 @@ Route::get('rapport', ['as'=> 'reportSubmissions.index', 'uses' => 'reportSubmis
 Route::post('reportSubmissions', ['as'=> 'reportSubmissions.store', 'uses' => 'reportSubmissionController@store']);
 Route::get('reportSubmissions/create', ['as'=> 'reportSubmissions.create', 'uses' => 'reportSubmissionController@create']);
 
-Route::namespace('Student')->group(function () {
-    // Controllers Within The "App\Http\Controllers\Admin" Namespace
-    Route::prefix('student')->group(function () {
-        Route::get('eDocs', 'monStageController@eDocs');
-        Route::get('myDocuments/', 'myDocumentsController@index');
-        Route::get('monStage', ['as'=> 'monStage.index', 'uses' => 'monStageController@index']);
-        Route::get('monStage/{monStage}', ['as'=> 'monStage.show', 'uses' => 'monStageController@show']);
-        Route::get('monStage/postuler/{monStage}', ['as'=> 'monStage.postuler', 'uses' => 'monStageController@postuler']);
-        Route::post('monStage/postuler/{monStage}', ['as'=> 'monStage.postuler', 'uses' => 'monStageController@postuler']);
-        Route::post('monStage/postuler/{monStage}', ['as'=> 'monStage.store', 'uses' => 'monStageController@store']);
-    });
-});
+
 
 Route::namespace('Internship')->group(function () {
     // Controllers Within The "App\Http\Controllers\Admin" Namespace
@@ -137,7 +126,7 @@ Route::resource('Internship/Advising/Stats', 'Internship\StatsController');
 Route::get('Activation', ['as'=> 'people.activate', 'uses' => 'School\PeopleController@activate']);
 Route::resource('Authentic', 'Core\authenticDocumentController');
 Route::get('test', function(){
-    return view('internships.documents.excel.templates.internships');
+    return view('frontend.documents.excel.templates.internships');
     }
 );
 Route::get('test2', function(){
@@ -148,6 +137,11 @@ Route::get('test2', function(){
 
     Route::namespace('Frontend')->group(function () {
         // Controllers Within The "App\Http\Controllers\Frontend" Namespace
+        Route::namespace('Student')->group(function () {
+            Route::prefix('students')->group(function () {
+                Route::get('myDocuments/', 'myDocumentsController@index');
+            });
+        });
         Route::namespace('Internship')->group(function () {
             Route::resource('internships', 'myInternshipController');
         Route::prefix('internships')->group(function () {
