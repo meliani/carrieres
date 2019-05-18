@@ -1,8 +1,15 @@
-
-<div class = "input-field col s6">
-    <i class="material-icons prefix">{{ array_get($params,'icon') }}</i>
+<?php
+$type=array_get($params,'type','text');
+?>
+<div class = "input-field 
+    col 
+    s{{ array_get($params,'cols',6)*2 }}
+    m{{ array_get($params,'cols',6) }}
+    l{{ array_get($params,'cols',6) }}
+    ">
+    <i class="material-icons blue-text prefix">{{ array_get($params,'icon') }}</i>
     {!! Form::label(array_get($params,'name'), array_get($params,'label')) !!}
-    {!! Form::text(array_get($params,'name'), array_get($params,'value'), 
+    {!! Form::$type(array_get($params,'name'), array_get($params,'value'), 
     ['class' => array_get($params,'class'),
      'placeholder' => array_get($params,'placeholder'),
      'value' => array_get($params,'value'),
@@ -13,8 +20,8 @@
     <span class="helper-text" 
     {{ $errors->has(array_get($params,'name')?'data-error='.
     $errors->first(array_get($params,'name')):'') }} 
-    data-success="Parfait !"
-    >{{ array_get($params,'helper') }}
+    data-success="Parfait !">
+    {{ array_get($params,'helper') }}
     </span>
 
 </div>

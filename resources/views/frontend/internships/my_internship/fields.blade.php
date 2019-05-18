@@ -13,70 +13,108 @@
                 'icon' => 'domain',
                 'helper' => 'Nom de l\'entreprise où vous allez passer votre stage',
                 'required' => 'required',
+                'cols' => 6,
+            ], $errors) }}
+            <!-- Adresse Field -->
+            {{ Form::textGroup([
+                'name' => 'adresse',
+                'value' => '',
+                'label' => 'Adresse du stage',
+                'placeholder' => '',
+                'class' => 'materialize-textarea validate',
+                'icon' => 'place',
+                'helper' => 'Adresse de l\'entreprise où vous allez passer votre stage',
+                'required' => 'required',
+                'cols' => 6,
+            ], $errors) }}
+            </div>
+
+        <div class = "row">
+            <!-- Ville Field -->
+            {{ Form::textGroup([
+                'name' => 'ville',
+                'value' => '',
+                'label' => 'Ville',
+                'placeholder' => '',
+                'class' => 'validate',
+                'icon' => 'location_city',
+                'helper' => 'Ville ou se situe l\'entreprise',
+                'required' => 'required',
+                'cols' => 4,
+            ], $errors) }}
+            <!-- Pays Field -->
+            {{ Form::textGroup([
+                'name' => 'pays',
+                'value' => '',
+                'label' => 'Pays',
+                'placeholder' => '',
+                'class' => 'validate',
+                'icon' => 'location_city',
+                'helper' => 'Pays ou se situe l\'entreprise',
+                'required' => 'required',
+                'cols' => 4,
             ], $errors) }}
         </div>
-
         <div class = "row">
-                <!-- Adresse Field -->
-                <div class = "input-field col s12">
-                <i class="material-icons prefix">place</i>
-                {!! Form::label('adresse', 'Adresse du stage') !!}
-                {!! Form::textarea('adresse', null, 
-                ['class' => 'materialize-textarea validate']) !!}
-                </div>
-                {{ Form::textGroup([
-                    'name' => 'adresse',
-                    'value' => '',
-                    'label' => 'Adresse du stage',
-                    'placeholder' => '',
-                    'class' => 'materialize-textarea validate',
-                    'icon' => 'place',
-                    'helper' => 'Adresse de l\'entreprise où vous allez passer votre stage',
-                    'required' => 'required',
-                ], $errors) }}
-            </div>
-
-        <div class = "row">
-
-            <!-- Lieu De Stage Field -->
-            <div class = "input-field col s6">
-                <i class="material-icons prefix">location_city</i>
-                {!! Form::label('ville', 'Ville') !!}
-                {!! Form::text('ville', null,['class' => 'validate','required']) !!}
-            </div>
-
-            <!-- Fonction Field -->
-            <div class = "input-field col s6">
-                {!! Form::label('pays', 'Pays') !!}
-                {!! Form::text('pays', null,['class' => 'validate','required']) !!}
-            </div>
-        </div>
-        <div class = "row">
-                <h4 class="header col s12 light center blue-text text-lighten-1">Informations sur le stage</h4>
-                <div class = "input-field col s12">
-                <!-- Intitule Sujet Field -->
-                <i class = "material-icons prefix">mode_edit</i>
-                    {!! Form::label('intitule', 'Intitule du sujet:') !!}
-                    {!! Form::textarea('intitule', null, ['class' => 'materialize-textarea validate','required']) !!}
-                </div>
-                <div class = "input-field col s12">
-                    <!-- Descriptif Field -->
-                    {!! Form::label('descriptif', 'Descriptif détaillé') !!}
-                    {!! Form::textarea('descriptif', null, ['class' => 'materialize-textarea validate','required']) !!}
-                </div>
-                <div class = "input-field col s12">
-                    <!-- Descriptif Field -->
-                    {!! Form::label('keywords', 'Mots clés') !!}
-                    {!! Form::textarea('keywords', null, ['class' => 'materialize-textarea validate','required']) !!}
-                </div>
-                <div class = "input-field col s6">
-                    <input type="text" name="date_debut" class="datepicker">
-                    <label>Date début</label>
-                </div>
-                <div class = "input-field col s6">
-                    <input type="text" name="date_fin" class="datepicker">
-                    <label>Date fin</label>
-                </div>
+            <h4 class="header col s12 light center blue-text text-lighten-1">Informations sur le stage</h4>
+            {{ Form::textGroup([
+                'name' => 'intitule',
+                'value' => '',
+                'label' => 'Intitule du sujet',
+                'placeholder' => '',
+                'class' => 'materialize-textarea validate',
+                'icon' => 'edit',
+                'helper' => '',
+                'required' => 'required',
+                'cols' => 12,
+                'type' => 'textarea',
+            ], $errors) }}
+            {{ Form::textGroup([
+                'name' => 'descriptif',
+                'value' => '',
+                'label' => 'Descriptif détaillé',
+                'placeholder' => '',
+                'class' => 'materialize-textarea validate',
+                'icon' => 'edit',
+                'helper' => '',
+                'required' => 'required',
+                'cols' => 12,
+                'type' => 'textarea',
+            ], $errors) }}
+            {{ Form::textGroup([
+                'name' => 'keywords',
+                'value' => '',
+                'label' => 'Mots clés',
+                'placeholder' => '',
+                'class' => 'materialize-textarea validate',
+                'icon' => 'edit',
+                'helper' => '',
+                'required' => 'required',
+                'cols' => 12,
+                'type' => 'textarea',
+            ], $errors) }}
+            {{ Form::textGroup([
+                'name' => 'date_debut',
+                'value' => '',
+                'label' => 'Date début',
+                'placeholder' => '',
+                'class' => 'datepicker validate',
+                'icon' => 'date_range',
+                'helper' => 'Date de debut de stage',
+                'required' => 'required',
+                'cols' => 3,
+            ], $errors) }}
+            {{ Form::textGroup([
+                'name' => 'date_fin',
+                'value' => '',
+                'label' => 'Date fin',
+                'placeholder' => '',
+                'class' => 'datepicker validate',
+                'icon' => 'date_range',
+                'helper' => 'Date de fin de stage',
+                'required' => 'required',
+                'cols' => 3,
+            ], $errors) }}
             </div>
         <!-- parrain -------------------------------------------------------------------------->
         <div class = "row">
