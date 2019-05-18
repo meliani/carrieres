@@ -12,7 +12,6 @@
           <th width="25%">Membres du jury</th>            
       </tr>
     </thead>
-
     <tbody>
       @foreach ($trainees as $trainee)
 
@@ -21,15 +20,15 @@
         <td><div class="sub strong">{{ $trainee->name }}</div>
           @if ($trainee['option_text'])
           <span class="new badge blue lighten-3 white-text" 
-          data-badge-caption="{{ ( !empty($trainee['option_text'])? $trainee['option_text']:'' ) }}">
+          data-badge-caption="{{ ( !empty($trainee->option_text)? $trainee->option_text:'' ) }}">
           </span>
           @endif
-          
+          @if (isset($trainee->internship->id))
         </td>
-        <td class="strong">{{ str_limit($trainee->internship['raison_sociale'],30) }}</td>
-        <td class="sub">{{  str_limit($trainee->internship['intitule'], 100) }}</td>
+        <td class="strong">{{ isset($trainee->internship->raison_sociale) ? str_limit($trainee->internship->raison_sociale,30):'' }}</td>
+        <td class="sub">{{  isset($trainee->internship->intitule) ? str_limit($trainee->internship->intitule, 100):'' }}</td>
          {{-- Limit intitulé to 100 characters --}}
-         <td>{{ \Carbon\Carbon::parse($trainee->internship['created_at'])->format('d M Y') }}</td>   
+         <td>{{ isset($trainee->internship->created_at) ? \Carbon\Carbon::parse($trainee->internship['created_at'])->format('d M Y'):'' }}</td>   
          <td class="center">
            @if(isset($trainee->internship->adviser->adviser1))
             {{ $trainee->internship->adviser->adviser1['name']}}
@@ -40,16 +39,23 @@
           </td>
           <td class="center">
           @if(isset($trainee->internship->adviser->adviser2))  
-          <a class="left" href={{ route('Project.create', ['pfe_id' => $trainee->internship['id'],'advisor' => '2' ]) }}><i class="tiny material-icons">edit</i></a>
+          <a class="left" href={{ route('Project.create', ['pfe_id' => $trainee->internship['id'],'advisor' => '2' ]) }}>
+            <i class="tiny material-icons">edit</i></a>
             {{ $trainee->internship->adviser->adviser2['name']}}
           @else
-            <a href={{ route('Project.create', ['pfe_id' => $trainee->internship['id'],'advisor' => '2' ]) }}><i class="tiny material-icons">add</i></a>
+            <a href={{ route('Project.create', ['pfe_id' => $trainee->internship['id'],'advisor' => '2' ]) }}>
+              <i class="tiny material-icons">add</i></a>
           @endif
           </td>
           <td class="multiline">
-          @include('space.internship.advising.jury',$trainee)
+          @include('backend.internship.advising.jury',$trainee)
+          </td>
+          <td>
+          @include('backend.internship.advising.actions',$trainee)
+
           </td>
       </tr>
+      @endif
       @endforeach
     </tbody>
   </table>

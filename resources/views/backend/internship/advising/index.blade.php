@@ -1,8 +1,9 @@
 <?php 
 //$trainees = \App\Models\School\Internship\Internship::where('scholar_year','2018-2019')->with('people')->get();
-$trainees = \App\Models\School\Profile\Student::where('scholar_year','2018-2019')
+$trainees = \App\Models\School\Profile\Student::has('internship')->with('internship')
+->where('scholar_year','2018-2019')
 ->Where('ine','3')
-->with('internship')->latest()->paginate();
+->latest()->paginate();
 //$trainees = \App\Models\School\Internship\Internship::with
 
 //$trainees = $trainees->people();
@@ -25,14 +26,15 @@ $trainees = \App\Models\School\Profile\Student::where('scholar_year','2018-2019'
     </div>
     @endif
 
-    {!! Form::open(['method'=>'GET','url'=>'Internship/Advising/Project','class'=>'navbar-form navbar-left','role'=>'search'])  !!}
+    {!! Form::open(['method'=>'GET','url'=>'Internship/Advising/Project',
+    'class'=>'navbar-form navbar-left','role'=>'search'])  !!}
 
         <div class="input-group custom-search-form">
             <input type="text" class="form-control" name="s" placeholder="Chercher par Etudiant ou par Id...">
         </div>
     {!! Form::close() !!}
 
-    @include('space.internship.advising.list')
+    @include('backend.internship.advising.list')
 
 
     @if($trainees instanceof \Illuminate\Pagination\LengthAwarePaginator )
