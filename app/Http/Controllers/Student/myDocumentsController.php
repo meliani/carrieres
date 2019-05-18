@@ -22,7 +22,7 @@ class myDocumentsController extends Controller
     public function index(Request $r)
     {
         if(!auth()->user()->people->internship()->exists()){
-            return view('edocs.partials.fillforms');
+            return view('internships.documents.partials.fillforms');
         }else{
         if(isset($r->action)){
         if(in_array('delete',$r->action)){
@@ -36,9 +36,9 @@ class myDocumentsController extends Controller
         }
         if(auth()->user()->people->hasMedia('internship')){
             $documents = auth()->user()->people->getMedia('internship');
-            return view('edocs.index', compact('documents'));
+            return view('internships.documents.index', compact('documents'));
         }
-        else return view('edocs.partials.nodocs');
+        else return view('internships.documents.partials.nodocs');
     }
 
     }

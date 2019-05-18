@@ -130,7 +130,7 @@ class monStageController extends Controller
 
     public function eDocs()
     {
-        return view('edocs.index');
+        return view('internships.documents.index');
     }
 }
 

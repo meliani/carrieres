@@ -11,6 +11,6 @@ class InternshipsExport implements FromView
     public function view(): View
     {
         Internship::with('people');
-        return view('edocs.excel.templates.internships');
+        return view('internships.documents.excel.templates.internships');
     }
 }

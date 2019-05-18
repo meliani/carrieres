@@ -1,4 +1,4 @@
-@include('edocs.pdf.templates.document_headers')
+@include('internships.documents.pdf.templates.document_headers')
 <?php
 $internship = auth()->user()->internship;
 ?>
@@ -33,7 +33,7 @@ p {direction: ltr; line-height: 115%; text-align: left; orphans: 2; widows: 2; b
 	line-height: 1.5;
 }
 </style>
-@include('edocs.pdf.templates.document_css')
+@include('internships.documents.pdf.templates.document_css')
 
 </head>
 <body lang="fr-FR" link="#000080" vlink="#800000" dir="ltr">
@@ -196,9 +196,9 @@ d&rsquo;octobre de l&rsquo;ann&eacute;e en cours. </font><br/>
 
 
 <div id="footer" title="footer"><p style="line-height: 100%">
-	@include('edocs.pdf.templates.document_tag_v1')
+	@include('internships.documents.pdf.templates.document_tag_v1')
 
-	@include('edocs.pdf.templates.document_edited_online')
+	@include('internships.documents.pdf.templates.document_edited_online')
 </div>
 </body>
 </html>
