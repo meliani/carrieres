@@ -151,9 +151,9 @@ Route::get('test2', function(){
         Route::namespace('Internship')->group(function () {
             Route::resource('internships', 'myInternshipController');
         Route::prefix('internships')->group(function () {
-            Route::resource('offers', 'InternshipOfferController');
+            Route::resource('offers', 'internshipOfferController');
             Route::prefix('offers')->group(function () {
-                Route::resource('applications', 'InternshipApplicationController');
+                Route::resource('applications', 'internshipApplicationController');
                 }); 
             });
         });

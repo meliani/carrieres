@@ -87,10 +87,10 @@ class internshipApplicationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\School\Internship\InternshipApplication  $InternshipApplication
+     * @param  \App\Models\School\Internship\internshipApplication  $internshipApplication
      * @return \Illuminate\Http\Response
      */
-    public function show(InternshipApplication $InternshipApplication)
+    public function show(internshipApplication $internshipApplication)
     {
         //
     }
@@ -98,10 +98,10 @@ class internshipApplicationController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\School\Internship\InternshipApplication  $InternshipApplication
+     * @param  \App\Models\School\Internship\internshipApplication  $internshipApplication
      * @return \Illuminate\Http\Response
      */
-    public function edit(InternshipApplication $InternshipApplication)
+    public function edit(internshipApplication $internshipApplication)
     {
         //
     }
@@ -110,10 +110,10 @@ class internshipApplicationController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\School\Internship\InternshipApplication  $InternshipApplication
+     * @param  \App\Models\School\Internship\internshipApplication  $internshipApplication
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, InternshipApplication $InternshipApplication)
+    public function update(Request $request, internshipApplication $internshipApplication)
     {
         //
     }
@@ -121,10 +121,10 @@ class internshipApplicationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\School\Internship\InternshipApplication  $InternshipApplication
+     * @param  \App\Models\School\Internship\internshipApplication  $internshipApplication
      * @return \Illuminate\Http\Response
      */
-    public function destroy(InternshipApplication $InternshipApplication)
+    public function destroy(internshipApplication $internshipApplication)
     {
         //
     }

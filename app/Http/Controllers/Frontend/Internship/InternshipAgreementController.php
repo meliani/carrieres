@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Internship;
 use App\Models\School\Intenrship\internshipAgreement;
 use Illuminate\Http\Request;
 
-class InternshipAgreementController extends Controller
+class internshipAgreementController extends Controller
 {
     /**
      * Display a listing of the resource.
