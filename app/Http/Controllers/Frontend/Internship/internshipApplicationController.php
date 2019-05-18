@@ -52,7 +52,7 @@ class internshipApplicationController extends Controller
     public function create()
     {   
         //$id = Route::current()->parameter('id');
-        return view('frontend.internships.internship_offers.applications.create')
+        return view('frontend.internships.offers.applications.create')
         ->with('offre', $this->offer);
     }
 

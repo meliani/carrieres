@@ -14,7 +14,7 @@
 
 
 
-@include('frontend.internships.internship_offers.list')
+@include('frontend.internships.offers.list')
 
 @include('frontend.partials.pagination_wrapper',$paginate=$offres)
 

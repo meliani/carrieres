@@ -32,7 +32,7 @@ class InternshipOfferController extends Controller
     public function index()
     {
         $offres = Offer::published()->valid()->paginate();
-        return view('frontend.internships.internship_offers.index', compact('offres'));
+        return view('frontend.internships.offers.index', compact('offres'));
 
     }
 
@@ -65,7 +65,7 @@ class InternshipOfferController extends Controller
      */
     public function show(Offer $Offer)
     {
-        return view('frontend.internships.internship_offers.show')
+        return view('frontend.internships.offers.show')
         ->with('offre', $Offer);
 
     }
