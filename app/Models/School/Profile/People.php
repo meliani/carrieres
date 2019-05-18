@@ -79,19 +79,6 @@ class People extends Model implements HasMedia
     {
         return $this->hasOne(Student::class,'id','user_id');
     }
-    public static function getProfessors()
-    {
-        $queries = User::select('id','name')->where('is_professor','=',1)->get();
-
-        $results = array();
-        foreach ($queries as $query)
-        {
-            $results[$query->id] = $query->name;
-        }
-
-        return $results;
-    }
-
 
     /** Scopes */
     public function scopeActive($query) {
