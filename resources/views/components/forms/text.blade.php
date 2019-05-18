@@ -14,7 +14,7 @@
     {{ $errors->has(array_get($params,'name')?'data-error='.
     $errors->first(array_get($params,'name')):'') }} 
     data-success="Parfait !"
-    >
+    >{{ array_get($params,'helper') }}
     </span>
 
 </div>

@@ -4,11 +4,16 @@
         <div class = "row">        
             <h4 class="header col s12 light center blue-text text-lighten-1">Entreprise</h4>
             <!-- Raison Sociale Field -->
-            <div class = "input-field col s6">
-                <i class="material-icons prefix">domain</i>
-                {!! Form::label('raison_sociale', 'Raison sociale') !!}
-                {!! Form::text('raison_sociale', null,['class' => 'validate','required']) !!}
-            </div>
+            {{ Form::textGroup([
+                'name' => 'raison_sociale',
+                'value' => '',
+                'label' => 'Raison sociale',
+                'placeholder' => '',
+                'class' => 'validate',
+                'icon' => 'domain',
+                'helper' => 'Nom de l\'entreprise où vous allez passer votre stage',
+                'required' => 'required',
+            ], $errors) }}
         </div>
 
         <div class = "row">
@@ -16,8 +21,19 @@
                 <div class = "input-field col s12">
                 <i class="material-icons prefix">place</i>
                 {!! Form::label('adresse', 'Adresse du stage') !!}
-                {!! Form::textarea('adresse', null, ['class' => 'materialize-textarea validate']) !!}
+                {!! Form::textarea('adresse', null, 
+                ['class' => 'materialize-textarea validate']) !!}
                 </div>
+                {{ Form::textGroup([
+                    'name' => 'adresse',
+                    'value' => '',
+                    'label' => 'Adresse du stage',
+                    'placeholder' => '',
+                    'class' => 'materialize-textarea validate',
+                    'icon' => 'place',
+                    'helper' => 'Adresse de l\'entreprise où vous allez passer votre stage',
+                    'required' => 'required',
+                ], $errors) }}
             </div>
 
         <div class = "row">
