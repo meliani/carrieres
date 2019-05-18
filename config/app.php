@@ -189,6 +189,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\HelperServicerProvider::class,
+        App\Providers\FormGroupServiceProvider::class,
     ],
 
     /*
