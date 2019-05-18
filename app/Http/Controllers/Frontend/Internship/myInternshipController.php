@@ -25,7 +25,7 @@ class myInternshipController extends Controller
      */
     public function create()
     {
-        return view('frontend.internships.internship.create');
+        return view('frontend.internships.my_internship.create');
     }
 
     /**

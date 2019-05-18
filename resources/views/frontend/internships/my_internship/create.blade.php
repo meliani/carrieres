@@ -14,7 +14,7 @@
 
                     {!! Form::open(['action' => 'Frontend\Internship\myInternshipController@store']) !!}
 
-                        @include('frontend.internships.internship.fields')
+                        @include('frontend.internships.my_internship.fields')
 
                     {!! Form::close() !!}
         </div>

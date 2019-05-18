@@ -79,10 +79,10 @@
                     <div class="card-action">
                       @if(isset($offre->applyable))
                         @if($offre->applyable==0) 
-                          <a href="{{ route('offer.show', $offre->id) }}">Voir l'offre</a>
+                          <a href="{{ route('offers.show', $offre->id) }}">Voir l'offre</a>
                         @endif
                         @else
-                          <a href="{{ route('application.create', ['offer'=>$offre->id]) }}">Postuler</a>
+                          <a href="{{ route('applications.create', ['offer'=>$offre->id]) }}">Postuler</a>
                       @endif
                       
                       @role('Admin')

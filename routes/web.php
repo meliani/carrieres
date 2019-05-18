@@ -148,12 +148,12 @@ Route::get('test2', function(){
 
     Route::namespace('Frontend')->group(function () {
         // Controllers Within The "App\Http\Controllers\Frontend" Namespace
-        Route::resource('internship', 'Internship\myInternshipController');
         Route::namespace('Internship')->group(function () {
-        Route::prefix('internship')->group(function () {
-            Route::resource('offer', 'InternshipOfferController');
-            Route::prefix('offer')->group(function () {
-                Route::resource('application', 'InternshipApplicationController');
+            Route::resource('internships', 'myInternshipController');
+        Route::prefix('internships')->group(function () {
+            Route::resource('offers', 'InternshipOfferController');
+            Route::prefix('offers')->group(function () {
+                Route::resource('applications', 'InternshipApplicationController');
                 }); 
             });
         });

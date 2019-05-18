@@ -29,7 +29,7 @@ class internshipApplicationController extends Controller
     {        
         if (!isset($r['offer'])) {
             Flash::error('Offre de stages inexistante');
-            return redirect(route('offer.index'));
+            return redirect(route('offers.index'));
         }
         $this->offer=Offer::valid()->find($r->offer);
 
@@ -52,7 +52,7 @@ class internshipApplicationController extends Controller
     public function create()
     {   
         //$id = Route::current()->parameter('id');
-        return view('frontend.internships.internship_offers.application.create')
+        return view('frontend.internships.internship_offers.applications.create')
         ->with('offre', $this->offer);
     }
 
@@ -81,7 +81,7 @@ class internshipApplicationController extends Controller
         
         Session::flash('message', 'Candidature bien enregistrée!'); 
         Session::flash('alert-class', 'success');
-        return redirect(route('offer.index'));
+        return redirect(route('offers.index'));
     }
 
     /**
