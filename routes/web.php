@@ -132,7 +132,16 @@ Route::get('test', function(){
 Route::get('test2', function(){
     return view('backend.internship.advising.index');
     });
+    Route::get('test3', function(){
+        return view('backend.internship.create');
+        });
 
+
+    Route::namespace('Backend')->group(function () {
+        Route::prefix('students')->group(function () {
+
+        });
+    });
    /** ----------- New nomenclature for routes ------------- */
 
     Route::namespace('Frontend')->group(function () {
@@ -151,5 +160,4 @@ Route::get('test2', function(){
                 }); 
             });
         });
-    }
-);
+    });

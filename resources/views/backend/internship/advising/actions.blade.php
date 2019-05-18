@@ -4,14 +4,10 @@
 
 <!-- Dropdown Structure -->
 <ul id='row_menu' class='dropdown-content'>
-    <li><a href="#!"><i class="material-icons">content_copy</i></a></li>
+    <li><a href="{{ url('test3') }}"><i class="material-icons">content_copy</i></a></li>
     <li><a href="#!"><i class="material-icons">mode_edit</i></a></li>
     <li class="divider" tabindex="-1"></li>
     <li><a href="#!"><i class="material-icons">mode_edit</i>binome</a></li>
     <li class="divider" tabindex="-1"></li>
     <li><a href="#!"><i class="material-icons">delete</i></a></li>
 </ul>
-
-{{ route('Project.create', 
-['pfe_id' => $trainee->internship['id'],
-'advisor' => '2' ]) }}

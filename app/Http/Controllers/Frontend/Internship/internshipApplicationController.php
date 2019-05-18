@@ -25,9 +25,9 @@ class internshipApplicationController extends Controller
 {
 
     protected $offer;
-    public function __construct(Request $r)
-    {        
-        if (!isset($r['offer'])) {
+    public function __construct()
+    {   
+        if (!empty(request('offer'))) {
             Flash::error('Offre de stages inexistante');
             return redirect(route('offers.index'));
         }
