@@ -24,5 +24,6 @@ class FormGroupServiceProvider extends ServiceProvider
     public function boot()
     {
         Form::component('textGroup','components.forms.text', ['params','errors']);
+        Form::component('selectGroup','components.forms.select', ['params','errors']);
     }
 }
