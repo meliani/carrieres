@@ -65,6 +65,27 @@ class Internship extends Model
         'date_debut' => 'date',
         'date_fin' => 'date',
     ];
+    protected static $rules = [
+        'raison_sociale' => 'required|max:191',
+        'intitule' => 'required|max:191',
+        'adresse' => 'required|max:191',
+        'descriptif' => 'required|max:191',
+        'keywords' => 'required|max:191',
+        'date_debut' => 'required|date',
+        'date_fin' => 'required|date',
+        'parrain_titre' => 'required|max:191',
+        'parrain_nom' => 'required|max:191',
+        'parrain_prenom' => 'required|max:191',
+        'parrain_fonction' => 'required|max:191',
+        'parrain_tel' => 'required|max:191',
+        'parrain_mail' => 'required|email',
+        'encadrant_ext_titre' => 'required|max:191',
+        'encadrant_ext_nom' => 'required|max:191',
+        'encadrant_ext_prenom' => 'required|max:191',
+        'encadrant_ext_fonction' => 'required|max:191',
+        'encadrant_ext_tel' => 'required|max:191',
+        'encadrant_ext_mail' => 'required|email',
+    ];
     public function user()
 	{
 		return $this->BelongsTo(User::class,'user_id','id');

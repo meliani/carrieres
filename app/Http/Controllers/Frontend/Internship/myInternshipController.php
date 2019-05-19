@@ -37,32 +37,12 @@ class myInternshipController extends Controller
     public function store(Request $request)
     {   
         //dump($request);
-        $request->validate([
-            'raison_sociale' => 'required|max:191',
-            'intitule' => 'required|max:191',
-            'adresse' => 'required|max:191',
-            'descriptif' => 'required|max:191',
-            'keywords' => 'required|max:191',
-            'date_debut' => 'required|date',
-            'date_fin' => 'required|date',
-            'parrain_titre' => 'required|max:191',
-            'parrain_nom' => 'required|max:191',
-            'parrain_prenom' => 'required|max:191',
-            'parrain_fonction' => 'required|max:191',
-            'parrain_tel' => 'required|max:191',
-            'parrain_mail' => 'required|email',
-            'encadrant_ext_titre' => 'required|max:191',
-            'encadrant_ext_nom' => 'required|max:191',
-            'encadrant_ext_prenom' => 'required|max:191',
-            'encadrant_ext_fonction' => 'required|max:191',
-            'encadrant_ext_tel' => 'required|max:191',
-            'encadrant_ext_mail' => 'required|email',
-        ]);
+
         $input = $request->all();
         //dd($request->user()->id);
         $internship = Internship::create($input);
         //Flash::success('Votre déclaration a été bien enregistrée.');
-        return redirect(route('submit.create'))
+        return back()
         ->with('message', 'Votre déclaration a été bien enregistrée.');
     }
 
