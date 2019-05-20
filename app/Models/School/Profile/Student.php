@@ -4,7 +4,7 @@ namespace App\Models\School\Profile;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\School\Profile\People;
-use App\Models\School\Internship\Internship;
+use App\Models\School\Internship;
 
 class Student extends People
 {

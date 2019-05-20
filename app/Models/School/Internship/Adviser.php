@@ -2,7 +2,7 @@
 
 namespace App\Models\School\Internship;
 
-use App\Models\School\Internship\Internship;
+use App\Models\School\Internship;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 use Illuminate\Database\Eloquent\Model;

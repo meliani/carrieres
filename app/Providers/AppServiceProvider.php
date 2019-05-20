@@ -19,7 +19,7 @@ class AppServiceProvider extends ServiceProvider
         \Carbon\Carbon::setLocale(config('app.locale'));
 
         Relation::morphMap([
-            'internship' => 'App\Models\School\Internship\Internship',
+            'internship' => 'App\Models\School\Internship',
         ]);
     }
 
