@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\School\Internship;
+namespace App\Models\School;
 
 use Illuminate\Database\Eloquent\Model;
 use App\User;
