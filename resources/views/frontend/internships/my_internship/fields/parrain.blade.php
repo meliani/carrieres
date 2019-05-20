@@ -4,9 +4,9 @@ $required = 'required';
 <div class = "row">
 {{ Form::selectGroup([
     'name' => 'parrain_titre',
-    'value' => '',
+    'value' ,
     'label' => 'Civilité du parrain',
-    'placeholder' => '',
+    'placeholder' ,
     'class' => 'validate',
     'icon' => 'nature_people',
     'helper' => 'Civilité du parrain',
@@ -16,9 +16,9 @@ $required = 'required';
 ], $errors) }}
 {{ Form::textGroup([
     'name' => 'parrain_nom',
-    'value' => '',
+    'value' ,
     'label' => 'Nom du parrain',
-    'placeholder' => '',
+    'placeholder' ,
     'class' => 'validate',
     'icon' => 'person_outline',
     'helper' => 'Nom du représentant de l\'entreprise',
@@ -27,9 +27,9 @@ $required = 'required';
 ], $errors) }}
 {{ Form::textGroup([
     'name' => 'parrain_prenom',
-    'value' => '',
+    'value' ,
     'label' => 'Prénom du parrain',
-    'placeholder' => '',
+    'placeholder' ,
     'class' => 'validate',
     'icon' => 'person',
     'helper' => 'Prénom du représentant de l\'entreprise',
@@ -40,9 +40,9 @@ $required = 'required';
 <div class = "row">
     {{ Form::textGroup([
         'name' => 'parrain_fonction',
-        'value' => '',
+        'value' ,
         'label' => 'Fonction du parrain',
-        'placeholder' => '',
+        'placeholder' ,
         'class' => 'validate',
         'icon' => 'work',
         'helper' => 'Fonction du représentant de l\'entreprise',
@@ -51,9 +51,9 @@ $required = 'required';
     ], $errors) }}
 {{ Form::textGroup([
     'name' => 'parrain_tel',
-    'value' => '',
+    'value' ,
     'label' => 'Téléphone du parrain',
-    'placeholder' => '',
+    'placeholder' ,
     'class' => 'validate',
     'icon' => 'phone',
     'helper' => 'Téléphone du représentant de l\'entreprise',
@@ -62,9 +62,9 @@ $required = 'required';
 ], $errors) }}
 {{ Form::textGroup([
     'name' => 'parrain_mail',
-    'value' => '',
+    'value' ,
     'label' => 'Email du parrain',
-    'placeholder' => '',
+    'placeholder' ,
     'class' => 'validate',
     'icon' => 'mail',
     'helper' => 'Email du représentant de l\'entreprise',

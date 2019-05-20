@@ -4,9 +4,9 @@ $required = 'required';
 <div class = "row">
 {{ Form::textGroup([
     'name' => 'raison_sociale',
-    'value' => '',
+    'value' ,
     'label' => 'Raison sociale',
-    'placeholder' => '',
+    'placeholder' ,
     'class' => 'validate',
     'icon' => 'domain',
     'helper' => 'Nom de l\'entreprise où vous allez passer votre stage',
@@ -16,9 +16,9 @@ $required = 'required';
 <!-- Adresse Field -->
 {{ Form::textGroup([
     'name' => 'adresse',
-    'value' => '',
+    'value' ,
     'label' => 'Adresse du stage',
-    'placeholder' => '',
+    'placeholder' ,
     'class' => 'materialize-textarea validate',
     'icon' => 'place',
     'helper' => 'Adresse de l\'entreprise où vous allez passer votre stage',
@@ -29,9 +29,9 @@ $required = 'required';
 <!-- Ville Field -->
 {{ Form::textGroup([
     'name' => 'ville',
-    'value' => '',
+    'value' ,
     'label' => 'Ville',
-    'placeholder' => '',
+    'placeholder' ,
     'class' => 'validate',
     'icon' => 'location_city',
     'helper' => 'Ville ou se situe l\'entreprise',
@@ -41,9 +41,9 @@ $required = 'required';
 <!-- Pays Field -->
 {{ Form::textGroup([
     'name' => 'pays',
-    'value' => '',
+    'value' ,
     'label' => 'Pays',
-    'placeholder' => '',
+    'placeholder' ,
     'class' => 'validate',
     'icon' => 'location_city',
     'helper' => 'Pays ou se situe l\'entreprise',

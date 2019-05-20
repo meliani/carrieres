@@ -4,11 +4,11 @@ $required = 'required';
 <div class = "row">
 {{ Form::selectGroup([
     'name' => 'encadrant_ext_titre',
-    'value' => '',
+    'value' ,
     'label' => 'Civilité de l\'encadrant externe',
-    'placeholder' => '',
+    'placeholder' ,
     'class' => 'validate',
-    'icon' => '',
+    'icon' ,
     'helper' => 'Civilité de l\'encadrant externe',
     'required' => $required,
     'cols' => 3,
@@ -16,22 +16,22 @@ $required = 'required';
 ], $errors) }}
 {{ Form::textGroup([
     'name' => 'encadrant_ext_nom',
-    'value' => '',
+    'value' ,
     'label' => 'Nom de l\'encadrant externe',
-    'placeholder' => '',
+    'placeholder' ,
     'class' => 'validate',
-    'icon' => '',
+    'icon' ,
     'helper' => 'Nom de l\'encadrant externe',
     'required' => $required,
     'cols' => 5,
 ], $errors) }}
 {{ Form::textGroup([
     'name' => 'encadrant_ext_prenom',
-    'value' => '',
+    'value' ,
     'label' => 'Prénom de l\'encadrant externe',
-    'placeholder' => '',
+    'placeholder' ,
     'class' => 'validate',
-    'icon' => '',
+    'icon' ,
     'helper' => 'Prénom de l\'encadrant externe',
     'required' => $required,
     'cols' => 5,
@@ -40,9 +40,9 @@ $required = 'required';
 <div class = "row">
     {{ Form::textGroup([
         'name' => 'encadrant_ext_fonction',
-        'value' => '',
+        'value' ,
         'label' => 'Fonction de l\'encadrant externe',
-        'placeholder' => '',
+        'placeholder' ,
         'class' => 'validate',
         'icon' => 'person',
         'helper' => 'Fonction de l\'encadrant externe',
@@ -51,9 +51,9 @@ $required = 'required';
     ], $errors) }}
 {{ Form::textGroup([
     'name' => 'encadrant_ext_tel',
-    'value' => '',
+    'value' ,
     'label' => 'Téléphone de l\'encadrant externe',
-    'placeholder' => '',
+    'placeholder' ,
     'class' => 'validate',
     'icon' => 'phone',
     'helper' => 'Téléphone de l\'encadrant externe',
@@ -62,9 +62,9 @@ $required = 'required';
 ], $errors) }}
 {{ Form::textGroup([
     'name' => 'encadrant_ext_mail',
-    'value' => '',
+    'value' ,
     'label' => 'Email de l\'encadrant externe',
-    'placeholder' => '',
+    'placeholder' ,
     'class' => 'validate',
     'icon' => 'mail',
     'helper' => 'Email de l\'encadrant externe',

@@ -7,10 +7,12 @@ use App\User;
 use App\Models\School\Internship\Adviser;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\School\Profile\People;
+use Collective\Html\Eloquent\FormAccessible;
 
 
 class Internship extends Model
 {
+    use FormAccessible;     
 
     use SoftDeletes;
 

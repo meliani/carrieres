@@ -4,11 +4,11 @@ $required = '';
 <div class = "row">
 {{ Form::selectGroup([
     'name' => 'co_encadrant_int_titre',
-    'value' => '',
+    'value' ,
     'label' => 'Civilité du co-encadrant interne',
-    'placeholder' => '',
+    'placeholder' ,
     'class' => 'validate',
-    'icon' => '',
+    'icon' ,
     'helper' => 'Civilité du co-encadrant interne',
     'required' => $required,
     'cols' => 3,
@@ -16,55 +16,31 @@ $required = '';
 ], $errors) }}
 {{ Form::textGroup([
     'name' => 'co_encadrant_int_nom',
-    'value' => '',
+    'value' ,
     'label' => 'Nom du co-encadrant interne',
-    'placeholder' => '',
+    'placeholder' ,
     'class' => 'validate',
-    'icon' => '',
+    'icon' ,
     'helper' => 'Nom du co-encadrant interne',
     'required' => $required,
     'cols' => 5,
 ], $errors) }}
 {{ Form::textGroup([
     'name' => 'co_encadrant_int_prenom',
-    'value' => '',
+    'value' ,
     'label' => 'Prénom du co-encadrant interne',
-    'placeholder' => '',
+    'placeholder' ,
     'class' => 'validate',
-    'icon' => '',
+    'icon' ,
     'helper' => 'Prénom du co-encadrant interne',
     'required' => $required,
     'cols' => 5,
 ], $errors) }}
-</div>
-<div class = "row">
-    {{ Form::textGroup([
-        'name' => 'co_encadrant_int_fonction',
-        'value' => '',
-        'label' => 'Fonction du co-encadrant interne',
-        'placeholder' => '',
-        'class' => 'validate',
-        'icon' => 'person',
-        'helper' => 'Fonction du co-encadrant interne',
-        'required' => $required,
-        'cols' => 4,
-    ], $errors) }}
-{{ Form::textGroup([
-    'name' => 'co_encadrant_int_tel',
-    'value' => '',
-    'label' => 'Téléphone du co-encadrant interne',
-    'placeholder' => '',
-    'class' => 'validate',
-    'icon' => 'phone',
-    'helper' => 'Téléphone du co-encadrant interne',
-    'required' => $required,
-    'cols' => 4,
-], $errors) }}
 {{ Form::textGroup([
     'name' => 'co_encadrant_int_mail',
-    'value' => '',
+    'value' ,
     'label' => 'Email du co-encadrant interne',
-    'placeholder' => '',
+    'placeholder' ,
     'class' => 'validate',
     'icon' => 'mail',
     'helper' => 'Email du co-encadrant interne',

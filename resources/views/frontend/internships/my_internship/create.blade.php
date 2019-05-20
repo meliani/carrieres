@@ -11,9 +11,7 @@
             </h3>
         </div>
         @include ('errors.list')
-        {{ Form::model($internship,['route'=>['internships.create']]) }}
-
-                {{ dd($internship) }}
+        {{ Form::model($internship,['route'=>['internships.store']]) }}
             @include('frontend.internships.my_internship.fields')
         
             {!! Form::close() !!}

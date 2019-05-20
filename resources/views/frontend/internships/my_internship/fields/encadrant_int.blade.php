@@ -4,11 +4,11 @@ $required = '';
 <div class = "row">
 {{ Form::selectGroup([
     'name' => 'encadrant_int_titre',
-    'value' => '',
+    'value' ,
     'label' => 'Civilité de l\'encadrant interne',
-    'placeholder' => '',
+    'placeholder' ,
     'class' => 'validate',
-    'icon' => '',
+    'icon' ,
     'helper' => 'Civilité de l\'encadrant interne',
     'required' => $required,
     'cols' => 3,
@@ -16,55 +16,31 @@ $required = '';
 ], $errors) }}
 {{ Form::textGroup([
     'name' => 'encadrant_int_nom',
-    'value' => '',
+    'value' ,
     'label' => 'Nom de l\'encadrant interne',
-    'placeholder' => '',
+    'placeholder' ,
     'class' => 'validate',
-    'icon' => '',
+    'icon' ,
     'helper' => 'Nom de l\'encadrant interne',
     'required' => $required,
     'cols' => 5,
 ], $errors) }}
 {{ Form::textGroup([
     'name' => 'encadrant_int_prenom',
-    'value' => '',
+    'value' ,
     'label' => 'Prénom de l\'encadrant interne',
-    'placeholder' => '',
+    'placeholder' ,
     'class' => 'validate',
-    'icon' => '',
+    'icon' ,
     'helper' => 'Prénom de l\'encadrant interne',
     'required' => $required,
     'cols' => 5,
 ], $errors) }}
-</div>
-<div class = "row">
-    {{ Form::textGroup([
-        'name' => 'encadrant_int_fonction',
-        'value' => '',
-        'label' => 'Fonction de l\'encadrant interne',
-        'placeholder' => '',
-        'class' => 'validate',
-        'icon' => 'person',
-        'helper' => 'Fonction de l\'encadrant interne',
-        'required' => $required,
-        'cols' => 4,
-    ], $errors) }}
-{{ Form::textGroup([
-    'name' => 'encadrant_int_tel',
-    'value' => '',
-    'label' => 'Téléphone de l\'encadrant interne',
-    'placeholder' => '',
-    'class' => 'validate',
-    'icon' => 'phone',
-    'helper' => 'Téléphone de l\'encadrant interne',
-    'required' => $required,
-    'cols' => 4,
-], $errors) }}
 {{ Form::textGroup([
     'name' => 'encadrant_int_mail',
-    'value' => '',
+    'value' ,
     'label' => 'Email de l\'encadrant interne',
-    'placeholder' => '',
+    'placeholder' ,
     'class' => 'validate',
     'icon' => 'mail',
     'helper' => 'Email de l\'encadrant interne',

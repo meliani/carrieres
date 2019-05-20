@@ -17,18 +17,27 @@ class myInternshipController extends Controller
     {
         //
     }
-
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request=null, Internship $internship=null)
+    public function copy()
     {
         if(!is_null(request('id'))){
-        $internship = Internship::find(request('id'))->get();
+        $internship = Internship::find(request('id'));
         return view('frontend.internships.my_internship.create',compact('internship'));
         }
+    }
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        $internship ='';
+        return view('frontend.internships.my_internship.create',compact('internship'));
     }
 
     /**
@@ -43,7 +52,9 @@ class myInternshipController extends Controller
 
         $input = $request->all();
         //dd($request->user()->id);
-        $internship = Internship::create($input);
+        $internship = new Internship($input);
+        $internship->user()->associate(auth()->user()->id);
+        $internship->save();
         //Flash::success('Votre déclaration a été bien enregistrée.');
         return back()
         ->with('message', 'Votre déclaration a été bien enregistrée.');
