@@ -10,13 +10,13 @@
                 Déclaration de stage
             </h3>
         </div>
-        @include ('errors.list') {{-- Including error file --}}
+        @include ('errors.list')
+        {{ Form::model($internship,['route'=>['internships.create']]) }}
 
-                    {!! Form::open(['action' => 'Frontend\Internship\myInternshipController@store']) !!}
-
-                        @include('frontend.internships.my_internship.fields')
-
-                    {!! Form::close() !!}
+                {{ dd($internship) }}
+            @include('frontend.internships.my_internship.fields')
+        
+            {!! Form::close() !!}
         </div>
     </div>
 </div>

@@ -1,5 +1,5 @@
 <?php 
-//$trainees = \App\Models\School\Internship\Internship::where('scholar_year','2018-2019')->with('people')->get();
+//$trainees = \App\Models\School\Internship::where('scholar_year','2018-2019')->with('people')->get();
 $trainees = \App\Models\School\Profile\People::where('scholar_year','2018-2019')
 ->Where('ine','3')
 ->with('internship')->get();

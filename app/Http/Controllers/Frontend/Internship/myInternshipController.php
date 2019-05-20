@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Frontend\Internship;
 
 use App\Http\Controllers\Controller;
-use App\Models\School\Internship\Internship;
+use App\Models\School\Internship;
 use Illuminate\Http\Request;
 
 class myInternshipController extends Controller
@@ -23,9 +23,12 @@ class myInternshipController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request=null, Internship $internship=null)
     {
-        return view('frontend.internships.my_internship.create');
+        if(!is_null(request('id'))){
+        $internship = Internship::find(request('id'))->get();
+        return view('frontend.internships.my_internship.create',compact('internship'));
+        }
     }
 
     /**

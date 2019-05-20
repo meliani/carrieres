@@ -1,10 +1,10 @@
 <?php 
-//$trainees = \App\Models\School\Internship\Internship::where('scholar_year','2018-2019')->with('people')->get();
+//$trainees = \App\Models\School\Internship::where('scholar_year','2018-2019')->with('people')->get();
 $trainees = \App\Models\School\Profile\Student::has('internship')->with('internship')
 ->where('scholar_year','2018-2019')
 ->Where('ine','3')
 ->latest()->paginate();
-//$trainees = \App\Models\School\Internship\Internship::with
+//$trainees = \App\Models\School\Internship::with
 
 //$trainees = $trainees->people();
 ?>
