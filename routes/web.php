@@ -150,7 +150,7 @@ Route::get('test2', function(){
             });
         });
         Route::namespace('Internship')->group(function () {
-            Route::get('internships/duplicate/{id}', 'myInternshipController@copy');
+            Route::get('internships/clone/{id}', 'myInternshipController@clone');
             Route::resource('internships', 'myInternshipController');
         Route::prefix('internships')->group(function () {
             Route::resource('binomes', 'BinomeController');

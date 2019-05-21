@@ -22,7 +22,7 @@ class myInternshipController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function copy()
+    public function clone()
     {
         if(!is_null(request('id'))){
         $internship = Internship::find(request('id'));
