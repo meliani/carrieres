@@ -7,7 +7,7 @@ use App\Http\Requests\Admin;
 use App\Http\Requests\Admin\CreatereportSubmissionRequest;
 use App\Http\Requests\Admin\UpdatereportSubmissionRequest;
 use App\Repositories\Admin\reportSubmissionRepository;
-use Flash;
+
 use App\Http\Controllers\AppBaseController;
 use Response;
 
@@ -60,7 +60,7 @@ class reportSubmissionController extends AppBaseController
                 //$path = Storage::disk('uploads')->put('', $doc);
                 $input['doc_rapport'] = 'storage/'.$path;
             }elseif($doc->getError()!='UPLOADERROK')
-            Flash::error($doc->getErrorMessage());
+            flash()->error($doc->getErrorMessage());
         }
         if($request->hasFile('doc_fiche_evaluation'))
         {
@@ -71,7 +71,7 @@ class reportSubmissionController extends AppBaseController
                 //$path = Storage::disk('uploads')->put('', $doc);
                 $input['doc_fiche_evaluation'] = 'storage/'.$path;
             }elseif($doc->getError()!='UPLOADERROK')
-            Flash::error($doc->getErrorMessage());
+            flash()->error($doc->getErrorMessage());
         }
         if($request->hasFile('doc_convention'))
         {
@@ -82,7 +82,7 @@ class reportSubmissionController extends AppBaseController
                 //$path = Storage::disk('uploads')->put('', $doc);
                 $input['doc_convention'] = 'storage/'.$path;
             }elseif($doc->getError()!='UPLOADERROK')
-            Flash::error($doc->getErrorMessage());
+            flash()->error($doc->getErrorMessage());
         }
         if($request->hasFile('doc_attestation'))
         {
@@ -93,13 +93,13 @@ class reportSubmissionController extends AppBaseController
                 //$path = Storage::disk('uploads')->put('', $doc);
                 $input['doc_attestation'] = 'storage/'.$path;
             }elseif($doc->getError()!='UPLOADERROK')
-            Flash::error($doc->getErrorMessage());
+            flash()->error($doc->getErrorMessage());
         }
         $input = $request->all();
 
         $reportSubmission = $this->reportSubmissionRepository->create($input);
 
-        Flash::success('Report Submission saved successfully.');
+        flash()->success('Report Submission saved successfully.');
 
         return redirect(route('admin.reportSubmissions.index'));
     }
@@ -116,7 +116,7 @@ class reportSubmissionController extends AppBaseController
         $reportSubmission = $this->reportSubmissionRepository->findWithoutFail($id);
 
         if (empty($reportSubmission)) {
-            Flash::error('Report Submission not found');
+            flash()->error('Report Submission not found');
 
             return redirect(route('admin.reportSubmissions.index'));
         }
@@ -136,7 +136,7 @@ class reportSubmissionController extends AppBaseController
         $reportSubmission = $this->reportSubmissionRepository->findWithoutFail($id);
 
         if (empty($reportSubmission)) {
-            Flash::error('Report Submission not found');
+            flash()->error('Report Submission not found');
 
             return redirect(route('admin.reportSubmissions.index'));
         }
@@ -157,14 +157,14 @@ class reportSubmissionController extends AppBaseController
         $reportSubmission = $this->reportSubmissionRepository->findWithoutFail($id);
 
         if (empty($reportSubmission)) {
-            Flash::error('Report Submission not found');
+            flash()->error('Report Submission not found');
 
             return redirect(route('admin.reportSubmissions.index'));
         }
 
         $reportSubmission = $this->reportSubmissionRepository->update($request->all(), $id);
 
-        Flash::success('Report Submission updated successfully.');
+        flash()->success('Report Submission updated successfully.');
 
         return redirect(route('admin.reportSubmissions.index'));
     }
@@ -181,14 +181,14 @@ class reportSubmissionController extends AppBaseController
         $reportSubmission = $this->reportSubmissionRepository->findWithoutFail($id);
 
         if (empty($reportSubmission)) {
-            Flash::error('Report Submission not found');
+            flash()->error('Report Submission not found');
 
             return redirect(route('admin.reportSubmissions.index'));
         }
 
         $this->reportSubmissionRepository->delete($id);
 
-        Flash::success('Report Submission deleted successfully.');
+        flash()->success('Report Submission deleted successfully.');
 
         return redirect(route('admin.reportSubmissions.index'));
     }

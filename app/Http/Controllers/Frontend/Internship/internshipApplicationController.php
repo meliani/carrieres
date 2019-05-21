@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Frontend\Internship;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Flash;
+
 use Session;
 
 use App\Http\Controllers\Core\Documents\UploaderController as Uploader;
@@ -28,7 +28,7 @@ class internshipApplicationController extends Controller
     public function __construct()
     {   
         if (!empty(request('offer'))) {
-            Flash::error('Offre de stages inexistante');
+            flash()->error('Offre de stages inexistante');
             return redirect(route('offers.index'));
         }
         $this->offer=Offer::valid()->find($r->offer);

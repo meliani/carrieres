@@ -127,7 +127,7 @@ class PeopleController extends Controller
             //$path = Storage::disk('uploads')->put('', $doc);
             $path = 'storage/'.$path;
         }elseif($file->getError()!='UPLOADERROK')
-        Flash::error($file->getErrorMessage());
+        flash()->error($file->getErrorMessage());
         return back();
         }
     }

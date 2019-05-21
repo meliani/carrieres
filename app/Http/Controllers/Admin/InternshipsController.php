@@ -7,7 +7,7 @@ use App\Http\Requests\Admin;
 use App\Http\Requests\Admin\CreateInternshipsRequest;
 use App\Http\Requests\Admin\UpdateInternshipsRequest;
 use App\Repositories\Admin\InternshipsRepository;
-use Flash;
+
 use App\Http\Controllers\AppBaseController;
 use Response;
 
@@ -56,7 +56,7 @@ class InternshipsController extends AppBaseController
 
         $internships = $this->internshipsRepository->create($input);
 
-        Flash::success('Internships saved successfully.');
+        flash()->success('Internships saved successfully.');
 
         return redirect(route('admin.internships.index'));
     }
@@ -73,7 +73,7 @@ class InternshipsController extends AppBaseController
         $internships = $this->internshipsRepository->findWithoutFail($id);
 
         if (empty($internships)) {
-            Flash::error('Internships not found');
+            flash()->error('Internships not found');
 
             return redirect(route('admin.internships.index'));
         }
@@ -93,7 +93,7 @@ class InternshipsController extends AppBaseController
         $internships = $this->internshipsRepository->findWithoutFail($id);
 
         if (empty($internships)) {
-            Flash::error('Internships not found');
+            flash()->error('Internships not found');
 
             return redirect(route('admin.internships.index'));
         }
@@ -114,14 +114,14 @@ class InternshipsController extends AppBaseController
         $internships = $this->internshipsRepository->findWithoutFail($id);
 
         if (empty($internships)) {
-            Flash::error('Internships not found');
+            flash()->error('Internships not found');
 
             return redirect(route('admin.internships.index'));
         }
 
         $internships = $this->internshipsRepository->update($request->all(), $id);
 
-        Flash::success('Internships updated successfully.');
+        flash()->success('Internships updated successfully.');
 
         return redirect(route('admin.internships.index'));
     }
@@ -138,14 +138,14 @@ class InternshipsController extends AppBaseController
         $internships = $this->internshipsRepository->findWithoutFail($id);
 
         if (empty($internships)) {
-            Flash::error('Internships not found');
+            flash()->error('Internships not found');
 
             return redirect(route('admin.internships.index'));
         }
 
         $this->internshipsRepository->delete($id);
 
-        Flash::success('Internships deleted successfully.');
+        flash()->success('Internships deleted successfully.');
 
         return redirect(route('admin.internships.index'));
     }

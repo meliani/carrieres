@@ -7,7 +7,7 @@ use App\Http\Requests\Admin;
 use App\Http\Requests\Admin\CreateoffresDeStagesRequest;
 use App\Http\Requests\Admin\UpdateoffresDeStagesRequest;
 use App\Repositories\Admin\offresDeStagesRepository;
-use Flash;
+
 use App\Http\Controllers\AppBaseController;
 use Response;
 use Carbon\Carbon;
@@ -64,12 +64,12 @@ class offresDeStagesController extends AppBaseController
                 //$path = Storage::disk('uploads')->put('', $doc);
                 $input['document_offre'] = basename($path);
             }elseif($doc->getError()!='UPLOADERROK')
-            Flash::error($doc->getErrorMessage());
+            flash()->error($doc->getErrorMessage());
         }
 
         $offresDeStages = $this->offresDeStagesRepository->create($input);
 
-        Flash::success('Offres De Stages saved successfully.');
+        flash()->success('Offres De Stages saved successfully.');
 
         return redirect(route('admin.offresDeStages.index'));
     }
@@ -86,7 +86,7 @@ class offresDeStagesController extends AppBaseController
         $offresDeStages = $this->offresDeStagesRepository->findWithoutFail($id);
 
         if (empty($offresDeStages)) {
-            Flash::error('Offres De Stages not found');
+            flash()->error('Offres De Stages not found');
 
             return redirect(route('admin.offresDeStages.index'));
         }
@@ -106,7 +106,7 @@ class offresDeStagesController extends AppBaseController
         $offresDeStages = $this->offresDeStagesRepository->findWithoutFail($id);
 
         if (empty($offresDeStages)) {
-            Flash::error('Offres De Stages not found');
+            flash()->error('Offres De Stages not found');
 
             return redirect(route('admin.offresDeStages.index'));
         }
@@ -127,7 +127,7 @@ class offresDeStagesController extends AppBaseController
         $offresDeStages = $this->offresDeStagesRepository->findWithoutFail($id);
 
         if (empty($offresDeStages)) {
-            Flash::error('Offres De Stages non trouvée');
+            flash()->error('Offres De Stages non trouvée');
 
             return redirect(route('admin.offresDeStages.index'));
         }
@@ -144,7 +144,7 @@ class offresDeStagesController extends AppBaseController
                 $offresDeStages->document_offre = basename($path);
                 //dd($request->document_offre);
             }elseif($doc->getError()!='UPLOADERROK')
-            Flash::error($doc->getErrorMessage());
+            flash()->error($doc->getErrorMessage());
         }
         
 //dd($request);
@@ -152,7 +152,7 @@ class offresDeStagesController extends AppBaseController
 
         $offresDeStages->save();
 
-        Flash::success('Offres De Stages updated successfully.');
+        flash()->success('Offres De Stages updated successfully.');
 
         return redirect(route('admin.offresDeStages.index'));
     }
@@ -169,14 +169,14 @@ class offresDeStagesController extends AppBaseController
         $offresDeStages = $this->offresDeStagesRepository->findWithoutFail($id);
 
         if (empty($offresDeStages)) {
-            Flash::error('Offres De Stages not found');
+            flash()->error('Offres De Stages not found');
 
             return redirect(route('admin.offresDeStages.index'));
         }
 
         $this->offresDeStagesRepository->delete($id);
 
-        Flash::success('Offres De Stages deleted successfully.');
+        flash()->success('Offres De Stages deleted successfully.');
 
         return redirect(route('admin.offresDeStages.index'));
     }
@@ -187,14 +187,14 @@ class offresDeStagesController extends AppBaseController
         $offresDeStages = $this->offresDeStagesRepository->findWithoutFail($id);
     
         if (empty($offresDeStages)) {
-            Flash::error('Offres De Stages not found');
+            flash()->error('Offres De Stages not found');
     
             return redirect(route('admin.offresDeStages.index'));
         }
         $offresDeStages->is_valid = 1;
         //$offresDeStages = $this->offresDeStagesRepository->update($request->all(), $id);
         $offresDeStages->save();
-        Flash::success('Offres De Stages updated successfully.');
+        flash()->success('Offres De Stages updated successfully.');
     
         return redirect(route('admin.offresDeStages.index'));
     }

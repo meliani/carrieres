@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\School\Internship\Application;
 use App\Models\offreDeStage;
 use App\Http\Requests\Admin;
-use Flash;
+
 use App\Http\Controllers\Controller;
 use Response;
 use Carbon\Carbon;
@@ -64,7 +64,7 @@ class applicationsController extends Controller
         $offresDeStages = $this->offresDeStagesRepository->findWithoutFail($id);
 
         if (empty($offresDeStages)) {
-            Flash::error('Offres De Stages not found');
+            flash()->error('Offres De Stages not found');
 
             return redirect(route('admin.offresDeStages.index'));
         }

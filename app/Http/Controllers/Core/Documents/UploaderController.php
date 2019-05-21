@@ -24,7 +24,7 @@ class UploaderController extends Controller
                 $this->upload_path= 'storage/'.$path;
                 $request->$var_name = 'storage/'.$path;
             }elseif($file->getError()!='UPLOADERROK')
-            Flash::error($file->getErrorMessage());
+            flash()->error($file->getErrorMessage());
             Session::flash('message', 'error uploading files'); 
             Session::flash('alert-class', 'error');
             return back();

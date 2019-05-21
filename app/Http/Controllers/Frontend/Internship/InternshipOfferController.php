@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Frontend\Internship;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use Flash;
+
 use Session;
 
 use Prettus\Repository\Criteria\RequestCriteria;

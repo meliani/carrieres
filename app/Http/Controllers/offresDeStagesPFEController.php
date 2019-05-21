@@ -7,7 +7,7 @@ use App\Http\Requests\UpdateoffresDeStagesRequest;
 use App\Repositories\offresDeStagesRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
-use Flash;
+
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use Carbon\Carbon;
@@ -68,12 +68,12 @@ class offresDeStagesPFEController extends AppBaseController
                 //$path = Storage::disk('uploads')->put('', $doc);
                 $input['document_offre'] = 'storage/'.$path;
             }elseif($doc->getError()!='UPLOADERROK')
-            Flash::error($doc->getErrorMessage());
+            flash()->error($doc->getErrorMessage());
         }
 
         $offresStages = $this->offresDeStagesRepository->create($input);
 
-        Flash::success('Offre de stage bien enregistrée.');
+        flash()->success('Offre de stage bien enregistrée.');
 
         return redirect(route('offresDeStages.thanks'))->with('message', 'Votre proposition a été bien enregistrée');
     }
@@ -90,7 +90,7 @@ class offresDeStagesPFEController extends AppBaseController
         $offresStages = $this->offresDeStagesRepository->findWithoutFail($id);
 
         if (empty($offresStages)) {
-            Flash::error('Offres Stages not found');
+            flash()->error('Offres Stages not found');
 
             return redirect(route('offresDeStages.index'));
         }
@@ -110,7 +110,7 @@ class offresDeStagesPFEController extends AppBaseController
         $offresStages = $this->offresDeStagesRepository->findWithoutFail($id);
 
         if (empty($offresStages)) {
-            Flash::error('Offres Stages not found');
+            flash()->error('Offres Stages not found');
 
             return redirect(route('offresDeStages.index'));
         }
@@ -131,14 +131,14 @@ class offresDeStagesPFEController extends AppBaseController
         $offresStages = $this->offresDeStagesRepository->findWithoutFail($id);
 
         if (empty($offresStages)) {
-            Flash::error('Offres Stages not found');
+            flash()->error('Offres Stages not found');
 
             return redirect(route('offresDeStages.index'));
         }
 
         $offresStages = $this->offresDeStagesRepository->update($request->all(), $id);
 
-        Flash::success('Offres Stages updated successfully.');
+        flash()->success('Offres Stages updated successfully.');
 
         return redirect(route('offresDeStages.index'));
     }
@@ -155,14 +155,14 @@ class offresDeStagesPFEController extends AppBaseController
         $offresStages = $this->offresDeStagesRepository->findWithoutFail($id);
 
         if (empty($offresStages)) {
-            Flash::error('Offres Stages not found');
+            flash()->error('Offres Stages not found');
 
             return redirect(route('offresDeStages.index'));
         }
 
         $this->offresDeStagesRepository->delete($id);
 
-        Flash::success('Offres Stages deleted successfully.');
+        flash()->success('Offres Stages deleted successfully.');
 
         return redirect(route('offresDeStages.index'));
     }

@@ -7,7 +7,7 @@ use App\Models\School\Internship;
 use Illuminate\Http\Request;
 use App\Models\School\Profile\Student;
 use App\Models\School\Profile\People;
-use Flash;
+
 class BinomeController extends Controller
 {
     /**
@@ -47,7 +47,7 @@ class BinomeController extends Controller
         $internship->binome()->associate(request('binome_user_id'));
         $internship->binomes()->associate(request('binome_user_id'));
         $internship->save();
-        Flash::success('Votre déclaration a été bien enregistrée.');
+        flash()->success('Votre déclaration a été bien enregistrée.');
         return back();
     }
 

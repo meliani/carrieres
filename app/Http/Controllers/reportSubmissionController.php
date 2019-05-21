@@ -7,7 +7,7 @@ use App\Http\Requests\Admin;
 use App\Http\Requests\Admin\CreatereportSubmissionRequest;
 use App\Http\Requests\Admin\UpdatereportSubmissionRequest;
 use App\Repositories\Admin\reportSubmissionRepository;
-use Flash;
+
 use App\Http\Controllers\AppBaseController;
 use Response;
 use Carbon\Carbon;
@@ -63,7 +63,7 @@ class reportSubmissionController extends AppBaseController
                 $path = $doc->storeAs('uploads/Stages/'.$input['type_stage'].'/remise/'.Carbon::now()->format('Y').'/rapports',$input['nom'].' '.$input['prenom'].' - '.Carbon::now()->format('d-M h.i').'.'.$doc->getClientOriginalExtension(),'public');      
                 $input['doc_rapport'] = 'storage/'.$path;
             }elseif($doc->getError()!='UPLOADERROK')
-            Flash::error($doc->getErrorMessage());
+            flash()->error($doc->getErrorMessage());
         }
         if($request->hasFile('doc_fiche_evaluation'))
         {
@@ -73,7 +73,7 @@ class reportSubmissionController extends AppBaseController
                 $path = $doc->storeAs('uploads/Stages/'.$input['type_stage'].'/remise/'.Carbon::now()->format('Y').'/fiche_evaluation',$input['nom'].' '.$input['prenom'].' - '.Carbon::now()->format('d-M h.i').'.'.$doc->getClientOriginalExtension(),'public');      
                 $input['doc_fiche_evaluation'] = 'storage/'.$path;
             }elseif($doc->getError()!='UPLOADERROK')
-            Flash::error($doc->getErrorMessage());
+            flash()->error($doc->getErrorMessage());
         }
         if($request->hasFile('doc_convention'))
         {
@@ -83,7 +83,7 @@ class reportSubmissionController extends AppBaseController
                 $path = $doc->storeAs('uploads/Stages/'.$input['type_stage'].'/remise/'.Carbon::now()->format('Y').'/conventions',$input['nom'].' '.$input['prenom'].' - '.Carbon::now()->format('d-M h.i').'.'.$doc->getClientOriginalExtension(),'public');      
                 $input['doc_convention'] = 'storage/'.$path;
             }elseif($doc->getError()!='UPLOADERROK')
-            Flash::error($doc->getErrorMessage());
+            flash()->error($doc->getErrorMessage());
         }
         if($request->hasFile('doc_attestation'))
         {
@@ -93,13 +93,13 @@ class reportSubmissionController extends AppBaseController
                 $path = $doc->storeAs('uploads/Stages/remise/'.$input['type_stage'].'/'.Carbon::now()->format('Y').'/attestations',$input['nom'].' '.$input['prenom'].' - '.Carbon::now()->format('d-M h.i').'.'.$doc->getClientOriginalExtension(),'public');      
                 $input['doc_attestation'] = 'storage/'.$path;
             }elseif($doc->getError()!='UPLOADERROK')
-            Flash::error($doc->getErrorMessage());
+            flash()->error($doc->getErrorMessage());
         }
 
         
         $reportSubmission = $this->reportSubmissionRepository->create($input);
 
-        Flash::success('Report Submission saved successfully.');
+        flash()->success('Report Submission saved successfully.');
 
         return redirect(route('reportSubmissions.create'))->with('message', 'Documents bien soumis.');
     }

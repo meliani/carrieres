@@ -55,7 +55,7 @@ class myInternshipController extends Controller
         $internship = new Internship($input);
         $internship->user()->associate(auth()->user()->id);
         $internship->save();
-        //Flash::success('Votre déclaration a été bien enregistrée.');
+        //flash()->success('Votre déclaration a été bien enregistrée.');
         return back()
         ->with('message', 'Votre déclaration a été bien enregistrée.');
     }
