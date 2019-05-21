@@ -2,13 +2,13 @@
 
 namespace App\Http\Controllers\Frontend\Internship;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Frontend\BaseController;
 use App\Models\School\Internship;
 use Illuminate\Http\Request;
 use App\Models\School\Profile\Student;
 use App\Models\School\Profile\People;
 
-class BinomeController extends Controller
+class BinomeController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -45,7 +45,7 @@ class BinomeController extends Controller
         $internship = Internship::where('user_id', '=', auth()->user()->id)
         ->firstOrFail();
         $internship->binome()->associate(request('binome_user_id'));
-        $internship->binomes()->associate(request('binome_user_id'));
+        $internship->groupes()->attach(request('binome_user_id'));
         $internship->save();
         flash()->success('Votre déclaration a été bien enregistrée.');
         return back();

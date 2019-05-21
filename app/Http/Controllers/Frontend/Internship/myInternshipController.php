@@ -54,6 +54,7 @@ class myInternshipController extends Controller
         //dd($request->user()->id);
         $internship = new Internship($input);
         $internship->user()->associate(auth()->user()->id);
+        $internship->groupes()->attach(request('binome_user_id'));
         $internship->save();
         //flash()->success('Votre déclaration a été bien enregistrée.');
         return back()
