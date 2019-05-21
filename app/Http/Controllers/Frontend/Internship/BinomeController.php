@@ -7,7 +7,7 @@ use App\Models\School\Internship;
 use Illuminate\Http\Request;
 use App\Models\School\Profile\Student;
 use App\Models\School\Profile\People;
-
+use Flash;
 class BinomeController extends Controller
 {
     /**
@@ -27,7 +27,8 @@ class BinomeController extends Controller
      */
     public function create()
     {
-        $students = Student::where('ine','=',auth()->user()->people->ine)->active()
+        $students = Student::where('ine','=',auth()->user()->people->ine)
+        ->active()
         ->get(['id','fname','lname'])
         ->pluck('name','id')->all();
         return view('frontend.internships.my_internship.binome.create',compact('students'));
@@ -41,15 +42,13 @@ class BinomeController extends Controller
      */
     public function store(Request $request)
     {   
-        //dump($request);
-
         $internship = Internship::where('user_id', '=', auth()->user()->id)
         ->firstOrFail();
         $internship->binome()->associate(request('binome_user_id'));
+        $internship->binomes()->associate(request('binome_user_id'));
         $internship->save();
-        //Flash::success('Votre déclaration a été bien enregistrée.');
-        return back()
-        ->with('message', 'Votre déclaration a été bien enregistrée.');
+        Flash::success('Votre déclaration a été bien enregistrée.');
+        return back();
     }
 
     /**

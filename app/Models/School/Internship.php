@@ -90,11 +90,15 @@ class Internship extends Model
     ];
     public function binome()
     {
-        return $this->BelongsTo(User::class,'binome_user_id','id');
+        return $this->belongsTo(People::class,'binome_user_id','user_id');
+    }
+    public function binomes()
+    {
+        return $this->belongsToMany(People::class,'binome_user_id','user_id');
     }
     public function user()
 	{
-		return $this->BelongsTo(User::class,'user_id','id');
+		return $this->belongsTo(User::class,'user_id','id');
     }
     public function adviser()
     {
@@ -102,7 +106,7 @@ class Internship extends Model
     }
     public function people()
     {
-        return $this->BelongsTo(People::class,'user_id','user_id');
+        return $this->belongsTo(People::class,'user_id','user_id');
     }
 
     public function getParrainNameAttribute()
