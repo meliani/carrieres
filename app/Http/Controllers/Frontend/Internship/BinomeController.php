@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend\Internship;
 use App\Http\Controllers\Controller;
 use App\Models\School\Internship;
 use Illuminate\Http\Request;
+use App\Models\School\Profile\Student;
 
 class BinomeController extends Controller
 {
@@ -25,8 +26,9 @@ class BinomeController extends Controller
      */
     public function create()
     {
-        $internship = Internship::find(request('id'));
-        $internship ='';
+        $students = Student::active()
+        ->get(['id','name'])
+        ->pluck('name','id')->all();
         return view('frontend.internships.my_internship.binome.create',compact('internship'));
     }
 

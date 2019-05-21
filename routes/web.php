@@ -132,9 +132,7 @@ Route::get('test', function(){
 Route::get('test2', function(){
     return view('backend.internship.advising.index');
     });
-    Route::get('test3', function(){
-        return view('backend.internship.create');
-        });
+
 
 
     Route::namespace('Backend')->group(function () {
@@ -155,6 +153,7 @@ Route::get('test2', function(){
             Route::get('internships/duplicate/{id}', 'myInternshipController@copy');
             Route::resource('internships', 'myInternshipController');
         Route::prefix('internships')->group(function () {
+            Route::resource('binomes', 'BinomeController');
             Route::resource('offers', 'internshipOfferController');
             Route::prefix('offers')->group(function () {
                 Route::resource('applications', 'internshipApplicationController');
