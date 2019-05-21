@@ -64,7 +64,7 @@ class People extends Model implements HasMedia
     }
     public function user()
 	{
-		return $this->BelongsTo(User::class,'id','user_id');
+		return $this->belongsTo(User::class,'id','user_id');
     }
 
     public function internship()

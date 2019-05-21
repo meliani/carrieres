@@ -25,10 +25,10 @@ class Professor extends Model
     // ******************** LOVE RELATIONSHIPS ************************ //
     public function user()
 	{
-		return $this->BelongsTo(User::class,'id','id');
+		return $this->belongsTo(User::class,'id','id');
     }
     public function people()
 	{
-		return $this->BelongsTo(People::class,'user_id','id');
+		return $this->belongsTo(People::class,'user_id','id');
     }   
 }

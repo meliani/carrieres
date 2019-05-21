@@ -69,11 +69,11 @@ class Application extends Model
     }
     public function user()
     {
-        return $this->BelongsTo('App\User');
+        return $this->belongsTo('App\User');
     }
     public function offer()
     {
-        return $this->BelongsTo('App\Models\School\Internship\internshipOffer','offre_de_stage_id','id');
+        return $this->belongsTo('App\Models\School\Internship\internshipOffer','offre_de_stage_id','id');
     }
 
 }

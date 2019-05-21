@@ -35,30 +35,30 @@ class Adviser extends Model
     ];
     public function user()
 	{
-		return $this->BelongsTo(User::class);
+		return $this->belongsTo(User::class);
     }
     public function adviser1()
 	{
-		return $this->BelongsTo(User::class,'id_prof');
+		return $this->belongsTo(User::class,'id_prof');
     }
     public function adviser2()
 	{
-		return $this->BelongsTo(User::class,'id_encad2');
+		return $this->belongsTo(User::class,'id_encad2');
     }
     public function exami1()
 	{
-		return $this->BelongsTo(User::class,'id_exami1');
+		return $this->belongsTo(User::class,'id_exami1');
     }
     public function exami2()
 	{
-		return $this->BelongsTo(User::class,'id_exami2');
+		return $this->belongsTo(User::class,'id_exami2');
     }
     public function exami3()
 	{
-		return $this->BelongsTo(User::class,'id_exami3');
+		return $this->belongsTo(User::class,'id_exami3');
     }
     public function internship()
 	{
-		return $this->BelongsTo(Internship::class,'id_internship');
+		return $this->belongsTo(Internship::class,'id_internship');
     }
 }
