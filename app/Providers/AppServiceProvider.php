@@ -21,6 +21,11 @@ class AppServiceProvider extends ServiceProvider
         Relation::morphMap([
             'internship' => 'App\Models\School\Internship',
         ]);
+        \Spatie\Flash\Flash::levels([
+            'success' => 'alert-success',
+            'warning' => 'alert-warning',
+            'error' => 'alert-error',
+        ]);
     }
 
     /**
