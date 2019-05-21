@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\School\Internship;
 use Illuminate\Http\Request;
 use App\Models\School\Profile\Student;
+use App\Models\School\Profile\People;
 
 class BinomeController extends Controller
 {
@@ -26,10 +27,10 @@ class BinomeController extends Controller
      */
     public function create()
     {
-        $students = Student::active()
-        ->get(['id','name'])
+        $students = Student::where('ine','=',auth()->user()->people->ine)->active()
+        ->get(['id','fname','lname'])
         ->pluck('name','id')->all();
-        return view('frontend.internships.my_internship.binome.create',compact('internship'));
+        return view('frontend.internships.my_internship.binome.create',compact('students'));
     }
 
     /**
@@ -42,10 +43,9 @@ class BinomeController extends Controller
     {   
         //dump($request);
 
-        $input = $request->all();
-        //dd($request->user()->id);
-        $internship = new Internship($input);
-        $internship->user()->associate(auth()->user()->id);
+        $internship = Internship::where('user_id', '=', auth()->user()->id)
+        ->firstOrFail();
+        $internship->binome()->associate(request('binome_user_id'));
         $internship->save();
         //Flash::success('Votre déclaration a été bien enregistrée.');
         return back()

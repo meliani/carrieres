@@ -2,7 +2,7 @@
     <div class="card-content">
         <div class = "row">        
             <h4 class="header col s12 light center blue-text text-lighten-1">
-                Entreprise
+                Mon binome
             </h4>
         </div>
         <?php
@@ -11,15 +11,15 @@
         ?>
         <div class = "row">
         {{ Form::selectGroup([
-            'name' => 'binome_id',
+            'name' => 'binome_user_id',
             'value' ,
             'label' => 'Binome',
             'placeholder' ,
             'class' => 'validate',
-            'icon' ,
+            'icon' => 'group' ,
             'helper' => 'Ajouter un binome',
             'required' => $required,
-            'cols' => 3,
+            'cols' => 4,
             'data' => $students
         ], $errors) }}
         </div>

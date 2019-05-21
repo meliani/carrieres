@@ -88,6 +88,10 @@ class Internship extends Model
         'encadrant_ext_tel' => 'required|max:191',
         'encadrant_ext_mail' => 'required|email',
     ];
+    public function binome()
+    {
+        return $this->BelongsTo(User::class,'binome_user_id','id');
+    }
     public function user()
 	{
 		return $this->BelongsTo(User::class,'user_id','id');
