@@ -46,3 +46,8 @@ class ControllerTemplate extends Controller
     $file->move($destinationPath,$file->getClientOriginalName());
 
     route('route name')
+
+    public function __invoke($id)
+    {
+        return view('user.profile', ['user' => User::findOrFail($id)]);
+    }
