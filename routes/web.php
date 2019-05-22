@@ -136,28 +136,29 @@ Route::get('test2', function(){
 
 
     Route::namespace('Backend')->group(function () {
+        Route::get('-/Dashboard', 'Dashboard');
         Route::prefix('students')->group(function () {
 
         });
     });
    /** ----------- New nomenclature for routes ------------- */
 
-    Route::namespace('Frontend')->group(function () {
-        // Controllers Within The "App\Http\Controllers\Frontend" Namespace
-        Route::namespace('Student')->group(function () {
-            Route::prefix('students')->group(function () {
-                Route::get('myDocuments/', 'myDocumentsController@index');
-            });
-        });
-        Route::namespace('Internship')->group(function () {
-            Route::get('internships/clone/{id}', 'myInternshipController@clone');
-            Route::resource('internships', 'myInternshipController');
-        Route::prefix('internships')->group(function () {
-            Route::resource('binomes', 'BinomeController');
-            Route::resource('offers', 'internshipOfferController');
-            Route::prefix('offers')->group(function () {
-                Route::resource('applications', 'internshipApplicationController');
-                }); 
-            });
+Route::namespace('Frontend')->group(function () {
+    // Controllers Within The "App\Http\Controllers\Frontend" Namespace
+    Route::namespace('Student')->group(function () {
+        Route::prefix('students')->group(function () {
+            Route::get('myDocuments/', 'myDocumentsController@index');
         });
     });
+    Route::namespace('Internship')->group(function () {
+        Route::get('internships/clone/{id}', 'myInternshipController@clone');
+        Route::resource('internships', 'myInternshipController');
+    Route::prefix('internships')->group(function () {
+        Route::resource('binomes', 'BinomeController');
+        Route::resource('offers', 'internshipOfferController');
+        Route::prefix('offers')->group(function () {
+            Route::resource('applications', 'internshipApplicationController');
+            }); 
+        });
+    });
+});
