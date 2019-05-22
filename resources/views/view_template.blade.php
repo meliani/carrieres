@@ -13,3 +13,4 @@
 @section('floating-buttons')
     @include(Button::page_action_buttons())
 @endsection
+
