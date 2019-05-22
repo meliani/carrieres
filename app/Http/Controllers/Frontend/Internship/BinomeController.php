@@ -52,8 +52,7 @@ class BinomeController extends BaseController
         }
 
         $internship->binome()->associate(request('binome_user_id'));
-        $internship->groupes()detach();
-        $internship->groupes()->attach(request('binome_user_id'));
+        $internship->groupes()->sync(request('binome_user_id'));
         $internship->save();
 
         flash()->success('Votre binome a été bien enregistrée.');
