@@ -1,4 +1,4 @@
-@extends('layouts.ui')
+@extends('layouts.ui.app')
 @section('title')| Déclarer mon stage @endsection
 
 @section('content')

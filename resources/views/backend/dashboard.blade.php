@@ -1,4 +1,4 @@
-@extends('layouts.ui')
+@extends('layouts.ui.app')
 
 @section('title', 'This is my title')
 
@@ -21,11 +21,3 @@
 @section('floating-buttons')
     @include(Button::page_action_buttons())
 @endsection
-
-
-@extends('layouts.ui')
-
-@section('content')                
-
-
-

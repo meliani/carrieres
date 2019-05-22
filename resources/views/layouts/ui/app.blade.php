@@ -20,7 +20,7 @@
 <body>
 <header>
 <!--Main Navigation-->
-  @include('layouts.ui_navbar')
+  @include('layouts.ui.navbar')
 </header>
 
 <main>

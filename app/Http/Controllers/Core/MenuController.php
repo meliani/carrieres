@@ -28,7 +28,7 @@ class MenuController extends Controller
         }
         $menu = Menu::admin()->get();
 
-        return view('layouts.ui_usermenulist');
+        return view('layouts.ui.usermenulist');
     }
 
     /**
