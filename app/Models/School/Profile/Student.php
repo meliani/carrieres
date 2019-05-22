@@ -10,7 +10,17 @@ class Student extends People
 {
     protected $table = 'people';
 
+    public static function boot()
+    {
+        parent::boot();
 
+        /**static::addGlobalScope(function ($query) {
+            $query->where('status', '1');
+        });*/
+        static::addGlobalScope(function ($query) {
+                $query->where('is_active', true);
+        });
+    }
 
     public function internship()
     {
