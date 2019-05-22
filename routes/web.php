@@ -90,7 +90,9 @@ Route::get('test', function(){
 
 
 
-    Route::namespace('Backend')->group(function () {
+    Route::namespace('Backend')
+    ->name('backend.')
+    ->group(function () {
         Route::prefix('-')->group(function () {
             Route::get('Dashboard', 'Dashboard');
             Route::namespace('Internship')->group(function () {
@@ -102,12 +104,14 @@ Route::get('test', function(){
     });
    /** ----------- New nomenclature for routes ------------- */
 
-Route::namespace('Frontend')->group(function () {
+Route::namespace('Frontend')
+->name('frontend.')
+->group(function () {
     // Controllers Within The "App\Http\Controllers\Frontend" Namespace
-    Route::namespace('Student')->group(function () {
-        Route::prefix('students')->group(function () {
-            Route::get('myDocuments/', 'myDocumentsController@index');
-        });
+    Route::namespace('Student')
+    ->prefix('students')
+    ->group(function () {
+        Route::get('myDocuments/', 'myDocumentsController@index');
     });
     Route::namespace('Internship')->group(function () {
         Route::get('internships/clone/{id}', 'myInternshipController@clone');
