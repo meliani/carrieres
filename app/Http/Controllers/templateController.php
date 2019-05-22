@@ -51,3 +51,11 @@ class ControllerTemplate extends Controller
     {
         return view('user.profile', ['user' => User::findOrFail($id)]);
     }
+    
+
+    public function isNormal()
+    {
+        return $article->type === Article::TYPE_NORMAL;
+    }
+
+    return back()->with('message', __('app.article_added'));
