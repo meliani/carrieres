@@ -26,7 +26,7 @@ class InternshipController extends BaseController
 
         //$trainees = $trainees->people();
 
-        return view('backend.internship.advising.index',compact('trainees'));
+        return view('backend.internship.index',compact('trainees'));
 
     }
     /**

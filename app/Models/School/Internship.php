@@ -94,7 +94,7 @@ class Internship extends Model
     }
     public function groupes()
     {
-        return $this->belongsToMany(People::class,'internship_binomes','internship_id','user_id');
+        return $this->belongsToMany(People::class,'internship_groupes','internship_id','user_id');
     }
     public function user()
 	{

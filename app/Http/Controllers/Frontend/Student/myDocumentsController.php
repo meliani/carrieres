@@ -24,16 +24,22 @@ class myDocumentsController extends Controller
         if(!auth()->user()->people->internship()->exists()){
             return view('frontend.documents.partials.fillforms');
         }else{
-        if(isset($r->action)){
-        if(in_array('delete',$r->action)){
-            auth()->user()->people->clearMediaCollection('internship');
-        }
-        if(in_array('render',$r->action)){
-            $pdf = new renderController;
+        if(isset($r->action))
+        {
+            if(in_array('delete',$r->action)){
+                auth()->user()->people->clearMediaCollection('internship');
+            }
+            if(in_array('render',$r->action))
+            {
+                $pdf = new renderController;
                 $pdf->convention();
-                $pdf->recommendation_letter();
+                if(in_array('lr',$r->action)){
+                    $pdf = new renderController;
+                    $pdf->recommendation_letter();
+                }
             }
         }
+
         if(auth()->user()->people->hasMedia('internship')){
             $documents = auth()->user()->people->getMedia('internship');
             return view('frontend.documents.index', compact('documents'));
