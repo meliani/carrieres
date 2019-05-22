@@ -8,7 +8,7 @@
         <span class="card-title activator grey-text text-darken-4">
             {{ $count['internships'] }} Stages concrétisés
             <i class="material-icons right">more_vert</i></span>
-        <p><a href={{ url('') }}>Voir la liste</a></p>
+        <p><a href={{ url('-/internships') }}>Voir la liste</a></p>
         </div>
         <div class="card-reveal">
         <span class="card-title grey-text text-darken-4">
