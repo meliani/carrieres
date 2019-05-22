@@ -31,7 +31,7 @@ class internshipApplicationController extends Controller
             flash()->error('Offre de stages inexistante');
             return redirect(route('offers.index'));
         }
-        $this->offer=Offer::valid()->find($r->offer);
+        $this->offer=Offer::valid()->find(request('offer'));
 
         $this->middleware(['auth','isAdmin']);  
     }
