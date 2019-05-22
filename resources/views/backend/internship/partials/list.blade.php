@@ -10,6 +10,7 @@
           <th width="10%">Encadrant 1</th>   
           <th width="10%">Encadrant 2</th>   
           <th width="25%">Membres du jury</th>            
+          <th width="25%">Actions</th>            
       </tr>
     </thead>
     <tbody>
@@ -17,7 +18,13 @@
 
       <tr>
         <td class="strong">{{ $trainee->pfe_id }}</td>
-        <td><div class="sub strong">{{ $trainee->name }}</div>
+        <td><div
+          class="waves-effect sub strong tooltipped" data-position="bottom" 
+          data-delay="50" 
+          data-tooltip="INE 
+          {{ $trainee->ine }}
+          {{ $trainee->scholar_year }}">
+          {{ $trainee->name }}</div>
           @if ($trainee['option_text'])
           <span class="new badge blue lighten-3 white-text" 
           data-badge-caption="{{ ( !empty($trainee->option_text)? $trainee->option_text:'' ) }}">
