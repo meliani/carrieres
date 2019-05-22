@@ -4,7 +4,7 @@
 
 <!-- Dropdown Structure -->
 <ul id='row_menu' class='dropdown-content'>
-    <li><a href="{{ url('test3') }}"><i class="material-icons">content_copy</i></a></li>
+    <li><a href="{{ url('internships/clone/',$trainee->internship->id) }}"><i class="material-icons">content_copy</i></a></li>
     <li><a href="#!"><i class="material-icons">mode_edit</i></a></li>
     <li class="divider" tabindex="-1"></li>
     <li><a href="#!"><i class="material-icons">mode_edit</i>binome</a></li>
