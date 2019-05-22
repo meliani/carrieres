@@ -1,4 +1,4 @@
-@extends('layouts.ui')
+@extends('layouts.ui.app')
 
 @section('users_buttons')
     @include(Button::user_buttons())

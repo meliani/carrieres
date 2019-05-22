@@ -1,4 +1,4 @@
-@extends('layouts.ui')
+@extends('layouts.ui.app')
 @section('title')| Déclaration de binome @endsection
 
 @section('content')
