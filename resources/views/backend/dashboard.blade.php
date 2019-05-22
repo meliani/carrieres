@@ -12,6 +12,8 @@
     <div class="container">
         <div class="row">
             @include('backend.partials.cards.internships')
+            @include('backend.partials.cards.students')
+
         </div>
     </div>    
 @endsection
