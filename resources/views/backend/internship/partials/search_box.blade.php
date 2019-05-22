@@ -1,4 +1,4 @@
-{!! Form::open(['method'=>'GET','url'=>'Internship/Advising/Project',
+{!! Form::open(['method'=>'GET','url'=> url(Route::current()->getName()),
 'class'=>'navbar-form navbar-left','role'=>'search'])  !!}
 
     <div class="input-group custom-search-form">
