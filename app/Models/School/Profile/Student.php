@@ -8,6 +8,9 @@ use App\Models\School\Internship;
 
 class Student extends People
 {
+    protected $table = 'people';
+
+
 
     public function internship()
     {

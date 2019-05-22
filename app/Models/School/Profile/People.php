@@ -13,7 +13,7 @@ use App\Models\School\Profile\Student;
 class People extends Model implements HasMedia
 {
     use HasMediaTrait;
-    public $table = 'people';
+    protected $table = 'people';
     protected $primaryKey = "user_id";
     protected $appends = [
         'name',
