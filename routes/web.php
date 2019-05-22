@@ -86,18 +86,18 @@ Route::get('test', function(){
     return view('frontend.documents.excel.templates.internships');
     }
 );
-Route::get('test2', function(){
-    return view('backend.internship.advising.index');
-    });
+
 
 
 
     Route::namespace('Backend')->group(function () {
-        Route::get('-/Dashboard', 'Dashboard');
-        Route::namespace('Internship')->group(function () {
-            Route::resource('internships', 'InternshipController');
-            Route::prefix('internships')->group(function () {
-            });
+        Route::prefix('-')->group(function () {
+            Route::get('Dashboard', 'Dashboard');
+            Route::namespace('Internship')->group(function () {
+                Route::resource('internships', 'InternshipController');
+                Route::prefix('internships')->group(function () {
+                });
+            }); 
         });
     });
    /** ----------- New nomenclature for routes ------------- */
