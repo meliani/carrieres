@@ -3,7 +3,11 @@
 @section('content')
 <div class="container">
 
+
+@include('frontend.documents.partials.collections.old_docs')
+
 @include('frontend.documents.partials.collections.lr')
+
 
 <ul class="collection">
 <li class="collection-item avatar">

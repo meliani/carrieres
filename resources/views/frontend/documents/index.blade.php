@@ -20,12 +20,12 @@
     </li>
     <li class="collection-item avatar">
         <i class="material-icons circle green">sync</i>
-    <a href={{ url('student/myDocuments?action[]=render') }} class="waves-effect waves-light btn">
+    <a href={{ url('student/myDocuments?action[]=render&action[]=render&') }} class="waves-effect waves-light btn">
         <i class="material-icons right">save</i>Generer de nouveau les documents</a>
     </li>
     <li class="collection-item avatar">
         <i class="material-icons circle red">delete</i>
-    <a href={{ url('student/myDocuments?action[]=render&action[]=delete') }} 
+    <a href={{ url('student/myDocuments?action[]=render&action[]=convention&action[]=delete') }} 
     class="waves-effect waves-light red btn" onclick="return confirm('Vos anciens documents seront supprimés \nEtes vous sure ?')">
         <i class="material-icons right">save</i>Generer les documents et supprimer les anciens</a>
     </li>
