@@ -23,10 +23,8 @@
         "spatie/laravel-flash": "^1.2",
         "spatie/laravel-medialibrary": "^7.0.0",
         "spatie/laravel-permission": "^2.7",
-        "spatie/laravel-tags": "^2.4",
-        "yajra/laravel-datatables": "dev-master",
-        "yajra/laravel-datatables-buttons": "dev-master",
-        "yajra/laravel-datatables-oracle": "~9.0"
+        "spatie/laravel-tags": "^2.4"
+
     },
     "require-dev": {
         "beyondcode/laravel-dump-server": "^1.0",
