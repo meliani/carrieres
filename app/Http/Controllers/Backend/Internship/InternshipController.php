@@ -16,16 +16,21 @@ class InternshipController extends BaseController
      */
     public function index()
     {
-
+        if(request()->has('s')){
+            $trainees = Student::with('internship')
+            ->Where('fname','like','%'.request('s').'%')
+            ->orWhere('lname','like','%'.request('s').'%')
+            ->orWhere('pfe_id',request('s'))
+            ->latest()->get();  
+        }else{
         //$trainees = \App\Models\School\Internship::where('scholar_year','2018-2019')->with('people')->get();
         $trainees = Student::has('internship')->with('internship')
         ->where('scholar_year','2018-2019')
         ->Where('ine','3')
-        ->latest()->paginate();
+        ->latest('created_at')->paginate();
         //$trainees = \App\Models\School\Internship::with
-
         //$trainees = $trainees->people();
-
+        }
         return view('backend.internship.index',compact('trainees'));
 
     }
