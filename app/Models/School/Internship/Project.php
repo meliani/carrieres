@@ -15,8 +15,13 @@ class Project extends Internship
     {
         parent::boot();
 
-        static::addGlobalScope(function ($query) {
+        /**static::addGlobalScope(function ($query) {
             $query->where('status', '1');
+        });*/
+        static::addGlobalScope(function ($query) {
+            $query->whereHas('people', function ($query) {
+                $query->where('scholar_year', '=', '2018-2019');
+            });
         });
     }
 

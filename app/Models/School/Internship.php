@@ -16,7 +16,7 @@ class Internship extends Model
 
     use SoftDeletes;
 
-    public $table = 'internships';
+    protected $table = 'internships';
     
 
     protected $dates = [
