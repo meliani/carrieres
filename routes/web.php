@@ -81,11 +81,14 @@ Route::resource('People', 'School\PeopleController');
 Route::resource('Internship/Advising/Stats', 'Internship\StatsController');
 
 Route::get('Activation', ['as'=> 'people.activate', 'uses' => 'School\PeopleController@activate']);
+
 Route::resource('Authentic', 'Core\authenticDocumentController');
 Route::get('test', function(){
     return view('frontend.documents.excel.templates.internships');
     }
 );
+
+Route::resource('url/{url}', 'Core\UrlController');
 
 
 
@@ -94,7 +97,7 @@ Route::get('test', function(){
     ->name('backend.')
     ->group(function () {
         Route::prefix('-')->group(function () {
-            Route::get('Dashboard', 'Dashboard');
+            Route::resource('Dashboard', 'Dashboard');
             Route::namespace('Internship')->group(function () {
                 Route::resource('internships', 'InternshipController');
                 Route::prefix('internships')->group(function () {
@@ -105,7 +108,6 @@ Route::get('test', function(){
    /** ----------- New nomenclature for routes ------------- */
 
 Route::namespace('Frontend')
-->name('frontend.')
 ->group(function () {
     // Controllers Within The "App\Http\Controllers\Frontend" Namespace
     Route::namespace('Student')
