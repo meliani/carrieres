@@ -88,23 +88,23 @@ Route::get('test', function(){
     }
 );
 
-Route::resource('url/{url}', 'Core\UrlController');
+//Route::get('url/{url}', 'Core\UrlController');
 
 
 
 
-    Route::namespace('Backend')
-    ->name('backend.')
-    ->group(function () {
-        Route::prefix('-')->group(function () {
-            Route::resource('Dashboard', 'Dashboard');
-            Route::namespace('Internship')->group(function () {
-                Route::resource('internships', 'InternshipController');
-                Route::prefix('internships')->group(function () {
-                });
-            }); 
-        });
+Route::namespace('Backend')
+->name('backend.')
+->group(function () {
+    Route::prefix('-')->group(function () {
+        Route::get('Dashboard', 'Dashboard');
+        Route::namespace('Internship')->group(function () {
+            Route::resource('internships', 'InternshipController');
+            Route::prefix('internships')->group(function () {
+            });
+        }); 
     });
+});
    /** ----------- New nomenclature for routes ------------- */
 
 Route::namespace('Frontend')
