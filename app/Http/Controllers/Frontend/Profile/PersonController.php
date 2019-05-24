@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\School;
+namespace App\Http\Controllers\Frontend\Profile;
 
 use App\Models\School\Profile\People;
 use Illuminate\Http\Request;
@@ -10,7 +10,7 @@ use Session;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 
-class PeopleController extends Controller
+class PersonController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -63,7 +63,7 @@ class PeopleController extends Controller
     public function edit($id)
     {
         //
-        return view('space.people.profile.activation');
+        return view('frontend.profile.person.activation');
     }
 
     /**
@@ -112,7 +112,7 @@ class PeopleController extends Controller
     public function activate()
     {
         $person = People::find(auth()->user()->id);
-        return view('space.people.profile.activation',compact('person'));
+        return view('frontend.profile.person.activation',compact('person'));
     }
 
     public function storeFile($file,$basePath='uploads/students/init_data/')

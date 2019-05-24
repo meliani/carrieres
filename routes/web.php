@@ -84,14 +84,13 @@ Route::get('Activation', ['as'=> 'people.activate', 'uses' => 'School\PeopleCont
 
 Route::resource('Authentic', 'Core\authenticDocumentController');
 Route::get('test', function(){
-    return view('frontend.documents.excel.templates.internships');
     }
 );
 
 //Route::get('url/{url}', 'Core\UrlController');
 
 
-
+/** ----------- New nomenclature for routes ------------- */
 
 Route::namespace('Backend')
 ->name('backend.')
@@ -105,7 +104,6 @@ Route::namespace('Backend')
         }); 
     });
 });
-   /** ----------- New nomenclature for routes ------------- */
 
 Route::namespace('Frontend')
 ->group(function () {
@@ -126,4 +124,10 @@ Route::namespace('Frontend')
             }); 
         });
     });
+});
+
+Route::namespace('Frontend\Profile')
+->group(function () {
+Route::resource('Person', 'PersonController');
+Route::get('Activation', ['as'=> 'people.activate', 'uses' => 'PersonController@activate']);
 });
