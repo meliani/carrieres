@@ -22,12 +22,12 @@
   <h3 class="header light center blue-text text-lighten-1">Mon profil</h3>
   <div class="row">
     <div class="col s12 m5">
-        @include('space.people.profile.details')
+        @include('frontend.profile.person.cards.details')
     </div>
 @endif
 {!! Form::model($person, ['route' => ['People.update', 'id' => $person->id], 'method' => 'patch','files' => true]) !!}
 <div class="col s12 m7">
-@include('space.people.profile.fields')
+@include('frontend.profile.person.fields')
 
 
     </div>
