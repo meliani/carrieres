@@ -10,9 +10,9 @@
                 </div>
                 <div class="collapsible-body">
                     <p> Nom complet :
-                        {!! $person->name !!}
+                        {!! user('name') !!}
                     </p>
-                <p>INE {{ $person->ine }}, Année scolaire {{ $person->scholar_year }}</p>
+                <p>INE {{ user('people.ine') }}, Année scolaire {{ user('people.scholar_year') }}</p>
                 
                 </div>
             </li>

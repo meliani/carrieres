@@ -1,55 +1,67 @@
 <div class="card-panel">
     <div class="card-content">
         <div class = "row">
-            <!--  Field -->
-            <div class = "input-field col m5 s12">
-                {!! Form::label('email', 'E-mail personnel') !!}
-                {!! Form::text('email', null, ['class' => 'validate','required']) !!}
-            </div>
-            <!--  Field -->
-            <div class = "input-field col m5 s12">
-                {!! Form::label('phone', 'Téléphone personnel') !!}
-                {!! Form::text('phone', null, ['class' => 'validate','required']) !!}
-            </div>
 
+            {{ Form::textGroup([
+                'name' => 'email_perso',
+                'value' ,
+                'label' => 'E-mail personnel',
+                'placeholder' ,
+                'class' => 'validate',
+                'icon' ,
+                'helper' => 'E-mail personnel pour recevoir les notifications.',
+                'required' => 'required',
+                'cols' => 5,
+            ], $errors) }}
 
-            <!-- Document Field -->
-            <div class = "input-field col s12 m9 right">
-                <div class="file-field input-field">
-                    <div class="btn right blue">
-                        <span>Parcourir</span>
-                        {!! Form::file('cv') !!}
-                    </div>
-                    <div class="file-path-wrapper">
-                        <input class="file-path validate" required type="text" placeholder="Mon CV">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Document Field -->
-            <div class = "input-field col s12 m9 right">
-                <div class="file-field input-field">
-                    <div class="right btn blue">
-                        <span>Parcourir</span>
-                        {!! Form::file('lm') !!}
-                    </div>
-                    <div class="file-path-wrapper">
-                    <input class="file-path validate" required type="text" placeholder="Lettre de  motivation">
-                    </div>
-                </div>
-            </div>
-            <!-- Document Field -->
-            <div class = "input-field col s12 m9 right">
-                <div class="file-field input-field">
-                    <div class="right btn blue">
-                        <span>Parcourir</span>
-                        {!! Form::file('photo') !!}
-                    </div>
-                    <div class="file-path-wrapper">
-                    <input class="file-path validate" required type="text" placeholder="Photo">
-                    </div>
-                </div>
-            </div>
+            {{ Form::textGroup([
+                'name' => 'phone',
+                'value' ,
+                'label' => 'Téléphone personnel',
+                'placeholder' ,
+                'class' => 'validate',
+                'icon' ,
+                'helper' => 'Telephone portable pour vous contacter d\'urgence',
+                'required' => 'required',
+                'cols' => 5,
+            ], $errors) }}
+            <h1 class="col m12 center-align">Fichiers</h1>
+            {{ Form::fileGroup([
+                'name' => 'cv',
+                'value' ,
+                'label' => 'CV professionel',
+                'placeholder' ,
+                'class' => 'validate',
+                'icon' => 'person',
+                'helper' => 'Attacher votre CV actualise.',
+                'required' => 'required',
+                'position' => 'left',
+                'cols' => 12,
+            ], $errors) }}
+            {{ Form::fileGroup([
+                'name' => 'lm',
+                'value' ,
+                'label' => 'Lettre de motivation',
+                'placeholder' ,
+                'class' => 'validate',
+                'icon' => 'person',
+                'helper' => 'Attacher une lettre de motivation generale.',
+                'required' => 'required',
+                'position' => 'left',
+                'cols' => 12,
+            ], $errors) }}
+            {{ Form::fileGroup([
+                'name' => 'photo',
+                'value' ,
+                'label' => 'CV professionel',
+                'placeholder' ,
+                'class' => 'validate',
+                'icon' => 'person',
+                'helper' => 'Attacher une photo recente',
+                'required' => 'required',
+                'position' => 'left',
+                'cols' => 12,
+            ], $errors) }}
             
         </div>  
     </div>
@@ -61,4 +73,3 @@
         </div>
     </div>
 </div>
-{!! Form::close() !!}

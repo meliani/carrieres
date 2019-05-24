@@ -33,7 +33,7 @@ class People extends Model implements HasMedia
     'title',
     'first_name',
     'last_name',
-    'email',
+    'email_perso',
     'phone',
     'cv',
     'lm',
@@ -52,11 +52,13 @@ class People extends Model implements HasMedia
 
 
    public function setCvAttribute($value){
-
-    upload($value,[
-        'var_name' =>'cv',
-        'upload_path' => 'uploads/people/init_data/CVs'
-        ]);
+    $this->attributes['cv']=Storage::putFile('public/uploads/people/init_data/CVs', new File($value));
+   }
+   public function setLmAttribute($value){
+    $this->attributes['lm']=Storage::putFile('public/uploads/people/init_data/LMs', new File($value));
+   } 
+   public function setPhotoAttribute($value){
+    $this->attributes['photo']=Storage::putFile('public/uploads/people/init_data/Photos', new File($value));
    } 
    public function getNameAttribute($value)
 	{
