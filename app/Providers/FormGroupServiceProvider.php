@@ -25,5 +25,7 @@ class FormGroupServiceProvider extends ServiceProvider
     {
         Form::component('textGroup','components.forms.text', ['params','errors']);
         Form::component('selectGroup','components.forms.select', ['params','errors']);
+        Form::component('fileGroup','components.forms.file', ['params','errors']);
+
     }
 }
