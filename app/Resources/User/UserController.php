@@ -26,7 +26,7 @@ class UserController extends Controller
     {
         $users = User::paginate(10);
 
-        return view('backend.profiles.users.users.index')->with('users', $users);
+        return view('backend.profiles.users.index')->with('users', $users);
     }
 
     /**
@@ -37,7 +37,7 @@ class UserController extends Controller
     public function create()
     {
         $roles = Role::get();
-        return view('backend.profiles.users.users.create', ['roles'=>$roles]);
+        return view('backend.profiles.users.create', ['roles'=>$roles]);
     }
 
     /**
@@ -93,7 +93,7 @@ class UserController extends Controller
         $user = User::findOrFail($id);
         $roles = Role::get();
 
-        return view('backend.profiles.users.users.edit', compact('user', 'roles'));
+        return view('backend.profiles.users.edit', compact('user', 'roles'));
     }
 
     /**
