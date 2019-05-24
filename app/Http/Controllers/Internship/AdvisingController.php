@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Internship;
 // Models
 use App\Models\School\Internship;
 use App\Models\School\Internship\Adviser;
-use App\Models\School\Profile\People;
+use App\Models\Profile\Person;
 use App\Models\Stage;
 use App\User;
-use App\Models\School\Profile\Professor;
+use App\Models\Profile\Professor;
 
 use App\Http\Controllers\Controller;
 use App\Exports\StagesExport;
@@ -30,7 +30,7 @@ class AdvisingController extends Controller
     public function index(Request $request)
     {
         
-        $trainees = People::has('internship')
+        $trainees = Person::has('internship')
         ->where('is_active',true)
         ->latest();
         
@@ -39,14 +39,14 @@ class AdvisingController extends Controller
         }])->paginate();
         
         if(!isset($request->s)){
-            $trainees = People::has('internship')->where('is_active',true)
+            $trainees = Person::has('internship')->where('is_active',true)
             ->with(['internship' => function ($q) {
                 $q->orderBy('updated_at', 'desc');
             }])
             ->paginate();
         }else{
             $s=$request->s;
-            $trainees = People::with('internship')->has('internship')
+            $trainees = Person::with('internship')->has('internship')
             ->where('is_active',true)
             ->where('first_name', 'like', '%'.$s.'%')
             ->orWhere('last_name', 'like', '%'.$s.'%')
@@ -54,7 +54,7 @@ class AdvisingController extends Controller
             ->get();
         }
 
-        //$trainees = People::isActive();
+        //$trainees = Person::isActive();
         //dd($trainees);
         /*->with(['people' => function ($query) {
             $query->where('scholar_year', '=', '2018-2019');
@@ -70,7 +70,7 @@ class AdvisingController extends Controller
         ->orWhere('last_name', 'like', '%'.$s.'%')
         ->->with(['internship'])
         */
-        //$people = People::where('scholar_year','=','2018-2019');
+        //$people = Person::where('scholar_year','=','2018-2019');
         
     return view('space.internship.advising.index', compact('trainees'));
 

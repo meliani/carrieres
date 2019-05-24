@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
-use App\Models\School\Profile\People;
+use App\Models\Profile\Person;
 use App\Http\Controllers\Auth\CheckpointController as Checkpoint;
 
 class LoginController extends Controller
@@ -30,7 +30,7 @@ class LoginController extends Controller
     //protected $redirectTo = '/home';
 
     public function redirectTo(){
-        $person = People::find(auth()->user()->id);
+        $person = Person::find(auth()->user()->id);
 
         if(isset($person) && $person->active()){
             return '/home';

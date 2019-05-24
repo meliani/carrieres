@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Frontend\Profile;
 
-use App\Models\School\Profile\People;
+use App\Models\Profile\Person;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -75,7 +75,7 @@ class PersonController extends Controller
      */
     public function update(Request $r, $id)
     {
-        $person = People::find(user()->id);
+        $person = Person::find(user()->id);
         $person->update(
             $r->all()
         );
@@ -105,7 +105,7 @@ class PersonController extends Controller
      */
     public function activate()
     {
-        $person = People::firstOrCreate(['user_id' => user()->id]);
+        $person = Person::firstOrCreate(['user_id' => user()->id]);
         return view('frontend.profile.person.activation',compact('person'));
     }
 

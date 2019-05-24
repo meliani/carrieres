@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Models\School\Profile;
+namespace App\Models\Profile;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\School\Profile\People;
+use App\Models\Profile\Person;
 use App\Models\School\Internship;
 
-class Student extends People
+class Student extends Person
 {
     protected $table = 'people';
 

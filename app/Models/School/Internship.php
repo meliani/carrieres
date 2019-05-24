@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\User;
 use App\Models\School\Internship\Adviser;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use App\Models\School\Profile\People;
+use App\Models\Profile\Person;
 use Collective\Html\Eloquent\FormAccessible;
 
 
@@ -90,11 +90,11 @@ class Internship extends Model
     ];
     public function binome()
     {
-        return $this->belongsTo(People::class,'binome_user_id','user_id');
+        return $this->belongsTo(Person::class,'binome_user_id','user_id');
     }
     public function groupes()
     {
-        return $this->belongsToMany(People::class,'internship_groupes','internship_id','user_id');
+        return $this->belongsToMany(Person::class,'internship_groupes','internship_id','user_id');
     }
     public function user()
 	{
@@ -106,7 +106,7 @@ class Internship extends Model
     }
     public function people()
     {
-        return $this->belongsTo(People::class,'user_id','user_id');
+        return $this->belongsTo(Person::class,'user_id','user_id');
     }
 
     public function getParrainNameAttribute()

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Models\School\Profile;
+namespace App\Models\Profile;
 use App\User;
 
 use Illuminate\Database\Eloquent\Model;
-use App\Models\School\Profile\People;
+use App\Models\Profile\Person;
 
 class Professor extends Model
 {
@@ -29,6 +29,6 @@ class Professor extends Model
     }
     public function people()
 	{
-		return $this->belongsTo(People::class,'user_id','id');
+		return $this->belongsTo(Person::class,'user_id','id');
     }   
 }

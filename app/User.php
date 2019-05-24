@@ -5,7 +5,7 @@ namespace App;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
-use App\Models\School\Profile\People;
+use App\Models\Profile\Person;
 use App\Models\School\Internship;
 use App\Models\School\Internship\Adviser;
 
@@ -55,7 +55,7 @@ class User extends Authenticatable
     }
     public function people()
     {
-        return $this->hasOne(People::class,'user_id','id');
+        return $this->hasOne(Person::class,'user_id','id');
     }
     public function internship()
     {

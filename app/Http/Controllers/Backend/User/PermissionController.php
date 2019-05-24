@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\usersManager;
+namespace App\Http\Resources\User;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -26,7 +26,7 @@ class PermissionController extends Controller
     {
         $permissions = Permission::all();
 
-        return view('admin.usersManager.permissions.index')->with('permissions', $permissions);
+        return view('backend.profiles.users.permissions.index')->with('permissions', $permissions);
     }
 
     /**
@@ -38,7 +38,7 @@ class PermissionController extends Controller
     {
         $roles = Role::get();
 
-        return view('admin.usersManager.permissions.create')->with('roles', $roles);
+        return view('backend.profiles.users.permissions.create')->with('roles', $roles);
     }
 
     /**
@@ -97,7 +97,7 @@ class PermissionController extends Controller
     {
         $permission = Permission::find($id);
         
-        return view('admin.usersManager.permissions.edit', compact('permission'));
+        return view('backend.profiles.users.permissions.edit', compact('permission'));
     }
 
     /**

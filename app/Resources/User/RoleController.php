@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin\usersManager;
+namespace App\Http\Resources\User;
 
 use App\Http\Controllers\Controller;
 
@@ -22,7 +22,7 @@ class RoleController extends Controller
     {
         $roles = Role::all();
 
-        return view('admin.usersManager.roles.index')->with('roles', $roles);
+        return view('backend.profiles.users.roles.index')->with('roles', $roles);
     }
 
     /**
@@ -34,7 +34,7 @@ class RoleController extends Controller
     {
         $permissions = Permission::all();
 
-        return view('admin.usersManager.roles.create', ['permissions'=>$permissions]);
+        return view('backend.profiles.users.roles.create', ['permissions'=>$permissions]);
     }
 
     /**
@@ -92,7 +92,7 @@ class RoleController extends Controller
         $role = Role::findOrFail($id);
         $permissions = Permission::all();
 
-        return view('admin.usersManager.roles.edit', compact('role', 'permissions'));
+        return view('backend.profiles.users.roles.edit', compact('role', 'permissions'));
     }
 
     /**

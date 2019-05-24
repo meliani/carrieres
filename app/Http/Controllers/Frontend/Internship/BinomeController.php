@@ -5,8 +5,8 @@ namespace App\Http\Controllers\Frontend\Internship;
 use App\Http\Controllers\Frontend\BaseController;
 use App\Models\School\Internship;
 use Illuminate\Http\Request;
-use App\Models\School\Profile\Student;
-use App\Models\School\Profile\People;
+use App\Models\Profile\Student;
+use App\Models\Profile\Person;
 
 class BinomeController extends BaseController
 {

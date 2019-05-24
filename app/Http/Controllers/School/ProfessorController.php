@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\School;
 
 use App\Http\Controllers\Controller;
-use App\Models\School\Profile\Professor;
+use App\Models\Profile\Professor;
 use Illuminate\Http\Request;
 
 class ProfessorController extends Controller
@@ -42,7 +42,7 @@ class ProfessorController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\School\Profile\Professor  $professor
+     * @param  \App\Models\Profile\Professor  $professor
      * @return \Illuminate\Http\Response
      */
     public function show(Professor $professor)
@@ -53,7 +53,7 @@ class ProfessorController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\School\Profile\Professor  $professor
+     * @param  \App\Models\Profile\Professor  $professor
      * @return \Illuminate\Http\Response
      */
     public function edit(Professor $professor)
@@ -65,7 +65,7 @@ class ProfessorController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\School\Profile\Professor  $professor
+     * @param  \App\Models\Profile\Professor  $professor
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Professor $professor)
@@ -76,7 +76,7 @@ class ProfessorController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\School\Profile\Professor  $professor
+     * @param  \App\Models\Profile\Professor  $professor
      * @return \Illuminate\Http\Response
      */
     public function destroy(Professor $professor)

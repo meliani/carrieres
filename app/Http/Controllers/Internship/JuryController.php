@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Internship;
 
-use App\Models\School\Profile\People;
+use App\Models\Profile\Person;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\User;
-use App\Models\School\Profile\Professor;
+use App\Models\Profile\Professor;
 
 class JuryController extends Controller
 {

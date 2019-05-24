@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Internship;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Models\School\Profile\Professor;
+use App\Models\Profile\Professor;
 
 class StatsController extends Controller
 {

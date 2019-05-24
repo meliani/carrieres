@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Models\School\Profile;
+namespace App\Models\Profile;
 
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\School\Internship;
 use Spatie\MediaLibrary\HasMedia\HasMedia;
 use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
-use App\Models\School\Profile\Professor;
-use App\Models\School\Profile\Student;
+use App\Models\Profile\Professor;
+use App\Models\Profile\Student;
 
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 
-class People extends Model implements HasMedia
+class Person extends Model implements HasMedia
 {
     use HasMediaTrait;
     protected $table = 'people';
