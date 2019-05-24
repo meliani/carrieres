@@ -28,7 +28,6 @@ class People extends Model implements HasMedia
 
 
     public $fillable = [ 	
-    'id',
     'user_id',
     'title',
     'first_name',

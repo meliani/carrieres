@@ -53,7 +53,7 @@ class renderController extends Controller
         $file_path = Storage_path('app/public/user/generated/internship/'.$file_name);
         $pdf->save($file_path);
         $this->attach($file_path);
-        //return $pdf->inline(Carbon::now()->format('d_m_Y').'_Convention_de_stage.pdf');
+        return $pdf->inline(Carbon::now()->format('d_m_Y').'_recommendation_letter.pdf');
     }
 
     public function attach(String $file_path){

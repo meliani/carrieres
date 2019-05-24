@@ -22,6 +22,17 @@ class myDocumentsController extends Controller
     public function index(Request $r)
     {
         if(!auth()->user()->people->internship()->exists()){
+            if(isset($r->action) && in_array('render',$r->action))
+            {
+                if(in_array('delete',$r->action)){
+                    auth()->user()->people->clearMediaCollection('internship');
+                }
+                if(in_array('lr',$r->action)){
+                    $pdf = new renderController;
+                    $pdf->recommendation_letter();
+                }
+
+            }
             if(auth()->user()->people->hasMedia('internship')){
                 $documents = auth()->user()->people->getMedia('internship');
             }            
@@ -38,10 +49,6 @@ class myDocumentsController extends Controller
                 if(in_array('convention',$r->action)){
                     $pdf = new renderController;
                     $pdf->convention();
-                }
-                if(in_array('lr',$r->action)){
-                    $pdf = new renderController;
-                    $pdf->recommendation_letter();
                 }
             }
         }

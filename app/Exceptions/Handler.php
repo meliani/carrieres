@@ -55,7 +55,8 @@ class Handler extends ExceptionHandler
                     $errorMessage = 'Duplicate entry !';
                     break;
                 default:
-                    $errorMessage = 'database error !';
+                    //$errorMessage = 'database error !';
+                    return parent::render($request, $e);
             }
             //return response()->view('errors.pdo', [], 500);
             Session::flash('message', $errorMessage); 

@@ -16,12 +16,12 @@ class StudentMiddleware {
      * @return mixed
      */
     public function handle($request, Closure $next) {        
-        if (user()->hasRole('Etudiant')) {
+        /*if (user()->hasRole('Etudiant')) {
             return 'fdfdfddfd';
             abort('401');
             //
 
-        }
+        }*/
 //$this->middleware(Checkpoint::class);
         return $next($request);
     }

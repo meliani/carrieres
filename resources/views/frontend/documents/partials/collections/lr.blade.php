@@ -5,6 +5,8 @@
         <p>    
         <a href={{ url('students/myDocuments?action[]=render&action[]=lr') }} class="waves-effect waves-light btn green">
         <i class="material-icons right">save</i>Generer ma lettre de recommedations</a>
+        <a href={{ url('students/myDocuments?action[]=render&action[]=delete') }} class="waves-effect waves-light btn red">
+            <i class="material-icons right">delete</i>Delete all</a>
         </p>
     </li>
 </ul>
