@@ -3,14 +3,14 @@
 namespace App\Http\Controllers\Admin\usersManager;
 
 use Illuminate\Http\Request;
-use App\Http\Controllers\AppBaseController;
+use App\Http\Controllers\Controller;
 use App\User;
 use Auth;
 use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Session;
 
-class UserController extends AppBaseController
+class UserController extends Controller
 {
     public function __construct() 
     {

@@ -18,3 +18,4 @@ class CheckpointController extends Controller
             return '/Profile';
     }
 }
+}

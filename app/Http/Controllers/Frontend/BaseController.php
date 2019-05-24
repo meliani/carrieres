@@ -9,6 +9,6 @@ class BaseController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth','isAdmin','Student','Teacher']);        
+        $this->middleware(['auth','Student']);        
     }
 }

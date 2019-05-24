@@ -126,7 +126,7 @@ Route::namespace('Frontend')
 });
 
 
-//Route::get('Checkpoint', 'Auth\Checkpoint');
+Route::get('Checkpoint', 'Auth\CheckpointController');
 
 Route::namespace('Frontend\Profile')
 ->group(function () {

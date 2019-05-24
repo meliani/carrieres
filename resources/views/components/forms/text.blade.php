@@ -1,7 +1,7 @@
 <?php
 $type=array_get($params,'type','text');
 ?>
-<div class = "input-field 
+<div class = "input-field {{ array_get($params,'inline') }} 
     col 
     s{{ array_get($params,'cols',6)*3 }}
     m{{ array_get($params,'cols',6) }}

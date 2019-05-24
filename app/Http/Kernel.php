@@ -36,6 +36,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \PragmaRX\Tracker\Vendor\Laravel\Middlewares\Tracker::class,
+            //\App\Http\Middleware\Checkpoint::class,
         ],
 
         'api' => [
@@ -60,7 +61,7 @@ class Kernel extends HttpKernel
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'isAdmin' => \App\Http\Middleware\AdminMiddleware::class,
         'clearance' => \App\Http\Middleware\ClearanceMiddleware::class,
-        'Student' => \App\Http\Middleware\EtudiantMiddleware::class,
+        'Student' => \App\Http\Middleware\StudentMiddleware::class,
         'superTeacher' => \App\Http\Middleware\superTeacherMiddleware::class,
         'Teacher' => \App\Http\Middleware\TeacherMiddleware::class,
     ];
