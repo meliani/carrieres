@@ -10,9 +10,25 @@ use Carbon\Carbon;
 class UploaderController extends Controller
 {
     public $upload_path;
-    
-    public function __construct($request,$var_name,$path)
+    /**
+     * Store a newly created resource in storage.
+     * Example of use : $upload= new Uploader($request,[
+     * 'var_name' =>'cv',
+     * 'upload_path' => 'uploads/students/CVs'
+     * ]);
+     * 
+     * @param  \Illuminate\Http\Request  $request
+     * $request : request var
+     * @param  Array  $parameters
+     * var_name : form file variable name
+     * upload_path : where to store files
+     * 
+     * @return \Illuminate\Http\Response
+     */
+    public function __construct($request,$parameters)
     {  
+        $var_name = $parameters['var_name'];
+        $path = $parameters['upload_path'];
         if($request->hasFile($var_name))
         {
             $file = $request->file($var_name);            
@@ -25,7 +41,7 @@ class UploaderController extends Controller
                 $request->$var_name = 'storage/'.$path;
             }elseif($file->getError()!='UPLOADERROK')
             flash()->error($file->getErrorMessage());
-            Session::flash('message', 'error uploading files'); 
+            Session::flash('message', 'error uploading files, '.$file->getErrorMessage()); 
             Session::flash('alert-class', 'error');
             return back();
         }
