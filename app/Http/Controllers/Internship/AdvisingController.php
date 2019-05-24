@@ -48,8 +48,8 @@ class AdvisingController extends Controller
             $s=$request->s;
             $trainees = People::with('internship')->has('internship')
             ->where('is_active',true)
-            ->where('fname', 'like', '%'.$s.'%')
-            ->orWhere('lname', 'like', '%'.$s.'%')
+            ->where('first_name', 'like', '%'.$s.'%')
+            ->orWhere('last_name', 'like', '%'.$s.'%')
             ->orWhere('pfe_id', 'like', '%'.$s.'%')
             ->get();
         }
@@ -66,8 +66,8 @@ class AdvisingController extends Controller
         /*->with(['user' => function ($query,$s) {
             $query->where('name', 'like', '%'.$s.'%');
         }])
-        where('fname', 'like', '%'.$s.'%')
-        ->orWhere('lname', 'like', '%'.$s.'%')
+        where('first_name', 'like', '%'.$s.'%')
+        ->orWhere('last_name', 'like', '%'.$s.'%')
         ->->with(['internship'])
         */
         //$people = People::where('scholar_year','=','2018-2019');

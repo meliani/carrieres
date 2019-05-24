@@ -10,6 +10,9 @@ use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
 use App\Models\School\Profile\Professor;
 use App\Models\School\Profile\Student;
 
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
+
 class People extends Model implements HasMedia
 {
     use HasMediaTrait;
@@ -28,8 +31,8 @@ class People extends Model implements HasMedia
     'id',
     'user_id',
     'title',
-    'fname',
-    'lname',
+    'first_name',
+    'last_name',
     'email',
     'phone',
     'cv',
@@ -47,9 +50,17 @@ class People extends Model implements HasMedia
     'pfe_id'
     ];
 
+
+   public function setCvAttribute($value){
+
+    upload($value,[
+        'var_name' =>'cv',
+        'upload_path' => 'uploads/people/init_data/CVs'
+        ]);
+   } 
    public function getNameAttribute($value)
 	{
-		return $this->attributes['fname'].' '.$this->attributes['lname'];
+		return $this->attributes['first_name'].' '.$this->attributes['last_name'];
     }
    public function getTitleAttribute($value)
 	{

@@ -17,8 +17,8 @@ class CreatePeopleTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->nullable();
             $table->string('title')->nullable();
-            $table->string('fname')->nullable();
-            $table->string('lname')->nullable();
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
             $table->string('cv')->nullable();

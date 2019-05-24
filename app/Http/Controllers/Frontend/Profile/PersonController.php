@@ -76,12 +76,15 @@ class PersonController extends Controller
     public function update(Request $r, $id)
     {
         //dd($r);
-        if($r->hasFile('cv'))
-        $this->storeFile($r->file('cv'),'uploads/students/init_data/CVs');        
-        if($r->hasFile('lm'))
-        $this->storeFile($r->file('lm'),'uploads/students/init_data/LMs');        
-        if($r->hasFile('photo'))
-        $this->storeFile($r->file('photo'),'uploads/students/init_data/picture');
+
+        upload($r,[
+            'var_name' =>'lm',
+            'upload_path' => 'uploads/people/init_data/LMs'
+            ]);
+        upload($r,[
+            'var_name' =>'photo',
+            'upload_path' => 'uploads/people/init_data/photos'
+            ]);
 
         $person = People::find(auth()->user()->id);
         $person->update($r->all());
@@ -111,7 +114,7 @@ class PersonController extends Controller
      */
     public function activate()
     {
-        $person = People::find(auth()->user()->id);
+        $person = People::firstOrCreate(['user_id' => user()->id]);
         return view('frontend.profile.person.activation',compact('person'));
     }
 

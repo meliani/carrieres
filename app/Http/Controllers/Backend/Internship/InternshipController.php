@@ -18,8 +18,8 @@ class InternshipController extends BaseController
     {
         if(request()->has('s')){
             $trainees = Student::with('internship')
-            ->Where('fname','like','%'.request('s').'%')
-            ->orWhere('lname','like','%'.request('s').'%')
+            ->Where('first_name','like','%'.request('s').'%')
+            ->orWhere('last_name','like','%'.request('s').'%')
             ->orWhere('pfe_id',request('s'))
             ->latest()->get();  
         }else{
