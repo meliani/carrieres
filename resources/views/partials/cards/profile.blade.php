@@ -8,7 +8,7 @@
             </p>
         </div>
         <div class="card-action">
-            <a href="{{ route('people.activate') }}">Compléter mon profil</a>
+            <a href="{{ url('profile/activation') }}">Compléter mon profil</a>
         </div>
     </div>
 </div>
