@@ -77,7 +77,6 @@ Route::namespace('Internship')->group(function () {
         Route::resource('Jury', 'JuryController');
     });
 });
-Route::resource('People', 'School\PeopleController');
 Route::resource('Internship/Advising/Stats', 'Internship\StatsController');
 
 Route::get('Activation', ['as'=> 'people.activate', 'uses' => 'School\PeopleController@activate']);
@@ -126,8 +125,11 @@ Route::namespace('Frontend')
     });
 });
 
+
+//Route::get('Checkpoint', 'Auth\Checkpoint');
+
 Route::namespace('Frontend\Profile')
 ->group(function () {
-Route::resource('Person', 'PersonController');
-Route::get('Activation', ['as'=> 'people.activate', 'uses' => 'PersonController@activate']);
+Route::resource('person', 'PersonController');
+Route::get('profile/activation', 'PersonController@activate');
 });
