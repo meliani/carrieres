@@ -29,8 +29,8 @@ class BinomeController extends BaseController
     {
         $students = Student::where('ine','=',auth()->user()->people->ine)
         ->active()
-        ->get(['id','first_name','last_name'])
-        ->pluck('name','id')->all();
+        ->get(['user_id','first_name','last_name'])
+        ->pluck('name','user_id')->all();
         session(['internship_id' => request('internship_id')]);
         return view('frontend.internships.my_internship.binome.create',compact('students'));
     }
