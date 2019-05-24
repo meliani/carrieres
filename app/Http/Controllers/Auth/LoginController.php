@@ -35,7 +35,7 @@ class LoginController extends Controller
         if(isset($person) && $person->active()){
             return '/home';
         }else{
-            return '/Checkpoint';
+            return '/profile/activation';
         }
     }
 

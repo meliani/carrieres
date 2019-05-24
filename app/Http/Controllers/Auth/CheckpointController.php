@@ -15,6 +15,6 @@ class CheckpointController extends Controller
         if(isset($person) && $person->active()){
             return '/home';
         }else{
-            return '/welcome';
+            return '/Profile';
     }
 }
