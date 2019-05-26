@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Resources\User;
+namespace App\Http\Controllers\Backend\User;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -25,8 +25,8 @@ class UserController extends Controller
     public function index()
     {
         
-
-        return view('backend.profiles.users.index')->with('users',UserResource::index() );
+        $users = User::paginate(10);
+        return view('backend.profiles.users.index')->with('users',$users );
     }
 
     /**

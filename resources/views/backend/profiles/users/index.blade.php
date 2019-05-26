@@ -4,14 +4,14 @@
 
 @section('content')
 
-<div class="col-lg-10 col-lg-offset-1">
+<div class="container">
     <h1><i class="fa fa-users"></i>Administration des membres<a href="{{ route('roles.index') }}" class="btn btn-default pull-right">Roles</a>
     <a href="{{ route('permissions.index') }}" class="btn btn-default pull-right">Permissions</a></h1>
     <hr>
     
-    <div class="box">
-            <div class="box-header">
-              <h3 class="box-title">Liste des utilisateurs</h3>
+    <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Liste des utilisateurs</h3>
 
               <div class="box-tools">
                 <div class="input-group input-group-sm" style="width: 150px;">

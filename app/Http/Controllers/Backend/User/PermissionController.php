@@ -1,7 +1,8 @@
 <?php
 
-namespace App\Http\Resources\User;
+namespace App\Http\Controllers\Backend\User;
 
+use App\Http\Controllers\Backend\BaseController;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
@@ -10,7 +11,7 @@ use Spatie\Permission\Models\Role;
 use Spatie\Permission\Models\Permission;
 use Session;
 
-class PermissionController extends Controller
+class PermissionController extends BaseController
 {
     public function __construct() 
     {

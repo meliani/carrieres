@@ -20,11 +20,7 @@ Route::namespace('Admin')->group(function () {
     Route::prefix('admin')->group(function () {
         Route::get('applications', ['as'=> 'admin.applications.index', 'uses' => 'applicationsController@index']);
 
-        Route::resource('users', 'usersManager\UserController');
-    
-        Route::resource('roles', 'usersManager\RoleController');
-    
-        Route::resource('permissions', 'usersManager\PermissionController');
+
     
     });
 });
@@ -132,4 +128,11 @@ Route::namespace('Frontend\Profile')
 ->group(function () {
 Route::resource('person', 'PersonController');
 Route::get('profile/activation', 'PersonController@activate');
+});
+
+Route::namespace('Backend\User')
+->group(function () {
+Route::resource('users', 'UserController');
+Route::resource('roles', 'RoleController');
+Route::resource('permissions', 'PermissionController');
 });

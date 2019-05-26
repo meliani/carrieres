@@ -4,13 +4,14 @@
 
 @section('content')
 
-<div class='col-lg-4 col-lg-offset-4'>
+<div class='container'>
 
-    <h1><i class='fa fa-user-plus'></i> Edit {{$user->name}}</h1>
+    <h1><i class='material-icon'>mode_edit</i> Edit {{$user->name}}</h1>
     <hr>
-    {{-- @include ('errors.list') --}}
+    @include ('errors.list')
 
-    {{ Form::model($user, array('route' => array('users.update', $user->id), 'method' => 'PUT')) }} {{-- Form model binding to automatically populate our fields with user data --}}
+    {{ Form::model($user, array('route' => array('users.update', $user->id), 'method' => 'PUT')) }} 
+    {{-- Form model binding to automatically populate our fields with user data --}}
 
     <div class="form-group">
         {{ Form::label('name', 'Name') }}
@@ -24,10 +25,11 @@
 
     <h5><b>Give Role</b></h5>
 
-    <div class='form-group'>
+    <div class='form-input'>
         @foreach ($roles as $role)
+        {{ Form::label($role->name, ucfirst($role->name)) }}<br>
+
             {{ Form::checkbox('roles[]',  $role->id, $user->roles ) }}
-            {{ Form::label($role->name, ucfirst($role->name)) }}<br>
 
         @endforeach
     </div>

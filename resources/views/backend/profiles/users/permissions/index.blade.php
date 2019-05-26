@@ -4,7 +4,7 @@
 
 @section('content')
 
-<div class="col-lg-10 col-lg-offset-1">
+<div class="container">
     <h1><i class="fa fa-key"></i>Available Permissions
 
     <a href="{{ route('users.index') }}" class="btn btn-default pull-right">Users</a>
