@@ -111,7 +111,7 @@ class Internship extends Model
     }
     public function student()
     {
-        return $this->belongsTo(Person::class,'user_id','user_id');
+        return $this->belongsTo(Student::class,'user_id','user_id');
     }
     public function getParrainNameAttribute()
 	{
