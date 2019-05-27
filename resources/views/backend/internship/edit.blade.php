@@ -11,8 +11,17 @@
             </h3>
         </div>
         @include ('errors.list')
-        {{ Form::model($internship,['route'=>['backend.internships.store']]) }}
-            @include('backend.internship.fields')
+        {{ Form::model($internship,['route'=>['backend.internships.update',$internship],'method' => 'PUT']) }}
+        
+        @section('fields')
+          <div class = "row">        
+            <h4 class="header col s12 light center blue-text text-lighten-1">Administration INPT</h4>
+            <!-- Raison Sociale Field -->
+        </div>
+            @include('backend.internship.fields.admin')
+
+        @endsection
+        @include('backend.internship.fields')
         
             {!! Form::close() !!}
         </div>

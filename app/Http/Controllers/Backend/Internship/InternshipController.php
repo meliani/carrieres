@@ -17,7 +17,7 @@ class InternshipController extends BaseController
     public function index()
     {
 
-        $internships = Internship::latest()->get();
+        $internships = Internship::latest()->paginate();
         if(request()->has('s')){
             $internships = Internship::with('student')->latest()->paginate();
             $internships = $internships->filter(function ($item) {
@@ -107,7 +107,7 @@ class InternshipController extends BaseController
      */
     public function edit(Internship $internship)
     {
-        return view('backend.internship.create',compact('internship'));
+        return view('backend.internship.edit',compact('internship'));
     }
 
     /**
@@ -119,7 +119,13 @@ class InternshipController extends BaseController
      */
     public function update(Request $request, Internship $internship)
     {
-        //
+        $input = $request->all();
+        $internship = Internship::findOrFail($internship->id);
+        $internship->fill($input)->save();
+        return view('backend.internship.edit',compact('internship'))
+        ->with('message', 'Votre déclaration a été bien modifiee.');
+
+
     }
 
     /**

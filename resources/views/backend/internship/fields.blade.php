@@ -1,5 +1,6 @@
 <div class="card-panel">
     <div class="card-content">
+        @yield('fields')
         <!-- Entreprise -------------------------------------------------------->
         <div class = "row">        
             <h4 class="header col s12 light center blue-text text-lighten-1">Entreprise</h4>
