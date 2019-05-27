@@ -1,10 +1,10 @@
 <b>Informations sur la convention :</b>
 </br>
-Cryptage : {{ $a[0] }}
+Cryptage : {{ $v }}
 </br>
-Type de stage : {{ $a[1] }}
+Type de stage : 
 </br>
-Raison sociale de l'Entreprise : {{ $a[2] }}
+Raison sociale de l'Entreprise : 
 </br>
 Id utlisateur : {{ $b[0] }}
 </br>
