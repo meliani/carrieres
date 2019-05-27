@@ -19,10 +19,10 @@ class InternshipController extends BaseController
 
         $internships = Internship::latest()->paginate();
         if(request()->has('s')){
-            $internships = Internship::with('student')->latest()->paginate();
-            $internships = $internships->filter(function ($item) {
-                return $item->student->pfe_id == request('s');
-            })->values();
+            $internships = Internship::whereHas('student', function ($query) {
+                $query->where('pfe_id', 'like', request('s'));
+            })->get();
+            
             $trainees = Student::with('internship')
             ->Where('first_name','like','%'.request('s').'%')
             ->orWhere('last_name','like','%'.request('s').'%')
