@@ -78,6 +78,8 @@ Route::resource('Internship/Advising/Stats', 'Internship\StatsController');
 Route::get('Activation', ['as'=> 'people.activate', 'uses' => 'School\PeopleController@activate']);
 
 Route::resource('Authentic', 'Core\authenticDocumentController');
+Route::get('url/{v}/{url}', 'Core\UrlController');
+
 Route::get('test', function(){
     }
 );
