@@ -38,3 +38,16 @@
     'cols' => 6,
     'type' => 'textarea',
 ], $errors) }}
+
+{{ Form::checkboxGroup([
+    'name' => 'roles[]',
+    'value' => $role->id,
+    'label' => $role->name,
+    'placeholder' ,
+    'class' => 'validate',
+    'icon' ,
+    'helper' => 'Ajouter ou enlever ce droit',
+    'required',
+    'cols' => 6,
+    'data' => $user->roles,
+], $errors) }}
