@@ -19,7 +19,7 @@ class Project extends Internship
             $query->where('status', '1');
         });*/
         static::addGlobalScope(function ($query) {
-            $query->whereHas('people', function ($query) {
+            $query->whereHas('person', function ($query) {
                 $query->where('scholar_year', '=', '2018-2019');
             });
         });
