@@ -107,7 +107,7 @@ class InternshipController extends BaseController
      */
     public function edit(Internship $internship)
     {
-        //
+        return view('backend.internship.create',compact('internship'));
     }
 
     /**
