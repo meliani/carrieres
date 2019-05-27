@@ -11,13 +11,13 @@
             Liste des encadrements
         </h4>
     </div>
-    @include('components.pagination.pagination_wrapper',$paginate=$trainees)
+    @include('components.pagination.pagination_wrapper',$paginate=$internships)
 
     @include('components.search_box')
 
     @include('backend.internship.partials.list')
 
-    @include('components.pagination.pagination_wrapper',$paginate=$trainees)
+    @include('components.pagination.pagination_wrapper',$paginate=$internships)
 
 @endsection
 @section('floating-buttons')

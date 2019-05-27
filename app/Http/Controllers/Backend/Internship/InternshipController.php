@@ -16,6 +16,8 @@ class InternshipController extends BaseController
      */
     public function index()
     {
+
+        $internships = Internship::latest()->paginate();
         if(request()->has('s')){
             $trainees = Student::with('internship')
             ->Where('first_name','like','%'.request('s').'%')
@@ -31,7 +33,7 @@ class InternshipController extends BaseController
         //$trainees = \App\Models\School\Internship::with
         //$trainees = $trainees->people();
         }
-        return view('backend.internship.index',compact('trainees'));
+        return view('backend.internship.index',compact('internships'));
 
     }
     /**

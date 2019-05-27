@@ -14,53 +14,52 @@
       </tr>
     </thead>
     <tbody>
-      @foreach ($trainees as $trainee)
-
+      @foreach ($internships as $internship)
       <tr>
-        <td class="strong">{{ $trainee->pfe_id }}</td>
+        @if(isset($internship->student))
+        <td class="strong">{{ $internship->student->pfe_id }}</td>
         <td><div
           class="waves-effect sub strong tooltipped" data-position="bottom" 
           data-delay="50" 
           data-tooltip="INE 
-          {{ $trainee->ine }}
-          {{ $trainee->scholar_year }}">
-          {{ $trainee->name }}</div>
-          @if ($trainee['option_text'])
+          {{ $internship->student->ine }}
+          {{ $internship->student->scholar_year }}">
+          {{ $internship->student->name }}</div>
           <span class="new badge blue lighten-3 white-text" 
-          data-badge-caption="{{ ( !empty($trainee->option_text)? $trainee->option_text:'' ) }}">
+          data-badge-caption="{{ ( !empty($internship->student->option_text)? $internship->student->option_text:'' ) }}">
           </span>
-          @endif
-          @if (isset($trainee->internship->id))
+          @if (isset($internship->id))
         </td>
-        <td class="strong">{{ isset($trainee->internship->raison_sociale) ? str_limit($trainee->internship->raison_sociale,30):'' }}</td>
-        <td class="sub">{{  isset($trainee->internship->intitule) ? str_limit($trainee->internship->intitule, 100):'' }}</td>
+        <td class="strong">{{ isset($internship->raison_sociale) ? str_limit($internship->raison_sociale,30):'' }}</td>
+        <td class="sub">{{  isset($internship->intitule) ? str_limit($internship->intitule, 100):'' }}</td>
          {{-- Limit intitulé to 100 characters --}}
-         <td>{{ isset($trainee->internship->created_at) ? \Carbon\Carbon::parse($trainee->internship['created_at'])->format('d M Y'):'' }}</td>   
+         <td>{{ isset($internship->created_at) ? \Carbon\Carbon::parse($internship->student->internship['created_at'])->format('d M Y'):'' }}</td>   
          <td class="center">
-           @if(isset($trainee->internship->adviser->adviser1))
-            {{ $trainee->internship->adviser->adviser1['name']}}
-            <a class="left" href={{ route('Project.create', ['pfe_id' => $trainee->internship['id'],'advisor' => '1' ]) }}><i class="tiny material-icons">edit</i></a>
+           @if(isset($internship->adviser->adviser1))
+            {{ $internship->adviser->adviser1['name']}}
+            <a class="left" href={{ route('Project.create', ['pfe_id' => $internship->student->internship['id'],'advisor' => '1' ]) }}><i class="tiny material-icons">edit</i></a>
           @else
-            <a href={{ route('Project.create', ['pfe_id' => $trainee->internship['id'],'advisor' => '1' ]) }}><i class="tiny material-icons">add</i></a>
+            <a href={{ route('Project.create', ['pfe_id' => $internship->student->internship['id'],'advisor' => '1' ]) }}><i class="tiny material-icons">add</i></a>
           @endif
           </td>
           <td class="center">
-          @if(isset($trainee->internship->adviser->adviser2))  
-          <a class="left" href={{ route('Project.create', ['pfe_id' => $trainee->internship['id'],'advisor' => '2' ]) }}>
+          @if(isset($internship->adviser->adviser2))  
+          <a class="left" href={{ route('Project.create', ['pfe_id' => $internship->student->internship['id'],'advisor' => '2' ]) }}>
             <i class="tiny material-icons">edit</i></a>
-            {{ $trainee->internship->adviser->adviser2['name']}}
+            {{ $internship->adviser->adviser2['name']}}
           @else
-            <a href={{ route('Project.create', ['pfe_id' => $trainee->internship['id'],'advisor' => '2' ]) }}>
+            <a href={{ route('Project.create', ['pfe_id' => $internship->student->internship['id'],'advisor' => '2' ]) }}>
               <i class="tiny material-icons">add</i></a>
           @endif
           </td>
           <td class="multiline">
-          @include('backend.internship.advising.jury',$trainee)
+          @include('backend.internship.advising.jury',$internship->student)
           </td>
           <td>
-          @include('backend.internship.partials.actions',$trainee)
+          @include('backend.internship.partials.actions')
 
           </td>
+          @endif
       </tr>
       @endif
       @endforeach

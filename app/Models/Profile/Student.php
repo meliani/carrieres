@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Profile\Person;
 use App\Models\School\Internship;
 
-class Student extends Person
+class Student extends Model
 {
     protected $table = 'people';
 
@@ -21,6 +21,28 @@ class Student extends Person
                 $query->where('is_active', true);
         });
     }
+
+    public $fillable = [ 	
+        'user_id',
+        'title',
+        'first_name',
+        'last_name',
+        'email_perso',
+        'phone',
+        'cv',
+        'lm',
+        'photo',
+        'option_id',
+        'gender_id',
+        'birth_date',
+        'filiere_text',
+        'option_text',
+        'konosys_id',
+        'ine',
+        'is_active',
+        'scholar_year',
+        'pfe_id'
+        ];
 
     public function internship()
     {

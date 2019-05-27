@@ -16,7 +16,7 @@ class Professor extends Model
         return strtoupper($this->attributes['last_name']).' '.strtoupper($this->attributes['first_name']);
     }
 
-    // ******************** LOVE LETTERS (SCOPES) ************************ //
+    // ******************** LOVE CIRCLES (SCOPES) ************************ //
 
     public function scopeActive($query) {
         return $query->where('is_active', true);

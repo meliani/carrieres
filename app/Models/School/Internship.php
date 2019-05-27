@@ -7,6 +7,7 @@ use App\User;
 use App\Models\School\Internship\Adviser;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Profile\Person;
+use App\Models\Profile\Student;
 use Collective\Html\Eloquent\FormAccessible;
 
 
@@ -104,11 +105,14 @@ class Internship extends Model
     {
         return $this->hasOne(Adviser::class,'id_internship');
     }
-    public function people()
+    public function person()
     {
         return $this->belongsTo(Person::class,'user_id','user_id');
     }
-
+    public function student()
+    {
+        return $this->belongsTo(Person::class,'user_id','user_id');
+    }
     public function getParrainNameAttribute()
 	{
 		return $this->getTitle($this->parrain_titre).' '.$this->parrain_nom.' '.$this->parrain_prenom;
