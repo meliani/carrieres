@@ -39,22 +39,21 @@ class InternshipController extends BaseController
      *
      * @return \Illuminate\Http\Response
      */
-    public function clone()
+    public function clone($intertnship_id,$user_id)
     {
-        if(!is_null(request('id'))){
-        $internship = Internship::find(request('id'));
-        return view('frontend.internships.my_internship.create',compact('internship'));
-        }
+        session(['internship_id' => $intertnship_id]);
+        session(['user_id' => $user_id]);
+        $internship = Internship::find($intertnship_id);
+        return view('backend.internship.create',compact('internship'));
     }
     /**
      * Show the form for creating a new resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($internship = null)
     {
-        $internship ='';
-        return view('frontend.internships.my_internship.create',compact('internship'));
+        return view('backend.internship.create',compact('internship'));
     }
 
     /**
@@ -65,12 +64,17 @@ class InternshipController extends BaseController
      */
     public function store(Request $request)
     {   
-        //dump($request);
-
         $input = $request->all();
         //dd($request->user()->id);
         $internship = new Internship($input);
-        $internship->user()->associate(auth()->user()->id);
+        if($request->session()->has('user_id'))
+        {
+            $internship->user()->associate(session('user_id'));
+        }else{
+            $internship->user()->associate(user()->id);
+        }
+        
+        
         $internship->groupes()->attach(request('binome_user_id'));
         $internship->save();
         //flash()->success('Votre déclaration a été bien enregistrée.');

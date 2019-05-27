@@ -97,6 +97,8 @@ Route::namespace('Backend')
         Route::namespace('Internship')->group(function () {
             Route::resource('internships', 'InternshipController');
             Route::prefix('internships')->group(function () {
+                Route::get('clone/{internship_id}/{user_id}', 'InternshipController@clone');
+
             });
         }); 
     });
@@ -111,7 +113,7 @@ Route::namespace('Frontend')
         Route::get('myDocuments/', 'myDocumentsController@index');
     });
     Route::namespace('Internship')->group(function () {
-        Route::get('internships/clone/{id}', 'myInternshipController@clone');
+        Route::get('internships/clone/{id}/{user_id?}', 'myInternshipController@clone');
         Route::resource('internships', 'myInternshipController');
     Route::prefix('internships')->group(function () {
         Route::resource('binomes', 'BinomeController');
