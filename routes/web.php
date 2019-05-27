@@ -98,6 +98,7 @@ Route::namespace('Backend')
             Route::resource('internships', 'InternshipController');
             Route::prefix('internships')->group(function () {
                 Route::get('clone/{internship_id}/{user_id}', 'InternshipController@clone');
+                Route::resource('internships', 'InternshipController');
 
             });
         }); 
