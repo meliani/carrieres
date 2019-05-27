@@ -4,23 +4,18 @@
 
 @section('content')
 
-<div class="container">
+<div class="container col s12 m12">
     <h1><i class="fa fa-users"></i>Administration des membres<a href="{{ route('roles.index') }}" class="btn btn-default pull-right">Roles</a>
     <a href="{{ route('permissions.index') }}" class="btn btn-default pull-right">Permissions</a></h1>
     <hr>
     
-    <div class="card">
-            <div class="card-header">
+    <div class="card col s12 m12">
+            <div class="card-header center col m10 s10">
               <h3 class="card-title">Liste des utilisateurs</h3>
 
-              <div class="box-tools">
-                <div class="input-group input-group-sm" style="width: 150px;">
+              <div class="card-tools">
                   <input type="text" name="table_search" class="form-control pull-right" placeholder="Search">
-
-                  <div class="input-group-btn">
                     <button type="submit" class="btn btn-default"><i class="fa fa-search"></i></button>
-                  </div>
-                </div>
               </div>
             </div>
             <!-- /.box-header -->
@@ -60,7 +55,8 @@
 
         </table>
     </div>
-    {{ $users->links() }}
+    {{-- Html::paginator([$paginate=$users]) --}}
+    @include('components.pagination.pagination_wrapper',$paginate=$users)
     <!-- /.box-body -->
   </div>
   <!-- /.box -->
