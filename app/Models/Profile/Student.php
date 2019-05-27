@@ -9,7 +9,9 @@ use App\Models\School\Internship;
 class Student extends Model
 {
     protected $table = 'people';
-
+    protected $appends = [
+        'name',
+     ];
     public static function boot()
     {
         parent::boot();
@@ -52,6 +54,10 @@ class Student extends Model
     public function agreement()
     {
         return $this->hasOne(InternshipAgreement::class,'user_id','user_id');
+    }
+    public function getNameAttribute($value)
+	{
+		return $this->attributes['first_name'].' '.$this->attributes['last_name'];
     }
 
 }
