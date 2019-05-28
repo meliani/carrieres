@@ -84,10 +84,11 @@ class AdvisingController extends Controller
     public function create(Request $request)
     {
         $id=$request->pfe_id;
-        $encadrements = DB::table('internshipsview')
+        $encadrements = Internship::find($id);
+        /* DB::table('internshipsview')
             ->select('*')
             ->where('id',$id)
-            ->get();
+            ->get();*/
             //
             $profs = Professor::active()->orderBy('last_name')
             ->get(['id','first_name','last_name'])
