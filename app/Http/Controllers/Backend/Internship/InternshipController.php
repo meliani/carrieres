@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Backend\Internship;
 
 use App\Http\Controllers\Backend\BaseController;
 use App\Models\School\Internship;
+use App\Models\School\Internship\Defense;
 use Illuminate\Http\Request;
 use \App\Models\Profile\Student;
+use Route;
 
 class InternshipController extends BaseController
 {
@@ -21,22 +23,17 @@ class InternshipController extends BaseController
         if(request()->has('s')){
             $internships = Internship::whereHas('student', function ($query) {
                 $query->where('pfe_id', 'like', request('s'));
+                
             })->get();
-            
-            $trainees = Student::with('internship')
-            ->Where('first_name','like','%'.request('s').'%')
-            ->orWhere('last_name','like','%'.request('s').'%')
-            
-            ->latest()->get();  
+
         }else{
-        //$trainees = \App\Models\School\Internship::where('scholar_year','2018-2019')->with('people')->get();
-        $trainees = Student::has('internship')->with('internship')
-        ->where('scholar_year','2018-2019')
-        ->Where('ine','3')
-        ->latest('created_at')->paginate();
-        //$trainees = \App\Models\School\Internship::with
-        //$trainees = $trainees->people();
+        $internships = Internship::latest()->whereHas('student', function ($query) {
+            $query->where('ine', '=', 3)
+            ->where('scholar_year','2018-2019');
+        })->paginate();
         }
+
+        session(['last_url' => route(Route::current()->getName())]);
         return view('backend.internship.index',compact('internships'));
 
     }
@@ -84,6 +81,9 @@ class InternshipController extends BaseController
         $internship->groupes()->attach(request('binome_user_id'));
         $internship->save();
         //flash()->success('Votre déclaration a été bien enregistrée.');
+        if($request->session()->has('last_url'))
+        return session('last_url');
+        else
         return back()
         ->with('message', 'Votre déclaration a été bien enregistrée.');
     }
@@ -121,7 +121,16 @@ class InternshipController extends BaseController
     {
         $input = $request->all();
         $internship = Internship::findOrFail($internship->id);
+
+        if($internship->defense()->exists())
+        {
+            Defense::Where('internship_id','=',$internship->id)
+            ->internship()->associate($internship->id)->save();
+        }else{
+            Defense::create()->fill($input)->internship()->associate($internship->id)->save();
+        }
         $internship->fill($input)->save();
+
         return view('backend.internship.edit',compact('internship'))
         ->with('message', 'Votre déclaration a été bien modifiee.');
 

@@ -18,7 +18,7 @@
             <h4 class="header col s12 light center blue-text text-lighten-1">Administration INPT</h4>
             <!-- Raison Sociale Field -->
         </div>
-            @include('backend.internship.fields.admin')
+        @include('backend.internship.fields.admin')
 
         @endsection
         @include('backend.internship.fields')

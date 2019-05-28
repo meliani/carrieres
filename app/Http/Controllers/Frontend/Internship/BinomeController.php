@@ -28,7 +28,6 @@ class BinomeController extends BaseController
     public function create()
     {
         $students = Student::where('ine','=',auth()->user()->people->ine)
-        ->active()
         ->get(['user_id','first_name','last_name'])
         ->pluck('name','user_id')->all();
         session(['internship_id' => request('internship_id')]);

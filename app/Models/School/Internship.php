@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Profile\Person;
 use App\Models\Profile\Student;
 use Collective\Html\Eloquent\FormAccessible;
+use App\Models\School\Internship\Defense;
 
 
 class Internship extends Model
@@ -18,7 +19,6 @@ class Internship extends Model
     use SoftDeletes;
 
     protected $table = 'internships';
-    
 
     protected $dates = [
         'created_at',
@@ -61,7 +61,10 @@ class Internship extends Model
         'remuneration',
         'charge',
         'user_id',
-        'nbr_advisors'
+        'nbr_advisors',
+        'time_slot_id',
+        'classroom_id',
+        'defense_at',
     ];
     //protected $dateFormat = 'm/d/Y';
     protected $casts = [
@@ -89,6 +92,9 @@ class Internship extends Model
         'encadrant_ext_tel' => 'required|max:191',
         'encadrant_ext_mail' => 'required|email',
     ];
+    
+    
+    /** --------------------------------- Relations ----------------------------- */
     public function binome()
     {
         return $this->belongsTo(Person::class,'binome_user_id','user_id');
@@ -113,6 +119,14 @@ class Internship extends Model
     {
         return $this->belongsTo(Student::class,'user_id','user_id');
     }
+    public function defense()
+    {
+        return $this->hasOne(Defense::class);
+    }    
+
+
+
+    /** ---------------------------------  Getters ----------------------------- */
     public function getParrainNameAttribute()
 	{
 		return $this->getTitle($this->parrain_titre).' '.$this->parrain_nom.' '.$this->parrain_prenom;
