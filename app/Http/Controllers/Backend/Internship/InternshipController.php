@@ -124,8 +124,10 @@ class InternshipController extends BaseController
 
         if($internship->defense()->exists())
         {
-            Defense::Where('internship_id','=',$internship->id)
-            ->internship()->associate($internship->id)->save();
+            $internship->defense->internship()->associate($internship->id);
+            
+            /*Defense::Where('internship_id','=',$internship->id)
+            ->internship()->associate($internship->id)->save();*/
         }else{
             Defense::create()->fill($input)->internship()->associate($internship->id)->save();
         }
