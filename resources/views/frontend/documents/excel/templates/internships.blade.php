@@ -9,6 +9,7 @@ $trainees = \App\Models\Profile\Person::where('scholar_year','2018-2019')
 <table>
 <thead>
     <tr>
+        <th width="5%">id declaration</th>
         <th width="5%">Id</th>
         <th width="13%">Nom et prénom</th>
         <th width="13%">Option</th>
@@ -29,6 +30,7 @@ $trainees = \App\Models\Profile\Person::where('scholar_year','2018-2019')
     @foreach ($trainees as $trainee)
 
     <tr>
+        <td class="strong">{{ $trainee->internship['id'] }}</td>
         <td class="strong">{{ $trainee->pfe_id }}</td>
         <td class="sub strong">{{ $trainee->name }}</td>
         <td>{{ ( !empty($trainee['option_text'])? $trainee['option_text']:'' ) }}</td>
