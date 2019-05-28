@@ -70,6 +70,10 @@ class Internship extends Model
     protected $casts = [
         'date_debut' => 'date',
         'date_fin' => 'date',
+        'defense_at' => 'date',
+        'defense_start_time' => 'time:H:i',
+        'defense_end_time' => 'time:H:i',
+
     ];
     protected static $rules = [
         'raison_sociale' => 'required|max:191',

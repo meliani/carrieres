@@ -33,7 +33,7 @@ class AdminExportsController extends Controller
     }
     public function InternshipsExport($type)
     {
-        return Excel::download(new InternshipsExport, 'Internships global'.Carbon::now()->format('dMY his').'.xlsx');
+        return Excel::download(new InternshipsExport, 'Internships global - '.Carbon::now()->format('d_M_Y-ha').'.xlsx');
     }
     public function OffersApplicationsExport($type)
     {
