@@ -29,7 +29,7 @@ class AdminExportsController extends Controller
 
     public function AdvancedStagesExport($type)
     {
-        return Excel::download(new AdvancedStagesExport, 'StagesPFEExportAdvanced.xlsx');
+        return Excel::download(new AdvancedStagesExport, 'StagesPFEExportAdvanced - '.Carbon::now()->format('d_M_Y-ha').'.xlsx');
     }
     public function InternshipsExport($type)
     {
@@ -37,10 +37,10 @@ class AdminExportsController extends Controller
     }
     public function OffersApplicationsExport($type)
     {
-        return Excel::download(new OffersApplicationsExport, 'OffersApplications.xlsx');
+        return Excel::download(new OffersApplicationsExport, 'OffersApplications - '.Carbon::now()->format('d_M_Y-ha').'.xlsx');
     }
     public function AdvisingStatsExport($type)
     {
-        return Excel::download(new AdvisingStatsExport, 'AdvisingStats.xlsx');
+        return Excel::download(new AdvisingStatsExport, 'AdvisingStats - '.Carbon::now()->format('d_M_Y-ha').'.xlsx');
     }
 }
