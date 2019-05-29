@@ -6,7 +6,7 @@
             </td>
             <td>
                @foreach ($professor->internships as $internship)
-                    <p>{!! $internship->pivot->advising_type !!} -                     
+                    <p>{!! advising_type($internship->pivot->advising_type) !!} -                     
                     {!! $internship->student->pfe_id !!}</p>                    
                @endforeach
             </td>
