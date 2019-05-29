@@ -15,8 +15,11 @@ class CreateDefensesTable extends Migration
     {
         Schema::create('defenses', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('time_slot_id')->unsigned()->nullable();
+            $table->string('time_slot_id')->nullable();
             $table->integer('classroom_id')->unsigned()->nullable();
+            $table->time('start_time')->nullable();
+            $table->time('end_time')->nullable();
+            $table->date('defense_at')->nullable();
             $table->integer('internship_id')->unsigned()->nullable();
             $table->timestamps();
         });
