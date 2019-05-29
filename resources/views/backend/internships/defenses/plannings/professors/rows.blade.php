@@ -2,13 +2,15 @@
     @foreach ($collection as $professor)
         <tr>
             <td>
-                {!! $defense->internship_id !!}
+                {!! $professor->name !!}
             </td>
            <td>
 
             </td>
            <td>
-                {!! $defense->internship->student->name !!}
+               @isset($professor->internships->defenses)
+                {!! $professor->internships->defenses->defense_at !!}
+               @endisset
             </td>
             <td>
 

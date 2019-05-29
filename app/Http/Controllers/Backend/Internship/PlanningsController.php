@@ -5,9 +5,9 @@ namespace App\Http\Controllers\Backend\Internship;
 use App\Http\Controllers\Backend\BaseController;
 use App\Models\School\Internship\Defense;
 use Illuminate\Http\Request;
-use App\Models\School\Profile\Professor;
+use App\Models\Profile\Professor;
 
-class DefenseController extends BaseController
+class PlanningsController extends BaseController
 {
     /**
      * Display a listing of the resource.
