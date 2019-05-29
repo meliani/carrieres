@@ -95,6 +95,7 @@ Route::namespace('Backend')
     Route::prefix('-')->group(function () {
         Route::get('Dashboard', 'Dashboard');
         Route::namespace('Internship')->group(function () {
+            Route::get('defenses', 'Defense');
             Route::resource('internships', 'InternshipController');
             Route::prefix('internships')->group(function () {
                 Route::get('clone/{internship_id}/{user_id}', 'InternshipController@clone');
