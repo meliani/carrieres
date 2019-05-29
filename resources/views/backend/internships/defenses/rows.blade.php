@@ -17,15 +17,19 @@
                     {!! $defense->internship->adviser->adviser1->name !!}
                 @endisset
                 @isset($defense->internship->adviser->adviser2)
+                ,
                 {!! $defense->internship->adviser->adviser2->name !!}
                 @endisset
                 @isset($defense->internship->adviser->exami1)
+                ,
                 {!! $defense->internship->adviser->exami1->name !!}
                 @endisset
                 @isset($defense->internship->adviser->exami2)
+                ,
                 {!! $defense->internship->adviser->exami2->name !!}
                 @endisset
                 @isset($defense->internship->adviser->exami3)
+                ,
                 {!! $defense->internship->adviser->exami3->name !!}
                 @endisset
             </td>
