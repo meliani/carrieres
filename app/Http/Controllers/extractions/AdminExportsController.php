@@ -26,21 +26,21 @@ class AdminExportsController extends Controller
         $this->middleware(['auth','isAdmin']);        
     }
 
-
+    protected $extention = Carbon::now()->format('d_M_Y-ha').'.xlsx';
     public function AdvancedStagesExport($type)
     {
-        return Excel::download(new AdvancedStagesExport, 'StagesPFEExportAdvanced - '.Carbon::now()->format('d_M_Y-ha').'.xlsx');
+        return Excel::download(new AdvancedStagesExport, 'StagesPFEExportAdvanced - '.$extention);
     }
     public function InternshipsExport($type)
     {
-        return Excel::download(new InternshipsExport, 'Internships global - '.Carbon::now()->format('d_M_Y-ha').'.xlsx');
+        return Excel::download(new InternshipsExport, 'Internships global - '.$extention);
     }
     public function OffersApplicationsExport($type)
     {
-        return Excel::download(new OffersApplicationsExport, 'OffersApplications - '.Carbon::now()->format('d_M_Y-ha').'.xlsx');
+        return Excel::download(new OffersApplicationsExport, 'OffersApplications - '.$extention);
     }
     public function AdvisingStatsExport($type)
     {
-        return Excel::download(new AdvisingStatsExport, 'AdvisingStats - '.Carbon::now()->format('d_M_Y-ha').'.xlsx');
+        return Excel::download(new AdvisingStatsExport, 'AdvisingStats - '.$extention);
     }
 }
