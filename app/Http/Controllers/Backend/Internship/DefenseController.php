@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers\Backend\Internship;
 
-use App\Models\School\Defense;
+use App\Http\Controllers\Backend\BaseController;
+use App\Models\School\Internship\Defense;
 use Illuminate\Http\Request;
 
-class DefenseController extends Controller
+class DefenseController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -14,9 +15,9 @@ class DefenseController extends Controller
      */
     public function index()
     {
-        $defenses = Defense::all();
+        $collection = Defense::paginate();
 
-        return view('backend.internships.defenses.index',compact('defenses'));
+        return view('backend.internships.defenses.index',compact('collection'));
     }
 
     /**

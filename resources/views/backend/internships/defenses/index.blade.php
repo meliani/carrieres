@@ -1,26 +1,29 @@
 @extends('layouts.ui.app')
-@section('title', 'Stages et soutenances')
+
+@section('title', 'Soutenances')
 
 @section('users_buttons')
     @include(Button::user_buttons())
 @endsection  
 
-@section('content')
 
+@section('content')
+    {{-- Title bloc --}}}
     <div class="row center">
         <h4 class="header light center blue-text text-lighten-1">
-            Liste des encadrements
+            <Title>Planing des soutenances</Title>
         </h4>
     </div>
-    @include('components.pagination.pagination_wrapper',$paginate=$internships)
 
+    @include('components.pagination.pagination_wrapper',$paginate=$collection)
     @include('components.search_box')
+    @include('backend.internships.defenses.table_wrapper')
 
-    @include('backend.internships.partials.list')
 
-    @include('components.pagination.pagination_wrapper',$paginate=$internships)
-
+    @include('components.pagination.pagination_wrapper',$paginate=$collection)
 @endsection
+
 @section('floating-buttons')
     @include(Button::page_action_buttons())
 @endsection
+
