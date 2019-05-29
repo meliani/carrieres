@@ -11,7 +11,7 @@
             </h3>
         </div>
         @include ('errors.list')
-        {{ Form::model($internship,['route'=>['backend.internshipss.update',$internship],'method' => 'PUT']) }}
+        {{ Form::model($internship,['route'=>['backend.internships.update',$internship],'method' => 'PUT']) }}
         
         @section('fields')
           <div class = "row">        
