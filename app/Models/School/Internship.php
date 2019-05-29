@@ -139,7 +139,7 @@ class Internship extends Model
     }
     public function advisings()
 	{
-		return $this->hasMany(Advising::class);
+		return $this->hasMany(Advising::class)->withPivot('advising_type','user_id');
     }
 
 

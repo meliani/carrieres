@@ -44,6 +44,6 @@ class Professor extends Model
     }
     public function internships()
 	{
-		return $this->belongsToMany(Internship::class);
+		return $this->belongsToMany(Internship::class)->withPivot('advising_type');
     }
 }
