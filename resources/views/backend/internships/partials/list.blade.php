@@ -64,10 +64,10 @@
           @endif
           </td>
           <td class="multiline center">
-          @include('backend.internship.advising.jury',$internship->student)
+          @include('backend.internships.advising.jury',$internship->student)
           </td>
           <td>
-          @include('backend.internship.partials.actions')
+          @include('backend.internships.partials.actions')
 
           </td>
           @endif

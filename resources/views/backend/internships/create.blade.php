@@ -11,8 +11,8 @@
             </h3>
         </div>
         @include ('errors.list')
-        {{ Form::model($internship,['route'=>['backend.internships.store']]) }}
-            @include('backend.internship.fields')
+        {{ Form::model($internship,['route'=>['backend.internshipss.store']]) }}
+            @include('backend.internships.fields')
         
             {!! Form::close() !!}
         </div>

@@ -15,7 +15,7 @@
 
     @include('components.search_box')
 
-    @include('backend.internship.partials.list')
+    @include('backend.internships.partials.list')
 
     @include('components.pagination.pagination_wrapper',$paginate=$internships)
 

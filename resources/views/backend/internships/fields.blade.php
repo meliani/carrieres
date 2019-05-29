@@ -6,12 +6,12 @@
             <h4 class="header col s12 light center blue-text text-lighten-1">Entreprise</h4>
             <!-- Raison Sociale Field -->
         </div>
-        @include('backend.internship.fields.entreprise')
+        @include('backend.internships.fields.entreprise')
 
         <div class = "row">
             <h4 class="header col s12 light center blue-text text-lighten-1">Informations sur le stage</h4>
         </div>
-        @include('backend.internship.fields.internship')
+        @include('backend.internships.fields.internship')
 
         <!-- parrain -------------------------------------------------------------------------->
         <div class = "row">
@@ -20,14 +20,14 @@
             <h6 class="col s12 light center blue-text text-lighten-1">
                 Représentant de l'entreprise</h6>
         </div>
-            @include('backend.internship.fields.parrain')
+            @include('backend.internships.fields.parrain')
 
         <!-- Encadrant ext ---------------------------------------------------------->
         <div class = "row">
             <h4 class="header col s12 light center blue-text text-lighten-1">
                 Encadrant externe</h4>
         </div>
-            @include('backend.internship.fields.encadrant_ext')
+            @include('backend.internships.fields.encadrant_ext')
 
 
         <!-- Encadrant int ---------------------------------------------------------->
@@ -35,7 +35,7 @@
             <h4 class="header col s12 light center blue-text text-lighten-1">
                 Encadrant interne</h4>
         </div>
-        @include('backend.internship.fields.encadrant_int')
+        @include('backend.internships.fields.encadrant_int')
 
         <!-- Co Encadrant int ---------------------------------------------------------->
         <div class = "row">
@@ -43,7 +43,7 @@
                 Co-encadrant interne (Optionnel)
             </h4>
         </div>
-        @include('backend.internship.fields.co_encadrant_int')
+        @include('backend.internships.fields.co_encadrant_int')
 
 
         <div class = "row">

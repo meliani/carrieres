@@ -23,7 +23,7 @@
         </div>
     {!! Form::close() !!}
 
-    @include('backend.internship.advising.list')
+    @include('backend.internships.advising.list')
 
 
     @if($trainees instanceof \Illuminate\Pagination\LengthAwarePaginator )

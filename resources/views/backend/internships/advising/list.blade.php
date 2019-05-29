@@ -48,10 +48,10 @@
           @endif
           </td>
           <td class="multiline">
-          @include('backend.internship.advising.jury',$trainee)
+          @include('backend.internships.advising.jury',$trainee)
           </td>
           <td>
-          @include('backend.internship.advising.actions',$trainee)
+          @include('backend.internships.advising.actions',$trainee)
 
           </td>
       </tr>
