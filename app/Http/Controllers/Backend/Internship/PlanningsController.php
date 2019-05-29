@@ -16,7 +16,11 @@ class PlanningsController extends BaseController
      */
     public function index()
     {
-        $collection = Professor::paginate();
+        if(request('s'))
+        $collection = Professor::with('internships')->where('first_name','like','%'.request('s').'%')
+        ->orWhere('last_name','like','%'.request('s').'%')->get();
+        else
+        $collection = Professor::with('internships')->paginate();
 
         return view('backend.internships.defenses.plannings.professors.index',compact('collection'));
     }

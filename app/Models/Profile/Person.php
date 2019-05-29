@@ -69,7 +69,7 @@ class Person extends Model implements HasMedia
 		return "Mme.";
         else
 		return "Mr.";
-    }    
+    }
     public function activate(){
         $this->is_active=true;
         $this->save();
@@ -83,6 +83,7 @@ class Person extends Model implements HasMedia
     {
         return $this->hasOne(Internship::class,'user_id','user_id')->with('adviser');
     }
+
     public function professor()
     {
         return $this->hasOne(Professor::class,'id','user_id');

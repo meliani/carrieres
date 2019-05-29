@@ -5,6 +5,9 @@ use App\User;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Profile\Person;
+use App\Models\School\Internship\Advising;
+use App\Models\School\Internship\Project;
+use App\Models\School\Internship;
 
 class Professor extends Model
 {
@@ -27,8 +30,20 @@ class Professor extends Model
 	{
 		return $this->belongsTo(User::class,'id','id');
     }
-    public function people()
+    public function person()
 	{
 		return $this->belongsTo(Person::class,'user_id','id');
-    }   
+    }
+    public function projects()
+	{
+		return $this->hasMany(Project::class);
+    }
+    public function advisings()
+	{
+		return $this->hasMany(Advising::class);
+    }
+    public function internships()
+	{
+		return $this->belongsToMany(Internship::class);
+    }
 }

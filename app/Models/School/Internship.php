@@ -20,6 +20,16 @@ class Internship extends Model
 
     protected $table = 'internships';
 
+    protected static function boot()
+    {
+        parent::boot();
+    
+        static::addGlobalScope(function ($query) {
+                $query->orderBy('defense_at', 'asc');
+        });
+
+    }
+
     protected $dates = [
         'created_at',
         'updated_at',
@@ -126,8 +136,11 @@ class Internship extends Model
     public function defense()
     {
         return $this->hasOne(Defense::class);
-    }    
-
+    }
+    public function advisings()
+	{
+		return $this->hasMany(Advising::class);
+    }
 
 
     /** ---------------------------------  Getters ----------------------------- */

@@ -4,16 +4,25 @@
             <td>
                 {!! $professor->name !!}
             </td>
-           <td>
-
+            <td>
+               @foreach ($professor->internships as $internship)
+                    <p>{!! $internship->student->pfe_id !!}</p>                    
+               @endforeach
             </td>
-           <td>
-               @isset($professor->internships->defenses)
-                {!! $professor->internships->defenses->defense_at !!}
-               @endisset
+              <td>
+               @foreach ($professor->internships as $internship)
+                    <p>{!! $internship->defense_at->format('d M') !!}</p>
+               @endforeach
             </td>
             <td>
-
+                @foreach ($professor->internships as $internship)
+                    <p>{!! $internship->defense_start_time !!}</p>
+               @endforeach
+            </td>               
+            <td>
+                @foreach ($professor->internships as $internship)
+                    <p>Amphi {!! $internship->classroom_id !!}</p>
+               @endforeach
             </td>
         </tr>
     @endforeach
