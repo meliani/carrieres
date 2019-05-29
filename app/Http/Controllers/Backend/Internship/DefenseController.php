@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend\Internship;
 
 use App\Models\School\Defense;
 use Illuminate\Http\Request;
@@ -14,7 +14,9 @@ class DefenseController extends Controller
      */
     public function index()
     {
-        //
+        $defenses = Defense::all();
+
+        return view('backend.internships.defenses.index',compact('defenses'));
     }
 
     /**

@@ -34,7 +34,7 @@ class InternshipController extends BaseController
         }
 
         session(['last_url' => route(Route::current()->getName())]);
-        return view('backend.internship.index',compact('internships'));
+        return view('backend.internships.index',compact('internships'));
 
     }
     /**
@@ -47,7 +47,7 @@ class InternshipController extends BaseController
         session(['internship_id' => $intertnship_id]);
         session(['user_id' => $user_id]);
         $internship = Internship::find($intertnship_id);
-        return view('backend.internship.create',compact('internship'));
+        return view('backend.internships.create',compact('internship'));
     }
     /**
      * Show the form for creating a new resource.
@@ -56,7 +56,7 @@ class InternshipController extends BaseController
      */
     public function create($internship = null)
     {
-        return view('backend.internship.create',compact('internship'));
+        return view('backend.internships.create',compact('internship'));
     }
 
     /**
@@ -107,7 +107,7 @@ class InternshipController extends BaseController
      */
     public function edit(Internship $internship)
     {
-        return view('backend.internship.edit',compact('internship'));
+        return view('backend.internships.edit',compact('internship'));
     }
 
     /**
@@ -133,7 +133,7 @@ class InternshipController extends BaseController
         }
         $internship->fill($input)->save();
 
-        return view('backend.internship.edit',compact('internship'))
+        return view('backend.internships.edit',compact('internship'))
         ->with('message', 'Votre déclaration a été bien modifiee.');
 
 
