@@ -59,3 +59,24 @@ class ControllerTemplate extends Controller
     }
 
     return back()->with('message', __('app.article_added'));
+
+    /**
+     ******************** Eager loading with sorting ************************
+     */
+
+        $user->load(['cars' => function($query)
+    {
+        $query->orderBy('colour_id', 'asc');
+    }]);
+    If you want to order by colour name, do this:
+
+    $user->load(['cars' => function($query)
+    {
+        $query->select('cars.*')->join('colours', 'cars.colour_id', '=', 'colours.id')->orderBy('colours.colour', 'asc');
+    }]);
+
+    /** ---------------------------------------------------------- */
+    /**
+     * Annother solution for eager loading sorting
+     */
+    Order::with('company')->get()->sortBy('company.name');
