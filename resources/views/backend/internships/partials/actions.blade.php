@@ -10,7 +10,7 @@
         <i class="material-icons">mode_edit</i>modifier</a></li>
     <li class="divider" tabindex="-1"></li>
     <li>
-        <a href="{{ action('Frontend\Internship\BinomeController@create',
+        <a href="{{ action('Backend\Internship\BinomeController@create',
         ['internship_id' => $internship->id]) }}">
         <i class="material-icons">group_add</i>binome</a></li>
     <li><a href="#!"><i class="material-icons">date_range</i>planifier</a></li>

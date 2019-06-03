@@ -100,6 +100,7 @@ Route::namespace('Backend')
             Route::resource('plannings', 'PlanningsController');
             Route::resource('internships', 'InternshipController');
             Route::prefix('internships')->group(function () {
+                Route::resource('binomes', 'BinomeController');
                 Route::get('clone/{internship_id}/{user_id}', 'InternshipController@clone');
             });
         }); 
