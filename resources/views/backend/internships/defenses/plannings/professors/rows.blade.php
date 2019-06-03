@@ -12,17 +12,17 @@
             </td>
               <td>
                @foreach ($professor->internships as $internship)
-                    <p>{!! $internship->defense_at->format('d M') !!}</p>
+                    <p>{!! isset($internship->defense_at)?$internship->defense_at->format('d M'):'Not planned yet !' !!}</p>
                @endforeach
             </td>
             <td>
                 @foreach ($professor->internships as $internship)
-                    <p>{!! $internship->defense_start_time !!}</p>
+                    <p>{!! isset($internship->defense_start_time)?$internship->defense_start_time:'Not planned yet !' !!}</p>
                @endforeach
             </td>               
             <td>
                 @foreach ($professor->internships as $internship)
-                    <p>Amphi {!! $internship->classroom_id !!}</p>
+                    <p>{!! isset($internship->classroom_id) ? 'Amphi '.$internship->classroom_id:'Not planned yet !' !!}</p>
                @endforeach
             </td>
         </tr>
