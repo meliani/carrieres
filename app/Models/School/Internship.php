@@ -74,6 +74,8 @@ class Internship extends Model
         'nbr_advisors',
         'time_slot_id',
         'classroom_id',
+        'defense_start_time',
+        'defense_end_time',
         'defense_at',
     ];
     //protected $dateFormat = 'm/d/Y';
@@ -81,8 +83,8 @@ class Internship extends Model
         'date_debut' => 'date',
         'date_fin' => 'date',
         'defense_at' => 'date',
-        'defense_start_time' => 'time:H:i',
-        'defense_end_time' => 'time:H:i',
+        'defense_start_time' => 'time:HH:ii:SS',
+        'defense_end_time' => 'time:HH:ii:SS',
 
     ];
     protected static $rules = [
