@@ -11,9 +11,9 @@
             </h3>
         </div>
         @include ('errors.list')
-        {{ Form::open(['route'=>['binomes.store']]) }}
+        {{ Form::open(['route'=>['backend.binomes.store']]) }}
 
-            @include('frontend.internships.my_internship.binome.fields')
+            @include('backend.internships.binome.fields')
         
             {!! Form::close() !!}
         </div>

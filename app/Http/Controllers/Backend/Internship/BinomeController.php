@@ -31,7 +31,7 @@ class BinomeController extends BaseController
         ->get(['user_id','first_name','last_name'])
         ->pluck('name','user_id')->all();
         session(['internship_id' => request('internship_id')]);
-        return view('frontend.internships.my_internship.binome.create',compact('students'));
+        return view('backend.internships.binome.create',compact('students'));
     }
 
     /**
@@ -45,14 +45,24 @@ class BinomeController extends BaseController
         if($request->session()->has('internship_id')){
         $internship = Internship::where('id', '=', session('internship_id'))
         ->firstOrFail();
+        $internship_b = Internship::where('user_id', '=', request('binome_user_id'))
+        ->firstOrFail();
         }else{
         $internship = Internship::where('user_id', '=', auth()->user()->id)
         ->firstOrFail();
+        $internship_b = Internship::where('user_id', '=', request('binome_user_id'))
+        ->firstOrFail();
         }
+
+
 
         $internship->binome()->associate(request('binome_user_id'));
         $internship->groupes()->sync(request('binome_user_id'));
         $internship->save();
+
+        $internship_b->binome()->associate($internship->user_id);
+        $internship_b->groupes()->sync($internship->user_id);
+        $internship_b->save();
 
         flash()->success('Votre binome a été bien enregistrée.');
         return back();
