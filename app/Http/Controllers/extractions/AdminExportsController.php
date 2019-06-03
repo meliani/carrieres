@@ -8,6 +8,7 @@ use App\Exports\AdvancedStagesExport;
 use App\Exports\OffersApplicationsExport;
 use App\Exports\AdvisingStatsExport;
 use App\Exports\InternshipsExport;
+use App\Exports\planningByProfessor;
 
 use Carbon\Carbon;
 
@@ -43,5 +44,9 @@ class AdminExportsController extends Controller
     public function AdvisingStatsExport($type)
     {
         return Excel::download(new AdvisingStatsExport, 'AdvisingStats - '.$this->extention);
+    }
+    public function planningByProfessor($type)
+    {
+        return Excel::download(new planningByProfessor, 'Planning des enseignants - '.$this->extention);
     }
 }

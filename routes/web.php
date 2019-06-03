@@ -33,6 +33,7 @@ Route::namespace('Admin')->group(function () {
     Route::get('extractions/StagesExportAdvanced/{type}','extractions\AdminExportsController@AdvancedStagesExport')->middleware(['Teacher']);
     Route::get('extractions/AdvisingStatsExport/{type}','extractions\AdminExportsController@AdvisingStatsExport')->middleware(['Teacher']);
     Route::get('extractions/InternshipsExport/{type}','extractions\AdminExportsController@InternshipsExport')->middleware(['Teacher']);
+    Route::get('extractions/planningByProfessor/{type}','extractions\AdminExportsController@planningByProfessor')->middleware(['Teacher']);
 
 
 });
