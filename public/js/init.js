@@ -11,7 +11,7 @@ $(document).ready(function(){
   $('.timepicker').timepicker(
     {
       //default: 'now',
-      twelvehour: false, // change to 12 hour AM/PM clock from 24 hour
+      twelvehour: true, // change to 12 hour AM/PM clock from 24 hour
       donetext: 'OK',
       format:"HH:ii:SS",
       autoclose: false,
