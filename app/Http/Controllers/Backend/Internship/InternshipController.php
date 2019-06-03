@@ -137,7 +137,7 @@ class InternshipController extends BaseController
         }
             $internship->fill($input)->save();
 
-        return view('backend.internships.index',compact('internship'))
+        return view('backend.internships.edit',compact('internship'))
         ->with('message', 'Votre déclaration a été bien modifiee.');
 
 
