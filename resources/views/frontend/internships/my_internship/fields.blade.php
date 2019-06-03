@@ -25,6 +25,8 @@
         <div class = "row">
             <h4 class="header col s12 light center blue-text text-lighten-1">
                 Encadrant externe</h4>
+                <h6 class="col s12 light center blue-text text-lighten-1">
+                    Votre encadrant dans l'entreprise</h6>
         </div>
             @include('frontend.internships.my_internship.fields.encadrant_ext')
 
@@ -32,7 +34,9 @@
         <!-- Encadrant int ---------------------------------------------------------->
         <div class = "row">
             <h4 class="header col s12 light center blue-text text-lighten-1">
-                Encadrant interne</h4>
+                Encadrant interne (Optionnel)</h4>
+                <h6 class="col s12 light center blue-text text-lighten-1">
+                    Votre encadrant de l'INPT</h6>
         </div>
         @include('frontend.internships.my_internship.fields.encadrant_int')
 
@@ -41,13 +45,15 @@
             <h4 class="header col s12 light center blue-text text-lighten-1">
                 Co-encadrant interne (Optionnel)
             </h4>
+            <h6 class="col s12 light center blue-text text-lighten-1">
+                Votre deuxième encadrant de l'INPT</h6>
         </div>
         @include('frontend.internships.my_internship.fields.co_encadrant_int')
 
 
         <div class = "row">
             <h4 class="header col s12 light center blue-text text-lighten-1">
-                Si stage a l'étranger
+                Si stage a l'étranger (Optionnel)
             </h4>
             <!-- Mail Field --> 
             <div class = "input-field col m4 s12">
