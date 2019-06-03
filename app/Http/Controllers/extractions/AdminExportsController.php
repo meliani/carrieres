@@ -21,26 +21,27 @@ use Illuminate\Support\Facades\View;
 
 class AdminExportsController extends Controller
 {
+    protected $extention;
+
     public function __construct()
     {
-        $this->middleware(['auth','isAdmin']);        
+        $this->middleware(['auth','isAdmin']);
+        $this->extention= Carbon::now()->format('d_M_Y-ha').'.xlsx';
     }
-
-    protected $extention = Carbon::now()->format('d_M_Y-ha').'.xlsx';
     public function AdvancedStagesExport($type)
     {
-        return Excel::download(new AdvancedStagesExport, 'StagesPFEExportAdvanced - '.$extention);
+        return Excel::download(new AdvancedStagesExport, 'StagesPFEExportAdvanced - '.$this->extention);
     }
     public function InternshipsExport($type)
     {
-        return Excel::download(new InternshipsExport, 'Internships global - '.$extention);
+        return Excel::download(new InternshipsExport, 'Internships global - '.$this->extention);
     }
     public function OffersApplicationsExport($type)
     {
-        return Excel::download(new OffersApplicationsExport, 'OffersApplications - '.$extention);
+        return Excel::download(new OffersApplicationsExport, 'OffersApplications - '.$this->extention);
     }
     public function AdvisingStatsExport($type)
     {
-        return Excel::download(new AdvisingStatsExport, 'AdvisingStats - '.$extention);
+        return Excel::download(new AdvisingStatsExport, 'AdvisingStats - '.$this->extention);
     }
 }

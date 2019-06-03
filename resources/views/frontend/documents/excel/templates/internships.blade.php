@@ -9,11 +9,6 @@ $trainees = \App\Models\Profile\Person::where('scholar_year','2018-2019')
 <table>
 <thead>
     <tr>
-        <th width="5%" colspan="10">Stage</th>
-        <th width="10%" colspan="5">Soutenance</th>      
-        <th width="10%" colspan="5">Jury</th>      
-    </tr>
-    <tr>
         <th width="5%">id declaration</th>
         <th width="5%">Id</th>
         <th width="13%">Nom et prénom</th>
