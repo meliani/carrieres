@@ -30,7 +30,7 @@ $required = '';
     'value' ,
     'label' => 'Date de soutenance',
     'placeholder' ,
-    'class' => 'datepicker validate',
+    'class' => 'timepicker validate',
     'icon' => 'date_range',
     'helper' => 'Date de soutenance prevue',
     'required' => $required,
@@ -57,6 +57,14 @@ $required = '';
     'helper' => '',
     'required' => $required,
     'cols' => 3,
-    'data' => ['1'=>'09h00-10h30','2'=>'10h30-12h00','3'=>'14h00-15h30','4'=>'14h30-16h00','5'=>'15h00-16h30','6'=>'15h30-17h00','7'=>'16h00-17h30']
+    'data' => [
+    '09h00-10h30'=>'09h00-10h30',
+    '10h30-12h00'=>'10h30-12h00',
+    '14h00-15h30'=>'14h00-15h30',
+    '14h30-16h00'=>'14h30-16h00',
+    '15h00-16h30'=>'15h00-16h30',
+    '15h30-17h00'=>'15h30-17h00',
+    '16h00-17h30'=>'16h00-17h30',
+    ]
 ], $errors) }}
 </div>

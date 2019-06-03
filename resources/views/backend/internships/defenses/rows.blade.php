@@ -5,9 +5,9 @@
                 {!! $defense->internship_id !!}
             </td>
            <td>
-                {!! $defense->defense_at !!}
-                {!! $defense->classroom_id !!}
-                a {!! $defense->start_time !!}
+                {!! $defense->defense_at !!},
+                Amphi {!! $defense->classroom_id !!},
+                à {!! $defense->defense_start_time !!}
             </td>
            <td>
                 {!! $defense->internship->student->name !!}

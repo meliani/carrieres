@@ -8,4 +8,5 @@ $(document).ready(function(){
   $('.collapsible').collapsible();
   $('select').formSelect();
   $('.datepicker').datepicker({format: 'yyyy-mm-dd'});
+  $('.timepicker').timepicker();
 });
