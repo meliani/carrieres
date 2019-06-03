@@ -129,11 +129,15 @@ class InternshipController extends BaseController
             /*Defense::Where('internship_id','=',$internship->id)
             ->internship()->associate($internship->id)->save();*/
         }else{
-            Defense::create()->fill($input)->internship()->associate($internship->id)->save();
+            Defense::create()
+            ->fill($input)
+            ->internship()
+            ->associate($internship->id)
+            ->save();
         }
-        $internship->fill($input)->save();
+            $internship->fill($input)->save();
 
-        return view('backend.internships.edit',compact('internship'))
+        return view('backend.internships.index',compact('internship'))
         ->with('message', 'Votre déclaration a été bien modifiee.');
 
 

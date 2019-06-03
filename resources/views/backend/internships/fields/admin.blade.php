@@ -28,22 +28,22 @@ $required = '';
 {{ Form::textGroup([
     'name' => 'defense_start_time',
     'value' ,
-    'label' => 'Date de soutenance',
+    'label' => 'Heure',
     'placeholder' ,
     'class' => 'timepicker validate',
     'icon' => 'date_range',
-    'helper' => 'Date de soutenance prevue',
+    'helper' => 'Heure de debut',
     'required' => $required,
     'cols' => 5,
 ], $errors) }}
 {{ Form::textGroup([
     'name' => 'defense_end_time',
     'value' ,
-    'label' => 'Date de soutenance',
+    'label' => 'Heure',
     'placeholder' ,
     'class' => 'timepicker validate',
     'icon' => 'date_range',
-    'helper' => 'Date de soutenance prevue',
+    'helper' => 'Heure de fin',
     'required' => $required,
     'cols' => 5,
 ], $errors) }}
