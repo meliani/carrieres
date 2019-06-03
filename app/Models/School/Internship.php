@@ -83,8 +83,8 @@ class Internship extends Model
         'date_debut' => 'date',
         'date_fin' => 'date',
         'defense_at' => 'date',
-        'defense_start_time' => 'time:HH:ii:SS',
-        'defense_end_time' => 'time:HH:ii:SS',
+        'defense_start_time' => 'time:H:i',
+        'defense_end_time' => 'time:H:i',
 
     ];
     protected static $rules = [
