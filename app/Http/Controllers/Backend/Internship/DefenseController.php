@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Backend\Internship;
 
 use App\Http\Controllers\Backend\BaseController;
 use App\Models\School\Internship\Defense;
+use App\Models\School\Internship;
 use Illuminate\Http\Request;
 
 class DefenseController extends BaseController
@@ -15,9 +16,13 @@ class DefenseController extends BaseController
      */
     public function index()
     {
-        $collection = Defense::paginate();
+        //$collection = Defense::paginate();.
+        $collection = Internship::latest()->whereHas('student', function ($query) {
+            $query->where('ine', '=', 3)
+            ->where('scholar_year','2018-2019');
+        })->get();
 
-        return view('backend.internships.defenses.index',compact('collection'));
+        return view('backend.internships.defenses.plannings.general.index',compact('collection'));
     }
 
     /**
