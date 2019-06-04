@@ -36,7 +36,9 @@ $trainees = \App\Models\Profile\Person::where('scholar_year','2018-2019')
 
     <tr>
         <td class="strong">{{ $trainee->internship['id'] }}</td>
-        <td class="strong">{{ $trainee->pfe_id }}</td>
+        <td class="strong">{{ $trainee->pfe_id }}
+            {!! isset($trainee->internship->binome)?'.'.$trainee->internship->binome->pfe_id:'' !!}
+        </td>
         <td class="sub strong">{{ $trainee->name }}</td>
         <td>{{ ( !empty($trainee['option_text'])? $trainee['option_text']:'' ) }}</td>
         <td class="strong">{{ $trainee->internship['raison_sociale'] }}</td>

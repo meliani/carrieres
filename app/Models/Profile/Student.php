@@ -9,6 +9,8 @@ use App\Models\School\Internship;
 class Student extends Model
 {
     protected $table = 'people';
+    protected $primaryKey = "user_id";
+
     protected $appends = [
         'name',
      ];

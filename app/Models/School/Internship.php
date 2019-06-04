@@ -8,8 +8,10 @@ use App\Models\School\Internship\Adviser;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Profile\Person;
 use App\Models\Profile\Student;
+use App\Models\Profile\Professor;
 use Collective\Html\Eloquent\FormAccessible;
 use App\Models\School\Internship\Defense;
+use App\Models\School\Internship\Advising;
 
 
 class Internship extends Model
@@ -113,7 +115,7 @@ class Internship extends Model
     /** --------------------------------- Relations ----------------------------- */
     public function binome()
     {
-        return $this->belongsTo(Person::class,'binome_user_id','user_id');
+        return $this->belongsTo(Student::class,'binome_user_id','user_id');
     }
     public function groupes()
     {
@@ -139,9 +141,10 @@ class Internship extends Model
     {
         return $this->hasOne(Defense::class);
     }
-    public function advisings()
+    public function professors()
 	{
-		return $this->hasMany(Advising::class)->withPivot('advising_type','user_id');
+        return $this->hasMany(Professor::class)
+        ->withPivot('advising_type','user_id','professor_id','internship_id');
     }
 
 
