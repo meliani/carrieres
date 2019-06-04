@@ -19,12 +19,28 @@ class Professor extends Model
         return strtoupper($this->attributes['last_name']).' '.strtoupper($this->attributes['first_name']);
     }
 
+    public function is_available($date,$time){
+        
+        $internships= Internship::Where('defense_at',$date)
+        ->Where('defense_start_time',$time)->with(array('professors' => function($query)
+        {
+            $query->where('professor_id', $this->id); 
+        }))->get();
+        /*$internships= Internship::Where('defense_at',$date)
+        ->Where('defense_start_time',$time)->professors()->wherePivot('professor_id',$this->id);
+        foreach ($internships as $internship) {
+            if($internship->pivot->professor_id)
+            return 'no';
+        }*/
+        if(empty($internships))
+        return 'yes';
+        else return 'no';
+    }
     // ******************** LOVE CIRCLES (SCOPES) ************************ //
 
     public function scopeActive($query) {
         return $query->where('is_active', true);
     }
-
     // ******************** LOVE RELATIONSHIPS ************************ //
     public function user()
 	{
@@ -44,6 +60,6 @@ class Professor extends Model
     }
     public function internships()
 	{
-		return $this->belongsToMany(Internship::class)->withPivot('advising_type','user_id');
+		return $this->belongsToMany(Internship::class)->withPivot('advising_type','user_id','professor_id','internship_id');
     }
 }
