@@ -21,11 +21,11 @@ class Professor extends Model
 
     public function is_available($date,$time){
         
-        $internships= Internship::Where('defense_at',$date)
+        /*$internships= Internship::Where('defense_at',$date)
         ->Where('defense_start_time',$time)->with(array('professors' => function($query)
         {
             $query->where('professor_id', $this->id); 
-        }))->get();
+        }))->get();*/
         /*$internships= Internship::Where('defense_at',$date)
         ->Where('defense_start_time',$time)->professors()->wherePivot('professor_id',$this->id);
         foreach ($internships as $internship) {
