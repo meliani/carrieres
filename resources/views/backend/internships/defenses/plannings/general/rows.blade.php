@@ -28,8 +28,6 @@
                     Elève : {!! $internship->student->name !!}
                     {!! isset($internship->binome)?','.$internship->binome->name:'' !!}
                 </p>
-<p>
-
     @isset($internship->adviser->adviser1)
     <p>Encadrant 1 : 
         {!! $internship->adviser->adviser1->name !!}</p>
@@ -38,7 +36,6 @@
     <p>Encadrant 2 : 
     {!! $internship->adviser->adviser2->name !!}</p>
     @endisset
-</p>
     @isset($internship->adviser->exami1)
     <p>Examinateur 1 : 
     {!! $internship->adviser->exami1->name !!}</p>
