@@ -46,9 +46,6 @@
                     <p>{!! isset($internship->classroom_id) ? 'Amphi'.$internship->classroom_id:'Not planned yet !' !!}</p>
                @endforeach
             </td>
-            <td>
-                {{ $professor->user->email}}
-            </td>
         </tr>
     @endforeach
 </tbody>
