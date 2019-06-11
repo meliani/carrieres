@@ -16,7 +16,7 @@
 <ul class="collection">
     <li class="collection-item avatar">
         <i class="material-icons circle">sync</i>
-    <a href={{ url('students/myDocuments?action[]=render') }} class="waves-effect waves-light btn">
+    <a href={{ url('students/myDocuments?action[]=render&action[]=convention') }} class="waves-effect waves-light btn">
         <i class="material-icons right">save</i>Generer les documents</a>
     </li>
 </ul>
