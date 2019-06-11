@@ -143,3 +143,5 @@ Route::resource('users', 'UserController');
 Route::resource('roles', 'RoleController');
 Route::resource('permissions', 'PermissionController');
 });
+
+Route::get('PlanningPFE2019', 'Backend\Internship\PlanningsController@index');

@@ -11,12 +11,12 @@
     {{-- Title bloc --}}}
     <div class="row center">
         <h4 class="header light center blue-text text-lighten-1">
-            <Title>Planing des enseignants</Title>
+            <Title>Planning des enseignants</Title>
         </h4>
     </div>
 
     @include('components.pagination.pagination_wrapper',$paginate=$collection)
-    @include('components.search_box')
+    {{--@include('components.search_box')--}}
     @include('backend.internships.defenses.plannings.professors.table_wrapper')
 
 

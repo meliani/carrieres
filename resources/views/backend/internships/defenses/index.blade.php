@@ -11,7 +11,7 @@
     {{-- Title bloc --}}}
     <div class="row center">
         <h4 class="header light center blue-text text-lighten-1">
-            <Title>Planing des soutenances</Title>
+            <Title>Planning des soutenances</Title>
         </h4>
     </div>
 
