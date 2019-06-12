@@ -5,7 +5,7 @@
                 {!! $defense->internship_id !!}
             </td>
            <td>
-                {!! $defense->defense_at !!},
+                {!! $defense->defense_at->format('d/m/y') !!},
                 Amphi {!! $defense->classroom_id !!},
                 à {!! $defense->defense_start_time !!}
             </td>

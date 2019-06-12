@@ -2,7 +2,7 @@
     @foreach ($collection as $internship)
         <tr>
             <td>
-                {!! $internship->defense_at->format('D d M Y') !!}
+                {!! $internship->defense_at->format('d/m/Y') !!}
             </td>
            <td>
                {!! $internship->defense_start_time !!}
