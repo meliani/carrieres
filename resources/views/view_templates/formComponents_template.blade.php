@@ -1,6 +1,6 @@
 <!-- Select -->
 {{ Form::selectGroup([
-    'name' => 'encadrant_int_titre',
+    'name' => __('form.name.first_name'),
     'value' ,
     'label' => 'Civilité de l\'encadrant interne',
     'placeholder' ,
@@ -39,6 +39,7 @@
     'type' => 'textarea',
 ], $errors) }}
 
+<!-- Checkbox -->
 {{ Form::checkboxGroup([
     'name' => 'roles[]',
     'value' => $role->id,
