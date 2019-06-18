@@ -22,6 +22,7 @@ class internshipOffer extends baseModel
 
 
     public $fillable = [
+        'internship_type',
         'nom_responsable',
         'raison_sociale',
         'lieu_de_stage',
