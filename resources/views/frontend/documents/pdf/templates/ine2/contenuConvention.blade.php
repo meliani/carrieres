@@ -103,7 +103,7 @@ types orient&eacute;s vers des objectifs globaux et sp&eacute;cifiques
 <p align="justify" style=" line-height: 100%"><font size="2" style="font-size: 11pt">Cette
 convention concerne l&rsquo;&eacute;l&egrave;ve ing&eacute;nieur :</font></p>
 <p align="justify" style=" line-height: 100%"><font size="2" style="font-size: 11pt"><b>{{ $internship->person->title }}</b></font><font size="2" style="font-size: 11pt"><b> {{ $internship->person->name }}</b>, &eacute;l&egrave;ve
-ing&eacute;nieur de la 1<sup>&egrave;re</sup>
+ing&eacute;nieur de la 2<sup>&egrave;me</sup>
 ann&eacute;e du cycle INE de l&rsquo;INPT.</font></p>
 <h3 class="western"><a name="_9f4lltgvdivs"></a>Article 2</h3>
 <p align="justify" style=" line-height: 100%"><font size="2" style="font-size: 11pt">L&rsquo;&eacute;tudiant(e)
