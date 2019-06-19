@@ -100,6 +100,11 @@ types orient&eacute;s vers des objectifs globaux et sp&eacute;cifiques
     Durant le stage technique dont la durée est de 4 à 8 semaines, 
     l’élève ingénieur effectue une recherche personnelle sur 
     le thème proposé.</font></p>
+    <h3 class="western"><a name="_dhr18evwjqdy"></a>Article 1</h3>
+    <p align="justify" style=" line-height: 100%"><font size="2" style="font-size: 11pt">La
+    pr&eacute;sente convention r&egrave;gle les rapports entre
+    l&rsquo;organisme d&rsquo;accueil d'une part, l&rsquo;INPT et le
+    stagiaire d'autre part. </font></p>
 <p align="justify" style=" line-height: 100%"><font size="2" style="font-size: 11pt">Cette
 convention concerne l&rsquo;&eacute;l&egrave;ve ing&eacute;nieur :</font></p>
 <p align="justify" style=" line-height: 100%"><font size="2" style="font-size: 11pt"><b>{{ $internship->person->title }}</b></font><font size="2" style="font-size: 11pt"><b> {{ $internship->person->name }}</b>, &eacute;l&egrave;ve
