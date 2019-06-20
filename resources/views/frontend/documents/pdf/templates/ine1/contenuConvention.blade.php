@@ -123,7 +123,7 @@ ing&eacute;nieur.</font></p>
 <p align="justify" style=" line-height: 100%"><font size="2" style="font-size: 11pt">Th&egrave;me
 du stage : </font><font size="2" style="font-size: 11pt"><b>{{ $internship->intitule }}</b></font></p>
 <p align="justify" style=" line-height: 100%"><font size="2" style="font-size: 11pt">La
-dur&eacute;e du stage est fix&eacute;e &agrave; </font><font size="2" style="font-size: 11pt"><b>{{ $internship->duree }} semaines</b></font> <font size="2" style="font-size: 11pt">, du 
+dur&eacute;e du stage est fix&eacute;e &agrave; </font><font size="2" style="font-size: 11pt"><b>{{ $internship->duree }}</b></font> <font size="2" style="font-size: 11pt">, du 
 <b>{{ $internship->date_debut->format('d/m/Y') }}</b>
 au <b>{{ $internship->date_fin->format('d/m/Y') }}.</b></font></p>
 <h3 class="western"><a name="_ritn9hpt2ay1"></a>Article 4</h3>
