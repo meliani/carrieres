@@ -164,10 +164,12 @@ class Internship extends Model
         else
         return "Mme.";
     }
-    public function getDureeAttribute($gender)
+    public function getDureeAttribute()
 	{
         //return $this->date_fin->diffForHumans($this->date_debut);
-        return $this->date_fin->longAbsoluteDiffForHumans($this->date_debut);
+        //return $this->date_fin->longAbsoluteDiffForHumans($this->date_debut,null,7);
+        return $this->date_fin->diffInWeeks($this->date_debut);
+
     }
     
 }
