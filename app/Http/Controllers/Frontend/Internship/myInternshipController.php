@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Frontend\Internship;
 
-use App\Http\Controllers\Controller;
+use App\Http\Controllers\Frontend\BaseController;
 use App\Models\School\Internship;
 use Illuminate\Http\Request;
 
-class myInternshipController extends Controller
+class myInternshipController extends BaseController
 {
     /**
      * Display a listing of the resource.
