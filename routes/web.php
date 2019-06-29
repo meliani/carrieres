@@ -76,7 +76,7 @@ Route::namespace('Internship')->group(function () {
 });
 Route::resource('Internship/Advising/Stats', 'Internship\StatsController');
 
-Route::get('Activation', ['as'=> 'people.activate', 'uses' => 'School\PeopleController@activate']);
+Route::get('Activation', ['as'=> 'person.activate', 'uses' => 'Frontend\Profile\PersonController@activate']);
 
 Route::resource('Authentic', 'Core\authenticDocumentController');
 Route::get('url/{v}/{url}', 'Core\UrlController');
@@ -146,3 +146,4 @@ Route::resource('permissions', 'PermissionController');
 
 //Route::get('PlanningPFE2019', 'Backend\Internship\PlanningsController@index');
 Route::get('PlanningPFE2019', 'Frontend\IframeController');
+Route::get('submit_offer', 'Frontend\Internship\InternshipOfferController@create',$internship_type=2);

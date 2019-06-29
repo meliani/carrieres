@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Core\baseModel;
 
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
 class internshipOffer extends baseModel
 {
     use SoftDeletes;
@@ -105,7 +107,9 @@ class internshipOffer extends baseModel
 /**
  * Assecors end Mutators
  */
-
+public function setDocumentOffreAttribute($value){
+    $this->attributes['document_offre']=Storage::putFile('public/uploads/internships/offers/submited_files', new File($value));
+   }
     public function getNomResponsableAttribute($value)
     {
         return ucfirst($value);

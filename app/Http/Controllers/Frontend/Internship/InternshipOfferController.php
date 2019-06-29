@@ -22,7 +22,7 @@ class internshipOfferController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['auth','isAdmin']);        
+        $this->middleware(['auth','isAdmin'])->except('create');        
     }
     /**
      * Display a listing of the resource.
@@ -41,9 +41,9 @@ class internshipOfferController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create($internship_type=2)
     {
-        //
+        return view('frontend.internships.offers.submit', compact('internship_type'));
     }
 
     /**
@@ -54,7 +54,11 @@ class internshipOfferController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Offer::create($request->all()); 
+        flash()->success('Offre de stage bien enregistrée.');
+
+        return view('frontend.internships.offers.form.thanks')->with('message', 'Votre proposition a été bien enregistrée');
+
     }
 
     /**
