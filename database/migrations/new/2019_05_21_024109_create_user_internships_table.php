@@ -15,7 +15,7 @@ class CreateUserInternshipsTable extends Migration
     {
         Schema::create('user_internships', function (Blueprint $table) {
             $table->increments('user_id');
-            $table->integer('internship_id')
+            $table->integer('internship_id');
             $table->timestamps();
         });
     }

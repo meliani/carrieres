@@ -1,4 +1,3 @@
-<?php
 
 
 namespace App\Http\Controllers;
@@ -24,7 +23,7 @@ class ControllerTemplate extends Controller
     }
 
     /** ------ playing with files -------- */
-
+function playingWithFiles(){
     $file = $request->file('photo');
     //File Name
     $file->getClientOriginalName();
@@ -45,8 +44,8 @@ class ControllerTemplate extends Controller
     $destinationPath = 'uploads';
     $file->move($destinationPath,$file->getClientOriginalName());
 
-    route('route name')
-
+    route('route name');
+}
     public function __invoke($id)
     {
         return view('user.profile', ['user' => User::findOrFail($id)]);
@@ -58,12 +57,14 @@ class ControllerTemplate extends Controller
         return $article->type === Article::TYPE_NORMAL;
     }
 
+    function returnBackWithMEssage(){
     return back()->with('message', __('app.article_added'));
-
+    }
     /**
      ******************** Eager loading with sorting ************************
      */
 
+    
         $user->load(['cars' => function($query)
     {
         $query->orderBy('colour_id', 'asc');
