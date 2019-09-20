@@ -211,7 +211,7 @@
     <div class="section">
         <p>
         Dans une deuxième étape, seuls les élèves ingénieurs ayant remis une version électronique pourront remettre le dossier complet de leur stage. 
-        Le dossier de stage doit être remis avant le <b>30 Novembre 2019.</b> Il doit être composé de :
+        Le dossier de stage doit être remis <b>entre le 04 et le 15 Novembre 2019.</b> Il doit être composé de :
         </p>
         <ul>
         <li>1 - Rapport du stage version papier (identique à la version numérique),</li>
