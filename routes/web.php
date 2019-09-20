@@ -121,13 +121,15 @@ Route::namespace('Frontend')
     Route::prefix('internships')->group(function () {
         Route::resource('binomes', 'BinomeController');
         Route::resource('offers', 'internshipOfferController');
+        Route::resource('reports', 'internshipReportController');
         Route::prefix('offers')->group(function () {
             Route::resource('applications', 'internshipApplicationController');
-            }); 
+            });
         });
     });
 });
 
+Route::get('rapport', 'Frontend\Internship\internshipReportController@create');
 
 Route::get('Checkpoint', 'Auth\CheckpointController');
 
