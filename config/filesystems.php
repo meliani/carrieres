@@ -68,7 +68,24 @@ return [
             'url' => env('APP_URL').'/storage/userfiles',
             'visibility' => 'public',
         ],
-
+        'internship_reports' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/userfiles/internships/reports'),
+            'url' => env('APP_URL').'/storage/userfiles/internships/reports',
+            'visibility' => 'public',
+        ],
+        'internship_agreements' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/userfiles/internships/agreements'),
+            'url' => env('APP_URL').'/storage/userfiles/internships/agreements',
+            'visibility' => 'public',
+        ],
+        'internship_certificates' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/userfiles/internships/certificates'),
+            'url' => env('APP_URL').'/storage/userfiles/internships/certificates',
+            'visibility' => 'public',
+        ],
         's3' => [
             'driver' => 's3',
             'key' => env('AWS_ACCESS_KEY_ID'),
