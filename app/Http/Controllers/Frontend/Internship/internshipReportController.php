@@ -54,7 +54,9 @@ class internshipReportController extends Controller
      */
     public function store(StoreInternshipReport $request)
     {
-        Report::create($request->validated()); 
+        $report = Report::create($request->validated());
+        $report = $report->user()->associate(auth()->user())->save();
+
         flash()->success('Offre de stage bien enregistrée.');
 
         return view('frontend.internships.reports.thanks')->with('message', 'Votre Rapport a été bien enregistrée');
