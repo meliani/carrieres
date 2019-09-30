@@ -15,7 +15,6 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 /** --------- Models ----------- */
 use App\Models\School\Internship\Application;
-use App\Models\School\Internship\internshipOffer as Offer;
 use App\User;
 
 class internshipReportController extends Controller
@@ -32,7 +31,7 @@ class internshipReportController extends Controller
      */
     public function index()
     {
-
+        
 
     }
 
@@ -55,9 +54,9 @@ class internshipReportController extends Controller
     public function store(StoreInternshipReport $request)
     {
         $report = Report::create($request->validated());
-        $report = $report->user()->associate(auth()->user())->save();
+        $report->user()->associate(auth()->user())->save();
 
-        flash()->success('Offre de stage bien enregistrée.');
+        flash()->success('Rapport de stage bien enregistrée.');
 
         return view('frontend.internships.reports.thanks')->with('message', 'Votre Rapport a été bien enregistrée');
 

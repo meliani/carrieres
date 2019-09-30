@@ -43,14 +43,21 @@ class internshipReport extends Model
     ];
 
     public function setFileReportAttribute($value){
-        $this->attributes['file_report']=Storage::putFile('public/uploads/internships/reports/2019/report', new File($value));
-    }
+        auth()->user()->people
+        ->addMedia($value)
+        ->toMediaCollection('file_report','internship_reports');
+    }    
     public function setFileAgreementAttribute($value){
-        $this->attributes['file_agreement']=Storage::putFile('public/uploads/internships/reports/2019/agreement', new File($value));
-    }
+        auth()->user()->people
+        ->addMedia($value)
+        ->toMediaCollection('file_agreement','internship_agreements');
+    }    
     public function setFileCertificateAttribute($value){
-        $this->attributes['file_certificate']=Storage::putFile('public/uploads/internships/reports/2019/certificate', new File($value));
+        auth()->user()->people
+        ->addMedia($value)
+        ->toMediaCollection('file_certificate','internship_certificates');
     }
+
     public function user()
 	{
 		return $this->belongsTo(User::class);
