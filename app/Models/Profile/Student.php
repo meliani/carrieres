@@ -5,6 +5,7 @@ namespace App\Models\Profile;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Profile\Person;
 use App\Models\School\Internship;
+use App\Models\School\Internship\internshipReport as Report;
 
 class Student extends Model
 {
@@ -62,6 +63,12 @@ class Student extends Model
     {
         return $this->hasOne(InternshipAgreement::class,'user_id','user_id');
     }
+    
+    public function report()
+    {
+        return $this->hasMany(Report::class,'user_id','user_id');
+    }
+
     public function getNameAttribute($value)
 	{
 		return $this->attributes['first_name'].' '.$this->attributes['last_name'];
