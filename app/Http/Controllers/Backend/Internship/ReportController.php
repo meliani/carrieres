@@ -16,7 +16,7 @@ class ReportController extends BaseController
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $r)
     {
         $students = Student::all();
 
