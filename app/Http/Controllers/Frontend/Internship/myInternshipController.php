@@ -69,7 +69,7 @@ class myInternshipController extends BaseController
      */
     public function show(Internship $internship)
     {
-        //
+        return view('frontend.internships.my_internship.show',compact('internship'));
     }
 
     /**
