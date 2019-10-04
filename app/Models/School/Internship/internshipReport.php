@@ -12,7 +12,7 @@ class internshipReport extends Model
 {
     use SoftDeletes;
     public $table = 'internship_reports';
-
+    //public $current_year = config('school.current.academic_year');
     //protected $primaryKey = "";
 
     protected $dates = [
