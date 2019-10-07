@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Profile\Person;
 use App\Models\School\Internship;
 use App\Models\School\Internship\internshipReport as Report;
+use App\Models\School\schoolCycle as Cycle;
 
 class Student extends Model
 {
@@ -68,7 +69,13 @@ class Student extends Model
     {
         return $this->hasMany(Report::class,'user_id','user_id');
     }
-
+    public function cycle(){
+        return $this->hasOneThrough(Cycle::class,studentCycle::class,'user_id','user_id');
+    }
+/**
+ * 
+ * ********** Getters ***********
+ */
     public function getNameAttribute($value)
 	{
 		return $this->attributes['first_name'].' '.$this->attributes['last_name'];
