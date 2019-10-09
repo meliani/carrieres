@@ -1,5 +1,5 @@
 @extends('layouts.ui.app')
-@section('title') welcome @endsection
+@section('title') - Votre portail pour les stages @endsection
 
 @section('content')
 
