@@ -16,9 +16,7 @@
     </thead>
     <tbody>
       @foreach ($students as $student)
-      <tr>
-
-      </tr>
+        @include('backend.internships.reports.partials.records')
       @endforeach
     </tbody>
   </table>

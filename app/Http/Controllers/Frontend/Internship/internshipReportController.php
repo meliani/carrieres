@@ -31,8 +31,7 @@ class internshipReportController extends Controller
      */
     public function index()
     {
-        
-
+        return view('frontend.internships.reports.create');
     }
 
     /**
@@ -68,7 +67,7 @@ class internshipReportController extends Controller
      * @param  \App\Models\School\Internship\Offer  $Offer
      * @return \Illuminate\Http\Response
      */
-    public function show(Offer $Offer)
+    public function show(Report $report)
     {
 
     }
@@ -79,7 +78,7 @@ class internshipReportController extends Controller
      * @param  \App\Models\School\Internship\Offer  $Offer
      * @return \Illuminate\Http\Response
      */
-    public function edit(Offer $Offer)
+    public function edit(Report $report)
     {
         //
     }
@@ -91,7 +90,7 @@ class internshipReportController extends Controller
      * @param  \App\Models\School\Internship\Offer  $Offer
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Offer $Offer)
+    public function update(Request $request, Report $report)
     {
         //
     }
@@ -102,7 +101,7 @@ class internshipReportController extends Controller
      * @param  \App\Models\School\Internship\Offer  $Offer
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Offer $Offer)
+    public function destroy(Report $report)
     {
         //
     }

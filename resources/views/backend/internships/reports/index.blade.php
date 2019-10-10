@@ -18,9 +18,9 @@
     @include('backend.internships.reports.partials.list')
 
 
-    @if($trainees instanceof \Illuminate\Pagination\LengthAwarePaginator )
+    @if($students instanceof \Illuminate\Pagination\LengthAwarePaginator )
     <div class="center">
-        {{ $trainees->links('vendor.pagination.default') }}
+        {{ $students->links('vendor.pagination.default') }}
     </div>
     @endif
 @endsection

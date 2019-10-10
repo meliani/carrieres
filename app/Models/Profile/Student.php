@@ -67,10 +67,12 @@ class Student extends Model
     
     public function report()
     {
-        return $this->hasMany(Report::class,'user_id','user_id');
+        return $this->hasOne(Report::class,'user_id','user_id');
     }
+
+    /**** a revoir cette relation cycle */
     public function cycle(){
-        return $this->hasOneThrough(Cycle::class,studentCycle::class,'user_id','user_id');
+        return $this->hasOneThrough(Cycle::class,App\Models\School\schoolCycle::class,'user_id','user_id');
     }
 /**
  * 

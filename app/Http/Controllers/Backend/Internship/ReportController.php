@@ -18,7 +18,7 @@ class ReportController extends BaseController
      */
     public function index(Request $r)
     {
-        $students = Student::all();
+        $students = Student::whereHas('report')->get();
 
         return view('backend.internships.reports.index',compact('students'));
 
