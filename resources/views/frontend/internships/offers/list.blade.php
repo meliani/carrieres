@@ -1,6 +1,6 @@
 @section('buttons')
   @role('Admin')
-  <a href="{{ route('offresDeStages.create') }}" class="left btn-floating btn-large halfway-fab waves-effect waves-light white">
+  <a href="{{ route('offers.create') }}" class="left btn-floating btn-large halfway-fab waves-effect waves-light white">
   <i class="tiny material-icons blue-grey-text textlighten-5">add</i></a>
   @endrole
 @endsection
@@ -86,7 +86,7 @@
                       @endif
                       
                       @role('Admin')
-                      <a href="{{ route('admin.offresDeStages.edit', $offre->id) }}" class="right btn-floating btn halfway-fab waves-effect waves-light white">
+                      <a href="{{ route('offers.edit', $offre->id) }}" class="right btn-floating btn halfway-fab waves-effect waves-light white">
                       <i class="tiny material-icons blue-grey-text textlighten-5">edit</i></a>
                       @endrole
                     </div>
