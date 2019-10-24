@@ -7,7 +7,7 @@
         <div class="col s12 m12">
         <div class="section">
             <h3 class="header light center blue-text text-lighten-1">
-                Planning des soutenances 2019
+                {{ $title }}
             </h3>
         </div>
         @include ('errors.list')
