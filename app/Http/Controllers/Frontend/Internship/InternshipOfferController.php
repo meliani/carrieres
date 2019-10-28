@@ -14,7 +14,8 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 /** --------- Models ----------- */
 use App\Models\School\Internship\Application;
-use App\Models\School\Internship\internshipOffer as Offer;
+//use App\Models\School\Internship\internshipOffer as Offer;
+use App\Offer;
 use App\User;
 
 class internshipOfferController extends Controller
@@ -31,7 +32,9 @@ class internshipOfferController extends Controller
      */
     public function index()
     {
-        $offres = Offer::published()->valid()->paginate();
+        //$offres = Offer::published()->valid()->year()->actual()->paginate();
+        $offers = Offer::Where('year_id',3)->valid()->get();
+        $offres = $offers;
         return view('frontend.internships.offers.index', compact('offres'));
 
     }

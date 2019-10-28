@@ -104,6 +104,10 @@ class internshipOffer extends baseModel
         return $this->morphToMany('App\Models\School\Internship\Application', 'applyable');
         //return $this->hasMany('App\Models\School\Internship\Application', 'offre_de_stage_id', 'id');
     }
+    public function year()
+	{
+		return $this->belongsTo(App\Year::class);
+	}
 /**
  * Assecors end Mutators
  */

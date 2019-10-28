@@ -19,7 +19,8 @@ use Illuminate\Support\Facades\Route;
 /** --------- Models ----------- */
 use App\Models\School\Internship\Application;
 use App\User;
-use App\Models\School\Internship\internshipOffer as Offer;
+//use App\Models\School\Internship\internshipOffer as Offer;
+use App\Offer;
 
 class internshipApplicationController extends Controller
 {
@@ -31,8 +32,9 @@ class internshipApplicationController extends Controller
             flash()->error('Offre de stages inexistante');
             return redirect(route('offers.index'));
         }
-        $this->offer=Offer::valid()->find(request('offer'));
-
+        //$this->offer=Offer::valid()->find(request('offer'));
+        $this->offer = Offer::find(request('offer'));
+        dd(request('offer'));
         $this->middleware(['auth','isAdmin']);  
     }
     /**
@@ -53,7 +55,7 @@ class internshipApplicationController extends Controller
     {   
         //$id = Route::current()->parameter('id');
         return view('frontend.internships.offers.applications.create')
-        ->with('offre', $this->offer);
+        ->with('offer', $this->offer);
     }
 
     /**

@@ -9,7 +9,7 @@
   @endrole
 @endsection
 
-@if(!isset($offre))
+@if(!isset($offer))
 <div class="offre col s12 m12">
   <div class="card">
     <div class="card-content">
@@ -34,30 +34,31 @@
                 <div class="collapsible-header">
                   <h5 class='header5 blue-grey-text textlighten-5'>
                     <i class="small material-icons blue-grey-text textlighten-5">business</i>
-                    {!!  $offre->raison_sociale !!}</h5></div>
+                    {!!  $offer->raison_sociale !!}</h5></div>
                 <div class="collapsible-body"><p><i class="small material-icons blue-grey-text textlighten-5">place</i> 
-                  {!! $offre->lieu_de_stage !!}
+                  {!! $offer->lieu_de_stage !!}
                 </p>
                 </div>
 				</li>
 				<li>
-                <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">subject</i><h6 class='header5'>{!!  str_limit($offre->intitule_sujet,50) !!}</h6></div>
-                <div class="collapsible-body"><p>{!!  $offre->intitule_sujet !!}</p></div>
+                <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">subject</i><h6 class='header5'>
+                  {!!  str_limit($offer->intitule_sujet,50) !!}</h6></div>
+                <div class="collapsible-body"><p>{!!  $offer->intitule_sujet !!}</p></div>
               </li>
               <li>
                 <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">queue</i>Détails et Prérequis</div>
-                <div class="collapsible-body"><p>{!!  $offre->descriptif !!}</p></div>
+                <div class="collapsible-body"><p>{!!  $offer->descriptif !!}</p></div>
               </li>
 
               <li>
                 <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">local_offer</i>Keywords</div>
-                <div class="collapsible-body"><p>{!!  $offre->mots_cles !!}</p></div>
+                <div class="collapsible-body"><p>{!!  $offer->mots_cles !!}</p></div>
               </li>
 
-              @if($offre->document_offre)
+              @if($offer->document_offre)
               <li>
               <div class="collapsible-header">Pièce jointe</div>
-              <div class="collapsible-body"><p>{!!  Html::link($offre->document_offre,"Voir le document") !!}</p></div>
+              <div class="collapsible-body"><p>{!!  Html::link($offer->document_offre,"Voir le document") !!}</p></div>
               </li>
               @endif
             </ul>
@@ -66,7 +67,7 @@
         </div>
 		</div>
 @endif
-{!! Form::open(['action' => ['Frontend\Internship\internshipApplicationController@store', 'offer'=>$offre], 'files' => true]) !!}
+{!! Form::open(['action' => ['Frontend\Internship\internshipApplicationController@store', 'offer'=>$offer], 'files' => true]) !!}
 
 <div class="offre col s12 m7">
 <div class="card-panel">
