@@ -33,9 +33,11 @@ class internshipOfferController extends Controller
     public function index()
     {
         //$offres = Offer::published()->valid()->year()->actual()->paginate();
-        $offers = Offer::Where('year_id',3)->valid()->get();
-        $offres = $offers;
-        return view('frontend.internships.offers.index', compact('offres'));
+        $offers = Offer::Where('year_id',3)
+        ->Where('is_valid',1)
+        ->get();
+
+        return view('frontend.internships.offers.index', compact('offers'));
 
     }
 

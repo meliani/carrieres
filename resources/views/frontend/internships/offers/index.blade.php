@@ -10,10 +10,10 @@
         <h4 class="header col s12 light">Offres de stages</h4>
     </div>
 
-    @include('components.pagination.pagination_wrapper',$paginate=$offres)
+    @include('components.pagination.pagination_wrapper',$paginate=$offers)
 
     @include('frontend.internships.offers.list')
 
-    @include('components.pagination.pagination_wrapper',$paginate=$offres)
+    @include('components.pagination.pagination_wrapper',$paginate=$offers)
 
 @endsection
