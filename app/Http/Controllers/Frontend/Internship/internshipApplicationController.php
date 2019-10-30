@@ -34,7 +34,6 @@ class internshipApplicationController extends Controller
         }
         //$this->offer=Offer::valid()->find(request('offer'));
         $this->offer = Offer::find(request('offer'));
-        dd(request('offer'));
         $this->middleware(['auth','isAdmin']);  
     }
     /**
@@ -54,8 +53,8 @@ class internshipApplicationController extends Controller
     public function create()
     {   
         //$id = Route::current()->parameter('id');
-        return view('frontend.internships.offers.applications.create')
-        ->with('offer', $this->offer);
+        $offer = Offer::find(request('offer'));
+        return view('frontend.internships.offers.applications.create',compact('offer'));
     }
 
     /**

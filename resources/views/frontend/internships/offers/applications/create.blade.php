@@ -8,7 +8,6 @@
   <i class="tiny material-icons blue-grey-text textlighten-5">add</i></a>
   @endrole
 @endsection
-
 @if(!isset($offer))
 <div class="offre col s12 m12">
   <div class="card">
