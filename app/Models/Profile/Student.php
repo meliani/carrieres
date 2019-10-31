@@ -4,12 +4,17 @@ namespace App\Models\Profile;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Profile\Person;
+use Spatie\MediaLibrary\HasMedia\HasMedia;
+use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\Models\Media;
+
 use App\Models\School\Internship;
 use App\Models\School\Internship\internshipReport as Report;
 use App\Models\School\schoolCycle as Cycle;
 
-class Student extends Model
+class Student extends Model implements HasMedia
 {
+    use HasMediaTrait;
     protected $table = 'people';
     protected $primaryKey = "user_id";
 
@@ -83,4 +88,17 @@ class Student extends Model
 		return $this->attributes['first_name'].' '.$this->attributes['last_name'];
     }
 
+    public function registerMediaCollections()
+    {
+        $this
+           ->addMediaCollection('internship')
+           ->useDisk('userfiles');
+    }
+    /**
+     * Get all of the student's images.
+     */
+    public function media()
+    {
+        return $this->morphMany(Media::class, 'model');
+    }
 }
