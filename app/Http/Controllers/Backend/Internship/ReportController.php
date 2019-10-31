@@ -62,9 +62,19 @@ class ReportController extends BaseController
      * @param  \App\Models\School\Internship\Offer  $Offer
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function edit(Report $report)
     {
-        //
+        $student = Student::find($report->user_id);
+        //$documents = $student->getMedia('internship');
+        // check how to get multiple medias from model
+        $documents[0] = $student->getMedia('file_agreement');
+        $documents[1] = $student->getMedia('file_report');
+        $documents[2] = $student->getMedia('file_certificate');
+        
+        //$documents = $student->getMedia();
+        //$documents = $report->student->media();
+        //dd($documents);
+        return view('backend.internships.reports.edit', compact('report','documents'));
     }
 
     /**
@@ -76,7 +86,9 @@ class ReportController extends BaseController
      */
     public function update(Request $request, Report $report)
     {
-        //
+        $report->fill($request->all());
+        $report->save();
+        return redirect()->action('Backend\Internship\ReportController@index');
     }
 
     /**
