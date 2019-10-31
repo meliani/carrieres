@@ -55,7 +55,7 @@ class internshipReportController extends Controller
         $report = new Report($request->validated());
         $report->user()->associate(auth()->user())->save();
 
-        flash()->success('Rapport de stage bien enregistrée.');
+        flash()->success('Rapport de stage enregistré.');
 
         return view('frontend.internships.reports.thanks')->with('message', 'Votre Rapport a été bien enregistrée');
 
