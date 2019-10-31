@@ -33,9 +33,9 @@ class internshipReport extends Model
         'internship_responsible_name',
         'internship_responsible_position',
         'internship_responsible_email',
-        'file_report',
-        'file_agreement',
-        'file_certificate'
+        'paper_report',
+        'paper_agreement',
+        'paper_certificate'
     ];
 
     protected $casts = [
@@ -62,4 +62,8 @@ class internshipReport extends Model
 	{
 		return $this->belongsTo(User::class);
     }
+    public function student()
+	{
+		return $this->belongsTo(\App\Models\Profile\Student::class,'user_id','user_id');
+    }    
 }
