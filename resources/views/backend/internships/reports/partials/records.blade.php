@@ -27,7 +27,7 @@
     {{ $student->report->paper_agreement }}
     </td>
     <td>
-    {{ $student->report->paper_evaluation }}
+    {{ $student->report->paper_scorecard }}
     </td>
     <td>
         <a href="-/internships/reports/{{ $student->report->id }}/edit"><i class="material-icons">menu</i></a>

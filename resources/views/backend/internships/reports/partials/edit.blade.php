@@ -15,7 +15,7 @@
                 'helper' => 'Rapport de stage',
                 'required',
                 'cols' => 3,
-                'data' => ['1'=>'Remis','0'=>'Pas encore']
+                'data' => ['1'=>'Remis','0'=>'Non encore']
             ], $errors) }}
             {{ Form::selectGroup([
                 'name' => 'paper_agreement',
@@ -27,7 +27,7 @@
                 'helper' => 'Convention de stage',
                 'required',
                 'cols' => 3,
-                'data' => ['1'=>'Remis','0'=>'Pas encore']
+                'data' => ['1'=>'Remis','0'=>'Non encore']
             ], $errors) }}
             {{ Form::selectGroup([
                 'name' => 'paper_certificate',
@@ -39,7 +39,19 @@
                 'helper' => 'Attestation de stage',
                 'required',
                 'cols' => 3,
-                'data' => ['1'=>'Remis','0'=>'Pas encore']
+                'data' => ['1'=>'Remis','0'=>'Non encore']
+            ], $errors) }}
+            {{ Form::selectGroup([
+                'name' => 'paper_scorecard',
+                'value' ,
+                'label' => 'Fiche d\'evaluation',
+                'placeholder' ,
+                'class' => 'validate',
+                'icon' ,
+                'helper' => '',
+                'required',
+                'cols' => 3,
+                'data' => ['1'=>'Remis','0'=>'Non encore']
             ], $errors) }}
         </div>
         <div class = "row">
