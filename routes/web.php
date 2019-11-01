@@ -107,7 +107,7 @@ Route::namespace('Backend')
         }); 
     });
 });
-Route::get('reports_manager', 'Backend\Internship\ReportController@index');
+Route::get('reports_manager', 'Backend\Internship\ReportController@index')->name('reports_manager');
 Route::get('offers', 'Frontend\Internship\internshipOfferController@index');
 
 Route::namespace('Frontend')
