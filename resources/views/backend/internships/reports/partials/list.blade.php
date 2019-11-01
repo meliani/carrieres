@@ -8,10 +8,11 @@
         <th width="15%">Entreprise</th>
         <th width="25%">Titre du Rapport</th>
         <th width="10%">Date de soumission</th>      
-        <th width="10%">Rapport de stage</th>      
-        <th width="10%">Attestation de stage</th>      
-        <th width="10%">Date de soumission</th>      
-          <th width="25%">Actions</th>            
+        <th width="10%">Rapport</th>      
+        <th width="10%">Attestation</th>
+        <th width="10%">Convention</th>
+        <th width="10%">Fiche d'eval</th>
+        <th width="25%">Actions</th>            
       </tr>
     </thead>
     <tbody>
