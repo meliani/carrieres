@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Backend\BaseController;
 /** --------- Models ----------- */
 use App\Models\Profile\Student;
+use App\Models\Profile\Person;
 
 class ReportController extends BaseController
 {
@@ -64,7 +65,7 @@ class ReportController extends BaseController
      */
     public function edit(Report $report)
     {
-        $student = Student::find($report->user_id);
+        $student = Person::find($report->user_id);
         //$documents = $student->getMedia('internship');
         // check how to get multiple medias from model
         $documents[0] = $student->getMedia('file_agreement');
