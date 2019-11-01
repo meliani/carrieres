@@ -19,8 +19,13 @@ class ReportController extends BaseController
      */
     public function index(Request $r)
     {
-        $students = Student::whereHas('report')->get();
-
+        $students = Student::whereHas('report')->paginate();
+        if(request()->has('s')){
+            $students = Student::whereHas('report', function ($query) {
+                $query->where('first_name', 'like', '%'.request('s').'%')
+                ->orWhere('last_name', 'like', '%'.request('s').'%');
+            })->get();
+        }
         return view('backend.internships.reports.index',compact('students'));
 
     }
