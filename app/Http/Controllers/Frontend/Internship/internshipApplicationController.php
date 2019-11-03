@@ -65,8 +65,13 @@ class internshipApplicationController extends Controller
      */
     public function store(Request $request)
     {
-            $upload= new Uploader($request,'cv','uploads/students/CVs');
-            $upload= new Uploader($request,'lettre_de_motivation','uploads/students/LMs');
+            $upload= upload($request,[
+                'var_name'=>'cv',
+            'upload_path'=>'uploads/students/CVs'
+            ]);
+            $upload= upload($request,['var_name'=>'lettre_de_motivation',
+            'upload_path'=>'uploads/students/LMs'
+            ]);
 
         $offer = Offer::find($request->offer);
         
@@ -78,7 +83,7 @@ class internshipApplicationController extends Controller
         $application->user()->associate(auth()->user()->id);
         $application->offer()->associate($request->offer);
         $application->save();
-        $offer->applications()->attach($application->id);//, ['cv' => $cv,'lettre_de_motivation' => $lettre_de_motivation ]);
+        //$offer->applications()->attach($application->id);//, ['cv' => $cv,'lettre_de_motivation' => $lettre_de_motivation ]);
         
         Session::flash('message', 'Candidature bien enregistrée!'); 
         Session::flash('alert-class', 'success');
