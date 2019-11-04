@@ -134,6 +134,17 @@ Route::namespace('Frontend')
 
 Route::get('rapport', 'Frontend\Internship\internshipReportController@create');
 
+/********************************* USER MENU ****************
+ * 
+ * some specific pages 
+ * 
+ * 
+ * 
+*/
+Route::get('mesCandidatures', 'Frontend\Internship\internshipApplicationController@index');
+
+/******************************************USER MENU END */
+
 Route::get('Checkpoint', 'Auth\CheckpointController');
 
 Route::namespace('Frontend\Profile')
