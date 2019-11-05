@@ -95,14 +95,9 @@ class internshipOffer extends baseModel
 	{
 		return $this->belongsTo('App\User');
 	}
-    public function application()
-    {
-        return $this->hasMany('App\Models\School\Internship\Application', 'offre_de_stage_id', 'id');
-    }
     public function applications()
     {
-        return $this->morphToMany('App\Models\School\Internship\Application', 'applyable');
-        //return $this->hasMany('App\Models\School\Internship\Application', 'offre_de_stage_id', 'id');
+        return $this->hasMany('App\Models\School\Internship\Application', 'offer_id', 'id');
     }
     public function year()
 	{

@@ -42,9 +42,9 @@ class Application extends Model
      */
     protected $casts = [
         'user_id' => 'integer',
-        'offre_de_stage_id' => 'string',
-        'cv' => 'string',
-        'lettre_de_motivation' => 'string'
+        'offer_id' => 'string',
+        'file_cv' => 'string',
+        'file_cover_letter' => 'string'
     ];
 
     /**
@@ -54,9 +54,9 @@ class Application extends Model
      */
     public static $rules = [
         'user_id' => 'required',
-        'offre_de_stage_id' => 'required',
-        'cv' => 'nullable',
-        'lettre_de_motivation' => 'nullable'
+        'offer_id' => 'required',
+        'file_cv' => 'nullable',
+        'file_cover_letter' => 'nullable'
     ];
     // !!!!!!! what is this relation ???
 
@@ -66,7 +66,7 @@ class Application extends Model
     }
     public function offer()
     {
-        return $this->belongsTo('App\Models\School\Internship\internshipOffer','offre_de_stage_id','id');
+        return $this->belongsTo('App\Models\School\Internship\internshipOffer','offer_id','id');
     }
 
 }
