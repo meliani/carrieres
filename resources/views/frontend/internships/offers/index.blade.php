@@ -1,4 +1,5 @@
 @extends('layouts.ui.app')
+@section('title', '- Opportunités de stages')
 
 @section('users_buttons')
     @include(Button::home_button())
@@ -6,9 +7,7 @@
 
 @section('content')
 
-    <div class="row center">
-        <h4 class="header col s12 light">Offres de stages</h4>
-    </div>
+    @include('components.section_title',['title' => 'Opportunités de stages PFE'])
 
     @include('components.pagination.pagination_wrapper',$paginate=$offers)
 

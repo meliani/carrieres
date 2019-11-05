@@ -8,9 +8,6 @@ use Illuminate\Http\Request;
 
 use Session;
 
-use App\Http\Controllers\Core\Documents\UploaderController as Uploader;
-
-
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use Carbon\Carbon;
@@ -34,7 +31,7 @@ class internshipApplicationController extends Controller
         }
         //$this->offer=Offer::valid()->find(request('offer'));
         $this->offer = Offer::find(request('offer'));
-        $this->middleware(['auth','isAdmin']);  
+        $this->middleware(['auth']);  
     }
     /**
      * Display a listing of the resource.
@@ -43,6 +40,9 @@ class internshipApplicationController extends Controller
      */
     public function index()
     {
+        $applications = Application::where('user_id',user()->id)->get();
+        //dd($applications);
+        return view('frontend.internships.offers.applications.index',compact('applications'));
     }
 
     /**
@@ -87,7 +87,7 @@ class internshipApplicationController extends Controller
         
         Session::flash('message', 'Candidature bien enregistrée!'); 
         Session::flash('alert-class', 'success');
-        return redirect(route('offers.index'));
+        return redirect(route('offers'));
     }
 
     /**

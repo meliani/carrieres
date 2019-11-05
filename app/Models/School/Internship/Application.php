@@ -59,14 +59,7 @@ class Application extends Model
         'lettre_de_motivation' => 'nullable'
     ];
     // !!!!!!! what is this relation ???
-    public function offers()
-    {
-        return $this->morphedByMany('App\Models\School\Internship\internshipOffer', 'applyable');
-    }
-    public function applyable()
-    {
-        return $this->morphTo();
-    }
+
     public function user()
     {
         return $this->belongsTo('App\User');
