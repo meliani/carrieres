@@ -87,7 +87,7 @@ class internshipApplicationController extends Controller
         
         Session::flash('message', 'Candidature bien enregistrée!'); 
         Session::flash('alert-class', 'success');
-        return redirect(route('offers'));
+        return redirect(route('myOffers'));
     }
 
     /**

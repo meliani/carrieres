@@ -21,7 +21,7 @@
 </div>
 @else
 <div class="section">
-  <h5>Postuler pour cette offre de stage</h5>
+    @include('components.section_title',['title' => 'Postuler pour cette offre de stage PFE'])
   <div class="row">
         <div class="offre col s12 m5">
           <div class="card hoverable">

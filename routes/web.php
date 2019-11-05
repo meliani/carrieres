@@ -107,8 +107,7 @@ Route::namespace('Backend')
         }); 
     });
 });
-Route::get('reports_manager', 'Backend\Internship\ReportController@index')->name('reports_manager');
-Route::get('offers', 'Frontend\Internship\internshipOfferController@index');
+
 
 Route::namespace('Frontend')
 ->group(function () {
@@ -138,12 +137,16 @@ Route::get('rapport', 'Frontend\Internship\internshipReportController@create');
  * 
  * some specific pages 
  * 
- * 
- * 
 */
-Route::get('myApplications', 'Frontend\Internship\internshipApplicationController@index');
 
-/******************************************USER MENU END */
+Route::get('myOffers', 'Frontend\Internship\internshipOfferController@index')->name('myOffers');
+Route::get('myApplications', 'Frontend\Internship\internshipApplicationController@index')->name('myApplications');
+
+/****************************************** USER MENU END */
+
+/***************** Backend menu ********************/
+Route::get('reports_manager', 'Backend\Internship\ReportController@index')->name('reports_manager');
+/********** End Backend links */
 
 Route::get('Checkpoint', 'Auth\CheckpointController');
 
