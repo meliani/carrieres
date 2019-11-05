@@ -141,7 +141,7 @@ Route::get('rapport', 'Frontend\Internship\internshipReportController@create');
  * 
  * 
 */
-Route::get('mesCandidatures', 'Frontend\Internship\internshipApplicationController@index');
+Route::get('myApplications', 'Frontend\Internship\internshipApplicationController@index');
 
 /******************************************USER MENU END */
 
