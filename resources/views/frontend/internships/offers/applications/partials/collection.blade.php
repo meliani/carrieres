@@ -6,8 +6,8 @@
             <span class="title">Entreprise : {{ $application->offer->raison_sociale }}</span>
             <p>Sujet : {{ $application->offer->intitule_sujet }}<br>
                 Descriptif : {{ $application->offer->descriptif }}<br>
-                {{ HTML::link($application->cv, 'CV') }}<br>
-                {{ HTML::link(url($application->lettre_de_motivation),'Lettre de motivation') }}
+                {{ HTML::link($application->file_cv, 'CV') }}<br>
+                {{ HTML::link(url($application->file_cover_letter),'Lettre de motivation') }}
             </p>
         </li>
         </ul>

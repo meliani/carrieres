@@ -66,18 +66,18 @@ class internshipApplicationController extends Controller
     public function store(Request $request)
     {
             $upload= upload($request,[
-                'var_name'=>'cv',
+                'var_name'=>'file_cv',
             'upload_path'=>'uploads/students/CVs'
             ]);
-            $upload= upload($request,['var_name'=>'lettre_de_motivation',
+            $upload= upload($request,['var_name'=>'file_cover_letter',
             'upload_path'=>'uploads/students/LMs'
             ]);
 
         $offer = Offer::find($request->offer);
         
         $application = new Application([ 
-            'cv' => $request->cv,
-            'lettre_de_motivation' => $request->lettre_de_motivation,
+            'file_cv' => $request->file_cv,
+            'file_cover_letter' => $request->file_cover_letter,
         ]);
         
         $application->user()->associate(auth()->user()->id);

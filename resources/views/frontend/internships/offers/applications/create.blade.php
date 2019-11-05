@@ -78,7 +78,7 @@
             <div class="file-field input-field">
               <div class="btn right">
                 <span>Parcourir</span>
-                {!! Form::file('cv') !!}
+                {!! Form::file('file_cv') !!}
               </div>
               <div class="file-path-wrapper">
                 <input class="file-path validate" required type="text" placeholder="Mon CV">
@@ -92,7 +92,7 @@
             <div class="file-field input-field">
               <div class="right btn">
                   <span>Parcourir</span>
-                  {!! Form::file('lettre_de_motivation') !!}
+                  {!! Form::file('file_cover_letter') !!}
               </div>
               <div class="file-path-wrapper">
                 <input class="file-path validate" required type="text" placeholder="Letttre de  motivation">
