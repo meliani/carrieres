@@ -31,8 +31,8 @@ class Application extends Model
     public $fillable = [
         'user_id',
         'offre_de_stage_id',
-        'cv',
-        'lettre_de_motivation'
+        'file_cv',
+        'file_cover_letter'
     ];
 
     /**
