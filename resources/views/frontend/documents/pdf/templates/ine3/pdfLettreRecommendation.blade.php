@@ -110,6 +110,7 @@ Une copie dudit rapport sera remise &agrave; l&#8217;INPT et une autre &agrave; 
 de l&#8217;INPT et d&#8217;un ou plusieurs repr&eacute;sentant(s) de votre honorable entreprise que vous voudriez bien d&eacute;signer.</span></p>
 <p class="Normal tm6"><span class="tm7">&#160;</span></p>
 <p class="Normal tm6"><span class="tm7">En vous remerciant de votre coop&eacute;ration, nous vous prions d&#8217;agr&eacute;er, Madame, Monsieur, l&#8217;expression de nos salutations les meilleures.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></p>
+<br><br><br>
 <div align="center"><!-- Signature -->
 	<img src="{{ public_path('templates/pdf/images/signature.png') }}" name="Image1" align="center" width="231" height="124" border="0"/>
 </div><!-- End Signature -->
