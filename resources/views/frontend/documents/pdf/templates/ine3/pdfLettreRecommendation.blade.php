@@ -66,7 +66,7 @@ font-weight:bold;
 .tm9 {
 margin-left:248.0pt;
 text-indent:35.5pt;
-text-align:justify;
+text-align:right;
 }
 .tm10 {
 color:#0070C0;
