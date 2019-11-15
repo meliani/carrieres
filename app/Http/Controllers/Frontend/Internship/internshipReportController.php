@@ -53,7 +53,9 @@ class internshipReportController extends Controller
     public function store(StoreInternshipReport $request)
     {
         $report = new Report($request->validated());
-        $report->user()->associate(auth()->user())->save();
+        $report->user()
+        ->associate(auth()->user())
+        ->save();
 
         flash()->success('Rapport de stage enregistré.');
 
