@@ -24,7 +24,7 @@ class StoreInternshipReport extends FormRequest
     public function rules()
     {
         return [
-            'student_email' => 'required',
+            'student_email' => 'required|email',
             'student_phone' => 'required',
             'report_title' => 'required',
             'project_description' => 'required',
