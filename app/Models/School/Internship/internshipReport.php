@@ -33,6 +33,9 @@ class internshipReport extends Model
         'internship_responsible_name',
         'internship_responsible_position',
         'internship_responsible_email',
+        'file_report',
+        'file_agreement',
+        'file_certificate',
         'paper_report',
         'paper_agreement',
         'paper_certificate'
