@@ -38,7 +38,9 @@ class internshipReport extends Model
         'file_certificate',
         'paper_report',
         'paper_agreement',
-        'paper_certificate'
+        'paper_certificate',
+        'paper_scorecard'
+
     ];
 
     protected $casts = [

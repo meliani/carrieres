@@ -74,7 +74,13 @@ class Student extends Model implements HasMedia
     {
         return $this->hasOne(Report::class,'user_id','user_id');
     }
-
+    /**
+     * Get the Events for the Student.
+     */
+    public function events()
+    {
+        return $this->belongsToMany(\App\Event::class);
+    }
     /**** a revoir cette relation cycle */
     public function cycle(){
         return $this->hasOneThrough(Cycle::class,App\Models\School\schoolCycle::class,'user_id','user_id');

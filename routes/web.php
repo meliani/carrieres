@@ -94,6 +94,7 @@ Route::namespace('Backend')
 ->name('backend.')
 ->group(function () {
     Route::prefix('-')->group(function () {
+        Route::resource('events', 'EventController');
         Route::get('Dashboard', 'Dashboard');
         Route::namespace('Internship')->group(function () {
             Route::resource('defenses', 'DefenseController');
@@ -138,7 +139,9 @@ Route::get('rapport', 'Frontend\Internship\internshipReportController@create');
  * some specific pages 
  * 
 */
+Route::get('Events', 'Backend\EventController@index')->name('Events');
 
+Route::get('myEvents', 'Frontend\EventController@index')->name('myEvents');
 Route::get('myOffers', 'Frontend\Internship\internshipOfferController@index')->name('myOffers');
 Route::get('myApplications', 'Frontend\Internship\internshipApplicationController@index')->name('myApplications');
 

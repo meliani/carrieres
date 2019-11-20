@@ -206,6 +206,7 @@
     'cols' => 5,
 ], $errors) }}
 <input type="hidden" name="user_id" value={{ user()->id }}>
+<input type="hidden" name="year_id" value=3>
 
 </div>
     <div class="section">
