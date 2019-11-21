@@ -10,7 +10,6 @@
                 'class' => 'validate',
                 'icon' ,
                 'helper' => __('labels.email_perso_helper'),
-                'required' => 'required',
                 'cols' => 5,
             ], $errors) }}
 
@@ -22,7 +21,6 @@
                 'class' => 'validate',
                 'icon' ,
                 'helper' => __('labels.phone_helper'),
-                'required' => 'required',
                 'cols' => 5,
             ], $errors) }}
             <h1 class="col m12 center-align">Fichiers</h1>
@@ -34,7 +32,6 @@
                 'class' => 'validate',
                 'icon' => 'person',
                 'helper' => __('labels.cv_helper'),
-                'required' => 'required',
                 'position' => 'left',
                 'cols' => 12,
             ], $errors) }}
@@ -46,7 +43,6 @@
                 'class' => 'validate',
                 'icon' => 'person',
                 'helper' => __('labels.lm_helper'),
-                'required' => 'required',
                 'position' => 'left',
                 'cols' => 12,
             ], $errors) }}
@@ -58,7 +54,6 @@
                 'class' => 'validate',
                 'icon' => 'person',
                 'helper' => __('labels.photo_helper'),
-                'required' => 'required',
                 'position' => 'left',
                 'cols' => 12,
             ], $errors) }}

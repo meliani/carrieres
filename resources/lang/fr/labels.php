@@ -15,5 +15,6 @@ return [
     'cv_helper' => 'Attacher votre CV actualise.',
     'lm_helper' => 'Attacher une lettre de motivation generale.',
     'photo_helper' => 'Attacher une photo recente',
+    'stream' => 'filière',
 
 ];
