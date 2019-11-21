@@ -35,9 +35,9 @@ class StoreInternshipReport extends FormRequest
             'internship_responsible_name' => 'required',
             'internship_responsible_position' => 'required',
             'internship_responsible_email' => 'required',
-            'file_report' => 'required',
-            'file_agreement' => 'required',
-            'file_certificate' => 'required',
+            'file_report' => 'required|max:10240',
+            'file_agreement' => 'required|max:10240',
+            'file_certificate' => 'required|max:10240',
         ];
     }
 }
