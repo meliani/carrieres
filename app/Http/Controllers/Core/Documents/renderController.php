@@ -19,9 +19,10 @@ class renderController extends Controller
         $pdf = app('snappy.pdf.wrapper');
         $header = view()->make('frontend.documents.pdf.header')->render();
         $footer = view()->make('frontend.documents.pdf.footerINPT')->render();
+        /** Some lines for testing purposes */
         //return PDF::loadFile('file:///C:/Users/Cosmos/Desktop/projects/newlife/documents/Convention Stage Ouvrier/ConventionStageOuvrier.html')->inline('github.pdf');
         //$pdf->loadView('frontend.documents.pdfConvention')
-        $pdf->loadView('frontend.documents.pdf.templates.ine'.auth()->user()->people->ine.'.contenuConvention')
+        $pdf->loadView('frontend.documents.pdf.templates.'.auth()->user()->student->programs->last()->slug.'.contenuConvention')
         ->setOption('margin-top', '25mm')
         ->setOption('margin-bottom', '29mm')
         ->setOption('margin-left', '10mm')
@@ -39,9 +40,7 @@ class renderController extends Controller
         $pdf = app('snappy.pdf.wrapper');
         $header = view()->make('frontend.documents.pdf.header')->render();
         $footer = view()->make('frontend.documents.pdf.footerINPT')->render();
-        //return PDF::loadFile('file:///C:/Users/Cosmos/Desktop/projects/newlife/documents/Convention Stage Ouvrier/ConventionStageOuvrier.html')->inline('github.pdf');
-        //$pdf->loadView('frontend.documents.pdfConvention')
-        $pdf->loadView('frontend.documents.pdf.templates.ine'.auth()->user()->people->ine.'.pdfLettreRecommendation')
+        $pdf->loadView('frontend.documents.pdf.templates.'.auth()->user()->student->programs->last()->slug.'.pdfLettreRecommendation')
         ->setOption('margin-top', '25mm')
         ->setOption('margin-bottom', '29mm')
         ->setOption('margin-left', '10mm')
@@ -55,7 +54,78 @@ class renderController extends Controller
         $this->attach($file_path);
         return $pdf->inline(Carbon::now()->format('d_m_Y').'_recommendation_letter.pdf');
     }
-
+    public function conventionPfe(){
+        $pdf = app('snappy.pdf.wrapper');
+        $header = view()->make('frontend.documents.pdf.header')->render();
+        $footer = view()->make('frontend.documents.pdf.footerINPT')->render();
+        $pdf->loadView('frontend.documents.pdf.templates.'.auth()->user()->student->programs->last()->slug.'.contenuConvention')
+        ->setOption('margin-top', '25mm')
+        ->setOption('margin-bottom', '29mm')
+        ->setOption('margin-left', '10mm')
+        ->setOption('margin-right', '10mm')
+        ->setOption('header-html', $header)
+        ->setOption('footer-html', $footer)
+        ->setOption('page-size' ,'A4');
+        $file_name = 'Convention de stage '.auth()->user()->people->first_name.' '.Carbon::now()->format('dMY his').'.pdf';
+        $file_path = Storage_path('users/internship/'.$file_name);
+        $pdf->save($file_path);
+        $this->attach($file_path);
+        //return $pdf->inline($file_name);
+    }
+    public function conventionPfeFrance(){
+        $pdf = app('snappy.pdf.wrapper');
+        $header = view()->make('frontend.documents.pdf.header')->render();
+        $footer = view()->make('frontend.documents.pdf.footerINPT')->render();
+        $pdf->loadView('frontend.documents.pdf.templates.'.auth()->user()->student->programs->last()->slug.'.contenuConvention')
+        ->setOption('margin-top', '25mm')
+        ->setOption('margin-bottom', '29mm')
+        ->setOption('margin-left', '10mm')
+        ->setOption('margin-right', '10mm')
+        ->setOption('header-html', $header)
+        ->setOption('footer-html', $footer)
+        ->setOption('page-size' ,'A4');
+        $file_name = 'Convention de stage '.auth()->user()->people->first_name.' '.Carbon::now()->format('dMY his').'.pdf';
+        $file_path = Storage_path('users/internship/'.$file_name);
+        $pdf->save($file_path);
+        $this->attach($file_path);
+        //return $pdf->inline($file_name);
+    }
+    public function conventionmobilityPfe(){
+        $pdf = app('snappy.pdf.wrapper');
+        $header = view()->make('frontend.documents.pdf.header')->render();
+        $footer = view()->make('frontend.documents.pdf.footerINPT')->render();
+        $pdf->loadView('frontend.documents.pdf.templates.'.auth()->user()->student->programs->last()->slug.'.contenuConvention')
+        ->setOption('margin-top', '25mm')
+        ->setOption('margin-bottom', '29mm')
+        ->setOption('margin-left', '10mm')
+        ->setOption('margin-right', '10mm')
+        ->setOption('header-html', $header)
+        ->setOption('footer-html', $footer)
+        ->setOption('page-size' ,'A4');
+        $file_name = 'Convention de stage '.auth()->user()->people->first_name.' '.Carbon::now()->format('dMY his').'.pdf';
+        $file_path = Storage_path('users/internship/'.$file_name);
+        $pdf->save($file_path);
+        $this->attach($file_path);
+        //return $pdf->inline($file_name);
+    }
+    public function conventionMobilityPfeAutre(){
+        $pdf = app('snappy.pdf.wrapper');
+        $header = view()->make('frontend.documents.pdf.header')->render();
+        $footer = view()->make('frontend.documents.pdf.footerINPT')->render();
+        $pdf->loadView('frontend.documents.pdf.templates.'.auth()->user()->student->programs->last()->slug.'.contenuConvention')
+        ->setOption('margin-top', '25mm')
+        ->setOption('margin-bottom', '29mm')
+        ->setOption('margin-left', '10mm')
+        ->setOption('margin-right', '10mm')
+        ->setOption('header-html', $header)
+        ->setOption('footer-html', $footer)
+        ->setOption('page-size' ,'A4');
+        $file_name = 'Convention de stage '.auth()->user()->people->first_name.' '.Carbon::now()->format('dMY his').'.pdf';
+        $file_path = Storage_path('users/internship/'.$file_name);
+        $pdf->save($file_path);
+        $this->attach($file_path);
+        //return $pdf->inline($file_name);
+    }
     public function attach(String $file_path){
         //auth()->user()->people->clearMediaCollection('internship');
         auth()->user()->people

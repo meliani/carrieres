@@ -50,6 +50,23 @@ class myDocumentsController extends Controller
                     $pdf = new renderController;
                     $pdf->convention();
                 }
+                if(in_array('convention_pfe_maroc',$r->action)){
+                    $pdf = new renderController;
+                    $pdf->conventionPfeMaroc();
+                }
+                if(in_array('convention_pfe_france',$r->action)){
+                    $pdf = new renderController;
+                    $pdf->conventionPfeMaroc();
+                }
+                if(in_array('convention_mobilite_pfe_france',$r->action)){
+                    $pdf = new renderController;
+                    $pdf->conventionPfeMaroc();
+                }
+                if(in_array('convention_mobilite_pfe_autre',$r->action)){
+                    $pdf = new renderController;
+                    $pdf->conventionPfeMaroc();
+                }
+
             }
         }
 

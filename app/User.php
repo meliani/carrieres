@@ -57,6 +57,10 @@ class User extends Authenticatable
     {
         return $this->hasOne(Person::class,'user_id','id');
     }
+    public function student()
+    {
+        return $this->hasOne(\App\Models\Profile\Student::class);
+    }
     public function internship()
     {
         return $this->hasOne(Internship::class);
