@@ -61,9 +61,9 @@ class User extends Authenticatable
     {
         return $this->hasOne(\App\Models\Profile\Student::class);
     }
-    public function internship()
+    public function internships()
     {
-        return $this->hasOne(Internship::class);
+        return $this->hasMany(Internship::class);
     }
     public function adviser1()
     {

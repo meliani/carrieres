@@ -60,6 +60,10 @@ class Student extends Model implements HasMedia
         return $this->hasOne(Internship::class,'user_id','user_id')
         ->with('adviser.adviser1.adviser2');
     }
+    public function internships()
+    {
+        return $this->hasMany(Internship::class,'user_id','user_id');
+    }
     public function user()
 	{
 		return $this->belongsTo(User::class,'id','user_id');
