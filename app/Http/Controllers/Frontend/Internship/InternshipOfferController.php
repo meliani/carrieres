@@ -59,7 +59,9 @@ class internshipOfferController extends Controller
      */
     public function store(Request $request)
     {
-        Offer::create($request->all()); 
+        $input=$request->all();
+        $offer = new Offer($input); 
+        $offer->save();
         flash()->success('Offre de stage bien enregistrée.');
 
         return view('frontend.internships.offers.form.thanks')->with('message', 'Votre proposition a été bien enregistrée');

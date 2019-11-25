@@ -13,7 +13,21 @@ class Offer extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'title', 'description', 'year_id'
+        'id', 'title', 'description', 'year_id',
+        'nom_responsable',
+        'raison_sociale',
+        'lieu_de_stage',
+        'fonction',
+        'telephone',
+        'email',
+        'intitule_sujet',
+        'descriptif',
+        'mots_cles',
+        'document_offre',
+        'is_valid',
+        'status',
+        'expire_at',
+        'applyable'
     ];
 
     /**
