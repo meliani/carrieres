@@ -29,7 +29,7 @@
     'cols' => 4,
 ], $errors) }}
 {{ Form::textGroup([
-    'name' => 'details',
+    'name' => 'detail',
     'placeholder' ,
     'class' => 'materialize-textarea validate',
     'icon' => 'edit',
@@ -45,7 +45,7 @@
     'cols' => 3,
 ], $errors) }}
 {{ Form::textGroup([
-    'name' => 'time',
+    'name' => 'hour',
     'value' ,
     'class' => 'timepicker validate',
     'icon' => 'alarm_add',
@@ -58,7 +58,7 @@
     <div class="card-action">
     <!-- Submit Field -->
         <div class = "input-field">
-            {!! Form::submit('Envoyer', ['class' => 'btn waves-effect waves-light blue-text text-lighten-1 blue lighten-1']) !!}
+            {!! Form::submit('Envoyer', ['class' => 'btn']) !!}
             <a href="{!! route('home') !!}" class="waves-effect waves-teal btn-flat">Annuler</a>
         </div>
     </div>

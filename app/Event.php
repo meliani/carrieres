@@ -12,7 +12,7 @@ class Event extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'program_id', 'name', 'slug', 'title', 'detail', 'hour', 'rsvp_mandatory', 'rsvp_deadline'
+        'id', 'program_id', 'name', 'slug', 'title', 'detail','date', 'hour', 'rsvp_mandatory', 'rsvp_deadline'
     ];
 
     /**
