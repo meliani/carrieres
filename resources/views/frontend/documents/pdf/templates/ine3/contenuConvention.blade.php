@@ -1284,9 +1284,9 @@ font-weight:bold;
  class="tm91">.</span><span class="tm90">&nbsp;</span></strong></p>
 <p class="tm38 tm82 tm86"><strong><span class="tm87"></span></strong><span class="tm89">ci-apr&egrave;s d&eacute;sign&eacute;e par Entreprise, et repr&eacute;sent&eacute;e par</span><strong><span
  class="tm92"> </span><span class="tm90">{{ $internship->parrain_name }}</span><span
- class="tm91">, </span><span class="tm90"> &laquo;Fonction Parrain&raquo;</span><span class="tm91">,</span></strong></p>
+ class="tm91">, </span><span class="tm90">{{ $internship->parrain_fonction }}</span><span class="tm91">,</span></strong></p>
 <p class="tm40 tm82 tm93"><span class="tm94"></span><span class="tm89">avec L&#8217;Institut National des Postes et T&eacute;l&eacute;communications (INPT) repr&eacute;sent&eacute; par </span><strong><span
- class="tm91">Monsieur Ahmed TAMTAOUI, Directeur par intérime,</span></strong></p>
+ class="tm91">Monsieur Ahmed TAMTAOUI, Directeur par intérim,</span></strong></p>
 <p class="tm34 tm82 tm86"><strong><span class="tm87"></span></strong><span class="tm89">Concernant le stage de Fin d&#8217;&eacute;tudes de</span><strong><span
  class="tm91"> </span><span class="tm90">{{ $internship->person->title }}</span><span class="tm91">&nbsp;</span><span
  class="tm90">{{ $internship->person->name }}</span></strong><span
@@ -1301,7 +1301,7 @@ font-weight:bold;
  class="tm90">{{ $internship->encadrant_ext_tel }}</span><span class="tm91">, </span><span class="tm90">{{ $internship->encadrant_ext_mail }}</span><span
  class="tm91">.</span></strong></p>
 <p class="tm44 tm82"><strong><span class="tm87"></span></strong><span class="tm96">- </span><span class="tm89">Chef de la fili&egrave;re&nbsp;: </span><strong><span
- class="tm90">&laquo;Civilit&eacute; Chef Fili&egrave;re&raquo;</span><span class="tm91">&nbsp;</span><span class="tm90">&laquo;Nom Chef Fili&egrave;re&raquo; &laquo;Pr&eacute;nom Chef Fili&egrave;re&raquo;.</span></strong></p>
+ class="tm90">{{ $internship->encadrant_int_name ?? '................... .....................'}}.</span></strong></p>
 <p class="tm47 tm82 tm97"><span class="tm94"></span><span class="tm89">Le stage portera sur le sujet suivant&nbsp;:</span><strong><span
  class="tm91"> </span><span class="tm90"><b>{{ $internship->intitule }}</b></span><span class="tm91">&nbsp;</span></strong></p>
 <p class="tm49 tm82 tm93"><span class="tm94"></span><span class="tm89">Descriptif d&eacute;taill&eacute;&nbsp;: </span><strong><span

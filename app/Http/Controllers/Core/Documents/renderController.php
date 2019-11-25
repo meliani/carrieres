@@ -76,7 +76,7 @@ class renderController extends Controller
         $pdf = app('snappy.pdf.wrapper');
         $header = view()->make('frontend.documents.pdf.header')->render();
         $footer = view()->make('frontend.documents.pdf.footerINPT')->render();
-        $pdf->loadView('frontend.documents.pdf.templates.'.auth()->user()->student->programs->last()->slug.'.contenuConvention')
+        $pdf->loadView('frontend.documents.pdf.templates.'.auth()->user()->student->programs->last()->slug.'.contenuConventionFrance')
         ->setOption('margin-top', '25mm')
         ->setOption('margin-bottom', '29mm')
         ->setOption('margin-left', '10mm')

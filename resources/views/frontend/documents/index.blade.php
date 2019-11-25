@@ -21,7 +21,12 @@
     <li class="collection-item avatar">
         <i class="material-icons circle green">sync</i>
     <a href={{ url('students/myDocuments?action[]=render&action[]=convention') }} class="waves-effect waves-light btn">
-        <i class="material-icons right">save</i>Generer de nouveau les documents</a>
+      <i class="material-icons right">save</i>Generer la convention Maroc et autres pays</a>
+    </li>
+    <li class="collection-item avatar">
+        <i class="material-icons circle green">sync</i>
+    <a href={{ url('students/myDocuments?action[]=render&action[]=convention_pfe_france') }} class="waves-effect waves-light btn">
+      <i class="material-icons right">save</i>Generer la convention France</a>
     </li>
     <li class="collection-item avatar">
         <i class="material-icons circle red">delete</i>
