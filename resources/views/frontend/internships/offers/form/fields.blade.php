@@ -111,6 +111,7 @@
     'icon' ,
     'helper' => 'Descriptif du sujet du stage',
     'required',
+    'type' => 'textarea',
     'cols' => 5,
 ], $errors) }}
 
