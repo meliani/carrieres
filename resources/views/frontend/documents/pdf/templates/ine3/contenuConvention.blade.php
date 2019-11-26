@@ -9,7 +9,7 @@ $internship = auth()->user()->student->internships->last();
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <meta charset="UTF-8" />
-<title>La formation de l&#8217;ing&eacute;nieur au sein de l&#8217;INPT a pour ambition de fournir une base documentaire scientifique et technique dont</title>
+<title></title>
 
 <meta name="author" content="inpt" />
 <style type="text/css">
