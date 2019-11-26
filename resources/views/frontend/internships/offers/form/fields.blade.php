@@ -107,10 +107,11 @@
     'value' ,
     'label' => 'Descriptif',
     'placeholder' ,
-    'class' => 'validate',
+    'class' => 'materialize-textarea validate',
     'icon' ,
     'helper' => 'Descriptif du sujet du stage',
     'required',
+    'type' => 'textarea',
     'cols' => 5,
 ], $errors) }}
 
