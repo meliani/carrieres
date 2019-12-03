@@ -113,6 +113,7 @@ Route::namespace('Backend')
 Route::namespace('Frontend')
 ->group(function () {
     // Controllers Within The "App\Http\Controllers\Frontend" Namespace
+    Route::resource('events', 'EventController');
     Route::namespace('Student')
     ->prefix('students')
     ->group(function () {

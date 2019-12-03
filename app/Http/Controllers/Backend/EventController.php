@@ -17,7 +17,7 @@ class EventController extends BaseController
     public function index()
     {
         //Events::all();
-        return view('backend.events.create');
+        return view('backend.events.index');
     }
  
     public function show(Event $event)
@@ -31,15 +31,15 @@ class EventController extends BaseController
 
     public function store(Request $request)
     {
-        $input=$request->all();
-        $event = new Event($input);
-        $event->save();
-        return view('backend.events.create');
+
     }
 
     public function update(Request $request, Event $event)
     {
-
+        $input=$request->all();
+        $event = new Event($input);
+        $event->save();
+        return view('backend.events.create');
     }
 
     public function destroy(Request $request, Event $event)

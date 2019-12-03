@@ -54,7 +54,9 @@ class Event extends Model
      */
     public function students()
     {
-        return $this->belongsToMany(\App\Models\Profile\Student::class);
+        return $this->belongsToMany(\App\Models\Profile\Student::class,
+        'event_student',
+        'user_id','user_id');
     }
 
 }

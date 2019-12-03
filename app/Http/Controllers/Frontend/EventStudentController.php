@@ -8,7 +8,7 @@ use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-class EventController extends BaseController
+class EventStudentController extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
@@ -22,10 +22,13 @@ class EventController extends BaseController
     {
     }   
     
-    public function create()
+    public function create(Event $event)
     {
-        return view('frontend.events.create');
-    }
+        $event->students()->attach(user()->student());
+        $event->save();
+        $events = Event::all();
+        return view('frontend.events.index',compact('events'));   
+     }
 
     public function store(Request $request)
     {
@@ -34,10 +37,7 @@ class EventController extends BaseController
     public function update(Request $request, Event $event)
     {
         //dd($event->id);
-        $event->students()->attach(user()->student());
-        $event->save();
-        $events = Event::all();
-        return view('frontend.events.index',compact('events'));
+
     }
 
     public function destroy(Request $request, Event $event)
