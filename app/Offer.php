@@ -83,7 +83,7 @@ class Offer extends Model
        public function getDocumentOffreAttribute($value)
        {
            if($value!=NULL)
-               return "storage/uploads/Stages/Offres/".$value;
+               return $value;
            else
                return NULL;
        }
