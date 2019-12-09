@@ -4,6 +4,14 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
+use Carbon\Carbon;
+
+use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Core\baseModel;
+
+use Illuminate\Http\File;
+use Illuminate\Support\Facades\Storage;
+
 class Offer extends Model
 {
     protected $table="internship_offers";
@@ -55,6 +63,30 @@ class Offer extends Model
         //
     ];
 
+    public function setDocumentOffreAttribute($value){
+        $this->attributes['document_offre']=Storage::putFile('storage/uploads/internships/offers/submited_files', new File($value));
+       }
+       public function getNomResponsableAttribute($value)
+       {
+           return ucfirst($value);
+       }
+   
+       public function getDescriptifAttribute($value)
+       {
+           return nl2br($value);
+       }
+       
+       public function getLieuDeStageAttribute($value)
+       {
+           return nl2br($value);
+       }
+       public function getDocumentOffreAttribute($value)
+       {
+           if($value!=NULL)
+               return "storage/uploads/Stages/Offres/".$value;
+           else
+               return NULL;
+       }
     /**
      * Get the Year for the Offer.
      */
@@ -70,6 +102,7 @@ class Offer extends Model
     {
         return $this->hasMany('App\Models\School\Internship\Application', 'offre_de_stage_id', 'id');
     }
+
     public function getExpireAtAttribute()
     {
         //Carbon::now();
