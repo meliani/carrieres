@@ -112,7 +112,7 @@ class renderController extends Controller
         $pdf = app('snappy.pdf.wrapper');
         $header = view()->make('frontend.documents.pdf.header')->render();
         $footer = view()->make('frontend.documents.pdf.footerINPT')->render();
-        $pdf->loadView('frontend.documents.pdf.templates.'.auth()->user()->student->programs->last()->slug.'.contenuConvention')
+        $pdf->loadView('frontend.documents.pdf.templates.'.auth()->user()->student->programs->last()->slug.'.contenuConventionMobiliteAutre')
         ->setOption('margin-top', '25mm')
         ->setOption('margin-bottom', '29mm')
         ->setOption('margin-left', '10mm')
@@ -126,6 +126,7 @@ class renderController extends Controller
         $this->attach($file_path);
         //return $pdf->inline($file_name);
     }
+    
     public function attach(String $file_path){
         //auth()->user()->people->clearMediaCollection('internship');
         auth()->user()->people
