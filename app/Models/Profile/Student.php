@@ -89,7 +89,10 @@ class Student extends Model implements HasMedia
     {
         return $this->belongsToMany(\App\Program::class);
     }
-
+    public function years()
+    {
+        return $this->belongsToMany(\App\Year::class,'student_year','user_id','year_id');
+    }
 /**
  * 
  * ********** Getters ***********
