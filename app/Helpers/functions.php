@@ -1,5 +1,7 @@
 <?php
-    use App\Http\Controllers\Core\Documents\UploaderController as Uploader;
+
+use App\Http\Controllers\Core\Documents\UploaderController as Uploader;
+use App\Year;
 
 if (!function_exists('app_name')) {
     function app_name()
@@ -47,6 +49,14 @@ if (! function_exists('upload'))
             'var_name' =>$parameters['var_name'],
             'upload_path' => $parameters['upload_path']
             ]);
+    }
+}
+if (! function_exists('this_year'))
+{
+
+    function this_year()
+    {
+        return Year::all()->last();
     }
 }
 if (! function_exists('advising_type'))
