@@ -27,7 +27,7 @@ class Internship extends Model
         parent::boot();
     
         static::addGlobalScope(function ($query) {
-                $query->orderBy('defense_at', 'asc');
+                $query->orderBy('created_at', 'asc');
         });
 
     }
@@ -146,8 +146,14 @@ class Internship extends Model
         return $this->hasMany(Professor::class)
         ->withPivot('advising_type','user_id','professor_id','internship_id');
     }
-
-
+    public function year()
+	{
+		return $this->belongsTo(App\Year::class);
+	}
+    public function program()
+	{
+		return $this->belongsTo(App\Program::class);
+	}
     /** ---------------------------------  Getters ----------------------------- */
     public function getParrainNameAttribute()
 	{
