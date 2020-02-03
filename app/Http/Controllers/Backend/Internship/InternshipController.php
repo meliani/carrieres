@@ -19,7 +19,7 @@ class InternshipController extends BaseController
     public function index()
     {
 
-        $internships = Internship::latest()->paginate();
+        
         if(request()->has('s')){
             $internships = Internship::whereHas('student', function ($query) {
                 $query->where('pfe_id', 'like', request('s'));
@@ -28,11 +28,10 @@ class InternshipController extends BaseController
 
         }else{
         $internships = Internship::latest()->whereHas('student', function ($query) {
-            $query->where('ine', '=', 3)
-            ->where('scholar_year','2018-2019');
+            $query->where('scholar_year','2019-2020');
         })->paginate();
         }
-
+        //$internships = Internship::latest()->paginate();
         session(['last_url' => route(Route::current()->getName())]);
         return view('backend.internships.index',compact('internships'));
 
