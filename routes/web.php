@@ -173,3 +173,7 @@ Route::get('PlanningPFE2020', 'Frontend\IframeController@PlanningPFE');
 Route::get('lesjeudis', 'Frontend\IframeController@PlanningJeudis');
 
 Route::get('submit_offer', 'Frontend\Internship\InternshipOfferController@create',$internship_type=2);
+
+Route::get('AutorisationSoutenance', function(){
+    return redirect('https://carrieres.inpt.ac.ma/Survey/index.php/295393');
+});
