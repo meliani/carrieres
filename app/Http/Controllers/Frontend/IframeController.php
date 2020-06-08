@@ -12,14 +12,14 @@ class IframeController extends Controller
     
     public function PlanningPFE()
     {
-        $title = "Planning des soutenances 2019";
+        $title = "Planning des soutenances 2020";
         
         $iframe = '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRtTUc6KeZ1YZ74AKHeiazI-r-axUry4HvOLB2GOhB6Od9tlaS2FUaTujt2iPbC6_iFVwkry9kW-j7_/pubhtml?gid=386980207&single=true&widget=false&headers=false&range=A:E" width="99%" height="1200px"></iframe>'; 
         return view('frontend.iframe',compact('iframe','title'));
     } 
     public function PlanningJeudis()
     {
-        $title = "Planning des Jeudis Entreprises 2019/2020";
+        $title = "Planning des Jeudis Entreprises 2020";
         $iframe = '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQgb9d3SO1PtC5e0ugkRlQczysMYF9YDevM6vVZtM9_eNzmv9Wgs9EngvZP2scjhMjCAK7MzJcqRrvp/pubhtml?gid=741529741&single=true&widget=false&headers=false&range=A:D" width="99%" height="1200px"></iframe>'; 
         return view('frontend.iframe',compact('iframe','title'));
     } 
