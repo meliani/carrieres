@@ -26,7 +26,7 @@
               <div class="offre col s12 m6 l4 xl4">
                   <div class="card hoverable">
                     <div class="card-content">
-                    <img src="/images/badges/pfe.svg" width="100pt">
+                    <!-- <img src="/images/badges/pfe.svg" width="100pt"> !-->
                       @if(isset($offer->expire_at)) 
                         <span class="new badge orange" data-badge-caption="{{$offer->expire_at}}"></span>
                       @endif
