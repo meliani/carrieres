@@ -7,7 +7,7 @@
 
 @section('content')
 
-    @include('components.section_title',['title' => 'Opportunités de stages PFE'])
+    @include('components.section_title',['title' => 'Opportunités de stages'])
 
     @include('components.pagination.pagination_wrapper',$paginate=$offers)
 
