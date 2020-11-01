@@ -179,7 +179,7 @@ return [
         Spatie\Permission\PermissionServiceProvider::class,
         Maatwebsite\Excel\ExcelServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
-        PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
+        //PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
         /*
          * Application Service Providers...
          */

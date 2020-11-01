@@ -5,7 +5,7 @@ return [
     /*
      * Enable it?
      */
-    'enabled' => true,
+    'enabled' => false,
 
     /*
      * Enable cache?
@@ -20,7 +20,7 @@ return [
     /*
      * Robots should be tracked?
      */
-    'do_not_track_robots' => false,
+    'do_not_track_robots' => true,
 
     /*
      * Which environments are not trackable?
@@ -181,7 +181,7 @@ return [
      *     sudo apt-get purge php5-geoip
      *
      */
-    'log_geoip' => true,
+    'log_geoip' => false,
 
     /*
      * Do you wish to log the user agent?
