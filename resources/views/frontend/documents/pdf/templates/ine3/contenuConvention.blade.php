@@ -1287,7 +1287,7 @@ font-weight:bold;
  class="tm92"> </span><span class="tm90">{{ $internship->parrain_name }}</span><span
  class="tm91">, </span><span class="tm90">{{ $internship->parrain_fonction }}</span><span class="tm91">,</span></strong></p>
 <p class="tm40 tm82 tm93"><span class="tm94"></span><span class="tm89">avec L&#8217;Institut National des Postes et T&eacute;l&eacute;communications (INPT) repr&eacute;sent&eacute; par </span><strong><span
- class="tm91">Monsieur Ahmed TAMTAOUI, Directeur par intérim,</span></strong></p>
+ class="tm91">Mr HILALI Abdelaziz, Directeur Adjoint des Stages et Relations avec les Entreprises,</span></strong></p>
 <p class="tm34 tm82 tm86"><strong><span class="tm87"></span></strong><span class="tm89">Concernant le stage de Fin d&#8217;&eacute;tudes de</span><strong><span
  class="tm91"> </span><span class="tm90">{{ $internship->person->title }}</span><span class="tm91">&nbsp;</span><span
  class="tm90">{{ $internship->person->name }}</span></strong><span
