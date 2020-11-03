@@ -1,5 +1,5 @@
 <?php
-namespace App\Http\Controllers\Frontend\Internship;
+namespace App\Http\Controllers\Backend\Internship;
 
 
 

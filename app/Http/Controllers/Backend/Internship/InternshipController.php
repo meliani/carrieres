@@ -7,7 +7,10 @@ use App\Models\School\Internship;
 use App\Models\School\Internship\Defense;
 use Illuminate\Http\Request;
 use \App\Models\Profile\Student;
-use Route;
+//use Route;
+use Illuminate\Support\Facades\Route;
+
+
 
 class InternshipController extends BaseController
 {
