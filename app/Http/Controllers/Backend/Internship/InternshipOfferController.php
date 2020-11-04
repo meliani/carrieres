@@ -92,6 +92,7 @@ class internshipOfferController extends Controller
     public function edit(Offer $Offer)
     {
         //
+        
     }
 
     /**
