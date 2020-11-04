@@ -19,7 +19,6 @@
         @if(isset($internship->student))
         <td class="strong">{{ $internship->student->pfe_id }}</td>
         <td class="strong">{{ $internship->student->programs->last()->name ?? 'NA' }}</td>
-        <td class="strong">{{ $internship->student->years->last()->title ?? 'NA' }}</td>
         <td><div
           class="waves-effect sub strong tooltipped" data-position="bottom" 
           data-delay="50" 

@@ -31,7 +31,7 @@ class InternshipController extends BaseController
 
         }else{
         $internships = Internship::latest()->whereHas('student', function ($query) {
-            $query->where('scholar_year','%');
+            $query->where('scholar_year','like','%');
         })->paginate();
         }
         //$internships = Internship::latest()->paginate();
