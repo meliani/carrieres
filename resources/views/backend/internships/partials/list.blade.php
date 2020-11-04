@@ -6,7 +6,7 @@
         <th width="13%">Nom et prénom</th>
         <th width="15%">Entreprise</th>
           <th width="25%">Titre du PFE</th>
-          <th width="10%">Dates Declaration / Soutenance</th>
+          <th width="10%">Dates Declaration</th>
           <th width="10%">Encadrant 1</th>   
           <th width="10%">Encadrant 2</th>   
           <th width="25%">Membres du jury</th>            
@@ -45,7 +45,6 @@
          {{-- Limit intitulé to 100 characters --}}
          <td>
            <p>{{ isset($internship->created_at) ? \Carbon\Carbon::parse($internship['created_at'])->format('d M Y'):'' }}</p>
-           <p>{{ isset($internship->defense_at) ? \Carbon\Carbon::parse($internship['defense_at'])->format('d M Y'):'' }}</p>
         </td>   
          <td class="center">
            @if(isset($internship->adviser->adviser1))
