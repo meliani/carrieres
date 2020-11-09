@@ -1290,7 +1290,7 @@ font-weight:bold;
  class="tm91">Mr HILALI Abdelaziz, Directeur Adjoint des Stages et Relations avec les Entreprises,</span></strong></p>
 <p class="tm34 tm82 tm86"><strong><span class="tm87"></span></strong><span class="tm89">Concernant le stage de Fin d&#8217;&eacute;tudes de</span><strong><span
  class="tm91"> </span><span class="tm90">{{ $internship->person->title }}</span><span class="tm91">&nbsp;</span><span
- class="tm90">{{ $internship->person->name }}</span></strong><span
+ class="tm90">{{ $internship->person->full_name }}</span></strong><span
  class="tm89">, </span><strong><span class="tm90"> </span></strong><span class="tm89">&eacute;l&egrave;ve ing&eacute;nieur de la fili&egrave;re : </span><strong><span
  class="tm90">{{ $internship->person->filiere_text }}</span></strong><span class="tm89">, </span></p>
 <p class="tm42 tm82"><strong><span class="tm87"></span></strong><span class="tm89">Pour la p&eacute;riode du </span><strong><span

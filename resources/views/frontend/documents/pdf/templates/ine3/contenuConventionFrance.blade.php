@@ -611,7 +611,7 @@ height:52px;
  class="tm42">Monsieur Ahmed TAMTAOUI</span><span class="tm43">, </span></strong><span class="tm41">Directeur par int&eacute;rim</span><strong><span
  class="tm43">,</span></strong></p>
 <p class="Normal tm38"><strong><span class="tm32">de deuxi&egrave;me part, et</span></strong></p>
-<p class="Normal tm44"><span class="tm33"></span><strong><span class="tm34">{{ $internship->person->name }}</span><span
+<p class="Normal tm44"><span class="tm33"></span><strong><span class="tm34">{{ $internship->person->full_name }}</span><span
  class="tm32">, </span></strong><span class="tm33">&eacute;tudiant(e) de la fili&egrave;re</span><span class="tm33"> </span><strong><span
  class="tm34">{{ $internship->person->filiere_text }}</span></strong><span class="tm33"> </span><span class="tm33">de la 3</span><sup><span
  class="tm33">&egrave;me</span></sup><span class="tm33"> ann&eacute;e du Cycle des Ing&eacute;nieurs d&#8217;Etat (INE)</span><span

@@ -97,7 +97,7 @@ font-weight:bold;
 <p class="Normal tm6"><span class="tm7">Madame, Monsieur, </span></p>
 <p class="Normal tm6"><span class="tm7">&#160;</span></p>
 <p class="Normal tm6"><span class="tm7">Nous vous remercions de bien vouloir accorder un Stage de Projet de Fin d&#8217;Etudes (PFE) &agrave; </span><strong><span
- class="tm11">{{ auth()->user()->people->title }} {{ auth()->user()->people->name }}</span></strong><span class="tm7">, &eacute;l&egrave;ve ing&eacute;nieur de </span><strong><span
+ class="tm11">{{ auth()->user()->people->title }} {{ auth()->user()->people->full_name }}</span></strong><span class="tm7">, &eacute;l&egrave;ve ing&eacute;nieur de </span><strong><span
  class="tm8">3&egrave;me ann&eacute;e &agrave; l&#8217;INPT</span></strong><span class="tm7"> de Rabat. En accueillant notre &eacute;l&egrave;ve stagiaire au sein de votre entreprise, vous auriez contribu&eacute; &agrave;
 une meilleure pr&eacute;paration pour son insertion dans la vie professionnelle.</span></p>
 <p class="Normal tm6"><span class="tm7">&#160;</span></p>
