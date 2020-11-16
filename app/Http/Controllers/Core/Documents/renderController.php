@@ -30,7 +30,7 @@ class renderController extends Controller
         ->setOption('header-html', $header)
         ->setOption('footer-html', $footer)
         ->setOption('page-size' ,'A4');
-        $file_name = 'Convention de stage '.auth()->user()->people->first_name.' '.Carbon::now()->format('dMY his').'.pdf';
+        $file_name = 'Convention de stage '.auth()->user()->people->full_name.' '.Carbon::now()->format('dMY his').'.pdf';
         $file_path = Storage_path('users/internship/'.$file_name);
         $pdf->save($file_path);
         $this->attach($file_path);
@@ -48,7 +48,7 @@ class renderController extends Controller
         ->setOption('header-html', $header)
         ->setOption('footer-html', $footer)
         ->setOption('page-size' ,'A4');
-        $file_name = 'Lettre de recommendation '.auth()->user()->people->first_name.' '.Carbon::now()->format('dMY his').'.pdf';
+        $file_name = 'Lettre de recommendation '.auth()->user()->people->full_name.' '.Carbon::now()->format('dMY his').'.pdf';
         $file_path = Storage_path('app/public/user/generated/internship/'.$file_name);
         $pdf->save($file_path);
         $this->attach($file_path);
@@ -66,7 +66,7 @@ class renderController extends Controller
         ->setOption('header-html', $header)
         ->setOption('footer-html', $footer)
         ->setOption('page-size' ,'A4');
-        $file_name = 'Convention de stage '.auth()->user()->people->first_name.' '.Carbon::now()->format('dMY his').'.pdf';
+        $file_name = 'Convention de stage '.auth()->user()->people->full_name.' '.Carbon::now()->format('dMY his').'.pdf';
         $file_path = Storage_path('users/internship/'.$file_name);
         $pdf->save($file_path);
         $this->attach($file_path);
@@ -84,7 +84,7 @@ class renderController extends Controller
         ->setOption('header-html', $header)
         ->setOption('footer-html', $footer)
         ->setOption('page-size' ,'A4');
-        $file_name = 'Convention de stage '.auth()->user()->people->first_name.' '.Carbon::now()->format('dMY his').'.pdf';
+        $file_name = 'Convention de stage '.auth()->user()->people->full_name.' '.Carbon::now()->format('dMY his').'.pdf';
         $file_path = Storage_path('users/internship/'.$file_name);
         $pdf->save($file_path);
         $this->attach($file_path);
@@ -102,7 +102,7 @@ class renderController extends Controller
         ->setOption('header-html', $header)
         ->setOption('footer-html', $footer)
         ->setOption('page-size' ,'A4');
-        $file_name = 'Convention de stage '.auth()->user()->people->first_name.' '.Carbon::now()->format('dMY his').'.pdf';
+        $file_name = 'Convention de stage '.auth()->user()->people->full_name.' '.Carbon::now()->format('dMY his').'.pdf';
         $file_path = Storage_path('users/internship/'.$file_name);
         $pdf->save($file_path);
         $this->attach($file_path);
@@ -120,7 +120,7 @@ class renderController extends Controller
         ->setOption('header-html', $header)
         ->setOption('footer-html', $footer)
         ->setOption('page-size' ,'A4');
-        $file_name = 'Convention de stage '.auth()->user()->people->first_name.' '.Carbon::now()->format('dMY his').'.pdf';
+        $file_name = 'Convention de stage '.auth()->user()->people->full_name.' '.Carbon::now()->format('dMY his').'.pdf';
         $file_path = Storage_path('users/internship/'.$file_name);
         $pdf->save($file_path);
         $this->attach($file_path);
