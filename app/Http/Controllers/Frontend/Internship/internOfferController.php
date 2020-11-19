@@ -18,7 +18,7 @@ use App\Models\School\Internship\Application;
 use App\Offer;
 use App\User;
 
-class internshipOfferController extends Controller
+class internOfferController extends Controller
 {
 
     public function __construct()

@@ -125,7 +125,7 @@ Route::namespace('Frontend')
         Route::resource('internships', 'myInternshipController');
     Route::prefix('internships')->group(function () {
         Route::resource('binomes', 'BinomeController');
-        Route::resource('offers', 'internshipOfferController');
+        Route::resource('offers', 'internOfferController');
         Route::resource('reports', 'internshipReportController');
         Route::prefix('offers')->group(function () {
             Route::resource('applications', 'internshipApplicationController');
@@ -172,7 +172,7 @@ Route::resource('permissions', 'PermissionController');
 Route::get('PlanningPFE2020', 'Frontend\IframeController@PlanningPFE');
 Route::get('lesjeudis', 'Frontend\IframeController@PlanningJeudis');
 
-Route::get('submit_offer', 'Frontend\Internship\internshipOfferController@create',$internship_type=2);
+Route::get('submit_offer', 'Frontend\Internship\internOfferController@create',$internship_type=2);
 
 Route::get('AutorisationSoutenance', function(){
     return redirect('https://carrieres.inpt.ac.ma/Survey/index.php/295393');
