@@ -153,7 +153,12 @@ class Internship extends Model
     public function program()
 	{
 		return $this->belongsTo(App\Program::class);
-	}
+    }
+    public function professor()
+	{
+        return $this->hasOne('App\User', 'id', 'is_signed');
+
+    }
     /** ---------------------------------  Getters ----------------------------- */
     public function getParrainNameAttribute()
 	{

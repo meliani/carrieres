@@ -68,7 +68,9 @@ Route::middleware(['auth'])->group(function () {
 Auth::routes();
 
 Route::namespace('Internship')->group(function () {
-    // Controllers Within The "App\Http\Controllers\Admin" Namespace
+    // Controllers Within The "App\Http\Controllers\Internship" Namespace
+    Route::prefix('Internship')->group(function () {
+});
     Route::prefix('Internship/Advising')->group(function () {
         Route::resource('Project', 'AdvisingController');
         Route::resource('Jury', 'JuryController');
@@ -104,12 +106,14 @@ Route::namespace('Backend')
                 Route::resource('offers', 'OfferController');
                 Route::resource('binomes', 'BinomeController');
                 Route::resource('reports', 'ReportController');
-                Route::get('clone/{internship_id}/{user_id}', 'InternshipController@clone');
+                Route::get('clone/{internship_id}/{user_id}', 'InternshipController@clone');    
+
             });
         }); 
     });
 });
 
+Route::resource('Sign', 'Frontend\Internship\SignController');
 
 Route::namespace('Frontend')
 ->group(function () {
@@ -121,9 +125,12 @@ Route::namespace('Frontend')
         Route::get('myDocuments/', 'myDocumentsController@index');
     });
     Route::namespace('Internship')->group(function () {
+            // Controllers Within The "App\Http\Controllers\Frontend\Internship" Namespace
+
         Route::get('internships/clone/{id}/{user_id?}', 'myInternshipController@clone');
         Route::resource('internships', 'myInternshipController');
     Route::prefix('internships')->group(function () {
+
         Route::resource('binomes', 'BinomeController');
         Route::resource('offers', 'internOfferController');
         Route::resource('reports', 'internshipReportController');
