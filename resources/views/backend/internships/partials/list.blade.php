@@ -18,13 +18,8 @@
       <tr>
         @if(isset($internship->student))
         <td class="strong">{{ $internship->student->pfe_id }}</td>
-        <td class="strong">{{ $internship->student->programs->last()->name ?? 'NA' }}</td>
         <td><div
-          class="waves-effect sub strong tooltipped" data-position="bottom" 
-          data-delay="50" 
-          data-tooltip="INE 
-          {{ $internship->student->ine }}
-          {{ $internship->student->scholar_year }}">{{ $internship->student->name }}
+          class="waves-effect sub strong">{{ $internship->student->full_name }}
           </div>
           @isset($internship->binome)
           <span class="new badge orange lighten-3 white-text tooltipped" 
@@ -34,9 +29,7 @@
           </span>              
           @endisset
 
-          <span class="new badge blue lighten-3 white-text" 
-          data-badge-caption="{{ ( !empty($internship->student->option_text)? $internship->student->option_text:'' ) }}">
-          </span>
+
           @if (isset($internship->id))
         </td>
         <td class="strong">{{ isset($internship->raison_sociale) ? str_limit($internship->raison_sociale,30):'' }}</td>

@@ -34,7 +34,7 @@ class InternshipController extends BaseController
             $query->where('scholar_year','like','%');
         })->paginate();
         }
-        //$internships = Internship::latest()->paginate();
+        $internships = Internship::latest()->paginate();
         session(['last_url' => route(Route::current()->getName())]);
         return view('backend.internships.index',compact('internships'));
 
