@@ -80,9 +80,10 @@
                       @if(isset($offer->applyable))
                         @if($offer->applyable==0) 
                           <a href="{{ route('offers.show', $offer->id) }}">Voir l'offre</a>
-                        @endif
+                        
                         @else
                           <a href="{{ route('applications.create', ['offer'=>$offer->id]) }}">Postuler</a>
+                          @endif
                       @endif
                       
                       @role('Admin')
