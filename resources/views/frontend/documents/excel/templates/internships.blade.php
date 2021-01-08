@@ -38,7 +38,7 @@ $trainees = \App\Models\Profile\Person::Where('ine','3')
         <td class="strong">{{ $trainee->pfe_id }}
             {!! isset($trainee->internship->binome)?'.'.$trainee->internship->binome->pfe_id:'' !!}
         </td>
-        <td class="sub strong">{{ $trainee->name }}</td>
+        <td class="sub strong">{{ $trainee->full_name }}</td>
         <td>{{ ( !empty($trainee['option_text'])? $trainee['option_text']:'' ) }}</td>
         <td class="strong">{{ $trainee->internship['raison_sociale'] }}</td>
         <td class="sub">{{  $trainee->internship['intitule'] }}</td>
