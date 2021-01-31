@@ -596,7 +596,7 @@ height:52px;
 @include('frontend.documents.pdf.templates.document_css')
 
 <body>
-<p class="BodyText2 tm25"><strong><span class="tm26">CONVENTION </span><span class="tm27">DE StAge</span><span class="tm26"> </span></strong></p>
+<p class="BodyText2 tm25"><strong><span class="tm26">CONVENTION </span><span class="tm27">DE Stage</span><span class="tm26"> </span></strong></p>
 <p class="Normal tm28"><span class="tm29"></span><strong><u><span class="tm30">ARTICLE 1</span></u><span class="tm30">&nbsp;: Parties signataires de la convention&nbsp;: </span></strong></p>
 <p class="Normal tm31"><strong><span class="tm32"></span></strong><span class="tm33">La pr&eacute;sente convention r&egrave;gle les rapports entre l&#8217;Entreprise</span><strong><span
  class="tm32"> </span><span class="tm34">{{ $internship->raison_sociale }}</span><span class="tm35"> </span></strong><span class="tm33">situ&eacute;e&nbsp;au </span><strong><span

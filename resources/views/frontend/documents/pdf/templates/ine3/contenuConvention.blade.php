@@ -1366,7 +1366,7 @@ connaissance de l&#8217;entreprise et de l&#8217;&eacute;l&egrave;ve et que ceux
 <p class="tm68 tm82 tm86"><span class="tm94"></span><strong><span class="tm91">REGLEMENT DES STAGES EN ENTREPRISE</span></strong></p>
 <p class="tm69 tm82 tm99"><span class="tm94">&#160;</span></p>
 <p class="tm71 tm82 tm93"><span class="tm94"></span><strong><span class="tm111">Art.1-</span></strong><span class="tm112"> l&#8217;&eacute;l&egrave;ve ing&eacute;nieur est appel&eacute; &agrave; effectuer un stage de PFE obligatoire
-pour l&#8217;obtention du dipl&ocirc;me d&#8217;ing&eacute;nieur en t&eacute;l&eacute;communications. L&#8217;objectif poursuivi du stage de PFE est de donner &agrave; chaque &eacute;tudiant l&#8217;occasion d&#8217;effectuer
+pour l&#8217;obtention du dipl&ocirc;me d&#8217;Ingénieur en Télécommunications et Technologies de l'Information. L&#8217;objectif poursuivi du stage de PFE est de donner &agrave; chaque &eacute;tudiant l&#8217;occasion d&#8217;effectuer
 une recherche personnelle et approfondie sur un sujet propos&eacute; par une entreprise afin de s&#8217;immerger dans le monde du travail.</span></p>
 <p class="tm75 tm82 tm93"><em><span class="tm101"></span><strong><span class="tm111">Art.2-</span></strong><span class="tm112"> Pendant la dur&eacute;e de son stage, le stagiaire reste plac&eacute; sous la responsabilit&eacute;
 de l&#8217;entreprise d&#8217;accueil tout en demeurant &eacute;tudiant de l&#8217;INPT. L&#39;&eacute;l&egrave;ve stagiaire pourra revenir &agrave; l&#39;Institut pendant la dur&eacute;e du stage, pour y suivre certains cours
