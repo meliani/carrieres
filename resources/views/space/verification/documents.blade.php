@@ -31,10 +31,3 @@ Email INPT : {{ $user->email }}
 Email autre : {{ $person->email }}
 </br>
 <b>Stage</b>
-</br>Sujet : {{ $person->internship->intitule }}
-</br>Entreprise : {{ $person->internship->raison_sociale }}
-</br>Date de declaration : {{ $person->internship->created_at }}
-</br>parrain : {{ $person->internship->parrain_name }}
-</br>telephone parrain : {{ $person->internship->parrain_tel }}
-</br>encadrant ext : {{ $person->internship->encadrant_ext_name }}
-</br>telephone encadrant ext : {{ $person->internship->encadrant_ext_tel }}
