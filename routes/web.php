@@ -175,7 +175,7 @@ Route::resource('permissions', 'PermissionController');
 });
 
 //Route::get('PlanningPFE2019', 'Backend\Internship\PlanningsController@index');
-Route::get('PlanningPFE2021', 'Frontend\IframeController@PlanningPFE');
+Route::get('PlanningPFE', 'Frontend\IframeController@PlanningPFE');
 Route::get('lesjeudis', 'Frontend\IframeController@PlanningJeudis');
 
 Route::get('submit_offer', 'Frontend\Internship\internOfferController@create',$internship_type=2);
