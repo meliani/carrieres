@@ -32,4 +32,6 @@ Email autre : {{ $person->email }}
 </br>
 <b>Stage</b>
 </br>
-Telepone : {{ $person->internship->title }}
+Telepone : {{ $person->internship->intitule }}
+</br>
+Telepone : {{ $person->internship->raison_sociale }}
