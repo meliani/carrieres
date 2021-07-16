@@ -31,3 +31,5 @@ Email INPT : {{ $user->email }}
 Email autre : {{ $person->email }}
 </br>
 <b>Stage</b>
+</br>
+Telepone : {{ $person->internship->title }}
