@@ -42,7 +42,7 @@ intitule : {{ $person->internship->intitule }}
 </br>
 Date de debut : {{ $person->internship->date_debut }}
 </br>
-Date de fin : {{ $person->internship->Date_fin }}
+Date de fin : {{ $person->internship->date_fin }}
 </br>
 Mots cles : {{ $person->internship->keywords }}
 </br>
