@@ -1,4 +1,4 @@
-<b>Informations sur la convention :</b>
+<b>Informations decryptes du tag de la convention :</b>
 </br>
 Cryptage : {{ $v }}
 </br>
@@ -22,6 +22,8 @@ $user = App\User::findOrFail($b[0]);
 $person = $user->people;
 ?>
 </br>
+<b>Etudiant</b>
+</br>
 Nom de l'etudiant : {{ $person->title }}{{ $person->name }}
 </br>
 Telepone : {{ $person->phone }}
@@ -32,6 +34,16 @@ Email autre : {{ $person->email }}
 </br>
 <b>Stage</b>
 </br>
-Telepone : {{ $person->internship->intitule }}
+Entreprise : {{ $person->internship->raison_sociale }}
 </br>
-Telepone : {{ $person->internship->raison_sociale }}
+Location : {{ $person->internship->ville }} / {{ $person->internship->pays }}
+</br>
+intitule : {{ $person->internship->intitule }}
+</br>
+Date de debut : {{ $person->internship->date_debut }}
+</br>
+Date de fin : {{ $person->internship->Date_fin }}
+</br>
+Mots cles : {{ $person->internship->keywords }}
+</br>
+Descriptif : {{ $person->internship->descriptif }}
