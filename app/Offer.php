@@ -64,7 +64,8 @@ class Offer extends Model
     ];
 
     public function setDocumentOffreAttribute($value){
-        $this->attributes['document_offre']=Storage::putFile('public/uploads/internships/offers/submited_files', new File($value));
+        //dd($value);
+        $this->attributes['document_offre']=Storage::disk('interOffersDocs')->putFile('', new File($value));
        }
        public function getNomResponsableAttribute($value)
        {

@@ -2,10 +2,6 @@
 </br>
 Cryptage : {{ $v }}
 </br>
-Type de stage : 
-</br>
-Raison sociale de l'Entreprise : 
-</br>
 Id utlisateur : {{ $b[0] }}
 </br>
 Id declaration de stage : {{ $b[1] }}

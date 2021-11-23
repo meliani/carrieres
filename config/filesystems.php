@@ -61,7 +61,12 @@ return [
             'url' => env('APP_URL').'/storage/uploads',
             'visibility' => 'public',
         ],
-        
+        'interOffersDocs' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/uploads/internships/offers/submited_files'),
+            'url' => env('APP_URL').'/storage/uploads/internships/offers/submited_files',
+            'visibility' => 'public',
+        ],
         'userfiles' => [
             'driver' => 'local',
             'root' => storage_path('app/public/userfiles'),
