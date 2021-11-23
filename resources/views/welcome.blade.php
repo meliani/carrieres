@@ -35,7 +35,7 @@
           </p>
             <p class="light">
               Afin de récupérer votre mot de passe, veuillez utiliser la même adresse email renseignée et cliquer sur <a href="{{ route('password.request') }}">"redéfinir ?"</a>".
-              Vous aller recevoir un message pour réinitialiser votre login et pouvoir accéder aux offres PFE 2018.
+              Vous aller recevoir un message pour réinitialiser votre login et pouvoir accéder aux offres de stages.
             </p>
           </div>
         </div>
@@ -52,12 +52,6 @@
               <li class="light">Le Projet de fin d’études (PFE) en troisième année.</li>
 
           </div>
-          <p class="center">
-          <a href="https://carrieres.inpt.ac.ma/rapport" class="btn-floating btn-medium blue pulse"><i class="material-icons">book</i></a>
-          </p>
-          <p class="center">
-          Soumettre votre rapport de stage ici...   
-        </p>
         </div>
 
         <div class="col s12 m4">
@@ -70,7 +64,7 @@
             s’enquérir des réalités du monde du travail.
             </p>
             <p class=" center light">
-            <a class="btn light-blue flat" href="">Planning</a>
+            <a class="btn light-blue flat" href="">Voir le Planning</a>
             </p>
           </div>
         </div>
