@@ -17,6 +17,6 @@ return [
     'reset' => 'Votre mot de passe est renouvlé !',
     'sent' => 'Le lien de redéfinition a été envoyé par email !',
     'token' => 'Ce lien de redéfinition de mot de passe est invalide.',
-    'user' => "l'adresse que vous avez fourni n'est pas enregistrée dans la base de données DASRE, veuillez conacter la INPT/DSI pour avoir une adresse mail valide a envoyer par la suite à entreprises@inpt.ac.ma pour la crétion de votre compte.",
+    'user' => "L'adresse que vous avez fournie ne figure pas dans la liste des étudiants enregistres a l'INPT. Veuillez-vous assurer que vous avec entré l'adresse email avec le bon format (nom.prenom@ine.inpt.ma).",
 
 ];
