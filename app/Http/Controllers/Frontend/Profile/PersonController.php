@@ -73,7 +73,7 @@ class PersonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $r, $id)
+    public function update(Request $r)
     {
         $person = Person::find(user()->id);
         $person->update(

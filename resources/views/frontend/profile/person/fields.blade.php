@@ -1,5 +1,7 @@
 <div class="card-panel">
     <div class="card-content">
+        <h1 class="col m12 center-align">@lang('newlife.activation.fill_required_informations')</h5>
+
         <div class = "row">
 
             {{ Form::textGroup([
@@ -23,8 +25,8 @@
                 'helper' => __('labels.phone_helper'),
                 'cols' => 5,
             ], $errors) }}
-            <h1 class="col m12 center-align">Fichiers</h1>
-            {{ Form::fileGroup([
+            <h1 class="col m12 center-align">@lang('newlife.activation.your_cloud_files')</h1>
+            {{ Form::textGroup([
                 'name' => 'cv',
                 'value' ,
                 'label' => __('labels.cv'),
@@ -35,7 +37,7 @@
                 'position' => 'left',
                 'cols' => 12,
             ], $errors) }}
-            {{ Form::fileGroup([
+            {{ Form::textGroup([
                 'name' => 'lm',
                 'value' ,
                 'label' => __('labels.lm'),
@@ -46,7 +48,7 @@
                 'position' => 'left',
                 'cols' => 12,
             ], $errors) }}
-            {{ Form::fileGroup([
+            {{ Form::textGroup([
                 'name' => 'photo',
                 'value' ,
                 'label' => __('labels.photo'),

@@ -3,7 +3,7 @@
     @if($person->active())
         @include('partials.cards.profile')
     @endif
-    @if($person->ine=='2')
+    @if($person->ine>0)
         @include('partials.cards.stage')
     @endif
 @endif

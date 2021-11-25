@@ -49,7 +49,7 @@ class Person extends Model implements HasMedia
     'pfe_id'
     ];
 
-
+/*
    public function setCvAttribute($value){
     $this->attributes['cv']=Storage::putFile('public/uploads/people/init_data/CVs', new File($value));
    }
@@ -59,11 +59,12 @@ class Person extends Model implements HasMedia
    public function setPhotoAttribute($value){
     $this->attributes['photo']=Storage::putFile('public/uploads/people/init_data/Photos', new File($value));
    } 
-   public function getNameAttribute($value)
+   */
+   public function getNameAttribute()
 	{
-		return $this->attributes['first_name'].' '.$this->attributes['last_name'];
+		return $this->getTitleAttribute().' '.$this->attributes['first_name'].' '.$this->attributes['last_name'];
     }
-   public function getTitleAttribute($value)
+   public function getTitleAttribute()
 	{
         if($this->attributes['gender_id']==0)
 		return "Mme.";

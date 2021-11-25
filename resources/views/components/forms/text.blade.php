@@ -14,6 +14,7 @@ $type=array_get($params,'type','text');
      'placeholder' => array_get($params,'placeholder'),
      'value' => array_get($params,'value'),
      array_get($params,'required'),
+     array_get($params,'disabled'),
     ]
     ) !!}
 
