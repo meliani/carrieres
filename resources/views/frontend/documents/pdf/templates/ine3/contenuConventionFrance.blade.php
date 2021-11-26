@@ -773,7 +773,7 @@ accueillant le stagiaire, le troisi&egrave;me  &agrave; l&#8217;Ecole et le quat
  <tbody class="tm86">
  <tr>
   <td class="tm87 tm88 tm89">
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">Date et signature du Chef de fili&egrave;re</span></em></p>
+  <p class="BodyTextIndent3 tm90"><em><span class="tm91">Date et signature du Coordonnateur de fili&egrave;re</span></em></p>
   <p class="BodyTextIndent3 tm90"><em><span class="tm91">&#160;</span></em></p>
   </td>
   <td class="tm87 tm88 tm89">

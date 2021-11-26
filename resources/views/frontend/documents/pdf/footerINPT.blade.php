@@ -14,7 +14,7 @@
             color: #999999;
             text-emphasis:5px;
             font-family:Arial, Helvetica, sans-serif;
-            line-height:8px;
+            line-height:6px;
         }
         </style>
 </head>

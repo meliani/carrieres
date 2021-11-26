@@ -1304,7 +1304,7 @@ font-weight:bold;
  class="tm91">, </span><span class="tm90">{{ $internship->encadrant_ext_fonction }}</span><span class="tm91">, </span><span
  class="tm90">{{ $internship->encadrant_ext_tel }}</span><span class="tm91">, </span><span class="tm90">{{ $internship->encadrant_ext_mail }}</span><span
  class="tm91">.</span></strong></p>
-<p class="tm44 tm82"><strong><span class="tm87"></span></strong><span class="tm96">- </span><span class="tm89">Chef de la fili&egrave;re&nbsp;: </span><strong><span
+<p class="tm44 tm82"><strong><span class="tm87"></span></strong><span class="tm96">- </span><span class="tm89">Coordonnateur de la fili&egrave;re&nbsp;: </span><strong><span
  class="tm90">{{ $internship->encadrant_int_name ?? '................... .....................'}}.</span></strong></p>
 <p class="tm47 tm82 tm97"><span class="tm94"></span><span class="tm89">Le stage portera sur le sujet suivant&nbsp;:</span><strong><span
  class="tm91"> </span><span class="tm90"><b>{{ $internship->intitule }}</b></span><span class="tm91">&nbsp;</span></strong></p>
@@ -1324,7 +1324,7 @@ connaissance de l&#8217;entreprise et de l&#8217;&eacute;l&egrave;ve et que ceux
  <tbody class="tm106">
  <tr>
   <td class="tm107 tm108 tm109">
-  <p class="tm66 tm82 tm99"><em><span class="tm101"></span><span class="tm89">Date et signature du Chef de fili&egrave;re</span></em></p>
+  <p class="tm66 tm82 tm99"><em><span class="tm101"></span><span class="tm89">Date et signature du Coordonnateur de fili&egrave;re</span></em></p>
   <p class="tm66 tm82 tm99"><em><span class="tm101">&#160;</span></em></p>
   </td>
   <td class="tm107 tm108 tm109">

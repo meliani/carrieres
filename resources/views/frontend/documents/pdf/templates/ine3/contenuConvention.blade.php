@@ -1275,8 +1275,8 @@ font-weight:bold;
 @include('frontend.documents.pdf.templates.document_css')
 </head>
 <body>
-<p class="tm26 tm82"><strong><em><span class="tm83"></span><span class="tm84">-=- CONVENTION </span></em><span class="tm85">DE StAge -=-</span></strong></p>
-<p class="tm26 tm82"><strong><em><span class="tm83"></span></em><span class="tm85">Projet de FIN D&#8217;ETUDES</span></strong></p>
+<p class="tm26 tm82"><strong><em><span class="tm83"></span><span class="tm84">-=- CONVENTION </span></em><span class="tm85">DE STAGE -=-</span></strong></p>
+<p class="tm26 tm82"><strong><em><span class="tm83"></span></em><span class="tm85">PROJET DE FIN D&#8217;ETUDES</span></strong></p>
 <p class="tm29 tm82"><strong><em><span class="tm83">&#160;</span></em></strong></p>
 <p class="tm31 tm82 tm86"><strong><span class="tm87"></span><u><span class="tm88">ARTICLE PREMIER&nbsp;:</span></u></strong></p>
 <p class="tm34 tm82 tm86"><strong><span class="tm87"></span></strong><span class="tm89">La pr&eacute;sente convention r&egrave;gle les rapports de&nbsp;: </span><strong><span
@@ -1301,7 +1301,7 @@ font-weight:bold;
  class="tm91">, </span><span class="tm90">{{ $internship->encadrant_ext_fonction }}</span><span class="tm91">, </span><span
  class="tm90">{{ $internship->encadrant_ext_tel }}</span><span class="tm91">, </span><span class="tm90">{{ $internship->encadrant_ext_mail }}</span><span
  class="tm91">.</span></strong></p>
-<p class="tm44 tm82"><strong><span class="tm87"></span></strong><span class="tm96">- </span><span class="tm89">Chef de la fili&egrave;re&nbsp;: </span><strong><span
+<p class="tm44 tm82"><strong><span class="tm87"></span></strong><span class="tm96">- </span><span class="tm89">Coordonnateur de la fili&egrave;re&nbsp;: </span><strong><span
  class="tm90">{{ $internship->encadrant_int_name ?? '................... .....................'}}.</span></strong></p>
 <p class="tm47 tm82 tm97"><span class="tm94"></span><span class="tm89">Le stage portera sur le sujet suivant&nbsp;:</span><strong><span
  class="tm91"> </span><span class="tm90"><b>{{ $internship->intitule }}</b></span><span class="tm91">&nbsp;</span></strong></p>
