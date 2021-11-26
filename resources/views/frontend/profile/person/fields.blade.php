@@ -1,7 +1,20 @@
 <div class="card-panel">
     <div class="card-content">
         <h1 class="col m12 center-align">@lang('newlife.activation.fill_required_informations')</h5>
-
+        <div class = "row">
+            {{ Form::selectGroup([
+                'name' => 'gender_id',
+                'value' ,
+                'label' => 'Civilité',
+                'placeholder' ,
+                'class' => 'validate',
+                'icon' ,
+                'helper' => 'Votre pronom',
+                'required' => 'required',
+                'cols' => 6,
+                'data' => ['1'=>'Il','0'=>'Elle']
+            ], $errors) }}
+        </div>
         <div class = "row">
 
             {{ Form::textGroup([

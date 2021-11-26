@@ -5,7 +5,7 @@
                 <div class="collapsible-header">
                     <h5 class='header5 blue-grey-text textlighten-5'>
                         <i class="small material-icons blue-grey-text textlighten-5">account_circle</i>
-                        Bonjour <b>{!! user()->people->name !!}</b>
+                        Bonjour <b>{!! user()->people->full_name !!}</b>
                     </h5>
                 </div>
                 <div class="collapsible-body ">
