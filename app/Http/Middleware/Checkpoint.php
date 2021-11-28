@@ -14,11 +14,11 @@ class Checkpoint
      * @return mixed
      */
     public function handle($request, Closure $next)
-    {
-
-        if($request->is('profile/activation','person/*')) return $next($request);
-       
+    {  
         if(Auth::check()){
+
+            if($request->is('profile/activation','person/*')) return $next($request);
+
             if(isset(user()->people)){
                 if (!user()->people->is_active) {
                     return redirect('profile/activation');
