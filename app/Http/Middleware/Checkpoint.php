@@ -15,11 +15,15 @@ class Checkpoint
      */
     public function handle($request, Closure $next)
     {
-        if($request->is('Checkpoint')) return $next($request); 
-        if (!user()->people->is_active) {
-            return redirect('Checkpoint');
-        } else {
+        if($request->is('profile/activation','person/*')) return $next($request);
+
+        if (isset(user()->people) && !user()->people->is_active) {
+            return redirect('profile/activation');
+        } elseif (user()->people->is_active) {
             return $next($request);
+        }
+        else {
+            abort(403);
         }
     }
 }

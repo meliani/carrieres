@@ -36,7 +36,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             \PragmaRX\Tracker\Vendor\Laravel\Middlewares\Tracker::class,
-            //\App\Http\Middleware\Checkpoint::class,
+            \App\Http\Middleware\Checkpoint::class,
         ],
 
         'api' => [
@@ -64,5 +64,18 @@ class Kernel extends HttpKernel
         'Student' => \App\Http\Middleware\StudentMiddleware::class,
         'superTeacher' => \App\Http\Middleware\superTeacherMiddleware::class,
         'Teacher' => \App\Http\Middleware\TeacherMiddleware::class,
+        //'Checkpoint' => \App\Http\Middleware\Checkpoint::class,
+    ];
+    protected $middlewarePriority = [
+        \Illuminate\Cookie\Middleware\EncryptCookies::class,
+        \Illuminate\Session\Middleware\StartSession::class,
+        \Illuminate\View\Middleware\ShareErrorsFromSession::class,
+        \Illuminate\Contracts\Auth\Middleware\AuthenticatesRequests::class,
+        \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        \Illuminate\Routing\Middleware\ThrottleRequestsWithRedis::class,
+        \Illuminate\Session\Middleware\AuthenticateSession::class,
+        \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        \Illuminate\Auth\Middleware\Authorize::class,
+        \App\Http\Middleware\Checkpoint::class,
     ];
 }

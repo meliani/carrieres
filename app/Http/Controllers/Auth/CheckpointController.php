@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Models\Profile\Person;
 
+/** NOT USED ANYMORE */
+
 class CheckpointController extends Controller
 {
     public function __invoke()
@@ -13,9 +15,10 @@ class CheckpointController extends Controller
         $person = Person::find(auth()->user()->id);
 
         if(isset($person) && $person->active()){
-            return '/home';
+            //return view('profile/activation')->with('person',$person);
+            return view('/profile/activation');
         }else{
-            return '/Profile';
+            return route('home');
     }
 }
 }
