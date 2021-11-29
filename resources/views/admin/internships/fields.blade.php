@@ -184,10 +184,10 @@
     {!! Form::text('remuneration', null, ['class' => 'form-control']) !!}
 </div>
 
-<!-- Charge Field -->
+<!-- load Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('charge', 'Charge:') !!}
-    {!! Form::text('charge', null, ['class' => 'form-control']) !!}
+    {!! Form::label('load', 'Charge:') !!}
+    {!! Form::text('load', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- User Id Field -->

@@ -30,14 +30,6 @@ class CreateInternshipsTable extends Migration
             $table->string('encadrant_ext_fonction');
             $table->string('encadrant_ext_tel');
             $table->string('encadrant_ext_mail');
-            $table->string('encadrant_int_titre');
-            $table->string('encadrant_int_nom');
-            $table->string('encadrant_int_prenom');
-            $table->string('encadrant_int_mail');
-            $table->string('co_encadrant_int_titre')->nullable();
-            $table->string('co_encadrant_int_nom')->nullable();
-            $table->string('co_encadrant_int_prenom')->nullable();
-            $table->string('co_encadrant_int_mail')->nullable();
             $table->string('intitule');
             $table->text('descriptif');
             $table->string('keywords');
@@ -45,7 +37,7 @@ class CreateInternshipsTable extends Migration
             $table->date('date_fin');
             $table->integer('foreign')->nullable();
             $table->integer('remuneration')->nullable();
-            $table->integer('charge')->nullable();
+            $table->integer('load')->nullable();
             $table->integer('user_id')->unsigned()->nullable();            
             $table->integer('nbr_advisors')->unsigned()->nullable();            
 

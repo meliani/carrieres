@@ -100,54 +100,6 @@
     <p>{!! $internships->encadrant_ext_mail !!}</p>
 </div>
 
-<!-- Encadrant Int Titre Field -->
-<div class="form-group">
-    {!! Form::label('encadrant_int_titre', 'Encadrant Int Titre:') !!}
-    <p>{!! $internships->encadrant_int_titre !!}</p>
-</div>
-
-<!-- Encadrant Int Nom Field -->
-<div class="form-group">
-    {!! Form::label('encadrant_int_nom', 'Encadrant Int Nom:') !!}
-    <p>{!! $internships->encadrant_int_nom !!}</p>
-</div>
-
-<!-- Encadrant Int Prenom Field -->
-<div class="form-group">
-    {!! Form::label('encadrant_int_prenom', 'Encadrant Int Prenom:') !!}
-    <p>{!! $internships->encadrant_int_prenom !!}</p>
-</div>
-
-<!-- Encadrant Int Mail Field -->
-<div class="form-group">
-    {!! Form::label('encadrant_int_mail', 'Encadrant Int Mail:') !!}
-    <p>{!! $internships->encadrant_int_mail !!}</p>
-</div>
-
-<!-- Co Encadrant Int Titre Field -->
-<div class="form-group">
-    {!! Form::label('co_encadrant_int_titre', 'Co Encadrant Int Titre:') !!}
-    <p>{!! $internships->co_encadrant_int_titre !!}</p>
-</div>
-
-<!-- Co Encadrant Int Nom Field -->
-<div class="form-group">
-    {!! Form::label('co_encadrant_int_nom', 'Co Encadrant Int Nom:') !!}
-    <p>{!! $internships->co_encadrant_int_nom !!}</p>
-</div>
-
-<!-- Co Encadrant Int Prenom Field -->
-<div class="form-group">
-    {!! Form::label('co_encadrant_int_prenom', 'Co Encadrant Int Prenom:') !!}
-    <p>{!! $internships->co_encadrant_int_prenom !!}</p>
-</div>
-
-<!-- Co Encadrant Int Mail Field -->
-<div class="form-group">
-    {!! Form::label('co_encadrant_int_mail', 'Co Encadrant Int Mail:') !!}
-    <p>{!! $internships->co_encadrant_int_mail !!}</p>
-</div>
-
 <!-- Intitule Field -->
 <div class="form-group">
     {!! Form::label('intitule', 'Intitule:') !!}
@@ -180,8 +132,8 @@
 
 <!-- Foreign Field -->
 <div class="form-group">
-    {!! Form::label('foreign', 'Foreign:') !!}
-    <p>{!! $internships->foreign !!}</p>
+    {!! Form::label('abroad', 'Foreign:') !!}
+    <p>{!! $internships->abroad !!}</p>
 </div>
 
 <!-- Remuneration Field -->
@@ -192,8 +144,8 @@
 
 <!-- Charge Field -->
 <div class="form-group">
-    {!! Form::label('charge', 'Charge:') !!}
-    <p>{!! $internships->charge !!}</p>
+    {!! Form::label('load', 'Charge:') !!}
+    <p>{!! $internships->load !!}</p>
 </div>
 
 <!-- User Id Field -->

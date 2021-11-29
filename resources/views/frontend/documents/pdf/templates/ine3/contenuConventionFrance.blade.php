@@ -638,7 +638,7 @@ chaque &eacute;tudiant l&#39;occasion d&#39;effectuer une recherche personnelle 
 stagiaire. Toutes prolongations seront soumises aux obligations du programme concern&eacute;.</span></p>
 <p class="Normal tm53"><strong><span class="tm32">D&eacute;roulement du stage</span></strong></p>
 <p class="Normal tm55"><span class="tm33">La dur&eacute;e hebdomadaire maximale de pr&eacute;sence du stagiaire dans l&#8217;entreprise sera de </span><strong><span
- class="tm34">{{ $internship->charge ?? '.......' }}</span></strong><span class="tm33"> heures/semaine.</span></p>
+ class="tm34">{{ $internship->load ?? '.......' }}</span></strong><span class="tm33"> heures/semaine.</span></p>
 <p class="Normal tm55"><span class="tm33">&#160;</span></p>
 <p class="Normal tm56"><span class="tm29"></span><strong><u><span class="tm30">ARTICLE 4</span></u><span class="tm30">&nbsp;: Statut du stagiaire - </span><span
  class="tm30">Encadrement</span></strong></p>

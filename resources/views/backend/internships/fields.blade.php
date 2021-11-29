@@ -59,8 +59,8 @@
             <!-- Mail Field --> 
             <div class = "input-field col m4 s12">
                 <i class="material-icons prefix">charge</i>
-                {!! Form::label('charge', 'Charge horaire Heures/semaine') !!}
-                {!! Form::text('charge') !!}
+                {!! Form::label('load', 'Charge horaire Heures/semaine') !!}
+                {!! Form::text('load') !!}
             </div>
         </div>
     </div>
