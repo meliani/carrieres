@@ -78,7 +78,7 @@ Route::namespace('Internship')->group(function () {
 });
 Route::resource('Internship/Advising/Stats', 'Internship\StatsController');
 
-Route::get('Activation', ['as'=> 'person.activate', 'uses' => 'Frontend\Profile\PersonController@activate']);
+Route::get('Activation', ['as'=> 'person.activate', 'uses' => 'Frontend\Profile\PersonController@activate'])->middleware(['auth']);
 
 Route::resource('Authentic', 'Core\authenticDocumentController');
 Route::get('url/{v}/{url}', 'Core\UrlController');
@@ -161,7 +161,7 @@ Route::get('reports_manager', 'Backend\Internship\ReportController@index')->name
 
 Route::get('Checkpoint', 'Auth\CheckpointController');
 
-Route::namespace('Frontend\Profile')
+Route::namespace('Frontend\Profile')->middleware(['auth'])
 ->group(function () {
 Route::resource('person', 'PersonController');
 Route::get('profile/activation', 'PersonController@activate');
