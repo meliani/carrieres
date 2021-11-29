@@ -10,6 +10,7 @@ use App\Http\Controllers\Core\Documents\renderController;
 class myDocumentsController extends Controller
 {
 
+    private $documents;
     public function __construct()
     {
         $this->middleware(['auth','Student']);
@@ -21,6 +22,7 @@ class myDocumentsController extends Controller
      */
     public function index(Request $r)
     {
+
         if(!auth()->user()->people->internship()->exists()){
             if(isset($r->action) && in_array('render',$r->action))
             {
@@ -34,9 +36,9 @@ class myDocumentsController extends Controller
 
             }
             if(auth()->user()->people->hasMedia('internship')){
-                $documents = auth()->user()->people->getMedia('internship');
-            }            
-            return view('frontend.documents.partials.fillforms', compact('documents'));
+                $this->documents = auth()->user()->people->getMedia('internship');
+            }
+            return view('frontend.documents.partials.fillforms')->with(['documents'=>$this->documents]);
         }else{
         if(isset($r->action))
         {
@@ -71,8 +73,8 @@ class myDocumentsController extends Controller
         }
 
         if(auth()->user()->people->hasMedia('internship')){
-            $documents = auth()->user()->people->getMedia('internship');
-            return view('frontend.documents.index', compact('documents'));
+            $this->documents = auth()->user()->people->getMedia('internship');
+            return view('frontend.documents.index')->with(['documents'=>$this->documents]);
         }
         else return view('frontend.documents.partials.nodocs');
     }
