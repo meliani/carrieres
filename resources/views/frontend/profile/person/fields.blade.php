@@ -12,7 +12,7 @@
                 'helper' => 'Votre pronom',
                 'required' => 'required',
                 'cols' => 6,
-                'data' => ['1'=>'Il','0'=>'Elle']
+                'data' => ['1'=>'Mr','0'=>'Mme']
             ], $errors) }}
         </div>
         <div class = "row">
