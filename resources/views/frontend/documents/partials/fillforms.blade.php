@@ -14,7 +14,7 @@
   <i class="material-icons circle red ">playlist_add_check</i>
   <span class="title">Remplir la declaration de stage</span>
   <p>
-    Vous devez remplir votre declaration de stage avant de generer la convention.
+    Vous devez remplir votre déclaration de stage avant de générer votre convention.
   </p>
 </li>
 </ul>
@@ -23,7 +23,7 @@
     <li class="collection-item avatar">
         <i class="material-icons circle green">sync</i>
     <a href={{ url('internships/create') }} class="waves-effect waves-light btn green">
-        <i class="material-icons right">save</i>Declarer mon stage</a>
+        <i class="material-icons right">save</i>Déclarer mon stage</a>
     </li>
 </ul>
 </div>
