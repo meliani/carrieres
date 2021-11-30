@@ -766,7 +766,7 @@ les informations du rapport.</span></em></p>
 convention deviendrait caduque&nbsp;; l&#8217;&eacute;tudiant stagiaire perdrait son statut d&#8217;&eacute;tudiant et  ne rel&egrave;verait plus de la responsabilit&eacute; de l&#8217;Ecole. Ce dernier devrait imp&eacute;rativement
 en &ecirc;tre averti avant signature du </span><span class="tm33">contrat. </span></p>
 <p class="Normal tm81"><span class="tm33">&#160;</span></p>
-<p class="Normal tm82"><em><span class="tm61"></span><strong><span class="tm32">Document &eacute;tabli en quatre exemplaires; le premier est destin&eacute; au chef de fili&egrave;re, le deuxi&egrave;me &agrave; l&#39;Entreprise
+<p class="Normal tm82"><em><span class="tm61"></span><strong><span class="tm32">Document &eacute;tabli en quatre exemplaires; le premier est destin&eacute; au Coordonnateur de fili&egrave;re, le deuxi&egrave;me &agrave; l&#39;Entreprise
 accueillant le stagiaire, le troisi&egrave;me  &agrave; l&#8217;Ecole et le quatri&egrave;me &agrave; l&#39;&eacute;tudiant.</span></strong></em></p>
 <center>
 <table border="0" rules="all" class="tm83 tm84 tm85">
