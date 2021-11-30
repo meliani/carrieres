@@ -39,7 +39,7 @@ $required = 'required';
     'cols' => 2,
 ], $errors) }}
 <!-- Pays Field -->
-{{ Form::textGroup([
+{{ Form::selectGroup([
     'name' => 'pays',
     'value' ,
     'label' => 'Pays',
@@ -48,6 +48,7 @@ $required = 'required';
     'icon' => 'location_city',
     'helper' => 'Pays ou se situe l\'entreprise',
     'required' => $required,
-    'cols' => 2,
+    'cols' => 6,
+    'data' => config('inpt.countries'),
 ], $errors) }}
 </div>
