@@ -613,10 +613,9 @@ height:52px;
 <p class="Normal tm38"><strong><span class="tm32">de deuxi&egrave;me part, et</span></strong></p>
 <p class="Normal tm44"><span class="tm33"></span><strong><span class="tm34">{{ $internship->person->full_name }}</span><span
  class="tm32">, </span></strong><span class="tm33">&eacute;tudiant(e) de la fili&egrave;re</span><span class="tm33"> </span><strong><span
- class="tm34">{{ $internship->person->filiere_text }}</span></strong><span class="tm33"> </span><span class="tm33">de la 3</span><sup><span
- class="tm33">&egrave;me</span></sup><span class="tm33"> ann&eacute;e du Cycle des Ing&eacute;nieurs d&#8217;Etat (INE)</span><span
+ class="tm34">{{ $internship->person->filiere_text }}</span></strong><span class="tm33"> </span><span
  class="tm33"> de l&#8217;Institut National des Postes et T&eacute;l&eacute;communications (INPT)</span><strong><span class="tm32"> </span></strong><span
- class="tm33">de Rabat.</span></p>
+ class="tm33">de Rabat, en échange académique à l’Ecole «Ecole Partenaire» sur l’année scolaire «Année Scolaire» dans le cadre d’un partenariat,</span></p>
 <p class="Normal tm45"><strong><span class="tm32">de troisi&egrave;me part, </span></strong></p>
 <p class="BodyText tm39"><em><span class="tm46">&#160;</span></em></p>
 <h4 class="tm47"><strong><span class="tm48"></span><u><span class="tm48">ARTICLE 2</span></u><span class="tm48">&nbsp;: Contenu et objectif du stage</span><span

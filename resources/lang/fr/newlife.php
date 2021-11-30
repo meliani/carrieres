@@ -11,5 +11,6 @@ return [
 ],
         'profile' => [
             'welcome' => 'Les informations figurant dans cette page vont être utilisées tout au long du process de Stage / Soutenance, veuillez renseigner les informations manquantes et fournir les documents requis.',
+            'mobility' => 'en échange académique dans le cadre de la mobilité Internationale INPT',
     ],
 ];
