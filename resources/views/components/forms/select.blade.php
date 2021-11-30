@@ -10,10 +10,7 @@ $type=array_get($params,'type','text');
     <i class="material-icons blue-text prefix">{{ array_get($params,'icon') }}</i>
 
     {!! Form::select(array_get($params,'name'),
-    [
-        null => array_get($params,'null', null)
-    ]
-    +
+    //[ null => array_get($params,'null', null) ] +
     array_get($params,'data')) !!}
     {!! Form::label(array_get($params,'name'), array_get($params,'label')) !!}
 
