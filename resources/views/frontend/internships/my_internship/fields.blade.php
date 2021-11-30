@@ -30,10 +30,10 @@
         </div>
             @include('frontend.internships.my_internship.fields.encadrant_ext')
 
-
+        
         <div class = "row">
             <h4 class="header col s12 light center blue-text text-lighten-1">
-                Si stage a l'étranger (Optionnel)
+                Obligatoire { si stage à l'étranger }
             </h4>
             @include('frontend.internships.my_internship.fields.mobility')
         </div>
