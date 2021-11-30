@@ -9,8 +9,21 @@
                     </h5>
                 </div>
                 <div class="collapsible-body ">
-                        <h6 class='header5 blue-grey-text textlighten-5'><p>Vous êtes en <b>{{ trans_choice('labels.profile.years',user()->people->ine) }} </b>, filière <b>{{ user()->people->filiere_text }}</b></p></h6>
-                        <p class='header5 blue-grey-text'>@lang('newlife.profile.welcome')</p>
+
+                        <h6 class='header5 blue-grey-text textlighten-5'><p>Vous êtes en 
+
+                            <b>{{ trans_choice('labels.profile.years',user()->people->ine) }} </b>, filière 
+                            <b>{{ user()->people->filiere_text }}</b>
+                            @if(user()->people->is_mobility)
+                                @lang('newlife.profile.mobility')
+                            @endif
+                        
+                        </p></h6>
+
+                        <p class='header5 blue-grey-text'>
+                            @lang('newlife.profile.welcome')
+                        </p>
+
                     </p>
                 </div>
             </li>

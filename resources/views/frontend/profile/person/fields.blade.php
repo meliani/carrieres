@@ -40,6 +40,22 @@
                 'helper' => __('labels.phone_helper'),
                 'cols' => 5,
             ], $errors) }}
+
+            {{ Form::selectGroup([
+                'name' => 'abroad_school',
+                'value' ,
+                'label' => 'Etablissement de mobilité',
+                'placeholder' ,
+                'class' => 'validate',
+                'icon' => 'location_searching',
+                'helper' => '',
+                'required' => 'required',
+                'cols' => 12,
+                'data' => config('inpt.abroad_schools'),
+            ], $errors) }}
+        </div>
+        <div class = "row">
+
             <h1 class="col m12 center-align">@lang('newlife.activation.your_cloud_files')</h1>
             {{ Form::textGroup([
                 'name' => 'cv',
