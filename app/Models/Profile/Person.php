@@ -29,7 +29,10 @@ class Person extends Model implements HasMedia
 
     public $fillable = [ 	
     'user_id',
+    'gender_id',
+    'pfe_id',
     'title',
+    'full_name',
     'first_name',
     'last_name',
     'email_perso',
@@ -37,16 +40,14 @@ class Person extends Model implements HasMedia
     'cv',
     'lm',
     'photo',
-    'option_id',
-    'gender_id',
     'birth_date',
-    'filiere_text',
-    'option_text',
-    'konosys_id',
     'ine',
-    'is_active',
+    'branche_id',
+    'filiere_text',
+    'is_mobility',
+    'abroad_school',
     'scholar_year',
-    'pfe_id'
+    'is_active'
     ];
 
 /*
