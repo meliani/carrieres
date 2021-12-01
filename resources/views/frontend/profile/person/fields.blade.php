@@ -101,7 +101,6 @@
     <!-- Submit Field -->
         <div class = "input-field">
             {!! Form::submit('Enregistrer', ['class' => "btn waves-effect waves-light white-text blue"]) !!}
-            {!! Form::submit('Valider et enregistrer', ['class' => "btn waves-effect waves-light white-text green",'formaction' => "/URL2"]) !!}
             <a href="{!! route('home') !!}" class="waves-effect waves-blue btn-flat">Annuler</a>
         </div>
     </div>
