@@ -43,12 +43,12 @@ class myDocumentsController extends Controller
             if(auth()->user()->people->hasMedia('internship')){
                 $this->documents = auth()->user()->people->getMedia('internship');
             }
-            return view('frontend.documents.partials.fillforms')->with(['documents'=>$this->documents]);
+            return view('frontend.documents.partials.fillforms',['documents'=>$this->documents]);
         }else{
         if(isset($r->action))
         {
             if(auth()->user()->people->internship->is_valid == 0)
-                return view('frontend.documents.partials.fillforms')->with(['documents'=>$this->documents]);
+                return view('frontend.documents.partials.fillforms',['documents'=>$this->documents]);
 
             if($this->person->is_mobility==1){
                 //dd($this->person->is_mobility);
@@ -58,25 +58,21 @@ class myDocumentsController extends Controller
             }
             if(in_array('render',$r->action))
             {
-                if(in_array('convention',$r->action)){
+                if(in_array('global_agreement',$r->action)){
                     $pdf = new renderController;
-                    $pdf->convention();
+                    $pdf->conventionGlobale();
                 }
-                if(in_array('convention_pfe_maroc',$r->action)){
+                if(in_array('france_agreement',$r->action)){
                     $pdf = new renderController;
-                    $pdf->conventionPfeMaroc();
+                    $pdf->conventionFrance();
                 }
-                if(in_array('convention_pfe_france',$r->action)){
+                if(in_array('mobility_global_agreement',$r->action)){
                     $pdf = new renderController;
-                    $pdf->conventionPfeFrance();
+                    $pdf->conventionMobilityAutre();
                 }
-                if(in_array('convention_pfe_mobilite_autre',$r->action)){
+                if(in_array('mobility_france_agreement',$r->action)){
                     $pdf = new renderController;
-                    $pdf->conventionMobilityPfeAutre();
-                }
-                if(in_array('convention_mobilite_pfe_autre',$r->action)){
-                    $pdf = new renderController;
-                    $pdf->conventionPfeMaroc();
+                    $pdf->conventionMobilityFrance();
                 }
 
             }
@@ -88,9 +84,9 @@ class myDocumentsController extends Controller
             if(auth()->user()->people->internship->is_valid == 0)
                 return view('frontend.documents.partials.fillforms');
 
-            return view('frontend.documents.index')->with(['documents'=>$this->documents]);
+            return view('frontend.documents.index',['documents'=>$this->documents]);
         }
-        else return view('frontend.documents.partials.nodocs');
+        else return view('frontend.documents.index');
     }
 
     }

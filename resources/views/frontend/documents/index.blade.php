@@ -18,26 +18,34 @@
       @endforeach
     @endif
     </li>
+    @if(!auth()->user()->people->is_mobility)
     <li class="collection-item avatar">
         <i class="material-icons circle green">sync</i>
-    <a href={{ url('students/myDocuments?action[]=render&action[]=convention') }} class="waves-effect waves-light btn">
-      <i class="material-icons right">save</i>Generer la convention Maroc et autres pays</a>
+    <a href={{ url('students/myDocuments?action[]=render&action[]=global_agreement') }} class="waves-effect waves-light btn">
+      <i class="material-icons right">save</i>Générer la convention Maroc et autres pays</a>
     </li>
     <li class="collection-item avatar">
         <i class="material-icons circle green">sync</i>
-    <a href={{ url('students/myDocuments?action[]=render&action[]=convention_pfe_france') }} class="waves-effect waves-light btn">
-      <i class="material-icons right">save</i>Generer la convention France</a>
+    <a href={{ url('students/myDocuments?action[]=render&action[]=france_agreement') }} class="waves-effect waves-light btn">
+      <i class="material-icons right">save</i>Générer la convention France</a>
     </li>
+    @else
     <li class="collection-item avatar">
         <i class="material-icons circle green">sync</i>
-    <a href={{ url('students/myDocuments?action[]=render&action[]=convention_pfe_mobilite_autre') }} class="waves-effect waves-light btn">
-      <i class="material-icons right">save</i>Generer la convention Mobilité Autre pays que la france</a>
+    <a href={{ url('students/myDocuments?action[]=render&action[]=mobility_global_agreement') }} class="waves-effect waves-light btn">
+      <i class="material-icons right">save</i>Générer la convention Mobilité autre pays que la france</a>
     </li>
+    <li class="collection-item avatar">
+      <i class="material-icons circle green">sync</i>
+    <a href={{ url('students/myDocuments?action[]=render&action[]=mobility_france_agreement') }} class="waves-effect waves-light btn">
+      <i class="material-icons right">save</i>Générer la convention Mobilité en France</a>
+    </li>
+    @endif
     <li class="collection-item avatar">
         <i class="material-icons circle red">delete</i>
-    <a href={{ url('students/myDocuments?action[]=render&action[]=convention&action[]=delete') }} 
+    <a href={{ url('students/myDocuments?action[]=render&action[]=delete') }} 
     class="waves-effect waves-light red btn" onclick="return confirm('Vos anciens documents seront supprimés \nEtes vous sure ?')">
-        <i class="material-icons right">save</i>Generer les documents et supprimer les anciens</a>
+        <i class="material-icons right">save</i>Liberer l'espace et partir du zéro</a>
     </li>
 
     
