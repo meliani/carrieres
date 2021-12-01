@@ -40,7 +40,7 @@
                 'helper' => __('labels.phone_helper'),
                 'cols' => 5,
             ], $errors) }}
-
+            @if(user()->people->is_mobility)
             {{ Form::selectGroup([
                 'name' => 'abroad_school',
                 'value' ,
@@ -53,6 +53,7 @@
                 'cols' => 12,
                 'data' => config('inpt.abroad_schools'),
             ], $errors) }}
+            @endif
         </div>
         <div class = "row">
 
@@ -99,7 +100,8 @@
     <div class="card-action">
     <!-- Submit Field -->
         <div class = "input-field">
-            {!! Form::submit('Envoyer', ['class' => "btn waves-effect waves-light white-text blue"]) !!}
+            {!! Form::submit('Enregistrer', ['class' => "btn waves-effect waves-light white-text blue"]) !!}
+            {!! Form::submit('Valider et enregistrer', ['class' => "btn waves-effect waves-light white-text green",'formaction' => "/URL2"]) !!}
             <a href="{!! route('home') !!}" class="waves-effect waves-blue btn-flat">Annuler</a>
         </div>
     </div>
