@@ -6,11 +6,14 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\Http\Controllers\Core\Documents\renderController;
+use App\Models\Profile\Person;
 
 class myDocumentsController extends Controller
 {
 
     private $documents;
+    private $person;
+
     public function __construct()
     {
         $this->middleware(['auth','Student']);
@@ -22,6 +25,8 @@ class myDocumentsController extends Controller
      */
     public function index(Request $r)
     {
+
+        $this->person = auth()->user()->people;
 
         if(!auth()->user()->people->internship()->exists()){
             if(isset($r->action) && in_array('render',$r->action))
@@ -42,7 +47,12 @@ class myDocumentsController extends Controller
         }else{
         if(isset($r->action))
         {
+            if(auth()->user()->people->internship->is_valid == 0)
+                return view('frontend.documents.partials.fillforms')->with(['documents'=>$this->documents]);
 
+            if($this->person->is_mobility==1){
+                //dd($this->person->is_mobility);
+            }
             if(in_array('delete',$r->action)){
                 auth()->user()->people->clearMediaCollection('internship');
             }
@@ -74,6 +84,10 @@ class myDocumentsController extends Controller
 
         if(auth()->user()->people->hasMedia('internship')){
             $this->documents = auth()->user()->people->getMedia('internship');
+
+            if(auth()->user()->people->internship->is_valid == 0)
+                return view('frontend.documents.partials.fillforms');
+
             return view('frontend.documents.index')->with(['documents'=>$this->documents]);
         }
         else return view('frontend.documents.partials.nodocs');

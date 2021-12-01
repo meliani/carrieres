@@ -73,12 +73,7 @@ class Internship extends Model
         'remuneration',
         'load',
         'user_id',
-        'nbr_advisors',
-        'time_slot_id',
-        'classroom_id',
-        'defense_start_time',
-        'defense_end_time',
-        'defense_at',
+        'is_valid'
     ];
     //protected $dateFormat = 'm/d/Y';
     protected $casts = [

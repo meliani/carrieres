@@ -73,13 +73,41 @@ class PersonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $r)
+    public function update(Request $request)
     {
         $person = Person::find(user()->id);
+/*
+        $validated = $request->validate([
+            'gender_id' => 'required',
+            'pfe_id' => 'required',
+            'title' => 'required',
+            'full_name' => 'required',
+            'first_name' => 'required',
+            'last_name' => 'required',
+            'email_perso' => 'required|max:191',
+            'phone' => 'required',
+            'cv' => 'required',
+            'lm' => 'required',
+            'photo' => 'required',
+            'birth_date',
+            'ine',
+            'branche_id',
+            'filiere_text' => 'required',
+            'is_mobility',
+            'abroad_school',
+            'scholar_year',
+            'is_active'
+        ]);
+*/
+        if(isset($request->action)=='validate')
+                dd(isset($request->action));
         $person->update(
-            $r->all()
+            $request->all()
         );
+
         $person->activate();
+        flash('votre profil a été mis a jour.','success');
+
         return view('home',compact('person'))->with('message','votre profil a été mis a jour.');
         /*$person->update($r->all());
         $person->activate();

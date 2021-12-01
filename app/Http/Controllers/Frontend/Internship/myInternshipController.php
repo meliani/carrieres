@@ -36,7 +36,10 @@ class myInternshipController extends BaseController
      */
     public function create()
     {
-        $internship ='';
+        $internship = Internship::firstOrNew(['user_id' => user()->id]);
+        if($internship->is_valid == 1)
+        return view('frontend.internships.my_internship.show',compact('internship'));
+        else
         return view('frontend.internships.my_internship.create',compact('internship'));
     }
 
@@ -50,11 +53,17 @@ class myInternshipController extends BaseController
     {   
         //dump($request);
 
-        $input = $request->all();
-        //dd($request->user()->id);
-        $internship = new Internship($input);
+        $intern = $request->all();
+        $internship = Internship::firstOrCreate(['user_id' => user()->id]);
+        $internship->fill($intern);
+        //$internship = Internship::firstOrCreate(['user_id' => user()->id]);
+        //$internship = new Internship($intern);
         $internship->user()->associate(auth()->user()->id);
         $internship->groupes()->attach(request('binome_user_id'));
+        if(isset($request->action)){
+            $internship->is_valid = 1;
+            $internship->status = 'submitted by student';
+        }
         $internship->save();
         //flash()->success('Votre déclaration a été bien enregistrée.');
         return back()

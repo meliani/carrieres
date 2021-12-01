@@ -14,7 +14,7 @@
   <i class="material-icons circle red ">playlist_add_check</i>
   <span class="title">Remplir la declaration de stage</span>
   <p>
-    Vous devez remplir votre déclaration de stage avant de générer votre convention.
+    Vous devez remplir votre déclaration de stage et la valider avant de générer votre convention en PDF.
   </p>
 </li>
 </ul>
