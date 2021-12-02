@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use \App\Models\Profile\Student;
 //use Route;
 use Illuminate\Support\Facades\Route;
+use App\Http\Requests\StoreInternship;
 
 
 
@@ -67,7 +68,7 @@ class InternshipController extends BaseController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreInternship $request)
     {   
         $input = $request->all();
         //dd($request->user()->id);
@@ -119,8 +120,9 @@ class InternshipController extends BaseController
      * @param  \App\Internship  $internship
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Internship $internship)
+    public function update(StoreInternship $request, Internship $internship)
     {
+        dd($internship);
         $input = $request->all();
         $internship = Internship::findOrFail($internship->id);
 
