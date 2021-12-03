@@ -18,7 +18,6 @@ class renderController extends Controller
         $this->middleware(['auth','Student']);
         $this->header = view::make('frontend.documents.pdf.header')->render();
         $this->footer = view::make('frontend.documents.pdf.footerINPT')->render();
-        //dd($this->header);
     }
     private $file_path;
 
@@ -57,7 +56,7 @@ class renderController extends Controller
         $file_path = Storage_path('users/internship/'.$file_name);
         $pdf->save($file_path);
         $this->attach($file_path);
-        
+
         //return $pdf->inline($file_name);
     }
 
