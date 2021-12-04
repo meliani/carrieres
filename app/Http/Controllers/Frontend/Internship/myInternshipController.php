@@ -78,6 +78,7 @@ class myInternshipController extends BaseController
      * @param  \App\Internship  $internship
      * @return \Illuminate\Http\Response
      */
+    
     public function show(Internship $internship)
     {
         return view('frontend.internships.my_internship.show',compact('internship'));
@@ -101,7 +102,7 @@ class myInternshipController extends BaseController
      * @param  \App\Internship  $internship
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Internship $internship)
+    public function update(StoreInternship $request, Internship $internship)
     {
         //
     }

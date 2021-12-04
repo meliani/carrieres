@@ -56,14 +56,6 @@ class Internship extends Model
         'encadrant_ext_fonction',
         'encadrant_ext_tel',
         'encadrant_ext_mail',
-        'encadrant_int_titre',
-        'encadrant_int_nom',
-        'encadrant_int_prenom',
-        'encadrant_int_mail',
-        'co_encadrant_int_titre',
-        'co_encadrant_int_nom',
-        'co_encadrant_int_prenom',
-        'co_encadrant_int_mail',
         'intitule',
         'descriptif',
         'keywords',
@@ -72,8 +64,11 @@ class Internship extends Model
         'abroad',
         'remuneration',
         'load',
+        'abdoard_school',
+        'is_signed',
         'user_id',
-        'is_valid'
+        'is_valid',
+        'status'
     ];
     //protected $dateFormat = 'm/d/Y';
     protected $casts = [
@@ -83,27 +78,6 @@ class Internship extends Model
         'defense_start_time' => 'time:H:i',
         'defense_end_time' => 'time:H:i',
 
-    ];
-    protected static $rules = [
-        'raison_sociale' => 'required|max:191',
-        'intitule' => 'required|max:191',
-        'adresse' => 'required|max:191',
-        'descriptif' => 'required|max:191',
-        'keywords' => 'required|max:191',
-        'date_debut' => 'required|date',
-        'date_fin' => 'required|date',
-        'parrain_titre' => 'required|max:191',
-        'parrain_nom' => 'required|max:191',
-        'parrain_prenom' => 'required|max:191',
-        'parrain_fonction' => 'required|max:191',
-        'parrain_tel' => 'required|max:191',
-        'parrain_mail' => 'required|email',
-        'encadrant_ext_titre' => 'required|max:191',
-        'encadrant_ext_nom' => 'required|max:191',
-        'encadrant_ext_prenom' => 'required|max:191',
-        'encadrant_ext_fonction' => 'required|max:191',
-        'encadrant_ext_tel' => 'required|max:191',
-        'encadrant_ext_mail' => 'required|email',
     ];
     
     
