@@ -38,13 +38,27 @@ class StoreInternship extends FormRequest
             'parrain_prenom' => 'required|max:191',
             'parrain_fonction' => 'required|max:191',
             'parrain_tel' => 'required|max:13|between:10,13',
-            'parrain_mail' => 'required|email',
+            'parrain_mail' => 'required|email:rfc,dns,spoof',
             'encadrant_ext_titre' => 'required',
             'encadrant_ext_nom' => 'required|max:191',
             'encadrant_ext_prenom' => 'required|max:191',
             'encadrant_ext_fonction' => 'required|max:191',
             'encadrant_ext_tel' => 'required|max:13|between:10,13',
-            'encadrant_ext_mail' => 'required|email'
+            'encadrant_ext_mail' => 'required|email:rfc,dns,spoof',
+            'abroad' => 'nullable',
+            'remuneration' => 'nullable',
+            'load' => 'nullable',
+            'abdoard_school' => 'nullable',
+            'is_valid' => 'nullable',
+            'status' => 'nullable'
         ];
+    }
+
+    public function attributes()
+    {
+    return [
+        'email' => 'adresse email',
+        
+    ];
     }
 }
