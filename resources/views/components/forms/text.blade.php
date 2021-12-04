@@ -25,7 +25,9 @@ $class = array_get($params,'class');
     ]) }}
 
     <span class="helper-text" 
-    data-error="don't have to be empty"
+    @error(array_get($params,'name'))
+    data-error="{{ $errors->first(array_get($params,'name')) }}"
+    @enderror
     data-success="Parfait !">
     {{ array_get($params,'helper') }}
     </span>
