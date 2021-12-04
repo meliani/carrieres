@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend\Profile;
 use App\Models\Profile\Person;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StorePeople;
 
 use Session;
 use Carbon\Carbon;
@@ -73,7 +74,7 @@ class PersonController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request)
+    public function update(StorePeople $request)
     {
         $person = Person::find(user()->id);
 /*

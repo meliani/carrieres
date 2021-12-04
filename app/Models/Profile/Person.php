@@ -31,7 +31,6 @@ class Person extends Model implements HasMedia
     'user_id',
     'gender_id',
     'pfe_id',
-    'title',
     'full_name',
     'first_name',
     'last_name',
