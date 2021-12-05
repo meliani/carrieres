@@ -1,5 +1,5 @@
 @if (count($errors) > 0)
-<div class="card-panel">
+<div id="flash_message" class="card-panel" onclick="el=document.getElementById('flash_message');el.parentNode.removeChild(el);">
 	<div class="card-content">
 		<ul>
 	    	@foreach ($errors->all() as $error)
