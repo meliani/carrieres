@@ -8,6 +8,9 @@
             {{ session('status') }}
         </div>
     @endif
+    {{ session('messages') }}
+    @include ('errors.list')
+
 </div>
 <div class="container home">
     @if(isset($person))
