@@ -1,6 +1,7 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\School;
+use App\Http\Controllers\Controller;
 
 use App\Models\Profile\Student;
 use Illuminate\Http\Request;

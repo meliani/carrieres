@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-class InternshipController extends BaseController
+class internSigningController extends BaseController
 {
     /**
      * Display a listing of the resource.
@@ -139,8 +139,7 @@ class InternshipController extends BaseController
         }
             $internship->fill($input)->save();
 
-        return view('backend.internships.edit',compact('internship'))
-        ->with('message', 'Votre déclaration a été bien modifiee.');
+        return view('backend.internships.edit')->with(['message'=> 'Votre déclaration a été bien modifiee.','internship'=>$internship]);
 
 
     }

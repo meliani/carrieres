@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Internship;
+namespace App\Http\Controllers\Frontend\Internship;
 
 use App\Models\School\Intenrship\internshipAgreement;
 use Illuminate\Http\Request;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Internship;
 
 use App\Models\School\Internship\Project;
 use Illuminate\Http\Request;
