@@ -25,11 +25,11 @@
     @endif
     </li>
     @if(!auth()->user()->people->is_mobility)
-   @includeWhen(auth()->user()->people->internship->pays!='France','frontend.documents.partials.buttons.global')
-   @includeWhen(auth()->user()->people->internship->pays='France','frontend.documents.partials.buttons.france')
+   @includeWhen(auth()->user()->people->internship->pays<>'France','frontend.documents.partials.buttons.global')
+   @includeWhen(auth()->user()->people->internship->pays=='France','frontend.documents.partials.buttons.france')
     @else
-    @includeWhen(auth()->user()->people->internship->pays!='France','frontend.documents.partials.buttons.mobility')
-    @includeWhen(auth()->user()->people->internship->pays='France','frontend.documents.partials.buttons.mobility_france')
+    @includeWhen(auth()->user()->people->internship->pays<>'France','frontend.documents.partials.buttons.mobility')
+    @includeWhen(auth()->user()->people->internship->pays=='France','frontend.documents.partials.buttons.mobility_france')
     @endif
     <li class="collection-item avatar">
         <i class="material-icons circle red">delete</i>
