@@ -118,6 +118,8 @@ return [
         'paths' => [
             resource_path('views/vendor/mail'),
         ],
+    
+    'local_domain' => env('MAIL_HOST')
     ],
 
 ];
