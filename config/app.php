@@ -177,9 +177,8 @@ return [
         Yajra\DataTables\DataTablesServiceProvider::class,
         Yajra\DataTables\ButtonsServiceProvider::class, */
         Spatie\Permission\PermissionServiceProvider::class,
-        Maatwebsite\Excel\ExcelServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
-        //PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
+        PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
         /*
          * Application Service Providers...
          */
