@@ -1,6 +1,8 @@
 @extends('layouts.ui.app')
-@section('title')| Déclarer mon stage @endsection
-
+@section('title','| Déclarer mon stage')
+@section('users_buttons')
+    @include(Button::home_button())
+@endsection
 @section('content')
 <div class="container">
     <div class="row">

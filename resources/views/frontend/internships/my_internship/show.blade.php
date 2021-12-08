@@ -1,4 +1,9 @@
 @extends('layouts.ui.app')
+@section('title','| Mon stage')
+
+@section('users_buttons')
+    @include(Button::home_button())
+@endsection
 
 @section('css')
 

@@ -1,4 +1,9 @@
 @extends('layouts.ui.app')
+@section('title','| aucun documents de stage')
+
+@section('users_buttons')
+    @include(Button::home_button())
+@endsection
 
 @section('content')
 <div class="container">
