@@ -10,7 +10,7 @@ return [
     /*
      * Enable cache?
      */
-    'cache_enabled' => false,
+    'cache_enabled' => true,
 
     /*
      * Deffer booting for middleware use
@@ -62,7 +62,7 @@ return [
     /*
      * When an IP is not trackable, show a message in log.
      */
-    'log_untrackable_sessions' => true,
+    'log_untrackable_sessions' => false,
 
     /*
      * Log every single access?
@@ -237,12 +237,12 @@ return [
     /*
      * If you are storing cookies, you better change it to a name you of your own.
      */
-    'tracker_cookie_name' => 'career_center',
+    'tracker_cookie_name' => 'career_center_cookie',
 
     /*
      * Internal tracker session name.
      */
-    'tracker_session_name' => 'tracker_session',
+    'tracker_session_name' => 'career_center_session',
 
     /*
      * ** IMPORTANT **
