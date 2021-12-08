@@ -768,56 +768,9 @@ en &ecirc;tre averti avant signature du </span><span class="tm33">contrat. </spa
 <p class="Normal tm81"><span class="tm33">&#160;</span></p>
 <p class="Normal tm82"><em><span class="tm61"></span><strong><span class="tm32">Document &eacute;tabli en quatre exemplaires; le premier est destin&eacute; au Coordonnateur de fili&egrave;re, le deuxi&egrave;me &agrave; l&#39;Entreprise
 accueillant le stagiaire, le troisi&egrave;me  &agrave; l&#8217;Ecole et le quatri&egrave;me &agrave; l&#39;&eacute;tudiant.</span></strong></em></p>
-<center>
-<table border="0" rules="all" class="tm83 tm84 tm85">
- <tbody class="tm86">
- <tr>
-  <td class="tm87 tm88 tm89">
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">Date et signature du Coordonnateur de fili&egrave;re</span></em></p>
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">&#160;</span></em></p>
-  </td>
-  <td class="tm87 tm88 tm89">
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">Date et signature du Chef d&#8217;Entreprise</span></em></p>
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">(Cachet de l&#8217;Entreprise)</span></em></p>
-  </td>
-  <td class="tm87 tm88 tm89">
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">Date et signature du stagiaire</span></em></p>
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">(Mention manuscrite </span></em></p>
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">&laquo;&nbsp;lu et approuv&eacute;&nbsp;&raquo;)</span></em></p>
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">&#160;</span></em></p>
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">&#160;</span></em></p>
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">&#160;</span></em></p>
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">&#160;</span></em></p>
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">&#160;</span></em></p>
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">&#160;</span></em></p>
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">&#160;</span></em></p>
-  </td>
-  <td class="tm87 tm88 tm89">
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">Le Directeur de l&#8217;INPT</span></em></p>
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">(ou son Repr&eacute;sentant)</span></em></p>
-  </td>
- </tr>
- <tr>
-  <td class="tm87 tm88 tm89">
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">Nom et pr&eacute;nom du signataire</span></em></p>
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;.</span></em></p>
-  </td>
-  <td class="tm87 tm88 tm89">
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">Nom et pr&eacute;nom du signataire</span></em></p>
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;.</span></em></p>
-  </td>
-  <td class="tm87 tm88 tm89">
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">Nom et pr&eacute;nom du signataire</span></em></p>
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;.</span></em></p>
-  </td>
-  <td class="tm87 tm88 tm89">
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">Nom et pr&eacute;nom du signataire</span></em></p>
-  <p class="BodyTextIndent3 tm90"><em><span class="tm91">&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;.</span></em></p>
-  </td>
- </tr>
- </tbody>
-</table>
-</center>
+
+@include('frontend.documents.pdf.templates.partials.signature_fields')
+
 <div id="footer" title="footer"><p style="line-height: 100%">
         @include('frontend.documents.pdf.templates.document_tag_v1')
     

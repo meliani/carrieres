@@ -1315,54 +1315,9 @@ ci dessus)</span></em><span class="tm91">:</span></strong></p>
 connaissance de l&#8217;entreprise et de l&#8217;&eacute;l&egrave;ve et que ceux-ci en ont approuv&eacute; express&eacute;ment toutes les clauses.</span></p>
 <p class="tm52 tm82 tm99"><strong><span class="tm87">&#160;</span></strong></p>
 <p class="tm55 tm82 tm100"><em><span class="tm101">&#160;</span></em></p>
-<center>
 
-<table border="0" rules="all" class="tm61 tm102 tm103 tm104 tm105">
- <tbody class="tm106">
- <tr>
+@include('frontend.documents.pdf.templates.partials.signature_fields')
 
-  <td class="tm107 tm108 tm109">
-  <p class="tm66 tm82 tm99"><em><span class="tm101"></span><span class="tm89">Date et signature du Chef d&#8217;Entreprise</span></em></p>
-  <p class="tm66 tm82 tm99"><em><span class="tm101"></span><span class="tm89">(Cachet de l&#8217;Entreprise)</span></em></p>
-  </td>
-  <td class="tm107 tm108 tm109">
-  <p class="tm66 tm82 tm99"><em><span class="tm101"></span><span class="tm89">Date et signature du stagiaire</span></em></p>
-  <p class="tm66 tm82 tm99"><em><span class="tm101"></span><span class="tm89">(Mention manuscrite</span></em></p>
-  <p class="tm66 tm82 tm99"><em><span class="tm101"></span><span class="tm89">&laquo;&nbsp;lu et approuv&eacute;&nbsp;&raquo;)</span></em></p>
-  <p class="tm66 tm82 tm99"><em><span class="tm101">&#160;</span></em></p>
-  <p class="tm66 tm82 tm99"><em><span class="tm101">&#160;</span></em></p>
-  <p class="tm66 tm82 tm99"><em><span class="tm101">&#160;</span></em></p>
-  <p class="tm66 tm82 tm99"><em><span class="tm101">&#160;</span></em></p>
-  <p class="tm66 tm82 tm99"><em><span class="tm101">&#160;</span></em></p>
-  <p class="tm66 tm82 tm99"><em><span class="tm101">&#160;</span></em></p>
-  <p class="tm66 tm82 tm99"><em><span class="tm101">&#160;</span></em></p>
-  </td>
-  <td class="tm107 tm108 tm109">
-  <p class="tm66 tm82 tm99"><em><span class="tm101"></span><span class="tm89">Le Directeur de l&#8217;INPT</span></em></p>
-  <p class="tm66 tm82 tm99"><em><span class="tm101"></span><span class="tm89">(ou son Repr&eacute;sentant)</span></em></p>
-  </td>
- </tr>
- <tr>
-
-  <td class="tm107 tm108 tm109">
-  <p class="tm66 tm82 tm99"><em><span class="tm101"></span><span class="tm89">Nom et pr&eacute;nom </span></em></p>
-  <p class="tm66 tm82 tm99"><em><span class="tm101"></span><span class="tm89">du signataire</span></em></p>
-  <p class="tm66 tm82 tm99"><em><span class="tm101"></span><span class="tm89">&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;.</span></em></p>
-  </td>
-  <td class="tm107 tm108 tm109">
-  <p class="tm66 tm82 tm99"><em><span class="tm101"></span><span class="tm89">Nom et pr&eacute;nom </span></em></p>
-  <p class="tm66 tm82 tm99"><em><span class="tm101"></span><span class="tm89">du signataire</span></em></p>
-  <p class="tm66 tm82 tm99"><em><span class="tm101"></span><span class="tm89">&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;.</span></em></p>
-  </td>
-  <td class="tm107 tm108 tm109">
-  <p class="tm66 tm82 tm99"><em><span class="tm101"></span><span class="tm89">Nom et pr&eacute;nom </span></em></p>
-  <p class="tm66 tm82 tm99"><em><span class="tm101"></span><span class="tm89">du signataire</span></em></p>
-  <p class="tm66 tm82 tm99"><em><span class="tm101"></span><span class="tm89">&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;&#8230;.</span></em></p>
-  </td>
- </tr>
- </tbody>
-</table >
-</center>
 <p style="page-break-after: always;" class="tm68 tm82 tm86"><span class="tm94">&#160;</span></p>
 <p class="tm68 tm82 tm86"><span class="tm94"></span><strong><span class="tm91">REGLEMENT DES STAGES EN ENTREPRISE</span></strong></p>
 <p class="tm69 tm82 tm99"><span class="tm94">&#160;</span></p>
