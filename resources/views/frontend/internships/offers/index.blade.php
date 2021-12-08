@@ -1,5 +1,5 @@
 @extends('layouts.ui.app')
-@section('title', '- Opportunités de stages')
+@section('title', '| Opportunités de stages')
 
 @section('users_buttons')
     @include(Button::home_button())
