@@ -122,4 +122,6 @@ return [
     'local_domain' => env('MAIL_HOST')
     ],
 
+    'local_domain' => env('MAIL_LOCAL_DOMAIN', 'localhost'),
+
 ];
