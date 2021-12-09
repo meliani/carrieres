@@ -24,19 +24,14 @@
       @endforeach
     @endif
     </li>
-    @if(!auth()->user()->people->is_mobility)
+    @if(auth()->user()->people->is_mobility<>1)
    @includeWhen(auth()->user()->people->internship->pays<>'France','frontend.documents.partials.buttons.global')
    @includeWhen(auth()->user()->people->internship->pays=='France','frontend.documents.partials.buttons.france')
-    @else
+    @elseif(auth()->user()->people->is_mobility==1)
     @includeWhen(auth()->user()->people->internship->pays<>'France','frontend.documents.partials.buttons.mobility')
     @includeWhen(auth()->user()->people->internship->pays=='France','frontend.documents.partials.buttons.mobility_france')
     @endif
-    <li class="collection-item avatar">
-        <i class="material-icons circle red">delete</i>
-    <a href={{ url('students/myDocuments?action[]=render&action[]=delete') }} 
-    class="waves-effect waves-light red btn" onclick="return confirm('Vos anciens documents seront supprimés \nEtes vous sure ?')">
-        <i class="material-icons right">save</i>Liberer l'espace et partir du zéro</a>
-    </li>
+
 
     
 
