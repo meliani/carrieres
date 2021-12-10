@@ -30,7 +30,8 @@ return [
     */
 
     'host' => env('MAIL_HOST', '192.168.1.101'),
-
+    
+    'local_domain' => env('MAIL_LOCAL_DOMAIN', 'localhost'),
     /*
     |--------------------------------------------------------------------------
     | SMTP Host Port
@@ -120,6 +121,6 @@ return [
         ],
     ],
 
-    'local_domain' => env('MAIL_LOCAL_DOMAIN', 'localhost'),
+    
 
 ];
