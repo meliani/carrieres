@@ -608,7 +608,7 @@ height:52px;
 <p class="Normal tm38"><strong><span class="tm32">de premi&egrave;re part, et</span></strong></p>
 <p class="BodyText tm39"><em><span class="tm40"></span></em><span class="tm41">L&#8217;Institut National des Postes et T&eacute;l&eacute;communications (INPT) </span><strong><span
  class="tm42">repr&eacute;sent&eacute; par</span></strong><span class="tm41"> </span><span class="tm41">Monsieur </span><strong><span
- class="tm42">Mr HILALI Abdelaziz, Directeur Adjoint des Stages et Relations avec les Entreprises,</span></strong></p>
+ class="tm42"> HILALI Abdelaziz, Directeur Adjoint des Stages et Relations avec les Entreprises,</span></strong></p>
 <p class="Normal tm38"><strong><span class="tm32">de deuxi&egrave;me part, et</span></strong></p>
 <p class="Normal tm44"><span class="tm33"></span><strong><span class="tm34">{{ $internship->person->full_name }}</span><span
  class="tm32">, </span></strong><span class="tm33">&eacute;tudiant(e) de la fili&egrave;re</span><span class="tm33"> </span><strong><span

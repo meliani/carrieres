@@ -67,11 +67,11 @@ class Person extends Model implements HasMedia
    public function getTitleAttribute()
 	{
         if($this->attributes['gender_id']==0)
-		return "Mme.";
+		return "Mme";
         elseif($this->attributes['gender_id']==1)
-		return "Mr.";
+		return "M.";
         else
-		return "Mme/Mr.";
+		return "Mme/M.";
     }
     public function activate(){
         $this->is_active=true;
