@@ -28,9 +28,9 @@ class StorePeople extends FormRequest
             'pfe_id',
             'email_perso' => 'required|max:191|email:rfc,dns',
             'phone' => 'required|max:13|between:8,13',
-            'cv' => 'required|url',
-            'lm' => 'required|url|active_url',
-            'photo' => 'required|url',
+            'cv' => 'required|url|active_url',
+            'lm' => 'nullable|url|active_url',
+            'photo' => 'required|url|active_url',
             'abroad_school' 
         ];
     }
