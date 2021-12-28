@@ -1,6 +1,8 @@
 <div class="card-panel">
     <div class="card-content">
-        <h1 class="col m12 center-align">@lang('newlife.activation.fill_required_informations')</h5>
+        <div class="row card-title title">
+        <h5 class="col m12 center-align">@lang('newlife.activation.fill_required_informations')</h5>
+        </div>
         <div class = "row">
             {{ Form::selectGroup([
                 'name' => 'gender_id',
@@ -9,10 +11,10 @@
                 'placeholder' ,
                 'class' => 'validate',
                 'icon' => 'location_searching',
-                'helper' => 'Votre pronom',
+                'helper' => '',
                 'required' => 'required',
                 'cols' => 6,
-                'data' => ['1'=>'Mr','0'=>'Mme']
+                'data' => ['0'=>'Mme','1'=>'M.']
             ], $errors) }}
         </div>
         <div class = "row">
@@ -40,6 +42,8 @@
                 'helper' => __('labels.phone_helper'),
                 'cols' => 5,
             ], $errors) }}
+        </div>
+        <div class="row">
             @if(user()->people->is_mobility)
             {{ Form::selectGroup([
                 'name' => 'abroad_school',
@@ -77,7 +81,7 @@
                 'placeholder' ,
                 'class' => 'validate',
                 'icon' => 'featured_play_list',
-                'required' => 'required',
+                'required' => '',
                 'helper' => __('labels.lm_helper'),
                 'position' => 'left',
                 'cols' => 12,

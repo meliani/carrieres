@@ -10,8 +10,8 @@
             <p>
                 Cet espace sécurisé est réservé aux étudiants et enseignants de l'INPT.
                 </p>
-             <p>    Afin de récupérer votre mot de passe, veuillez utiliser la même adresse email INPT et cliquer sur <a href="{{ route('password.request') }}">"redéfinir ?"</a>". 
-                Vous aller recevoir un message pour réinitialiser votre mot de passe et pouvoir accéder aux services de la plateforme carrières.
+             <p>    Afin de récupérer votre mot de passe, veuillez cliquer sur <a href="{{ route('password.request') }}">"redéfinir ?"</a> et utiliser votre adresse email INPT. 
+                Vous allez recevoir un message pour réinitialiser votre mot de passe et pouvoir accéder aux services de la plateforme carrières.
              </p>
         <div class="card-content">
             <form method="POST" action="{{ route('login') }}">

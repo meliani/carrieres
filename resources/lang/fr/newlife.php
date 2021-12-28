@@ -7,10 +7,10 @@ return [
     'activation' => [
         'title' => 'Mieux vous connaître',
         'your_cloud_files' => 'Vos Fichiers sur le cloud',
-        'fill_required_informations' => 'Merci de completer les informations manquantes',
+        'fill_required_informations' => 'Merci de renseigner ce formulaire et fournir les documents requis',
 ],
         'profile' => [
-            'welcome' => 'Les informations figurant dans cette page vont être utilisées tout au long du process de Stage / Soutenance, veuillez renseigner les informations manquantes et fournir les documents requis.',
-            'mobility' => 'en échange académique dans le cadre de la mobilité Internationale INPT',
+            'welcome' => '',
+            'mobility' => 'en échange académique dans le cadre de la mobilité internationale INPT.',
     ],
 ];

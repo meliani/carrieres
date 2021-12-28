@@ -608,14 +608,13 @@ height:52px;
 <p class="Normal tm38"><strong><span class="tm32">de premi&egrave;re part, et</span></strong></p>
 <p class="BodyText tm39"><em><span class="tm40"></span></em><span class="tm41">L&#8217;Institut National des Postes et T&eacute;l&eacute;communications (INPT) </span><strong><span
  class="tm42">repr&eacute;sent&eacute; par</span></strong><span class="tm41"> </span><span class="tm41">Monsieur </span><strong><span
- class="tm42">Monsieur Ahmed TAMTAOUI</span><span class="tm43">, </span></strong><span class="tm41">Directeur par int&eacute;rim</span><strong><span
- class="tm43">,</span></strong></p>
+ class="tm42">Mr HILALI Abdelaziz, Directeur Adjoint des Stages et Relations avec les Entreprises,</span></strong></p>
 <p class="Normal tm38"><strong><span class="tm32">de deuxi&egrave;me part, et</span></strong></p>
 <p class="Normal tm44"><span class="tm33"></span><strong><span class="tm34">{{ $internship->person->full_name }}</span><span
  class="tm32">, </span></strong><span class="tm33">&eacute;tudiant(e) de la fili&egrave;re</span><span class="tm33"> </span><strong><span
  class="tm34">{{ $internship->person->filiere_text }}</span></strong><span class="tm33"> </span><span
  class="tm33"> de l&#8217;Institut National des Postes et T&eacute;l&eacute;communications (INPT)</span><strong><span class="tm32"> </span></strong><span
- class="tm33">de Rabat, en échange académique à l’Ecole «Ecole Partenaire» sur l’année scolaire «Année Scolaire» dans le cadre d’un partenariat,</span></p>
+ class="tm33">de Rabat, en échange académique à l’Ecole «{{ $internship->person->abroad_school }}» sur l’année scolaire «2021-2022» dans le cadre d’un partenariat,</span></p>
 <p class="Normal tm45"><strong><span class="tm32">de troisi&egrave;me part, </span></strong></p>
 <p class="BodyText tm39"><em><span class="tm46">&#160;</span></em></p>
 <h4 class="tm47"><strong><span class="tm48"></span><u><span class="tm48">ARTICLE 2</span></u><span class="tm48">&nbsp;: Contenu et objectif du stage</span><span
