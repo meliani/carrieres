@@ -116,11 +116,7 @@ class renderController extends Controller
         auth()->user()->people
         ->addMedia($file_path)
         ->toMediaCollection('internship');
-<<<<<<< HEAD
         //$agreementsMediaCollection = 'Agreements'.School::actualYear;
-=======
-        $agreementsMediaCollection = 'Agreements'.School::actualYear;
->>>>>>> f8caeb2a2aec462f453c3ae603718455fb10663b
 
     }
 }
