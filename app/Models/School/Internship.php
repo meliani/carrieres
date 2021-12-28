@@ -2,6 +2,7 @@
 
 namespace App\Models\School;
 
+use App\Models\Core\baseModel;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
 use App\Models\School\Internship\Adviser;
@@ -14,7 +15,7 @@ use App\Models\School\Internship\Defense;
 use App\Models\School\Internship\Advising;
 
 
-class Internship extends Model
+class Internship extends baseModel
 {
     use FormAccessible;     
 
@@ -137,13 +138,7 @@ class Internship extends Model
 	{
 		return $this->getTitle($this->encadrant_ext_titre).' '.$this->encadrant_ext_nom.' '.$this->encadrant_ext_prenom;
     }
-    public function getTitle($gender)
-	{
-        if($gender==1)
-        return "M.";
-        else
-        return "Mme";
-    }
+
     public function getDureeAttribute()
 	{
         //return $this->date_fin->diffForHumans($this->date_debut);

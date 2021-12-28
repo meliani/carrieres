@@ -2,6 +2,7 @@
 
 namespace App\Models\Profile;
 
+use App\Models\Core\baseModel;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\School\Internship;
@@ -13,7 +14,7 @@ use App\Models\Profile\Student;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
 
-class Person extends Model implements HasMedia
+class Person extends baseModel implements HasMedia
 {
     use HasMediaTrait;
     protected $table = 'people';
@@ -66,6 +67,7 @@ class Person extends Model implements HasMedia
     }
    public function getTitleAttribute()
 	{
+
         if($this->attributes['gender_id']==0)
 		return "Mme";
         elseif($this->attributes['gender_id']==1)
