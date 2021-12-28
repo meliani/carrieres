@@ -140,9 +140,9 @@ class Internship extends Model
     public function getTitle($gender)
 	{
         if($gender==1)
-        return "Mr.";
+        return "M.";
         else
-        return "Mme.";
+        return "Mme";
     }
     public function getDureeAttribute()
 	{
