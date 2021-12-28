@@ -13,6 +13,7 @@
         "facade/ignition": "^1.9",
         "fideloper/proxy": "~4.0",
         "geoip2/geoip2": "~2.0",
+        "laravel-lang/lang": "~5.0",
         "laravel/framework": "^6.0",
         "laravel/helpers": "^1.4",
         "laravelcollective/errors": "^1.0",

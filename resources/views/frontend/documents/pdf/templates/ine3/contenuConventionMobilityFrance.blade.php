@@ -766,9 +766,9 @@ en &ecirc;tre averti avant signature du </span><span class="tm33">contrat. </spa
 <p class="Normal tm81"><span class="tm33">&#160;</span></p>
 <p class="Normal tm82"><em><span class="tm61"></span><strong><span class="tm32">Document &eacute;tabli en quatre exemplaires; le premier est destin&eacute; au Coordonnateur de fili&egrave;re, le deuxi&egrave;me &agrave; l&#39;Entreprise
 accueillant le stagiaire, le troisi&egrave;me  &agrave; l&#8217;Ecole et le quatri&egrave;me &agrave; l&#39;&eacute;tudiant.</span></strong></em></p>
-    
-    @include('frontend.documents.pdf.templates.partials.signature_fields')
-
+<div>
+@include('frontend.documents.pdf.templates.partials.signature_fields')
+</div>
 <div id="footer" title="footer"><p style="line-height: 100%">
         @include('frontend.documents.pdf.templates.document_tag_v1')
     
