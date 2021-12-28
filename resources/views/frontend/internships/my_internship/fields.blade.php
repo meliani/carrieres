@@ -35,8 +35,9 @@
             <h4 class="header col s12 light center blue-text text-lighten-1">
                 Obligatoire { si stage à l'étranger }
             </h4>
-            @include('frontend.internships.my_internship.fields.mobility')
         </div>
+           @include('frontend.internships.my_internship.fields.internal_adviser')
+            @include('frontend.internships.my_internship.fields.mobility')
     </div>
     <div class="card-action">
     <!-- Submit Field -->

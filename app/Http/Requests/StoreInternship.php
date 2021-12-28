@@ -46,11 +46,13 @@ class StoreInternship extends FormRequest
             'encadrant_ext_tel' => 'required|max:13|between:8,13',
             'encadrant_ext_mail' => 'required|email:rfc,dns,spoof',
             'abroad' => 'nullable',
-            'remuneration' => 'nullable',
-            'load' => 'nullable',
+            'remuneration' => 'nullable|max:6',
+            'load' => 'nullable|max:2',
             'abdoard_school' => 'nullable',
             'is_valid' => 'nullable',
-            'status' => 'nullable'
+            'status' => 'nullable',
+            'internal_adviser_id' => 'nullable',
+            'internal_adviser_name' => 'nullable'
         ];
     }
 
