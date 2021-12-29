@@ -19,6 +19,10 @@ class Checkpoint
 
             if($request->is('profile/activation','person/*')) return $next($request);
 
+            if($request->is('logout')){
+                return $next($request);
+            }
+
             if(isset(user()->people)){
                 if (!user()->people->is_active) {
                     return redirect('profile/activation');
@@ -26,7 +30,7 @@ class Checkpoint
                     return $next($request);
                 }
             }
-            else {
+            else{
                 abort(403);
             }
         }else{
