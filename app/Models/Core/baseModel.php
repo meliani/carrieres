@@ -21,7 +21,7 @@ class baseModel extends Model
     static function getTitle($gender)
 	{
         if($gender==1)
-        return "M.MMMMMMMMMMMMMMMMMMMMMMMM";
+        return "M.";
         elseif($gender==0)
         return "Mme";
         else
