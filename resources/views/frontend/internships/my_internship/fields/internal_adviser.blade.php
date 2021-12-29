@@ -1,6 +1,6 @@
 <div class = "row">
     {{ Form::selectGroup([
-        'name' => 'internal_adviser',
+        'name' => 'int_adviser_name',
         'value' => null,
         'label' => 'Votre encadrant interne',
         'placeholder' ,
@@ -8,7 +8,7 @@
         'icon' => 'person',
         'helper' => '',
         'required' => 'required',
-        'cols' => 12,
+        'cols' => 6,
         'data' => config('inpt.profs'),
     ], $errors) }}
     </div>

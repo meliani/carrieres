@@ -2,6 +2,19 @@
 $required = 'required';
 ?>
 <div class = "row">
+    {{ Form::textGroup([
+        'name' => 'office_location',
+        'value' ,
+        'label' => 'Adresse du stage (si différente de l\'adresse du siège)',
+        'placeholder' ,
+        'class' => 'materialize-textarea validate',
+        'icon' => 'place',
+        'helper' => 'Laisser vide si la même que celle indiquée dessus',
+        'required' => '',
+        'cols' => 8,
+    ], $errors) }}
+</div>
+<div class = "row">
 {{ Form::selectGroup([
     'name' => 'parrain_titre',
     'value' ,

@@ -607,14 +607,33 @@ height:52px;
  class="tm36">,</span><span class="tm35"> </span><span class="tm34">{{ $internship->parrain_fonction }}</span><span class="tm36">,</span></strong></p>
 <p class="Normal tm38"><strong><span class="tm32">de premi&egrave;re part, et</span></strong></p>
 <p class="BodyText tm39"><em><span class="tm40"></span></em><span class="tm41">L&#8217;Institut National des Postes et T&eacute;l&eacute;communications (INPT) </span><strong><span
- class="tm42">repr&eacute;sent&eacute; par</span></strong><span class="tm41"> </span><span class="tm41">Monsieur </span><strong><span
- class="tm42"> HILALI Abdelaziz, Directeur Adjoint des Stages et Relations avec les Entreprises,</span></strong></p>
+ class="tm42">repr&eacute;sent&eacute; par</span></strong>
+ <span class="tm41"> </span>
+ <span class="tm41">
+    {{ config('school.current.signature.envoy_title') }}      
+</span><strong><span
+ class="tm42">
+ {{ config('school.current.signature.envoy_name') }},
+ {{ config('school.current.signature.envoy_occupation') }},
+</span></strong></p>
 <p class="Normal tm38"><strong><span class="tm32">de deuxi&egrave;me part, et</span></strong></p>
 <p class="Normal tm44"><span class="tm33"></span><strong><span class="tm34">{{ $internship->person->full_name }}</span><span
  class="tm32">, </span></strong><span class="tm33">&eacute;tudiant(e) de la fili&egrave;re</span><span class="tm33"> </span><strong><span
- class="tm34">{{ $internship->person->filiere_text }}</span></strong><span class="tm33"> </span><span
- class="tm33"> de l&#8217;Institut National des Postes et T&eacute;l&eacute;communications (INPT)</span><strong><span class="tm32"> </span></strong><span
- class="tm33">de Rabat, en échange académique à l’Ecole «{{ $internship->person->abroad_school }}» sur l’année scolaire «2021-2022» dans le cadre d’un partenariat,</span></p>
+ class="tm34">
+ {{ config('school.current.branches.'.$internship->person->filiere_text.'.full_title')  }}
+</span></strong><span class="tm33"> </span><span
+ class="tm33"> de l&#8217;Institut National des Postes et T&eacute;l&eacute;communications (INPT)
+</span><strong><span class="tm32"> </span></strong>
+<span class="tm33">de Rabat, en échange académique à l’Ecole 
+    <span class="tm34"><strong>
+        {{ $internship->person->abroad_school }}
+    </strong>
+    </span>
+         sur l’année scolaire 
+ <span class="tm34"> <strong>
+    {{ config('school.current.academic_year') }}     
+</strong> </span>
+  dans le cadre d’un partenariat,</span></p>
 <p class="Normal tm45"><strong><span class="tm32">de troisi&egrave;me part, </span></strong></p>
 <p class="BodyText tm39"><em><span class="tm46">&#160;</span></em></p>
 <h4 class="tm47"><strong><span class="tm48"></span><u><span class="tm48">ARTICLE 2</span></u><span class="tm48">&nbsp;: Contenu et objectif du stage</span><span
@@ -652,12 +671,13 @@ par un enseignant de l&#8217;INPT et par un membre de l&#39;entreprise charg&eac
     <span class="tm34">{{ $internship->encadrant_ext_fonction }}</span><span
  class="tm36">.</span></strong></p>
 <p class="Normal tm60"><span class="tm33"></span><strong><span class="tm32">Tuteur p&eacute;dagogique / Conseiller de stage&nbsp;: </span><span
- class="tm34">{{ $internship->encadrant_int_name ?? '................  ................' }}</span><span class="tm32">.</span></strong></p>
+ class="tm34">{{ $internship->int_adviser_name ?? '................  ................' }}</span><span class="tm32">.</span></strong></p>
 <p class="Normal tm39"><span class="tm33"></span><strong><span class="tm32">Lieu du stage&nbsp;</span></strong><em><span class="tm61">
     (adresse pr&eacute;cise, si diff&eacute;rente de l&#8217;adresse de l&#8217;entreprise indiqu&eacute;e
-ci dessus)</span></em><span class="tm33">:</span></p>
-<p class="Normal tm39"><span class="tm33">&#160;</span></p>
-<p class="BodyText tm39"><span class="tm62">&#160;</span></p>
+ci dessus)</span></em><span class="tm33"> : </span></p>
+<p class="Normal tm39"><span class="tm33">
+    {{ $internship->office_location ?? '' }}    
+</span></p>
 <p class="Normal tm63"><span class="tm29"></span><strong><u><span class="tm30">ARTICLE 5</span></u><span class="tm30">&nbsp;: Discipline </span></strong></p>
 <p class="Normal tm64"><span class="tm33">Durant son stage, l&#39;&eacute;tudiant stagiaire est soumis &agrave; la discipline et au r&egrave;glement int&eacute;rieur de l&#39;Entreprise, notamment en ce qui concerne les horaires,
 </span><strong><span class="tm32">la r&eacute;glementation du travail, les r&egrave;gles d&#8217;hygi&egrave;ne et de s&eacute;curit&eacute; en vigueur dans l&#8217;entreprise</span></strong><span

@@ -17,11 +17,11 @@ $required = 'required';
 {{ Form::textGroup([
     'name' => 'adresse',
     'value' ,
-    'label' => 'Adresse du stage',
+    'label' => 'Adresse de l\'entreprise',
     'placeholder' ,
     'class' => 'materialize-textarea validate',
     'icon' => 'place',
-    'helper' => 'Adresse de l\'entreprise où vous allez passer votre stage',
+    'helper' => 'Adresse du siège social de l\'entreprise',
     'required' => $required,
     'cols' => 4,
 ], $errors) }}

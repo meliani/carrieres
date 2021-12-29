@@ -1287,13 +1287,19 @@ font-weight:bold;
 <p class="tm38 tm82 tm86"><strong><span class="tm87"></span></strong><span class="tm89">ci-apr&egrave;s d&eacute;sign&eacute;e par Entreprise, et repr&eacute;sent&eacute;e par</span><strong><span
  class="tm92"> </span><span class="tm90">{{ $internship->parrain_name }}</span><span
  class="tm91">, </span><span class="tm90">{{ $internship->parrain_fonction }}</span><span class="tm91">,</span></strong></p>
-<p class="tm40 tm82 tm93"><span class="tm94"></span><span class="tm89">avec L&#8217;Institut National des Postes et T&eacute;l&eacute;communications (INPT) repr&eacute;sent&eacute; par </span><strong><span
- class="tm91">Mr HILALI Abdelaziz, Directeur Adjoint des Stages et Relations avec les Entreprises,</span></strong></p>
+<p class="tm40 tm82 tm93"><span class="tm94"></span><span class="tm89">avec L&#8217;Institut National des Postes et T&eacute;l&eacute;communications (INPT) repr&eacute;sent&eacute; par 
+	{{ config('school.current.signature.envoy_title') }} 
+</span><strong><span
+ class="tm91">{{ config('school.current.signature.envoy_name') }},
+ {{ config('school.current.signature.envoy_occupation') }},
+</span></strong></p>
 <p class="tm34 tm82 tm86"><strong><span class="tm87"></span></strong><span class="tm89">Concernant le stage de Fin d&#8217;&eacute;tudes de</span><strong><span
  class="tm91"> </span><span class="tm90">{{ $internship->person->title }}</span><span class="tm91">&nbsp;</span><span
  class="tm90">{{ $internship->person->full_name }}</span></strong><span
  class="tm89">, </span><strong><span class="tm90"> </span></strong><span class="tm89">&eacute;l&egrave;ve ing&eacute;nieur de la fili&egrave;re : </span><strong><span
- class="tm90">{{ $internship->person->filiere_text }}</span></strong><span class="tm89">, </span></p>
+ class="tm90">
+ {{ config('school.current.branches.'.$internship->person->filiere_text.'.full_title')  }} 
+</span></strong><span class="tm89">, </span></p>
 <p class="tm42 tm82"><strong><span class="tm87"></span></strong><span class="tm89">Pour la p&eacute;riode du </span><strong><span
  class="tm90">{{ $internship->date_debut->format('d/m/Y') }}</span></strong><span class="tm89">&nbsp;au</span><strong><span class="tm95"> </span><span
  class="tm90">{{ $internship->date_fin->format('d/m/Y') }}</span></strong><span class="tm89">, sous la responsabilit&eacute; de&nbsp;:</span></p>
@@ -1303,14 +1309,22 @@ font-weight:bold;
  class="tm90">{{ $internship->encadrant_ext_tel }}</span><span class="tm91">, </span><span class="tm90">{{ $internship->encadrant_ext_mail }}</span><span
  class="tm91">.</span></strong></p>
 <p class="tm44 tm82"><strong><span class="tm87"></span></strong><span class="tm96">- </span><span class="tm89">Coordonnateur de la fili&egrave;re&nbsp;: </span><strong><span
- class="tm90">{{ $internship->encadrant_int_name ?? '................... .....................'}}.</span></strong></p>
+ class="tm90">
+ {{ config('school.current.branches.'.$internship->person->filiere_text.'.cf_title') ?? '' }} 
+ {{ config('school.current.branches.'.$internship->person->filiere_text.'.cf_name')  ?? '. . . . . . . . . . . . . . . . . . .'}} 
+</span></strong></p>
 <p class="tm47 tm82 tm97"><span class="tm94"></span><span class="tm89">Le stage portera sur le sujet suivant&nbsp;:</span><strong><span
  class="tm91"> </span><span class="tm90"><b>{{ $internship->intitule }}</b></span><span class="tm91">&nbsp;</span></strong></p>
 <p class="tm49 tm82 tm93"><span class="tm94"></span><span class="tm89">Descriptif d&eacute;taill&eacute;&nbsp;: </span><strong><span
  class="tm90">{{ $internship->descriptif }}</span></strong><span class="tm89">&nbsp;</span></p>
 <p class="tm49 tm82 tm93"><span class="tm94"></span><span class="tm89">Adresse du stage&nbsp;</span><strong><em><span class="tm98">(adresse pr&eacute;cise, si diff&eacute;rente de l&#8217;adresse de l&#8217;entreprise indiqu&eacute;e
-ci dessus)</span></em><span class="tm91">:</span></strong></p>
-<p class="tm51 tm82 tm86"><strong><span class="tm87"></span><u><span class="tm88">ARTICLE SECOND&nbsp;:</span></u></strong></p>
+ci dessus) : </span></em><span class="tm90">{{ $internship->office_location ?? '' }} </span></strong>
+ 
+</p>
+<br>
+<p class="tm51 tm82 tm86">
+	<strong><span class="tm87"></span>
+	<u><span class="tm88">ARTICLE SECOND&nbsp;:</span></u></strong></p>
 <p class="tm52 tm82 tm99"><strong><span class="tm87"></span></strong><span class="tm89">La pr&eacute;sente convention garantit que le r&egrave;glement des stages inscrit au verso a &eacute;t&eacute; port&eacute; &agrave; la
 connaissance de l&#8217;entreprise et de l&#8217;&eacute;l&egrave;ve et que ceux-ci en ont approuv&eacute; express&eacute;ment toutes les clauses.</span></p>
 <p class="tm52 tm82 tm99"><strong><span class="tm87">&#160;</span></strong></p>

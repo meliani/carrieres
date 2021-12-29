@@ -607,13 +607,19 @@ height:52px;
  class="tm36">,</span><span class="tm35"> </span><span class="tm34">{{ $internship->parrain_fonction }}</span><span class="tm36">,</span></strong></p>
 <p class="Normal tm38"><strong><span class="tm32">de premi&egrave;re part, et</span></strong></p>
 <p class="BodyText tm39"><em><span class="tm40"></span></em><span class="tm41">L&#8217;Institut National des Postes et T&eacute;l&eacute;communications (INPT) </span><strong><span
- class="tm42">repr&eacute;sent&eacute; par</span></strong><span class="tm41"> </span><span class="tm41">Monsieur </span><strong><span
- class="tm42">Monsieur Ahmed TAMTAOUI</span><span class="tm43">, </span></strong><span class="tm41">Directeur par int&eacute;rim</span><strong><span
- class="tm43">,</span></strong></p>
+ class="tm42">repr&eacute;sent&eacute; par</span></strong><span class="tm41"> </span>
+ <span class="tm41">
+     {{ config('school.current.signature.envoy_title') }} 
+    </span>
+     <strong>
+         <span class="tm42">
+    {{ config('school.current.signature.envoy_name') }},
+ {{ config('school.current.signature.envoy_occupation') }},
+</span></strong></p>
 <p class="Normal tm38"><strong><span class="tm32">de deuxi&egrave;me part, et</span></strong></p>
 <p class="Normal tm44"><span class="tm33"></span><strong><span class="tm34">{{ $internship->person->full_name }}</span><span
  class="tm32">, </span></strong><span class="tm33">&eacute;tudiant(e) de la fili&egrave;re</span><span class="tm33"> </span><strong><span
- class="tm34">{{ $internship->person->filiere_text }}</span></strong><span class="tm33"> </span><span class="tm33">de la 3</span><sup><span
+ class="tm34">{{ config('school.current.branches.'.$internship->person->filiere_text.'.full_title')  }}</span></strong><span class="tm33"> </span><span class="tm33">de la 3</span><sup><span
  class="tm33">&egrave;me</span></sup><span class="tm33"> ann&eacute;e du Cycle des Ing&eacute;nieurs d&#8217;Etat (INE)</span><span
  class="tm33"> de l&#8217;Institut National des Postes et T&eacute;l&eacute;communications (INPT)</span><strong><span class="tm32"> </span></strong><span
  class="tm33">de Rabat.</span></p>
@@ -654,12 +660,12 @@ par un enseignant de l&#8217;INPT et par un membre de l&#39;entreprise charg&eac
     <span class="tm34">{{ $internship->encadrant_ext_fonction }}</span><span
  class="tm36">.</span></strong></p>
 <p class="Normal tm60"><span class="tm33"></span><strong><span class="tm32">Tuteur p&eacute;dagogique / Conseiller de stage&nbsp;: </span><span
- class="tm34">{{ $internship->encadrant_int_name ?? '................  ................' }}</span><span class="tm32">.</span></strong></p>
+ class="tm34">{{ $internship->int_adviser_name ?? '................  ................' }}</span><span class="tm32">.</span></strong></p>
 <p class="Normal tm39"><span class="tm33"></span><strong><span class="tm32">Lieu du stage&nbsp;</span></strong><em><span class="tm61">
     (adresse pr&eacute;cise, si diff&eacute;rente de l&#8217;adresse de l&#8217;entreprise indiqu&eacute;e
-ci dessus)</span></em><span class="tm33">:</span></p>
-<p class="Normal tm39"><span class="tm33">&#160;</span></p>
-<p class="BodyText tm39"><span class="tm62">&#160;</span></p>
+ci dessus) : </span></em><span class="tm34">{{ $internship->office_location ?? '' }} </span></p>
+
+
 <p class="Normal tm63"><span class="tm29"></span><strong><u><span class="tm30">ARTICLE 5</span></u><span class="tm30">&nbsp;: Discipline </span></strong></p>
 <p class="Normal tm64"><span class="tm33">Durant son stage, l&#39;&eacute;tudiant stagiaire est soumis &agrave; la discipline et au r&egrave;glement int&eacute;rieur de l&#39;Entreprise, notamment en ce qui concerne les horaires,
 </span><strong><span class="tm32">la r&eacute;glementation du travail, les r&egrave;gles d&#8217;hygi&egrave;ne et de s&eacute;curit&eacute; en vigueur dans l&#8217;entreprise</span></strong><span
@@ -768,7 +774,7 @@ en &ecirc;tre averti avant signature du </span><span class="tm33">contrat. </spa
 <p class="Normal tm81"><span class="tm33">&#160;</span></p>
 <p class="Normal tm82"><em><span class="tm61"></span><strong><span class="tm32">Document &eacute;tabli en quatre exemplaires; le premier est destin&eacute; au Coordonnateur de fili&egrave;re, le deuxi&egrave;me &agrave; l&#39;Entreprise
 accueillant le stagiaire, le troisi&egrave;me  &agrave; l&#8217;Ecole et le quatri&egrave;me &agrave; l&#39;&eacute;tudiant.</span></strong></em></p>
-
+<p></p>
 @include('frontend.documents.pdf.templates.partials.signature_fields')
 
 <div id="footer" title="footer"><p style="line-height: 100%">
