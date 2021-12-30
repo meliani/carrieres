@@ -6,7 +6,7 @@ return [
     'first_name' => 'Prenom',
     'last_name' => 'Nom',
     'email_perso' =>'Votre E-mail personnel',
-    'phone' => 'Votre Téléphone portable',
+    'phone' => 'Votre numéro de téléphone portable',
     'cv' => 'CV professionnel',
     'lm' => 'Lettre de motivation',
     'photo' => 'Photo professionnelle',
