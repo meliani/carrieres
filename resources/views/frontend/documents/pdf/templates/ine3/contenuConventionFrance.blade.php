@@ -679,7 +679,7 @@ respectant les dispositions fix&eacute;es &agrave; l&#8217;article 9 de la pr&ea
 <p class="BodyText tm39"><span class="tm41">L&#8217;&eacute;tudiant stagiaire ne per&ccedil;oit aucune r&eacute;mun&eacute;ration. Toutefois il peut lui &ecirc;tre allou&eacute; une gratification.</span></p>
 <p class="BodyText tm39"><em><span class="tm40">Lorsque la dur&eacute;e du  stage est sup&eacute;rieure &agrave; trois mois cons&eacute;cutifs, celui-ci fait l&#8217;objet d&#8217;une gratification </span></em></p>
 <p class="BodyText tm45"><span class="tm41">Cette derni&egrave;re est fix&eacute;e &agrave; </span>
-    <strong><span class="tm49">{{ $internship->remuneration ?? '.......' }}</span></strong><span
+    <strong><span class="tm49">{{ $internship->remuneration }} {{ $internship->currency }}</span></strong><span
  class="tm67"> </span><span class="tm41">bruts par mois. </span></p>
 <p class="Normal tm65"><strong><span class="tm32"></span><span class="tm32">Modalit&eacute;s de versement de la gratification&nbsp;: </span></strong><span
  class="tm33">virement</span></p>

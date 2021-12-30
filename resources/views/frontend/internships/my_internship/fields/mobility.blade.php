@@ -5,14 +5,26 @@ $required = 'required';
 {{ Form::textGroup([
     'name' => 'remuneration',
     'value' ,
-    'label' => 'Montant avec le symbole de la devise',
+    'label' => 'Montant en chiffres',
     'placeholder' ,
     'class' => 'validate',
     'icon' ,
     'helper' => 'Montant de gratification mensuel',
     'required' => $required,
-    'cols' => 5,
+    'cols' => 3,
 ], $errors) }}
+    {{ Form::selectGroup([
+        'name' => 'currency',
+        'value' => null,
+        'label' => 'Devise',
+        'placeholder' ,
+        'class' => 'validate',
+        'icon' => '',
+        'helper' => '',
+        'required' => '',
+        'cols' => 3,
+        'data' => config('inpt.currencies'),
+    ], $errors) }}
 {{ Form::textGroup([
     'name' => 'load',
     'value' ,
@@ -22,6 +34,6 @@ $required = 'required';
     'icon' ,
     'helper' => 'Charge horaire (Heures/semaine)',
     'required' => $required,
-    'cols' => 5,
+    'cols' => 3,
 ], $errors) }}
 </div>

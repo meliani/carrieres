@@ -65,6 +65,7 @@ class Internship extends baseModel
         'date_fin',
         'abroad',
         'remuneration',
+        'currency',
         'load',
         'abdoard_school',
         'int_adviser_id',
