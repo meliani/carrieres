@@ -40,7 +40,7 @@
             </div>
             <div class="card-panel">
                 <h5 class="blue-text lighten-5"><i class="small material-icons blue-text">business</i> Rémuneration et charges horaires</h5>
-                <p>La rémuneration de ce stage sera : {{ $internship->remuneration }} (par mois)</p>
+                <p>La rémuneration de ce stage sera : {{ $internship->remuneration }} {{ $internship->currency }} (par mois)</p>
                 <p>Les heures de travail seront fixés comme suit : {{ $internship->load }} (Heures par semaine)</p>
             </div>
             <div class="card-panel">
