@@ -7,7 +7,7 @@ return [
         'Centrale Supélec' => 'Centrale Supélec',
         'Télécom Paris' => 'Télécom Paris',
         'IMT Atlantique' => 'IMT Atlantique',
-        'IMT Lille Douai' => 'IMT Lille Douai',
+        'IMT Nord Europe' => 'IMT Nord Europe',
         'ENSIMAG' => 'ENSIMAG',
         'ESISAR' => 'ESISAR',
         'INSA Rennes' => 'INSA Rennes',
