@@ -21,8 +21,8 @@ return [
             'full_title' => 'Ingénieur Innovation et AMOA',
         ],
         'ASEDS' => [
-            'cf_title' => 'Mme',
-            'cf_name' => 'Rabia MARGHOUBI',
+            'cf_title' => 'M.',
+            'cf_name' => 'Mohamed Dahchour',
             'full_title' => 'Advanced Software Engineering for Digital Services',
         ],
         'DATA' => [
