@@ -9,7 +9,7 @@ $required = 'required';
     'placeholder' ,
     'class' => 'validate',
     'icon' ,
-    'helper' => 'Montant de gratification mensuel',
+    'helper' => 'Montant de la gratification mensuelle',
     'required' => $required,
     'cols' => 3,
 ], $errors) }}
@@ -28,12 +28,12 @@ $required = 'required';
 {{ Form::textGroup([
     'name' => 'load',
     'value' ,
-    'label' => 'Nombre d\'Heures par semaine',
+    'label' => 'Nombre d\'heures par semaine',
     'placeholder' ,
     'class' => 'validate',
     'icon' ,
-    'helper' => 'Charge horaire (Heures/semaine)',
+    'helper' => 'La durée hebdomadaire maximale de présence du stagiaire dans l\'organisme d\'accueil',
     'required' => $required,
-    'cols' => 3,
+    'cols' => 4,
 ], $errors) }}
 </div>

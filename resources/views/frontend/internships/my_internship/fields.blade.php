@@ -2,7 +2,7 @@
     <div class="card-content">
         <!-- Entreprise -------------------------------------------------------->
         <div class = "row">        
-            <h4 class="header col s12 light center blue-text text-lighten-1">Entreprise</h4>
+            <h4 class="header col s12 light center blue-text text-lighten-1">Organisme d'accueil</h4>
             <!-- Raison Sociale Field -->
         </div>
         @include('frontend.internships.my_internship.fields.entreprise')
@@ -17,7 +17,7 @@
             <h4 class="header col s12 light center blue-text text-lighten-1">
                 Parrain</h4>
             <h6 class="col s12 light center blue-text text-lighten-1">
-                Représentant de l'entreprise</h6>
+                Représentant de l'organisme d'accueil</h6>
         </div>
             @include('frontend.internships.my_internship.fields.parrain')
 
@@ -26,7 +26,7 @@
             <h4 class="header col s12 light center blue-text text-lighten-1">
                 Encadrant externe</h4>
                 <h6 class="col s12 light center blue-text text-lighten-1">
-                    Votre encadrant dans l'entreprise</h6>
+                    Votre encadrant au sein l'organisme d'accueil</h6>
         </div>
             @include('frontend.internships.my_internship.fields.encadrant_ext')
 

@@ -23,6 +23,11 @@ return [
     ],
 
     'countries' => [
+        'Les plus utilisés' => [
+        "Morocco"=>"Morocco",
+        "France"=>"France",
+        "Turkey"=>"Turkey",
+        ],
         "Afghanistan"=>"Afghanistan",
         "Albania"=>"Albania",
         "Algeria"=>"Algeria",
@@ -83,7 +88,6 @@ return [
         "Ethiopia"=>"Ethiopia",
         "Fiji"=>"Fiji",
         "Finland"=>"Finland",
-        "France"=>"France",
         "Gabon"=>"Gabon",
         "Gambia, The"=>"Gambia, The",
         "Georgia"=>"Georgia",
@@ -140,7 +144,6 @@ return [
         "Moldova"=>"Moldova",
         "Monaco"=>"Monaco",
         "Mongolia"=>"Mongolia",
-        "Morocco"=>"Morocco",
         "Mozambique"=>"Mozambique",
         "Myanmar"=>"Myanmar",
         "Namibia"=>"Namibia",
@@ -199,7 +202,6 @@ return [
         "Tonga"=>"Tonga",
         "Trinidad and Tobago"=>"Trinidad and Tobago",
         "Tunisia"=>"Tunisia",
-        "Turkey"=>"Turkey",
         "Turkmenistan"=>"Turkmenistan",
         "Tuvalu"=>"Tuvalu",
         "Uganda"=>"Uganda",

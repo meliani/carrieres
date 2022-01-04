@@ -9,7 +9,7 @@ $required = 'required';
     'placeholder' ,
     'class' => 'validate',
     'icon' => 'domain',
-    'helper' => 'Nom de l\'entreprise où vous allez passer votre stage',
+    'helper' => 'Nom de l\'organisme d\'accueil',
     'required' => $required,
     'cols' => 4,
 ], $errors) }}
@@ -17,11 +17,11 @@ $required = 'required';
 {{ Form::textGroup([
     'name' => 'adresse',
     'value' ,
-    'label' => 'Adresse de l\'entreprise',
+    'label' => 'Adresse du siège social de l\'organisme d\'accueil',
     'placeholder' ,
     'class' => 'materialize-textarea validate',
     'icon' => 'place',
-    'helper' => 'Adresse du siège social de l\'entreprise',
+    'helper' => '',
     'required' => $required,
     'cols' => 4,
 ], $errors) }}
@@ -34,7 +34,7 @@ $required = 'required';
     'placeholder' ,
     'class' => 'validate',
     'icon' => 'location_city',
-    'helper' => 'Ville ou se situe l\'entreprise',
+    'helper' => 'Ville où se situe l\'organisme d\'accueil',
     'required' => $required,
     'cols' => 2,
 ], $errors) }}
@@ -46,7 +46,7 @@ $required = 'required';
     'placeholder' ,
     'class' => 'validate',
     'icon' => 'location_city',
-    'helper' => 'Pays ou se situe l\'entreprise',
+    'helper' => 'Pays où se situe l\'organisme d\'accueil',
     'required' => $required,
     'cols' => 6,
     'data' => config('inpt.countries'),

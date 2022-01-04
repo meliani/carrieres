@@ -5,7 +5,7 @@ $required = 'required';
 {{ Form::textGroup([
     'name' => 'intitule',
     'value' ,
-    'label' => 'Intitule du sujet',
+    'label' => 'Intitulé du sujet',
     'placeholder' ,
     'class' => 'materialize-textarea validate',
     'icon' => 'edit',
@@ -45,7 +45,7 @@ $required = 'required';
     'placeholder' ,
     'class' => 'datepicker validate',
     'icon' => 'date_range',
-    'helper' => 'Date de debut de stage',
+    'helper' => 'Date de début de stage',
     'required' => $required,
     'cols' => 3,
 ], $errors) }}
@@ -60,4 +60,16 @@ $required = 'required';
     'required' => $required,
     'cols' => 3,
 ], $errors) }}
+
+    {{ Form::textGroup([
+        'name' => 'office_location',
+        'value' ,
+        'label' => 'Lieu du stage (adresse précise, si différente de l\'adresse du siège)',
+        'placeholder' ,
+        'class' => 'materialize-textarea validate',
+        'icon' => 'place',
+        'helper' => 'Laisser vide, si la même que l\'adresse du siège',
+        'required' => '',
+        'cols' => 8,
+    ], $errors) }}
 </div>

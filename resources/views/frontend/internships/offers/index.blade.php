@@ -1,5 +1,5 @@
 @extends('layouts.ui.app')
-@section('title', '| Opportunités de stages')
+@section('title', '| Opportunités de stage')
 
 @section('users_buttons')
     @include(Button::home_button())
@@ -7,7 +7,7 @@
 
 @section('content')
 
-    @include('components.section_title',['title' => 'Opportunités de stages'])
+    @include('components.section_title',['title' => 'Opportunités de stage'])
 
     @include('components.pagination.pagination_wrapper',$paginate=$offers)
 
