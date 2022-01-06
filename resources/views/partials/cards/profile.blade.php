@@ -4,7 +4,7 @@
         <div class="card-content white-text">
             <img src="{{ asset('images/icons/key-person.png') }}" width="64" height="64">
             <p>
-                Veuillez compléter votre profil en cliquant sur le bouton ci dessous.
+                Pour modifier votre profil, veuillez cliquer sur le bouton ci-dessous.
             </p>
         </div>
         <div class="card-action">

@@ -617,7 +617,7 @@ height:52px;
  {{ config('school.current.signature.envoy_occupation') }},
 </span></strong></p>
 <p class="Normal tm38"><strong><span class="tm32">de deuxi&egrave;me part, et</span></strong></p>
-<p class="Normal tm44"><span class="tm33"></span><strong><span class="tm34">{{ $internship->person->full_name }}</span><span
+<p class="Normal tm44"><span class="tm33"></span><strong><span class="tm34">{{ $internship->person->title }} {{ $internship->person->full_name }}</span><span
  class="tm32">, </span></strong><span class="tm33">&eacute;tudiant(e) de la fili&egrave;re</span><span class="tm33"> </span><strong><span
  class="tm34">
  {{ config('school.current.branches.'.$internship->person->filiere_text.'.full_title')  }}

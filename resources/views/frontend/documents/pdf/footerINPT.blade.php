@@ -25,7 +25,7 @@
         <p><span>Av. Allal El Fassi,</span></p>
         <p><span>Madinat Al Irfane,</span></p>
         <p><span>Rabat - Maroc</span></p>
-        <p><span>T&eacute;l. : + 212 5 38 00 27 00 </span></p>
+        <p><span>T&eacute;l. : + 212 5 37 77 33 77</span></p>
         <p><span>Fax : + 212 5 37 77 30 44</span></p>
         <p><span>
             <a href="http://www.inpt.ac.ma">

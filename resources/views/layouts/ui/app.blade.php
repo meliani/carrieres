@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,7 +39,7 @@ Votre carrière se construit dès aujourd'hui, nous sommes là pour vous aider �
               <div class="col l4 offset-l2 s12">
                 <h5>Liens</h5>
                 <ul>
-                  <li><a class="light-blue-text text-lighten-5" href="#!">Conditions d'utilisation.</a></li>
+                  <li><a class="light-blue-text text-lighten-5" href="#!">Conditions d'utilisation</a></li>
                   
                 </ul>
               </div>
@@ -48,7 +48,7 @@ Votre carrière se construit dès aujourd'hui, nous sommes là pour vous aider �
           <div class="footer-copyright light-blue darken-3 z-depth-2">
             <div class="container">
              
-                <time datetime="00:00:00 | date: '2019'">&copy; {{ date('Y')}} DASRE INPT</time>
+                <time datetime="00:00:00 | date: '2019'">&copy; {{ date('Y') }} DASRE INPT</time>
 
             <a class="light-blue-text text-lighten-5 right" href="#!">Contact</a>
             </div>
@@ -58,7 +58,8 @@ Votre carrière se construit dès aujourd'hui, nous sommes là pour vous aider �
 
     <!-- Scripts -->
     <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
-    <script>if (!window.jQuery) { document.write('<script src="{{ asset('js/jquery-3.2.1.js') }}"><\/script>'); }
+    <script>
+    if (!window.jQuery) { document.write('<script src="{{ asset('js/jquery-3.2.1.js') }}"><\/script>'); }
     </script>
     <script src="{{ asset('js/materialize.js') }}"></script>
     <script src="{{ asset('js/init.js') }}"></script>

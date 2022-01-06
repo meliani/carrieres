@@ -17,7 +17,7 @@
 <ul class="collection">
 <li class="collection-item avatar">
   <i class="material-icons circle red ">playlist_add_check</i>
-  <span class="title">Remplir et "valider" la declaration de stage</span>
+  <span class="title">Remplir et "valider" la déclaration de stage</span>
   <p>
     Vous devez remplir votre déclaration de stage et la valider avant de générer votre convention en PDF.
   </p>

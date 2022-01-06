@@ -35,6 +35,7 @@ class internOfferController extends Controller
         //$offres = Offer::published()->valid()->year()->actual()->paginate();
         $offers = Offer::Where('year_id',config('school.current.academic_year_id'))
         ->Where('is_valid',1)
+        ->Where('status',1)
         ->get();
 
         return view('frontend.internships.offers.index', compact('offers'));
@@ -66,7 +67,7 @@ class internOfferController extends Controller
         $offer->save();
         flash()->success('Offre de stage bien enregistrée.');
 
-        return view('frontend.internships.offers.form.thanks')->with('message', 'Votre proposition a été bien enregistrée');
+        return view('frontend.internships.offers.form.thanks');
 
     }
 

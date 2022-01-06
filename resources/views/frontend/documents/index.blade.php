@@ -8,6 +8,10 @@
 
 @section('content')
 <div class="container">
+  <div class="row center">
+    <h4 class="header light center blue-text text-lighten-1">Générer la convention de stage</h4>
+    </div>
+
   <ul class="collection">
     <li class="collection-item avatar">
   @if(isset($documents))      

@@ -40,7 +40,7 @@ class myInternshipController extends BaseController
     {
         $internship = Internship::firstOrNew(['user_id' => user()->id]);
         if($internship->is_valid == 1)
-        return view('frontend.internships.my_internship.show',compact('internship'));
+        return view('frontend.documents.index',compact('internship'));
         else
         return view('frontend.internships.my_internship.create',compact('internship'));
     }

@@ -1306,9 +1306,15 @@ font-weight:bold;
 <p class="tm44 tm82"><strong><span class="tm87"></span></strong><span class="tm96">- </span><span class="tm89">Encadrant Externe&nbsp;: </span><strong><span
  class="tm90">{{ $internship->encadrant_ext_name }}</span><span
  class="tm91">, </span><span class="tm90">{{ $internship->encadrant_ext_fonction }}</span><span class="tm91">, </span><span
- class="tm90">{{ $internship->encadrant_ext_tel }}</span><span class="tm91">, </span><span class="tm90">{{ $internship->encadrant_ext_mail }}</span><span
+ class="tm90">{{ $internship->encadrant_ext_tel }} </span><span class="tm91">, </span><span class="tm90">{{ $internship->encadrant_ext_mail }}</span><span
  class="tm91">.</span></strong></p>
-<p class="tm44 tm82"><strong><span class="tm87"></span></strong><span class="tm96">- </span><span class="tm89">Coordonnateur de la fili&egrave;re&nbsp;: </span><strong><span
+<p class="tm44 tm82">
+		<span class="tm89">
+			et
+		</span>
+</p>
+<p class="tm44 tm82">
+	<span class="tm96">- </span><span class="tm89">Coordonnateur de la fili&egrave;re&nbsp;: </span><strong><span
  class="tm90">
  {{ config('school.current.branches.'.$internship->person->filiere_text.'.cf_title') ?? '' }} 
  {{ config('school.current.branches.'.$internship->person->filiere_text.'.cf_name')  ?? '. . . . . . . . . . . . . . . . . . .'}} 
@@ -1327,7 +1333,8 @@ ci dessus) : </span></em><span class="tm90">{{ $internship->office_location ?? '
 	<u><span class="tm88">ARTICLE SECOND&nbsp;:</span></u></strong></p>
 <p class="tm52 tm82 tm99"><strong><span class="tm87"></span></strong><span class="tm89">La pr&eacute;sente convention garantit que le r&egrave;glement des stages inscrit au verso a &eacute;t&eacute; port&eacute; &agrave; la
 connaissance de l&#8217;entreprise et de l&#8217;&eacute;l&egrave;ve et que ceux-ci en ont approuv&eacute; express&eacute;ment toutes les clauses.</span></p>
-<p class="tm52 tm82 tm99"><strong><span class="tm87">&#160;</span></strong></p>
+<p class="tm52 tm82 tm99"><span class="tm87">Document &eacute;tabli en quatre exemplaires</span></p>
+
 <p class="tm55 tm82 tm100"><em><span class="tm101">&#160;</span></em></p>
 
 @include('frontend.documents.pdf.templates.partials.signature_fields')

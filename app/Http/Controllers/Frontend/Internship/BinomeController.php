@@ -31,7 +31,7 @@ class BinomeController extends BaseController
         ->get(['user_id','first_name','last_name'])
         ->pluck('name','user_id')->all();
         session(['internship_id' => request('internship_id')]);
-        return view('frontend.internships.my_internship.binome.create',compact('students'));
+        return view('frontend.internships.my_internship.binome.create',compact('students'))->with('message', 'Votre déclaration a été bien enregistrée.');
     }
 
     /**
@@ -55,7 +55,7 @@ class BinomeController extends BaseController
         $internship->save();
 
         flash()->success('Votre binome a été bien enregistrée.');
-        return back();
+        return back()->with('message', 'Votre déclaration de binôme a été bien enregistrée.');
     }
 
     /**
