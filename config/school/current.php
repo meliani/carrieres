@@ -6,8 +6,8 @@ return [
     'academic_year_id' => '5',
     'signature' =>[
         'signing_person_id' => 1,
-        'signing_title' => 'M.',
-        'signing_name' => 'Hilali Abdelaziz',
+        'signing_title' => '',
+        'signing_name' => '………………………………',
         'signing_occupation' => '',
         'envoy_title' => 'Monsieur',
         'envoy_shortTitle' => 'M.',
