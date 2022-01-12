@@ -28,8 +28,8 @@
         <p><span>T&eacute;l. : + 212 5 37 77 30 77</span></p>
         <p><span>Fax : + 212 5 37 77 30 44</span></p>
         <p><span>
-            <a href="http://www.inpt.ac.ma">
-            http://www.inpt.ac.ma</a></span></p>
+            <a href="https://www.inpt.ac.ma">
+            https://www.inpt.ac.ma</a></span></p>
     </div>
 </body>
 
