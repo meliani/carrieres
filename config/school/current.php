@@ -3,7 +3,7 @@
 return [
 
     'academic_year' => '2021-2022',
-    'academic_year_id' => '5',
+    'year_id' => '5',
     'signature' =>[
         'signing_person_id' => 1,
         'signing_title' => '',
@@ -13,6 +13,11 @@ return [
         'envoy_shortTitle' => 'M.',
         'envoy_name' => 'Hilali Abdelaziz',
         'envoy_occupation' => 'Directeur Adjoint des Stages et Relations avec les Entreprises',
+    ],
+    'model_status' => [
+        'test' => 0,
+        'prod' => 1,
+        'archive' => 2
     ],
     'branches' => [
         'AMOA' => [
