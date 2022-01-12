@@ -21,7 +21,7 @@
         @include('backend.internships.fields.admin')
 
         @endsection
-        @include('backend.internships.fields')
+        @include('frontend.internships.my_internship.fields')
         
             {!! Form::close() !!}
         </div>
