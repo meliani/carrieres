@@ -23,15 +23,21 @@ class Internship extends baseModel
 
     protected $table = 'internships';
 
+
     protected static function boot()
     {
         parent::boot();
     
         static::addGlobalScope(function ($query) {
-                $query->orderBy('created_at', 'asc');
+                $query->where('year_id', config('school.current.year_id'))
+                ->orderBy('created_at', 'asc');
         });
 
     }
+
+    protected $attributes = [
+
+    ];
 
     protected $dates = [
         'created_at',
@@ -72,9 +78,11 @@ class Internship extends baseModel
         'int_adviser_name',
         'is_signed',
         'user_id',
+        'year_id',
         'is_valid',
-        'status'
+        'model_status_id'
     ];
+
     //protected $dateFormat = 'm/d/Y';
     protected $casts = [
         'date_debut' => 'date',

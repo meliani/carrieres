@@ -29,31 +29,13 @@ class Student extends Model implements HasMedia
             $query->where('status', '1');
         });*/
         static::addGlobalScope(function ($query) {
-                $query->where('is_active', true);
+                $query->where('is_active', config('school.student.active'))
+                ->where('model_status_id', config('school.current.model_status.prod'))
+                ->where('year_id',config('school.current.year_id'));
         });
     }
 
-    public $fillable = [ 	
-        'user_id',
-        'title',
-        'first_name',
-        'last_name',
-        'email_perso',
-        'phone',
-        'cv',
-        'lm',
-        'photo',
-        'option_id',
-        'gender_id',
-        'birth_date',
-        'filiere_text',
-        'option_text',
-        'konosys_id',
-        'ine',
-        'is_active',
-        'scholar_year',
-        'pfe_id'
-        ];
+
 
     public function internship()
     {

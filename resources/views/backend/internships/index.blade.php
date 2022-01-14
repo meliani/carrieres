@@ -12,13 +12,17 @@
             Liste des encadrements
         </h4>
     </div>
-    @include('components.pagination.pagination_wrapper',$paginate=$internships)
+    <div>
+    @livewire('interns-table')
+    </div>
+    
+    {{-- @include('components.pagination.pagination_wrapper',$paginate=$internships)
 
     @include('components.search_box')
 
     @include('backend.internships.partials.list')
 
-    @include('components.pagination.pagination_wrapper',$paginate=$internships)
+    @include('components.pagination.pagination_wrapper',$paginate=$internships) --}}
 
 @endsection
 @section('floating-buttons')

@@ -3,13 +3,14 @@
     <thead>
       <tr>
         <th width="5%">Id</th>
-        <th width="13%">Nom et prénom</th>
+        <th width="13%">Etudiant</th>
+        {{-- contain student details name, phone, personal email --}}
         <th width="15%">Entreprise</th>
           <th width="25%">Titre du PFE</th>
           <th width="10%">Dates Declaration</th>
-          <th width="10%">Etat de Signature</th>   
-          <th width="10%">Encadrant 2</th>   
-          <th width="25%">Membres du jury</th>            
+          <th width="10%">Validation CF</th>   
+          <th width="10%">Signature INPT</th>   
+          <th width="25%"></th>            
           <th width="25%">Actions</th>            
       </tr>
     </thead>
@@ -17,16 +18,24 @@
       @foreach ($internships as $internship)
       <tr>
         @if(isset($internship->student))
-        <td class="strong">{{ $internship->student->user_id }}</td>
+        <td class="strong">{{ $internship->student->user_id }}
+        </td>
         <td><div
           class="waves-effect sub strong">{{ $internship->student->full_name }}
           </div>
+          
+          
+            <p><span class="new badge blue lighten-1 white-text" 
+            data-badge-caption="{{ $internship->student->phone }}"></p>
+            <p><span class="new badge orange lighten-3 white-text" 
+            data-badge-caption="{{ $internship->student->filiere_text }}"></p>
+
           @isset($internship->binome)
           <span class="new badge orange lighten-3 white-text tooltipped" 
           data-delay="50" 
           data-tooltip="{{ $internship->binome->name }}"
           data-badge-caption="Binome id : {{ $internship->binome->user_id }}">
-          </span>              
+          </span>
           @endisset
 
 
@@ -39,22 +48,10 @@
            <p>{{ isset($internship->created_at) ? \Carbon\Carbon::parse($internship['created_at'])->format('d M Y'):'' }}</p>
         </td>   
          <td class="center">
-           @if(isset($internship->adviser->adviser1))
-            <p>{{ $internship->adviser->adviser1['name']}}</p>
-            <a class="center" href={{ route('Project.create', ['pfe_id' => $internship['id'],'advisor' => '1' ]) }}><i class="tiny material-icons">edit</i></a>
-          @else
-            <a href={{ route('Project.create', ['pfe_id' => $internship['id'],'advisor' => '1' ]) }}><i class="tiny material-icons">add</i></a>
-          @endif
+
           </td>
           <td class="center">
-          @if(isset($internship->adviser->adviser2))
-          <p>{{ $internship->adviser->adviser2['name']}}</p>
-          <a class="center" href={{ route('Project.create', ['pfe_id' => $internship['id'],'advisor' => '2' ]) }}>
-            <i class="tiny material-icons">edit</i></a>
-          @else
-            <a href={{ route('Project.create', ['pfe_id' => $internship['id'],'advisor' => '2' ]) }}>
-              <i class="tiny material-icons">add</i></a>
-          @endif
+
           </td>
           <td class="multiline center">
           @include('backend.internships.advising.jury',$internship->student)

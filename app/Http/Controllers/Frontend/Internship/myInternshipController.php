@@ -62,6 +62,11 @@ class myInternshipController extends BaseController
         //$internship = new Internship($intern);
         $internship->user()->associate(auth()->user()->id);
         $internship->groupes()->attach(request('binome_user_id'));
+        
+        $internship->year_id = config('school.current.year_id');
+
+        $internship->model_status_id = config('school.current.model_status.prod');
+
         if(isset($request->action)){
             $internship->is_valid = 1;
             $internship->status = 'submitted by student';

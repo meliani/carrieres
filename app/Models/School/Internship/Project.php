@@ -8,6 +8,12 @@ use App\Models\School\Internship;
 class Project extends Internship
 {
 
+     /**
+     * hasMany internships
+     * hasMany professors
+     * hasMany students
+     * 
+     */
 
     protected $table = 'internships';
 
@@ -20,9 +26,11 @@ class Project extends Internship
         });*/
         static::addGlobalScope(function ($query) {
             $query->whereHas('person', function ($query) {
-                $query->where('scholar_year', '=', '2018-2019');
+                $query->where('is_valid', 1)
+                ->where('model_status_id', config('school.current.model_status.prod'));
             });
         });
+
     }
 
 

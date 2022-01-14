@@ -46,8 +46,9 @@ class Person extends baseModel implements HasMedia
     'filiere_text',
     'is_mobility',
     'abroad_school',
-    'scholar_year',
-    'is_active'
+    'year_id',
+    'is_active',
+    'model_status_id'
     ];
 
 /*

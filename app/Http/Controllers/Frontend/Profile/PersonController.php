@@ -96,7 +96,7 @@ class PersonController extends Controller
             'filiere_text' => 'required',
             'is_mobility',
             'abroad_school',
-            'scholar_year',
+            'year_id',
             'is_active'
         ]);
 */

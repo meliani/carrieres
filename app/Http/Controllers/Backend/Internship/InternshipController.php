@@ -22,17 +22,16 @@ class InternshipController extends BaseController
      */
     public function index()
     {
-
         
         if(request()->has('s')){
             $internships = Internship::whereHas('student', function ($query) {
-                $query->where('pfe_id', 'like', request('s'));
+                $query->where('user_id','=', request('s'));
                 
             })->get();
 
         }else{
         $internships = Internship::latest()->whereHas('student', function ($query) {
-            $query->where('scholar_year','like','%');
+            $query->where('year_id','like','%');
         })->paginate();
         }
         $internships = Internship::latest()->paginate();
@@ -122,7 +121,7 @@ class InternshipController extends BaseController
      */
     public function update(StoreInternship $request, Internship $internship)
     {
-        dd($internship);
+        //dd($internship);
         $input = $request->all();
         $internship = Internship::findOrFail($internship->id);
 
@@ -141,8 +140,7 @@ class InternshipController extends BaseController
         }
             $internship->fill($input)->save();
 
-        return view('backend.internships.edit',compact('internship'))
-        ->with('message', 'Votre déclaration a été bien modifiee.');
+        return view('backend.internships.edit',compact('internship'));
 
 
     }
