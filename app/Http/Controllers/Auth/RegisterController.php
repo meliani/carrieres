@@ -38,7 +38,7 @@ class RegisterController extends Controller
     {
         //$this->middleware('guest');
     if(config('app.canRegister')==0)
-        $this->middleware('auth');
+        $this->middleware(['auth','isAdmin']);
     else
         $this->middleware('guest');
     }
