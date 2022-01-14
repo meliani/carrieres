@@ -12,7 +12,7 @@ $required = '';
     'helper' => '',
     'required' => $required,
     'cols' => 3,
-    'data' => ['1'=>'Amphi 1','2'=>'Amphi 2','3'=>'Amphi 3']
+    'data' => config('school.current.defense.rooms')
 ], $errors) }}
 {{ Form::textGroup([
     'name' => 'defense_at',
@@ -57,14 +57,6 @@ $required = '';
     'helper' => '',
     'required' => $required,
     'cols' => 3,
-    'data' => [
-    '09h00-10h30'=>'09h00-10h30',
-    '10h30-12h00'=>'10h30-12h00',
-    '14h00-15h30'=>'14h00-15h30',
-    '14h30-16h00'=>'14h30-16h00',
-    '15h00-16h30'=>'15h00-16h30',
-    '15h30-17h00'=>'15h30-17h00',
-    '16h00-17h30'=>'16h00-17h30',
-    ]
+    'data' => config('school.current.defense.time_slots')
 ], $errors) }}
 </div>
