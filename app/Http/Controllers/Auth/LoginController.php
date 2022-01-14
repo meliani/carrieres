@@ -32,14 +32,11 @@ class LoginController extends Controller
     public function redirectTo(){
         $person = Person::find(auth()->user()->id);
 
-        if(isset($person) && $person->active()){
             if(auth()->user()->can('Administer roles & permissions'))
             return '/-/Dashboard';
             else
             return '/home';
-        }else{
-            return '/profile/activation';
-        }
+
     }
 
     /**
