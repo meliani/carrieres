@@ -39,7 +39,7 @@
 
                 </div>
                     <input type="hidden" name="pfe_id" value={{ request()->pfe_id }}>
-                    {!! Form::submit('Envoyer', ['class' => 'btn waves-effect waves-light white-text blue']) !!}
+                    {!! Form::submit('Envoyer', ['class' => 'btn waves-effect waves-light']) !!}
                     {!! Form::close() !!}
                 </div>
             </div>

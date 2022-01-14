@@ -30,7 +30,7 @@
                     {{ Form::select('advisor'.request()->advisor,[null=>'Enseignants ...','NULL'=>'Désactiver']+$profs,null,array('single','id'=>'profs')) }}
                     <input type="hidden" name="pfe_id" value={{ $encadrements['id'] }}>
                     <p class="divider"></p>
-                    {!! Form::submit('Envoyer', ['class' => 'btn waves-effect waves-light white-text blue']) !!}
+                    {!! Form::submit('Envoyer', ['class' => 'btn waves-effect waves-light']) !!}
                     {!! Form::close() !!}
                 </div>
             </div>

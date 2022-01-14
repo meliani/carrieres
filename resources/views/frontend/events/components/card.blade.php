@@ -4,7 +4,7 @@
         <div class="card-image waves-effect waves-block waves-light center-align">
             <img class="activator" src="https://materializecss.com/images/office.jpg">        </div>
         <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4">
+        <span class="card-title activator">
             {{ $event->title }}
             <i class="material-icons right">more_vert</i></span>
             {{ Form::open(['route'=>['events.update',
@@ -18,7 +18,7 @@
             </form>
         </div>
         <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">
+        <span class="card-title">
             Détails sur l'événement<i class="material-icons right">close</i></span>
         <p> {{ $event->detail }}</p>
         <p>le {{ $event->date->format('d/m/Y') }} à {{ $event->hour }}</p>

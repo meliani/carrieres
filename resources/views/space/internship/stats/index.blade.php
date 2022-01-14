@@ -31,7 +31,7 @@
         
         </div>
         
-        {!! Form::submit('Envoyer', ['class' => 'btn waves-effect waves-light white-text blue']) !!}
+        {!! Form::submit('Envoyer', ['class' => 'btn waves-effect waves-light']) !!}
         {!! Form::close() !!}
       </div>
     <div class="container col s12 m12">

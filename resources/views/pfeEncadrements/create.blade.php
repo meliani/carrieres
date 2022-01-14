@@ -43,7 +43,7 @@
                                   {{ Form::select('profs_advisor[]',$profs,null,array('multiple','id'=>'profs')) }}
                                   <input type="hidden" name="pfe_id" value={{ $encadrements[0]->id }}>
                                   <p class="divider"></p>
-                                  {!! Form::submit('Envoyer', ['class' => 'btn waves-effect waves-light white-text blue']) !!}
+                                  {!! Form::submit('Envoyer', ['class' => 'btn waves-effect waves-light']) !!}
                                   {!! Form::close() !!}
 
                                 </div>

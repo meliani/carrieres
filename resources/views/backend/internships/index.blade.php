@@ -14,6 +14,7 @@
     </div>
     <div>
     @livewire('interns-table')
+    {{-- <livewire:internsTable /> --}}
     </div>
     
     {{-- @include('components.pagination.pagination_wrapper',$paginate=$internships)

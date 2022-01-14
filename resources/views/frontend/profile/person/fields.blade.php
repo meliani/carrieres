@@ -104,7 +104,7 @@
     <div class="card-action">
     <!-- Submit Field -->
         <div class = "input-field">
-            {!! Form::submit('Enregistrer', ['class' => "btn waves-effect waves-light white-text blue"]) !!}
+            {!! Form::submit('Enregistrer', ['class' => "btn waves-effect waves-light"]) !!}
             <a href="{!! route('home') !!}" class="waves-effect waves-blue btn-flat">Annuler</a>
         </div>
     </div>
