@@ -42,7 +42,7 @@
     <div class="card-action">
     <!-- Submit Field -->
         <div class = "input-field">
-            {!! Form::submit('Enregistrer', ['class' => 'btn waves-effect waves-light blue-text text-lighten-1 blue lighten-1']) !!}
+            {!! Form::submit('Enregistrer', ['class' => 'btn waves-effect waves-light']) !!}
             {{ Form::submit('Valider et enregistrer', ['class' => "btn waves-effect waves-light white-text green",'formaction' => '/internships?action=validate' , 'hello_test' => 1,'onclick' => "return confirm('Vous ne pourriez plus modifier ces informations après avoir validé votre déclaration de stage.\\n\\nêtes-vous sûr(e) ?');" ]) }}            <a href="{!! route('home') !!}" class="waves-effect waves-teal btn-flat">Annuler</a>
         </div>
     </div>
