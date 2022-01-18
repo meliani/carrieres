@@ -39,8 +39,8 @@ class Student extends Model implements HasMedia
 
     public function internship()
     {
-        return $this->hasOne(Internship::class,'user_id','user_id')
-        ->with('adviser.adviser1.adviser2');
+        return $this->hasOne(Internship::class,'user_id','user_id');
+        // ->with('adviser.adviser1.adviser2');
     }
     public function internships()
     {
