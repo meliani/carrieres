@@ -71,7 +71,7 @@ $trainees = \App\Models\Profile\Student::with('internship')->get();
 
         <td class="sub">{{  $trainee->internship->pays }}</td>
         <td class="sub">{{  $trainee->internship->ville }}</td>
-        <td class="sub">{{  $trainee->internship->intern_location }}</td>
+        <td class="sub">{{  $trainee->internship->office_location }}</td>
         <td class="sub">{{  $trainee->internship->intitule }}</td>
         <td>{{ isset($trainee->internship->created_at) ? $trainee->internship->created_at->format('d M Y'):'' }}</td>
         <td>{{ isset($trainee->internship->date_debut) ?  $trainee->internship->date_debut->format('d/m/Y'):'' }}</td>   
