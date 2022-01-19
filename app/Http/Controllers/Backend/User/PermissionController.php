@@ -15,7 +15,7 @@ class PermissionController extends BaseController
 {
     public function __construct() 
     {
-        $this->middleware(['auth', 'isAdmin']);
+        $this->middleware(['auth', 'Admin']);
     }
 
     /**

@@ -11,7 +11,7 @@
 |
 */
 
-Route::middleware(['auth','isAdmin'])->group(function () {
+Route::middleware(['auth','Admin'])->group(function () {
 
 Route::view('extractions','extractions.index')->name('extractions');
 
@@ -29,11 +29,11 @@ Route::namespace('Admin')->group(function () {
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 
     // Admin Extraction routes :
-    Route::get('extractions/OffersApplications/{type}','extractions\AdminExportsController@OffersApplicationsExport')->middleware(['Teacher']);
-    Route::get('extractions/StagesExportAdvanced/{type}','extractions\AdminExportsController@AdvancedStagesExport')->middleware(['Teacher']);
-    Route::get('extractions/AdvisingStatsExport/{type}','extractions\AdminExportsController@AdvisingStatsExport')->middleware(['Teacher']);
-    Route::get('extractions/InternshipsExport/{type}','extractions\AdminExportsController@InternshipsExport')->middleware(['Teacher']);
-    Route::get('extractions/planningByProfessor/{type}','extractions\AdminExportsController@planningByProfessor')->middleware(['Teacher']);
+    Route::get('extractions/OffersApplications/{type}','extractions\AdminExportsController@OffersApplicationsExport')->middleware(['Admin']);
+    Route::get('extractions/StagesExportAdvanced/{type}','extractions\AdminExportsController@AdvancedStagesExport')->middleware(['Admin']);
+    Route::get('extractions/AdvisingStatsExport/{type}','extractions\AdminExportsController@AdvisingStatsExport')->middleware(['Admin']);
+    Route::get('extractions/InternshipsExport/{type}','extractions\AdminExportsController@InternshipsExport')->middleware(['Admin']);
+    Route::get('extractions/planningByProfessor/{type}','extractions\AdminExportsController@planningByProfessor')->middleware(['Admin']);
 
 
 });

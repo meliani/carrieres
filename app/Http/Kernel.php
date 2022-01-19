@@ -59,12 +59,12 @@ class Kernel extends HttpKernel
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
-        'isAdmin' => \App\Http\Middleware\AdminMiddleware::class,
+        'Admin' => \App\Http\Middleware\AdminMiddleware::class,
         'clearance' => \App\Http\Middleware\ClearanceMiddleware::class,
         'Student' => \App\Http\Middleware\StudentMiddleware::class,
         'superTeacher' => \App\Http\Middleware\superTeacherMiddleware::class,
         'Teacher' => \App\Http\Middleware\TeacherMiddleware::class,
-        //'Checkpoint' => \App\Http\Middleware\Checkpoint::class,
+        'Checkpoint' => \App\Http\Middleware\Checkpoint::class,
     ];
     protected $middlewarePriority = [
         \Illuminate\Cookie\Middleware\EncryptCookies::class,

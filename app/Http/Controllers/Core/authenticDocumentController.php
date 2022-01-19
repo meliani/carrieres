@@ -9,7 +9,7 @@ class authenticDocumentController extends Controller
 {
     public function __construct()
     {
-        $this->middleware(['auth','isAdmin']);
+        $this->middleware(['auth','Admin']);
     }
     /**
      * Display a listing of the resource.
