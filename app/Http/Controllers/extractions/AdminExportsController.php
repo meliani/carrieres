@@ -26,7 +26,7 @@ class AdminExportsController extends Controller
 
     public function __construct()
     {
-        $this->middleware(['auth']);
+        $this->middleware(['auth','Admin']);
         $this->extention= Carbon::now()->format('d_M_Y-ha').'.xlsx';
     }
     public function AdvancedStagesExport($type)
