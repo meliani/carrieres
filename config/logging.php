@@ -15,6 +15,8 @@ return [
 
     'default' => env('LOG_CHANNEL', 'stack'),
 
+    'deprecations' => env('LOG_DEPRECATIONS_CHANNEL', 'deprecations'),
+
     /*
     |--------------------------------------------------------------------------
     | Log Channels
@@ -32,13 +34,13 @@ return [
     'channels' => [
         'stack' => [
             'driver' => 'stack',
-            'channels' => ['single'],
+            'channels' => ['single','daily','slack'],
         ],
 
         'single' => [
             'driver' => 'single',
             'path' => storage_path('logs/laravel.log'),
-            'level' => 'debug',
+            'level' => 'info',
         ],
 
         'daily' => [
@@ -53,18 +55,25 @@ return [
             'url' => env('LOG_SLACK_WEBHOOK_URL'),
             'username' => 'Laravel Log',
             'emoji' => ':boom:',
-            'level' => 'critical',
+            'level' => 'debug',
         ],
 
         'syslog' => [
             'driver' => 'syslog',
             'level' => 'debug',
+            'lever2' => 'critical',
+
         ],
 
         'errorlog' => [
             'driver' => 'errorlog',
             'level' => 'debug',
         ],
+    ],
+
+    'deprecations' => [
+        'driver' => 'single',
+        'path' => storage_path('logs/php-deprecation-warnings.log'),
     ],
 
 ];

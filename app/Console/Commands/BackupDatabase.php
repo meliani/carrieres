@@ -1,5 +1,5 @@
 <?php
-
+/* 
 namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
@@ -38,4 +38,4 @@ class BackupDatabase extends Command
             $this->error('The backup process has been failed.');
         }
     }
-}
+} */

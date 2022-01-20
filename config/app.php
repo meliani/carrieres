@@ -178,7 +178,7 @@ return [
         Yajra\DataTables\ButtonsServiceProvider::class, */
         Spatie\Permission\PermissionServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
-        PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
+        //PragmaRX\Tracker\Vendor\Laravel\ServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -245,7 +245,7 @@ return [
         'Image' => Barryvdh\Snappy\Facades\SnappyImage::class,
         //this was named PDF but i changed it to DomPDF for confusion
         'DomPDF' => Barryvdh\DomPDF\Facade::class,
-        'Tracker' => PragmaRX\Tracker\Vendor\Laravel\Facade::class,
+        //'Tracker' => PragmaRX\Tracker\Vendor\Laravel\Facade::class,
         'Nav' => App\Http\Controllers\Core\MenuController::class,
         'Button' => App\Http\Controllers\Core\ButtonController::class,
     ],
