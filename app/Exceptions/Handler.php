@@ -59,9 +59,9 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Throwable $exception)
     {
-        if($e instanceof \PDOException)
+        if($exception instanceof \PDOException)
         {
-            $dbCode = trim($e->getCode());
+            $dbCode = trim($exception->getCode());
             //Codes specific to mysql errors
             switch ($dbCode)
             {
@@ -70,7 +70,7 @@ class Handler extends ExceptionHandler
                     break;
                 default:
                     //$errorMessage = 'database error !';
-                    return parent::render($request, $e);
+                    return parent::render($request, $exception);
             }
             //return response()->view('errors.pdo', [], 500);
             Session::flash('message', $errorMessage); 
