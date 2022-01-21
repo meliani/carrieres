@@ -2,6 +2,7 @@
 
 namespace App\Http\Middleware;
 use Illuminate\Support\Facades\Auth;
+use app\User;
 use Closure;
 
 class Checkpoint
