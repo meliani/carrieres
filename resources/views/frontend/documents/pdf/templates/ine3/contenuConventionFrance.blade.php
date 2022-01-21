@@ -1,6 +1,7 @@
 @include('frontend.documents.pdf.templates.document_headers')
 <?php
-$internship = auth()->user()->student->internships->last();
+// $internship = auth()->user()->student->internships->last();
+$internship = auth()->user()->people->internship;
 ?>
 
 <!DOCTYPE html>
