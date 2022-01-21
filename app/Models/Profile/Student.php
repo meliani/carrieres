@@ -4,8 +4,8 @@ namespace App\Models\Profile;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Profile\Person;
-use Spatie\MediaLibrary\HasMedia\HasMedia;
-use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\Models\Media;
 
 use App\Models\School\Internship;
@@ -14,7 +14,7 @@ use App\Models\School\schoolCycle as Cycle;
 
 class Student extends Model implements HasMedia
 {
-    use HasMediaTrait;
+    use InteractsWithMedia;
     protected $table = 'people';
     protected $primaryKey = "user_id";
 
@@ -84,7 +84,7 @@ class Student extends Model implements HasMedia
 		return $this->attributes['first_name'].' '.$this->attributes['last_name'];
     }
 
-    public function registerMediaCollections()
+    public function registerMediaCollections() :void
     {
         $this
            ->addMediaCollection('internship')

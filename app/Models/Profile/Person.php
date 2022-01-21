@@ -6,8 +6,8 @@ use App\Models\Core\baseModel;
 use App\User;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\School\Internship;
-use Spatie\MediaLibrary\HasMedia\HasMedia;
-use Spatie\MediaLibrary\HasMedia\HasMediaTrait;
+use Spatie\MediaLibrary\HasMedia;
+use Spatie\MediaLibrary\InteractsWithMedia;
 use App\Models\Profile\Professor;
 use App\Models\Profile\Student;
 
@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Storage;
 
 class Person extends baseModel implements HasMedia
 {
-    use HasMediaTrait;
+    use InteractsWithMedia;
     protected $table = 'people';
     protected $primaryKey = "user_id";
     protected $appends = [
@@ -105,7 +105,7 @@ class Person extends baseModel implements HasMedia
      }
 
 
-     public function registerMediaCollections()
+     public function registerMediaCollections() :void
      {
          $this
             ->addMediaCollection('internship')
