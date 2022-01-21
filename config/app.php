@@ -200,7 +200,7 @@ return [
         App\Providers\RouteServiceProvider::class,
 
         App\Providers\HelperServicerProvider::class,
-        // App\Providers\FormGroupServiceProvider::class,
+        App\Providers\FormGroupServiceProvider::class,
 
     ],
 
