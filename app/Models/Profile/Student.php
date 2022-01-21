@@ -6,11 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Profile\Person;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
-use Spatie\MediaLibrary\Models\Media;
-
+//use Spatie\MediaLibrary\Models\Media;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use App\Models\School\Internship;
 use App\Models\School\Internship\internshipReport as Report;
 use App\Models\School\schoolCycle as Cycle;
+use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Student extends Model implements HasMedia
 {
@@ -93,7 +94,7 @@ class Student extends Model implements HasMedia
     /**
      * Get all of the student's images.
      */
-    public function media()
+    public function media() :MorphMany
     {
         return $this->morphMany(Media::class, 'model');
     }

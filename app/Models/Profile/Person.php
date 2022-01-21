@@ -10,6 +10,7 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use App\Models\Profile\Professor;
 use App\Models\Profile\Student;
+use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
