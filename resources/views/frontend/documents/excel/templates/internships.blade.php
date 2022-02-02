@@ -9,7 +9,7 @@ $trainees = \App\Models\Profile\Student::with('internship')->get();
 <thead>
     <tr>
         <th width="5%">id déclaration</th>
-        <th width="5%">Id</th>
+        <th width="5%">Id PFE</th>
         <th width="13%">Nom et prénom</th>
         <th width="13%">Filière</th>
         <th width="13%">email</th>
@@ -27,10 +27,13 @@ $trainees = \App\Models\Profile\Student::with('internship')->get();
         <th width="10%">Lieu de stage</th>
 
         <th width="25%">Titre du PFE</th>
-        <th width="10%">Date déclaration</th>
-        <th width="10%">Date début</th>
-        <th width="10%">Date fin</th>
-        <th width="10%">durée</th>
+        <th width="25%">Détails du PFE</th>
+        <th width="25%">Keywords du PFE</th>
+        <th width="10%">Date de déclaration</th>
+        <th width="10%">Date de dernière modification de déclaration</th>
+        <th width="10%">Date de début</th>
+        <th width="10%">Date de fin</th>
+        <th width="10%">durée de stage</th>
         <th width="10%">nom parrain</th>
         <th width="10%">fonction parrain</th>
         <th width="10%">Téléphone parrain</th>
@@ -51,46 +54,74 @@ $trainees = \App\Models\Profile\Student::with('internship')->get();
         {{-- {{dd($trainee->internship->id)}} --}}
         {{-- Student fields --}}
         <td class="strong">{{ isset($trainee->internship->id)? $trainee->internship->id:''}}</td>
-        <td class="strong">{{ $trainee['id'] }}
+        <td class="strong">{{ $trainee->user_id }}
             {!! isset($trainee->internship->binome)?'.'.$trainee->internship->binome->id:'' !!}
         </td>
         <td class="sub strong">{{ $trainee->full_name }}</td>
         <td>{{ isset($trainee->filiere_text)? $trainee->filiere_text:'' }}</td>
-        <td class="sub">{{ $trainee->email_perso }}</td>
-        <td class="sub">{{ $trainee->phone }}</td>
-        <td class="sub">{{ $trainee->cv }}</td>
-        <td class="sub">{{ $trainee->lm }}</td>
-        <td class="sub">{{ $trainee->photo }}</td>
-        <td class="sub">{{ $trainee->is_mobility }}</td>
-        <td class="sub">{{ $trainee->abroad_school }}</td>
-        <td class="sub">{{ $trainee->is_active }}</td>
+        <td>{{ $trainee->email_perso }}</td>
+        <td>{{ $trainee->phone }}</td>
+        <td>{{ $trainee->cv }}</td>
+        <td>{{ $trainee->lm }}</td>
+        <td>{{ $trainee->photo }}</td>
+        <td>{{ $trainee->is_mobility }}</td>
+        <td>{{ $trainee->abroad_school }}</td>
+        <td>{{ $trainee->is_active }}</td>
 
         {{-- INternship fields --}}
         @isset($trainee->internship->id)
         <td class="strong">{{ $trainee->internship->raison_sociale }}</td>
 
-        <td class="sub">{{  $trainee->internship->pays }}</td>
-        <td class="sub">{{  $trainee->internship->ville }}</td>
-        <td class="sub">{{  $trainee->internship->office_location }}</td>
-        <td class="sub">{{  $trainee->internship->intitule }}</td>
-        <td>{{ isset($trainee->internship->created_at) ? $trainee->internship->created_at->format('d M Y'):'' }}</td>
+        <td>{{  $trainee->internship->pays }}</td>
+        <td>{{  $trainee->internship->ville }}</td>
+        <td>{{  $trainee->internship->office_location }}</td>
+        <td>{{  $trainee->internship->intitule }}</td>
+        <td>{{  $trainee->internship->descriptif }}</td>
+        <td>{{  $trainee->internship->keywords }}</td>
+
+        <td>{{ isset($trainee->internship->created_at) ? $trainee->internship->created_at->format('d/m/Y'):'' }}</td>
+        <td>{{ isset($trainee->internship->updated_at) ? $trainee->internship->updated_at->format('d/m/Y'):'' }}</td>
         <td>{{ isset($trainee->internship->date_debut) ?  $trainee->internship->date_debut->format('d/m/Y'):'' }}</td>   
         <td>{{ isset($trainee->internship->date_fin) ?  $trainee->internship->date_fin->format('d/m/Y'):'' }}</td>   
-        <td class="sub">{{  $trainee->internship->duree }}</td>
-        <td class="sub">{{  $trainee->internship->parrain_nom }} {{  $trainee->internship->parrain_prenom }}</td>
-        <td class="sub">{{  $trainee->internship->parrain_fonction }}</td>
-        <td class="sub">{{  $trainee->internship->parrain_tel }}</td>
-        <td class="sub">{{  $trainee->internship->parrain_mail }}</td>
-        <td class="sub">{{  $trainee->internship->encadrant_ext_nom }} {{  $trainee->internship->encadrant_ext_prenom }}</td>
-        <td class="sub">{{  $trainee->internship->encadrant_ext_fonction }}</td>
-        <td class="sub">{{  $trainee->internship->encadrant_ext_tel }}</td>
-        <td class="sub">{{  $trainee->internship->encadrant_ext_mail }}</td>
-        <td class="sub">{{  $trainee->internship->int_adviser_name }}</td>
-        <td class="sub">{{  $trainee->internship->remuneration }} {{  $trainee->internship->currency }}</td>
-        <td class="sub">{{  $trainee->internship->load }}</td>
+        <td>{{  $trainee->internship->duree }}</td>
+        <td>{{  $trainee->internship->parrain_nom }} {{  $trainee->internship->parrain_prenom }}</td>
+        <td>{{  $trainee->internship->parrain_fonction }}</td>
+        <td>{{  $trainee->internship->parrain_tel }}</td>
+        <td>{{  $trainee->internship->parrain_mail }}</td>
+        <td>{{  $trainee->internship->encadrant_ext_nom }} {{  $trainee->internship->encadrant_ext_prenom }}</td>
+        <td>{{  $trainee->internship->encadrant_ext_fonction }}</td>
+        <td>{{  $trainee->internship->encadrant_ext_tel }}</td>
+        <td>{{  $trainee->internship->encadrant_ext_mail }}</td>
+        <td>{{  $trainee->internship->int_adviser_name }}</td>
+        <td>{{  $trainee->internship->remuneration }} {{  $trainee->internship->currency }}</td>
+        <td>{{  $trainee->internship->load }}</td>
+        @else
+        <td></td>
+
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+
+        <td></td>
+        <td></td>
+        <td></td>   
+        <td></td>   
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
         @endisset
-
-
 
     </tr>
     @endforeach
