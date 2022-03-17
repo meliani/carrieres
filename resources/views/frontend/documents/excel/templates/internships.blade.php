@@ -55,7 +55,7 @@ $trainees = \App\Models\Profile\Student::with('internship')->get();
         {{-- Student fields --}}
         <td class="strong">{{ isset($trainee->internship->id)? $trainee->internship->id:''}}</td>
         <td class="strong">{{ $trainee->user_id }}
-            {!! isset($trainee->internship->binome)?'.'.$trainee->internship->binome->id:'' !!}
+            {!! isset($trainee->internship->binome)?'.'.$trainee->internship->binome_user_id:'' !!}
         </td>
         <td class="sub strong">{{ $trainee->full_name }}</td>
         <td>{{ isset($trainee->filiere_text)? $trainee->filiere_text:'' }}</td>
