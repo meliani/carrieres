@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Core\Documents;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+//use Illuminate\Support\Str;
 use App;
 use PDF;
 use Illuminate\Support\Facades\View;
@@ -52,7 +53,7 @@ class renderController extends Controller
         ->setOption('header-html',$this->header)
         ->setOption('footer-html',$this->footer)
         ->setOption('page-size' ,'A4');
-        $file_name = 'Convention de stage '.auth()->user()->people->full_name.'-General-'.Carbon::now()->format('dMY his').'.pdf';
+        $file_name = 'Convention de stage '.str_slug(auth()->user()->people->full_name).'-General-'.Carbon::now()->format('dMY his').'.pdf';
         $file_path = Storage_path('users/internship/'.$file_name);
         $pdf->save($file_path);
         $this->attach($file_path);
