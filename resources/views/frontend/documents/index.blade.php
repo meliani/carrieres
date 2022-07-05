@@ -28,12 +28,16 @@
       @endforeach
     @endif
     </li>
-    @if(auth()->user()->people->is_mobility<>1)
-   @includeWhen(auth()->user()->people->internship->pays<>'France','frontend.documents.partials.buttons.global')
-   @includeWhen(auth()->user()->people->internship->pays=='France','frontend.documents.partials.buttons.france')
-    @elseif(auth()->user()->people->is_mobility==1)
-    @includeWhen(auth()->user()->people->internship->pays<>'France','frontend.documents.partials.buttons.mobility')
-    @includeWhen(auth()->user()->people->internship->pays=='France','frontend.documents.partials.buttons.mobility_france')
+    @if(auth()->user()->people->ine==3)
+      @if(auth()->user()->people->is_mobility<>1)
+    @includeWhen(auth()->user()->people->internship->pays<>'France','frontend.documents.partials.buttons.global')
+    @includeWhen(auth()->user()->people->internship->pays=='France','frontend.documents.partials.buttons.france')
+      @elseif(auth()->user()->people->is_mobility==1)
+      @includeWhen(auth()->user()->people->internship->pays<>'France','frontend.documents.partials.buttons.mobility')
+      @includeWhen(auth()->user()->people->internship->pays=='France','frontend.documents.partials.buttons.mobility_france')
+      @endif
+    @else
+      @include('frontend.documents.partials.buttons.global')
     @endif
 
 
