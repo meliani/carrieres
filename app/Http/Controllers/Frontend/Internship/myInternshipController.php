@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Frontend\Internship;
 use App\Http\Controllers\Frontend\BaseController;
 use App\Models\School\Internship;
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreInternship;
+use App\Http\Requests\StoreInternshipPFE;
 
 
 class myInternshipController extends BaseController
@@ -51,7 +51,7 @@ class myInternshipController extends BaseController
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreInternship $request)
+    public function store(StoreInternshipPFE $request)
     {   
         //dump($request);
 
@@ -107,7 +107,7 @@ class myInternshipController extends BaseController
      * @param  \App\Internship  $internship
      * @return \Illuminate\Http\Response
      */
-    public function update(StoreInternship $request, Internship $internship)
+    public function update(StoreInternshipPFE $request, Internship $internship)
     {
         //
     }

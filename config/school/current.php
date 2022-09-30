@@ -1,9 +1,13 @@
 <?php
 
 return [
-
-    'academic_year' => '2021-2022',
-    'year_id' => '5',
+    'time_limits' => [
+        'max_debut_pfe' => '19-02-2023',
+        'max_fin_pfe' => '10-07-2023',
+        'ouverture_plateforme' => '06-09-2022',
+    ],
+    'academic_year' => '2022-2023',
+    'year_id' => '6',
     'signature' =>[
         'signing_person_id' => 1,
         'signing_title' => '',
