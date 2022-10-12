@@ -3,7 +3,9 @@
 return [
     'time_limits' => [
         'max_debut_pfe' => '01-01-2023',
-        'max_fin_pfe' => '10-07-2023',
+        'max_max_debut_pfe' => '19-01-2023',
+
+        'max_fin_pfe' => '15-07-2023',
         'ouverture_plateforme' => '06-09-2022',
     ],
     'academic_year' => '2022-2023',
