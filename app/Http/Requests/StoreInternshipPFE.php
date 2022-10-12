@@ -33,6 +33,8 @@ class StoreInternshipPFE extends FormRequest
             'keywords' => 'required|max:65535',
             'date_debut' => 'required|date|before:date_fin|after_or_equal:'.
             config('school.current.time_limits.ouverture_plateforme').'|after_or_equal:today|after_or_equal:'.
+            config('school.current.time_limits.min_debut_pfe').
+            '|before_or_equal:'.
             config('school.current.time_limits.max_debut_pfe'),
             //'|valid_date_range:date_debut,6',
             'date_fin' => 'required|date|after:date_debut|after_or_equal:'.
