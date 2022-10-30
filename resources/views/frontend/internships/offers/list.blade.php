@@ -64,8 +64,11 @@
                       @if($offer->document_offre)
                       <li>
                       <div class="collapsible-header">Pièce jointe</div>
-                      <div class="collapsible-body"><p>{!!  Html::link($offer->document_offre,"Voir le document") !!}</p></div>
-                      </li>
+                      {{-- <div class="collapsible-body"><p>{!!  Html::link(config('school.current.time_limits.max_debut_pfe')."storage/uploads/internships/offers/submited_files/".$offer->document_offre,"Voir le document") !!}</p></div> --}}
+                      {{-- <div class="collapsible-body"><p>{!!  Html::link(asset('storage/uploads/internships/offers/submited_files/'.$offer->document_offre),"Voir le document") !!}</p></div> --}}
+                      {{-- <div class="collapsible-body"><p>{!!  Storage::disk('interOffersDocs')->download($offer->document_offre); !!}</p></div> --}}
+                      <div class="collapsible-body"><p>{!!  Html::link(Storage::disk('interOffersDocs')->url($offer->document_offre),"Consulter le fichier joint") !!}</p></div>
+                    </li>
                       @endif
                     </ul>
 

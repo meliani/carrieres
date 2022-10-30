@@ -40,8 +40,18 @@ return [
     | Supported Drivers: "local", "ftp", "s3", "rackspace"
     |
     */
-
+    'links' => [
+        public_path('storage') => storage_path('app/public'),
+        //public_path('images') => storage_path('app/images'),
+        public_path('internOffers_attachments') => storage_path('app/public/uploads/internships/offers/submited_files'),
+    ],
     'disks' => [
+        'interOffersDocs' => [
+            'driver' => 'local',
+            'root' => storage_path('app/public/uploads/internships/offers/submited_files'),
+            'url' => env('APP_URL').'/internOffers_attachments',
+            'visibility' => 'public',
+        ],
 
         'local' => [
             'driver' => 'local',
@@ -61,12 +71,7 @@ return [
             'url' => env('APP_URL').'/storage/uploads',
             'visibility' => 'public',
         ],
-        'interOffersDocs' => [
-            'driver' => 'local',
-            'root' => storage_path('app/public/uploads/internships/offers/submited_files'),
-            'url' => env('APP_URL').'/storage/uploads/internships/offers/submited_files',
-            'visibility' => 'public',
-        ],
+
         'userfiles' => [
             'driver' => 'local',
             'root' => storage_path('app/public/userfiles'),
