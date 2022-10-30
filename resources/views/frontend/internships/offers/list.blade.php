@@ -70,6 +70,14 @@
                       <div class="collapsible-body"><p>{!!  Html::link(Storage::disk('interOffersDocs')->url($offer->document_offre),"Consulter le fichier joint") !!}</p></div>
                     </li>
                       @endif
+                      @if($offer->email)
+                      <li>
+                        <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">local_offer</i>Contact direct</div>
+                        <div class="collapsible-body">
+                          <p>{!!  $offer->nom_responsable !!} / {!!  $offer->fonction !!}</p>
+                        <p>{!!  $offer->email !!}</p></div>
+                      </li>
+                      @endif
                     </ul>
 
                       @if(isset($offer->applyable))
