@@ -3,21 +3,24 @@
 
         <div class = "row">
             <h5 class="header col s12 light center blue-text text-lighten-1">
-                Modalités de candidature</h5>
+                {{__('How to apply ?')}}</h5>
         </div>
         <div class = "row">
         <!-- Text -->
         {{ Form::selectGroup([
-            'name' => 'applayable',
+            'name' => 'applyable',
             'value' ,
             'label' => __('How you would like to be contacted'),
             'placeholder' ,
             'class' => 'validate',
             'icon' ,
-            'helper' => __('The way you want to get applications from our students'),
+            'helper' => __('The way you want to get applications from our students').__(' - DASRE*: Direction Adjointe des Stages et Relations Entreprises'),
             'required',
             'cols' => 5,
-            'data' => config('inpt.applayable'),
+            'data' => [
+                0 => __('Direct application'),
+                1 => __('Applications managed and processed by ').config('school.current.external_relation_entity_name').'*',
+            ],
         ], $errors) }}
         {{ Form::textGroup([
             'name' => 'contact_email',
@@ -52,18 +55,18 @@
     </div>
     <div class = "row">
         <h5 class="header col s12 light center blue-text text-lighten-1">
-            {{__('Your informations')}}Informations sur vous</h5>
+            {{__('Your informations')}}</h5>
     </div>
     <div class = "row">
     <!-- Text -->
     {{ Form::textGroup([
     'name' => 'responsible_fullname',
     'value' ,
-    'label' => __('Your name'),
+    'label' => __('Your full name'),
     'placeholder' ,
     'class' => 'validate',
     'icon' => 'person',
-    'helper' => __('Your complete name please'),
+    'helper' => __('Your full name please'),
     'required',
     'cols' => 8,
     ], $errors) }}
@@ -110,18 +113,18 @@
     </div>
     <div class = "row">
     <h5 class="header col s12 light center blue-text text-lighten-1">
-        Informations sur le stage</h5>
+        {{__('Internship informations')}}</h5>
     </div>
     <div class = "row">
     <!-- Text -->
     {{ Form::textGroup([
     'name' => 'internship_location',
     'value' ,
-    'label' => 'Adresse du stage',
+    'label' => __('Internship location adress'),
     'placeholder' ,
     'class' => 'validate',
     'icon' ,
-    'helper' => 'Adresse ou le stage va se passer',
+    'helper' => __('Internship location adress'),
     'required',
     'cols' => 5,
     ], $errors) }}
@@ -129,11 +132,11 @@
     {{ Form::textGroup([
     'name' => 'project_title',
     'value' ,
-    'label' => 'Intitulé du stage',
+    'label' => __('Project title'),
     'placeholder' ,
     'class' => 'validate',
     'icon' ,
-    'helper' => 'Intitulé du stage',
+    'helper' => __('Project title'),
     'required',
     'cols' => 5,
     ], $errors) }}
@@ -143,11 +146,11 @@
     {{ Form::textGroup([
     'name' => 'project_detail',
     'value' ,
-    'label' => 'Descriptif',
+    'label' => __('Project details'),
     'placeholder' ,
     'class' => 'materialize-textarea validate',
     'icon' ,
-    'helper' => 'Descriptif du sujet du stage',
+    'helper' => __('Project details'),
     'required',
     'type' => 'textarea',
     'cols' => 5,
@@ -157,11 +160,11 @@
     {{ Form::textGroup([
     'name' => 'keywords',
     'value' ,
-    'label' => __('form/label.mots_cles'),
+    'label' => __('Keywords'),
     'placeholder' ,
     'class' => 'validate',
     'icon' ,
-    'helper' => __('form/helper.mots_cles'),
+    'helper' => __('Enter keywords separated by commas'),
     'required',
     'cols' => 5,
     ], $errors) }}
@@ -170,11 +173,11 @@
     {{ Form::fileGroup([
     'name' => 'attached_file',
     'value' ,
-    'label' => __('form/label.document_offre'),
-    'placeholder' ,
+    'label' => __('Attach document'),
+    'placeholder' => __('File path'),
     'class' => 'validate',
     'icon',
-    'helper' => __('form/helper.document_offre'),
+    'helper' => __('Add a document to detail this project'),
     'required',
     'position' => 'left',
     'cols' => 5,

@@ -11,7 +11,7 @@ l{{ array_get($params,'cols',6)/1.5 }}
                 {!! Form::file(array_get($params,'name')) !!}
             </div>
             <div class="file-path-wrapper">
-                <input class="file-path validate" {{ array_get($params,'required') }} type="text" placeholder="Chemin du fichier">
+                <input class="file-path validate" {{ array_get($params,'required') }} type="text" placeholder={{array_get($params,'placeholder')}}>
             </div>
         </div>
         <span class="helper-text" 

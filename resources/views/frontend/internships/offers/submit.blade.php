@@ -8,7 +8,7 @@
         <div class="col s12 m12">
         <div class="section">
             <h3 class="header light center blue-text text-lighten-1">
-                Demande de stagiaire INPT
+                {{__('Propose a topic for a graduation project')}}
             </h3>
         </div>
         @include ('errors.list')

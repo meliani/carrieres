@@ -1,6 +1,10 @@
 <?php
 
 return [
+    'organization_name' => 'INPT',
+    'organization long name' => 'Institut National des Postes et Télécommunications',
+    'external_relation_entity_name' => 'INPT/DASRE',
+    'external_relation_entity_full_name' => 'INPT/DASRE',
     'time_limits' => [
         'min_debut_pfe' => '01-01-2023',
         'max_debut_pfe' => '19-01-2023',
