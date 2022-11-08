@@ -20,30 +20,106 @@ class Offer extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'id', 'title', 'description', 'year_id',
-        'nom_responsable',
-        'raison_sociale',
-        'lieu_de_stage',
-        'fonction',
-        'telephone',
-        'email',
-        'intitule_sujet',
-        'descriptif',
-        'mots_cles',
-        'document_offre',
-        'is_valid',
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+        'expire_at'
+    ];
+
+
+    public $fillable = [
+        'id',
+        'year_id',
+        'program_id',
+        'organization_name',
+        'internship_type',
+        'responsible_fullname',
+        'responsible_occupation',
+        'responsible_phone',
+        'responsible_email',        
+        'project_title',
+        'project_detail',
+        'internship_location',
+        'keywords',
+        'attached_file',
+        'link',
+        'paycheck',
+        'recruting_type',
+        'event_id',
+        'event_date',
+        'badge',
+        'display_permissions',
         'status',
-        'expire_at',
-        'applyable'
+        'is_valid',
+        'applyable'        
     ];
 
     /**
-     * The attributes that should be mutated to dates.
+     * The attributes that should be casted to native types.
      *
      * @var array
      */
-    protected $dates = ['created_at', 'updated_at'];
+    protected $casts = [
+        'id' => 'string',
+        'year_id' => 'string',
+        'program_id' => 'string',
+        'organization_name' => 'string',
+        'internship_type' => 'string',
+        'responsible_fullname' => 'string',
+        'responsible_occupation' => 'string',
+        'responsible_phone' => 'string',
+        'responsible_email' => 'string',        
+        'project_title' => 'string',
+        'project_detail' => 'string',
+        'internship_location' => 'string',
+        'keywords' => 'string',
+        'attached_file' => 'string',
+        'link' => 'string',
+        'paycheck' => 'string',
+        'recruting_type' => 'string',
+        'event_id' => 'string',
+        'event_date' => 'string',
+        'badge' => 'string',
+        'display_permissions' => 'string',
+        'status' => 'integer',
+        'is_valid' => 'boolean',
+        'applyable' => 'boolean',
+        'expire_at' => 'date'
+    ];
+
+    /**
+     * Validation rules
+     *
+     * @var array
+     */
+    public static $rules = [
+        'id' => 'nullable',
+        'year_id' => 'nullable',
+        'program_id' => 'nullable',
+        'organization_name' => 'nullable',
+        'internship_type' => 'nullable',
+        'responsible_fullname' => 'nullable',
+        'responsible_occupation' => 'nullable',
+        'responsible_phone' => 'nullable',
+        'responsible_email' => 'nullable',        
+        'project_title' => 'nullable',
+        'project_detail' => 'nullable',
+        'internship_location' => 'nullable',
+        'keywords' => 'nullable',
+        'attached_file' => 'nullable',
+        'link' => 'nullable',
+        'paycheck' => 'nullable',
+        'recruting_type' => 'nullable',
+        'event_id' => 'nullable',
+        'event_date' => 'nullable',
+        'badge' => 'nullable',
+        'display_permissions' => 'nullable',
+        'status' => 'nullable',
+        'is_valid' => 'nullable',
+        'applyable' => 'nullable',
+        'expire_at' => 'nullable'        
+    ];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -54,34 +130,26 @@ class Offer extends Model
         //
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        //
-    ];
 
-    public function setDocumentOffreAttribute($value){
+    public function setAttachedFileAttribute($value){
         //dd($value);
-        $this->attributes['document_offre']=Storage::disk('interOffersDocs')->putFile('', new File($value));
+        $this->attributes['attached_file']=Storage::disk('interOffersDocs')->putFile('', new File($value));
        }
-       public function getNomResponsableAttribute($value)
+       public function getResponsibleNameAttribute($value)
        {
            return ucfirst($value);
        }
    
-       public function getDescriptifAttribute($value)
+       public function getProjectDetailAttribute($value)
        {
            return nl2br($value);
        }
        
-       public function getLieuDeStageAttribute($value)
+       public function getInternshipLocationAttribute($value)
        {
            return nl2br($value);
        }
-       public function getDocumentOffreAttribute($value)
+       public function getAttachedFileAttribute($value)
        {
            if($value!=NULL)
                return $value;

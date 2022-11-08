@@ -39,7 +39,7 @@
     <div class = "row">
     <!-- Text -->
     {{ Form::textGroup([
-    'name' => 'raison_sociale',
+    'name' => 'organization_name',
     'value' ,
     'label' => __('Organization name'),
     'placeholder' ,
@@ -57,7 +57,7 @@
     <div class = "row">
     <!-- Text -->
     {{ Form::textGroup([
-    'name' => 'nom_responsable',
+    'name' => 'responsible_fullname',
     'value' ,
     'label' => __('Your name'),
     'placeholder' ,
@@ -69,7 +69,7 @@
     ], $errors) }}
     <!-- Text -->
     {{ Form::textGroup([
-    'name' => 'fonction',
+    'name' => 'responsible_occupation',
     'value' ,
     'label' => __('Position'),
     'placeholder' ,
@@ -84,7 +84,7 @@
 
     <!-- Text -->
     {{ Form::textGroup([
-    'name' => 'telephone',
+    'name' => 'responsible_phone',
     'value' ,
     'label' => __('Your phone number'),
     'placeholder' ,
@@ -97,7 +97,7 @@
 
     <!-- Text -->
     {{ Form::textGroup([
-    'name' => 'email',
+    'name' => 'responsible_email',
     'value' ,
     'label' => __('Your email'),
     'placeholder' ,
@@ -115,7 +115,7 @@
     <div class = "row">
     <!-- Text -->
     {{ Form::textGroup([
-    'name' => 'lieu_de_stage',
+    'name' => 'internship_location',
     'value' ,
     'label' => 'Adresse du stage',
     'placeholder' ,
@@ -127,7 +127,7 @@
     ], $errors) }}
     <!-- Text -->
     {{ Form::textGroup([
-    'name' => 'intitule_sujet',
+    'name' => 'project_title',
     'value' ,
     'label' => 'Intitulé du stage',
     'placeholder' ,
@@ -141,7 +141,7 @@
     <div class = "row">
 <!-- Text -->
     {{ Form::textGroup([
-    'name' => 'descriptif',
+    'name' => 'project_detail',
     'value' ,
     'label' => 'Descriptif',
     'placeholder' ,
@@ -155,7 +155,7 @@
 
 <!-- Text -->
     {{ Form::textGroup([
-    'name' => 'mots_cles',
+    'name' => 'keywords',
     'value' ,
     'label' => __('form/label.mots_cles'),
     'placeholder' ,
@@ -168,7 +168,7 @@
     </div>
     <div class = "row">
     {{ Form::fileGroup([
-    'name' => 'document_offre',
+    'name' => 'attached_file',
     'value' ,
     'label' => __('form/label.document_offre'),
     'placeholder' ,

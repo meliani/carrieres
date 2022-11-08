@@ -62,7 +62,7 @@ class internOfferController extends Controller
     {
         $input=$request->all();
         $offer = new Offer($input);
-        $offer->year()->associate(this_year());
+        $offer->year()->associate(config('school.current.year_id'));
         $offer->program()->associate(3);
         $offer->save();
         flash()->success('Offre de stage bien enregistrée.');
