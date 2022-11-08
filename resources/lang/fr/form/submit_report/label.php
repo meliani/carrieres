@@ -3,6 +3,7 @@
 // resources/lang/fr/labels.php
 
 return [
+    /** SUbmit Offer form */
     'company_name' => 'Nom de l\'entreprise',
     'company_city' => 'Ville',
     'student_phone' => 'Votre numéro de telephone',
@@ -18,4 +19,7 @@ return [
     'file_report' => 'Parcourir...',
     'file_agreement' => 'Parcourir...',
     'file_certificate' => 'Parcourir...',
+    'applayable' => 'Comment vous souhaitez être contacté',
+    'contact_email' => 'Votre email de contact',
+    /** end of submit offer */
 ];

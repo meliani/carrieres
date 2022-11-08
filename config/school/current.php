@@ -21,7 +21,7 @@ return [
         'envoy_occupation' => 'Directeur Adjoint des Stages et Relations avec les Entreprises',
     ],
     'model_status' => [
-        'test' => 0,
+        'test' => -1,
         'prod' => 1,
         'archive' => 2
     ],

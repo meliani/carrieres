@@ -36,7 +36,7 @@ class StoreInternshipPFE extends FormRequest
             config('school.current.time_limits.min_debut_pfe').
             '|before_or_equal:'.
             config('school.current.time_limits.max_debut_pfe'),
-            //'|valid_date_range:date_debut,6',
+            '|valid_date_range:date_debut,6',
             'date_fin' => 'required|date|after:date_debut|after_or_equal:'.
             config('school.current.time_limits.ouverture_plateforme').
             '|before_or_equal:'.
@@ -69,7 +69,6 @@ class StoreInternshipPFE extends FormRequest
     {
     return [
         'email' => 'adresse email',
-        
     ];
     }
 }

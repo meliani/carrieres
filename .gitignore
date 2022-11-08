@@ -16,3 +16,4 @@ yarn-error.log
 /.vscode
 /storage/backups/*.sql
 /public/files
+/public/internOffers_attachments

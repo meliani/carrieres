@@ -1,83 +1,120 @@
 <div class="card-panel">
     <div class="card-content">
+
+        <div class = "row">
+            <h5 class="header col s12 light center blue-text text-lighten-1">
+                Modalités de candidature</h5>
+        </div>
+        <div class = "row">
+        <!-- Text -->
+        {{ Form::selectGroup([
+            'name' => 'applayable',
+            'value' ,
+            'label' => __('How you would like to be contacted'),
+            'placeholder' ,
+            'class' => 'validate',
+            'icon' ,
+            'helper' => __('The way you want to get applications from our students'),
+            'required',
+            'cols' => 5,
+            'data' => config('inpt.applayable'),
+        ], $errors) }}
+        {{ Form::textGroup([
+            'name' => 'contact_email',
+            'value' ,
+            'label' => __('Your contact email'),
+            'placeholder' ,
+            'class' => 'validate',
+            'icon' ,
+            'helper' => __('Your contact email if different from your personal one'),
+            'required',
+            'cols' => 5,
+        ], $errors) }}
+        </div>
+        
         <div class = "row">
             <h5 class="header col s12 light center blue-text text-lighten-1">
                 Informations sur votre Entreprise</h5>
         </div>
-<div class = "row">
-<!-- Text -->
-{{ Form::textGroup([
+    <div class = "row">
+    <!-- Text -->
+    {{ Form::textGroup([
     'name' => 'raison_sociale',
     'value' ,
-    'label' => __('form/label.raison_sociale'),
+    'label' => __('Organization name'),
     'placeholder' ,
     'class' => 'validate',
     'icon' ,
-    'helper' => __('form/helper.raison_sociale'),
+    'helper' => __('Legal organization name'),
     'required',
     'cols' => 5,
-], $errors) }}
-
-<div class = "row">
-    <h5 class="header col s12 light center blue-text text-lighten-1">
-        Informations sur vous</h5>
-</div>
-<!-- Text -->
-{{ Form::textGroup([
+    ], $errors) }}
+    </div>
+    <div class = "row">
+        <h5 class="header col s12 light center blue-text text-lighten-1">
+            {{__('Your informations')}}Informations sur vous</h5>
+    </div>
+    <div class = "row">
+    <!-- Text -->
+    {{ Form::textGroup([
     'name' => 'nom_responsable',
     'value' ,
-    'label' => __('form/label.nom_responsable'),
+    'label' => __('Your name'),
     'placeholder' ,
     'class' => 'validate',
     'icon' => 'person',
-    'helper' => __('form/helper.nom_responsable'),
+    'helper' => __('Your complete name please'),
     'required',
     'cols' => 8,
-], $errors) }}
-<!-- Text -->
-{{ Form::textGroup([
+    ], $errors) }}
+    <!-- Text -->
+    {{ Form::textGroup([
     'name' => 'fonction',
     'value' ,
-    'label' => 'Fonction',
+    'label' => __('Position'),
     'placeholder' ,
     'class' => 'validate',
     'icon' ,
-    'helper' => 'Votre fontion',
+    'helper' => __('Your job title please'),
     'required' ,
     'cols' => 4,
-], $errors) }}
+    ], $errors) }}
+    </div>
+    <div class = "row">
 
-<!-- Text -->
-{{ Form::textGroup([
+    <!-- Text -->
+    {{ Form::textGroup([
     'name' => 'telephone',
     'value' ,
-    'label' => 'Telephone',
+    'label' => __('Your phone number'),
     'placeholder' ,
     'class' => 'validate',
     'icon' ,
-    'helper' => 'Votre numero de telephone',
+    'helper' => __('Your phone in international format please'),
     'required',
     'cols' => 5,
-], $errors) }}
+    ], $errors) }}
 
-<!-- Text -->
-{{ Form::textGroup([
+    <!-- Text -->
+    {{ Form::textGroup([
     'name' => 'email',
     'value' ,
-    'label' => 'Email',
+    'label' => __('Your email'),
     'placeholder' ,
     'class' => 'validate',
     'icon' ,
-    'helper' => 'Votre email',
+    'helper' => __('Your email'),
     'required',
     'cols' => 5,
-], $errors) }}
-<div class = "row">
+    ], $errors) }}
+    </div>
+    <div class = "row">
     <h5 class="header col s12 light center blue-text text-lighten-1">
         Informations sur le stage</h5>
-</div>
-<!-- Text -->
-{{ Form::textGroup([
+    </div>
+    <div class = "row">
+    <!-- Text -->
+    {{ Form::textGroup([
     'name' => 'lieu_de_stage',
     'value' ,
     'label' => 'Adresse du stage',
@@ -87,9 +124,9 @@
     'helper' => 'Adresse ou le stage va se passer',
     'required',
     'cols' => 5,
-], $errors) }}
-<!-- Text -->
-{{ Form::textGroup([
+    ], $errors) }}
+    <!-- Text -->
+    {{ Form::textGroup([
     'name' => 'intitule_sujet',
     'value' ,
     'label' => 'Intitulé du stage',
@@ -99,10 +136,11 @@
     'helper' => 'Intitulé du stage',
     'required',
     'cols' => 5,
-], $errors) }}
-
+    ], $errors) }}
+    </div>
+    <div class = "row">
 <!-- Text -->
-{{ Form::textGroup([
+    {{ Form::textGroup([
     'name' => 'descriptif',
     'value' ,
     'label' => 'Descriptif',
@@ -113,10 +151,10 @@
     'required',
     'type' => 'textarea',
     'cols' => 5,
-], $errors) }}
+    ], $errors) }}
 
 <!-- Text -->
-{{ Form::textGroup([
+    {{ Form::textGroup([
     'name' => 'mots_cles',
     'value' ,
     'label' => __('form/label.mots_cles'),
@@ -126,9 +164,10 @@
     'helper' => __('form/helper.mots_cles'),
     'required',
     'cols' => 5,
-], $errors) }}
-
-{{ Form::fileGroup([
+    ], $errors) }}
+    </div>
+    <div class = "row">
+    {{ Form::fileGroup([
     'name' => 'document_offre',
     'value' ,
     'label' => __('form/label.document_offre'),
@@ -139,8 +178,8 @@
     'required',
     'position' => 'left',
     'cols' => 5,
-], $errors) }}
-    </div>
+    ], $errors) }}
+        </div>
     </div>
     <div class="card-action">
         <!-- Submit Field -->

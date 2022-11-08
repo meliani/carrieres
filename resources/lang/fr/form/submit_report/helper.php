@@ -3,6 +3,9 @@
 // resources/lang/fr/labels.php
 
 return [
+    /** SUbmit Offer form */
+    'applayable' => 'Comment vous souhaitez être contacté',
+    'contact_email' => 'Votre email de contact si different de l\'email que vous avez déjà renseigné',
     'company_name' => 'Nom legal de l\'entreprise',
     'company_city' => 'Ville de l\'entreprise',
     'student_phone' => 'Votre numéro de telephone de contact',
@@ -18,4 +21,5 @@ return [
     'file_report' => 'Attacher votre rapport de stage (format pdf, taille du fichier < 5Mo)',
     'file_agreement' => 'Attacher votre convention de stage signée par l\'entreprise et l\'INPT (format pdf, taille du fichier < 2Mo)',
     'file_certificate' => 'Attacher votre attestation de stage (format pdf, taille du fichier < 2Mo)',
+    /** end of submit offer */
 ];

@@ -9,6 +9,7 @@ return array(
         'timeout' => false,
         'options' => array(),
         'env'     => array(),
+        'temporary_folder'  => 'c:\root_temp',
     ),
     'image' => array(
         'enabled' => true,

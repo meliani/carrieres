@@ -1,6 +1,10 @@
 <?php
 
 return [
+    'applayable' => [
+        0 => 'Directement par le candidat',
+        1 => 'Par le service des stages de l\'INPT',
+    ],
     'abroad_schools' => [
         'Université de Bretagne Occidentale' => 'Université de Bretagne Occidentale',
         'Université de Nice' => 'Université de Nice',
