@@ -53,11 +53,29 @@ Route::middleware(['auth'])->group(function () {
 
     Route::get('/home', 'HomeController@index')->name('home');
 
-    Route::get('welcome/{locale}', function ($locale) {
+    /* locale selector */
+    Route::get('language/{locale}', function ($locale) {
+        app()->setLocale($locale);
+        session()->put('locale', $locale);
+        return redirect()->back();
+    });
+    
+/* we did this at the beginning and now here is this one ont top */
+/*     Route::get('/{locale?}', function ($locale = null) {
+        if (isset($locale) && in_array($locale, config('app.available_locales'))) {
+            app()->setLocale($locale);
+        }
+        
+        return view('welcome');
+    }); */
+    /* end of locale selector */
+
+/*     Route::get('welcome/{locale}', function ($locale) {
         App::setLocale($locale);
         return view('welcome');
         //
     });
+    */
     Route::get('welcome', function () {
         return view('welcome');
     })->name('welcome');

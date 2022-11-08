@@ -37,6 +37,7 @@ class Kernel extends HttpKernel
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
             //\PragmaRX\Tracker\Vendor\Laravel\Middlewares\Tracker::class,
             \App\Http\Middleware\Checkpoint::class,
+            \App\Http\Middleware\Localization::class, /* <--- localization middlware */
         ],
 
         'api' => [

@@ -5,6 +5,11 @@ return [
     'canRegister' => 0,
     'imagespath' => 'uploads/',
     'offers_storage_path' => 'uploads/Stages/Offres/',
+
+    'available_locales' => [
+        'English' => 'en',
+        'French' => 'fr',
+      ],
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -82,7 +87,7 @@ return [
     |
     */
 
-    'locale' => 'fr',
+    'locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -95,7 +100,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'fr',
+    'fallback_locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -108,7 +113,7 @@ return [
     |
     */
 
-    'faker_locale' => 'fr_FR',
+    'faker_locale' => 'en_US',
 
     /*
     |--------------------------------------------------------------------------
@@ -139,7 +144,7 @@ return [
 
     'log' => env('APP_LOG', 'daily'),
 
-    'log_level' => env('APP_LOG_LEVEL', 'debug'),
+    'log_level' => env('APP_LOG_LEVEL', 'error'),
 
     /*
     |--------------------------------------------------------------------------
