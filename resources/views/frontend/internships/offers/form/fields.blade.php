@@ -144,7 +144,7 @@
     <div class = "row">
 <!-- Text -->
     {{ Form::textGroup([
-    'name' => 'project_detail',
+    'name' => 'project_details',
     'value' ,
     'label' => __('Project details'),
     'placeholder' ,
