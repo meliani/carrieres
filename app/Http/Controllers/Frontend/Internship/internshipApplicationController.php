@@ -17,7 +17,7 @@ use Illuminate\Support\Facades\Route;
 use App\Models\School\Internship\Application;
 use App\User;
 //use App\Models\School\Internship\internshipOffer as Offer;
-use App\Offer;
+use App\Models\Offer;
 
 class internshipApplicationController extends Controller
 {

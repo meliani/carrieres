@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Storage;
 /** --------- Models ----------- */
 use App\Models\School\Internship\Application;
 //use App\Models\School\Internship\internshipOffer as Offer;
-use App\Offer;
+use app\Models\Offer;
 use App\User;
 
 class internOfferController extends Controller
