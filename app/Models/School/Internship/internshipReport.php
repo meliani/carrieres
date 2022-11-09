@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
-use App\User;
+use App\Models\User;
 
 class internshipReport extends Model
 {

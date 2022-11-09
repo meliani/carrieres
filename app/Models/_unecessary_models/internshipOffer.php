@@ -93,7 +93,7 @@ class internshipOffer extends baseModel
 
 	public function user()
 	{
-		return $this->belongsTo('App\User');
+		return $this->belongsTo('App\Models\User');
 	}
     public function applications()
     {
@@ -101,7 +101,7 @@ class internshipOffer extends baseModel
     }
     public function year()
 	{
-		return $this->belongsTo(App\Year::class);
+		return $this->belongsTo(app\Models\Year::class);
 	}
 /**
  * Assecors end Mutators

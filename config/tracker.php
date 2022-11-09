@@ -249,7 +249,7 @@ return [
      *   Change the user model to your own.
      */
     //'user_model' => 'PragmaRX\Tracker\Vendor\Laravel\Models\User',
-    'user_model' => 'App\User',
+    'user_model' => 'App\Models\User',
     /*
      * You can use your own model for every single table Tracker has.
      */

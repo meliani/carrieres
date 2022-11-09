@@ -4,7 +4,7 @@ namespace App\Models\School;
 
 use App\Models\Core\baseModel;
 use Illuminate\Database\Eloquent\Model;
-use App\User;
+use App\Models\User;
 use App\Models\School\Internship\Adviser;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Profile\Person;
@@ -130,15 +130,15 @@ class Internship extends baseModel
     }
     public function year()
 	{
-		return $this->belongsTo(App\Year::class);
+		return $this->belongsTo(app\Models\Year::class);
 	}
     public function program()
 	{
-		return $this->belongsTo(App\Program::class);
+		return $this->belongsTo(app\Models\Program::class);
     }
     public function professor()
 	{
-        return $this->hasOne('App\User', 'id', 'is_signed');
+        return $this->hasOne('App\Models\User', 'id', 'is_signed');
 
     }
     /** ---------------------------------  Getters ----------------------------- */

@@ -19,7 +19,7 @@ class StatsController extends Controller
      */
     public function index(Request $r)
     {
-        $professors=\App\User::where('is_professor',1)
+        $professors=\App\Models\User::where('is_professor',1)
         ->Where('name','like','%'.$r['s'].'%')
         ->get();
 

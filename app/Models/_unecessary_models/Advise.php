@@ -53,11 +53,11 @@ class Advise extends Model
     ];
     public function user()
 	{
-		return $this->HasOne('App\User');
+		return $this->HasOne('App\Models\User');
     }
     public function prof()
 	{
-		return $this->HasOne('App\User');
+		return $this->HasOne('App\Models\User');
     }
     public function internship()
 	{

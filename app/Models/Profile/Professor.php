@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Models\Profile;
-use App\User;
+use App\Models\User;
 
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Profile\Person;

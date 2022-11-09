@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Core\Documents\UploaderController as Uploader;
-use App\Year;
+use app\Models\Year;
 
 if (!function_exists('app_name')) {
     function app_name()

@@ -7,7 +7,7 @@ use App\Models\School\Internship;
 use App\Models\School\Internship\Adviser;
 use App\Models\Profile\Person;
 use App\Models\Stage;
-use App\User;
+use App\Models\User;
 use App\Models\Profile\Professor;
 
 use App\Http\Controllers\Controller;

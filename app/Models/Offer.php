@@ -161,11 +161,11 @@ class Offer extends Model
      */
     public function program()
     {
-        return $this->belongsTo(\App\Stream::class);
+        return $this->belongsTo(\app\Models\stream::class);
     }
     public function year()
     {
-        return $this->belongsTo(\App\Year::class);
+        return $this->belongsTo(\app\Models\Year::class);
     }
     public function applications()
     {

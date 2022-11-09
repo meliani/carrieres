@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Program extends Model
+class Stream extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -12,7 +12,7 @@ class Program extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'name', 'slug'
+        'id', 'name', 'slug', 'parent_id'
     ];
 
     /**
@@ -41,11 +41,19 @@ class Program extends Model
     ];
 
     /**
-     * Get the Streams for the Program.
+     * Get the Students for the Stream.
      */
-    public function streams()
+    public function students()
     {
-        return $this->belongsToMany(\App\Stream::class);
+        return $this->belongsToMany(\App\Student::class);
+    }
+
+    /**
+     * Get the Programs for the Stream.
+     */
+    public function programs()
+    {
+        return $this->belongsToMany(\app\Models\Program::class);
     }
 
 }

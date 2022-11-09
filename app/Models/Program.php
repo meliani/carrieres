@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Year extends Model
+class Program extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -12,7 +12,7 @@ class Year extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'title'
+        'id', 'name', 'slug'
     ];
 
     /**
@@ -39,24 +39,13 @@ class Year extends Model
     protected $casts = [
         //
     ];
-    public function actual()
-    {
-        return 3;
-    }
+
     /**
-     * Get the Streams for the Year.
+     * Get the Streams for the Program.
      */
     public function streams()
     {
-        return $this->belongsToMany(\App\Stream::class);
-    }
-
-    /**
-     * Get the Internships for the Year.
-     */
-    public function internships()
-    {
-        return $this->belongsToMany(\App\Internship::class);
+        return $this->belongsToMany(\app\Models\stream::class);
     }
 
 }

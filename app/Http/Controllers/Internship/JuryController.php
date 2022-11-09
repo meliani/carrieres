@@ -6,7 +6,7 @@ use App\Models\Profile\Person;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\User;
+use App\Models\User;
 use App\Models\Profile\Professor;
 
 class JuryController extends Controller

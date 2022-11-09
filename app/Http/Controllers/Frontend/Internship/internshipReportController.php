@@ -15,7 +15,7 @@ use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
 /** --------- Models ----------- */
 use App\Models\School\Internship\Application;
-use App\User;
+use App\Models\User;
 
 class internshipReportController extends Controller
 {

@@ -14,7 +14,7 @@ Date fin : {{ $b[3] }}
 
 <b>Informations sur la plateforme</b>
 <?php 
-$user = App\User::findOrFail($b[0]);
+$user = App\Models\User::findOrFail($b[0]);
 $person = $user->people;
 ?>
 </br>

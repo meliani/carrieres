@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Backend;
 use App\Http\Controllers\Frontend\BaseController;
-use App\Event;
+use app\Models\Event;
 use Illuminate\Http\Request;
 use App\Models\Profile\Student;
 

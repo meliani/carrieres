@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Route;
 /** --------- Models ----------- */
 use App\Models\School\Internship\Application;
-use App\User;
+use App\Models\User;
 //use App\Models\School\Internship\internshipOffer as Offer;
 use App\Models\Offer;
 

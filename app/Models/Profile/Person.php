@@ -3,7 +3,7 @@
 namespace App\Models\Profile;
 
 use App\Models\Core\baseModel;
-use App\User;
+use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\School\Internship;
 use Spatie\MediaLibrary\HasMedia;

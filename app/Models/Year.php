@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Event extends Model
+class Year extends Model
 {
     /**
      * The attributes that are mass assignable.
@@ -12,7 +12,7 @@ class Event extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'program_id', 'name', 'slug', 'title', 'detail','date', 'hour', 'rsvp_mandatory', 'rsvp_deadline'
+        'id', 'title'
     ];
 
     /**
@@ -20,7 +20,7 @@ class Event extends Model
      *
      * @var array
      */
-    protected $dates = ['date', 'created_at', 'updated_at'];
+    protected $dates = ['created_at', 'updated_at'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -39,24 +39,24 @@ class Event extends Model
     protected $casts = [
         //
     ];
-
-    /**
-     * Get the Program for the Event.
-     */
-    public function program()
+    public function actual()
     {
-        return $this->belongsTo(\App\Program::class);
+        return 3;
+    }
+    /**
+     * Get the Streams for the Year.
+     */
+    public function streams()
+    {
+        return $this->belongsToMany(\app\Models\stream::class);
     }
 
-
     /**
-     * Get the Students for the Event.
+     * Get the Internships for the Year.
      */
-    public function students()
+    public function internships()
     {
-        return $this->belongsToMany(\App\Models\Profile\Student::class,
-        'event_student',
-        'user_id','user_id');
+        return $this->belongsToMany(\App\Internship::class);
     }
 
 }
