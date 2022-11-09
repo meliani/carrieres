@@ -101,7 +101,7 @@ class internshipOffer extends baseModel
     }
     public function year()
 	{
-		return $this->belongsTo(app\Models\Year::class);
+		return $this->belongsTo(App\Models\Year::class);
 	}
 /**
  * Assecors end Mutators

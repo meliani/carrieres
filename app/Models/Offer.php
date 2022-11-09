@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -161,11 +161,11 @@ class Offer extends Model
      */
     public function program()
     {
-        return $this->belongsTo(\app\Models\stream::class);
+        return $this->belongsTo(\App\Models\stream::class);
     }
     public function year()
     {
-        return $this->belongsTo(\app\Models\Year::class);
+        return $this->belongsTo(\App\Models\Year::class);
     }
     public function applications()
     {

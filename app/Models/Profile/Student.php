@@ -66,15 +66,15 @@ class Student extends Model implements HasMedia
      */
     public function events()
     {
-        return $this->belongsToMany(\app\Models\Event::class);
+        return $this->belongsToMany(\App\Models\Event::class);
     }
     public function programs()
     {
-        return $this->belongsToMany(\app\Models\Program::class);
+        return $this->belongsToMany(\App\Models\Program::class);
     }
     public function years()
     {
-        return $this->belongsToMany(\app\Models\Year::class,'student_year','user_id','year_id');
+        return $this->belongsToMany(\App\Models\Year::class,'student_year','user_id','year_id');
     }
 /**
  * 

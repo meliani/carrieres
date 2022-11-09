@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -45,7 +45,7 @@ class Event extends Model
      */
     public function program()
     {
-        return $this->belongsTo(\app\Models\Program::class);
+        return $this->belongsTo(\App\Models\Program::class);
     }
 
 

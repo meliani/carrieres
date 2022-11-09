@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Frontend;
 use Illuminate\Http\Request;
-use \app\Models\Event;
+use \App\Models\Event;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Foundation\Validation\ValidatesRequests;
@@ -14,7 +14,7 @@ class EventStudentController extends BaseController
 
     public function index()
     {
-        $events = \app\Models\Event::all();
+        $events = \App\Models\Event::all();
         return view('frontend.events.index',compact('events'));
     }
  

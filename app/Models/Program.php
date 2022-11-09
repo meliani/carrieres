@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
@@ -45,7 +45,7 @@ class Program extends Model
      */
     public function streams()
     {
-        return $this->belongsToMany(\app\Models\stream::class);
+        return $this->belongsToMany(\App\Models\stream::class);
     }
 
 }

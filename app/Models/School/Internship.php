@@ -130,11 +130,11 @@ class Internship extends baseModel
     }
     public function year()
 	{
-		return $this->belongsTo(app\Models\Year::class);
+		return $this->belongsTo(App\Models\Year::class);
 	}
     public function program()
 	{
-		return $this->belongsTo(app\Models\Program::class);
+		return $this->belongsTo(App\Models\Program::class);
     }
     public function professor()
 	{
