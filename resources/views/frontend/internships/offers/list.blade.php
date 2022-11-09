@@ -36,46 +36,50 @@
                         <div class="collapsible-header">
                           <h5 class='header5 blue-grey-text textlighten-5'>
                           <i class="small material-icons blue-grey-text textlighten-5">business</i>
-                          {!!  $offer->raison_sociale !!}
+                          {!!  $offer->organization_name !!}
                           </h5>
                         </div>
-                        @if($offer->lieu_de_stage)
+                        @if($offer->internship_location)
                         <div class="collapsible-body">
                         <p><i class="small material-icons blue-grey-text textlighten-5">place</i> 
-                        {!! $offer->lieu_de_stage !!}
+                        {!! $offer->internship_location !!}
                         </p>
                         </div>
                         @endif
                       </li>
+                      @if($offer->project_title)
                       <li>
-                        <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">subject</i>{!!  str_limit($offer->intitule_sujet,50) !!}</div>
-                        <div class="collapsible-body"><p>{!!  $offer->intitule_sujet !!}</p></div>
-                      </li>
-                      <li>
-                        <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">queue</i>Détails et Prérequis</div>
-                        <div class="collapsible-body"><p>{!!  $offer->descriptif !!}</p></div>
-                      </li>
-                      @if($offer->mots_cles)
-                      <li>
-                        <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">local_offer</i>Keywords</div>
-                        <div class="collapsible-body"><p>{!!  $offer->mots_cles !!}</p></div>
+                        <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">subject</i>{!!  str_limit($offer->project_title,50) !!}</div>
+                        <div class="collapsible-body"><p>{!!  $offer->project_title !!}</p></div>
                       </li>
                       @endif
-                      @if($offer->document_offre)
+                      @if($offer->project_details)
+                      <li>
+                        <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">queue</i>Détails et Prérequis</div>
+                        <div class="collapsible-body"><p>{!!  $offer->project_details !!}</p></div>
+                      </li>
+                      @endif
+                      @if($offer->keywords)
+                      <li>
+                        <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">local_offer</i>Keywords</div>
+                        <div class="collapsible-body"><p>{!!  $offer->keywords !!}</p></div>
+                      </li>
+                      @endif
+                      @if($offer->attached_file)
                       <li>
                       <div class="collapsible-header">Pièce jointe</div>
                       {{-- <div class="collapsible-body"><p>{!!  Html::link(config('school.current.time_limits.max_debut_pfe')."storage/uploads/internships/offers/submited_files/".$offer->document_offre,"Voir le document") !!}</p></div> --}}
                       {{-- <div class="collapsible-body"><p>{!!  Html::link(asset('storage/uploads/internships/offers/submited_files/'.$offer->document_offre),"Voir le document") !!}</p></div> --}}
                       {{-- <div class="collapsible-body"><p>{!!  Storage::disk('interOffersDocs')->download($offer->document_offre); !!}</p></div> --}}
-                      <div class="collapsible-body"><p>{!!  Html::link(Storage::disk('interOffersDocs')->url($offer->document_offre),"Consulter le fichier joint") !!}</p></div>
+                      <div class="collapsible-body"><p>{!!  Html::link(Storage::disk('interOffersDocs')->url($offer->attached_file),"Consulter le fichier joint") !!}</p></div>
                     </li>
                       @endif
-                      @if($offer->email)
+                      @if($offer->responsible_email)
                       <li>
                         <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">local_offer</i>Contact direct</div>
                         <div class="collapsible-body">
-                          <p>{!!  $offer->nom_responsable !!} / {!!  $offer->fonction !!}</p>
-                        <p>{!!  $offer->email !!}</p></div>
+                          <p>{!!  $offer->responsible_fullname !!} / {!!  $offer->responsible_occupation !!}</p>
+                        <p>{!!  $offer->responsible_email !!}</p></div>
                       </li>
                       @endif
                     </ul>
