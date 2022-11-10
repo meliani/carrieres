@@ -51,11 +51,13 @@ return [
             'root' => storage_path('app/public/uploads/internships/offers/submited_files'),
             'url' => env('APP_URL').'/internOffers_attachments',
             'visibility' => 'public',
+            'throw' => true,
         ],
 
         'local' => [
             'driver' => 'local',
             'root' => storage_path('app'),
+            'throw' => true,
         ],
 
         'public' => [
@@ -63,6 +65,7 @@ return [
             'root' => storage_path('app/public'),
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
+            'throw' => true,
         ],
 
         'uploads' => [
@@ -70,6 +73,7 @@ return [
             'root' => storage_path('app/public/uploads'),
             'url' => env('APP_URL').'/storage/uploads',
             'visibility' => 'public',
+            'throw' => true,
         ],
 
         'userfiles' => [
@@ -77,24 +81,28 @@ return [
             'root' => storage_path('app/public/userfiles'),
             'url' => env('APP_URL').'/storage/userfiles',
             'visibility' => 'public',
+            'throw' => true,
         ],
         'internship_reports' => [
             'driver' => 'local',
             'root' => storage_path('app/public/userfiles/internships/reports'),
             'url' => env('APP_URL').'/storage/userfiles/internships/reports',
             'visibility' => 'public',
+            'throw' => true,
         ],
         'internship_agreements' => [
             'driver' => 'local',
             'root' => storage_path('app/public/userfiles/internships/agreements'),
             'url' => env('APP_URL').'/storage/userfiles/internships/agreements',
             'visibility' => 'public',
+            'throw' => true,
         ],
         'internship_certificates' => [
             'driver' => 'local',
             'root' => storage_path('app/public/userfiles/internships/certificates'),
             'url' => env('APP_URL').'/storage/userfiles/internships/certificates',
             'visibility' => 'public',
+            'throw' => true,
         ],
         's3' => [
             'driver' => 's3',
@@ -102,6 +110,7 @@ return [
             'secret' => env('AWS_SECRET_ACCESS_KEY'),
             'region' => env('AWS_DEFAULT_REGION'),
             'bucket' => env('AWS_BUCKET'),
+            'throw' => true,
         ],
 
     ],
