@@ -11,6 +11,20 @@
 * Table surcharging style
 *
 */
+
+/* multicolumn cards layout */
+/* div.cards-container {
+  -moz-column-width: 23rem;
+  -webkit-column-width: 23rem;
+  -moz-column-gap: 1rem;
+  -webkit-column-gap: 1rem;
+}
+
+._card {
+  display: inline-block;
+  width: 100%;
+} */
+/* multicolumn end */
 .table td{
   font-size: 0.9em;
   line-height: 1.3rem;
