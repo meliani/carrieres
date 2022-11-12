@@ -17,4 +17,3 @@ yarn-error.log
 /storage/backups/*.sql
 /public/files
 /public/internOffers_attachments
-composer.lock
