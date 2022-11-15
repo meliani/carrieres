@@ -125,6 +125,7 @@ Route::namespace('Backend')
                 Route::resource('binomes', 'BinomeController');
                 Route::resource('reports', 'ReportController');
                 Route::get('clone/{internship_id}/{user_id}', 'InternshipController@clone');
+                Route::get('agreements/{user_id}','generatedAgreementController@index');
             });
         }); 
     });
