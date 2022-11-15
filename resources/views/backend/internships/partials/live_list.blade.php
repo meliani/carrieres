@@ -45,7 +45,10 @@
 
           @if (isset($internship->id))
         </td>
-        <td class="strong">{{ isset($internship->raison_sociale) ? str_limit($internship->raison_sociale,30):'' }}</td>
+        <td class="strong">{{ isset($internship->raison_sociale) ? str_limit($internship->raison_sociale,30):'' }}
+            <p class="blue-text">{{ isset($internship->pays) ? $internship->pays : '' }}</p>
+
+        </td>
         <td class="sub">{{  isset($internship->intitule) ? str_limit($internship->intitule, 100):'' }}</td>
          {{-- Limit intitulé to 100 characters --}}
          <td>
