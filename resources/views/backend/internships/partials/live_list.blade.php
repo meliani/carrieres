@@ -61,8 +61,10 @@
       
           </td>
           <td>
-          @include('backend.internships.partials.actions')
-
+          {{-- @include('backend.internships.partials.actions') --}}
+          <a class="waves-effect waves-light small-btn" 
+          href="{{url('-/internships/agreements',$internship->user_id)}}"
+          >voir fichiers</a>
           </td>
           @endif
       </tr>
