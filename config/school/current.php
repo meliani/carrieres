@@ -55,7 +55,7 @@ return [
             'cf_name' => 'Oussama EL ISSATI',
             'full_title' => 'Systèmes Embraqués et Services Numériques',
         ],
-        'SMART ICT' => [
+        "SMART-ICT" => [
             'cf_title' => 'M.',
             'cf_name' => 'EL KHADIMI AHMED',
             'full_title' => 'Ingénierie Smart  ICT« Smart Information & Communication Technology Engineering »',

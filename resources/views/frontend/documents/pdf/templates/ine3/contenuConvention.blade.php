@@ -1317,6 +1317,7 @@ font-weight:bold;
 <p class="tm44 tm82">
 	<span class="tm96">- </span><span class="tm89">Coordonnateur de la fili&egrave;re&nbsp;: </span><strong><span
  class="tm90">
+ {{-- {{ dd(config("school.current.branches.".$internship->person->filiere_text.".cf_name"))}}  --}}
  {{ config('school.current.branches.'.$internship->person->filiere_text.'.cf_title') ?? '' }} 
  {{ config('school.current.branches.'.$internship->person->filiere_text.'.cf_name')  ?? '. . . . . . . . . . . . . . . . . . .'}} 
 </span></strong></p>
