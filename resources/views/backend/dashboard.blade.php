@@ -1,6 +1,6 @@
 @extends('layouts.ui.app')
 
-@section('title', 'This is my title')
+@section('title', ' | '.'Dashboard Direction des stages')
 
 @section('users_buttons')
     @include(Button::user_buttons())
