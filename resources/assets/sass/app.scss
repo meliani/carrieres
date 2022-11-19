@@ -1,8 +1,10 @@
+// modules to be imported into the mix
+
 
 // Fonts
 @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
-// Variables
+// importing customization Variables in variables.scss
 @import "variables";
 
 // Bootstrap
@@ -11,3 +13,4 @@
 //Materialize
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 @import "node_modules/@materializecss/materialize/sass/materialize";
+// @import "~select2/dist/css/select2.css";

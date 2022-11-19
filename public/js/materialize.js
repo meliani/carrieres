@@ -14858,9 +14858,14 @@ window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
 try {
   window.$ = window.jQuery = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
 
-  __webpack_require__(/*! @materializecss/materialize */ "./node_modules/@materializecss/materialize/dist/js/materialize.js"); //  require('bootstrap-sass');
+  __webpack_require__(/*! @materializecss/materialize */ "./node_modules/@materializecss/materialize/dist/js/materialize.js"); // require('materialize-css');
+  // require('select2');
+  // $('select').select2();
+  //  require('bootstrap-sass');
 
-} catch (e) {}
+} catch (error) {
+  console.log(error);
+}
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the

@@ -1,4 +1,4 @@
-(function($){
+/* (function($){
   $(function(){
   $('.sidenav').sidenav();
   $('.dropdown-trigger').dropdown();
@@ -18,4 +18,8 @@ $(document).ready(function(){
       vibrate: true 
     }
   );
+}); */
+
+document.addEventListener("DOMContentLoaded", function () {
+  M.AutoInit();
 });

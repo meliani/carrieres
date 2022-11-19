@@ -10,9 +10,14 @@ window._ = require('lodash');
 try {
     window.$ = window.jQuery = require('jquery');
     require('@materializecss/materialize');
-//  require('bootstrap-sass');
-} catch (e) {}
+    // require('materialize-css');
+    // require('select2');
+    // $('select').select2();
 
+//  require('bootstrap-sass');
+} catch (error) {
+    console.log(error);
+}
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
  * to our Laravel back-end. This library automatically handles sending the
