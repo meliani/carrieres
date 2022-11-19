@@ -7,6 +7,15 @@ document.addEventListener('DOMContentLoaded', function() {
   };
   var instances = M.Datepicker.init(elems, options);
 
+  var elems = document.querySelectorAll('.autocomplete');
+/*   var instances = M.Autocomplete.init(elems,{
+    data: {
+      "Lat Pull Down": null,
+      "Lat  Down": null,
+    },
+    limit:2,
+    minLength:1,
+  }); */
   // var instance = M.Datepicker.getInstance(elem);
 
   var elems = document.querySelectorAll('.modal');
