@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN"
+"http://www.w3.org/TR/html4/strict.dtd">
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
     <meta charset="utf-8">
@@ -10,12 +11,13 @@
     <title>@lang('messages.titlePrefix') @yield('title')</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="{{ asset('css/google/material_icons.css') }}">
+    <link href="{{ asset('css/google/material_icons.css') }}" rel="stylesheet">
     <link href="{{ asset('css/materialize.css') }}" media="screen,projection" rel="stylesheet">
     <link href="{{ asset('css/materialert.css') }}" media="screen,projection" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" media="screen,projection" rel="stylesheet">
     @yield('css')
     @yield('page-css')
+    @stack('eoh-css')
 </head>
 <body>
 <header>
@@ -48,7 +50,7 @@ Votre carrière se construit dès aujourd'hui, nous sommes là pour vous aider �
           <div class="footer-copyright light-blue darken-3 z-depth-2">
             <div class="container">
              
-                <time datetime="00:00:00 | date: '2016'">&copy; 2016 - {{ date('Y') }} DASRE INPT</time>
+                <time datetime="00:00:00 | date: '2019'">&copy; 2016 - {{ date('Y') }} DASRE INPT</time>
 
             <a class="light-blue-text text-lighten-5 right" href="#!">Contact</a>
             </div>
@@ -58,13 +60,16 @@ Votre carrière se construit dès aujourd'hui, nous sommes là pour vous aider �
 
     <!-- Scripts -->
     <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
-    <script>
+{{--     <script> // unecessary jquery import but maybe will be useful oneday if we need different jquery verions on the same page
     if (!window.jQuery) { document.write('<script src="{{ asset('js/jquery-3.2.1.js') }}"><\/script>'); }
-    </script>
-    <script src="{{ asset('js/materialize.js') }}"></script>
+    </script> --}}
+    <script src="{{ mix('js/materialize.js') }}"></script>
     <script src="{{ asset('js/init.js') }}"></script>
   @yield('scripts')
   @yield('page-script')
 
+  {{-- some scripts related to livewire and other javascript/alpine on page manipulations--}}
+
+  @stack('eob-scripts')
 </body>
 </html>

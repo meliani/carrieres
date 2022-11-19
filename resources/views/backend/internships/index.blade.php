@@ -1,6 +1,10 @@
 @extends('layouts.ui.app')
 @section('title', 'Stages et soutenances')
 
+@section('css')
+    @livewireStyles
+@endsection
+
 @section('users_buttons')
     @include(Button::user_buttons())
 @endsection  
@@ -13,8 +17,8 @@
         </h4>
     </div>
     <div>
-    @livewire('interns-table')
-    {{-- <livewire:internsTable /> --}}
+    {{-- @livewire('interns-table') --}}
+    <livewire:interns-table />
     </div>
     
     {{-- @include('components.pagination.pagination_wrapper',$paginate=$internships)
@@ -26,6 +30,11 @@
     @include('components.pagination.pagination_wrapper',$paginate=$internships) --}}
 
 @endsection
+
 @section('floating-buttons')
     @include(Button::page_action_buttons())
+@endsection
+
+@section('scripts')
+    @livewireScripts
 @endsection
