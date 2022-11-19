@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
         // Laravel strict mode // wait until 9 upgrade
         // Model::shouldBeStrict(! $this->app->isProduction());
         
-    Model::preventLazyLoading(! $this->app->isProduction());
+    // Model::preventLazyLoading(! $this->app->isProduction());
     // Model::preventSilentlyDiscardingAttributes(); // throwing error
     // Model::preventsAccessingMissingAttributes(); // throwing error
 

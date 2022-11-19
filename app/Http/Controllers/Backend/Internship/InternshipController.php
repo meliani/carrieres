@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Backend\Internship;
 
 use App\Http\Controllers\Backend\BaseController;
+use App\Http\Livewire\Internships;
 use App\Models\School\Internship;
 use App\Models\School\Internship\Defense;
 use Illuminate\Http\Request;
@@ -24,18 +25,24 @@ class InternshipController extends BaseController
     {
         
         if(request()->has('s')){
-            $internships = Internship::whereHas('student', function ($query) {
+            $internships = Internship::with('student')->whereHas('student', function ($query) {
                 $query->where('user_id','=', request('s'));
                 
             })->get();
+            $internships = Internship::with('student')->get();
 
         }else{
-        $internships = Internship::latest()->whereHas('student', function ($query) {
+        $internships = Internship::latest()
+        ->whereHas('student', 
+        function ($query) {
             $query->where('year_id','like','%');
-        })->paginate();
+        })->get();
         }
-        $internships = Internship::latest()->paginate();
+        // $internships = Internship::with('student')->latest()->paginate();
         session(['last_url' => route(Route::current()->getName())]);
+
+        $internships->load('student');
+
         return view('backend.internships.index',compact('internships'));
 
     }
