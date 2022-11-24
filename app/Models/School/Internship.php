@@ -80,7 +80,10 @@ class Internship extends baseModel
         'user_id',
         'year_id',
         'is_valid',
-        'model_status_id'
+        'model_status_id',
+        'meta_pedagogic_validation',
+        'pedagogic_validation_date',
+        'professor_id',
     ];
 
     //protected $dateFormat = 'm/d/Y';
@@ -90,6 +93,8 @@ class Internship extends baseModel
         'defense_at' => 'date',
         'defense_start_time' => 'time:H:i',
         'defense_end_time' => 'time:H:i',
+            'meta_pedagogic_validation' => 'array',
+            'pedagogic_validation_date' => 'date'
 
     ];
     
@@ -99,22 +104,22 @@ class Internship extends baseModel
     {
         return $this->belongsTo(Student::class,'binome_user_id','user_id');
     }
-    public function groupes()
+/*     public function groupes()
     {
         return $this->belongsToMany(Person::class,'internship_groupes','internship_id','user_id');
-    }
+    } */
     public function user()
 	{
 		return $this->belongsTo(User::class,'user_id','id');
     }
-    public function adviser()
+/*     public function adviser()
     {
         return $this->hasOne(Adviser::class,'id_internship');
-    }
-    public function person()
+    } */
+/*     public function person()
     {
         return $this->belongsTo(Person::class,'user_id','user_id');
-    }
+    } */
     public function student()
     {
         return $this->belongsTo(Student::class,'user_id','user_id');
@@ -123,11 +128,11 @@ class Internship extends baseModel
     {
         return $this->hasOne(Defense::class);
     }
-    public function professors()
+/*     public function professors()
 	{
         return $this->hasMany(Professor::class)
         ->withPivot('advising_type','user_id','professor_id','internship_id');
-    }
+    } */
     public function year()
 	{
 		return $this->belongsTo(App\Models\Year::class);
@@ -136,11 +141,10 @@ class Internship extends baseModel
 	{
 		return $this->belongsTo(App\Models\Program::class);
     }
-    public function professor()
+/*     public function professor()
 	{
         return $this->hasOne('App\Models\User', 'id', 'is_signed');
-
-    }
+    } */
     /** ---------------------------------  Getters ----------------------------- */
     public function getParrainNameAttribute()
 	{
