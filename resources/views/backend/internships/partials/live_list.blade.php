@@ -1,6 +1,6 @@
 <div class="container col s12 m12">
-  <button wire:click="downloadExcel">Telecharger</button>
-
+  {{-- <button wire:click="downloadExcel">Telecharger</button> --}}
+<a href="/extractions/InternshipsExport/xlsx">Telecharger la globale</a>
   <table class="table highlight scale-transition scale-in">
     <thead>
       <tr>
@@ -15,6 +15,7 @@
         <th width="10%" class="center">Date de validation CF</th>
         <th width="10%" class="center">Date de validation encadrant (France)</th>
         <th width="10%" class="center">Date de signature INPT/DASRE</th>
+        <th width="10%" class="center">PDFs de conventions</th>
         <th width="10%" class="center">Notes</th>
       </tr>
     </thead>
@@ -70,10 +71,14 @@
         <td class="center">
           {{-- if signed icon will be verified_user --}}
           @if(empty($internship->meta_pedagogic_validation))
-          <a href="{{url('-/internships/pedagogic_validation',$internship->id)}}"><i class="material-icons">person_add</i></a>
+          <a href="{{url('-/internships/pedagogic_validation',$internship->id)}}"><i class="material-icons orange-text">person_add</i></a>
           @else
           <a href="{{url('-/internships/pedagogic_validation',$internship->id)}}"><i class="material-icons green-text">verified_user</i></a>
           @endif
+        </td>
+        <td class="multiline center">
+          <a
+            href=""><i class="material-icons">person_add</i></a>
         </td>
         <td class="multiline center">
           <a
