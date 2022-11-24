@@ -113,7 +113,8 @@ class pedagogicValidationController extends Controller
         $this->selected_internship->meta_pedagogic_validation = $this->meta_pedagogic_validation;
 
 
-        $this->selected_internship->save();
+        $this->selected_internship->timestamps = false;
+        $this->selected_internship->save(['timestamps' => false]);
         return back();
     }
 
