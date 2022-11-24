@@ -20,7 +20,7 @@ $person = $user->people;
 </br>
 <b>Etudiant</b>
 </br>
-Nom de l'etudiant : {{ $person->title }}{{ $person->name }}
+Nom de l'etudiant : {{ $person->long_full_name }}
 </br>
 Telepone : {{ $person->phone }}
 </br>

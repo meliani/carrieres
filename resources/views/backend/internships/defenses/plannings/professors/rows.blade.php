@@ -2,7 +2,7 @@
     @foreach ($collection as $professor)
         <tr>
             <td>
-                {!! $professor->name !!}
+                {!! $professor->full_name !!}
             </td>
             <td>
                @foreach ($professor->internships as $internship)

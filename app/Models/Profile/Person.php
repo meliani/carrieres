@@ -63,7 +63,11 @@ class Person extends baseModel implements HasMedia
     $this->attributes['photo']=Storage::putFile('public/uploads/people/init_data/Photos', new File($value));
    } 
    */
-   public function getNameAttribute()
+   public function getFullNameAttribute()
+	{
+		return $this->attributes['first_name'].' '.$this->attributes['last_name'];
+    }
+   public function getLongFullNameAttribute()
 	{
 		return $this->getTitleAttribute().' '.$this->attributes['first_name'].' '.$this->attributes['last_name'];
     }

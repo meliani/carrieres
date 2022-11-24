@@ -14,7 +14,7 @@ class Professor extends Model
     protected $appends = [
         'name',
     ];
-    public function getNameAttribute($value)
+    public function getFullNameAttribute($value)
     {
         return strtoupper($this->attributes['last_name']).' '.strtoupper($this->attributes['first_name']);
     }

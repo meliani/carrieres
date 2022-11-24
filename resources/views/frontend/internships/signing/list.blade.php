@@ -30,7 +30,7 @@
          <td>{{ isset($trainee->internship->created_at) ? \Carbon\Carbon::parse($trainee->internship['created_at'])->format('d M Y'):'' }}</td>   
          <td class="center">
            @if(isset($trainee->internship->is_signed))
-            Convention signée par {{ $trainee->internship->professor->name }}
+            Convention signée par {{ $trainee->internship->professor->full_name }}
           @else
             <a class="blue btn-small" href={{ route('Sign.create', ['id' => $trainee->internship['id'],'advisor' => '1' ]) }}><i class="tiny material-icons">remove_red_eye</i></a>
           @endif

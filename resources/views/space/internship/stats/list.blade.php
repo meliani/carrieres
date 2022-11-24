@@ -15,7 +15,7 @@
     @foreach ($professors as $professor)
     <tr>
       <td>{{ $loop->iteration }}</td>
-        <td>{{ $professor->name }}</td>
+        <td>{{ $professor->full_name }}</td>
         <td>{{ $professor->department_id }}</td>
         <td>{{ $professor->user->adviser1->count() }}</td>
         <td>{{ $professor->user->adviser2->count() }}</td>
