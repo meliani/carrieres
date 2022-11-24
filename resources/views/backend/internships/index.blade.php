@@ -13,7 +13,7 @@
 
     <div class="row center">
         <h4 class="header light center blue-text text-lighten-1">
-            Liste des encadrements
+            Liste des Projets
         </h4>
     </div>
     <div>
