@@ -81,9 +81,14 @@ class Internship extends baseModel
         'year_id',
         'is_valid',
         'model_status_id',
-        'meta_pedagogic_validation',
+        'status',
+        'procedure_achieved_at',
         'pedagogic_validation_date',
-        'professor_id',
+        'meta_pedagogic_validation',
+        'adviser_validated_at',
+        'meta_adviser_validation',
+        'administration_signed_at',
+        'meta_administration_signature',
     ];
 
     //protected $dateFormat = 'm/d/Y';
@@ -93,9 +98,13 @@ class Internship extends baseModel
         'defense_at' => 'date',
         'defense_start_time' => 'time:H:i',
         'defense_end_time' => 'time:H:i',
+        'procedure_achieved_at' => 'date',
             'meta_pedagogic_validation' => 'array',
-            'pedagogic_validation_date' => 'date'
-
+            'pedagogic_validation_date' => 'date',
+            'adviser_validated_at' => 'date',
+            'meta_adviser_validation' => 'array',
+            'administration_signed_at' => 'date',
+            'meta_administration_signature' => 'array',
     ];
     
     
