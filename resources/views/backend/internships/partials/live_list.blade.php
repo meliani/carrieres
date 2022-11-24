@@ -4,17 +4,23 @@
   <table class="table highlight scale-transition scale-in">
     <thead>
       <tr>
+        <th class="center" colspan="4">Informations stage</th>
+        {{-- contains student details name, phone, personal email --}}
+        <th class="center" colspan="5">Dates</th>
+        <th class="center" colspan="2"></th>
+      </tr>
+      <tr>
         <th width="5%" class="center">Id</th>
         {{-- contains student details name, phone, personal email --}}
         <th width="13%" class="center">Etudiant</th>
         <th width="15%" class="center">Entreprise, Pays</th>
         <th width="25%" class="center">Titre du PFE</th>
-        <th width="10%" class="center">Dates Déclaration / Dernière modification</th>
+        <th width="10%" class="center">Déclaration / Dernière modification</th>
         {{-- date when student signed and brought the agreement to administration --}}
-        <th width="10%" class="center">Date d'achèvement</th>
-        <th width="10%" class="center">Date de validation CF</th>
-        <th width="10%" class="center">Date de validation encadrant (France)</th>
-        <th width="10%" class="center">Date de signature INPT/DASRE</th>
+        <th width="10%" class="center">achèvement</th>
+        <th width="10%" class="center">validation CF</th>
+        <th width="10%" class="center">validation encadrant (France)</th>
+        <th width="10%" class="center">signature INPT/DASRE</th>
         <th width="10%" class="center">PDFs de conventions</th>
         <th width="10%" class="center">Notes</th>
       </tr>
@@ -82,7 +88,7 @@
         </td>
         <td class="multiline center">
           <a
-            href=""><i class="material-icons">person_add</i></a>
+            href="{{url('-/internships/administration_signature',$internship->id)}}"><i class="material-icons">person_add</i></a>
         </td>
         <td class="center">
           {{-- @include('backend.internships.partials.actions') --}}

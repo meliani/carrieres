@@ -129,6 +129,9 @@ Route::namespace('Backend')
                 // Route::resource('pedagogic_validation','pedagogicValidationController');
                 Route::get('pedagogic_validation/{internship_id}','pedagogicValidationController@index');
                 Route::put('pedagogic_validation/{internship_id}','pedagogicValidationController@update');
+                // Route::resource('administration_signature','AdministrationSignatureController');
+                Route::get('administration_signature/{internship_id}','AdministrationSignatureController@show');
+                Route::put('administration_signature/{internship_id}','AdministrationSignatureController@update');
             });
         }); 
     });

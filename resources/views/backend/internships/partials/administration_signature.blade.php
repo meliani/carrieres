@@ -9,20 +9,22 @@
 @section('content')
 <div class="container">
     <div class="row center">
-        <h4 class="header light center blue-text text-lighten-1">Validation des sujets</h4>
+        <h4 class="header light center blue-text text-lighten-1">Signature DASRE/INPT</h4>
     </div>
     <div class="row">
-        @if(!empty($internship->meta_pedagogic_validation))
+        {{-- Display all validation cards from other stuff --}}
+        @if(!empty($internship->administration_signed_at))
 
         <div class="col s12 m6 l6">
             <div class="card-panel">
                 <div class="row center">
-                    sujet validé par le chef de filière :
+                    Convention signée par :
                     <h1 class="light center blue-text text-lighten-1">
-                        {{App\Models\Profile\Professor::find($internship->meta_pedagogic_validation['signatures']['professor_id'])->full_name}}
-                    </h1>date de validation :
+                        {{App\Models\Profile\Person::find($internship->meta_administration_signature['signatures']['signatory_id'])->long_full_name}}
+                        {{-- {{$internship->meta_administration_signature}} --}}
+                    </h1>date de signature :
                     <h1 class="light center blue-text text-lighten-1">
-                         {{\Carbon\Carbon::parse($internship->meta_pedagogic_validation['dates']['created_at'])->format('d M Y')}}
+                         {{\Carbon\Carbon::parse($internship->administration_signed_at)->format('d M Y')}}
                     </h1>
                 </div>
             </div>
@@ -40,7 +42,7 @@
                     Form::model($internship,['route'=>['backend.internhips.pedagogic_validation.update',$internship],'method'
                     =>
                     'PUT']) }} --}}
-                    {!! Form::open(['action' => ['Backend\Internship\pedagogicValidationController@update',
+                    {!! Form::open(['action' => ['Backend\Internship\AdministrationSignatureController@update',
                     'internship_id' =>
                     $internship->id], 'method' => 'PUT', 'files' => false]) !!}
 
@@ -62,16 +64,16 @@
 
                     {{ Form::selectGroup([
                     // 'id' => '#pedagogicValidator',
-                    'name' => 'professor_id',
+                    'name' => 'signatory_id',
                     'value' ,
-                    'label' => 'Coordonateur de filère',
+                    'label' => 'Signataire',
                     'placeholder' ,
                     'class' => 'validate',
                     'icon' => 'person',
-                    'helper' => 'Coordonateur de filère',
+                    'helper' => 'Directeur ou son representant',
                     'required',
                     'cols' => 12,
-                    'data' => $professors
+                    'data' => $signatory
                     ], $errors) }}
                 </div>
 
