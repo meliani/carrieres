@@ -59,7 +59,7 @@ if (! function_exists('this_year'))
         return Year::all()->last();
     }
 }
-if (! function_exists('advising_type'))
+/* if (! function_exists('advising_type'))
 {
 
     function advising_type($type)
@@ -80,4 +80,4 @@ if (! function_exists('advising_type'))
                 break;
         }
     }
-}
+} */
