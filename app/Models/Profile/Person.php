@@ -92,7 +92,7 @@ class Person extends baseModel implements HasMedia
 
     public function internship()
     {
-        return $this->hasOne(Internship::class,'user_id','user_id')->with('adviser');
+        return $this->hasOne(Internship::class,'user_id','user_id');
     }
 
     public function professor()
