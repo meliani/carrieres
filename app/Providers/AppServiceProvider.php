@@ -22,7 +22,7 @@ class AppServiceProvider extends ServiceProvider
         \Carbon\Carbon::setLocale(config('app.locale'));
 
         // Laravel strict mode // wait until 9 upgrade
-        // Model::shouldBeStrict(! $this->app->isProduction());
+        Model::shouldBeStrict(! $this->app->isProduction());
         
     // Model::preventLazyLoading(! $this->app->isProduction());
     // Model::preventSilentlyDiscardingAttributes(); // throwing error
