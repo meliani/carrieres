@@ -5,7 +5,7 @@ namespace App\Models\School;
 use App\Models\Core\baseModel;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
-use App\Models\School\Internship\Adviser;
+// use App\Models\School\Internship\Adviser;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Profile\Person;
 use App\Models\Profile\Student;
@@ -133,10 +133,10 @@ class Internship extends baseModel
     {
         return $this->belongsTo(Student::class,'user_id','user_id');
     }
-    public function defense()
+/*     public function defense()
     {
         return $this->hasOne(Defense::class);
-    }
+    } */
 /*     public function professors()
 	{
         return $this->hasMany(Professor::class)

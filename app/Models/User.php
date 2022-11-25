@@ -65,7 +65,7 @@ class User extends Authenticatable
     {
         return $this->hasMany(Internship::class);
     }
-    public function adviser1()
+/*     public function adviser1()
     {
         return $this->hasMany(Adviser::class,'id_prof');
     }
@@ -84,5 +84,5 @@ class User extends Authenticatable
     public function examiner3()
     {
         return $this->hasMany(Adviser::class,'id_exami3');
-    }
+    } */
 }

@@ -89,12 +89,12 @@ Route::namespace('Internship')->group(function () {
     // Controllers Within The "App\Http\Controllers\Internship" Namespace
     Route::prefix('Internship')->group(function () {
 });
-    Route::prefix('Internship/Advising')->group(function () {
+/*     Route::prefix('Internship/Advising')->group(function () {
         Route::resource('Project', 'AdvisingController');
         Route::resource('Jury', 'JuryController');
-    });
+    }); */
 });
-Route::resource('Internship/Advising/Stats', 'Internship\StatsController');
+// Route::resource('Internship/Advising/Stats', 'Internship\StatsController');
 
 Route::get('Activation', ['as'=> 'person.activate', 'uses' => 'Frontend\Profile\PersonController@activate'])->middleware(['auth']);
 
