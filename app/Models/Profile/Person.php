@@ -21,7 +21,8 @@ class Person extends baseModel implements HasMedia
     protected $table = 'people';
     protected $primaryKey = "user_id";
     protected $appends = [
-        'name',
+        'full_name',
+        'long_full_name'
      ];
     protected $dates = [
         'updated_at',

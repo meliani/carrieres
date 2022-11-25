@@ -80,7 +80,7 @@ class Student extends Model implements HasMedia
  * 
  * ********** Getters ***********
  */
-    public function getNameAttribute($value)
+    public function getFull_NameAttribute($value)
 	{
 		return $this->attributes['first_name'].' '.$this->attributes['last_name'];
     }

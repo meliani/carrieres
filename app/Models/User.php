@@ -43,10 +43,10 @@ class User extends Authenticatable
     {   
         $this->attributes['password'] = $password;
     }
-    public static function getProfessors()
+/*     public static function getProfessors()
     {
         return User::where('is_professor',1)->orderBy('name')->get(['id','name'])->pluck('name','id')->all();
-    }
+    } */
 
     public function applications()
     {
