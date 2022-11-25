@@ -125,10 +125,10 @@ class Internship extends baseModel
     {
         return $this->hasOne(Adviser::class,'id_internship');
     } */
-/*     public function person()
+    public function person()
     {
         return $this->belongsTo(Person::class,'user_id','user_id');
-    } */
+    }
     public function student()
     {
         return $this->belongsTo(Student::class,'user_id','user_id');
