@@ -25,7 +25,7 @@
                     Intitulé : {!! $internship->intitule !!}
                 </p>
                 <p>
-                    Elève : {!! $internship->student->name !!}
+                    Elève : {!! $internship->student->full_name !!}
                     {!! isset($internship->binome)?','.$internship->binome->name:'' !!}
                 </p>
     @isset($internship->adviser->adviser1)

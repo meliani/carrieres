@@ -99,12 +99,12 @@ class Internship extends baseModel
         'defense_start_time' => 'time:H:i',
         'defense_end_time' => 'time:H:i',
         'procedure_achieved_at' => 'date',
-            'meta_pedagogic_validation' => 'array',
-            'pedagogic_validation_date' => 'date',
-            'adviser_validated_at' => 'date',
-            'meta_adviser_validation' => 'array',
-            'administration_signed_at' => 'date',
-            'meta_administration_signature' => 'array',
+        'meta_pedagogic_validation' => 'array',
+        'pedagogic_validation_date' => 'date',
+        'adviser_validated_at' => 'date',
+        'meta_adviser_validation' => 'array',
+        'administration_signed_at' => 'date',
+        'meta_administration_signature' => 'array',
     ];
     
     

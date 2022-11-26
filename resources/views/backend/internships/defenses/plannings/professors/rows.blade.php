@@ -25,7 +25,7 @@
             <td>
                 @foreach ($professor->internships as $internship)
                 <p>
-                    {!! $internship->student->name !!}
+                    {!! $internship->student->full_name !!}
                     {!! isset($internship->binome)?','.$internship->binome->name:'' !!}
                 </p>
                      {{-- $professor->is_available($internship->defense_at,$internship->defense_start_time) --}}

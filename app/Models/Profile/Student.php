@@ -20,7 +20,7 @@ class Student extends Model implements HasMedia
     protected $primaryKey = "user_id";
 
     protected $appends = [
-        'name',
+        'full_name',
      ];
     public static function boot()
     {

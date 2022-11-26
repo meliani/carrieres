@@ -3,7 +3,7 @@
     {{ $student->user_id }}
     </td>
     <td>
-    {{ $student->name }}
+    {{ $student->full_name }}
     </td>
     <td>
     {{ $student->ine ?? 'NA' }}

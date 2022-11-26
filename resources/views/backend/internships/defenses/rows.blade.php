@@ -10,7 +10,7 @@
                 à {!! $defense->defense_start_time !!}
             </td>
            <td>
-                {!! $defense->internship->student->name !!}
+                {!! $defense->internship->student->full_name !!}
             </td>
             <td>
                 @isset($defense->internship->adviser->adviser1)
