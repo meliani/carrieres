@@ -17,9 +17,10 @@ class AdminMiddleware
      */
     public function handle($request, Closure $next)
     {
-        // First letting the first user to be an admin by nature
+        // Admin check logic :
+        // letting the first user to be an admin by nature
         
-        $user = User::all()->count();
+        $user = User::count();
 
         if (!($user == 1)) {
             // Auth::user()->hasPermissionTo('Administer roles & permissions')
