@@ -13,7 +13,7 @@ use App\Models\School\Internship\internshipReport as Report;
 use App\Models\School\schoolCycle as Cycle;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
-class Student extends Model implements HasMedia
+class Student extends Person implements HasMedia
 {
     use InteractsWithMedia;
     protected $table = 'people';
@@ -80,10 +80,10 @@ class Student extends Model implements HasMedia
  * 
  * ********** Getters ***********
  */
-    public function getFull_NameAttribute($value)
+/*     public function getFull_NameAttribute($value)
 	{
 		return $this->attributes['first_name'].' '.$this->attributes['last_name'];
-    }
+    } */
 
     public function registerMediaCollections() :void
     {
