@@ -76,7 +76,7 @@
         </td>
         <td class="center">
           <a
-            href=""><i class="material-icons">person_add</i></a>
+            href=""><i class="material-icons grey-text">person_add</i></a>
         </td>
         <td class="center">
           {{-- if signed icon will be verified_user --}}
@@ -88,11 +88,14 @@
         </td>
         <td class="multiline center">
           <a
-            href=""><i class="material-icons">person_add</i></a>
+            href=""><i class="material-icons grey-text">person_add</i></a>
         </td>
         <td class="multiline center">
-          <a
-            href="{{url('-/internships/administration_signature',$internship->id)}}"><i class="material-icons">person_add</i></a>
+          @if(empty($internship->meta_pedagogic_validation))
+          <a href="{{url('-/internships/administration_signature',$internship->id)}}"><i class="material-icons orange-text">person_add</i></a>
+          @else
+          <a href="{{url('-/internships/administration_signature',$internship->id)}}"><i class="material-icons green-text">verified_user</i></a>
+          @endif
         </td>
         <td class="center">
           {{-- @include('backend.internships.partials.actions') --}}
@@ -102,7 +105,7 @@
         <td class="center">
           {{-- @include('backend.internships.partials.actions') --}}
           <a
-            href=""><i class="material-icons">note_add</i></a>
+            href=""><i class="material-icons grey-text">note_add</i></a>
         </td>
         
         @endif
