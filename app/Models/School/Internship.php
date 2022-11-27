@@ -131,7 +131,7 @@ class Internship extends baseModel
     }
     public function student()
     {
-        return $this->belongsTo(Student::class,'user_id','user_id');
+        return $this->hasOne(Student::class,'user_id','user_id');
     }
 /*     public function defense()
     {
