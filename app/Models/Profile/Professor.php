@@ -19,7 +19,7 @@ class Professor extends Model
     {
         return strtoupper($this->attributes['last_name']).' '.strtoupper($this->attributes['first_name']);
     }
-    public function getFullNameDepartmentAttribute($value)
+    public function getFullNameBrancheAttribute($value)
     {
         return strtoupper($this->attributes['last_name']).' '.strtoupper($this->attributes['first_name']).' - '.$this->load('branche')->branche->short_title;
     }
