@@ -25,17 +25,21 @@
         <th width="10%" class="center">Notes</th>
       </tr>
     </thead>
-    <tbody>
+    <tbody>        
+      {{-- {{dd($internships[0])}} --}}
       @foreach ($internships as $internship)
 
       <tr>
         {{-- Trainee informations : contains student details name, phone, personal email --}}
+        {{-- {{dd($internship->student)}} --}}
         @if(isset($internship->student))
-        <td class="strong">{{ $internship->student->user_id }}
+        <td class="strong">
+          {{ $internship->student->user_id }}
         </td>
         <td class="multiline center strong">
           <p onclick="copyToClipboard('#full_name{{ $internship->student->user_id }}')" class="waves-effect sub strong">
-          <p id="full_name{{ $internship->student->user_id }}">{{ $internship->student->full_name }}</p>
+          <p id="full_name{{ $internship->student->user_id }}">
+            {{ $internship->student->full_name }}</p>
           </p>
 
           <p><span class="new badge blue lighten-1 white-text" data-badge-caption=""
