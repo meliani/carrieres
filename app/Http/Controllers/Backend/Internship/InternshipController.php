@@ -12,7 +12,7 @@ use \App\Models\Profile\Student;
 use Illuminate\Support\Facades\Route;
 use App\Http\Requests\StoreInternship;
 
-
+/* I guess this class is not working anymore */
 
 class InternshipController extends BaseController
 {
@@ -25,26 +25,27 @@ class InternshipController extends BaseController
     {
         
         if(request()->has('s')){
-            $internships = Internship::with('student')->whereHas('student', function ($query) {
+            $internships = Internship::whereHas('student', function ($query) {
                 $query->where('user_id','=', request('s'));
                 
-            })->get();
+            })->with('student')->get();
             $internships = Internship::with('student')->get();
 
         }else{
-        $internships = Internship::latest()
+        $internships = Internship::with('student')->latest()
         ->whereHas('student', 
         function ($query) {
             $query->where('year_id','like','%');
         })->get();
         }
-        // $internships = Internship::with('student')->latest()->paginate();
+
+        // $internships = Internship::with('student')->first();
         session(['last_url' => route(Route::current()->getName())]);
 
-        $internships->load('student');
-
-        return view('backend.internships.index',compact('internships'));
-
+        $internships->load(['student','binome']);
+// dd($internships[0]->student);
+        return view('backend.internships.index',['internships'=> $internships]);
+        // return view('backend.internships.index')->with('internships',$internships);
     }
     /**
      * Show the form for creating a new resource.
@@ -53,10 +54,10 @@ class InternshipController extends BaseController
      */
     public function clone($intertnship_id,$user_id)
     {
-        session(['internship_id' => $intertnship_id]);
+/*         session(['internship_id' => $intertnship_id]);
         session(['user_id' => $user_id]);
         $internship = Internship::find($intertnship_id);
-        return view('backend.internships.create',compact('internship'));
+        return view('backend.internships.create',compact('internship')); */
     }
     /**
      * Show the form for creating a new resource.
