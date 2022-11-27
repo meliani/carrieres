@@ -8,15 +8,20 @@ use App\Models\Profile\Person;
 use App\Models\School\Internship\Advising;
 use App\Models\School\Internship\Project;
 use App\Models\School\Internship;
-
+use App\Models\School\Branche;
 class Professor extends Model
 {
     protected $appends = [
-        'name',
+        'full_name',
+        'full_name_department'
     ];
     public function getFullNameAttribute($value)
     {
         return strtoupper($this->attributes['last_name']).' '.strtoupper($this->attributes['first_name']);
+    }
+    public function getFullNameDepartmentAttribute($value)
+    {
+        return strtoupper($this->attributes['last_name']).' '.strtoupper($this->attributes['first_name']).' - '.$this->load('branche')->branche->short_title;
     }
 
     public function is_available($date,$time){
@@ -60,6 +65,10 @@ class Professor extends Model
     }
     public function internships()
 	{
-		return $this->belongsToMany(Internship::class)->withPivot('advising_type','user_id','professor_id','internship_id');
+		return $this->belongsToMany(Internship::class);
+    }
+    public function branche()
+	{
+		return $this->belongsTo(branche::class);
     }
 }

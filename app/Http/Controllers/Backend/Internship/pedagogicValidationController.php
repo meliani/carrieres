@@ -34,7 +34,7 @@ class pedagogicValidationController extends Controller
         $this->selected_id = $internship_id;
 
         $this->selected_internship = Internship::find($this->selected_id);
-        $this->professors = Professor::where('is_branche_coordinator',1)->get()->pluck('name','id');
+        $this->professors = Professor::where('is_branche_coordinator',1)->get()->pluck('full_name_branche','id');
 
         // Log::debug("Internship:mounted : ".$this->selectedInternship);
 

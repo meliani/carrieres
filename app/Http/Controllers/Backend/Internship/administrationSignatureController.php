@@ -60,7 +60,7 @@ class administrationSignatureController extends Controller
         // $this->siganture = Professor::where('is_branche_coordinator',1)->get()->pluck('name','id');
         $signatory_id = Parameter::where('name','main_signatory_id')->get()->pluck('value');
         // dd($signatory_id);
-        $this->signatory = Person::where('user_id',$signatory_id)->get()->pluck('name','user_id');
+        $this->signatory = Person::where('user_id',$signatory_id)->get()->pluck('full_name','user_id');
 
         // Log::debug("Internship:mounted : ".$this->selectedInternship);
 
