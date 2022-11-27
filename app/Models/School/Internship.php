@@ -89,6 +89,9 @@ class Internship extends baseModel
         'meta_adviser_validation',
         'administration_signed_at',
         'meta_administration_signature',
+        'notes',
+        'notes->agent_id',
+        'notes->note'
     ];
 
     //protected $dateFormat = 'm/d/Y';
@@ -105,6 +108,7 @@ class Internship extends baseModel
         'meta_adviser_validation' => 'array',
         'administration_signed_at' => 'date',
         'meta_administration_signature' => 'array',
+        'notes' => 'array'
     ];
     
     
@@ -169,7 +173,20 @@ class Internship extends baseModel
         //return $this->date_fin->diffForHumans($this->date_debut);
         //return $this->date_fin->longAbsoluteDiffForHumans($this->date_debut,null,7);
         return $this->date_fin->diffInWeeks($this->date_debut).' semaines';
+    }
+    public function getNotesTipAttribute()
+    {
+        $notes = null;
+        // dd($this->attributes['notes'][1]);
+        if(!empty($this->attributes['notes'])){
+            // dd(json_decode($this->attributes['notes']));
+            $note = json_decode($this->attributes['notes']);
+        // json_decode($this->attributes['notes']);
+            if(isset($note->note))
+            $notes = $note->agent_name.':'.$note->note.' : '.$note->noted_at;
+        }
 
+        return $notes;
     }
     
 }

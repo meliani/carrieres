@@ -104,8 +104,17 @@
         </td>
         <td class="center">
           {{-- @include('backend.internships.partials.actions') --}}
-          <a
-            href=""><i class="material-icons grey-text">note_add</i></a>
+          
+
+            @if(empty($internship->notes))
+            <a href="{{url('-/internships/add_note',$internship->id)}}"><i class="material-icons blue-text">note_add</i></a>
+            @else
+            <span class="tooltipped" data-delay="100"
+            data-tooltip="{{ $internship->notes_tip }}" data-badge-caption="">
+            <a href="{{url('-/internships/add_note',$internship->id)}}"><i class="material-icons orange-text">edit</i></a>
+          </span>
+            @endif
+
         </td>
         
         @endif
