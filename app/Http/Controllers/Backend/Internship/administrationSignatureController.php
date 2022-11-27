@@ -92,7 +92,7 @@ class administrationSignatureController extends Controller
         $this->agent_id = auth()->user()->id;
 
         $this->selected_internship = Internship::find($this->selected_id);
-        $this->selected_internship->administration_signed_at = Carbon::createFromDate($request->validation_date);
+        $this->selected_internship->administration_signed_at = Carbon::createFromDate($request->administration_signed_at);
 // dd($request);
         $this->meta_signature = [
             'signatures' => [
@@ -105,7 +105,6 @@ class administrationSignatureController extends Controller
             ],
         ];
         $this->selected_internship->meta_administration_signature = $this->meta_signature;
-
 
         $this->selected_internship->timestamps = false;
         $this->selected_internship->save(['timestamps' => false]);

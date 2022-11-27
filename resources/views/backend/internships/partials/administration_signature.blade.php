@@ -52,7 +52,7 @@
                     {{-- 'class'=>'navbar-form navbar-left' ]) !!} --}}
                     {!! Form::textGroup([
                     // 'id' => '#pedagogicValidationDate',
-                    'name' => 'pedagogic_validation_date',
+                    'name' => 'administration_signed_at',
                     'label' => __('table.datepicker'),
                     // 'value' => $signature_details,
                     'class' => 'datepicker validate',
