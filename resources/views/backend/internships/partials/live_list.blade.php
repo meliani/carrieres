@@ -91,7 +91,7 @@
             href=""><i class="material-icons grey-text">person_add</i></a>
         </td>
         <td class="multiline center">
-          @if(empty($internship->meta_pedagogic_validation))
+          @if(empty($internship->meta_administration_signature))
           <a href="{{url('-/internships/administration_signature',$internship->id)}}"><i class="material-icons orange-text">person_add</i></a>
           @else
           <a href="{{url('-/internships/administration_signature',$internship->id)}}"><i class="material-icons green-text">verified_user</i></a>
