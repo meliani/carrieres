@@ -83,7 +83,10 @@
           @if(empty($internship->meta_pedagogic_validation))
           <a href="{{url('-/internships/pedagogic_validation',$internship->id)}}"><i class="material-icons orange-text">person_add</i></a>
           @else
+          <span class="tooltipped" data-delay="100"
+          data-tooltip="{{ $internship->pedagogic_validation_date }}" data-badge-caption="">
           <a href="{{url('-/internships/pedagogic_validation',$internship->id)}}"><i class="material-icons green-text">verified_user</i></a>
+          </span>
           @endif
         </td>
         <td class="multiline center">
@@ -94,7 +97,10 @@
           @if(empty($internship->meta_administration_signature))
           <a href="{{url('-/internships/administration_signature',$internship->id)}}"><i class="material-icons orange-text">person_add</i></a>
           @else
+          <span class="tooltipped" data-delay="100"
+          data-tooltip="{{ $internship->administration_signed_at }}" data-badge-caption="">
           <a href="{{url('-/internships/administration_signature',$internship->id)}}"><i class="material-icons green-text">verified_user</i></a>
+          </span>
           @endif
         </td>
         <td class="center">
