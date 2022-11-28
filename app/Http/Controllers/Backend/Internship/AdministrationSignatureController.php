@@ -12,7 +12,7 @@ use App\Models\Profile\Professor;
 use App\Models\Profile\Signatory;
 use Carbon\Carbon;
 
-class administrationSignatureController extends Controller
+class AdministrationSignatureController extends Controller
 {
     /**
      * Display a listing of the resource.
