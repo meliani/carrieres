@@ -5,7 +5,7 @@ namespace App\Models\School;
 use App\Models\Core\baseModel;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
-// use App\Models\School\Internship\Adviser;
+use App\Models\School\Internship\Adviser;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Models\Profile\Person;
 use App\Models\Profile\Student;
@@ -13,6 +13,7 @@ use App\Models\Profile\Professor;
 use Collective\Html\Eloquent\FormAccessible;
 use App\Models\School\Internship\Defense;
 use App\Models\School\Internship\Advising;
+use App\Models\School\Internship\Project;
 use Carbon\Carbon;
 
 class Internship extends baseModel
@@ -35,9 +36,9 @@ class Internship extends baseModel
 
     }
 
-/*     protected $attributes = [
-
-    ]; */
+    protected $attributes = [
+        // 'internship_id'
+    ];
     protected $guarded = [
 
     ];
@@ -128,9 +129,9 @@ class Internship extends baseModel
 	{
 		return $this->belongsTo(User::class,'user_id','id');
     }
-/*     public function adviser()
+/*     public function advisers()
     {
-        return $this->hasOne(Adviser::class,'id_internship');
+        return $this->hasMany(Adviser::class);
     } */
     public function person()
     {
@@ -138,7 +139,11 @@ class Internship extends baseModel
     }
     public function student()
     {
-        return $this->hasOne(Student::class,'user_id','user_id');
+        return $this->belongsTo(Student::class,'user_id','user_id');
+    }
+    public function project()
+    {
+        return $this->hasOne(Project::class,'id');
     }
 /*     public function defense()
     {

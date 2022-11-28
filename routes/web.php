@@ -134,6 +134,7 @@ Route::namespace('Backend')
                 Route::put('administration_signature/{internship_id}','AdministrationSignatureController@update');
                 Route::get('add_note/{internship_id}','NoteController@show');
                 Route::put('add_note/{internship_id}','NoteController@update');
+                // Route::resource('add_adviser/{internship_id}','AdviserController');
             });
         }); 
     });

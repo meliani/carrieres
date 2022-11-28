@@ -10,7 +10,7 @@ use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
 use App\Models\School\Internship;
 use App\Models\School\Internship\internshipReport as Report;
-use App\Models\School\schoolCycle as Cycle;
+use App\Models\School\Internship\Project;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 
 class Student extends Person implements HasMedia
@@ -75,6 +75,10 @@ class Student extends Person implements HasMedia
     public function years()
     {
         return $this->belongsToMany(\App\Models\Year::class,'student_year','user_id','year_id');
+    }
+    public function project()
+    {
+        return $this->belongsTo(Project::class,'user_id','student_id');
     }
 /**
  * 
