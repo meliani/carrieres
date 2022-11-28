@@ -12,9 +12,7 @@
             </h3>
         </div>
         @include ('errors.list')
-        {{ Form::open(['route'=>['offers.store'],'files' => true]) }}
             @include('frontend.internships.offers.form.fields')
-            {!! Form::close() !!}
         </div>
     </div>
 </div>

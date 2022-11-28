@@ -18,6 +18,8 @@ class baseModel extends Model
     public function scopeArchived($query) {
         return $query->where('status', -1);
     }
+
+    /* Common methods */
     static function getTitle($gender)
 	{
         if($gender==1)

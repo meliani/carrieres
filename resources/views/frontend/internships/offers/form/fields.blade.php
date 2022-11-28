@@ -1,4 +1,6 @@
 <div class="card-panel">
+    {{ Form::open(['route'=>['offers.store'],'files' => true]) }}
+
     <div class="card-content">
 
         <div class = "row">
@@ -189,6 +191,8 @@
         <div class = "input-field">
             {!! Form::submit('Envoyer', ['class' => 'btn waves-effect waves-light']) !!}
             <a href="{!! route('home') !!}" class="waves-effect waves-teal btn-flat">Annuler</a>
+            {!! Form::close() !!}
+
         </div>
     </div>  
 </div>
