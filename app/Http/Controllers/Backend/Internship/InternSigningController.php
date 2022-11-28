@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Route;
 
 
 
-class internSigningController extends BaseController
+class InternSigningController extends BaseController
 {
     /**
      * Display a listing of the resource.
