@@ -6,7 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
 
-class generatedAgreementController extends Controller
+class GeneratedAgreementController extends Controller
 {
     private $documents;
     private $user;
