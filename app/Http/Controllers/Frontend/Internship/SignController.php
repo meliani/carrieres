@@ -31,6 +31,7 @@ class SignController extends Controller
     {
         
         $trainees = Person::has('internship')
+        ->with('internship')
         ->where('is_active',true)
         
         ->latest();
@@ -40,7 +41,9 @@ class SignController extends Controller
         }])->paginate();
         
         if(!isset($request->s)){
-            $trainees = Person::has('internship')->where('is_active',true)->where('option_id',user()->filiere_id)
+            $trainees = Person::has('internship')->where('is_active',true)
+            ->with('internship')
+            // ->where('option_id',user()->filiere_id)
             ->with(['internship' => function ($q) {
                 $q->orderBy('updated_at', 'desc');
             }])
@@ -49,12 +52,15 @@ class SignController extends Controller
             $s=$request->s;
             $trainees = Person::with('internship')->has('internship')
             ->where('is_active',true)
-            ->where('option_id',user()->filiere_id)
+            // ->with('internship')
+            // ->where('option_id',user()->filiere_id)
             ->where('first_name', 'like', '%'.$s.'%')
             ->orWhere('last_name', 'like', '%'.$s.'%')
             ->orWhere('pfe_id', 'like', '%'.$s.'%')
             ->get();
         }
+        $trainees->load('internship.professor');
+
 
         //$trainees = Person::isActive();
         //dd($trainees);
