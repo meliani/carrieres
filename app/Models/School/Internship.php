@@ -13,7 +13,7 @@ use App\Models\Profile\Professor;
 use Collective\Html\Eloquent\FormAccessible;
 use App\Models\School\Internship\Defense;
 use App\Models\School\Internship\Advising;
-
+use Carbon\Carbon;
 
 class Internship extends baseModel
 {
@@ -35,7 +35,10 @@ class Internship extends baseModel
 
     }
 
-    protected $attributes = [
+/*     protected $attributes = [
+
+    ]; */
+    protected $guarded = [
 
     ];
 
@@ -91,7 +94,7 @@ class Internship extends baseModel
         'meta_administration_signature',
         'notes',
         'notes->agent_id',
-        'notes->note'
+        'notes->note',
     ];
 
     //protected $dateFormat = 'm/d/Y';
@@ -183,7 +186,7 @@ class Internship extends baseModel
             $note = json_decode($this->attributes['notes']);
         // json_decode($this->attributes['notes']);
             if(isset($note->note))
-            $notes = $note->agent_name.':'.$note->note.' : '.$note->noted_at;
+            $notes = $note->agent_name.': '.$note->note.' @ '.Carbon::create($note->noted_at)->format('j M Y h:m:s');
         }
 
         return $notes;

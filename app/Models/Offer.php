@@ -52,7 +52,8 @@ class Offer extends Model
         'display_permissions',
         'status',
         'is_valid',
-        'applyable'        
+        'applyable',
+        'contact_email'   
     ];
 
     /**
@@ -127,7 +128,10 @@ class Offer extends Model
      * @var array
      */
     protected $hidden = [
-        //
+    ];
+
+    protected $guarded =[
+// '_token'
     ];
 
 

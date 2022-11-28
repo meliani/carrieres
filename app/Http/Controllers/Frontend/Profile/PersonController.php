@@ -103,7 +103,7 @@ class PersonController extends Controller
         if(isset($request->action)=='validate')
                 dd(isset($request->action));
         $person->update(
-            $request->all()
+            $request->validated()
         );
 
         $person->activate();

@@ -55,7 +55,7 @@ class myInternshipController extends BaseController
     {   
         //dump($request);
 
-        $intern = $request->all();
+        $intern = $request->validated();
         $internship = Internship::firstOrCreate(['user_id' => user()->id]);
         $internship->fill($intern);
         //$internship = Internship::firstOrCreate(['user_id' => user()->id]);
