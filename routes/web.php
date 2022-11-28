@@ -158,7 +158,7 @@ Route::namespace('Frontend')
     Route::prefix('internships')->group(function () {
 
         Route::resource('binomes', 'BinomeController');
-        Route::resource('offers', 'internOfferController');
+        Route::resource('offers', 'InternOfferController');
         Route::resource('reports', 'internshipReportController');
         Route::prefix('offers')->group(function () {
             Route::resource('applications', 'internshipApplicationController');
@@ -177,7 +177,7 @@ Route::get('rapport', 'Frontend\Internship\internshipReportController@create');
 Route::get('Events', 'Backend\EventController@index')->name('Events');
 
 Route::get('myEvents', 'Frontend\EventController@index')->name('myEvents');
-Route::get('myOffers', 'Frontend\Internship\internOfferController@index')->name('myOffers');
+Route::get('myOffers', 'Frontend\Internship\InternOfferController@index')->name('myOffers');
 Route::get('myApplications', 'Frontend\Internship\internshipApplicationController@index')->name('myApplications');
 
 /****************************************** USER MENU END */
@@ -205,7 +205,7 @@ Route::resource('permissions', 'PermissionController');
 Route::get('PlanningPFE', 'Frontend\IframeController@PlanningPFE');
 Route::get('lesjeudis', 'Frontend\IframeController@PlanningJeudis');
 
-Route::get('submit_offer', 'Frontend\Internship\internOfferController@create',$internship_type=2);
+Route::get('submit_offer', 'Frontend\Internship\InternOfferController@create',$internship_type=2);
 
 Route::get('AutorisationSoutenance', function(){
     return redirect('https://carrieres.inpt.ac.ma/Survey/index.php/295393');
