@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Frontend\Internship;
 
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreOfferRequest;
 use Illuminate\Http\Request;
 
 use Session;
@@ -18,7 +19,7 @@ use App\Models\School\Internship\Application;
 use App\Models\Offer;
 use App\Models\User;
 
-class InternOfferController extends Controller
+class internOfferController extends Controller
 {
 
     public function __construct()
@@ -58,9 +59,9 @@ class InternOfferController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreOfferRequest $request)
     {
-        $input=$request->all();
+        $input=$request->validated();
         $offer = new Offer($input);
         $offer->year()->associate(config('school.current.year_id'));
         $offer->program()->associate(3);
