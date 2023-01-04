@@ -29,11 +29,11 @@ class Student extends Person implements HasMedia
         /**static::addGlobalScope(function ($query) {
             $query->where('status', '1');
         });*/
-        static::addGlobalScope(function ($query) {
+/*         static::addGlobalScope(function ($query) {
                 $query->where('is_active', config('school.student.active'))
                 ->where('model_status_id', config('school.current.model_status.prod'))
                 ->where('year_id',config('school.current.year_id'));
-        });
+        }); */
     }
 
 
