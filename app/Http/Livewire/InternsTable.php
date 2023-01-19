@@ -46,8 +46,10 @@ class InternsTable extends Component
         $this->internships = Internship::with(['student','binome'])->whereHas('student', function ($query) {
             $query->where('user_id','=', "%$this->search%")
             ->orWhere('last_name','LIKE' , "%{$this->search}%")
-            ->orWhere('first_name','LIKE' , "%{$this->search}%");
-        })->take(10)->get();
+            ->orWhere('first_name','LIKE' , "%{$this->search}%")
+            ->orWhere('filiere_text','LIKE' , "%{$this->search}%");
+
+        })->take(200)->get();
     }
     public function render()
     {

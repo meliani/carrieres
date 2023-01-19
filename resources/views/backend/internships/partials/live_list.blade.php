@@ -1,4 +1,5 @@
 <div class="container col s12 m12">
+  <div class="header">{{$internships->count()}}</div>
   {{-- <button wire:click="downloadExcel">Telecharger</button> --}}
 <a href="/extractions/InternshipsExport/xlsx">Telecharger la globale</a>
   <table class="table highlight scale-transition scale-in">
