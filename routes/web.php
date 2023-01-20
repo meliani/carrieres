@@ -113,7 +113,7 @@ Route::get('test', function(){
 Route::namespace('Backend')
 ->name('backend.')
 ->group(function () {
-    Route::prefix('-')->group(function () {
+    Route::prefix('~')->group(function () {
         Route::resource('events', 'EventController');
         Route::get('Dashboard', 'Dashboard');
         Route::namespace('Internship')->group(function () {
@@ -121,7 +121,7 @@ Route::namespace('Backend')
             Route::resource('plannings', 'PlanningsController');
             Route::resource('internships', 'InternshipController');
             Route::prefix('internships')->group(function () {
-                Route::resource('offers', 'OfferController');
+                Route::resource('offers', 'InternOfferController');
                 Route::resource('binomes', 'BinomeController');
                 Route::resource('reports', 'ReportController');
                 Route::get('clone/{internship_id}/{user_id}', 'InternshipController@clone');
