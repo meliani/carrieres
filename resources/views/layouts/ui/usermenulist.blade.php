@@ -20,15 +20,9 @@
         ->prof()
         ->get(); ?>
     @foreach ($menu as $item)
-        @if ($item->route)
-            <li class="{!! Request::routeIs($item->route) ? 'active' : '' !!}">
-                <a href="{!! route($item->route) !!}">{{ $item->name }}</a>
-            </li>
-        @else
-            <li class="{!! Request::is($item->url) ? 'active' : '' !!}">
-                <a href="{!! route($item->url) !!}">{{ $item->name }}</a>
-            </li>
-        @endif
+        <li class="{!! Request::is($item->url) ? 'active' : '' !!}">
+            <a href="{!! url($item->url) !!}">{{ $item->name }}</a>
+        </li>
     @endforeach
     <li class="divider"></li>
 @endcan
@@ -37,15 +31,9 @@
         ->student()
         ->get(); ?>
     @foreach ($menu as $item)
-        @if ($item->route)
-            <li class="{!! Request::routeIs($item->route) ? 'active' : '' !!}">
-                <a href="{!! route($item->route) !!}">{{ $item->name }}</a>
-            </li>
-        @else
-            <li class="{!! Request::is($item->url) ? 'active' : '' !!}">
-                <a href="{!! route($item->url) !!}">{{ $item->name }}</a>
-            </li>
-        @endif
+        <li class="{!! Request::is($item->url) ? 'active' : '' !!}">
+            <a href="{!! url($item->url) !!}">{{ $item->name }}</a>
+        </li>
     @endforeach
 @endrole
 @guest
