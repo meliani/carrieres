@@ -84,11 +84,11 @@
         <td class="center">
           {{-- if signed icon will be verified_user --}}
           @if(empty($internship->meta_pedagogic_validation))
-          <a href="{{url('-/internships/pedagogic_validation',$internship->id)}}"><i class="material-icons orange-text">person_add</i></a>
+          <a href="{{url('~/internships/pedagogic_validation',$internship->id)}}"><i class="material-icons orange-text">person_add</i></a>
           @else
           <span class="tooltipped" data-delay="100"
           data-tooltip="{{ $internship->pedagogic_validation_date }}" data-badge-caption="">
-          <a href="{{url('-/internships/pedagogic_validation',$internship->id)}}"><i class="material-icons green-text">verified_user</i></a>
+          <a href="{{url('~/internships/pedagogic_validation',$internship->id)}}"><i class="material-icons green-text">verified_user</i></a>
           </span>
           @endif
         </td>
@@ -98,29 +98,29 @@
         </td>
         <td class="multiline center">
           @if(empty($internship->meta_administration_signature))
-          <a href="{{url('-/internships/administration_signature',$internship->id)}}"><i class="material-icons orange-text">person_add</i></a>
+          <a href="{{url('~/internships/administration_signature',$internship->id)}}"><i class="material-icons orange-text">person_add</i></a>
           @else
           <span class="tooltipped" data-delay="100"
           data-tooltip="{{ $internship->administration_signed_at }}" data-badge-caption="">
-          <a href="{{url('-/internships/administration_signature',$internship->id)}}"><i class="material-icons green-text">verified_user</i></a>
+          <a href="{{url('~/internships/administration_signature',$internship->id)}}"><i class="material-icons green-text">verified_user</i></a>
           </span>
           @endif
         </td>
         <td class="center">
           {{-- @include('backend.internships.partials.actions') --}}
           <a
-            href="{{url('-/internships/agreements',$internship->user_id)}}"><i class="material-icons">attach_file</i></a>
+            href="{{url('~/internships/agreements',$internship->user_id)}}"><i class="material-icons">attach_file</i></a>
         </td>
         <td class="center">
           {{-- @include('backend.internships.partials.actions') --}}
           
 
             @if(empty($internship->notes))
-            <a href="{{url('-/internships/add_note',$internship->id)}}"><i class="material-icons blue-text">note_add</i></a>
+            <a href="{{url('~/internships/add_note',$internship->id)}}"><i class="material-icons blue-text">note_add</i></a>
             @else
             <span class="tooltipped" data-delay="100"
             data-tooltip="{{ $internship->notes_tip }}" data-badge-caption="">
-            <a href="{{url('-/internships/add_note',$internship->id)}}"><i class="material-icons orange-text">edit</i></a>
+            <a href="{{url('~/internships/add_note',$internship->id)}}"><i class="material-icons orange-text">edit</i></a>
           </span>
             @endif
 

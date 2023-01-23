@@ -30,6 +30,6 @@
     {{ $student->report->paper_scorecard }}
     </td>
     <td>
-        <a href="-/internships/reports/{{ $student->report->id }}/edit"><i class="material-icons">menu</i></a>
+        <a href="~/internships/reports/{{ $student->report->id }}/edit"><i class="material-icons">menu</i></a>
     </td>
 </tr>

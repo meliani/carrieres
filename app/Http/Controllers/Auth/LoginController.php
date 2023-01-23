@@ -33,7 +33,7 @@ class LoginController extends Controller
         $person = Person::find(auth()->user()->id);
 
             if(auth()->user()->can('Administer roles & permissions'))
-            return '/-/Dashboard';
+            return '/~/Dashboard';
             else
             return '/home';
 

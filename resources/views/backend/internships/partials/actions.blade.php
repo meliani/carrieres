@@ -4,7 +4,7 @@
 
 <!-- Dropdown Structure -->
 <ul id='row_menu{{$internship->id}}' class='dropdown-content'>
-{{--     <li><a href="{{ url('-/internships/clone',[$internship->id,$internship->user_id]) }}">
+{{--     <li><a href="{{ url('~/internships/clone',[$internship->id,$internship->user_id]) }}">
         <i class="material-icons">content_copy</i>cloner</a></li> --}}
     <li><a href="{{ route('backend.internships.edit',$internship->id) }}">
         <i class="material-icons">mode_edit</i>modifier</a></li>
