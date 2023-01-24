@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Log;
 
 // Excel export libs
 use App\Exports\StagesExport;
+use App\Models\School\Internship\Project;
 use Maatwebsite\Excel\Facades\Excel;
 
 class InternsTable extends Component
@@ -56,7 +57,7 @@ class InternsTable extends Component
         //dd($this->attributes);
         return view('livewire.interns-table', 
         [
-            'internships' => $this->internships
+            'projects' => $this->projects
         ]
     );
     }
