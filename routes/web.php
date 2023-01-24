@@ -126,14 +126,23 @@ Route::namespace('Backend')
                 Route::resource('reports', 'ReportController');
                 Route::get('clone/{internship_id}/{user_id}', 'InternshipController@clone');
                 Route::get('agreements/{user_id}','GeneratedAgreementController@index');
+
                 // Route::resource('pedagogic_validation','pedagogicValidationController');
                 Route::get('pedagogic_validation/{internship_id}','pedagogicValidationController@index');
                 Route::put('pedagogic_validation/{internship_id}','pedagogicValidationController@update');
+
                 // Route::resource('administration_signature','AdministrationSignatureController');
                 Route::get('administration_signature/{internship_id}','AdministrationSignatureController@show');
                 Route::put('administration_signature/{internship_id}','AdministrationSignatureController@update');
+
                 Route::get('add_note/{internship_id}','NoteController@show');
                 Route::put('add_note/{internship_id}','NoteController@update');
+
+                Route::get('add_partner/{internship_id}','PartnerController@show');
+                Route::put('add_partner/{internship_id}','PartnerController@update');
+
+                Route::get('add_adviser/{project_id}','AdviserController@show');
+                Route::put('add_adviser/{project_id}','AdviserController@update');
                 // Route::resource('add_adviser/{internship_id}','AdviserController');
             });
         }); 
