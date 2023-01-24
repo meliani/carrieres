@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Profile\Person;
 use App\Models\School\Internship\Advising;
 use App\Models\School\Internship\Project;
-use App\Models\School\Internship;
+use App\Models\School\Internship\Internship;
 use App\Models\School\Branche;
 class Professor extends Model
 {

@@ -5,7 +5,7 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 
 use App\Models\Profile\Student;
-use App\Models\School\Internship;
+use App\Models\School\Internship\Internship;
 use Illuminate\Support\Facades\Log;
 
 // Excel export libs

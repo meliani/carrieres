@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend\Internship;
 
 use App\Http\Controllers\Backend\BaseController;
 use App\Models\School\Internship\Defense;
-use App\Models\School\Internship;
+use App\Models\School\Internship\Internship;
 use Illuminate\Http\Request;
 
 class DefenseController extends BaseController

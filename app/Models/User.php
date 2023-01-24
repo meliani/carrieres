@@ -6,7 +6,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
 use App\Models\Profile\Person;
-use App\Models\School\Internship;
+use App\Models\School\Internship\Internship;
 use App\Models\School\Internship\Adviser;
 
 use Illuminate\Support\Facades\Hash;

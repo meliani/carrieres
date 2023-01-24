@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend\Internship;
 
 use App\Http\Controllers\Backend\BaseController;
 use App\Http\Livewire\Internships;
-use App\Models\School\Internship;
+use App\Models\School\Internship\Internship;
 use App\Models\School\Internship\Defense;
 use Illuminate\Http\Request;
 use \App\Models\Profile\Student;

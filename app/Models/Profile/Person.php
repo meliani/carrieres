@@ -5,7 +5,7 @@ namespace App\Models\Profile;
 use App\Models\Core\baseModel;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\School\Internship;
+use App\Models\School\Internship\Internship;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use App\Models\Profile\Professor;

@@ -8,7 +8,7 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 //use Spatie\MediaLibrary\Models\Media;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
-use App\Models\School\Internship;
+use App\Models\School\Internship\Internship;
 use App\Models\School\Internship\internshipReport as Report;
 use App\Models\School\Internship\Project;
 use Illuminate\Database\Eloquent\Relations\MorphMany;

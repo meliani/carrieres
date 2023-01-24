@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Frontend\Internship;
 
 // Models
-use App\Models\School\Internship;
+use App\Models\School\Internship\Internship;
 use App\Models\School\Internship\Adviser;
 use App\Models\Profile\Person;
 use App\Models\Stage;

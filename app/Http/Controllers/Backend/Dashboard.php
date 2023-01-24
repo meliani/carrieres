@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Backend\BaseController;
 use App\Models\School\Internship\Project;
-use App\Models\School\Internship;
+use App\Models\School\Internship\Internship;
 use App\Models\Profile\Student;
 
 class Dashboard extends BaseController
