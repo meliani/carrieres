@@ -13,7 +13,8 @@ class Professor extends Model
 {
     protected $appends = [
         'full_name',
-        'full_name_department'
+        'full_name_branche',
+        'full_name_department',
     ];
     public function getFullNameAttribute($value)
     {
@@ -22,6 +23,10 @@ class Professor extends Model
     public function getFullNameBrancheAttribute($value)
     {
         return strtoupper($this->attributes['last_name']).' '.strtoupper($this->attributes['first_name']).' - '.$this->load('branche')->branche->short_title;
+    }
+    public function getFullNameDepartmentAttribute($value)
+    {
+        return strtoupper($this->attributes['last_name']).' '.strtoupper($this->attributes['first_name']).' - '.$this->department_title;
     }
 
     public function is_available($date,$time){
@@ -59,10 +64,10 @@ class Professor extends Model
 	{
 		return $this->hasMany(Project::class);
     }
-    public function advisings()
+/*     public function advisings()
 	{
 		return $this->hasMany(Advising::class);
-    }
+    } */
     public function internships()
 	{
 		return $this->belongsToMany(Internship::class);
