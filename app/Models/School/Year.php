@@ -41,14 +41,7 @@ class Year extends Model
     ];
     public function actual()
     {
-        return 3;
-    }
-    /**
-     * Get the Streams for the Year.
-     */
-    public function streams()
-    {
-        return $this->belongsToMany(\App\Models\stream::class);
+        return 6;
     }
 
     /**

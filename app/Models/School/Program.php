@@ -12,7 +12,7 @@ class Program extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'name', 'slug'
+        'id', 'short_name', 'long_name', 'order'
     ];
 
     /**
@@ -39,13 +39,5 @@ class Program extends Model
     protected $casts = [
         //
     ];
-
-    /**
-     * Get the Streams for the Program.
-     */
-    public function streams()
-    {
-        return $this->belongsToMany(\App\Models\stream::class);
-    }
 
 }

@@ -1,7 +1,6 @@
 <?php
 
-namespace App\Models\School\Internship;
-
+Models\School\Internship\Internship;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 

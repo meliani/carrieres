@@ -1,7 +1,6 @@
 <?php
 
-namespace App\Models\School\Internship;
-use App\Models\School\Internship;
+Models\School\Internship\Internship;use App\Models\School\Internship;
 
 use Illuminate\Database\Eloquent\Model;
 

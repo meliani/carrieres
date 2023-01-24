@@ -1,7 +1,6 @@
 <?php
 
-namespace App\Models\School\Internship;
-
+Models\School\Internship\Internship;
 use App\Models\Core\baseModel;
 use App\Models\Profile\Student;
 use App\Models\School\Internship\Adviser;
@@ -19,7 +18,39 @@ class Project extends baseModel
      */
 
     // protected $table = 'internships';
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+    protected $fillable = [
+        'id', 'student_ids'
+    ];
 
+    /**
+     * The attributes that should be mutated to dates.
+     *
+     * @var array
+     */
+    protected $dates = ['created_at', 'updated_at'];
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        //
+    ];
+
+    /**
+     * The attributes that should be cast to native types.
+     *
+     * @var array
+     */
+    protected $casts = [
+        //
+    ];
     public static function boot()
     {
         parent::boot();

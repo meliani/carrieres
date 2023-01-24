@@ -1,7 +1,6 @@
 <?php
 
-namespace App\Models\School\Internship;
-
+Models\School\Internship\Internship;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
