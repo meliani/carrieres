@@ -78,10 +78,34 @@ class Project extends baseModel
     {
         return $this->belongsTo(Internship::class);
     }
-    public function student()
+    /* Old student working relationship */
+/*     public function student()
     {
         return $this->belongsTo(Student::class,'student_id','user_id');
+    } */
+    public function student()
+    {
+        // return $this->belongsTo(Student::class,'student_id','user_id');
+        // return $this->hasOneThrough(Student::class, Internship::class,);
+        return $this->hasOneThrough(
+            Student::class,              //Owner::class,
+            Internship::class,          //Car::class,
+            'id', // mechanic_id Foreign key on the cars table...
+            'user_id', // car_id Foreign key on the owners table...
+            'internship_id', // id Local key on the mechanics table...
+            'user_id' // id Local key on the cars table...
+        );
     }
+    public function partners()
+    {
+        return $this->belongsTo(Project::class,'partner_project_id','id');
+        /* 
+        return $this->hasOne(Phone::class, 'foreign_key', 'local_key');
+        return $this->belongsTo(User::class, 'foreign_key', 'owner_key');
+        */
+        // return $this->hasOneThrough(Student::class, Internship::class,);
+    }
+
 
 
 }
