@@ -18,6 +18,8 @@ class InternsTable extends Component
     public $search = '';
 
     protected $internships;
+    protected $projects;
+    
     public Internship $internship;
     public $signing_date = '';
     public $pedagogic_validation = '';
@@ -44,7 +46,7 @@ class InternsTable extends Component
         ]; */
     }
     public function loadInternships(){
-        $this->internships = Internship::with(['student','binome'])->whereHas('student', function ($query) {
+        $this->projects = Internship::with(['student','binome'])->whereHas('student', function ($query) {
             $query->where('user_id','=', "%$this->search%")
             ->orWhere('last_name','LIKE' , "%{$this->search}%")
             ->orWhere('first_name','LIKE' , "%{$this->search}%")
@@ -57,7 +59,7 @@ class InternsTable extends Component
         //dd($this->attributes);
         return view('livewire.interns-table', 
         [
-            'internships' => $this->internships
+            'projects' => $this->projects
         ]
     );
     }
