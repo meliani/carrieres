@@ -2,8 +2,8 @@
 
 namespace App\Models\School\Project;
 
+use App\Models\Core\baseModel as Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 
 class Team extends Model
 {

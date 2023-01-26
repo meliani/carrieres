@@ -1,8 +1,10 @@
 <?php
 
-namespace App\Http\Controllers\Frontend\Project;
+namespace App\Http\Controllers\Backend\Project;
 
+use App\Http\Controllers\Backend\BaseController as Controller;
 use App\Models\School\Project\Team;
+use App\Models\School\Project\Project;
 
 use Illuminate\Http\Request;
 
@@ -56,9 +58,7 @@ class TeamController extends Controller
         //here the team gonna be created with it's uuid
         $student = Student::findOrFail(Auth::user()->id);
 
-        Team::createOrFail(Str::Uuid(),$student_id);    
-        return view('team created, add participants ?');
-
+        Team::createOrFail(Str::Uuid(),$student_id);
     }
 
     /**

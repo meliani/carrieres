@@ -114,7 +114,6 @@ Route::namespace('Backend')
 ->name('backend.')
 ->group(function () {
     Route::prefix('~')->group(function () {
-        Route::resource('events', 'EventController');
         Route::get('Dashboard', 'Dashboard');
         Route::namespace('Internship')->group(function () {
             Route::resource('defenses', 'DefenseController');
@@ -145,7 +144,10 @@ Route::namespace('Backend')
                 Route::put('add_adviser/{project_id}','AdviserController@update');
                 // Route::resource('add_adviser/{internship_id}','AdviserController');
             });
-        }); 
+        });
+        Route::namespace('Project')->group(function () {
+            Route::resource('projects', 'ProjectController');
+        });
     });
 });
 

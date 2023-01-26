@@ -1,13 +1,13 @@
 <?php
+namespace App\Models\School\Project;
 
-Models\School\Internship\Internship;
-use App\Models\Core\baseModel;
+use App\Models\Core\baseModel as Model;
 use App\Models\Profile\Student;
 use App\Models\School\Internship\Adviser;
-use Illuminate\Database\Eloquent\Model;
 use App\Models\School\Internship\Internship;
 
-class Project extends baseModel
+
+class Project extends Model
 {
 
      /**

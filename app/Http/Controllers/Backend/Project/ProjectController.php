@@ -1,23 +1,26 @@
 <?php
 
-namespace App\Http\Controllers\Frontend\Project;
+namespace App\Http\Controllers\Backend\Project;
 
-use App\Models\School\Project\Team;
-
+use App\Http\Controllers\Backend\BaseController as Controller;
+use App\Models\School\Project\Project;
 use Illuminate\Http\Request;
 
-class TeamController extends Controller
+class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
+    
     public function index()
     {
         //
-        $team = Team::findOrFail(Auth::user()->id);
-        $team = Team::findOrFail('team_uuid','=',$team->uuid)->with('students','internship');
+        Auth::user()->id();
+
+        $project = Project::findOrFail(Auth::user()->id);
+        $project = Project::findOrFail('team_uuid','=',$project->uuid)->with('students','internship');
         
         // the relation internship should handle the logic of the project view
         // that means we need to flag the team founder to keep 
@@ -33,15 +36,13 @@ class TeamController extends Controller
      */
     public function create()
     {
-
-
-        return view('team created, add participants ?');
+        return view('backend.internships.validate.index');
     }
     public function join($team_uuid):view
     {
         $student = Student::findOrFail(Auth::user()->id);
         //student who joins gonna have the same uuid and his id
-        Team::create($team_uuid, $student_id);
+        Project::create($team_uuid, $student_id);
         return view('you joined the team $team_uuid');
     }
 
@@ -56,18 +57,16 @@ class TeamController extends Controller
         //here the team gonna be created with it's uuid
         $student = Student::findOrFail(Auth::user()->id);
 
-        Team::createOrFail(Str::Uuid(),$student_id);    
-        return view('team created, add participants ?');
-
+        Project::createOrFail(Str::Uuid(),$student_id);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\School\Project\Team  $team
+     * @param  \App\Models\School\Project\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function show(Team $team)
+    public function show(Project $project)
     {
         //
     }
@@ -75,10 +74,10 @@ class TeamController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\School\Project\Team  $team
+     * @param  \App\Models\School\Project\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function edit(Team $team)
+    public function edit(Project $project)
     {
         //
     }
@@ -87,10 +86,10 @@ class TeamController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\School\Project\Team  $team
+     * @param  \App\Models\School\Project\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Team $team)
+    public function update(Request $request, Project $project)
     {
         //
     }
@@ -98,10 +97,10 @@ class TeamController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\School\Project\Team  $team
+     * @param  \App\Models\School\Project\Project  $project
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Team $team)
+    public function destroy(Project $project)
     {
         //
     }
