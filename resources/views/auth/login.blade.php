@@ -24,7 +24,7 @@
                             {{ Form::textGroup([
                                 'name' => 'email',
                                 'value' ,
-                                'label' => 'Adresse email',
+                                'label' => __('Email adress'),
                                 'placeholder' ,
                                 'class' => 'materialize-textarea validate',
                                 'icon' => 'account_circle',
@@ -37,7 +37,7 @@
                             {{ Form::textGroup([
                                 'name' => 'password',
                                 'value' ,
-                                'label' => 'Adresse email',
+                                'label' => __('Email adress'),
                                 'placeholder' ,
                                 'class' => 'materialize-textarea validate',
                                 'icon' => 'lock_outline',

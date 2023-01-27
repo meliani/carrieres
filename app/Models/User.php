@@ -9,12 +9,15 @@ use App\Models\Profile\Person;
 use App\Models\School\Internship\Internship;
 use App\Models\School\Internship\Adviser;
 
+// use App\Notifications\Auth\VerifyEmail;
+
 use Illuminate\Support\Facades\Hash;
 
 class User extends Authenticatable
 {
     use HasRoles;
     use Notifiable;
+    use \App\Traits\Auth\CanResetPassword;
 
     /**
      * The attributes that are mass assignable.
@@ -85,4 +88,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Adviser::class,'id_exami3');
     } */
+    
+    /**
+     * Send the email verification notification.
+     *
+     * @return void
+     */
+    // public function sendEmailVerificationNotification()
+    // {
+    //     $this->notify(new VerifyEmail);
+    // }
 }
