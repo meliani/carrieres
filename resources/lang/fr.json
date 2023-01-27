@@ -32,6 +32,11 @@
     "Add a document to detail this project": "Attacher un doment contenant d'avantage d'informations sur le projet",
     "DASRE: Direction Adjointe des Stages et Relations Entreprises": "DASRE: Direction Adjointe des Stages et Relations Entreprises",
     "Staff Dashboard": "Dashboard Direction des stages",
-    "Click and select a date": "Cliquer et selectionnez une date"
+    "Click and select a date": "Cliquer et selectionnez une date",
+    "Projects list": "Liste des projets",
+    "by": "par",
+    "This agreement was signed": "Convention signée",
+    "Duplicate entry not allowed !": "Double enregistrement non permis !",
+    "Database communication error !": "Erreur de communication avec la base de données ... Veuillez réessayer plutard, si le problème persiste contactez l'administrateur de la plateforme"
 
 }

@@ -7,7 +7,7 @@
 @section('content')
 
         <div class="row center">
-        <h4 class="header light center blue-text text-lighten-1">Liste des encadrements</h4>
+        <h4 class="header light center blue-text text-lighten-1">{{ __('Projects list') }}</h4>
         </div>
     @if($trainees instanceof \Illuminate\Pagination\LengthAwarePaginator )
     <div class="center">
@@ -23,7 +23,7 @@
         </div>
     {!! Form::close() !!}
 
-    @include('frontend.internships.signing.list')
+    @include('backend.internships.validation.list')
 
 
     @if($trainees instanceof \Illuminate\Pagination\LengthAwarePaginator )

@@ -24,7 +24,7 @@ class Project extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'student_ids'
+        'id','project_uuid', 'team_uuid'
     ];
 
     /**

@@ -137,8 +137,8 @@ Route::namespace('Backend')
                 Route::get('add_note/{internship_id}','NoteController@show');
                 Route::put('add_note/{internship_id}','NoteController@update');
 
-                Route::get('add_partner/{internship_id}','PartnerController@show');
-                Route::put('add_partner/{internship_id}','PartnerController@update');
+                // Route::get('add_partner/{internship_id}','PartnerController@show');
+                // Route::put('add_partner/{internship_id}','PartnerController@update');
 
                 Route::get('add_adviser/{project_id}','AdviserController@show');
                 Route::put('add_adviser/{project_id}','AdviserController@update');

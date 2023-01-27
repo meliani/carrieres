@@ -10,7 +10,7 @@
 
 <div class="row center">
     <i class="large material-icons prefix blue-text">supervisor_account</i>
-<h4 class="header light center blue-text text-lighten-1">{{$internship->student_name}}</h4>
+<h4 class="header light center blue-text text-lighten-1">{{$internship->student->full_name}}</h4>
 </div>
 <div class="container">
     <div class="row">
