@@ -3,7 +3,9 @@
 namespace App\Models\School\Project;
 
 use App\Models\Core\baseModel as Model;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\School\Project\Project;
+use Illuminate\Database\Eloquent\Relations\HasManyThrough;
+
 
 class Team extends Model
 {
@@ -18,4 +20,18 @@ class Team extends Model
         'created_at',
         'updated_at'
     ];
+    public function project()
+    {
+        // return $this->hasOne(Project::class,'id');
+        // return $intern->student->team->project;
+        return $this->hasOne(Project::class,'team_uuid','team_uuid');
+
+    }
+    public function supervisors()
+    {
+        // return $this->hasOne(Project::class,'id');
+        // return $intern->student->team->project;
+        return $this->hasMany(Supervisor::class,'team_uuid','team_uuid');
+HasManyThroughpivot
+    }
 }

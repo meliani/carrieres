@@ -2,21 +2,21 @@
 
 namespace App\Models\School\Internship;
 
-use App\Models\Core\baseModel;
-use Illuminate\Database\Eloquent\Model;
-use App\Models\User;
-use App\Models\School\Internship\Adviser;
-use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\Core\baseModel as Model;
 use App\Models\Profile\Person;
-use App\Models\Profile\Student;
 use App\Models\Profile\Professor;
-use Collective\Html\Eloquent\FormAccessible;
-use App\Models\School\Internship\Defense;
+use App\Models\Profile\Student;
+use App\Models\School\Internship\Adviser;
 use App\Models\School\Internship\Advising;
-use App\Models\School\Internship\Project;
+use App\Models\School\Internship\Defense;
+use App\Models\School\Project\Team;
+use App\Models\User;
 use Carbon\Carbon;
+use Collective\Html\Eloquent\FormAccessible;
+use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Models\School\Project\Project;
 
-class Internship extends baseModel
+class Internship extends Model
 {
     use FormAccessible;     
 
@@ -143,8 +143,15 @@ class Internship extends baseModel
     }
     public function project()
     {
-        return $this->hasOne(Project::class,'id');
+        // return $this->hasOne(Project::class,'id');
+        // return $intern->student->team->project;
     }
+    public function team()
+    {
+        return $this->hasOne(Team::class,'student_id','user_id');
+        // return $intern->student->team->project;
+    }
+
 /*     public function defense()
     {
         return $this->hasOne(Defense::class);
@@ -154,6 +161,10 @@ class Internship extends baseModel
         return $this->hasMany(Professor::class)
         ->withPivot('advising_type','user_id','professor_id','internship_id');
     } */
+     public function supervisor()
+	{
+        // return $intern->student->team->project->supervisors;
+    }
     public function year()
 	{
 		return $this->belongsTo(App\Models\Year::class);
@@ -197,4 +208,9 @@ class Internship extends baseModel
         return $notes;
     }
     
+
+    /**
+     */
+    public function __construct() {
+    }
 }
