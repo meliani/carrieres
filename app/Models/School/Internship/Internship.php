@@ -81,7 +81,7 @@ class Internship extends Model
         'int_adviser_id',
         'int_adviser_name',
         'is_signed',
-        'user_id',
+        'student_id',
         'year_id',
         'is_valid',
         'model_status_id',
@@ -125,21 +125,9 @@ class Internship extends Model
     {
         return $this->belongsToMany(Person::class,'internship_groupes','internship_id','user_id');
     } */
-    public function user()
-	{
-		return $this->belongsTo(User::class,'user_id','id');
-    }
-/*     public function advisers()
-    {
-        return $this->hasMany(Adviser::class);
-    } */
-    public function person()
-    {
-        return $this->belongsTo(Person::class,'user_id','user_id');
-    }
     public function student()
     {
-        return $this->belongsTo(Student::class,'user_id','user_id');
+        return $this->belongsTo(Student::class);
     }
     public function project()
     {
@@ -148,7 +136,7 @@ class Internship extends Model
     }
     public function team()
     {
-        return $this->hasOne(Team::class,'student_id','user_id');
+        return $this->hasOne(Team::class,'student_id','student_id');
         // return $intern->student->team->project;
     }
 

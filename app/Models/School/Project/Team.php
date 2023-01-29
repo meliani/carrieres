@@ -32,6 +32,6 @@ class Team extends Model
         // return $this->hasOne(Project::class,'id');
         // return $intern->student->team->project;
         return $this->hasMany(Supervisor::class,'team_uuid','team_uuid');
-HasManyThroughpivot
+// or HasManyThroughpivot
     }
 }

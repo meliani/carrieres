@@ -45,7 +45,7 @@ class Stream extends Model
      */
     public function students()
     {
-        return $this->belongsToMany(\App\Student::class);
+        return $this->belongsToMany(\App\School\Student::class);
     }
 
 }
