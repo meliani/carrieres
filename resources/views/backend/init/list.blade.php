@@ -15,7 +15,7 @@
       @foreach ($students as $student)
 
       <tr>
-        <td class="strong">{{ $student->pfe_id }}</td>
+        <td class="strong">{{ $student->id }}</td>
         <td><div class="sub strong">{{ $student->full_name }}</div>
           @if ($student['filiere_text'])
           <span class="new badge blue lighten-3 white-text" 
@@ -29,7 +29,7 @@
          {{-- Limit intitulé to 100 characters --}}
          <td>{{ isset($student->internship->created_at) ? \Carbon\Carbon::parse($student->internship['created_at'])->format('d M Y'):'' }}</td>   
          <td class="center">
-           @if(isset($student->internship->is_signed)*0)
+           @if(isset($student->internship->is_signed))
            {{ __('This agreement was signed') }}{{ __('by') }} {{ $student->internship->professor->full_name }}
           @else
             <a class="blue btn-small" href={{ route('backend.projects.create', ['id' => $student->internship['id'] ]) }}><i class="tiny material-icons">remove_red_eye</i></a>

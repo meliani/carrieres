@@ -27,7 +27,7 @@ class BinomeController extends BaseController
      */
     public function create()
     {
-        $students = Student::where('ine','=',3)
+        $students = Student::where('program_id','=',3)
         ->get(['user_id','first_name','last_name'])
         ->pluck('name','user_id')->all();
         session(['internship_id' => request('internship_id')]);
@@ -60,8 +60,8 @@ class BinomeController extends BaseController
         $internship->groupes()->sync(request('binome_user_id'));
         $internship->save();
 
-        $internship_b->binome()->associate($internship->user_id);
-        $internship_b->groupes()->sync($internship->user_id);
+        $internship_b->binome()->associate($internship->student_id);
+        $internship_b->groupes()->sync($internship->student_id);
         $internship_b->save();
 
         flash()->success('Votre binome a été bien enregistrée.');

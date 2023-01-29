@@ -12,7 +12,7 @@
 
                         <h6 class='header5 blue-grey-text textlighten-5'><p>Vous êtes en 
 
-                            <b>{{ trans_choice('labels.profile.years',user()->people->ine) }}</b>, filière 
+                            <b>{{ trans_choice('labels.profile.years',user()->people->program_id) }}</b>, filière 
                             <b>{{ user()->people->filiere_text }}</b>
                             @if(user()->people->is_mobility)
                                 @lang('newlife.profile.mobility')

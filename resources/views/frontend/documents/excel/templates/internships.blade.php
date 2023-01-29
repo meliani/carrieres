@@ -1,9 +1,9 @@
 <?php 
-//$trainees = \App\Models\School\Internship::where('scholar_year','2018-2019')->with('people')->get();
-$trainees = \App\Models\Profile\Student::with('internship')->get();
+//$students = \App\Models\School\Internship::where('scholar_year','2018-2019')->with('people')->get();
+$students = \App\Models\Profile\Student::with('internship')->get();
 // ->with('internship')->get();
-//dd($trainees);
-//$trainees = $trainees->people();
+//dd($students);
+//$students = $students->people();
 ?>
 <table>
 <thead>
@@ -49,52 +49,52 @@ $trainees = \App\Models\Profile\Student::with('internship')->get();
     </tr>
 </thead>
 <tbody>
-    @foreach ($trainees as $trainee)
+    @foreach ($students as $student)
     <tr>
-        {{-- {{dd($trainee->internship->id)}} --}}
+        {{-- {{dd($student->internship->id)}} --}}
         {{-- Student fields --}}
-        <td class="strong">{{ isset($trainee->internship->id)? $trainee->internship->id:''}}</td>
-        <td class="strong">{{ $trainee->user_id }}
-            {!! isset($trainee->internship->binome)?'.'.$trainee->internship->binome_user_id:'' !!}
+        <td class="strong">{{ isset($student->internship->id)? $student->internship->id:''}}</td>
+        <td class="strong">{{ $student->user_id }}
+            {!! isset($student->internship->binome)?'.'.$student->internship->binome_user_id:'' !!}
         </td>
-        <td class="sub strong">{{ $trainee->full_name }}</td>
-        <td>{{ isset($trainee->filiere_text)? $trainee->filiere_text:'' }}</td>
-        <td>{{ $trainee->email_perso }}</td>
-        <td>{{ $trainee->phone }}</td>
-        <td>{{ $trainee->cv }}</td>
-        <td>{{ $trainee->lm }}</td>
-        <td>{{ $trainee->photo }}</td>
-        <td>{{ $trainee->is_mobility }}</td>
-        <td>{{ $trainee->abroad_school }}</td>
-        <td>{{ $trainee->is_active }}</td>
+        <td class="sub strong">{{ $student->full_name }}</td>
+        <td>{{ isset($student->filiere_text)? $student->filiere_text:'' }}</td>
+        <td>{{ $student->email_perso }}</td>
+        <td>{{ $student->phone }}</td>
+        <td>{{ $student->cv }}</td>
+        <td>{{ $student->lm }}</td>
+        <td>{{ $student->photo }}</td>
+        <td>{{ $student->is_mobility }}</td>
+        <td>{{ $student->abroad_school }}</td>
+        <td>{{ $student->is_active }}</td>
 
         {{-- INternship fields --}}
-        @isset($trainee->internship->id)
-        <td class="strong">{{ $trainee->internship->raison_sociale }}</td>
+        @isset($student->internship->id)
+        <td class="strong">{{ $student->internship->raison_sociale }}</td>
 
-        <td>{{  $trainee->internship->pays }}</td>
-        <td>{{  $trainee->internship->ville }}</td>
-        <td>{{  $trainee->internship->office_location }}</td>
-        <td>{{  $trainee->internship->intitule }}</td>
-        <td>{{  $trainee->internship->descriptif }}</td>
-        <td>{{  $trainee->internship->keywords }}</td>
+        <td>{{  $student->internship->pays }}</td>
+        <td>{{  $student->internship->ville }}</td>
+        <td>{{  $student->internship->office_location }}</td>
+        <td>{{  $student->internship->intitule }}</td>
+        <td>{{  $student->internship->descriptif }}</td>
+        <td>{{  $student->internship->keywords }}</td>
 
-        <td>{{ isset($trainee->internship->created_at) ? $trainee->internship->created_at->format('d/m/Y'):'' }}</td>
-        <td>{{ isset($trainee->internship->updated_at) ? $trainee->internship->updated_at->format('d/m/Y'):'' }}</td>
-        <td>{{ isset($trainee->internship->date_debut) ?  $trainee->internship->date_debut->format('d/m/Y'):'' }}</td>   
-        <td>{{ isset($trainee->internship->date_fin) ?  $trainee->internship->date_fin->format('d/m/Y'):'' }}</td>   
-        <td>{{  $trainee->internship->duree }}</td>
-        <td>{{  $trainee->internship->parrain_nom }} {{  $trainee->internship->parrain_prenom }}</td>
-        <td>{{  $trainee->internship->parrain_fonction }}</td>
-        <td>{{  $trainee->internship->parrain_tel }}</td>
-        <td>{{  $trainee->internship->parrain_mail }}</td>
-        <td>{{  $trainee->internship->encadrant_ext_nom }} {{  $trainee->internship->encadrant_ext_prenom }}</td>
-        <td>{{  $trainee->internship->encadrant_ext_fonction }}</td>
-        <td>{{  $trainee->internship->encadrant_ext_tel }}</td>
-        <td>{{  $trainee->internship->encadrant_ext_mail }}</td>
-        <td>{{  $trainee->internship->int_adviser_name }}</td>
-        <td>{{  $trainee->internship->remuneration }} {{  $trainee->internship->currency }}</td>
-        <td>{{  $trainee->internship->load }}</td>
+        <td>{{ isset($student->internship->created_at) ? $student->internship->created_at->format('d/m/Y'):'' }}</td>
+        <td>{{ isset($student->internship->updated_at) ? $student->internship->updated_at->format('d/m/Y'):'' }}</td>
+        <td>{{ isset($student->internship->date_debut) ?  $student->internship->date_debut->format('d/m/Y'):'' }}</td>   
+        <td>{{ isset($student->internship->date_fin) ?  $student->internship->date_fin->format('d/m/Y'):'' }}</td>   
+        <td>{{  $student->internship->duree }}</td>
+        <td>{{  $student->internship->parrain_nom }} {{  $student->internship->parrain_prenom }}</td>
+        <td>{{  $student->internship->parrain_fonction }}</td>
+        <td>{{  $student->internship->parrain_tel }}</td>
+        <td>{{  $student->internship->parrain_mail }}</td>
+        <td>{{  $student->internship->encadrant_ext_nom }} {{  $student->internship->encadrant_ext_prenom }}</td>
+        <td>{{  $student->internship->encadrant_ext_fonction }}</td>
+        <td>{{  $student->internship->encadrant_ext_tel }}</td>
+        <td>{{  $student->internship->encadrant_ext_mail }}</td>
+        <td>{{  $student->internship->int_adviser_name }}</td>
+        <td>{{  $student->internship->remuneration }} {{  $student->internship->currency }}</td>
+        <td>{{  $student->internship->load }}</td>
         @else
         <td></td>
 

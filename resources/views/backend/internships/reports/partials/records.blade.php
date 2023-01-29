@@ -1,12 +1,12 @@
 <tr>
     <td>
-    {{ $student->user_id }}
+    {{ $student->id }}
     </td>
     <td>
     {{ $student->full_name }}
     </td>
     <td>
-    {{ $student->ine ?? 'NA' }}
+    {{ $student->program_id ?? 'NA' }}
     </td>
     <td>
     {{ $student->report->company_name }}

@@ -17,7 +17,7 @@
       @foreach ($internships as $internship)
       <tr>
         @if(isset($internship->student))
-        <td class="strong">{{ $internship->student->user_id }}</td>
+        <td class="strong">{{ $internship->student->id }}</td>
         <td><div
           class="waves-effect sub strong">{{ $internship->student->full_name }}
           </div>

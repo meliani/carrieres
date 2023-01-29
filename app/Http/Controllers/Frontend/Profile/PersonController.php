@@ -91,7 +91,7 @@ class PersonController extends Controller
             'lm' => 'required',
             'photo' => 'required',
             'birth_date',
-            'ine',
+            'program_id',
             'branche_id',
             'filiere_text' => 'required',
             'is_mobility',

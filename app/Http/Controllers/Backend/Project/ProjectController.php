@@ -38,11 +38,11 @@ class ProjectController extends Controller
 
 
         $internships = Internship::with('student')->latest();
-        $trainees = Student::has('internship')
+        $students = Student::has('internship')
         ->with('internship')
         ->latest()->get();
-        // dd($trainees);
-        return view('backend.internships.validation.index', ["trainees"=>$trainees]);
+        // dd($students);
+        return view('backend.internships.validation.index', ["students"=>$students]);
    }
 
     /**

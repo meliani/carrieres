@@ -28,7 +28,7 @@
       @endforeach
     @endif
     </li>
-    @if(auth()->user()->people->ine==3)
+    @if(auth()->user()->people->program_id==3)
       @if(auth()->user()->people->is_mobility<>1)
     @includeWhen(auth()->user()->people->internship->pays<>'France','frontend.documents.partials.buttons.global')
     @includeWhen(auth()->user()->people->internship->pays=='France','frontend.documents.partials.buttons.france')

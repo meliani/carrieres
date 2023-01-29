@@ -37,22 +37,22 @@
                     {{-- {{dd($internship->student)}} --}}
                     @isset($internship->student)
                         <td class="strong">
-                            {{ $internship->student->user_id }}
+                            {{ $internship->student->id }}
                         </td>
                         <td class="multiline center strong">
-                            <p onclick="copyToClipboard('#full_name{{ $internship->student->user_id }}')"
+                            <p onclick="copyToClipboard('#full_name{{ $internship->student->id }}')"
                                 class="waves-effect sub strong">
-                            <p id="full_name{{ $internship->student->user_id }}">
+                            <p id="full_name{{ $internship->student->id }}">
                                 {{ $internship->student->full_name }}</p>
                             </p>
 
                             <p><span class="new badge blue lighten-1 white-text" data-badge-caption=""
-                                    onclick="copyToClipboard('#phone{{ $internship->student->user_id }}')"
-                                    id="phone{{ $internship->student->user_id }}">{{ $internship->student->phone }}</p>
+                                    onclick="copyToClipboard('#phone{{ $internship->student->id }}')"
+                                    id="phone{{ $internship->student->id }}">{{ $internship->student->phone }}</p>
                             <p>
                                 <span class="new badge orange lighten-1 white-text" data-badge-caption=""
-                                    onclick="copyToClipboard('#filiere{{ $internship->student->user_id }}')"
-                                    id="filiere{{ $internship->student->user_id }}">{{ $internship->student->filiere_text }}
+                                    onclick="copyToClipboard('#filiere{{ $internship->student->id }}')"
+                                    id="filiere{{ $internship->student->id }}">{{ $internship->student->filiere_text }}
                             </p>
 
                             @isset($internship->binome)
@@ -113,7 +113,7 @@
                             </td>
                             <td class="center">
                                 {{-- @include('backend.internships.partials.actions') --}}
-                                <a href="{{ url('~/internships/agreements', $internship->user_id) }}"><i
+                                <a href="{{ url('~/internships/agreements', $internship->student_id) }}"><i
                                         class="material-icons">attach_file</i></a>
                             </td>
                             <td class="center">

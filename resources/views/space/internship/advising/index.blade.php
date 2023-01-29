@@ -10,9 +10,9 @@
         <div class="row center">
         <h4 class="header light center blue-text text-lighten-1">Liste des encadrements</h4>
         </div>
-    @if($trainees instanceof \Illuminate\Pagination\LengthAwarePaginator )
+    @if($students instanceof \Illuminate\Pagination\LengthAwarePaginator )
     <div class="center">
-        {{ $trainees->links('vendor.pagination.default') }}
+        {{ $students->links('vendor.pagination.default') }}
     </div>
     @endif
 
@@ -26,9 +26,9 @@
     @include('space.internship.advising.list')
 
 
-    @if($trainees instanceof \Illuminate\Pagination\LengthAwarePaginator )
+    @if($students instanceof \Illuminate\Pagination\LengthAwarePaginator )
     <div class="center">
-        {{ $trainees->links('vendor.pagination.default') }}
+        {{ $students->links('vendor.pagination.default') }}
     </div>
     @endif
 @endsection
