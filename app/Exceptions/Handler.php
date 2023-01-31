@@ -73,9 +73,8 @@ class Handler extends ExceptionHandler
                 default:
                     $errorMessage = 'Database communication error !';
                     $errorMessage = $exception->getMessage();
-                    return parent::render($request, $exception);
-
-
+                    if(app()->isLocal())
+                        return parent::render($request, $exception);
             }
             // return response()->view('errors.pdo', [], 500);
             Session::flash('message', $errorMessage); 
