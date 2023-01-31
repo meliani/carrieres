@@ -1,8 +1,8 @@
 @include('frontend.documents.pdf.templates.document_headers')
 <?php
-//dd(auth()->user()->people);
+$internship = auth()->user()->student->internship;
 //$internship = auth()->user()->student->internships->last();
-$internship = auth()->user()->people->internship;
+
 //dd($internship);
 ?>
 
@@ -1277,8 +1277,8 @@ font-weight:bold;
 @include('frontend.documents.pdf.templates.document_css')
 </head>
 <body>
-<p class="tm26 tm82"><strong><em><span class="tm83"></span><span class="tm84">-=- CONVENTION </span></em><span class="tm85">DE STAGE -=-</span></strong></p>
-<p class="tm26 tm82"><strong><em><span class="tm83"></span></em><span class="tm85">PROJET DE FIN D&#8217;ETUDES</span></strong></p>
+<p class="tm26 tm82"><strong><em><span class="tm83"></span><span class="tm84">-=- CONVENTION </span></em><span class="tm85">DE StAge -=-</span></strong></p>
+<p class="tm26 tm82"><strong><em><span class="tm83"></span></em><span class="tm85">Projet de FIN D&#8217;ETUDES</span></strong></p>
 <p class="tm29 tm82"><strong><em><span class="tm83">&#160;</span></em></strong></p>
 <p class="tm31 tm82 tm86"><strong><span class="tm87"></span><u><span class="tm88">ARTICLE PREMIER&nbsp;:</span></u></strong></p>
 <p class="tm34 tm82 tm86"><strong><span class="tm87"></span></strong><span class="tm89">La pr&eacute;sente convention r&egrave;gle les rapports de&nbsp;: </span><strong><span
@@ -1289,54 +1289,60 @@ font-weight:bold;
  class="tm92"> </span><span class="tm90">{{ $internship->parrain_name }}</span><span
  class="tm91">, </span><span class="tm90">{{ $internship->parrain_fonction }}</span><span class="tm91">,</span></strong></p>
 <p class="tm40 tm82 tm93"><span class="tm94"></span><span class="tm89">avec L&#8217;Institut National des Postes et T&eacute;l&eacute;communications (INPT) repr&eacute;sent&eacute; par 
-	{{ config('school.current.signature.envoy_title') }} 
-</span><strong><span
- class="tm91">{{ config('school.current.signature.envoy_name') }},
+	{{ config('school.current.signature.envoy_title') }} 	
+</span><strong>
+	<span class="tm91">
+ {{ config('school.current.signature.envoy_name') }},
  {{ config('school.current.signature.envoy_occupation') }},
 </span></strong></p>
 <p class="tm34 tm82 tm86"><strong><span class="tm87"></span></strong><span class="tm89">Concernant le stage de Fin d&#8217;&eacute;tudes de</span><strong><span
- class="tm91"> </span><span class="tm90">{{ $internship->person->title }}</span><span class="tm91">&nbsp;</span><span
- class="tm90">{{ $internship->person->full_name }}</span></strong><span
- class="tm89">, </span><strong><span class="tm90"> </span></strong><span class="tm89">&eacute;l&egrave;ve ing&eacute;nieur de la fili&egrave;re : </span><strong><span
- class="tm90">
- {{ config('school.current.branches.'.$internship->person->filiere_text.'.full_title')  }} 
-</span></strong><span class="tm89">, </span></p>
+ class="tm91"> </span><span class="tm90">{{ $internship->student->title }}</span><span class="tm91">&nbsp;</span><span
+ class="tm90">{{ $internship->student->full_name }}</span></strong><span
+ class="tm89">, </span><strong><span class="tm90"> </span></strong><span class="tm89">&eacute;l&egrave;ve ing&eacute;nieur de la fili&egrave;re : </span><strong>
+	 <span class="tm90">
+ {{ config('school.current.branches.'.$internship->student->filiere_text.'.full_title')  }} 
+</span></strong><span class="tm89">, 
+        de l’Institut National des Postes et Télécommunications (INPT) de Rabat, 
+        en échange académique à l’Ecole 
+		<span class="tm90">
+			<strong>
+				{{ $internship->student->abroad_school }}
+			</strong>
+		</span>
+		sur l’année scolaire 
+		<span class="tm90"> 
+		<strong>
+			{{ config('school.current.academic_year') }}     
+		</strong>
+		</span>
+		dans le cadre d’un partenariat,     
+</span></p>
 <p class="tm42 tm82"><strong><span class="tm87"></span></strong><span class="tm89">Pour la p&eacute;riode du </span><strong><span
  class="tm90">{{ $internship->date_debut->format('d/m/Y') }}</span></strong><span class="tm89">&nbsp;au</span><strong><span class="tm95"> </span><span
  class="tm90">{{ $internship->date_fin->format('d/m/Y') }}</span></strong><span class="tm89">, sous la responsabilit&eacute; de&nbsp;:</span></p>
 <p class="tm44 tm82"><strong><span class="tm87"></span></strong><span class="tm96">- </span><span class="tm89">Encadrant Externe&nbsp;: </span><strong><span
  class="tm90">{{ $internship->encadrant_ext_name }}</span><span
  class="tm91">, </span><span class="tm90">{{ $internship->encadrant_ext_fonction }}</span><span class="tm91">, </span><span
- class="tm90">{{ $internship->encadrant_ext_tel }} </span><span class="tm91">, </span><span class="tm90">{{ $internship->encadrant_ext_mail }}</span><span
+ class="tm90">{{ $internship->encadrant_ext_tel }}</span><span class="tm91">, </span><span class="tm90">{{ $internship->encadrant_ext_mail }}</span><span
  class="tm91">.</span></strong></p>
-<p class="tm44 tm82">
-		<span class="tm89">
-			et
-		</span>
-</p>
-<p class="tm44 tm82">
-	<span class="tm96">- </span><span class="tm89">Coordonnateur de la fili&egrave;re&nbsp;: </span><strong><span
+<p class="tm44 tm82"><strong><span class="tm87"></span></strong><span class="tm96">- </span><span class="tm89">Coordonnateur de la fili&egrave;re&nbsp;: </span><strong><span
  class="tm90">
- {{-- {{ dd(config("school.current.branches.".$internship->person->filiere_text.".cf_name"))}}  --}}
- {{ config('school.current.branches.'.$internship->person->filiere_text.'.cf_title') ?? '' }} 
- {{ config('school.current.branches.'.$internship->person->filiere_text.'.cf_name')  ?? '. . . . . . . . . . . . . . . . . . .'}} 
+	{{ config('school.current.branches.'.$internship->student->filiere_text.'.cf_title') ?? '' }} 
+	{{ config('school.current.branches.'.$internship->student->filiere_text.'.cf_name')  ?? '. . . . . . . . . . . . . . . . . . .'}}
 </span></strong></p>
 <p class="tm47 tm82 tm97"><span class="tm94"></span><span class="tm89">Le stage portera sur le sujet suivant&nbsp;:</span><strong><span
  class="tm91"> </span><span class="tm90"><b>{{ $internship->intitule }}</b></span><span class="tm91">&nbsp;</span></strong></p>
 <p class="tm49 tm82 tm93"><span class="tm94"></span><span class="tm89">Descriptif d&eacute;taill&eacute;&nbsp;: </span><strong><span
  class="tm90">{{ $internship->descriptif }}</span></strong><span class="tm89">&nbsp;</span></p>
 <p class="tm49 tm82 tm93"><span class="tm94"></span><span class="tm89">Adresse du stage&nbsp;</span><strong><em><span class="tm98">(adresse pr&eacute;cise, si diff&eacute;rente de l&#8217;adresse de l&#8217;entreprise indiqu&eacute;e
-ci dessus) : </span></em><span class="tm90">{{ $internship->office_location ?? '' }} </span></strong>
- 
-</p>
-<br>
-<p class="tm51 tm82 tm86">
-	<strong><span class="tm87"></span>
-	<u><span class="tm88">ARTICLE SECOND&nbsp;:</span></u></strong></p>
+ci dessus)</span></em><span class="tm91"> : </span>
+<span class="tm90">{{ $internship->office_location ?? '' }} </span>
+</strong></p>
+<p class="tm51 tm82 tm86"><strong><span class="tm87"></span><u><span class="tm88">ARTICLE SECOND&nbsp;:</span></u></strong></p>
 <p class="tm52 tm82 tm99"><strong><span class="tm87"></span></strong><span class="tm89">La pr&eacute;sente convention garantit que le r&egrave;glement des stages inscrit au verso a &eacute;t&eacute; port&eacute; &agrave; la
 connaissance de l&#8217;entreprise et de l&#8217;&eacute;l&egrave;ve et que ceux-ci en ont approuv&eacute; express&eacute;ment toutes les clauses.</span></p>
-<p class="tm52 tm82 tm99"><span class="tm87">Document &eacute;tabli en quatre exemplaires</span></p>
-
+<p class="tm52 tm82 tm99"><strong><span class="tm87">&#160;</span></strong></p>
+<p class="tm53 tm82 tm86"><strong><span class="tm87"></span><em><u><span class="tm98">Document &eacute;tabli en quatre exemplaires</span></u></em></strong></p>
 <p class="tm55 tm82 tm100"><em><span class="tm101">&#160;</span></em></p>
 
 @include('frontend.documents.pdf.templates.partials.signature_fields')
@@ -1345,7 +1351,7 @@ connaissance de l&#8217;entreprise et de l&#8217;&eacute;l&egrave;ve et que ceux
 <p class="tm68 tm82 tm86"><span class="tm94"></span><strong><span class="tm91">REGLEMENT DES STAGES EN ENTREPRISE</span></strong></p>
 <p class="tm69 tm82 tm99"><span class="tm94">&#160;</span></p>
 <p class="tm71 tm82 tm93"><span class="tm94"></span><strong><span class="tm111">Art.1-</span></strong><span class="tm112"> l&#8217;&eacute;l&egrave;ve ing&eacute;nieur est appel&eacute; &agrave; effectuer un stage de PFE obligatoire
-pour l&#8217;obtention du dipl&ocirc;me d&#8217;Ingénieur en Télécommunications et Technologies de l'Information. L&#8217;objectif poursuivi du stage de PFE est de donner &agrave; chaque &eacute;tudiant l&#8217;occasion d&#8217;effectuer
+pour l&#8217;obtention du dipl&ocirc;me d&#8217;ing&eacute;nieur en t&eacute;l&eacute;communications. L&#8217;objectif poursuivi du stage de PFE est de donner &agrave; chaque &eacute;tudiant l&#8217;occasion d&#8217;effectuer
 une recherche personnelle et approfondie sur un sujet propos&eacute; par une entreprise afin de s&#8217;immerger dans le monde du travail.</span></p>
 <p class="tm75 tm82 tm93"><em><span class="tm101"></span><strong><span class="tm111">Art.2-</span></strong><span class="tm112"> Pendant la dur&eacute;e de son stage, le stagiaire reste plac&eacute; sous la responsabilit&eacute;
 de l&#8217;entreprise d&#8217;accueil tout en demeurant &eacute;tudiant de l&#8217;INPT. L&#39;&eacute;l&egrave;ve stagiaire pourra revenir &agrave; l&#39;Institut pendant la dur&eacute;e du stage, pour y suivre certains cours

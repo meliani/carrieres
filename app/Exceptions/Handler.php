@@ -71,9 +71,9 @@ class Handler extends ExceptionHandler
 
                     break;
                 default:
-                    // return parent::render($request, $exception);
-                    // $errorMessage = $exception->getMessage();
                     $errorMessage = 'Database communication error !';
+                    $errorMessage = $exception->getMessage();
+                    return parent::render($request, $exception);
 
 
             }

@@ -134,7 +134,7 @@ class PersonController extends Controller
      */
     public function activate()
     {
-        $person = Person::firstOrCreate(['user_id' => user()->id]);
+        $person = Person::firstOrCreate(['id' => user()->id]);
         return view('frontend.profile.person.activation',compact('person'));
     }
 

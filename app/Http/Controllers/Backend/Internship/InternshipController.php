@@ -26,7 +26,7 @@ class InternshipController extends BaseController
         
         if(request()->has('s')){
             $internships = Internship::whereHas('student', function ($query) {
-                $query->where('user_id','=', request('s'));
+                $query->where('pin','=', request('s'));
                 
             })->with('student')->get();
             $internships = Internship::with('student')->get();
@@ -52,10 +52,10 @@ class InternshipController extends BaseController
      *
      * @return \Illuminate\Http\Response
      */
-    public function clone($intertnship_id,$user_id)
+    public function clone($intertnship_id,$student_id)
     {
 /*         session(['internship_id' => $intertnship_id]);
-        session(['user_id' => $user_id]);
+        session(['student_id' => $student_id]);
         $internship = Internship::find($intertnship_id);
         return view('backend.internships.create',compact('internship')); */
     }
@@ -80,9 +80,9 @@ class InternshipController extends BaseController
         $input = $request->all();
         //dd($request->user()->id);
         $internship = new Internship($input);
-        if($request->session()->has('user_id'))
+        if($request->session()->has('student_id'))
         {
-            $internship->user()->associate(session('user_id'));
+            $internship->user()->associate(session('student_id'));
         }else{
             $internship->user()->associate(user()->id);
         }

@@ -70,7 +70,7 @@ class ReportController extends BaseController
      */
     public function edit(Report $report)
     {
-        $student = Person::find($report->user_id);
+        $student = Student::find($report->user_id);
         //$documents = $student->getMedia('internship');
         // check how to get multiple medias from model
         $documents[0] = $student->getMedia('file_agreement');

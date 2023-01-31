@@ -5,7 +5,7 @@
 	<meta http-equiv="content-type" content="text/html; charset=UTF8"/>
 	<title></title>
 	<meta name="generator" content="LibreOffice 6.2.3.2 (Windows)"/>
-	<meta name="author" content="nawalmoumen"/>
+	<meta name="author" content=""/>
 	<meta name="created" content="2013-04-03T13:18:00"/>
 	<meta name="changed" content="2019-05-01T13:16:45.261000000"/>
 	<style type="text/css">
@@ -44,7 +44,7 @@
 				                   </b></span></font></font>
 				</p>
 				<p lang="en-US" class="western" align="center"><font face="Times New Roman, serif"><span lang="fr-FR">Stage
-				ouvrier de la 1</span><sup><span lang="fr-FR">&egrave;re</span></sup><span lang="fr-FR">
+				technique de la 2</span><sup><span lang="fr-FR">ème</span></sup><span lang="fr-FR">
 				ann&eacute;e du cycle des Ing&eacute;nieurs d&rsquo;Etat (INE) de
 				l&rsquo;Institut National des Postes et T&eacute;l&eacute;communications
 				(INPT)</span></font></p>
@@ -56,28 +56,54 @@
 <br/>
 
 </p>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 100%">
+<br/>
+
+</p>
 <p>
 Monsieur le Directeur,
-</p><p>
+</p>
+<p>
 Nous vous remercions par la présente de bien vouloir accorder un Stage 
-Ouvrier à notre élève ingénieur de première année,  
-<b>{{ auth()->user()->people->title }} {{ auth()->user()->people->long_full_name }}</b>. 
-En accueillant notre élève-stagiaire au sein de votre entreprise, vous auriez contribué ainsi à une meilleure préparation pour son insertion dans la vie professionnelle.
-</p><p>
-Les stages ouvriers intégrés à la structure pédagogique du cycle INE permettent à l’élève ingénieur de se familiariser avec les conditions de travail et observer le fonctionnement de l’entreprise. En plus, grâce à vos appréciations des capacités et des compétences de notre élève, nous pourrions améliorer notre action pédagogique en rapprochant notre formation aux exigences du marché de travail.
-</p><p>
-A l’issue de ce stage, l’élève ingénieur est tenu d’élaborer un rapport dans lequel il présentera les résultats de son travail. Une copie dudit rapport sera remise à l’INPT et une autre à votre entreprise. 
-</p><p>
-Ce Stage Ouvrier est d’une durée de 4 semaines ou plus. (entre le 05 juillet et le 05 septembre de chaque année). Nous vous confirmons que notre élève stagiaire est couvert par l’assurance de l’INPT contre les accidents pouvant survenir au cours de ce stage et ce dans la limite de garantie de son assurance.
-</p><p>
+Technique à notre élève ingénieur de deuxième année,
+<b>{{ auth()->user()->person->title }} {{ auth()->user()->person->long_full_name }}</b>. 
+En accueillant notre élève-stagiaire au sein de votre entreprise, 
+vous auriez contribué ainsi à une meilleure préparation pour son insertion dans la vie professionnelle.
+</p>
+<p>
+
+Les stages techniques intégrés à la structure pédagogique du cycle 
+INE permettent à l’élève ingénieur d’effectuer, en situation réelle, 
+une recherche personnelle sur le thème proposé. 
+En plus, grâce à vos appréciations des capacités et des compétences de 
+notre élève, nous pourrions améliorer notre action pédagogique en rapprochant 
+notre formation aux exigences du marché de travail.
+</p>
+<p>
+
+A l’issue de ce stage, l’élève ingénieur est tenu d’élaborer un rapport dans 
+lequel il présentera les résultats de son travail. Une copie dudit rapport 
+sera remise à l’INPT et une autre à votre entreprise. 
+</p>
+<p>
+
+Ce Stage Technique est d’une durée de 4 à 8 semaines 
+(entre le 05 juillet et le 05 septembre de chaque année). 
+Nous vous confirmons que notre élève stagiaire est couvert par 
+l’assurance de l’INPT contre les accidents pouvant survenir au cours 
+de ce stage et ce dans la limite de garantie de son assurance.
+
+<p>
 En vous remerciant de votre coopération, nous vous prions d’agréer, Monsieur le Directeur, l’expression de nos salutations les meilleures.
 </p>
-<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 100%">
+  <br/>
 
 </p>
-<p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
-
+<p class="western" align="justify" style="margin-bottom: 0cm; line-height: 100%">
+ 
 </p>
+
 <p class="western" style="margin-bottom: 0cm; line-height: 100%"><br/>
 
 </p>

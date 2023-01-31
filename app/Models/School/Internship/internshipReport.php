@@ -48,17 +48,17 @@ class internshipReport extends Model
     ];
 
     public function setFileReportAttribute($value){
-        auth()->user()->people
+        auth()->user()->person
         ->addMedia($value)
         ->toMediaCollection('file_report','internship_reports');
     }    
     public function setFileAgreementAttribute($value){
-        auth()->user()->people
+        auth()->user()->person
         ->addMedia($value)
         ->toMediaCollection('file_agreement','internship_agreements');
     }    
     public function setFileCertificateAttribute($value){
-        auth()->user()->people
+        auth()->user()->person
         ->addMedia($value)
         ->toMediaCollection('file_certificate','internship_certificates');
     }

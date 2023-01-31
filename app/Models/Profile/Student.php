@@ -30,11 +30,11 @@ class Student extends Person implements HasMedia
         /**static::addGlobalScope(function ($query) {
             $query->where('status', '1');
         });*/
-         static::addGlobalScope(function ($query) {
+/*          static::addGlobalScope(function ($query) {
                 $query->where('is_active', config('school.student.active'))
                 ->where('model_status_id', config('school.current.model_status.prod'))
                 ->where('year_id',config('school.current.year_id'));
-        });
+        }); */
     }
 
     public function setPin(Student $student,$currentPin, $streamOrder){
@@ -44,12 +44,12 @@ class Student extends Person implements HasMedia
 
     public function internship()
     {
-        return $this->hasOne(Internship::class,'student_id','id');
+        return $this->hasOne(Internship::class);
         // ->with('adviser.adviser1.adviser2');
     }
     public function agreement()
     {
-        return $this->hasOne(InternshipAgreement::class,'user_id','user_id');
+        return $this->hasOne(InternshipAgreement::class,'student_id');
     }
     public function stream()
     {
@@ -66,13 +66,9 @@ class Student extends Person implements HasMedia
     {
         return $this->belongsToMany(\App\Models\Program::class);
     }
-    public function years()
-    {
-        return $this->belongsToMany(\App\Models\Year::class,'student_year','user_id','year_id');
-    }
     public function project()
     {
-        return $this->belongsTo(Project::class,'user_id','student_id');
+        return $this->belongsTo(Project::class,'id','student_id');
     }
 /**
  * 

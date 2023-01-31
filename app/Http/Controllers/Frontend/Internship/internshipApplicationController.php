@@ -40,7 +40,7 @@ class internshipApplicationController extends Controller
      */
     public function index()
     {
-        $applications = Application::where('user_id',user()->id)->get();
+        $applications = Application::where('student_id',user()->id)->get();
         //dd($applications);
         return view('frontend.internships.offers.applications.index',compact('applications'));
     }

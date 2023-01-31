@@ -62,7 +62,7 @@ class StoreInternshipPFE extends FormRequest
             'int_adviser_id' => 'nullable',
             'int_adviser_name' => 'nullable',
             'is_signed' => 'nullable',
-            'user_id' => 'nullable',
+            'student_id' => 'nullable',
             'year_id' => 'nullable',
             'is_valid' => 'nullable',
             'model_status_id' => 'nullable',

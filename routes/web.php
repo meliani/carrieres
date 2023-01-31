@@ -179,7 +179,7 @@ Route::
         Route::namespace ('Internship')->group(function () {
             // Controllers Within The "App\Http\Controllers\Frontend\Internship" Namespace
     
-            Route::get('internships/clone/{id}/{user_id?}', 'myInternshipController@clone');
+            Route::get('internships/clone/{id}/{student_id?}', 'myInternshipController@clone');
             Route::resource('internships', 'myInternshipController');
             Route::prefix('internships')->group(function () {
 

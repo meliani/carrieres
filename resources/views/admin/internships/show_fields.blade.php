@@ -151,7 +151,7 @@
 <!-- User Id Field -->
 <div class="form-group">
     {!! Form::label('user_id', 'User Id:') !!}
-    <p>{!! $internships->user_id !!}</p>
+    <p>{!! $internships->student_id !!}</p>
 </div>
 
 <!-- Created At Field -->
