@@ -6,7 +6,7 @@ use App\Models\Stage;
 use Maatwebsite\Excel\Concerns\FromCollection;
 use Maatwebsite\Excel\Concerns\ShouldAutoSize;
 use Maatwebsite\Excel\Concerns\WithHeadings;
-
+use App\Models\School\Internship\Internship;
 
 class AdvancedStagesExport implements FromCollection, ShouldAutoSize, WithHeadings
 {
@@ -15,7 +15,7 @@ class AdvancedStagesExport implements FromCollection, ShouldAutoSize, WithHeadin
     */
     public function collection()
     {
-        return \App\Models\School\Internship::with('people')->get()->flatten(1)->values();
+        return Internship::with('people')->get()->flatten(1)->values();
     }
   
 	public function headings(): array

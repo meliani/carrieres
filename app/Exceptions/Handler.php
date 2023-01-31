@@ -66,13 +66,18 @@ class Handler extends ExceptionHandler
             switch ($dbCode)
             {
                 case 23000:
-                    $errorMessage = 'Duplicate entry !';
+                    $errorMessage = __('Duplicate entry not allowed !');
+                    // $errorMessage = $exception->getMessage();
+
                     break;
                 default:
-                    //$errorMessage = 'database error !';
-                    return parent::render($request, $exception);
+                    // return parent::render($request, $exception);
+                    // $errorMessage = $exception->getMessage();
+                    $errorMessage = 'Database communication error !';
+
+
             }
-            //return response()->view('errors.pdo', [], 500);
+            // return response()->view('errors.pdo', [], 500);
             Session::flash('message', $errorMessage); 
             Session::flash('alert-class', 'error');
             return back();

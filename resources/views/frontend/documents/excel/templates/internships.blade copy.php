@@ -1,9 +1,9 @@
 <?php 
-//$trainees = \App\Models\School\Internship::where('scholar_year','2018-2019')->with('people')->get();
-$trainees = \App\Models\Profile\Person::Where('ine','3')
+//$students = \App\Models\School\Internship::where('scholar_year','2018-2019')->with('people')->get();
+$students = \App\Models\Profile\Person::Where('program_id','3')
 ->with('internship')->get();
 
-//$trainees = $trainees->people();
+//$students = $students->people();
 ?>
 <table>
 <thead>
@@ -31,31 +31,31 @@ $trainees = \App\Models\Profile\Person::Where('ine','3')
     </tr>
 </thead>
 <tbody>
-    @foreach ($trainees as $trainee)
+    @foreach ($students as $student)
 
     <tr>
-        <td class="strong">{{ $trainee->internship['id'] }}</td>
-        <td class="strong">{{ $trainee->pfe_id }}
-            {!! isset($trainee->internship->binome)?'.'.$trainee->internship->binome->pfe_id:'' !!}
+        <td class="strong">{{ $student->internship['id'] }}</td>
+        <td class="strong">{{ $student->pin }}
+            {!! isset($student->internship->binome)?'.'.$student->internship->binome->pin:'' !!}
         </td>
-        <td class="sub strong">{{ $trainee->full_name }}</td>
-        <td>{{ ( !empty($trainee['option_text'])? $trainee['option_text']:'' ) }}</td>
-        <td class="strong">{{ $trainee->internship['raison_sociale'] }}</td>
-        <td class="sub">{{  $trainee->internship['intitule'] }}</td>
-        <td>{{ isset($trainee->internship->created_at) ? $trainee->internship['created_at']->format('d M Y'):'' }}</td>
-        <td>{{ isset($trainee->internship->date_debut) ?  $trainee->internship['date_debut']->format('d/m/Y'):'' }}</td>   
-        <td>{{ isset($trainee->internship->date_fin) ?  $trainee->internship['date_fin']->format('d/m/Y'):'' }}</td>   
-        <td class="sub">{{  $trainee->internship['duree'] }}</td>
-        <td>{{ isset($trainee->internship->defense_at) ?  $trainee->internship->defense_at->format('d/m/Y'):'' }}</td>   
-        <td>{{ isset($trainee->internship->time_slot_id) ?  $trainee->internship->time_slot_id:'' }}</td>   
-        <td>{{ isset($trainee->internship->defense_start_time) ?  $trainee->internship->defense_start_time:'' }}</td>   
-        <td>{{ isset($trainee->internship->defense_end_time) ?  $trainee->internship->defense_end_time:'' }}</td>   
-        <td>{{ isset($trainee->internship->classroom_id) ?  $trainee->internship['classroom_id']:'' }}</td>   
-        <td>{{ isset($trainee->internship->adviser->adviser1) ? $trainee->internship->adviser->adviser1['name']:''}}</td>
-        <td>{{ isset($trainee->internship->adviser->adviser1) ? $trainee->internship->adviser->adviser2['name']:''}}</td>
-        <td>{!! isset($trainee->internship->adviser->exami1) ? '<p>'.$trainee->internship->adviser->exami1->name.'</p>':'' !!}</td>
-        <td>{!! isset($trainee->internship->adviser->exami2) ? '<p>'.$trainee->internship->adviser->exami2->name.'</p>':'' !!}</td>
-        <td>{!! isset($trainee->internship->adviser->exami3) ? '<p>'.$trainee->internship->adviser->exami3->name.'</p>':'' !!}</td>
+        <td class="sub strong">{{ $student->full_name }}</td>
+        <td>{{ ( !empty($student['option_text'])? $student['option_text']:'' ) }}</td>
+        <td class="strong">{{ $student->internship['raison_sociale'] }}</td>
+        <td class="sub">{{  $student->internship['intitule'] }}</td>
+        <td>{{ isset($student->internship->created_at) ? $student->internship['created_at']->format('d M Y'):'' }}</td>
+        <td>{{ isset($student->internship->date_debut) ?  $student->internship['date_debut']->format('d/m/Y'):'' }}</td>   
+        <td>{{ isset($student->internship->date_fin) ?  $student->internship['date_fin']->format('d/m/Y'):'' }}</td>   
+        <td class="sub">{{  $student->internship['duree'] }}</td>
+        <td>{{ isset($student->internship->defense_at) ?  $student->internship->defense_at->format('d/m/Y'):'' }}</td>   
+        <td>{{ isset($student->internship->time_slot_id) ?  $student->internship->time_slot_id:'' }}</td>   
+        <td>{{ isset($student->internship->defense_start_time) ?  $student->internship->defense_start_time:'' }}</td>   
+        <td>{{ isset($student->internship->defense_end_time) ?  $student->internship->defense_end_time:'' }}</td>   
+        <td>{{ isset($student->internship->classroom_id) ?  $student->internship['classroom_id']:'' }}</td>   
+        <td>{{ isset($student->internship->adviser->adviser1) ? $student->internship->adviser->adviser1['name']:''}}</td>
+        <td>{{ isset($student->internship->adviser->adviser1) ? $student->internship->adviser->adviser2['name']:''}}</td>
+        <td>{!! isset($student->internship->adviser->exami1) ? '<p>'.$student->internship->adviser->exami1->name.'</p>':'' !!}</td>
+        <td>{!! isset($student->internship->adviser->exami2) ? '<p>'.$student->internship->adviser->exami2->name.'</p>':'' !!}</td>
+        <td>{!! isset($student->internship->adviser->exami3) ? '<p>'.$student->internship->adviser->exami3->name.'</p>':'' !!}</td>
     </tr>
     @endforeach
     </tbody>

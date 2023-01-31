@@ -1,12 +1,12 @@
 <tr>
     <td>
-    {{ $student->user_id }}
+    {{ $student->id }}
     </td>
     <td>
     {{ $student->full_name }}
     </td>
     <td>
-    {{ $student->ine ?? 'NA' }}
+    {{ $student->program_id ?? 'NA' }}
     </td>
     <td>
     {{ $student->report->company_name }}
@@ -30,6 +30,6 @@
     {{ $student->report->paper_scorecard }}
     </td>
     <td>
-        <a href="-/internships/reports/{{ $student->report->id }}/edit"><i class="material-icons">menu</i></a>
+        <a href="~/internships/reports/{{ $student->report->id }}/edit"><i class="material-icons">menu</i></a>
     </td>
 </tr>

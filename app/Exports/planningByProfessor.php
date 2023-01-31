@@ -4,7 +4,7 @@ namespace App\Exports;
 use Illuminate\Contracts\View\View;
 use Maatwebsite\Excel\Concerns\FromView;
 use Maatwebsite\Excel\Concerns\FromCollection;
-use \App\Models\School\Internship;
+use \App\Models\School\Internship\Internship;
 use App\Models\Profile\Professor;
 
 class planningByProfessor implements FromView

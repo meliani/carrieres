@@ -6,8 +6,10 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Spatie\Permission\Traits\HasRoles;
 use App\Models\Profile\Person;
-use App\Models\School\Internship;
+use App\Models\School\Internship\Internship;
 use App\Models\School\Internship\Adviser;
+
+// use App\Notifications\Auth\VerifyEmail;
 
 use Illuminate\Support\Facades\Hash;
 
@@ -15,6 +17,7 @@ class User extends Authenticatable
 {
     use HasRoles;
     use Notifiable;
+    use \App\Traits\Auth\CanResetPassword;
 
     /**
      * The attributes that are mass assignable.
@@ -43,6 +46,13 @@ class User extends Authenticatable
     {   
         $this->attributes['password'] = $password;
     }
+    protected $appends = [
+        'full_name',
+    ];
+    public function getFullNameAttribute()
+	{
+		return $this->attributes['name'];
+    }
 /*     public static function getProfessors()
     {
         return User::where('is_professor',1)->orderBy('name')->get(['id','name'])->pluck('name','id')->all();
@@ -55,7 +65,7 @@ class User extends Authenticatable
     }
     public function people()
     {
-        return $this->hasOne(Person::class,'user_id','id');
+        return $this->hasOne(Person::class,'id','id');
     }
     public function student()
     {
@@ -85,4 +95,14 @@ class User extends Authenticatable
     {
         return $this->hasMany(Adviser::class,'id_exami3');
     } */
+    
+    /**
+     * Send the email verification notification.
+     *
+     * @return void
+     */
+    // public function sendEmailVerificationNotification()
+    // {
+    //     $this->notify(new VerifyEmail);
+    // }
 }

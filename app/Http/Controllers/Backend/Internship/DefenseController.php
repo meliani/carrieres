@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Backend\Internship;
 
 use App\Http\Controllers\Backend\BaseController;
 use App\Models\School\Internship\Defense;
-use App\Models\School\Internship;
+use App\Models\School\Internship\Internship;
 use Illuminate\Http\Request;
 
 class DefenseController extends BaseController
@@ -18,7 +18,7 @@ class DefenseController extends BaseController
     {
         //$collection = Defense::paginate();.
         $collection = Internship::latest()->whereHas('student', function ($query) {
-            $query->where('ine', '=', 3);
+            $query->where('program_id', '=', 3);
         })->get();
 
         return view('backend.internships.defenses.plannings.general.index',compact('collection'));

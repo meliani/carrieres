@@ -17,7 +17,7 @@
       @foreach ($internships as $internship)
       <tr>
         @if(isset($internship->student))
-        <td class="strong">{{ $internship->student->user_id }}</td>
+        <td class="strong">{{ $internship->student->id }}</td>
         <td><div
           class="waves-effect sub strong">{{ $internship->student->full_name }}
           </div>
@@ -41,18 +41,18 @@
          <td class="center">
            @if(isset($internship->adviser->adviser1))
             <p>{{ $internship->adviser->adviser1['name']}}</p>
-            <a class="center" href={{ route('Project.create', ['pfe_id' => $internship['id'],'advisor' => '1' ]) }}><i class="tiny material-icons">edit</i></a>
+            <a class="center" href={{ route('Project.create', ['pin' => $internship['id'],'advisor' => '1' ]) }}><i class="tiny material-icons">edit</i></a>
           @else
-            <a href={{ route('Project.create', ['pfe_id' => $internship['id'],'advisor' => '1' ]) }}><i class="tiny material-icons">add</i></a>
+            <a href={{ route('Project.create', ['pin' => $internship['id'],'advisor' => '1' ]) }}><i class="tiny material-icons">add</i></a>
           @endif
           </td>
           <td class="center">
           @if(isset($internship->adviser->adviser2))
           <p>{{ $internship->adviser->adviser2['name']}}</p>
-          <a class="center" href={{ route('Project.create', ['pfe_id' => $internship['id'],'advisor' => '2' ]) }}>
+          <a class="center" href={{ route('Project.create', ['pin' => $internship['id'],'advisor' => '2' ]) }}>
             <i class="tiny material-icons">edit</i></a>
           @else
-            <a href={{ route('Project.create', ['pfe_id' => $internship['id'],'advisor' => '2' ]) }}>
+            <a href={{ route('Project.create', ['pin' => $internship['id'],'advisor' => '2' ]) }}>
               <i class="tiny material-icons">add</i></a>
           @endif
           </td>

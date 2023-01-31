@@ -31,6 +31,20 @@
     "File path": "Chemin du ficher",
     "Add a document to detail this project": "Attacher un doment contenant d'avantage d'informations sur le projet",
     "DASRE: Direction Adjointe des Stages et Relations Entreprises": "DASRE: Direction Adjointe des Stages et Relations Entreprises",
-    "Staff Dashboard": "Dashboard Direction des stages"
+    "Staff Dashboard": "Dashboard Direction des stages",
+    "Click and select a date": "Cliquer et selectionnez une date",
+    "Projects list": "Liste des projets",
+    "by": "par",
+    "This agreement was signed": "Convention signée",
+    "Duplicate entry not allowed !": "Double enregistrement non permis !",
+    "Database communication error !": "Erreur de communication avec la base de données ... Veuillez réessayer plutard, si le problème persiste contactez l'administrateur de la plateforme",
+    "Reset password": "Redéfinition de mot de passe",
+    "Your new access credentials": "Votre nouveau mot de passe",
+    "Password": "Mot de passe",
+    "Password confirmation": "Confirmation du mot de passe",
+    "Email adress": "Adresse email",
+    "Send reset link": "Envoyer le lien de redéfinition de mot de passe",
+    "Verify Email Address": "Verification de votre adresse email",
+    "Please click the button below to verify your email address.":"Veuillez cliquer sur le bouton ci dessous pour vérifier votre adresse email et procéder dand la configuration de votre compte sur la plateforme carrières"
 
 }

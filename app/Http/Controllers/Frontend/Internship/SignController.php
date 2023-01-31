@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Frontend\Internship;
 
 // Models
-use App\Models\School\Internship;
+use App\Models\School\Internship\Internship;
 use App\Models\School\Internship\Adviser;
-use App\Models\Profile\Person;
+use App\Models\Profile\Student;
 use App\Models\Stage;
 use App\Models\User;
 use App\Models\Profile\Professor;
@@ -30,18 +30,18 @@ class SignController extends Controller
     public function index(Request $request)
     {
         
-        $trainees = Person::has('internship')
+        $students = Student::has('internship')
         ->with('internship')
         ->where('is_active',true)
         
         ->latest();
         
-        $trainees = $trainees->with(['internship' => function ($q) {
+        $students = $students->with(['internship' => function ($q) {
             $q->latest();
         }])->paginate();
         
         if(!isset($request->s)){
-            $trainees = Person::has('internship')->where('is_active',true)
+            $students = Student::has('internship')->where('is_active',true)
             ->with('internship')
             // ->where('option_id',user()->filiere_id)
             ->with(['internship' => function ($q) {
@@ -50,20 +50,21 @@ class SignController extends Controller
             ->paginate();
         }else{
             $s=$request->s;
-            $trainees = Person::with('internship')->has('internship')
+            $students = Student::with('internship')->has('internship')
             ->where('is_active',true)
             // ->with('internship')
             // ->where('option_id',user()->filiere_id)
             ->where('first_name', 'like', '%'.$s.'%')
             ->orWhere('last_name', 'like', '%'.$s.'%')
-            ->orWhere('pfe_id', 'like', '%'.$s.'%')
+            ->orWhere('pin', 'like', '%'.$s.'%')
             ->get();
         }
-        $trainees->load('internship.professor');
+        // $students->load('internship.professor');
+        $students->load('internship','stream');
 
 
-        //$trainees = Person::isActive();
-        //dd($trainees);
+        //$students = Student::isActive();
+        //dd($students);
         /*->with(['people' => function ($query) {
             $query->where('scholar_year', '=', '2018-2019');
         }])
@@ -78,9 +79,9 @@ class SignController extends Controller
         ->orWhere('last_name', 'like', '%'.$s.'%')
         ->->with(['internship'])
         */
-        //$people = Person::where('scholar_year','=','2018-2019');
+        //$people = Student::where('scholar_year','=','2018-2019');
         
-    return view('frontend.internships.signing.index', compact('trainees'));
+    return view('frontend.internships.signing.index', compact('students'));
 
     }    
 

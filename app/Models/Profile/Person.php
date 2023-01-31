@@ -5,7 +5,7 @@ namespace App\Models\Profile;
 use App\Models\Core\baseModel;
 use App\Models\User;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\School\Internship;
+use App\Models\School\Internship\Internship;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use App\Models\Profile\Professor;
@@ -19,7 +19,7 @@ class Person extends baseModel implements HasMedia
 {
     use InteractsWithMedia;
     protected $table = 'people';
-    protected $primaryKey = "user_id";
+    protected $primaryKey = "id";
     protected $appends = [
         'full_name',
         'long_full_name'
@@ -31,9 +31,9 @@ class Person extends baseModel implements HasMedia
 
 
     public $fillable = [ 	
-    'user_id',
+    'id',
     'gender_id',
-    'pfe_id',
+    'pin',
     'full_name',
     'first_name',
     'last_name',
@@ -43,7 +43,7 @@ class Person extends baseModel implements HasMedia
     'lm',
     'photo',
     'birth_date',
-    'ine',
+    'program_id',
     'branche_id',
     'filiere_text',
     'is_mobility',
@@ -88,21 +88,7 @@ class Person extends baseModel implements HasMedia
     }
     public function user()
 	{
-		return $this->belongsTo(User::class,'id','user_id');
-    }
-
-    public function internship()
-    {
-        return $this->hasOne(Internship::class,'user_id','user_id');
-    }
-
-    public function professor()
-    {
-        return $this->hasOne(Professor::class,'id','user_id');
-    }
-    public function student()
-    {
-        return $this->hasOne(Student::class,'id','user_id');
+		return $this->belongsTo(User::class,'id','id');
     }
 
     /** Scopes */

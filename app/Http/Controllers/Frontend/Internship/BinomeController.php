@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Frontend\Internship;
 
 use App\Http\Controllers\Frontend\BaseController;
-use App\Models\School\Internship;
+use App\Models\School\Internship\Internship;
 use Illuminate\Http\Request;
 use App\Models\Profile\Student;
 use App\Models\Profile\Person;
@@ -27,7 +27,7 @@ class BinomeController extends BaseController
      */
     public function create()
     {
-        $students = Student::where('ine','=',auth()->user()->people->ine)
+        $students = Student::where('program_id','=',auth()->user()->people->program_id)
         ->get(['user_id','first_name','last_name'])
         ->pluck('name','user_id')->all();
         session(['internship_id' => request('internship_id')]);

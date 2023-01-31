@@ -8,16 +8,17 @@ use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 //use Spatie\MediaLibrary\Models\Media;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
-use App\Models\School\Internship;
+use App\Models\School\Internship\Internship;
 use App\Models\School\Internship\internshipReport as Report;
 use App\Models\School\Internship\Project;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
+use App\Models\School\Stream;
 
 class Student extends Person implements HasMedia
 {
     use InteractsWithMedia;
     protected $table = 'people';
-    protected $primaryKey = "user_id";
+    protected $primaryKey = "id";
 
     protected $appends = [
         'full_name',
@@ -29,37 +30,30 @@ class Student extends Person implements HasMedia
         /**static::addGlobalScope(function ($query) {
             $query->where('status', '1');
         });*/
-/*         static::addGlobalScope(function ($query) {
+         static::addGlobalScope(function ($query) {
                 $query->where('is_active', config('school.student.active'))
                 ->where('model_status_id', config('school.current.model_status.prod'))
                 ->where('year_id',config('school.current.year_id'));
-        }); */
+        });
     }
 
-
+    public function setPin(Student $student,$currentPin, $streamOrder){
+        $student->pin = $streamOrder.str_pad($currentPin, 2, "0", STR_PAD_LEFT);
+        $student->save();
+    }
 
     public function internship()
     {
-        return $this->hasOne(Internship::class,'user_id','user_id');
+        return $this->hasOne(Internship::class,'student_id','id');
         // ->with('adviser.adviser1.adviser2');
     }
-    public function internships()
-    {
-        return $this->hasMany(Internship::class,'user_id','user_id');
-    }
-    public function user()
-	{
-		return $this->belongsTo(User::class,'id','user_id');
-    }
-
     public function agreement()
     {
         return $this->hasOne(InternshipAgreement::class,'user_id','user_id');
     }
-    
-    public function report()
+    public function stream()
     {
-        return $this->hasOne(Report::class,'user_id','user_id');
+        return $this->belongsTo(Stream::class);
     }
     /**
      * Get the Events for the Student.
@@ -96,7 +90,7 @@ class Student extends Person implements HasMedia
            ->useDisk('userfiles');
     }
     /**
-     * Get all of the student's images.
+     * Get all of the student's media.
      */
     public function media() :MorphMany
     {

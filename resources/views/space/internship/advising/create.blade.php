@@ -24,11 +24,11 @@
         <div class="col s12 m4 l4">
             <div class="row">
                 <strong>Ajouter l'encadrant {{ request()->advisor }} :</strong>
-                {!! Form::open(['action' => ['Internship\AdvisingController@store', 'pfe_id' => $encadrements['id']], 'method' => 'post', 'files' => false]) !!}
+                {!! Form::open(['action' => ['Internship\AdvisingController@store', 'pin' => $encadrements['id']], 'method' => 'post', 'files' => false]) !!}
                 <div class="input-field col s12">
                     <i class="material-icons prefix">supervisor_account</i>
                     {{ Form::select('advisor'.request()->advisor,[null=>'Enseignants ...','NULL'=>'Désactiver']+$profs,null,array('single','id'=>'profs')) }}
-                    <input type="hidden" name="pfe_id" value={{ $encadrements['id'] }}>
+                    <input type="hidden" name="pin" value={{ $encadrements['id'] }}>
                     <p class="divider"></p>
                     {!! Form::submit('Envoyer', ['class' => 'btn waves-effect waves-light']) !!}
                     {!! Form::close() !!}

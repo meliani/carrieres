@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Frontend\Internship;
 
 use App\Http\Controllers\Frontend\BaseController;
-use App\Models\School\Internship;
+use App\Models\School\Internship\Internship;
 use Illuminate\Http\Request;
 use App\Http\Requests\StoreInternshipPFE;
 

@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire;
 
-use App\Models\School\Internship;
+use App\Models\School\Internship\Internship;
 use Illuminate\Support\Facades\Log;
 use App\Models\Profile\Professor;
 use Livewire\Component;

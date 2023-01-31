@@ -1,71 +1,77 @@
 @extends('layouts.ui.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="section">
-                
+	<div class="container">
+		<div class="row">
 
-                <div class="container">
-                <div class="header"><h5>Votre nouveau code d'accès</h5></div>
-                    <form class="form-horizontal" method="POST" action="{{ route('password.request') }}">
-                        {{ csrf_field() }}
+			<div class="container">
+				<div class="card-title">
+					<div class="header col s12 light center blue-text text-lighten-1">
+						<h5>{{ __('Your new access credentials') }}</h5>
+					</div>
+				</div>
+				<form class="form-horizontal" method="POST" action="{{ route('password.request') }}">
+					{{ csrf_field() }}
 
-                        <input type="hidden" name="token" value="{{ $token }}">
+					<input name="token" type="hidden" value="{{ $token }}">
 
-                        <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">Adresse E-Mail</label>
+					{{ Form::textGroup(
+					    [
+					        'name' => 'email',
+					        'value' => $email,
+					        'label' => __('Email adress'),
+					        'placeholder',
+					        'class' => 'materialize-textarea validate',
+					        'icon' => 'email',
+					        'helper',
+					        'required' => 'required',
+					        'cols' => 6,
+					        'type' => 'email',
+					    ],
+					    $errors,
+					) }}
 
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control" name="email" value="{{ $email or old('email') }}" required autofocus>
+					{{ Form::textGroup(
+					    [
+					        'name' => 'password',
+					        'value',
+					        'label' => __('Password'),
+					        'placeholder',
+					        'class' => 'materialize-textarea validate',
+					        'icon' => 'lock_outline',
+					        'helper',
+					        'required' => 'required',
+					        'cols' => 6,
+					        'type' => 'password',
+					    ],
+					    $errors,
+					) }}
 
-                                @if ($errors->has('email'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
+					{{ Form::textGroup(
+					    [
+					        'name' => 'password_confirmation',
+					        'value',
+					        'label' => __('Password confirmation'),
+					        'placeholder',
+					        'class' => 'materialize-textarea validate',
+					        'icon' => 'lock_outline',
+					        'helper',
+					        'required' => 'required',
+					        'cols' => 6,
+					        'type' => 'password',
+					    ],
+					    $errors,
+					) }}
 
-                        <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Mot de passe</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group{{ $errors->has('password_confirmation') ? ' has-error' : '' }}">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirmer mot de passe</label>
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-
-                                @if ($errors->has('password_confirmation'))
-                                    <span class="help-block">
-                                        <strong>{{ $errors->first('password_confirmation') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Redéfinir le mot de passe
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+					<div class="form-group">
+						<div class="col-md-6 col-md-offset-4">
+							<button class="btn btn-primary" type="submit">
+								{{ __('Reset password') }}
+							</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
 @endsection

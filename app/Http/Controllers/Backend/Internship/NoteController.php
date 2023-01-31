@@ -3,7 +3,7 @@
 namespace App\Http\Controllers\Backend\Internship;
 
 use App\Http\Controllers\Controller;
-use App\Models\School\Internship;
+use App\Models\School\Internship\Internship;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 

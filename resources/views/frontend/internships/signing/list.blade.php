@@ -12,27 +12,27 @@
       </tr>
     </thead>
     <tbody>
-      @foreach ($trainees as $trainee)
+      @foreach ($students as $student)
 
       <tr>
-        <td class="strong">{{ $trainee->pfe_id }}</td>
-        <td><div class="sub strong">{{ $trainee->full_name }}</div>
-          @if ($trainee['option_text'])
+        <td class="strong">{{ $student->pin }}</td>
+        <td><div class="sub strong">{{ $student->full_name }}</div>
+          @if ($student['stream_id'])
           <span class="new badge blue lighten-3 white-text" 
-          data-badge-caption="{{ ( !empty($trainee->option_text)? $trainee->option_text:'' ) }}">
+          data-badge-caption="{{ ( !empty($student->stream->id)? $student->stream->short_title:'' ) }}">
           </span>
           @endif
-          @if (isset($trainee->internship->id))
+          @if (isset($student->internship->id))
         </td>
-        <td class="strong">{{ isset($trainee->internship->raison_sociale) ? str_limit($trainee->internship->raison_sociale,30):'' }}</td>
-        <td class="sub">{{  isset($trainee->internship->intitule) ? str_limit($trainee->internship->intitule, 100):'' }}</td>
+        <td class="strong">{{ isset($student->internship->raison_sociale) ? str_limit($student->internship->raison_sociale,30):'' }}</td>
+        <td class="sub">{{  isset($student->internship->intitule) ? str_limit($student->internship->intitule, 100):'' }}</td>
          {{-- Limit intitulé to 100 characters --}}
-         <td>{{ isset($trainee->internship->created_at) ? \Carbon\Carbon::parse($trainee->internship['created_at'])->format('d M Y'):'' }}</td>   
+         <td>{{ isset($student->internship->created_at) ? \Carbon\Carbon::parse($student->internship['created_at'])->format('d M Y'):'' }}</td>   
          <td class="center">
-           @if(isset($trainee->internship->is_signed))
-            Convention signée par {{ $trainee->internship->professor->full_name }}
+           @if(isset($student->internship->is_signed))
+            Convention signée par {{ $student->internship->professor->full_name }}
           @else
-            <a class="blue btn-small" href={{ route('Sign.create', ['id' => $trainee->internship['id'],'advisor' => '1' ]) }}><i class="tiny material-icons">remove_red_eye</i></a>
+            <a class="blue btn-small" href={{ route('Sign.create', ['id' => $student->internship['id'],'advisor' => '1' ]) }}><i class="tiny material-icons">remove_red_eye</i></a>
           @endif
           </td>
           <td class="center">

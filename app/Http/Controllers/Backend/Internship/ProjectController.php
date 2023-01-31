@@ -73,6 +73,30 @@ class ProjectController extends Controller
     }
 
     /**
+     * Add adviser to the project
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\School\Intenrship\Project  $project
+     * @return \Illuminate\Http\Response
+     */
+    public function add_project_adviser(Request $request, Project $project)
+    {
+        return view('add_project_adviser');
+    }
+    /**
+     * list advisers to the project
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Models\School\Intenrship\Project  $project
+     * @return \Illuminate\Http\Response
+     */
+    public function show_project_advisers(Request $request, Project $project)
+    {
+        // we can also do this direct from project / internship view Controller by loading advisers
+        return view('show_project_advisers',['advisers' => $project->advisers]);
+    }
+
+    /**
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\School\Intenrship\Project  $project

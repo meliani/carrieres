@@ -7,7 +7,7 @@ use App\Models\Core\Parameter;
 use App\Models\Profile\Person;
 use Illuminate\Http\Request;
 
-use App\Models\School\Internship;
+use App\Models\School\Internship\Internship;
 use App\Models\Profile\Professor;
 use App\Models\Profile\Signatory;
 use Carbon\Carbon;

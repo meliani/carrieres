@@ -5,11 +5,12 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 
 use App\Models\Profile\Student;
-use App\Models\School\Internship;
+use App\Models\School\Internship\Internship;
 use Illuminate\Support\Facades\Log;
 
 // Excel export libs
 use App\Exports\StagesExport;
+use App\Models\School\Internship\Project;
 use Maatwebsite\Excel\Facades\Excel;
 
 class InternsTable extends Component
@@ -44,7 +45,7 @@ class InternsTable extends Component
     }
     public function loadInternships(){
         $this->internships = Internship::with(['student','binome'])->whereHas('student', function ($query) {
-            $query->where('user_id','=', "%$this->search%")
+            $query->where('student_id','=', "%$this->search%")
             ->orWhere('last_name','LIKE' , "%{$this->search}%")
             ->orWhere('first_name','LIKE' , "%{$this->search}%")
             ->orWhere('filiere_text','LIKE' , "%{$this->search}%");

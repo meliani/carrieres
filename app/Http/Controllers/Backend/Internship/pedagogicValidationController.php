@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Backend\Internship;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-use App\Models\School\Internship;
+use App\Models\School\Internship\Internship;
 use Illuminate\Support\Facades\Log;
 use App\Models\Profile\Professor;
 use Carbon\Carbon;

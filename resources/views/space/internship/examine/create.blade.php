@@ -19,7 +19,7 @@
         <div class="col s12 m4 l4">
             <div class="row">
                 <strong>Ajouter des examinateurs :</strong>
-                {!! Form::open(['action' => ['Internship\AdvisingController@store', 'pfe_id' => request()->pfe_id], 'method' => 'post', 'files' => false]) !!}
+                {!! Form::open(['action' => ['Internship\AdvisingController@store', 'pin' => request()->pin], 'method' => 'post', 'files' => false]) !!}
                 <div class="input-field col s12">
                     <i class="material-icons prefix">supervisor_account</i>
                     {!! Form::select('id_exami1',[null=>'Enseignants ...','NULL'=>'Désactiver']+$profs,array('single','id'=>'profs')) !!}
@@ -38,7 +38,7 @@
                     {{ Form::label('id_exami3', 'Examinateur 3') }}
 
                 </div>
-                    <input type="hidden" name="pfe_id" value={{ request()->pfe_id }}>
+                    <input type="hidden" name="pin" value={{ request()->pin }}>
                     {!! Form::submit('Envoyer', ['class' => 'btn waves-effect waves-light']) !!}
                     {!! Form::close() !!}
                 </div>

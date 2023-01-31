@@ -80,7 +80,7 @@ class PersonController extends Controller
 /*
         $validated = $request->validate([
             'gender_id' => 'required',
-            'pfe_id' => 'required',
+            'pin' => 'required',
             'title' => 'required',
             'full_name' => 'required',
             'first_name' => 'required',
@@ -91,7 +91,7 @@ class PersonController extends Controller
             'lm' => 'required',
             'photo' => 'required',
             'birth_date',
-            'ine',
+            'program_id',
             'branche_id',
             'filiere_text' => 'required',
             'is_mobility',

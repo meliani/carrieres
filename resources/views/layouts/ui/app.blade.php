@@ -60,9 +60,6 @@ Votre carrière se construit dès aujourd'hui, nous sommes là pour vous aider �
 
     <!-- Scripts -->
     <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
-{{--     <script> // unecessary jquery import but maybe will be useful oneday if we need different jquery verions on the same page
-    if (!window.jQuery) { document.write('<script src="{{ asset('js/jquery-3.2.1.js') }}"><\/script>'); }
-    </script> --}}
     <script src="{{ mix('js/materialize.js') }}"></script>
     <script src="{{ asset('js/init.js') }}"></script>
   @yield('scripts')
