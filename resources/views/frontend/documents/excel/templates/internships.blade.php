@@ -54,7 +54,7 @@ $students = \App\Models\Profile\Student::with('internship')->get();
         {{-- {{dd($student->internship->id)}} --}}
         {{-- Student fields --}}
         <td class="strong">{{ isset($student->internship->id)? $student->internship->id:''}}</td>
-        <td class="strong">{{ $student->user_id }}
+        <td class="strong">{{ $student->id }}
             {!! isset($student->internship->binome)?'.'.$student->internship->binome_user_id:'' !!}
         </td>
         <td class="sub strong">{{ $student->full_name }}</td>

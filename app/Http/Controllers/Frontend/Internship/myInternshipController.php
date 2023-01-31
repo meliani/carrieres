@@ -38,7 +38,7 @@ class myInternshipController extends BaseController
      */
     public function create()
     {
-        $internship = Internship::firstOrNew(['user_id' => user()->id]);
+        $internship = Internship::firstOrNew(['student_id' => user()->id]);
         if($internship->is_valid == 1)
         return view('frontend.documents.index',compact('internship'));
         else
@@ -56,7 +56,7 @@ class myInternshipController extends BaseController
         //dump($request);
 
         $intern = $request->validated();
-        $internship = Internship::firstOrCreate(['user_id' => user()->id]);
+        $internship = Internship::firstOrCreate(['student_id' => user()->id]);
         $internship->fill($intern);
         //$internship = Internship::firstOrCreate(['user_id' => user()->id]);
         //$internship = new Internship($intern);
