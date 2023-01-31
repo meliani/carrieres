@@ -2,3 +2,5 @@ database:
 add stream_id values in people table
 changing primary key from user_id to id
 changing foreign key in people user_id with student_id
+Changing pfe_id to pin
+we can remove // use App\Traits\Auth\ResetsPasswords;

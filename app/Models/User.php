@@ -46,6 +46,13 @@ class User extends Authenticatable
     {   
         $this->attributes['password'] = $password;
     }
+    protected $appends = [
+        'full_name',
+    ];
+    public function getFullNameAttribute()
+	{
+		return $this->attributes['name'];
+    }
 /*     public static function getProfessors()
     {
         return User::where('is_professor',1)->orderBy('name')->get(['id','name'])->pluck('name','id')->all();

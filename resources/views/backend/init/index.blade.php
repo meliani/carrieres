@@ -9,9 +9,9 @@
         <div class="row center">
         <h4 class="header light center blue-text text-lighten-1">{{ __('Projects list') }}</h4>
         </div>
-    @if($students instanceof \Illuminate\Pagination\LengthAwarePaginator )
+    @if($streams instanceof \Illuminate\Pagination\LengthAwarePaginator )
     <div class="center">
-        {{ $students->links('vendor.pagination.default') }}
+        {{ $streams->links('vendor.pagination.default') }}
     </div>
     @endif
 
@@ -25,10 +25,9 @@
 
     @include('backend.init.list')
 
-
-    @if($students instanceof \Illuminate\Pagination\LengthAwarePaginator )
+    @if($streams instanceof \Illuminate\Pagination\LengthAwarePaginator )
     <div class="center">
-        {{ $students->links('vendor.pagination.default') }}
+        {{ $streams->links('vendor.pagination.default') }}
     </div>
     @endif
 @endsection

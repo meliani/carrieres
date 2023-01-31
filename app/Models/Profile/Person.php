@@ -33,7 +33,7 @@ class Person extends baseModel implements HasMedia
     public $fillable = [ 	
     'id',
     'gender_id',
-    'pfe_id',
+    'pin',
     'full_name',
     'first_name',
     'last_name',

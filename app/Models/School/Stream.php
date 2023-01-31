@@ -2,6 +2,7 @@
 
 namespace App\Models\School;
 
+use App\Models\Profile\Student;
 use Illuminate\Database\Eloquent\Model;
 
 class Stream extends Model
@@ -12,7 +13,7 @@ class Stream extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'long_name', 'short_name', 'order'
+        'id', 'long_title', 'short_title', 'order'
     ];
 
     /**
@@ -45,7 +46,7 @@ class Stream extends Model
      */
     public function students()
     {
-        return $this->belongsToMany(\App\School\Student::class);
+        return $this->hasMany(Student::class);
     }
 
 }
