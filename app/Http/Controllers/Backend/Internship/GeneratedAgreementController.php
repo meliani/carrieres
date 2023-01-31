@@ -25,9 +25,9 @@ class GeneratedAgreementController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index($user_id)
+    public function index($id)
     {
-        $this->user = User::find($user_id);
+        $this->user = User::find($id);
         if($this->user->people->hasMedia('internship')){
             $this->documents = $this->user->people->getMedia('internship');
             // return view('frontend.documents.partials.fillforms');

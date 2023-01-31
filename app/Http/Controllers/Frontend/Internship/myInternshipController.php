@@ -58,10 +58,10 @@ class myInternshipController extends BaseController
         $intern = $request->validated();
         $internship = Internship::firstOrCreate(['student_id' => user()->id]);
         $internship->fill($intern);
-        //$internship = Internship::firstOrCreate(['user_id' => user()->id]);
+        //$internship = Internship::firstOrCreate(['student_id' => user()->id]);
         //$internship = new Internship($intern);
         $internship->user()->associate(auth()->user()->id);
-        // $internship->groupes()->attach(request('binome_user_id'));
+        // $internship->groupes()->attach(request('binome_student_id'));
         
         $internship->year_id = config('school.current.year_id');
 

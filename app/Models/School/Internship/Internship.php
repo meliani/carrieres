@@ -119,12 +119,9 @@ class Internship extends Model
     /** --------------------------------- Relations ----------------------------- */
     public function binome()
     {
-        return $this->belongsTo(Student::class,'binome_user_id','user_id');
+        return $this->belongsTo(Student::class,'binome_user_id','id');
     }
-/*     public function groupes()
-    {
-        return $this->belongsToMany(Person::class,'internship_groupes','internship_id','user_id');
-    } */
+
     public function student()
     {
         return $this->belongsTo(Student::class);
@@ -140,15 +137,6 @@ class Internship extends Model
         // return $intern->student->team->project;
     }
 
-/*     public function defense()
-    {
-        return $this->hasOne(Defense::class);
-    } */
-/*     public function professors()
-	{
-        return $this->hasMany(Professor::class)
-        ->withPivot('advising_type','user_id','professor_id','internship_id');
-    } */
      public function supervisor()
 	{
         // return $intern->student->team->project->supervisors;
@@ -161,10 +149,7 @@ class Internship extends Model
 	{
 		return $this->belongsTo(App\Models\Program::class);
     }
-/*     public function professor()
-	{
-        return $this->hasOne('App\Models\User', 'id', 'is_signed');
-    } */
+
     /** ---------------------------------  Getters ----------------------------- */
     public function getParrainNameAttribute()
 	{

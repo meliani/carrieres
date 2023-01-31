@@ -25,7 +25,7 @@
           <span class="new badge orange lighten-3 white-text tooltipped" 
           data-delay="50" 
           data-tooltip="{{ $internship->binome->name }}"
-          data-badge-caption="Binome id : {{ $internship->binome->user_id }}">
+          data-badge-caption="Binome id : {{ $internship->binome->id }}">
           </span>              
           @endisset
 

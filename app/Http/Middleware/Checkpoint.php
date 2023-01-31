@@ -24,8 +24,8 @@ class Checkpoint
                 return $next($request);
             }
 
-            if(isset(user()->people)){
-                if (!user()->people->is_active) {
+            if(isset(user()->person)){
+                if (!user()->person->is_active) {
                     return redirect('profile/activation');
                 } else {
                     return $next($request);

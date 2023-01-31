@@ -55,7 +55,7 @@ class InternshipController extends BaseController
     public function clone($intertnship_id,$student_id)
     {
 /*         session(['internship_id' => $intertnship_id]);
-        session(['user_id' => $user_id]);
+        session(['student_id' => $student_id]);
         $internship = Internship::find($intertnship_id);
         return view('backend.internships.create',compact('internship')); */
     }

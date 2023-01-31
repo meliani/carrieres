@@ -5,16 +5,16 @@
                 <div class="collapsible-header">
                     <h5 class='header5 blue-grey-text textlighten-5'>
                         <i class="small material-icons blue-grey-text textlighten-5">account_circle</i>
-                        Bonjour <b>{!! user()->people->full_name !!}</b>
+                        Bonjour <b>{!! user()->person->full_name !!}</b>
                     </h5>
                 </div>
                 <div class="collapsible-body ">
 
                         <h6 class='header5 blue-grey-text textlighten-5'><p>Vous êtes en 
 
-                            <b>{{ trans_choice('labels.profile.years',user()->people->program_id) }}</b>, filière 
-                            <b>{{ user()->people->filiere_text }}</b>
-                            @if(user()->people->is_mobility)
+                            <b>{{ trans_choice('labels.profile.years',user()->person->program_id) }}</b>, filière 
+                            <b>{{ user()->person->filiere_text }}</b>
+                            @if(user()->person->is_mobility)
                                 @lang('newlife.profile.mobility')
                             @endif
                         

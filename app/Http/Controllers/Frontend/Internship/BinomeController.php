@@ -27,9 +27,9 @@ class BinomeController extends BaseController
      */
     public function create()
     {
-        $students = Student::where('program_id','=',auth()->user()->people->program_id)
-        ->get(['user_id','first_name','last_name'])
-        ->pluck('name','user_id')->all();
+        $students = Student::where('program_id','=',auth()->user()->student->program_id)
+        ->get(['id','first_name','last_name'])
+        ->pluck('name','id')->all();
         session(['internship_id' => request('internship_id')]);
         return view('frontend.internships.my_internship.binome.create',compact('students'))->with('message', 'Votre déclaration a été bien enregistrée.');
     }
@@ -46,7 +46,7 @@ class BinomeController extends BaseController
         $internship = Internship::where('id', '=', session('internship_id'))
         ->firstOrFail();
         }else{
-        $internship = Internship::where('user_id', '=', auth()->user()->id)
+        $internship = Internship::where('student_id', '=', auth()->user()->id)
         ->firstOrFail();
         }
 

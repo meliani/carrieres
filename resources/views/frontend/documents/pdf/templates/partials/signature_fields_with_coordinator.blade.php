@@ -36,8 +36,8 @@
                                 signataire</span></em></p>
                     <p class="tm66 tm82 tm99"><em><span class="tm101"></span><span
                                 class="tm89"><strong>
-                                {{ config('school.current.branches.'.$internship->person->filiere_text.'.cf_title') ?? '' }} 
-                                {{ config('school.current.branches.'.$internship->person->filiere_text.'.cf_name')  ?? '. . . . . . . . . . . . . . . . . . .'}}
+                                {{ config('school.current.branches.'.$internship->student->filiere_text.'.cf_title') ?? '' }} 
+                                {{ config('school.current.branches.'.$internship->student->filiere_text.'.cf_name')  ?? '. . . . . . . . . . . . . . . . . . .'}}
                             </strong></span></em>
                     </p>
                 </td>

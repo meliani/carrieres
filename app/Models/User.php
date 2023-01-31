@@ -8,7 +8,7 @@ use Spatie\Permission\Traits\HasRoles;
 use App\Models\Profile\Person;
 use App\Models\School\Internship\Internship;
 use App\Models\School\Internship\Adviser;
-
+use App\Models\Profile\Student;
 // use App\Notifications\Auth\VerifyEmail;
 
 use Illuminate\Support\Facades\Hash;
@@ -63,13 +63,13 @@ class User extends Authenticatable
         return $this->morphToMany('App\Models\School\Internship\Application', 'applyable');
         //return $this->hasMany('App\Models\School\Internship\Application', 'user_id', 'id');
     }
-    public function people()
+    public function person()
     {
         return $this->hasOne(Person::class,'id','id');
     }
     public function student()
     {
-        return $this->hasOne(\App\Models\Profile\Student::class);
+        return $this->hasOne(Student::class,'id','id');
     }
     public function internships()
     {
