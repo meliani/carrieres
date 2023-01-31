@@ -15,7 +15,7 @@
       @foreach ($students as $student)
 
       <tr>
-        <td class="strong">{{ $student->pfe_id }}</td>
+        <td class="strong">{{ $student->pin }}</td>
         <td><div class="sub strong">{{ $student->full_name }}</div>
           @if ($student['stream_id'])
           <span class="new badge blue lighten-3 white-text" 

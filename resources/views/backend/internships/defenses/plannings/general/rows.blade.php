@@ -12,8 +12,8 @@
             </td>
            <td>
                 <p>
-                    ID PFE : {!! $internship->student->pfe_id !!}
-                    {!! isset($internship->binome)?'.'.$internship->binome->pfe_id:'' !!}
+                    ID PFE : {!! $internship->student->pin !!}
+                    {!! isset($internship->binome)?'.'.$internship->binome->pin:'' !!}
                 </p>
                 <p>
                     Option : {!! $internship->student->option_text !!}

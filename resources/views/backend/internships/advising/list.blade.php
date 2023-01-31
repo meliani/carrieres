@@ -16,7 +16,7 @@
       @foreach ($students as $student)
 
       <tr>
-        <td class="strong">{{ $student->pfe_id }}</td>
+        <td class="strong">{{ $student->pin }}</td>
         <td><div class="sub strong">{{ $student->name }}</div>
           @if ($student['option_text'])
           <span class="new badge blue lighten-3 white-text" 
@@ -32,18 +32,18 @@
          <td class="center">
            @if(isset($student->internship->adviser->adviser1))
             {{ $student->internship->adviser->adviser1['name']}}
-            <a class="left" href={{ route('Project.create', ['pfe_id' => $student->internship['id'],'advisor' => '1' ]) }}><i class="tiny material-icons">edit</i></a>
+            <a class="left" href={{ route('Project.create', ['pin' => $student->internship['id'],'advisor' => '1' ]) }}><i class="tiny material-icons">edit</i></a>
           @else
-            <a href={{ route('Project.create', ['pfe_id' => $student->internship['id'],'advisor' => '1' ]) }}><i class="tiny material-icons">add</i></a>
+            <a href={{ route('Project.create', ['pin' => $student->internship['id'],'advisor' => '1' ]) }}><i class="tiny material-icons">add</i></a>
           @endif
           </td>
           <td class="center">
           @if(isset($student->internship->adviser->adviser2))  
-          <a class="left" href={{ route('Project.create', ['pfe_id' => $student->internship['id'],'advisor' => '2' ]) }}>
+          <a class="left" href={{ route('Project.create', ['pin' => $student->internship['id'],'advisor' => '2' ]) }}>
             <i class="tiny material-icons">edit</i></a>
             {{ $student->internship->adviser->adviser2['name']}}
           @else
-            <a href={{ route('Project.create', ['pfe_id' => $student->internship['id'],'advisor' => '2' ]) }}>
+            <a href={{ route('Project.create', ['pin' => $student->internship['id'],'advisor' => '2' ]) }}>
               <i class="tiny material-icons">add</i></a>
           @endif
           </td>

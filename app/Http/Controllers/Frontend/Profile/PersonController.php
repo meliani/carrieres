@@ -80,7 +80,7 @@ class PersonController extends Controller
 /*
         $validated = $request->validate([
             'gender_id' => 'required',
-            'pfe_id' => 'required',
+            'pin' => 'required',
             'title' => 'required',
             'full_name' => 'required',
             'first_name' => 'required',

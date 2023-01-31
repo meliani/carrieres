@@ -35,8 +35,8 @@ $students = \App\Models\Profile\Person::Where('program_id','3')
 
     <tr>
         <td class="strong">{{ $student->internship['id'] }}</td>
-        <td class="strong">{{ $student->pfe_id }}
-            {!! isset($student->internship->binome)?'.'.$student->internship->binome->pfe_id:'' !!}
+        <td class="strong">{{ $student->pin }}
+            {!! isset($student->internship->binome)?'.'.$student->internship->binome->pin:'' !!}
         </td>
         <td class="sub strong">{{ $student->full_name }}</td>
         <td>{{ ( !empty($student['option_text'])? $student['option_text']:'' ) }}</td>

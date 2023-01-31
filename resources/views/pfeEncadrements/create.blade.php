@@ -37,11 +37,11 @@
                             <div class="col s12">
                               <div class="row">
                                   <strong>Ajouter un encadrant/Examinateur :</strong>
-                                  {!! Form::open(['action' => ['pfeEncadrementsController@store', 'pfe_id' => $encadrements[0]->id], 'method' => 'post', 'files' => false]) !!}
+                                  {!! Form::open(['action' => ['pfeEncadrementsController@store', 'pin' => $encadrements[0]->id], 'method' => 'post', 'files' => false]) !!}
                                 <div class="input-field col s12">
                                   <i class="material-icons prefix">supervisor_account</i>
                                   {{ Form::select('profs_advisor[]',$profs,null,array('multiple','id'=>'profs')) }}
-                                  <input type="hidden" name="pfe_id" value={{ $encadrements[0]->id }}>
+                                  <input type="hidden" name="pin" value={{ $encadrements[0]->id }}>
                                   <p class="divider"></p>
                                   {!! Form::submit('Envoyer', ['class' => 'btn waves-effect waves-light']) !!}
                                   {!! Form::close() !!}

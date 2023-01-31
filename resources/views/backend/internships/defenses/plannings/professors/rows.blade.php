@@ -7,8 +7,8 @@
             <td>
                @foreach ($professor->internships as $internship)
                     <p>{!! advising_type($internship->pivot->advising_type) !!} -                     
-                    {!! $internship->student->pfe_id !!}
-                    {!! isset($internship->binome)?' en binome avec : '.$internship->binome->pfe_id:'' !!}
+                    {!! $internship->student->pin !!}
+                    {!! isset($internship->binome)?' en binome avec : '.$internship->binome->pin:'' !!}
                 </p>
                @endforeach
             </td>

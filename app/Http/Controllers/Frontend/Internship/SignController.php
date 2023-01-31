@@ -56,7 +56,7 @@ class SignController extends Controller
             // ->where('option_id',user()->filiere_id)
             ->where('first_name', 'like', '%'.$s.'%')
             ->orWhere('last_name', 'like', '%'.$s.'%')
-            ->orWhere('pfe_id', 'like', '%'.$s.'%')
+            ->orWhere('pin', 'like', '%'.$s.'%')
             ->get();
         }
         // $students->load('internship.professor');
