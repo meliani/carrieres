@@ -1,7 +1,7 @@
 <li class="{{ Request::is('offresDeStages*') ? 'active' : '' }}">
     <a href="{!! route('admin.offresDeStages.index') !!}"><i class="fa fa-briefcase"></i><span>Gestion des offres PFE</span></a>
 </li><li class="{{ Request::is('users*') ? 'active' : '' }}">
-    <a href="{!! route('users.index') !!}"><i class="fa fa-users"></i><span>Utilisateurs</span></a>
+    <a href="{!! route('backend.users.index') !!}"><i class="fa fa-users"></i><span>Utilisateurs</span></a>
 </li>
 <li class="{{ Request::is('applications*') ? 'active' : '' }}">
     <a href="{!! route('admin.applications.index') !!}"><i class="fa fa-check"></i><span>Candidatures</span></a>

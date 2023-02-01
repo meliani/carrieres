@@ -47,12 +47,18 @@ Route::resource('Authentic', 'Core\authenticDocumentController');
 Route::get('url/{v}/{url}', 'Core\UrlController');
 
 Route::
-    namespace ('Backend')
+    namespace('Backend')
     ->name('backend.')
     ->group(function () {
         Route::prefix('~')->group(function () {
             Route::get('Dashboard', 'Dashboard');
             Route::resource('init', 'InitController');
+
+            Route::namespace ('User')->group(function () {
+                Route::resource('users', 'UserController');
+                Route::resource('roles', 'RoleController');
+                Route::resource('permissions', 'PermissionController');
+            });
             Route::namespace ('Internship')->group(function () {
                 Route::resource('defenses', 'DefenseController');
                 Route::resource('plannings', 'PlanningsController');
@@ -79,7 +85,6 @@ Route::
             });
         });
     });
-
 Route::resource('Sign', 'Frontend\Internship\SignController');
 
 Route::namespace('Frontend')
@@ -122,9 +127,7 @@ Route::
 Route::
     namespace ('Backend\User')
     ->group(function () {
-        Route::resource('users', 'UserController');
-        Route::resource('roles', 'RoleController');
-        Route::resource('permissions', 'PermissionController');
+
     });
     
 /****************************************** PUBLIC LINKS ********************************************************************/

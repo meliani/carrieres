@@ -5,8 +5,8 @@
 @section('content')
 
 <div class="container col s12 m12">
-    <h1><i class="fa fa-users"></i>Administration des membres<a href="{{ route('roles.index') }}" class="btn btn-default pull-right">Roles</a>
-    <a href="{{ route('permissions.index') }}" class="btn btn-default pull-right">Permissions</a></h1>
+    <h1><i class="fa fa-users"></i>Administration des membres<a href="{{ route('backend.roles.index') }}" class="btn btn-default pull-right">Roles</a>
+    <a href="{{ route('backend.permissions.index') }}" class="btn btn-default pull-right">Permissions</a></h1>
     <hr>
     
     <div class="card col s12 m12">
@@ -42,9 +42,9 @@
                     <td>{{  $user->roles()->pluck('name')->implode(' ') }}</td>{{-- Retrieve array of roles associated to a user and convert to string --}}
 
                     <td>
-                    <a href="{{ route('users.edit', $user->id) }}" class="btn fa fa-edit btn-info pull-left" style="margin-right: 3px;"></a>
+                    <a href="{{ route('backend.users.edit', $user->id) }}" class="btn fa fa-edit btn-info pull-left" style="margin-right: 3px;"></a>
 
-                    {!! Form::open(['method' => 'DELETE', 'route' => ['users.destroy', $user->id] ]) !!}
+                    {!! Form::open(['method' => 'DELETE', 'route' => ['backend.users.destroy', $user->id] ]) !!}
                     {!! Form::submit('X', ['class' => 'btn fa fa-remove btn-danger']) !!}
                     {!! Form::close() !!}
 
@@ -61,7 +61,7 @@
   </div>
   <!-- /.box -->
 
-    <a href="{{ route('users.create') }}" class="btn btn-success">Add User</a>
+    <a href="{{ route('backend.users.create') }}" class="btn btn-success">Add User</a>
 
 </div>
 
