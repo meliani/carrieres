@@ -10,7 +10,7 @@
     <hr>
     @include ('errors.list')
 
-    {{ Form::model($user, array('route' => array('users.update', $user->id), 'method' => 'PUT')) }} 
+    {{ Form::model($user, array('route' => array('backend.users.update', $user->id), 'method' => 'PUT')) }} 
     {{-- Form model binding to automatically populate our fields with user data --}}
     <!-- Text -->
     {{ Form::textGroup([
