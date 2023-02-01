@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Frontend\Project;
 
-use App\Http\Controllers\Backend\BaseController as Controller;
+use App\Http\Controllers\Frontend\BaseController as Controller;
 use App\Models\School\Project\Team;
 use App\Models\School\Project\Project;
 

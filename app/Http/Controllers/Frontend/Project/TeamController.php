@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Frontend\Project;
 
 use App\Models\School\Project\Team;
+use App\Http\Controllers\Frontend\BaseController as Controller;
 
 use Illuminate\Http\Request;
 
@@ -31,18 +32,22 @@ class TeamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function getCreate()
     {
 
 
-        return view('team created, add participants ?');
+        // return view('team created, add participants ?');
+        return view('frontend.teams.create');
+
     }
-    public function join($team_uuid):view
+    public function getJoin($team_uuid) :view
     {
         $student = Student::findOrFail(Auth::user()->id);
         //student who joins gonna have the same uuid and his id
         Team::create($team_uuid, $student_id);
         return view('you joined the team $team_uuid');
+        return view('frontend.teams.join');
+
     }
 
     /**
@@ -51,7 +56,7 @@ class TeamController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function getStore(Request $request)
     {
         //here the team gonna be created with it's uuid
         $student = Student::findOrFail(Auth::user()->id);

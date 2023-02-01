@@ -1,0 +1,1 @@
+{{-- display partnership invitations and possibility to select one it might be merged with index --}}
