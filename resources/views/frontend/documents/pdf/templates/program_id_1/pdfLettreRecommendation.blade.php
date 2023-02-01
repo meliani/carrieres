@@ -61,7 +61,7 @@ Monsieur le Directeur,
 </p><p>
 Nous vous remercions par la présente de bien vouloir accorder un Stage 
 Ouvrier à notre élève ingénieur de première année,  
-<b>{{ auth()->user()->person->title }} {{ auth()->user()->person->long_full_name }}</b>. 
+<b>{{ user()->student->title }} {{ user()->student->long_full_name }}</b>. 
 En accueillant notre élève-stagiaire au sein de votre entreprise, vous auriez contribué ainsi à une meilleure préparation pour son insertion dans la vie professionnelle.
 </p><p>
 Les stages ouvriers intégrés à la structure pédagogique du cycle INE permettent à l’élève ingénieur de se familiariser avec les conditions de travail et observer le fonctionnement de l’entreprise. En plus, grâce à vos appréciations des capacités et des compétences de notre élève, nous pourrions améliorer notre action pédagogique en rapprochant notre formation aux exigences du marché de travail.

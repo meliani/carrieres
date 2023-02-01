@@ -1,5 +1,5 @@
 {{ Carbon\Carbon::now()->isoFormat('dddd Do MMMM YYYY') }}
-{{ auth()->user()->person->title }} {{ auth()->user()->person->long_full_name }}
+{{ user()->student->title }} {{ user()->student->long_full_name }}
 
 
 

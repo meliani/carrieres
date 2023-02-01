@@ -44,7 +44,7 @@
             ], $errors) }}
         </div>
         <div class="row">
-            @if(user()->person->is_mobility)
+            @if(user()->student->is_mobility)
             {{ Form::selectGroup([
                 'name' => 'abroad_school',
                 'value' ,

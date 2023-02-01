@@ -16,8 +16,8 @@ class ClearanceMiddleware {
     public function handle($request, Closure $next) {        
 
         if ($request->is('/*')) {
-            dd(user()->person->active());
-            if (!user()->person->active()) {
+            // dd(user()->student->active());
+            if (!user()->student->active()) {
                 abort('401');
             } else {
                 return $next($request);

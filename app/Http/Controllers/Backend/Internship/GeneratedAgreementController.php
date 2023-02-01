@@ -3,13 +3,15 @@
 namespace App\Http\Controllers\Backend\Internship;
 
 use App\Http\Controllers\Controller;
+use App\Models\Profile\Person;
+use App\Models\Profile\Student;
 use App\Models\User;
 use Illuminate\Http\Request;
 
 class GeneratedAgreementController extends Controller
 {
     private $documents;
-    private $user;
+    private $student;
     
     public function __construct()
     {
@@ -27,17 +29,10 @@ class GeneratedAgreementController extends Controller
      */
     public function index($id)
     {
-        $this->user = User::find($id);
-        if($this->user->people->hasMedia('internship')){
-            $this->documents = $this->user->people->getMedia('internship');
-            // return view('frontend.documents.partials.fillforms');
-            // return view('frontend.documents.index',['documents'=>$this->documents]);
+        $this->student = Student::find($id);
+        if($this->student->hasMedia('internship')){
+            $this->documents = $this->student->getMedia('internship');
             return view('backend.internships.partials.generated_agreements', ['documents'=>$this->documents]);
         }
-/*         //$offres = Offer::published()->valid()->year()->actual()->paginate();
-        $offers = Offer::Where('year_id',config('school.current.year_id'))
-        ->Where('is_valid',1)
-        ->get();
- */
     }
 }

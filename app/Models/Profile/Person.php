@@ -66,6 +66,7 @@ class Person extends baseModel implements HasMedia
    */
    public function getFullNameAttribute()
 	{
+        // dd($this->attributes);
 		return $this->attributes['first_name'].' '.$this->attributes['last_name'];
     }
    public function getLongFullNameAttribute()
