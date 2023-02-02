@@ -56,24 +56,12 @@ class Professor extends Model
 	{
 		return $this->belongsTo(User::class,'id','id');
     }
-    public function person()
-	{
-		return $this->belongsTo(Person::class,'user_id','id');
-    }
     public function projects()
 	{
 		return $this->hasMany(Project::class);
     }
-/*     public function advisings()
-	{
-		return $this->hasMany(Advising::class);
-    } */
     public function internships()
 	{
 		return $this->belongsToMany(Internship::class);
-    }
-    public function branche()
-	{
-		return $this->belongsTo(branche::class);
     }
 }

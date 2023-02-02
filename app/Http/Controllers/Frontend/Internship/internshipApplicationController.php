@@ -80,7 +80,7 @@ class internshipApplicationController extends Controller
             'file_cover_letter' => $request->file_cover_letter,
         ]);
         
-        $application->user()->associate(auth()->user()->id);
+        $application->user()->associate(user()->id);
         $application->offer()->associate($request->offer);
         $application->save();
         //$offer->applications()->attach($application->id);//, ['cv' => $cv,'lettre_de_motivation' => $lettre_de_motivation ]);

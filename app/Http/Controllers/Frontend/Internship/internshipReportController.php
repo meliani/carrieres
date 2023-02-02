@@ -54,7 +54,7 @@ class internshipReportController extends Controller
     {
         $report = new Report($request->validated());
         $report->user()
-        ->associate(auth()->user())
+        ->associate(user())
         ->save();
 
         flash()->success('Rapport de stage enregistré.');

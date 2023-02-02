@@ -79,10 +79,10 @@ class NoteController extends Controller
     {
         $this->selected_id = $id;
 
-        $this->agent_id = auth()->user()->id;
+        $this->agent_id = user()->id;
         $this->selected_internship = Internship::find($this->selected_id);
         $this->notes = [
-            'agent_name' => auth()->user()->name,
+            'agent_name' => user()->name,
             'agent_id' => $this->agent_id,
             'note' => $request->note,
             'noted_at' => Carbon::now(),

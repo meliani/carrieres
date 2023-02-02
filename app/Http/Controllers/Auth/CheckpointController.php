@@ -12,7 +12,7 @@ class CheckpointController extends Controller
 {
     public function __invoke()
     {
-        $person = Person::find(auth()->user()->id);
+        $person = Person::find(user()->id);
 
         if(isset($person) && $person->active()){
             //return view('profile/activation')->with('person',$person);

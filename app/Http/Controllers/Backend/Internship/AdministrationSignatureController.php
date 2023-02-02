@@ -89,7 +89,7 @@ class AdministrationSignatureController extends Controller
     public function update(Request $request, $id)
     {
         $this->selected_id = $id;
-        $this->agent_id = auth()->user()->id;
+        $this->agent_id = user()->id;
 
         $this->selected_internship = Internship::find($this->selected_id);
         $this->selected_internship->administration_signed_at = Carbon::createFromDate($request->administration_signed_at);

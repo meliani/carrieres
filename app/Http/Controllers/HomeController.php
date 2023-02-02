@@ -25,7 +25,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $person = Person::find(auth()->user()->id);
+        $person = Person::find(user()->id);
         return view('home',compact('person'));
         /*if(Auth::user()->can('encadrer'))
             return redirect(route('mesEcadrements.index'));

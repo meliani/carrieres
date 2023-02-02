@@ -48,7 +48,7 @@ class BinomeController extends BaseController
         $internship_b = Internship::where('user_id', '=', request('binome_user_id'))
         ->firstOrFail();
         }else{
-        $internship = Internship::where('user_id', '=', auth()->user()->id)
+        $internship = Internship::where('user_id', '=', user()->id)
         ->firstOrFail();
         $internship_b = Internship::where('user_id', '=', request('binome_user_id'))
         ->firstOrFail();
