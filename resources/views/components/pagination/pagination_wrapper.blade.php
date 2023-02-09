@@ -1,5 +1,5 @@
-@if($paginate instanceof \Illuminate\Pagination\LengthAwarePaginator )
+@if($collection instanceof \Illuminate\Pagination\LengthAwarePaginator )
 <div class="center">
-        {{ $paginate->links('vendor.pagination.default') }}
+        {{ $collection->links('vendor.pagination.default') }}
 </div>
 @endif

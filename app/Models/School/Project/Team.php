@@ -10,8 +10,8 @@ use Illuminate\Database\Eloquent\Relations\HasManyThrough;
 class Team extends Model
 {
 
+    protected $promaryKey = 'student_id';
     protected $fillable = [
-        'id',
         'student_id',
         'team_uuid'
     ];

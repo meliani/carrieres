@@ -65,7 +65,9 @@ Votre carrière se construit dès aujourd'hui, nous sommes là pour vous aider �
   @yield('scripts')
   @yield('page-script')
 
-  {{-- some scripts related to livewire and other javascript/alpine on page manipulations--}}
+  {{-- some scripts related to livewire and other javascript/alpine on page manipulations
+    can be stacked using @push directive in blade files
+    --}}
 
   @stack('eob-scripts')
 </body>

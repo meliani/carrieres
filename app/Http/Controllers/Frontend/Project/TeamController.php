@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Frontend\Project;
 use App\Models\School\Project\Team;
 use App\Http\Controllers\Frontend\BaseController as Controller;
 use App\Models\Profile\Student;
+use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
 
@@ -17,16 +18,18 @@ class TeamController extends Controller
      */
     public function index()
     {
-        $team = Team::firstOrCreate(user()->id);
+        $team = Team::firstOrCreate([
+            'student_id' => user()->id,
+            // 'team_uuid' => Str::uuid(),
+        ]);
         //student who joins gonna have the same uuid and his id
-        Team::create($team_uuid, $student_id);
         //$team = Team::findOrFail('team_uuid','=',$team->uuid)->with('students','internship');
 
         // the relation internship should handle the logic of the project view
         // that means we need to flag the team founder to keep 
         // the project informations always linked with one record from database
 
-        return view('my team members and project informations from the founder\'s internship');
+        return view('frontend.teams.index');
     }
 
     /**

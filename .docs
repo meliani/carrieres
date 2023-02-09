@@ -1,0 +1,15 @@
+Templating
+
+We're using materializecss, we created components with necessary classes,
+in this document we gonna see how to use them all.
+
+# app template
+ui.app
+Yealds:
+Stacks:
+# general page template
+ui.pages.general
+
+# grid page template
+ui.pages.grid
+
