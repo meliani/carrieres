@@ -39,9 +39,9 @@ class PartnershipController extends Controller
 
     // in case of invite call invite function
     
+    //if the student have an invitation display it without selection screen
 
-    //if the student have an invitation display it without selction screen
-
+        return view('frontend.teams.create'); //['action' => 'show_teams']
     }
 
     public function invite(Student $student){

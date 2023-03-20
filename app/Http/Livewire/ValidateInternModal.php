@@ -42,8 +42,8 @@ class ValidateInternModal extends Component
 
     public function mount(Internship $selectedInternship){
         $this->profs = Professor::get()->pluck('id','name');
-        $this->administrationAgentId = auth()->user()->id;
-        $this->administrationAgentName = auth()->user()->name;
+        $this->administrationAgentId = user()->id;
+        $this->administrationAgentName = user()->name;
         $this->selectedInternship = $selectedInternship;
         
         Log::debug("Internship:mounted : ".$this->selectedInternship);

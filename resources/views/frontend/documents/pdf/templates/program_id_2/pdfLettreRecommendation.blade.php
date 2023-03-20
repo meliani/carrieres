@@ -66,7 +66,7 @@ Monsieur le Directeur,
 <p>
 Nous vous remercions par la présente de bien vouloir accorder un Stage 
 Technique à notre élève ingénieur de deuxième année,
-<b>{{ auth()->user()->person->title }} {{ auth()->user()->person->long_full_name }}</b>. 
+<b>{{ user()->student->title }} {{ user()->student->long_full_name }}</b>. 
 En accueillant notre élève-stagiaire au sein de votre entreprise, 
 vous auriez contribué ainsi à une meilleure préparation pour son insertion dans la vie professionnelle.
 </p>

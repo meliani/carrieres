@@ -4,3 +4,7 @@ changing primary key from user_id to id
 changing foreign key in people user_id with student_id
 Changing pfe_id to pin
 we can remove // use App\Traits\Auth\ResetsPasswords;
+------------------------------------------
+add My team to menus table
+-------------
+changing all medias model_type to student

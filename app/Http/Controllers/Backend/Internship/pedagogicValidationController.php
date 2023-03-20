@@ -95,7 +95,7 @@ class pedagogicValidationController extends Controller
     public function update(Request $request, $internship_id)
     {
         $this->selected_id = $internship_id;
-        $this->agent_id = auth()->user()->id;
+        $this->agent_id = user()->id;
 
         $this->selected_internship = Internship::find($this->selected_id);
         $this->selected_internship->pedagogic_validation_date = Carbon::createFromDate($request->pedagogic_validation_date);

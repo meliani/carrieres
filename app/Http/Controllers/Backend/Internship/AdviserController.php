@@ -85,7 +85,7 @@ class AdviserController extends Controller
     public function update(Request $request, $project_id)
     {
         $this->selected_id = $project_id;
-        $this->agent_id = auth()->user()->id;
+        $this->agent_id = user()->id;
 
 
         $this->selected_project = Project::find($this->selected_id);

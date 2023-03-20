@@ -30,9 +30,9 @@ class LoginController extends Controller
     //protected $redirectTo = '/home';
 
     public function redirectTo(){
-        $person = Person::find(auth()->user()->id);
+        $person = Person::find(user()->id);
 
-            if(auth()->user()->can('Administer roles & permissions'))
+            if(user()->can('Administer roles & permissions'))
             return '/~/Dashboard';
             else
             return '/home';

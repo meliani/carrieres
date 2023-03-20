@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Frontend\Project;
 
 use App\Models\School\Project\Team;
 use App\Http\Controllers\Frontend\BaseController as Controller;
+use App\Models\Profile\Student;
+use Illuminate\Support\Str;
 
 use Illuminate\Http\Request;
 
@@ -16,15 +18,18 @@ class TeamController extends Controller
      */
     public function index()
     {
-        //
-        $team = Team::findOrFail(Auth::user()->id);
-        $team = Team::findOrFail('team_uuid','=',$team->uuid)->with('students','internship');
-        
+        $team = Team::firstOrCreate([
+            'student_id' => user()->id,
+            // 'team_uuid' => Str::uuid(),
+        ]);
+        //student who joins gonna have the same uuid and his id
+        //$team = Team::findOrFail('team_uuid','=',$team->uuid)->with('students','internship');
+
         // the relation internship should handle the logic of the project view
         // that means we need to flag the team founder to keep 
         // the project informations always linked with one record from database
 
-        return view('my team members and project informations from the founder\'s internship');
+        return view('frontend.teams.index');
     }
 
     /**
@@ -32,15 +37,13 @@ class TeamController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function getCreate()
+    public function create()
     {
-
-
         // return view('team created, add participants ?');
-        return view('frontend.teams.create');
-
+        // $students = Student::where('program_id','=',user()->student->program_id)->get('id','first_name');
+        // return view('frontend.teams.create',['students'=>$students]);
     }
-    public function getJoin($team_uuid) :view
+    public function join($team_uuid) :view
     {
         $student = Student::findOrFail(Auth::user()->id);
         //student who joins gonna have the same uuid and his id
@@ -56,7 +59,7 @@ class TeamController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function getStore(Request $request)
+    public function store(Request $request)
     {
         //here the team gonna be created with it's uuid
         $student = Student::findOrFail(Auth::user()->id);

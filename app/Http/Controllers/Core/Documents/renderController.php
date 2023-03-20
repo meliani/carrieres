@@ -20,14 +20,14 @@ class renderController extends Controller
         $this->middleware(['auth','Student']);
         $this->header = view::make('frontend.documents.pdf.header')->render();
         $this->footer = view::make('frontend.documents.pdf.footerINPT')->render();
-        $this->file_name = str_slug(auth()->user()->student->full_name);
+        $this->file_name = str_slug(user()->student->full_name);
     }
     private $file_path;
 
     public function recommendation_letter(){
         $pdf = app('snappy.pdf.wrapper');
 
-        $pdf->loadView('frontend.documents.pdf.templates.program_id_'.auth()->user()->student->program_id.'.pdfLettreRecommendation')
+        $pdf->loadView('frontend.documents.pdf.templates.program_id_'.user()->student->program_id.'.pdfLettreRecommendation')
         ->setOption('margin-top', '25mm')
         ->setOption('margin-bottom', '29mm')
         ->setOption('margin-left', '10mm')
@@ -47,7 +47,7 @@ class renderController extends Controller
         /** Some lines for testing purposes */
         //return PDF::loadFile('file:///C:/Users/Cosmos/Desktop/projects/newlife/documents/Convention Stage Ouvrier/ConventionStageOuvrier.html')->inline('github.pdf');
         //$pdf->loadView('frontend.documents.pdfConvention')
-        $pdf->loadView('frontend.documents.pdf.templates.program_id_'.auth()->user()->student->program_id.'.contenuConvention')
+        $pdf->loadView('frontend.documents.pdf.templates.program_id_'.user()->student->program_id.'.contenuConvention')
         ->setOption('margin-top', '25mm')
         ->setOption('margin-bottom', '29mm')
         ->setOption('margin-left', '10mm')
@@ -68,7 +68,7 @@ class renderController extends Controller
     public function conventionFrance(){
         $pdf = app('snappy.pdf.wrapper');
 
-        $pdf->loadView('frontend.documents.pdf.templates.program_id_'.auth()->user()->student->program_id.'.contenuConventionFrance')
+        $pdf->loadView('frontend.documents.pdf.templates.program_id_'.user()->student->program_id.'.contenuConventionFrance')
         ->setOption('margin-top', '25mm')
         ->setOption('margin-bottom', '29mm')
         ->setOption('margin-left', '10mm')
@@ -85,7 +85,7 @@ class renderController extends Controller
     public function conventionMobilityAutre(){
         $pdf = app('snappy.pdf.wrapper');
 
-        $pdf->loadView('frontend.documents.pdf.templates.program_id_'.auth()->user()->student->program_id.'.contenuConventionMobiliteAutre')
+        $pdf->loadView('frontend.documents.pdf.templates.program_id_'.user()->student->program_id.'.contenuConventionMobiliteAutre')
         ->setOption('margin-top', '25mm')
         ->setOption('margin-bottom', '29mm')
         ->setOption('margin-left', '10mm')
@@ -102,7 +102,7 @@ class renderController extends Controller
     public function conventionMobilityFrance(){
         $pdf = app('snappy.pdf.wrapper');
 
-        $pdf->loadView('frontend.documents.pdf.templates.program_id_'.auth()->user()->student->program_id.'.contenuConventionMobilityFrance')
+        $pdf->loadView('frontend.documents.pdf.templates.program_id_'.user()->student->program_id.'.contenuConventionMobilityFrance')
         ->setOption('margin-top', '25mm')
         ->setOption('margin-bottom', '29mm')
         ->setOption('margin-left', '10mm')
@@ -117,8 +117,8 @@ class renderController extends Controller
         //return $pdf->inline($file_name);
     }
     public function attach(String $file_path){
-        //auth()->user()->student->clearMediaCollection('internship');
-        auth()->user()->student
+        //user()->student->clearMediaCollection('internship');
+        user()->student
         ->addMedia($file_path)
         ->toMediaCollection('internship');
         //$agreementsMediaCollection = 'Agreements'.School::actualYear;
