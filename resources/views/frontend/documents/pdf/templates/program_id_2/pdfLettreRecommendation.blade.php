@@ -88,7 +88,7 @@ sera remise à l’INPT et une autre à votre entreprise.
 <p>
 
 Ce Stage Technique est d’une durée de 4 à 8 semaines 
-(entre le 05 juillet et le 05 septembre de chaque année). 
+(entre le 01 juillet et le 05 septembre de chaque année). 
 Nous vous confirmons que notre élève stagiaire est couvert par 
 l’assurance de l’INPT contre les accidents pouvant survenir au cours 
 de ce stage et ce dans la limite de garantie de son assurance.
