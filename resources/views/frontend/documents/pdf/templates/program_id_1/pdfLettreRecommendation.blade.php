@@ -68,7 +68,7 @@ Les stages ouvriers intégrés à la structure pédagogique du cycle INE permett
 </p><p>
 A l’issue de ce stage, l’élève ingénieur est tenu d’élaborer un rapport dans lequel il présentera les résultats de son travail. Une copie dudit rapport sera remise à l’INPT et une autre à votre entreprise. 
 </p><p>
-Ce Stage Ouvrier est d’une durée de 4 semaines ou plus. (entre le 01 juillet et le 05 septembre de chaque année). Nous vous confirmons que notre élève stagiaire est couvert par l’assurance de l’INPT contre les accidents pouvant survenir au cours de ce stage et ce dans la limite de garantie de son assurance.
+Ce Stage Ouvrier est d’une durée de 4 semaines ou plus. (entre le 01 Juillet et le 31 Août de chaque année). Nous vous confirmons que notre élève stagiaire est couvert par l’assurance de l’INPT contre les accidents pouvant survenir au cours de ce stage et ce dans la limite de garantie de son assurance.
 </p><p>
 En vous remerciant de votre coopération, nous vous prions d’agréer, Monsieur le Directeur, l’expression de nos salutations les meilleures.
 </p>
