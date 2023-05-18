@@ -24,10 +24,6 @@ class Person extends baseModel implements HasMedia
         'full_name',
         'long_full_name'
      ];
-    protected $dates = [
-        'updated_at',
-        'created_at'
-    ];
 
 
     public $fillable = [ 	
@@ -52,7 +48,10 @@ class Person extends baseModel implements HasMedia
     'is_active',
     'model_status_id'
     ];
-
+    protected $casts = [
+        'created_at'=> 'datetime',
+        'updated_at'=> 'datetime',
+    ];
 /*
    public function setCvAttribute($value){
     $this->attributes['cv']=Storage::putFile('public/uploads/people/init_data/CVs', new File($value));

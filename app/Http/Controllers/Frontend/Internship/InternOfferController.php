@@ -1,25 +1,19 @@
 <?php
 namespace App\Http\Controllers\Frontend\Internship;
 
-
-
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreOfferRequest;
 use Illuminate\Http\Request;
-
 use Session;
-
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
-/** --------- Models ----------- */
 use App\Models\School\Internship\Application;
-//use App\Models\School\Internship\internshipOffer as Offer;
 use App\Models\Offer;
 use App\Models\User;
 
-class internOfferController extends Controller
+class InternOfferController extends Controller
 {
 
     public function __construct()

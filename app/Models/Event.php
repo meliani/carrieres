@@ -20,7 +20,6 @@ class Event extends Model
      *
      * @var array
      */
-    protected $dates = ['date', 'created_at', 'updated_at'];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -37,7 +36,9 @@ class Event extends Model
      * @var array
      */
     protected $casts = [
-        //
+        'created_at'=> 'datetime',
+        'updated_at'=> 'datetime',
+        'date'=> 'datetime',    
     ];
 
     /**

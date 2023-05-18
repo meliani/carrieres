@@ -21,11 +21,6 @@ class Application extends Model
     public $table = 'applications';
     
 
-    protected $dates = [
-        'created_at',
-        'updated_at'
-    ];
-
 
     public $fillable = [
         'user_id',
@@ -43,7 +38,10 @@ class Application extends Model
         'user_id' => 'integer',
         'offer_id' => 'string',
         'file_cv' => 'string',
-        'file_cover_letter' => 'string'
+        'file_cover_letter' => 'string',
+        'created_at'=> 'datetime',
+        'updated_at'=> 'datetime',
+        'date'=> 'datetime',    
     ];
 
     /**
