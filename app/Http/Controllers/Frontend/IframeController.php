@@ -12,7 +12,7 @@ class IframeController extends Controller
     
     public function PlanningPFE()
     {
-        $title = "Planning des soutenances 2022";
+        $title = "Planning des soutenances ".config('school.current.academic_year');
         
         $iframe = '<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRtTUc6KeZ1YZ74AKHeiazI-r-axUry4HvOLB2GOhB6Od9tlaS2FUaTujt2iPbC6_iFVwkry9kW-j7_/pubhtml?gid=589152417&single=true&widget=false&headers=false&range=A:E" width="99%" height="1200px"></iframe>'; 
         return view('frontend.iframe',compact('iframe','title'));
