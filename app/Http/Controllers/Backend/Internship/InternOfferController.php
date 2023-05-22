@@ -1,20 +1,14 @@
 <?php
 namespace App\Http\Controllers\Backend\Internship;
 
-
-
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-
 use Session;
-
 use Prettus\Repository\Criteria\RequestCriteria;
 use Response;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
-/** --------- Models ----------- */
 use App\Models\School\Internship\Application;
-//use App\Models\School\Internship\internshipOffer as Offer;
 use App\Models\Offer;
 use App\Models\User;
 

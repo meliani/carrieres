@@ -15,17 +15,6 @@ use Illuminate\Support\Facades\Storage;
 class Offer extends Model
 {
     protected $table="internship_offers";
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $dates = [
-        'created_at',
-        'updated_at',
-        'deleted_at',
-        'expire_at'
-    ];
 
 
     public $fillable = [
@@ -86,7 +75,10 @@ class Offer extends Model
         'status' => 'integer',
         'is_valid' => 'boolean',
         'applyable' => 'boolean',
-        'expire_at' => 'date'
+        'expire_at' => 'date',
+        'created_at'=> 'datetime',
+        'updated_at'=> 'datetime',
+        'deleted_at'=> 'datetime',
     ];
 
     /**
