@@ -11,8 +11,11 @@
         </a>
     </p>
     @endforeach
-    </li><li class="collection-item avatar">
+
+    </li>
+    <li class="collection-item avatar">
     <a href={{ url('students/myDocuments?action[]=render&action[]=delete') }} class="waves-effect waves-light btn red">
         <i class="material-icons right">delete</i>Supprimer tout</a></li>
     </ul>
     @endif
+    @include('frontend.documents.partials.collections.lr')
