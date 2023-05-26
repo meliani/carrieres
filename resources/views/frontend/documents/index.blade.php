@@ -41,7 +41,7 @@
     @endif
 
 
-    
+    @include('frontend.documents.partials.collections.lr')
 
   </ul>
 </div>
