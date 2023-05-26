@@ -18,4 +18,3 @@
         <i class="material-icons right">delete</i>Supprimer tout</a></li>
     </ul>
     @endif
-    @include('frontend.documents.partials.collections.lr')
