@@ -69,7 +69,10 @@ class myDocumentsController extends Controller
                     if (in_array('mobility_france_agreement', $request->action)) {
                         $pdf->conventionMobilityFrance();
                         }
-
+                        if (in_array('lr', $request->action)) {
+                            $pdf = new renderController;
+                            $pdf->recommendation_letter();
+                            }
                     }
                 }
 
