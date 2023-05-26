@@ -264,6 +264,8 @@ return [
         /* Other packages aliases */
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
+        // 'Html' => Spatie\Html\Facades\Html::class,
+ 
         //'Flash'     => Laracasts\Flash\Flash::class,
         //'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,

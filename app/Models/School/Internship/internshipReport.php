@@ -14,12 +14,6 @@ class internshipReport extends Model
     public $table = 'internship_reports';
     //public $current_year = config('school.current.academic_year');
     //protected $primaryKey = "";
-
-    protected $dates = [
-        'created_at',
-        'updated_at',
-        'deleted_at'
-    ];
     
     public $fillable = [
         'student_email',
@@ -44,7 +38,9 @@ class internshipReport extends Model
     ];
 
     protected $casts = [
-
+        'created_at'=> 'datetime',
+        'updated_at'=> 'datetime',
+        'deleted_at'=> 'datetime',    
     ];
 
     public function setFileReportAttribute($value){

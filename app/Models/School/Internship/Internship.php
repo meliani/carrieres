@@ -42,12 +42,6 @@ class Internship extends Model
     protected $guarded = [
 
     ];
-
-    protected $dates = [
-        'created_at',
-        'updated_at',
-        'deleted_at'
-    ];
     
     public $fillable = [
         'id',
@@ -112,7 +106,10 @@ class Internship extends Model
         'meta_adviser_validation' => 'array',
         'administration_signed_at' => 'date',
         'meta_administration_signature' => 'array',
-        'notes' => 'array'
+        'notes' => 'array',
+        'created_at'=> 'datetime',
+        'updated_at'=> 'datetime',
+        'deleted_at'=> 'datetime',    
     ];
     
     

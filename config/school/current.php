@@ -6,11 +6,11 @@ return [
     'external_relation_entity_name' => 'INPT/DASRE',
     'external_relation_entity_full_name' => 'INPT/DASRE',
     'time_limits' => [
-        'min_debut_pfe' => '01-01-2023',
-        'max_debut_pfe' => '30-07-2023',// then was '15-03-2023', // was 19-01-2023
+        'min_debut_pfe' => '01-06-2023',
+        'max_debut_pfe' => '01-08-2023',// then was '15-03-2023', // was 19-01-2023
 
-        'max_fin_pfe' => '01-09-2023',
-        'ouverture_plateforme' => '06-09-2022',
+        'max_fin_pfe' => '31-08-2023',
+        'ouverture_plateforme' => '06-05-2023',
     ],
     'academic_year' => '2022-2023',
     'year_id' => '6',
