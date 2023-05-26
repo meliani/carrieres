@@ -25,7 +25,5 @@
         <i class="material-icons right">save</i>Generer les documents</a>
     </li>
 </ul>
-@include('frontend.documents.partials.collections.lr')
-
 </div>
 @endsection
