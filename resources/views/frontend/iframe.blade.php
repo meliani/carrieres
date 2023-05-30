@@ -1,5 +1,5 @@
 @extends('layouts.ui.app')
-@section('title')| Planning des soutenances @endsection
+@section('title')| {{ $title }} @endsection
 
 @section('content')
 <div class="container">
@@ -11,7 +11,7 @@
             </h3>
         </div>
         @include ('errors.list')
-        <div class="iframe" style="width:100%; height:100%;" >
+        <div class="iframe" style="width:100%; height:500px;" >
         {!! $iframe !!}
         </div>
         </div>
