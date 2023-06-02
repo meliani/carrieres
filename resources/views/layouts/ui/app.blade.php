@@ -17,7 +17,7 @@
     <link href="{{ asset('css/style.css') }}" media="screen,projection" rel="stylesheet">
     @yield('css')
     @yield('page-css')
-    @stack('eoh-css')
+    @stack('endofhead')
 </head>
 <body>
 <header>
@@ -69,6 +69,6 @@ Votre carrière se construit dès aujourd'hui, nous sommes là pour vous aider �
     can be stacked using @push directive in blade files
     --}}
 
-  @stack('eob-scripts')
+  @stack('endofbody-scripts')
 </body>
 </html>
