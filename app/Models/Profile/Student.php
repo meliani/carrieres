@@ -35,9 +35,9 @@ class Student extends Person implements HasMedia
         
         if(app()->isProduction()){
          static::addGlobalScope(function ($query) {
-                $query->where('is_active', config('school.student.active'))
-                ->where('model_status_id', config('school.current.model_status.prod'))
+                $query->where('model_status_id', config('school.current.model_status.prod'))
                 ->where('year_id',config('school.current.year_id'));
+                // ->where('is_active', config('school.student.active'))
         });
     }
     }
