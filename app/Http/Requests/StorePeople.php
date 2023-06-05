@@ -24,7 +24,7 @@ class StorePeople extends FormRequest
     public function rules()
     {
         return [
-            'gender_id',
+            'gender_id' => 'required',
             'pin',
             'email_perso' => 'required|max:191|email:rfc,dns',
             'phone' => 'required|max:13|between:8,13',

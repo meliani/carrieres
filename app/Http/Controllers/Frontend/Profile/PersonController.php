@@ -7,9 +7,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StorePeople;
 
-use Session;
-use Carbon\Carbon;
-use Illuminate\Support\Facades\Storage;
+// use Session;
+// use Carbon\Carbon;
+// use Illuminate\Support\Facades\Storage;
 
 class PersonController extends Controller
 {
@@ -77,43 +77,13 @@ class PersonController extends Controller
     public function update(StorePeople $request)
     {
         $person = Person::find(user()->id);
-/*
-        $validated = $request->validate([
-            'gender_id' => 'required',
-            'pin' => 'required',
-            'title' => 'required',
-            'full_name' => 'required',
-            'first_name' => 'required',
-            'last_name' => 'required',
-            'email_perso' => 'required|max:191',
-            'phone' => 'required',
-            'cv' => 'required',
-            'lm' => 'required',
-            'photo' => 'required',
-            'birth_date',
-            'program_id',
-            'branche_id',
-            'filiere_text' => 'required',
-            'is_mobility',
-            'abroad_school',
-            'year_id',
-            'is_active'
-        ]);
-*/
-        if(isset($request->action)=='validate')
-                dd(isset($request->action));
         $person->update(
             $request->validated()
         );
 
         $person->activate();
         flash('votre profil a été mis a jour.','success');
-
         return view('home',compact('person'))->with('message','votre profil a été mis a jour.');
-        /*$person->update($r->all());
-        $person->activate();
-        $person->save();*/
-
     }
 
     /**
