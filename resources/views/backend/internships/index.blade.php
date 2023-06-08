@@ -2,7 +2,7 @@
 @section('title', 'Stages et soutenances')
 
 @section('css')
-    @livewireStyles
+    {{-- @livewireStyles --}}
 @endsection
 
 @section('users_buttons')
@@ -36,5 +36,5 @@
 @endsection
 
 @section('scripts')
-    @livewireScripts
+    {{-- @livewireScripts --}}
 @endsection

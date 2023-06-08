@@ -6,7 +6,7 @@
 
 @endsection
 @push('endofhead')
-@livewireStyles
+{{-- @livewireStyles --}}
 @endpush
 @section('content')
 <div class="container">
@@ -28,6 +28,6 @@
 @endsection  
 
 @push('endofbody-scripts')
-@livewireScripts
-@liveCalendarScripts
+{{-- @livewireScripts --}}
+{{-- @liveCalendarScripts --}}
 @endpush

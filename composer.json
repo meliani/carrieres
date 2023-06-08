@@ -18,7 +18,6 @@
         "laravel/tinker": "^2.8",
         "laravel/ui": "^4.0",
         "laravelcollective/html": "^6.4",
-        "livewire/livewire": "^2.11",
         "maatwebsite/excel": "^3.1",
         "ohseesoftware/laravel-vite-manifest": "^1.2",
         "rap2hpoutre/laravel-log-viewer": "^2.0",
