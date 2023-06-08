@@ -12,7 +12,7 @@
             </h3>
         </div>
         <div class="row">
-            <div class="col s6 offset-s6 flow-text"><a href="v23/calendrier">Essayez le nouveau calendrier</a> <a href="v23/calendrier" class="btn-floating btn-large pulse"><i class="material-icons">insert_invitation</i></a></div>
+            <div class="col s6 offset-s6 flow-text"><a href="v23/calendar">Essayez le nouveau calendrier</a> <a href="v23/calendar" class="btn-floating btn-large pulse"><i class="material-icons">insert_invitation</i></a></div>
           </div>
         @include ('errors.list')
         <div class="iframe" style="width:100%; height:500px;" >
