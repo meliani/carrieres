@@ -89,7 +89,7 @@ Route::resource('Sign', 'Frontend\Internship\SignController');
 
 Route::namespace('Frontend')
     ->group(function () {
-        Route::resource('calendar', 'PlanningController');
+        // Route::resource('calendar', 'PlanningController');
         // Route::namespace('Team')->controller('teams', 'TeamsController');
         Route::namespace('Project')
         ->group(function () {
