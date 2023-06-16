@@ -132,8 +132,9 @@ Route::
     
 /****************************************** PUBLIC LINKS ********************************************************************/
 // Route::get('PlanningPFE', 'Frontend\IframeController@PlanningPFE');
-Route::get('PlanningPFE', fn() => redirect()->away('https://carrieres.inpt.ac.ma/v23/calendar'));
-Route::get('PlanningPFE_v1', 'Frontend\IframeController@PlanningPFE');
+/* Route::get('PlanningPFE', fn() => redirect()->away('https://carrieres.inpt.ac.ma/v23/calendar'));
+Route::get('PlanningPFE_v1', 'Frontend\IframeController@PlanningPFE'); */
+Route::get('PlanningPFE', 'Frontend\IframeController@PlanningPFE');
 Route::get('lesjeudis', 'Frontend\IframeController@PlanningJeudis');
 Route::get('submit_offer', 'Frontend\Internship\InternOfferController@create', $internship_type = 2);
 /****************************************** EOF PUBLIC LINKS ********************************************************************/
