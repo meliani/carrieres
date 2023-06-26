@@ -120,7 +120,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{!! url('/') !!}">
-                    Career Center
+                    {{__('Career Center')}}
                 </a>
             </div>
 
