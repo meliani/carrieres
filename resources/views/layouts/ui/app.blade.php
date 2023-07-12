@@ -60,7 +60,7 @@ Votre carrière se construit dès aujourd'hui, nous sommes là pour vous aider �
 
     <!-- Scripts -->
     <script src="{{ asset('js/jquery-3.2.1.js') }}"></script>
-    <script src="{{ mix('js/materialize.js') }}"></script>
+    @vite('resources/js/materialize.js')
     <script src="{{ asset('js/init.js') }}"></script>
   @yield('scripts')
   @yield('page-script')
