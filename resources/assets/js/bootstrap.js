@@ -1,3 +1,4 @@
+import M from '@materializecss/materialize'
 
 window._ = require('lodash');
 
@@ -13,7 +14,7 @@ try {
     // require('materialize-css');
     // require('select2');
     // $('select').select2();
-
+    M.AutoInit();
 //  require('bootstrap-sass');
 } catch (error) {
     console.log(error);
@@ -56,3 +57,20 @@ if (token) {
 //     broadcaster: 'pusher',
 //     key: 'your-pusher-key'
 // });
+
+/* import "https://fonts.googleapis.com/css?family=Raleway:300,400,600";
+import "variables";
+import "materialize-css/dist/css/materialize.min.css";
+import "materialize-css/dist/js/materialize.min.js";
+import "material-icons/iconfont/material-icons.css";
+import "animate.css/animate.min.css";
+import "aos/dist/aos.css";
+import "aos/dist/aos.js";
+import "jquery/dist/jquery.min.js";
+import "jquery.easing/jquery.easing.min.js";
+import "jquery-validation/dist/jquery.validate.min.js";
+import "jquery-validation/dist/additional-methods.min.js";
+import "jquery-validation/dist/localization/messages_en.min.js";
+import "jquery-validation/dist/localization/messages_fr.min.js";
+import "node_modules/@materializecss/materialize/sass/materialize";
+import "https://fonts.googleapis.com/icon?family=Material+Icons"; */
