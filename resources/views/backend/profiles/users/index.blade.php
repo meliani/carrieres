@@ -55,8 +55,8 @@
 
         </table>
     </div>
-    {{-- Html::paginator([$paginate=$users]) --}}
-    @include('components.pagination.pagination_wrapper',$paginate=$users)
+    {{-- Html::paginator([$collection=$users]) --}}
+    @include('components.pagination.pagination_wrapper',$collection=$users)
     <!-- /.box-body -->
   </div>
   <!-- /.box -->

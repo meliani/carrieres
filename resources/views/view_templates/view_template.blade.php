@@ -11,7 +11,7 @@
 {{-- Title bloc --}}}
 @include('components.section_title',['title' => 'Opportunités de stages PFE'])
 
-@include('components.pagination.pagination_wrapper',$paginate=$internships)
+@include('components.pagination.pagination_wrapper',$collection=$internships)
 
 @include('components.search_box')
 

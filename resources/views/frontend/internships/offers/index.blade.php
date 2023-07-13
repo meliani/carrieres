@@ -9,10 +9,10 @@
 
     @include('components.section_title',['title' => 'Opportunités de stage'])
 
-    @include('components.pagination.pagination_wrapper',$paginate=$offers)
+    @include('components.pagination.pagination_wrapper',$collection=$offers)
 
     @include('frontend.internships.offers.list')
 
-    @include('components.pagination.pagination_wrapper',$paginate=$offers)
+    @include('components.pagination.pagination_wrapper',$collection=$offers)
 
 @endsection
