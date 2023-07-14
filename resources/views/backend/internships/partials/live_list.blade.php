@@ -1,5 +1,5 @@
 <div class="container col s12 m12">
-    @include('components.pagination.pagination_wrapper', $paginate = $internships)
+    @include('components.pagination.pagination_wrapper', $collection = $internships)
 
     <div class="header">{{ $internships->count() }}</div>
     {{-- <button wire:click="downloadExcel">Telecharger</button> --}}

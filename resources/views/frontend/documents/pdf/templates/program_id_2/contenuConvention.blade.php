@@ -67,7 +67,11 @@ p {direction: ltr; line-height: 115%; text-align: left; orphans: 2; widows: 2; b
 <p align="justify" style=" line-height: 100%"><font size="2" style="font-size: 11pt">Situ&eacute;
 au Av. Allal El Fassi, Madinat Al Irfane, Rabat - Maroc</font></p>
 <p align="justify" style=" line-height: 100%"><font size="2" style="font-size: 11pt">Repr&eacute;sent&eacute;
-par M. HILALI Abdelaziz, Directeur Adjoint des Relations Entreprises</font></p>
+par {{ config('school.current.signature.envoy_title') }} 
+</span><strong><span
+ class="tm91">{{ config('school.current.signature.envoy_name') }},
+ {{ config('school.current.signature.envoy_occupation') }},
+</span></strong></p></font></p>
 <p align="justify" style=" line-height: 100%"><font size="2" style="font-size: 11pt">Et
 d&eacute;sign&eacute; dans ce qui suit par l&rsquo;INPT</font></p>
 <p align="justify" style=" line-height: 100%"><font size="2" style="font-size: 11pt">Et

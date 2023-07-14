@@ -15,12 +15,12 @@
         </h4>
     </div>
 
-    @include('components.pagination.pagination_wrapper',$paginate=$collection)
+    @include('components.pagination.pagination_wrapper',$collection=$collection)
     @include('components.search_box')
     @include('backend.internships.defenses.table_wrapper')
 
 
-    @include('components.pagination.pagination_wrapper',$paginate=$collection)
+    @include('components.pagination.pagination_wrapper',$collection=$collection)
 @endsection
 
 @section('floating-buttons')

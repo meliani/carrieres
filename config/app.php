@@ -207,6 +207,10 @@ return [
         App\Providers\HelperServicerProvider::class,
         App\Providers\FormGroupServiceProvider::class,
 
+        Amranidev\ScaffoldInterface\ScaffoldInterfaceServiceProvider::class,
+        Lab404\Impersonate\ImpersonateServiceProvider::class,
+        // Amranidev\Ajaxis\AjaxisServiceProvider::class,
+        // Pusher\Laravel\PusherServiceProvider::class,
     ],
 
     /*

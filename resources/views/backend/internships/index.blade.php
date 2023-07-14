@@ -21,13 +21,13 @@
     <livewire:interns-table />
     </div>
     
-    {{-- @include('components.pagination.pagination_wrapper',$paginate=$internships)
+    {{-- @include('components.pagination.pagination_wrapper',$collection=$internships)
 
     @include('components.search_box')
 
     @include('backend.internships.partials.list')
 
-    @include('components.pagination.pagination_wrapper',$paginate=$internships) --}}
+    @include('components.pagination.pagination_wrapper',$collection=$internships) --}}
 
 @endsection
 

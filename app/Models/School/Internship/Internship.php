@@ -178,6 +178,10 @@ class Internship extends Model
         return $notes;
     }
     
+    public function professor()
+    {
+        return $this->belongsTo(Professor::class,'int_adviser_id','id');
+    }
 
     /**
      */

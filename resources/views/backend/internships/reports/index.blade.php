@@ -11,13 +11,13 @@
         <h4 class="header light center blue-text text-lighten-1">Soumission de stages</h4>
         </div>
 
-        @include('components.pagination.pagination_wrapper',$paginate=$students)
+        @include('components.pagination.pagination_wrapper',$collection=$students)
         @include('components.search_box')
 
     @include('backend.internships.reports.partials.list')
 
 
-        @include('components.pagination.pagination_wrapper',$paginate=$students)
+        @include('components.pagination.pagination_wrapper',$collection=$students)
 
 @endsection
 @section('floating-buttons')
