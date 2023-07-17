@@ -106,6 +106,7 @@ $students = \App\Models\Profile\Student::with('internship')->get();
         <td></td>
         <td></td>
         <td></td>
+        <td></td>
 
         <td></td>
         <td></td>
