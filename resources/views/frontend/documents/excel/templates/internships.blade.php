@@ -68,7 +68,7 @@ $students = \App\Models\Profile\Student::with('internship')->get();
         <td>{{ $student->is_mobility }}</td>
         <td>{{ $student->abroad_school }}</td>
         <td>{{ $student->is_active }}</td>
-        <td>{{ $student->ine }}</td>
+        <td>{{ $student->program_id }}</td>
 
         {{-- INternship fields --}}
         @isset($student->internship->id)
