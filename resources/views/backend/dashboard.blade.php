@@ -8,12 +8,27 @@
 
 @section('content')
     <x-dashboard>
-        <livewire:time-weather-tile position="a1:a3" />
-        <livewire:chart-tile chartFactory="{{ App\Charts\InternshipsOverTimeChart::class }}" position="a3:a5" />
+        <livewire:time-weather-tile position="a1:a2" />
+        <x-dashboard-tile position="a2:a2">
+            <h1>{{ __('Top 10 Intenrships Over Time (by Month)') }}</h1>
+        </x-dashboard-tile>
+        <livewire:chart-tile chartFactory="{{ App\Charts\InternshipsOverTimeChart::class }}" position="a3:a4" />
+        <x-dashboard-tile position="a5:a5">
+            <h1>{{ __('Total Intenrships per class') }}</h1>
+        </x-dashboard-tile>
         <livewire:chart-tile chartFactory="{{ App\Charts\InternshipsTotalsChart::class }}" position="a6:a9" />
-        <livewire:chart-tile chartFactory="{{ App\Charts\InternshipsPerCityChart::class }}" position="b1:b9" />
-        <livewire:chart-tile chartFactory="{{ App\Charts\InternshipsPerCountryChart::class }}" position="c1:c3" />
-        <livewire:chart-tile chartFactory="{{ App\Charts\InternshipsPerOrganizationChart::class }}" position="c4:c9" />
+        <x-dashboard-tile position="b1:b1">
+            <h1>{{ __('Top 10 Intenrships per city') }}</h1>
+        </x-dashboard-tile>
+        <livewire:chart-tile chartFactory="{{ App\Charts\InternshipsPerCityChart::class }}" position="b2:b9" />
+        <x-dashboard-tile position="c1:c1">
+            <h1>{{ __('Top 10 Intenrships per country') }}</h1>
+        </x-dashboard-tile>
+        <livewire:chart-tile chartFactory="{{ App\Charts\InternshipsPerCountryChart::class }}" position="c2:c4" />
+        <x-dashboard-tile position="c5:c5">
+            <h1>{{ __('Top 10 Intenrships per organization') }}</h1>
+        </x-dashboard-tile>
+        <livewire:chart-tile chartFactory="{{ App\Charts\InternshipsPerOrganizationChart::class }}" position="c6:c9" />
     </x-dashboard>
 @endsection
 
