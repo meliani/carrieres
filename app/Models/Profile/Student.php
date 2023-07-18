@@ -67,9 +67,10 @@ class Student extends Person implements HasMedia
     {
         return $this->belongsToMany(\App\Models\Event::class);
     }
-    public function programs()
+    public function program()
     {
-        return $this->belongsToMany(\App\Models\Program::class);
+        return $this->belongsTo(\App\Models\School\Program::class);
+        // return $this->belongsToMany(\App\Models\School\Program::class);
     }
     public function project()
     {

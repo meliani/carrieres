@@ -209,6 +209,7 @@ return [
 
         Amranidev\ScaffoldInterface\ScaffoldInterfaceServiceProvider::class,
         Lab404\Impersonate\ImpersonateServiceProvider::class,
+        Khsing\World\WorldServiceProvider::class,
         // Amranidev\Ajaxis\AjaxisServiceProvider::class,
         // Pusher\Laravel\PusherServiceProvider::class,
     ],

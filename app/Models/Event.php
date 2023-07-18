@@ -46,7 +46,7 @@ class Event extends Model
      */
     public function program()
     {
-        return $this->belongsTo(\App\Models\Program::class);
+        return $this->belongsTo(\App\Models\School\Program::class);
     }
 
 

@@ -13,7 +13,7 @@ use App\Exports\StagesExport;
 use App\Models\School\Internship\Project;
 use Maatwebsite\Excel\Facades\Excel;
 
-class InternsTable extends Component
+class ProjectsTable extends Component
 {
     public $search = '';
 

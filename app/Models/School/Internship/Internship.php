@@ -142,10 +142,10 @@ class Internship extends Model
 	{
 		return $this->belongsTo(App\Models\Year::class);
 	}
-    public function program()
+/*     public function program()
 	{
-		return $this->belongsTo(App\Models\Program::class);
-    }
+		return $this->belongsTo(App\Models\School\Program::class);
+    } */
 
     /** ---------------------------------  Getters ----------------------------- */
     public function getParrainNameAttribute()
