@@ -20,6 +20,7 @@ Auth::routes();
 
 Route::middleware(['auth', 'Admin'])->group(function () {
 
+    Route::get('/charts-dashboard', 'ChartsController@showDashboard');
     Route::view('extractions', 'extractions.index')->name('extractions');
 
     Route::namespace ('Admin')->group(function () {
