@@ -15,7 +15,7 @@ class ChartsController extends Controller
         // $url = 'https://localhost:8888/'; // Replace with your Superset's HTTP URL
         // $response = Http::get($url . $request->getRequestUri());
 
-        $url = 'https://192.168.1.8:8888/'; // Replace with your Superset's HTTPS URL
+        $url = 'https://192.168.1.8:8888/admin'; // Replace with your Superset's HTTPS URL
         $response = Http::withOptions(['verify' => false])->get($url . $request->getRequestUri());
 
         return $response;
