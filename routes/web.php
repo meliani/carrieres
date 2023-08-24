@@ -19,8 +19,10 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::middleware(['auth', 'Admin'])->group(function () {
-
+    // charts dashboard routes and related uri
     Route::get('/charts-dashboard', 'ChartsController@showDashboard');
+    Route::get('/charts-dashboard/{uri}', 'ChartsController@showDashboard');
+    
     Route::view('extractions', 'extractions.index')->name('extractions');
 
     Route::namespace ('Admin')->group(function () {
