@@ -7,9 +7,9 @@ return [
     'external_relation_entity_full_name' => 'INPT/DASRE',
     'time_limits' => [
         'min_debut_pfe' => '01-06-2023',
-        'max_debut_pfe' => '31-08-2023',// then was '15-03-2023', // was 19-01-2023
+        'max_debut_pfe' => '31-11-2023',// then was '15-03-2023', // was 19-01-2023
 
-        'max_fin_pfe' => '31-08-2023',
+        'max_fin_pfe' => '31-12-2023',
         'ouverture_plateforme' => '06-05-2023',
     ],
     'academic_year' => '2022-2023',
