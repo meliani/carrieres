@@ -12,8 +12,8 @@ return [
         'max_fin_pfe' => '31-12-2023',
         'ouverture_plateforme' => '06-05-2023',
     ],
-    'academic_year' => '2022-2023',
-    'year_id' => '6',
+    'academic_year' => '2023-2024',
+    'year_id' => '7',
     'signature' =>[
         'signing_person_id' => 1,
         'signing_title' => '',

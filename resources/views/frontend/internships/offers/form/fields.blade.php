@@ -21,7 +21,7 @@
                         __('The way you want to get applications from our students') .
                         __(' - DASRE*: Direction Adjointe des Stages et Relations Entreprises'),
                     'required',
-                    'cols' => 5,
+                    'cols' => 4,
                     'data' => [
                         'external' => __('Direct application'),
                         'internal' =>
@@ -36,13 +36,13 @@
                 [
                     'name' => 'application_email',
                     'value',
-                    'label' => __('Your contact email'),
+                    'label' => __('Application email address'),
                     'placeholder',
                     'class' => 'validate',
                     'icon',
-                    'helper' => __('Your contact email if different from your personal one'),
+                    'helper' => __('Application email address if different from your personal one'),
                     'required',
-                    'cols' => 5,
+                    'cols' => 4,
                 ],
                 $errors,
             ) }}
