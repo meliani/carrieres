@@ -3,64 +3,7 @@
 
     <div class="card-content">
 
-        <div class="row">
-            <h5 class="header col s12 light center blue-text text-lighten-1">
-                {{ __('Applications') }}</h5>
-        </div>
-        <div class="row">
-            <!-- Text -->
-            {{ Form::selectGroup(
-                [
-                    'name' => 'recruting_type',
-                    'value',
-                    'label' => __('How you would like to be contacted'),
-                    'placeholder',
-                    'class' => 'validate',
-                    'icon',
-                    'helper' =>
-                        __('The way you want to get applications from our students') .
-                        __(' - DASRE*: Direction Adjointe des Stages et Relations Entreprises'),
-                    'required',
-                    'cols' => 4,
-                    'data' => [
-                        'external' => __('Direct application'),
-                        'internal' =>
-                            __('Applications managed and processed by ') .
-                            config('school.current.external_relation_entity_name') .
-                            '*',
-                    ],
-                ],
-                $errors,
-            ) }}
-            {{ Form::textGroup(
-                [
-                    'name' => 'application_email',
-                    'value',
-                    'label' => __('Application email address'),
-                    'placeholder',
-                    'class' => 'validate',
-                    'icon',
-                    'helper' => __('Application email address if different from your personal one'),
-                    'required',
-                    'cols' => 4,
-                ],
-                $errors,
-            ) }}
-            {{ Form::textGroup(
-                [
-                    'name' => 'expire_at',
-                    'value',
-                    'label' => __('Expiration date'),
-                    'placeholder',
-                    'class' => 'datepicker validate',
-                    'icon' => 'date_range',
-                    'helper' => '',
-                    'required' => '',
-                    'cols' => 4,
-                ],
-                $errors,
-            ) }}
-        </div>
+
 
         <div class="row">
             <h5 class="header col s12 light center blue-text text-lighten-1">
@@ -219,6 +162,64 @@
                     'helper' => __('Enter keywords separated by commas'),
                     'required',
                     'cols' => 5,
+                ],
+                $errors,
+            ) }}
+        </div>
+        <div class="row">
+            <h5 class="header col s12 light center blue-text text-lighten-1">
+                {{ __('Applications') }}</h5>
+        </div>
+        <div class="row">
+            <!-- Text -->
+            {{ Form::selectGroup(
+                [
+                    'name' => 'recruting_type',
+                    'value',
+                    'label' => __('How you would like to be contacted'),
+                    'placeholder',
+                    'class' => 'validate',
+                    'icon',
+                    'helper' =>
+                        __('The way you want to get applications from our students') .
+                        __(' - DASRE*: Direction Adjointe des Stages et Relations Entreprises'),
+                    'required',
+                    'cols' => 4,
+                    'data' => [
+                        'external' => __('Direct application'),
+                        'internal' =>
+                            __('Applications managed and processed by ') .
+                            config('school.current.external_relation_entity_name') .
+                            '*',
+                    ],
+                ],
+                $errors,
+            ) }}
+            {{ Form::textGroup(
+                [
+                    'name' => 'application_email',
+                    'value',
+                    'label' => __('Application email address'),
+                    'placeholder',
+                    'class' => 'validate',
+                    'icon',
+                    'helper' => __('Application email address if different from your personal one'),
+                    'required',
+                    'cols' => 4,
+                ],
+                $errors,
+            ) }}
+            {{ Form::textGroup(
+                [
+                    'name' => 'expire_at',
+                    'value',
+                    'label' => __('Expiration date'),
+                    'placeholder',
+                    'class' => 'datepicker validate',
+                    'icon' => 'date_range',
+                    'helper' => '',
+                    'required' => '',
+                    'cols' => 4,
                 ],
                 $errors,
             ) }}
