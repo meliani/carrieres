@@ -46,6 +46,20 @@
                 ],
                 $errors,
             ) }}
+            {{ Form::textGroup(
+                [
+                    'name' => 'expire_at',
+                    'value',
+                    'label' => __('Expiration date'),
+                    'placeholder',
+                    'class' => 'datepicker validate',
+                    'icon' => 'date_range',
+                    'helper' => '',
+                    'required' => '',
+                    'cols' => 3,
+                ],
+                $errors,
+            ) }}
         </div>
 
         <div class="row">

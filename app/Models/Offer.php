@@ -44,7 +44,8 @@ class Offer extends Model
         'status',
         'is_valid',
         'applyable',
-        'contact_email'
+        'contact_email',
+        'expire_at',
     ];
 
     /**
@@ -52,7 +53,7 @@ class Offer extends Model
      *
      * @var array
      */
-    // protected $casts = [
+    protected $casts = [
     //     'id' => 'string',
     //     'year_id' => 'string',
     //     'program_id' => 'string',
@@ -77,11 +78,11 @@ class Offer extends Model
     //     'status' => 'integer',
     //     'is_valid' => 'boolean',
     //     'applyable' => 'boolean',
-    //     'expire_at' => 'date',
-    //     'created_at'=> 'datetime',
-    //     'updated_at'=> 'datetime',
-    //     'deleted_at'=> 'datetime',
-    // ];
+        'expire_at' => 'date',
+        'created_at'=> 'datetime',
+        'updated_at'=> 'datetime',
+        'deleted_at'=> 'datetime',
+    ];
 
 
     /**
