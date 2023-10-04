@@ -56,7 +56,7 @@
                     'icon' => 'date_range',
                     'helper' => '',
                     'required' => '',
-                    'cols' => 3,
+                    'cols' => 4,
                 ],
                 $errors,
             ) }}
