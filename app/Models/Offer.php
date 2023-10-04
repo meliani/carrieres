@@ -83,38 +83,6 @@ class Offer extends Model
     //     'deleted_at'=> 'datetime',
     // ];
 
-    /**
-     * Validation rules
-     *
-     * @var array
-     */
-    // public static $rules = [
-    //     'id' => 'nullable',
-    //     'year_id' => 'nullable',
-    //     'program_id' => 'nullable',
-    //     'organization_name' => 'nullable',
-    //     'internship_type' => 'nullable',
-    //     'responsible_fullname' => 'nullable',
-    //     'responsible_occupation' => 'nullable',
-    //     'responsible_phone' => 'nullable',
-    //     'responsible_email' => 'nullable',        
-    //     'project_title' => 'nullable',
-    //     'project_details' => 'nullable',
-    //     'internship_location' => 'nullable',
-    //     'keywords' => 'nullable',
-    //     'attached_file' => 'nullable',
-    //     'link' => 'nullable',
-    //     'paycheck' => 'nullable',
-    //     'recruting_type' => 'nullable',
-    //     'event_id' => 'nullable',
-    //     'event_date' => 'nullable',
-    //     'badge' => 'nullable',
-    //     'display_permissions' => 'nullable',
-    //     'status' => 'nullable',
-    //     'is_valid' => 'nullable',
-    //     'applyable' => 'nullable',
-    //     'expire_at' => 'nullable'        
-    // ];
 
     /**
      * The attributes that should be hidden for arrays.

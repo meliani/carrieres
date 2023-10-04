@@ -41,6 +41,7 @@ class StoreOfferRequest extends FormRequest
         'link' => 'nullable',
         'paycheck' => 'nullable',
         'recruting_type' => 'nullable',
+        'application_email' => 'nullable',
         'event_id' => 'nullable',
         'event_date' => 'nullable',
         'badge' => 'nullable',
