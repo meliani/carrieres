@@ -55,7 +55,11 @@ class InternOfferController extends Controller
      */
     public function store(StoreOfferRequest $request)
     {
-        $input=$request->validated();
+        // dd('hey');
+
+        $input = $request->validated();
+        // $hey = new Offer($request);
+        // dd($request);
         $offer = new Offer($input);
         $offer->year()->associate(config('school.current.year_id'));
         $offer->program()->associate(3);

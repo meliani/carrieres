@@ -16,7 +16,8 @@ class Offer extends Model
 {
     protected $table="internship_offers";
 
-
+    // non fillable fields
+    protected $guarded = [];
     public $fillable = [
         'id',
         'year_id',
@@ -35,6 +36,7 @@ class Offer extends Model
         'link',
         'paycheck',
         'recruting_type',
+        'application_email',
         'event_id',
         'event_date',
         'badge',
@@ -42,7 +44,7 @@ class Offer extends Model
         'status',
         'is_valid',
         'applyable',
-        'contact_email'   
+        'contact_email'
     ];
 
     /**
@@ -50,69 +52,69 @@ class Offer extends Model
      *
      * @var array
      */
-    protected $casts = [
-        'id' => 'string',
-        'year_id' => 'string',
-        'program_id' => 'string',
-        'organization_name' => 'string',
-        'internship_type' => 'string',
-        'responsible_fullname' => 'string',
-        'responsible_occupation' => 'string',
-        'responsible_phone' => 'string',
-        'responsible_email' => 'string',        
-        'project_title' => 'string',
-        'project_details' => 'string',
-        'internship_location' => 'string',
-        'keywords' => 'string',
-        'attached_file' => 'string',
-        'link' => 'string',
-        'paycheck' => 'string',
-        'recruting_type' => 'string',
-        'event_id' => 'string',
-        'event_date' => 'string',
-        'badge' => 'string',
-        'display_permissions' => 'string',
-        'status' => 'integer',
-        'is_valid' => 'boolean',
-        'applyable' => 'boolean',
-        'expire_at' => 'date',
-        'created_at'=> 'datetime',
-        'updated_at'=> 'datetime',
-        'deleted_at'=> 'datetime',
-    ];
+    // protected $casts = [
+    //     'id' => 'string',
+    //     'year_id' => 'string',
+    //     'program_id' => 'string',
+    //     'organization_name' => 'string',
+    //     'internship_type' => 'string',
+    //     'responsible_fullname' => 'string',
+    //     'responsible_occupation' => 'string',
+    //     'responsible_phone' => 'string',
+    //     'responsible_email' => 'string',        
+    //     'project_title' => 'string',
+    //     'project_details' => 'string',
+    //     'internship_location' => 'string',
+    //     'keywords' => 'string',
+    //     'attached_file' => 'string',
+    //     'link' => 'string',
+    //     'paycheck' => 'string',
+    //     'recruting_type' => 'string',
+    //     'event_id' => 'string',
+    //     'event_date' => 'string',
+    //     'badge' => 'string',
+    //     'display_permissions' => 'string',
+    //     'status' => 'integer',
+    //     'is_valid' => 'boolean',
+    //     'applyable' => 'boolean',
+    //     'expire_at' => 'date',
+    //     'created_at'=> 'datetime',
+    //     'updated_at'=> 'datetime',
+    //     'deleted_at'=> 'datetime',
+    // ];
 
     /**
      * Validation rules
      *
      * @var array
      */
-    public static $rules = [
-        'id' => 'nullable',
-        'year_id' => 'nullable',
-        'program_id' => 'nullable',
-        'organization_name' => 'nullable',
-        'internship_type' => 'nullable',
-        'responsible_fullname' => 'nullable',
-        'responsible_occupation' => 'nullable',
-        'responsible_phone' => 'nullable',
-        'responsible_email' => 'nullable',        
-        'project_title' => 'nullable',
-        'project_details' => 'nullable',
-        'internship_location' => 'nullable',
-        'keywords' => 'nullable',
-        'attached_file' => 'nullable',
-        'link' => 'nullable',
-        'paycheck' => 'nullable',
-        'recruting_type' => 'nullable',
-        'event_id' => 'nullable',
-        'event_date' => 'nullable',
-        'badge' => 'nullable',
-        'display_permissions' => 'nullable',
-        'status' => 'nullable',
-        'is_valid' => 'nullable',
-        'applyable' => 'nullable',
-        'expire_at' => 'nullable'        
-    ];
+    // public static $rules = [
+    //     'id' => 'nullable',
+    //     'year_id' => 'nullable',
+    //     'program_id' => 'nullable',
+    //     'organization_name' => 'nullable',
+    //     'internship_type' => 'nullable',
+    //     'responsible_fullname' => 'nullable',
+    //     'responsible_occupation' => 'nullable',
+    //     'responsible_phone' => 'nullable',
+    //     'responsible_email' => 'nullable',        
+    //     'project_title' => 'nullable',
+    //     'project_details' => 'nullable',
+    //     'internship_location' => 'nullable',
+    //     'keywords' => 'nullable',
+    //     'attached_file' => 'nullable',
+    //     'link' => 'nullable',
+    //     'paycheck' => 'nullable',
+    //     'recruting_type' => 'nullable',
+    //     'event_id' => 'nullable',
+    //     'event_date' => 'nullable',
+    //     'badge' => 'nullable',
+    //     'display_permissions' => 'nullable',
+    //     'status' => 'nullable',
+    //     'is_valid' => 'nullable',
+    //     'applyable' => 'nullable',
+    //     'expire_at' => 'nullable'        
+    // ];
 
     /**
      * The attributes that should be hidden for arrays.
@@ -122,9 +124,9 @@ class Offer extends Model
     protected $hidden = [
     ];
 
-    protected $guarded =[
-// '_token'
-    ];
+//     protected $guarded =[
+// // '_token'
+//     ];
 
 
     public function setAttachedFileAttribute($value){

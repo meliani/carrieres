@@ -1,16 +1,16 @@
 {
     "Propose a topic for a graduation project": "Proposer un sujet pour un projet de fin d'études",
-	"How you would like to be contacted": "Comment vous souhaitez être contacté",
+    "How you would like to be contacted": "Comment vous souhaitez être contacté",
     "The way you want to get applications from our students": "La façon dont vous souhaitez obtenir des candidatures de nos étudiants",
     "Direct application": "Candidature directe",
     "Applications managed and processed by": "Candatures gérés par l'",
-	"Your contact email": "Votre email de contact",
-	"Organization name": "Nom de l'organisation",
-	"Legal organization name": "Nom légal de l'organisation",
-	"City": "Ville",
-	"Your email": "Votre email",
-	"Your contact email if different from your personal one": "Votre email de contact si different de l'email que vous avez déjà renseigné",
-	"Base city of the organization": "Ville où se trouve l'organisation",
+    "Your contact email": "Votre email de contact",
+    "Organization name": "Nom de l'organisation",
+    "Legal organization name": "Nom légal de l'organisation",
+    "City": "Ville",
+    "Your email": "Votre email",
+    "Your contact email if different from your personal one": "Votre email de contact si different de l'email que vous avez déjà renseigné",
+    "Base city of the organization": "Ville où se trouve l'organisation",
     "Responsible name": "Nom du résponsable",
     "Internship responsible": "Résponsable de stage",
     "Position": "Fonction",
@@ -19,7 +19,7 @@
     "Your full name please": "Votre nom complet s'il vous plaît",
     "Your phone number": "Votre numéro de téléphone",
     "Your phone in international format please": "Votre téléphone en format standard international",
-    "How to apply ?": "Modalités de candidature",
+    "Applications": "Modalités de candidature",
     "Your informations": "Informations sur vous",
     "Internship informations": "Informations sur le stage",
     "Internship location adress": "Adresse ou le stage va se passer",
@@ -45,6 +45,7 @@
     "Email adress": "Adresse email",
     "Send reset link": "Envoyer le lien de redéfinition de mot de passe",
     "Verify Email Address": "Verification de votre adresse email",
-    "Please click the button below to verify your email address.":"Veuillez cliquer sur le bouton ci dessous pour vérifier votre adresse email et procéder dand la configuration de votre compte sur la plateforme carrières"
-
+    "Please click the button below to verify your email address.": "Veuillez cliquer sur le bouton ci dessous pour vérifier votre adresse email et procéder dand la configuration de votre compte sur la plateforme carrières",
+    "Graduation project Proposal": "Proposition de sujet de projet de fin d'études",
+    "Organization Informations": "Informations sur votre Entreprise"
 }
