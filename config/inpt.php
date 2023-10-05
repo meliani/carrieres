@@ -27,6 +27,7 @@ return [
     ],
 
     'countries' => [
+        'N/A' => 'Not Applicable',
         'Les plus utilisés' => [
         "Morocco"=>"Morocco",
         "France"=>"France",

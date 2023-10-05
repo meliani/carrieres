@@ -232,11 +232,11 @@
                 [
                     'name' => 'application_email',
                     'value',
-                    'label' => __('Application email address'),
+                    'label' => __('Application email address or link'),
                     'placeholder',
                     'class' => 'validate',
                     'icon' => 'mail',
-                    'helper' => __('Application email address if different from your personal one'),
+                    'helper' => __('Application email address if different from your personal one or link to your platform'),
                     'required',
                     'cols' => 4,
                 ],
