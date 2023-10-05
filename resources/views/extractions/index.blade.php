@@ -5,7 +5,7 @@
 @endsection       
 @section('content')
     <div class="row center">
-        <h4 class="header col s12 light">mes extractions</h4>
+        <h4 class="header col s12 light"> {{__('Plateform databases export')}} </h4>
     </div>
 @include('extractions.links')
 

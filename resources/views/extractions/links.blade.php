@@ -1,27 +1,19 @@
 <div class="container">
-  <ul class="collection">
+  {{-- list exports from Export model as materializecss cards --}}
+  <div class="row">
+    @foreach ($exports as $export)
+    <div class="col s12 m6 l4">
+      <div class="card">
+        <div class="card-content">
+          <span class="card-title">{{ $export->name }}</span>
+          <p>{{ __($export->description) }}</p>
+        </div>
+        <div class="card-action">
+          <a href="{{ $export->path }}">{{__('download')}} </a>
+        </div>
+      </div>
+    </div>
+    @endforeach
+  
 
-    <li class="collection-item avatar">
-      <i class="material-icons circle green">insert_chart</i>
-      <span class="title">Les candidatures</span>
-      <p><a href="extractions/OffersApplications/xlsx">Telecharger les candidatures</a>
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle green">insert_chart</i>
-      <span class="title">Les offres</span>
-      <p><a href="#">Telecharger les offres</a>
-      </p>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-    </li>
-    <li class="collection-item avatar">
-      <i class="material-icons circle green">insert_chart</i>
-      <span class="title">Les encadrements</span>
-      <p><a href="extractions/InternshipsExport/xlsx">Globale des stages PFE</a></p>
-      <p><a href="extractions/planningByProfessor/xlsx">Planning par enseignant</a></p>
-      <p><a href="extractions/AdvisingStatsExport/xlsx">Statistiques</a></p>
-      <a href="#!" class="secondary-content"><i class="material-icons">grade</i></a>
-    </li>
-  </ul>
 </div>
