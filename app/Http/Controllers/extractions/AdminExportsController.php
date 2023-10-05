@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\View;
+use App\Exports\DefensesExport;
 
 class AdminExportsController extends Controller
 {
@@ -29,24 +30,29 @@ class AdminExportsController extends Controller
         $this->middleware(['auth','Admin']);
         $this->extention= Carbon::now()->format('d_M_Y-ha').'.xlsx';
     }
-    public function AdvancedStagesExport($type)
-    {
-        return Excel::download(new AdvancedStagesExport, 'StagesPFEExportAdvanced - '.$this->extention);
-    }
+    // public function AdvancedStagesExport($type)
+    // {
+    //     return Excel::download(new AdvancedStagesExport, 'StagesPFEExportAdvanced - '.$this->extention);
+    // }
     public function InternshipsExport($type)
     {
         return Excel::download(new InternshipsExport, 'Internships global - '.$this->extention);
+    }
+    public function DefensesExport($type)
+    {
+
+        return Excel::download(new DefensesExport, 'Internships global - '.$this->extention);
     }
     public function OffersApplicationsExport($type)
     {
         return Excel::download(new OffersApplicationsExport, 'OffersApplications - '.$this->extention);
     }
-    public function AdvisingStatsExport($type)
-    {
-        return Excel::download(new AdvisingStatsExport, 'AdvisingStats - '.$this->extention);
-    }
-    public function planningByProfessor($type)
-    {
-        return Excel::download(new planningByProfessor, 'Planning des enseignants - '.$this->extention);
-    }
+    // public function AdvisingStatsExport($type)
+    // {
+    //     return Excel::download(new AdvisingStatsExport, 'AdvisingStats - '.$this->extention);
+    // }
+    // public function planningByProfessor($type)
+    // {
+    //     return Excel::download(new planningByProfessor, 'Planning des enseignants - '.$this->extention);
+    // }
 }

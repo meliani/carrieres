@@ -36,6 +36,7 @@ Route::middleware(['auth', 'Admin'])->group(function () {
     Route::get('extractions/StagesExportAdvanced/{type}', 'extractions\AdminExportsController@AdvancedStagesExport')->middleware(['Admin']);
     Route::get('extractions/AdvisingStatsExport/{type}', 'extractions\AdminExportsController@AdvisingStatsExport')->middleware(['Admin']);
     Route::get('extractions/InternshipsExport/{type}', 'extractions\AdminExportsController@InternshipsExport')->middleware(['Admin']);
+    Route::get('extractions/DefensesExport/{type}', 'extractions\AdminExportsController@DefensesExport')->middleware(['Admin']);
     Route::get('extractions/planningByProfessor/{type}', 'extractions\AdminExportsController@planningByProfessor')->middleware(['Admin']);
 });
 
