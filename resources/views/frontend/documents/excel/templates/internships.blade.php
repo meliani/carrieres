@@ -1,10 +1,3 @@
-<?php 
-//$students = \App\Models\School\Internship::where('scholar_year','2018-2019')->with('people')->get();
-$students2 = \App\Models\Profile\Student::with('internship')->get();
-// ->with('internship')->get();
-//dd($students);
-//$students = $students->people();
-?>
 <table>
 <thead>
     <tr>

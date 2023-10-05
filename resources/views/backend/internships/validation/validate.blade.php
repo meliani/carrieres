@@ -48,7 +48,7 @@
                             {{ $internship->encadrant_ext_fonction }} au sein de l'entreprise d'accueil.</p>
                     </div>
                     <div class="card-panel">
-                        <h5 class="blue-text lighten-5"><i class="small material-icons blue-text">business</i> Annexe contacts
+                        <h5 class="blue-text lighten-5"><i class="small material-icons blue-text">business</i> {{ __('Additional contacts') }}
                         </h5>
                         <p>{{ $internship->parrain_name }}: {{ $internship->parrain_tel }}, {{ $internship->parrain_mail }}
                         </p>

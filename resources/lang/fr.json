@@ -54,8 +54,12 @@
     "Internship location": "Lieu du stage",
     "Internship location address": "Adresse du lieu du stage",
     "6 months": "6 mois",
+    "5 months": "5 mois",
     "4 months": "4 mois",
     "Internship duration": "Durée du stage",
     " - If remote, please precise the country": " - Si à distance, veuillez préciser le pays",
-    "Plateform databases export": "Export des bases de données de la plateforme"
+    "Platform databases export": "Export des bases de données de la plateforme",
+    "Additional contacts": "Contacts additionnels",
+    "Internship declaration": "Déclaration de stage",
+    "Country where the organization is located": "Pays où se trouve l'organisation"
 }

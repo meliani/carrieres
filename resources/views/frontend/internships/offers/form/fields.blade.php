@@ -2,9 +2,6 @@
     {{ Form::open(['route' => ['offers.store'], 'files' => true]) }}
 
     <div class="card-content">
-
-
-
         <div class="row">
             <h5 class="header col s12 light center blue-text text-lighten-1">
                 {{ __('Organization Informations') }}</h5>
@@ -18,13 +15,25 @@
                     'label' => __('Organization name'),
                     'placeholder',
                     'class' => 'validate',
-                    'icon',
+                    'icon' => 'domain',
                     'helper' => __('Legal organization name'),
                     'required',
                     'cols' => 5,
                 ],
                 $errors,
             ) }}
+            {{ Form::selectGroup([
+    'name' => 'country',
+    'value' ,
+    'label' => __('Country'),
+    'placeholder' ,
+    'class' => 'validate',
+    'icon' => 'location_city',
+    'helper' => __('Country where the organization is located'),
+    'required' => 'required',
+    'cols' => 6,
+    'data' => config('inpt.countries'),
+], $errors) }}
         </div>
         <div class="row">
             <h5 class="header col s12 light center blue-text text-lighten-1">
@@ -42,7 +51,7 @@
                     'icon' => 'person',
                     'helper' => __('Your full name please'),
                     'required',
-                    'cols' => 6,
+                    'cols' => 5,
                 ],
                 $errors,
             ) }}
@@ -54,10 +63,10 @@
                     'label' => __('Position'),
                     'placeholder',
                     'class' => 'validate',
-                    'icon',
+                    'icon' => 'work',
                     'helper' => __('Your job title please'),
                     'required',
-                    'cols' => 4,
+                    'cols' => 5,
                 ],
                 $errors,
             ) }}
@@ -72,7 +81,7 @@
                     'label' => __('Your phone number'),
                     'placeholder',
                     'class' => 'validate',
-                    'icon',
+                    'icon' => 'phone',
                     'helper' => __('Your phone in international format please'),
                     'required',
                     'cols' => 5,
@@ -88,7 +97,7 @@
                     'label' => __('Your email'),
                     'placeholder',
                     'class' => 'validate',
-                    'icon',
+                    'icon' => 'mail',
                     'helper' => __('Your email'),
                     'required',
                     'cols' => 5,
@@ -134,22 +143,9 @@
                     'cols' => 3,
                     'data' => [
                         '6 months' => __('6 months'),
+                        '5 months' => __('5 months'),
                         '4 months' => __('4 months'),
                     ],
-                ],
-                $errors,
-            ) }}
-            {{ Form::textGroup(
-                [
-                    'name' => 'internship_location',
-                    'value' => __(' - If remote, please precise the country'),
-                    'label' => __('Internship location adress'),
-                    'placeholder',
-                    'class' => 'validate',
-                    'icon',
-                    'helper' => __('Internship location adress') . __(' - If remote, please precise the country'),
-                    'required',
-                    'cols' => 5,
                 ],
                 $errors,
             ) }}
@@ -239,7 +235,7 @@
                     'label' => __('Application email address'),
                     'placeholder',
                     'class' => 'validate',
-                    'icon',
+                    'icon' => 'mail',
                     'helper' => __('Application email address if different from your personal one'),
                     'required',
                     'cols' => 4,
