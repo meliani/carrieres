@@ -48,5 +48,13 @@
     "Please click the button below to verify your email address.": "Veuillez cliquer sur le bouton ci dessous pour vérifier votre adresse email et procéder dand la configuration de votre compte sur la plateforme carrières",
     "Graduation project Proposal": "Proposition de sujet de projet de fin d'études",
     "Organization Informations": "Informations sur votre Entreprise",
-    "Expiration date": "Date limite de candidature"
+    "Expiration date": "Date limite de candidature",
+    "Remote": "A distance",
+    "On site": "Sur site",
+    "Internship location": "Lieu du stage",
+    "Internship location address": "Adresse du lieu du stage",
+    "6 months": "6 mois",
+    "4 months": "4 mois",
+    "Internship duration": "Durée du stage",
+    " - If remote, please precise the country": " - Si à distance, veuillez préciser le pays"
 }

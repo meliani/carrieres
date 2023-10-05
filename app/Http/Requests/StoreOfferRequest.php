@@ -49,7 +49,8 @@ class StoreOfferRequest extends FormRequest
         'status' => 'nullable',
         'is_valid' => 'nullable',
         'applyable' => 'nullable',
-        'expire_at' => 'nullable'
+        'expire_at' => 'nullable',
+        'internship_duration' => 'nullable',
         ];
     }
 }

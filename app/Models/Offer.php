@@ -34,6 +34,7 @@ class Offer extends Model
         'keywords',
         'attached_file',
         'link',
+        'internship_duration',
         'paycheck',
         'recruting_type',
         'application_email',

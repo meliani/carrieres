@@ -42,7 +42,7 @@
                     'icon' => 'person',
                     'helper' => __('Your full name please'),
                     'required',
-                    'cols' => 8,
+                    'cols' => 6,
                 ],
                 $errors,
             ) }}
@@ -102,15 +102,52 @@
         </div>
         <div class="row">
             <!-- Text -->
+            {{-- here we precise if the intern is onsite or remote --}}
+            {{ Form::selectGroup(
+                [
+                    'name' => 'internship_type',
+                    'value' => 'onsite',
+                    'label' => __('Internship type'),
+                    'placeholder' => __('Internship type'),
+                    'class' => 'validate',
+                    'icon',
+                    'helper',
+                    'required',
+                    'cols' => 2,
+                    'data' => [
+                        'onsite' => __('On site'),
+                        'remote' => __('Remote'),
+                    ],
+                ],
+                $errors,
+            ) }}
+            {{ Form::selectGroup(
+                [
+                    'name' => 'internship_duration',
+                    'value' => '6',
+                    'label' => __('Internship duration'),
+                    'placeholder',
+                    'class' => 'validate',
+                    'icon',
+                    'helper',
+                    'required',
+                    'cols' => 3,
+                    'data' => [
+                        '6 months' => __('6 months'),
+                        '4 months' => __('4 months'),
+                    ],
+                ],
+                $errors,
+            ) }}
             {{ Form::textGroup(
                 [
                     'name' => 'internship_location',
-                    'value',
+                    'value' => __(' - If remote, please precise the country'),
                     'label' => __('Internship location adress'),
                     'placeholder',
                     'class' => 'validate',
                     'icon',
-                    'helper' => __('Internship location adress'),
+                    'helper' => __('Internship location adress') . __(' - If remote, please precise the country'),
                     'required',
                     'cols' => 5,
                 ],
