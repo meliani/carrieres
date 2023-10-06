@@ -1,8 +1,8 @@
-<div class = "input-field col 
+<div class = "input-field 
 col 
-s{{ array_get($params,'cols',6)*3 }}
+{{-- s{{ array_get($params,'cols',6)*3 }} --}}
 m{{ array_get($params,'cols',6) }}
-l{{ array_get($params,'cols',6)/1.5 }}
+{{-- l{{ array_get($params,'cols',6)/1.5 }} --}}
  {{ array_get($params,'position') }}
  ">
         <div class="file-field input-field">

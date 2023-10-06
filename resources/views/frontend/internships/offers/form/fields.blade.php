@@ -22,18 +22,21 @@
                 ],
                 $errors,
             ) }}
-            {{ Form::selectGroup([
-    'name' => 'country',
-    'value' ,
-    'label' => __('Country'),
-    'placeholder' ,
-    'class' => 'validate',
-    'icon' => 'location_city',
-    'helper' => __('Country where the organization is located'),
-    'required' => 'required',
-    'cols' => 6,
-    'data' => config('inpt.countries'),
-], $errors) }}
+            {{ Form::selectGroup(
+                [
+                    'name' => 'country',
+                    'value',
+                    'label' => __('Country'),
+                    'placeholder',
+                    'class' => 'validate',
+                    'icon' => 'location_city',
+                    'helper' => __('Country where the organization is located'),
+                    'required' => 'required',
+                    'cols' => 6,
+                    'data' => config('inpt.countries'),
+                ],
+                $errors,
+            ) }}
         </div>
         <div class="row">
             <h5 class="header col s12 light center blue-text text-lighten-1">
@@ -111,6 +114,57 @@
         </div>
         <div class="row">
             <!-- Text -->
+            {{ Form::textGroup(
+                [
+                    'name' => 'project_title',
+                    'value',
+                    'label' => __('Project title'),
+                    'placeholder',
+                    'class' => 'validate',
+                    'icon',
+                    'helper' => __('Project title'),
+                    'required',
+                    'cols' => 6,
+                ],
+                $errors,
+            ) }}
+
+        </div>
+        <div class="row">
+            <!-- Text -->
+            {{ Form::textGroup(
+                [
+                    'name' => 'project_details',
+                    'value',
+                    'label' => __('Project details'),
+                    'placeholder',
+                    'class' => 'materialize-textarea validate',
+                    'icon',
+                    'helper' => __('Project details'),
+                    'required',
+                    'type' => 'textarea',
+                    'cols' => 6,
+                ],
+                $errors,
+            ) }}
+
+            <!-- Text -->
+            {{ Form::textGroup(
+                [
+                    'name' => 'keywords',
+                    'value',
+                    'label' => __('Keywords'),
+                    'placeholder',
+                    'class' => 'validate',
+                    'icon',
+                    'helper' => __('Enter keywords separated by commas'),
+                    'required',
+                    'cols' => 6,
+                ],
+                $errors,
+            ) }}
+        </div>
+        <div class="row">
             {{-- here we precise if the intern is onsite or remote --}}
             {{ Form::selectGroup(
                 [
@@ -140,7 +194,7 @@
                     'icon',
                     'helper',
                     'required',
-                    'cols' => 3,
+                    'cols' => 2,
                     'data' => [
                         '6 months' => __('6 months'),
                         '5 months' => __('5 months'),
@@ -149,55 +203,22 @@
                 ],
                 $errors,
             ) }}
-            <!-- Text -->
-            {{ Form::textGroup(
-                [
-                    'name' => 'project_title',
-                    'value',
-                    'label' => __('Project title'),
-                    'placeholder',
-                    'class' => 'validate',
-                    'icon',
-                    'helper' => __('Project title'),
-                    'required',
-                    'cols' => 5,
-                ],
-                $errors,
-            ) }}
-        </div>
-        <div class="row">
-            <!-- Text -->
-            {{ Form::textGroup(
-                [
-                    'name' => 'project_details',
-                    'value',
-                    'label' => __('Project details'),
-                    'placeholder',
-                    'class' => 'materialize-textarea validate',
-                    'icon',
-                    'helper' => __('Project details'),
-                    'required',
-                    'type' => 'textarea',
-                    'cols' => 5,
-                ],
-                $errors,
-            ) }}
-
-            <!-- Text -->
-            {{ Form::textGroup(
-                [
-                    'name' => 'keywords',
-                    'value',
-                    'label' => __('Keywords'),
-                    'placeholder',
-                    'class' => 'validate',
-                    'icon',
-                    'helper' => __('Enter keywords separated by commas'),
-                    'required',
-                    'cols' => 5,
-                ],
-                $errors,
-            ) }}
+            <div class="col m6 offset-m2">
+                {{ Form::textGroup(
+                    [
+                        'name' => 'expire_at',
+                        'value',
+                        'label' => __('Expiration date'),
+                        'placeholder',
+                        'class' => 'datepicker validate',
+                        'icon' => 'date_range',
+                        'helper' => '',
+                        'required' => '',
+                        'cols' => 6,
+                    ],
+                    $errors,
+                ) }}
+            </div>
         </div>
         <div class="row">
             <h5 class="header col s12 light center blue-text text-lighten-1">
@@ -217,7 +238,7 @@
                         __('The way you want to get applications from our students') .
                         __(' - DASRE*: Direction Adjointe des Stages et Relations Entreprises'),
                     'required',
-                    'cols' => 4,
+                    'cols' => 6,
                     'data' => [
                         'external' => __('Direct application'),
                         'internal' =>
@@ -238,26 +259,51 @@
                     'icon' => 'mail',
                     'helper' => __('Application email address if different from your personal one or link to your platform'),
                     'required',
-                    'cols' => 4,
+                    'cols' => 6,
                 ],
                 $errors,
             ) }}
+
+
+        </div>
+        <div class="row">
+            <div class="row">
+                <h5 class="header col s12 light center blue-text text-lighten-1">
+                    {{ __('Remuneration') . ' ' . __('(if applicable)') }}
+                </h5>
+            </div>
             {{ Form::textGroup(
                 [
-                    'name' => 'expire_at',
+                    'name' => 'remuneration',
                     'value',
-                    'label' => __('Expiration date'),
+                    'label' => 'Montant en chiffres',
                     'placeholder',
-                    'class' => 'datepicker validate',
-                    'icon' => 'date_range',
+                    'class' => 'validate',
+                    'icon',
+                    'helper' => 'Montant de la gratification mensuelle',
+                    'required' => '',
+                    'cols' => 3,
+                ],
+                $errors,
+            ) }}
+            {{ Form::selectGroup(
+                [
+                    'name' => 'currency',
+                    'value' => null,
+                    'label' => 'Devise',
+                    'placeholder',
+                    'class' => 'validate',
+                    'icon' => '',
                     'helper' => '',
                     'required' => '',
-                    'cols' => 4,
+                    'cols' => 3,
+                    'data' => config('inpt.currencies'),
                 ],
                 $errors,
             ) }}
         </div>
         <div class="row">
+        <div class="col m12 offset-m6">
             {{ Form::fileGroup(
                 [
                     'name' => 'attached_file',
@@ -269,10 +315,11 @@
                     'helper' => __('Add a document to detail this project'),
                     'required',
                     'position' => 'left',
-                    'cols' => 5,
+                    'cols' => 6,
                 ],
                 $errors,
             ) }}
+            </div>
         </div>
     </div>
     <div class="card-action">

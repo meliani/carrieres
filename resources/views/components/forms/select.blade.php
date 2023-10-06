@@ -3,9 +3,9 @@ $type=array_get($params,'type','text');
 ?>
 <div class = "input-field 
     col 
-    s{{ array_get($params,'cols',6)*2 }}
+    {{-- s{{ array_get($params,'cols',6)*2 }} --}}
     m{{ array_get($params,'cols',6) }}
-    l{{ array_get($params,'cols',6)/1.5 }}
+    {{-- l{{ array_get($params,'cols',6)/1.5 }} --}}
     ">
     <i class="material-icons blue-text prefix">{{ array_get($params,'icon') }}</i>
 

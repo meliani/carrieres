@@ -40,7 +40,7 @@ class StoreOfferRequest extends FormRequest
         'keywords' => 'nullable',
         'attached_file' => 'nullable',
         'link' => 'nullable',
-        'paycheck' => 'nullable',
+        'remuneration' => 'nullable',
         'currency' => 'nullable',
         'recruting_type' => 'nullable',
         'application_email' => 'nullable',

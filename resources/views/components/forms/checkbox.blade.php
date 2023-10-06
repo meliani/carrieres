@@ -1,8 +1,8 @@
 <div class = "input-field 
     col 
-    s{{ array_get($params,'cols',6)*2 }}
+    {{-- s{{ array_get($params,'cols',6)*2 }} --}}
     m{{ array_get($params,'cols',6) }}
-    l{{ array_get($params,'cols',6)/1.5 }}
+    {{-- l{{ array_get($params,'cols',6)/1.5 }} --}}
     ">
     <p>
     <label>
