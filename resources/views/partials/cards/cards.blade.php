@@ -12,7 +12,7 @@
     @if($person->program_id>0)
         @include('partials.cards.stage')
     @endif
-    @include('partials.cards.recommandation')
+    {{-- @include('partials.cards.recommandation') --}}
     @include('partials.cards.declaration')
     @include('partials.cards.convention')
     @include('partials.cards.binome')
