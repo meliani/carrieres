@@ -1,5 +1,5 @@
 <?php
-$required = 'required';
+$required = '';
 ?>
 <div class = "row">
 {{ Form::textGroup([

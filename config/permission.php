@@ -156,6 +156,9 @@ return [
          * file. Using 'default' here means to use the `default` set in cache.php.
          */
 
-        'store' => 'default',
+        # 'store' => 'default',
+        
+        # Changed this to 'array' to avoid cache issues
+        'store' => 'array'
     ],
 ];

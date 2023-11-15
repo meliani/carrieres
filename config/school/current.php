@@ -6,11 +6,11 @@ return [
     'external_relation_entity_name' => 'INPT/DASRE',
     'external_relation_entity_full_name' => 'INPT/DASRE',
     'time_limits' => [
-        'min_debut_pfe' => '01-06-2023',
-        'max_debut_pfe' => '31-11-2023',// then was '15-03-2023', // was 19-01-2023
+        'min_debut_pfe' => '15-01-2024',
+        'max_debut_pfe' => '31-11-2024',// then was '15-03-2023', // was 19-01-2023
 
-        'max_fin_pfe' => '31-12-2023',
-        'ouverture_plateforme' => '06-05-2023',
+        'max_fin_pfe' => '15-07-2024',
+        'ouverture_plateforme' => '15-11-2023',
     ],
     'academic_year' => '2023-2024',
     'year_id' => '7',
@@ -23,8 +23,8 @@ return [
         'envoy_shortTitle' => 'M.',
         // 'envoy_name' => 'Hilali Abdelaziz',
         // 'envoy_occupation' => 'Directeur Adjoint des Stages et Relations avec les Entreprises',
-        'envoy_name' => 'Tamtaoui Ahmed',
-        'envoy_occupation' => 'Directeur par intérim',
+        'envoy_name' => 'Ahmed Kensi',
+        'envoy_occupation' => 'Directeur Adjoint des Stages et Relations avec les Entreprises par intérim',
     ],
     'model_status' => [
         'test' => -1,
