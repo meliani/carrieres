@@ -39,7 +39,7 @@ return [
         ],
         'ASEDS' => [
             'cf_title' => 'M.',
-            'cf_name' => 'Mohamed Dahchour',
+            'cf_name' => 'Driss ALLAKI',
             'full_title' => 'Advanced Software Engineering for Digital Services',
         ],
         'DATA' => [
@@ -49,7 +49,7 @@ return [
         ],
         'ICCN' => [
             'cf_title' => 'M.',
-            'cf_name' => 'Abdelhamid BELMEKKI',
+            'cf_name' => 'Aafaf OUADDAH',
             'full_title' => 'Ingénieur Cybersécurité Et Confiance Numérique',
         ],
         'SESNUM' => [
