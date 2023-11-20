@@ -56,10 +56,16 @@ if (! function_exists('this_year'))
 
     function this_year()
     {
-        // return latest created Year id
-        return Year::latest()->first()->id;
+        return Year::all()->last();
+    }
+}
 
-        // return Year::last()->id;
+if (! function_exists('current_year_id'))
+{
+
+    function current_year_id()
+    {
+        return Year::latest()->first()->id;
     }
 }
 /* if (! function_exists('advising_type'))

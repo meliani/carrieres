@@ -16,7 +16,7 @@ class DefensesExport implements FromView
         $students = Student::with('internship.binome')
         ->whereHas('internship', 
         function ($query) {
-            $query->where('year_id','=',this_year())
+            $query->where('year_id','=',current_year_id())
             ->where('graduated_at','=',null)->where('program_id','=','3');
         })->get();
         return view('frontend.documents.excel.templates.internships',compact('students'));
