@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\Core\Documents\UploaderController as Uploader;
-use App\Models\Year;
+use App\Models\School\Year;
 
 if (!function_exists('app_name')) {
     function app_name()
@@ -56,7 +56,10 @@ if (! function_exists('this_year'))
 
     function this_year()
     {
-        return Year::all()->last();
+        // return latest created Year id
+        return Year::latest()->first()->id;
+
+        // return Year::last()->id;
     }
 }
 /* if (! function_exists('advising_type'))
