@@ -17,18 +17,18 @@ class InternshipsPerCityChart implements ChartFactory
     {
 
         //get the total count of registred internships per program using student relationship grouping by internships.city
-        $internships = \App\Models\School\Internship\Internship::selectRaw('count(*) as count, internships.correct_city')
+        $internships = \App\Models\School\Internship\Internship::selectRaw('count(*) as count, internships.ville')
             ->join('people', 'internships.student_id', '=', 'people.id')
             // ->where('internships.created_at', '>', Carbon::now()->subYear())
             ->Where('people.model_status_id', '=', '1')
-            ->groupBy('internships.correct_city')
+            ->groupBy('internships.ville')
             //order by count desc and limit to 10
             ->orderBy('count', 'desc')
-            ->limit(10)
+            // ->limit(10)
             ->get();
             //make pie chart with data from internships with a title and different colors for each slice
         $chart = (new Chart)
-            ->labels($internships->pluck('correct_city')->toArray())
+            ->labels($internships->pluck('ville')->toArray())
             ->options([
                 'responsive' => true,
                 'maintainAspectRatio' => false,

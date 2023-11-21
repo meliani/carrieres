@@ -19,7 +19,6 @@ class InternshipsTotalsChart implements ChartFactory
         //get the total count of registred internships per program using student relationship
         $internships = \App\Models\School\Internship\Internship::selectRaw('count(*) as count, program_id')
             ->join('people', 'internships.student_id', '=', 'people.id')
-            // ->where('internships.created_at', '>', Carbon::now()->subYear())
             ->Where('people.model_status_id', '=', '1')
             ->groupBy('program_id')
             ->orderBy('program_id')

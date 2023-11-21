@@ -2,11 +2,10 @@
 
 namespace App\Charts;
 
-use Carbon\Carbon;
 use Fidum\ChartTile\Charts\Chart;
 use Fidum\ChartTile\Contracts\ChartFactory;
 
-class InternshipsPerOrganizationChart implements ChartFactory
+class InternshipsPerDurationChart implements ChartFactory
 {
     public static function make(array $settings): ChartFactory
     {
@@ -16,20 +15,17 @@ class InternshipsPerOrganizationChart implements ChartFactory
     public function chart(): Chart
     {
 
-        //get the total count of registred internships grouped by raison_sociale on the same table
-        $internships = \App\Models\School\Internship\Internship::selectRaw('count(*) as count, raison_sociale')
-            ->groupBy('raison_sociale')
-            ->orderBy('raison_sociale')
-            // ->limit(10)
+        // internships grouped by duration, round to 4 months OR 6 months and if duration is more that 6 month or less than 4 months mention it as warning
+        // duration is calculable from date_debut and date_fin
+        $internships = \App\Models\School\Internship\Internship::selectRaw('count(*) as count, ROUND(DATEDIFF(date_fin, date_debut)/30) as duration')
+            ->groupBy('duration')
+            ->orderBy('duration')
             ->get();
-
-
-
-        //make chart with data from internships
+        // Display chart data from internships
         // chart's title
         $chart = (new Chart)
-            ->title('Stages PFE Par Entreprise')
-            ->labels($internships->pluck('raison_sociale')->toArray())
+            ->title('Stages par durée')
+            ->labels($internships->pluck('duration')->toArray())
             ->options([
                 'responsive' => true,
                 'maintainAspectRatio' => false,
@@ -37,7 +33,7 @@ class InternshipsPerOrganizationChart implements ChartFactory
             // display space chart with color for each space
         $chart->dataset('Internships', 'bar', $internships->pluck('count')->toArray())
             ->backgroundColor('#848584');
-            // display axe decimal to integer
+
             $chart->options([
                 'scales' => [
                     'yAxes' => [
@@ -50,7 +46,6 @@ class InternshipsPerOrganizationChart implements ChartFactory
                     ],
                 ],
             ]);
-
         return $chart;
     }
 }

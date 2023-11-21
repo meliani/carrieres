@@ -63,5 +63,13 @@
     "Internship declaration": "Déclaration de stage",
     "Country where the organization is located": "Pays où se trouve l'organisation",
     "Remuneration": "Rémunération",
-    "(if applicable)": "(si applicable)"
+    "(if applicable)": "(si applicable)",
+    "Internship per stream": "Stages par filière",
+    "Internships per city": "Stages par ville",
+    "Internships per country": "Stages par pays",
+    "Internships per organization": "Stages par organisation",
+    "Internships keywords": "Mots clés des stages",
+    "Internships per Duration": "Stages par durée"
+
+    
 }
