@@ -163,6 +163,12 @@ class Internship extends Model
         //return $this->date_fin->longAbsoluteDiffForHumans($this->date_debut,null,7);
         return $this->date_fin->diffInWeeks($this->date_debut).' semaines';
     }
+    public function getDurationInMonthsAttribute()
+	{
+        //return $this->date_fin->diffForHumans($this->date_debut);
+        //return $this->date_fin->longAbsoluteDiffForHumans($this->date_debut,null,7);
+        return $this->date_fin->diffInMonths($this->date_debut).' mois';
+    }
     public function getNotesTipAttribute()
     {
         $notes = null;
