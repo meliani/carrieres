@@ -12,10 +12,10 @@
 <div class="offre col s12 m12">
   <div class="card">
     <div class="card-content">
-    Oups something wrong.
+    Something wrong.
     </div>
     <div class="card-action">
-      <a href="#">Déclarer un bug</a>
+      <a href="#">Contact Administrator</a>
     </div>
   </div>
 </div>
@@ -33,31 +33,27 @@
                 <div class="collapsible-header">
                   <h5 class='header5 blue-grey-text textlighten-5'>
                     <i class="small material-icons blue-grey-text textlighten-5">business</i>
-                    {!!  $offer->raison_sociale !!}</h5></div>
+                    {!!  $offer->organization_name !!}</h5></div>
                 <div class="collapsible-body"><p><i class="small material-icons blue-grey-text textlighten-5">place</i> 
-                  {!! $offer->lieu_de_stage !!}
+                  {!! $offer->internship_location ?: "No Data" !!}
                 </p>
                 </div>
 				</li>
 				<li>
                 <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">subject</i><h6 class='header5'>
-                  {!!  str_limit($offer->intitule_sujet,50) !!}</h6></div>
-                <div class="collapsible-body"><p>{!!  $offer->intitule_sujet !!}</p></div>
-              </li>
-              <li>
-                <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">queue</i>Détails et Prérequis</div>
-                <div class="collapsible-body"><p>{!!  $offer->descriptif !!}</p></div>
+                  {!!  str_limit($offer->project_title,50) !!}</h6></div>
+                <div class="collapsible-body"><p>{!!  $offer->project_details !!}</p></div>
               </li>
 
               <li>
                 <div class="collapsible-header"><i class="small material-icons blue-grey-text textlighten-5">local_offer</i>Keywords</div>
-                <div class="collapsible-body"><p>{!!  $offer->mots_cles !!}</p></div>
+                <div class="collapsible-body"><p>{!!  $offer->keywords !!}</p></div>
               </li>
 
-              @if($offer->document_offre)
+              @if($offer->attached_file)
               <li>
               <div class="collapsible-header">Pièce jointe</div>
-              <div class="collapsible-body"><p>{!!  Html::link($offer->document_offre,"Voir le document") !!}</p></div>
+              <div class="collapsible-body"><p>{!!  Html::link($offer->attached_file,"Voir le document") !!}</p></div>
               </li>
               @endif
             </ul>

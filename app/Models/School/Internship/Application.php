@@ -1,7 +1,10 @@
 <?php
 
-Models\School\Internship\Internship;
-use Eloquent as Model;
+namespace App\Models\School\Internship;
+
+
+use Illuminate\Database\Eloquent\Model;
+
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
@@ -63,7 +66,7 @@ class Application extends Model
     }
     public function offer()
     {
-        return $this->belongsTo('App\Models\School\Internship\internshipOffer','offer_id','id');
+        return $this->belongsTo('App\Models\Offer','offer_id','id');
     }
 
 }
