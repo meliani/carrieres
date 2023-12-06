@@ -6,7 +6,7 @@ return [
     'external_relation_entity_name' => 'INPT/DASRE',
     'external_relation_entity_full_name' => 'INPT/DASRE',
     'time_limits' => [
-        'min_debut_pfe' => '15-01-2024',
+        'min_debut_pfe' => '01-01-2024',
         'max_debut_pfe' => '31-11-2024',// then was '15-03-2023', // was 19-01-2023
 
         'max_fin_pfe' => '15-07-2024',
