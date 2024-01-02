@@ -50,7 +50,7 @@ trait MakeoffresDeStagesTrait
             'telephone' => $fake->word,
             'email' => $fake->word,
             'intitule_sujet' => $fake->text,
-            'descriptif' => $fake->text,
+            'description' => $fake->text,
             'mots_cles' => $fake->word,
             'document_offre' => $fake->word,
             'created_at' => $fake->word,

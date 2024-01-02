@@ -286,7 +286,7 @@
         "inIndex": true
     },
     {
-        "name": "descriptif",
+        "name": "description",
         "dbType": "string",
         "htmlType": "text",
         "validations": "required",

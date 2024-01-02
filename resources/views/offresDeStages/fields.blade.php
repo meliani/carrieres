@@ -54,8 +54,8 @@
         <div class = "row">
             <!-- Descriptif Field -->
             <div class = "input-field col s12">
-                {!! Form::label('descriptif', 'Descriptif de l\'offre / Prérequis:') !!}
-                {!! Form::textarea('descriptif', null, ['class' => 'materialize-textarea']) !!}
+                {!! Form::label('description', 'Descriptif de l\'offre / Prérequis:') !!}
+                {!! Form::textarea('description', null, ['class' => 'materialize-textarea']) !!}
             </div>
         </div>
 

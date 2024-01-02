@@ -88,7 +88,7 @@
         "inIndex": false
     },
     {
-        "name": "descriptif",
+        "name": "description",
         "dbType": "text",
         "htmlType": "textarea",
         "validations": "required",

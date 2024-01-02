@@ -5,7 +5,7 @@
                 <i class="material-icons circle green">check</i>
                 <span class="title">Entreprise : {{ $application->offer->organization_name }}</span>
                 <p>Sujet : {{ $application->offer->intitule_sujet }}<br>
-                    Descriptif : {{ $application->offer->descriptif }}<br>
+                    Descriptif : {{ $application->offer->description }}<br>
                     {{ HTML::link($application->file_cv, 'CV') }}<br>
                     {{ HTML::link($application->file_cover_letter, 'Lettre de motivation') }}
                 </p>

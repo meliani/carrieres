@@ -48,8 +48,8 @@
 
 <!-- Descriptif Field -->
 <div class="form-group">
-    {!! Form::label('descriptif', 'Descriptif:') !!}
-    <p>{!! $offresDeStages->descriptif !!}</p>
+    {!! Form::label('description', 'Descriptif:') !!}
+    <p>{!! $offresDeStages->description !!}</p>
 </div>
 
 <!-- Mots Cles Field -->

@@ -108,8 +108,8 @@
 
 <!-- Descriptif Field -->
 <div class="form-group">
-    {!! Form::label('descriptif', 'Descriptif:') !!}
-    <p>{!! $internships->descriptif !!}</p>
+    {!! Form::label('description', 'Descriptif:') !!}
+    <p>{!! $internships->description !!}</p>
 </div>
 
 <!-- Keywords Field -->

@@ -780,7 +780,7 @@ $internship = user()->student->internship;
     <p class="BodyText tm25"><strong><span class="tm49">&#160;</span></strong></p>
     <p class="Normal tm50"><strong><span class="tm32">Contenu d&eacute;taill&eacute; du stage&nbsp;: </span></strong>
     </p>
-    <p class="BodyText"><strong><span class="tm49">{{ $internship->descriptif }}</span></strong></p>
+    <p class="BodyText"><strong><span class="tm49">{{ $internship->description }}</span></strong></p>
     <p class="Normal tm51"><span class="tm29">&#160;</span></p>
     <h5 class="tm52"><strong><span class="tm30"></span><u><span class="tm30">ARTICLE 3</span></u><span
                 class="tm30">&nbsp;: Modalit&eacute;s du stage</span></strong></h5>
@@ -934,7 +934,7 @@ $internship = user()->student->internship;
     <p class="BodyText tm60"><strong><span class="Strong">7.3: D&eacute;placements: </span></strong></p>
     <p class="BodyText tm39"><span class="tm41">En cas de </span><strong><span
                 class="tm42">d&eacute;placement</span></strong><span class="tm41">, il appartient &agrave;
-            l&#8217;entreprise d&#8217;&eacute;tablir, dans tous les cas, un descriptif nominatif de la nature du
+            l&#8217;entreprise d&#8217;&eacute;tablir, dans tous les cas, un description nominatif de la nature du
             d&eacute;placement et d&#39;en informer l&#39;</span><strong><span
                 class="tm42">Ecole</span></strong><span class="tm41">.</span></p>
     <p class="BodyText tm39"><strong><span class="tm42">De plus, en cas de d&eacute;placements &agrave;

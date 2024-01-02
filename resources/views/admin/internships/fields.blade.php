@@ -150,8 +150,8 @@
 
 <!-- Descriptif Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('descriptif', 'Descriptif:') !!}
-    {!! Form::text('descriptif', null, ['class' => 'form-control']) !!}
+    {!! Form::label('description', 'Descriptif:') !!}
+    {!! Form::text('description', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Keywords Field -->

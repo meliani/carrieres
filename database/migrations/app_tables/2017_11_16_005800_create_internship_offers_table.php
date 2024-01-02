@@ -5,7 +5,6 @@ use Illuminate\Database\Schema\Blueprint;
 
 class CreateInternshipOffersTable extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -22,7 +21,7 @@ class CreateInternshipOffersTable extends Migration
             $table->string('telephone')->nullable();
             $table->string('email')->nullable();
             $table->text('intitule_sujet');
-            $table->text('descriptif')->nullable();
+            $table->text('description')->nullable();
             $table->string('mots_cles')->nullable();
             $table->string('document_offre')->nullable();
             $table->boolean('is_valid')->nullable();

@@ -60,7 +60,7 @@
                 <li>
                     <div class="collapsible-header"><i class="material-icons">laptop_mac</i><b>Intitulé: </b>
                         {{ $person->internship->title }}</div>
-                    <div class="collapsible-body"><span>{{ $person->internship->descriptif }}</span></div>
+                    <div class="collapsible-body"><span>{{ $person->internship->description }}</span></div>
                     <div class="collapsible-body"><span>{{ $person->internship->keywords }}</span></div>
                 </li>
             </ul>

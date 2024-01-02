@@ -22,7 +22,7 @@
                 <i class="small material-icons blue-grey-text textlighten-5">queue</i>
                 Détails et Prérequis
                 <p>
-                    {!! $offre->descriptif !!}
+                    {!! $offre->description !!}
                 </p>
             </li>
             @if ($offre->mots_cles)

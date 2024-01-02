@@ -42,8 +42,8 @@
 
 <!-- Descriptif Field -->
 <div class="form-group col-sm-12 col-lg-12">
-    {!! Form::label('descriptif', 'Descriptif:') !!}
-    {!! Form::textarea('descriptif', null, ['class' => 'form-control']) !!}
+    {!! Form::label('description', 'Descriptif:') !!}
+    {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Mots Cles Field -->

@@ -19,7 +19,7 @@ $required = 'required';
     ) }}
     {{ Form::textGroup(
         [
-            'name' => 'descriptif',
+            'name' => 'description',
             'value',
             'label' => 'Descriptif détaillé',
             'placeholder',

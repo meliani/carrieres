@@ -26,7 +26,7 @@
                     <div class="card-panel">
                         <h5 class="blue-text"><i class="small material-icons blue-text">subject</i> Descriptif detaillé du PFE
                         </h5>
-                        <p>{{ $internship->descriptif }}</p>
+                        <p>{{ $internship->description }}</p>
                     </div>
                     <div class="card-panel">
                         <h5 class="blue-text lighten-5"><i class="small material-icons blue-text">business</i> Entreprise et

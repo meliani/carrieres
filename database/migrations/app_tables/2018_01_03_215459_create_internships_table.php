@@ -31,7 +31,7 @@ class CreateInternshipsTable extends Migration
             $table->string('encadrant_ext_tel');
             $table->string('encadrant_ext_mail');
             $table->string('title');
-            $table->text('descriptif');
+            $table->text('description');
             $table->string('keywords');
             $table->date('date_debut');
             $table->date('date_fin');
