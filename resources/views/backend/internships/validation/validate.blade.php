@@ -14,7 +14,7 @@
                 <div class="col s12 m12 l12">
                     <div class="card-panel">
                         <h5 class="blue-text"><i class="small material-icons blue-text">subject</i> Titre du PFE</h5>
-                        <p>{{ $internship->intitule }}</p>
+                        <p>{{ $internship->title }}</p>
                     </div>
                     <div class="card-panel">
                         <h5 class="blue-text"><i class="small material-icons blue-text">subject</i> Descriptif detaillé du PFE

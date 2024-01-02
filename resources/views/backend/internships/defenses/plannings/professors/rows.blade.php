@@ -17,7 +17,7 @@
                     <p>
 
                         > {!! $internship->organization_name !!}
-                        / {!! $internship->intitule !!}
+                        / {!! $internship->title !!}
                     </p>
                     {{-- $professor->is_available($internship->defense_at,$internship->defense_start_time) --}}
                 @endforeach

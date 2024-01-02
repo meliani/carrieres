@@ -25,7 +25,7 @@
 
                     </td>
                     <td>{{ $pfe->organization_name }}</td>
-                    <td class="sub">{{ str_limit($pfe->intitule, 100) }}</td>
+                    <td class="sub">{{ str_limit($pfe->title, 100) }}</td>
                     {{-- Limit intitulé to 100 characters --}}
                     <td>{{ \Carbon\Carbon::parse($pfe->created_at)->format('d M Y') }}</td>
                     <td>

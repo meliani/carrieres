@@ -235,7 +235,7 @@ $internship = user()->student->internship;
     <p align="justify" style=" line-height: 100%">
         <font size="2" style="font-size: 11pt">Th&egrave;me
             du stage : </font>
-        <font size="2" style="font-size: 11pt"><b>{{ $internship->intitule }}</b></font>
+        <font size="2" style="font-size: 11pt"><b>{{ $internship->title }}</b></font>
     </p>
     <p align="justify" style=" line-height: 100%">
         <font size="2" style="font-size: 11pt">La

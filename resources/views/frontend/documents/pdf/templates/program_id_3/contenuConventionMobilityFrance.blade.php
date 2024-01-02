@@ -785,7 +785,7 @@ $internship = user()->student->internship;
             propos&eacute; par une entreprise afin de s&#39;immerger dans le monde du travail. Il portera sur le sujet
             suivant&nbsp;:</span></p>
     <p class="BodyText tm39"><span class="tm41">&#160;</span></p>
-    <p class="BodyText tm25"><strong><span class="tm49">{{ $internship->intitule }}</span></strong></p>
+    <p class="BodyText tm25"><strong><span class="tm49">{{ $internship->title }}</span></strong></p>
     <p class="BodyText tm25"><strong><span class="tm49">&#160;</span></strong></p>
     <p class="Normal tm50"><strong><span class="tm32">Contenu d&eacute;taill&eacute; du stage&nbsp;: </span></strong>
     </p>

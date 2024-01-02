@@ -27,7 +27,7 @@
 
                     </td>
                     <td class="strong">{{ str_limit($student->internship['organization_name'], 30) }}</td>
-                    <td class="sub">{{ str_limit($student->internship['intitule'], 100) }}</td>
+                    <td class="sub">{{ str_limit($student->internship['title'], 100) }}</td>
                     {{-- Limit intitulé to 100 characters --}}
                     <td>{{ \Carbon\Carbon::parse($student->internship['created_at'])->format('d M Y') }}</td>
                     <td class="center">

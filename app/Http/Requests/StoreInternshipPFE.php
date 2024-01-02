@@ -41,7 +41,7 @@ class StoreInternshipPFE extends FormRequest
             'encadrant_ext_fonction' => 'required|max:191',
             'encadrant_ext_tel' => 'required|max:13|between:8,13',
             'encadrant_ext_mail' => 'required|email:rfc',
-            'intitule' => 'required|max:65535',
+            'title' => 'required|max:65535',
             'descriptif' => 'required|max:65535',
             'keywords' => 'required|max:65535',
             'date_debut' => 'required|date|before:date_fin|after_or_equal:'.

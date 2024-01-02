@@ -34,7 +34,7 @@
                         <td class="strong">
                             {{ isset($internship->organization_name) ? str_limit($internship->organization_name, 30) : '' }}
                         </td>
-                        <td class="sub">{{ isset($internship->intitule) ? str_limit($internship->intitule, 100) : '' }}
+                        <td class="sub">{{ isset($internship->title) ? str_limit($internship->title, 100) : '' }}
                         </td>
                         {{-- Limit intitulé to 100 characters --}}
                         <td>

@@ -28,7 +28,7 @@ class StoreInternship extends FormRequest
             'adresse' => 'required|max:191',
             'city' => 'required|max:191',
             'country' => 'required|max:191',
-            'intitule' => 'required|max:65535',
+            'title' => 'required|max:65535',
             'descriptif' => 'required|max:65535',
             'keywords' => 'required|max:65535',
             'date_debut' => 'required|date|after:today|after_or_equal:01-02-2022',

@@ -275,7 +275,7 @@
         "inIndex": true
     },
     {
-        "name": "intitule",
+        "name": "title",
         "dbType": "string",
         "htmlType": "text",
         "validations": "required",

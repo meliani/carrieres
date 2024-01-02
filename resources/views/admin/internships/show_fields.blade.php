@@ -102,8 +102,8 @@
 
 <!-- Intitule Field -->
 <div class="form-group">
-    {!! Form::label('intitule', 'Intitule:') !!}
-    <p>{!! $internships->intitule !!}</p>
+    {!! Form::label('title', 'Intitule:') !!}
+    <p>{!! $internships->title !!}</p>
 </div>
 
 <!-- Descriptif Field -->

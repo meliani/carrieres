@@ -22,7 +22,7 @@
                     Entreprise : {!! $internship->organization_name !!}
                 </p>
                 <p>
-                    Intitulé : {!! $internship->intitule !!}
+                    Intitulé : {!! $internship->title !!}
                 </p>
                 <p>
                     Elève : {!! $internship->student->full_name !!}

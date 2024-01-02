@@ -14,8 +14,8 @@
             <div class="col s12 m6 l6">
                 <div class="card-panel grey lighten-4">
                     @isset($encadrements)
-                        <h5 class="blue-text"><i
-                                class="small material-icons blue-text">subject</i>{{ $encadrements[0]->intitule }}</h5>
+                        <h5 class="blue-text"><i class="small material-icons blue-text">subject</i>{{ $encadrements[0]->title }}
+                        </h5>
                         <h5 class="blue-text lighten-5"><i class="small material-icons blue-text">business</i>
                             {{ $encadrements[0]->organization_name }}</h6>
                         @endisset

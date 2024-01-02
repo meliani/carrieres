@@ -1542,7 +1542,7 @@ $internship = user()->student->internship;
             </span></strong></p>
     <p class="tm47 tm82 tm97"><span class="tm94"></span><span class="tm89">Le stage portera sur le sujet
             suivant&nbsp;:</span><strong><span class="tm91"> </span><span
-                class="tm90"><b>{{ $internship->intitule }}</b></span><span class="tm91">&nbsp;</span></strong></p>
+                class="tm90"><b>{{ $internship->title }}</b></span><span class="tm91">&nbsp;</span></strong></p>
     <p class="tm49 tm82 tm93"><span class="tm94"></span><span class="tm89">Descriptif d&eacute;taill&eacute;&nbsp;:
         </span><strong><span class="tm90">{{ $internship->descriptif }}</span></strong><span
             class="tm89">&nbsp;</span></p>

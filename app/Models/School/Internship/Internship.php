@@ -56,7 +56,7 @@ class Internship extends Model
         'encadrant_ext_fonction',
         'encadrant_ext_tel',
         'encadrant_ext_mail',
-        'intitule',
+        'title',
         'descriptif',
         'keywords',
         'date_debut',

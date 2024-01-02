@@ -70,7 +70,7 @@
                     <td>{{ $student->internship->country }}</td>
                     <td>{{ $student->internship->city }}</td>
                     <td>{{ $student->internship->office_location }}</td>
-                    <td>{{ $student->internship->intitule }}</td>
+                    <td>{{ $student->internship->title }}</td>
                     <td>{{ $student->internship->descriptif }}</td>
                     <td>{{ $student->internship->keywords }}</td>
 

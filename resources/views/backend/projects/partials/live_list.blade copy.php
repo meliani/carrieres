@@ -72,7 +72,7 @@
                             {{-- Internship title --}}
                             {{-- Limit intitulé to 100 characters --}}
                             <td class="sub">
-                                {{ isset($internship->intitule) ? str_limit($internship->intitule, 100) : '' }}</td>
+                                {{ isset($internship->title) ? str_limit($internship->title, 100) : '' }}</td>
                             {{-- Created at and updated at fields --}}
                             <td>
                                 <p>{{ isset($internship->created_at) ? \Carbon\Carbon::parse($internship['created_at'])->format('d M Y') : '' }}

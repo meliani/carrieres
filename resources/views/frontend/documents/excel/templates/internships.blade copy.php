@@ -1,7 +1,7 @@
-<?php 
+<?php
 //$students = \App\Models\School\Internship::where('scholar_year','2018-2019')->with('people')->get();
-$students = \App\Models\Profile\Person::Where('program_id','3')
-->with('internship')->get();
+$students = \App\Models\Profile\Person::Where('program_id', '3')
+    ->with('internship')->get();
 
 //$students = $students->people();
 ?>
@@ -41,7 +41,7 @@ $students = \App\Models\Profile\Person::Where('program_id','3')
         <td class="sub strong">{{ $student->full_name }}</td>
         <td>{{ ( !empty($student['option_text'])? $student['option_text']:'' ) }}</td>
         <td class="strong">{{ $student->internship['organization_name'] }}</td>
-        <td class="sub">{{  $student->internship['intitule'] }}</td>
+        <td class="sub">{{  $student->internship['title'] }}</td>
         <td>{{ isset($student->internship->created_at) ? $student->internship['created_at']->format('d M Y'):'' }}</td>
         <td>{{ isset($student->internship->date_debut) ?  $student->internship['date_debut']->format('d/m/Y'):'' }}</td>   
         <td>{{ isset($student->internship->date_fin) ?  $student->internship['date_fin']->format('d/m/Y'):'' }}</td>   

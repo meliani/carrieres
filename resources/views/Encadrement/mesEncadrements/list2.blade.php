@@ -34,7 +34,7 @@
                             <li>{{ $pfe->encadrant_ext_mail }}</li>
                         </ul>
                     </td>
-                    <td>{{ $pfe->intitule }}</td>
+                    <td>{{ $pfe->title }}</td>
                     <td>{{ $pfe->created_at->format('d M Y') }}</td>
                 </tr>
             @endforeach

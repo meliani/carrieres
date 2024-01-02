@@ -15,7 +15,7 @@
             <div class="col s12 m6 l6">
                 <div class="card-panel">
                     <div class="card-content">
-                        <span class="card-title">{{ $project->internship->intitule }}</span>
+                        <span class="card-title">{{ $project->internship->title }}</span>
                         <p>{{ $project->internship->country }}</p>
                     </div>
                     <div class="row">

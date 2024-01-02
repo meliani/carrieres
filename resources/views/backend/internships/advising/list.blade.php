@@ -29,7 +29,7 @@
                         {{ isset($student->internship->organization_name) ? str_limit($student->internship->organization_name, 30) : '' }}
                     </td>
                     <td class="sub">
-                        {{ isset($student->internship->intitule) ? str_limit($student->internship->intitule, 100) : '' }}
+                        {{ isset($student->internship->title) ? str_limit($student->internship->title, 100) : '' }}
                     </td>
                     {{-- Limit intitulé to 100 characters --}}
                     <td>{{ isset($student->internship->created_at) ? \Carbon\Carbon::parse($student->internship['created_at'])->format('d M Y') : '' }}

@@ -144,8 +144,8 @@
 
 <!-- Intitule Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('intitule', 'Intitule:') !!}
-    {!! Form::text('intitule', null, ['class' => 'form-control']) !!}
+    {!! Form::label('title', 'Intitule:') !!}
+    {!! Form::text('title', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Descriptif Field -->
