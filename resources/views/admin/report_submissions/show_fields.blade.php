@@ -42,8 +42,8 @@
 
 <!-- Ville Field -->
 <div class="form-group">
-    {!! Form::label('ville', 'Ville:') !!}
-    <p>{!! $reportSubmission->ville !!}</p>
+    {!! Form::label('city', 'Ville:') !!}
+    <p>{!! $reportSubmission->city !!}</p>
 </div>
 
 <!-- Nom Responsable Stage Field -->
@@ -93,4 +93,3 @@
     {!! Form::label('updated_at', 'Updated At:') !!}
     <p>{!! $reportSubmission->updated_at !!}</p>
 </div>
-

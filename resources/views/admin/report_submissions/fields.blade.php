@@ -36,8 +36,8 @@
 
 <!-- Ville Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('ville', 'Ville:') !!}
-    {!! Form::text('ville', null, ['class' => 'form-control']) !!}
+    {!! Form::label('city', 'Ville:') !!}
+    {!! Form::text('city', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Nom Responsable Stage Field -->

@@ -24,10 +24,10 @@ class StoreInternshipPFE extends FormRequest
     public function rules()
     {
         return [
-            'raison_sociale' => 'required|max:191',
+            'organization_name' => 'required|max:191',
             'adresse' => 'required|max:191',
-            'ville' => 'required|max:191',
-            'pays' => 'required|max:191',
+            'city' => 'required|max:191',
+            'country' => 'required|max:191',
             'office_location' => 'required|max:191',
             'parrain_titre' => 'required',
             'parrain_nom' => 'required|max:191',
@@ -82,8 +82,8 @@ class StoreInternshipPFE extends FormRequest
 
     public function attributes()
     {
-    return [
-        'email' => 'adresse email',
-    ];
+        return [
+            'email' => 'adresse email',
+        ];
     }
 }

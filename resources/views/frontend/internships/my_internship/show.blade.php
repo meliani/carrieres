@@ -1,5 +1,5 @@
 @extends('layouts.ui.app')
-@section('title','| Mon stage')
+@section('title', '| Mon stage')
 
 @section('users_buttons')
     @include(Button::home_button())
@@ -11,61 +11,71 @@
 
 @section('content')
 
-@isset($internship)
-
-<div class="row center">
-    <i class="large material-icons prefix blue-text">supervisor_account</i>
-<h4 class="header light center blue-text text-lighten-1">{{$internship->student_name}}</h4>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col s12 m12 l12">                        
-            <div class="card-panel">
-                <h5 class="blue-text"><i class="small material-icons blue-text">subject</i> Titre du PFE</h5>
-                <p>{{ $internship->intitule }}</p>
-            </div>
-            <div class="card-panel">
-                <h5 class="blue-text"><i class="small material-icons blue-text">subject</i> Descriptif detaillé du PFE</h5>
-                <p>{{ $internship->descriptif }}</p>
-            </div>
-            <div class="card-panel">
-                    <h5 class="blue-text lighten-5"><i class="small material-icons blue-text">business</i> Entreprise et lieu</h5>
-                    <p>{{ $internship->raison_sociale }}</p>
-                    <p>{{ $internship->adresse }},{{ $internship->ville }}, {{ $internship->pays }} </p>
-            </div>
-            <div class="card-panel">
-                <h5 class="blue-text lighten-5"><i class="small material-icons blue-text">business</i> Dates</h5>
-                <p>Date debut de stage : {{ $internship->date_debut->format('d M Y') }}</p>
-                <p>Date fin de stage : {{ $internship->date_fin->format('d M Y') }}</p>
-            </div>
-            <div class="card-panel">
-                <h5 class="blue-text lighten-5"><i class="small material-icons blue-text">business</i> Rémuneration et charges horaires</h5>
-                <p>La rémuneration de ce stage sera : {{ $internship->remuneration }} {{ $internship->currency }} (par mois)</p>
-                <p>Les heures de travail seront fixés comme suit : {{ $internship->load }} (Heures par semaine)</p>
-            </div>
-            <div class="card-panel">
-                <h5 class="blue-text lighten-5"><i class="small material-icons blue-text">business</i> Representation de l'entreprise et l'encadrant externe</h5>
-                <p>L'entreprise est representée par {{ $internship->parrain_name }}, en qualité de {{ $internship->parrain_fonction }}.</p>
-
-                <p>L'encadrement sera efectué par {{ $internship->encadrant_ext_name }}, en qualité de {{ $internship->encadrant_ext_fonction }} au sein de l'entreprise d'accueil.</p>
-            </div>
-            <div class="card-panel">
-                <h5 class="blue-text lighten-5"><i class="small material-icons blue-text">business</i> {{ __('Additional contacts') }}</h5>
-                <p>{{ $internship->parrain_name }}: {{ $internship->parrain_tel }}, {{ $internship->parrain_mail }}</p>
-                <p>{{ $internship->encadrant_ext_name }}: {{ $internship->encadrant_ext_tel }}, {{ $internship->encadrant_ext_mail }}</p>
-            </div>   
+    @isset($internship)
+        <div class="row center">
+            <i class="large material-icons prefix blue-text">supervisor_account</i>
+            <h4 class="header light center blue-text text-lighten-1">{{ $internship->student_name }}</h4>
         </div>
-    </div>
-    <div class="row">
-        <div class="col s12 m4 l4">
+        <div class="container">
             <div class="row">
-                <a href="{!! route('home') !!}" class="waves-effect white waves-blue blue-text btn">Retour a la page d'accueil</a>
+                <div class="col s12 m12 l12">
+                    <div class="card-panel">
+                        <h5 class="blue-text"><i class="small material-icons blue-text">subject</i> Titre du PFE</h5>
+                        <p>{{ $internship->intitule }}</p>
+                    </div>
+                    <div class="card-panel">
+                        <h5 class="blue-text"><i class="small material-icons blue-text">subject</i> Descriptif detaillé du PFE
+                        </h5>
+                        <p>{{ $internship->descriptif }}</p>
+                    </div>
+                    <div class="card-panel">
+                        <h5 class="blue-text lighten-5"><i class="small material-icons blue-text">business</i> Entreprise et
+                            lieu</h5>
+                        <p>{{ $internship->organization_name }}</p>
+                        <p>{{ $internship->adresse }},{{ $internship->city }}, {{ $internship->country }} </p>
+                    </div>
+                    <div class="card-panel">
+                        <h5 class="blue-text lighten-5"><i class="small material-icons blue-text">business</i> Dates</h5>
+                        <p>Date debut de stage : {{ $internship->date_debut->format('d M Y') }}</p>
+                        <p>Date fin de stage : {{ $internship->date_fin->format('d M Y') }}</p>
+                    </div>
+                    <div class="card-panel">
+                        <h5 class="blue-text lighten-5"><i class="small material-icons blue-text">business</i> Rémuneration et
+                            charges horaires</h5>
+                        <p>La rémuneration de ce stage sera : {{ $internship->remuneration }} {{ $internship->currency }} (par
+                            mois)</p>
+                        <p>Les heures de travail seront fixés comme suit : {{ $internship->load }} (Heures par semaine)</p>
+                    </div>
+                    <div class="card-panel">
+                        <h5 class="blue-text lighten-5"><i class="small material-icons blue-text">business</i> Representation de
+                            l'entreprise et l'encadrant externe</h5>
+                        <p>L'entreprise est representée par {{ $internship->parrain_name }}, en qualité de
+                            {{ $internship->parrain_fonction }}.</p>
+
+                        <p>L'encadrement sera efectué par {{ $internship->encadrant_ext_name }}, en qualité de
+                            {{ $internship->encadrant_ext_fonction }} au sein de l'entreprise d'accueil.</p>
+                    </div>
+                    <div class="card-panel">
+                        <h5 class="blue-text lighten-5"><i class="small material-icons blue-text">business</i>
+                            {{ __('Additional contacts') }}</h5>
+                        <p>{{ $internship->parrain_name }}: {{ $internship->parrain_tel }}, {{ $internship->parrain_mail }}
+                        </p>
+                        <p>{{ $internship->encadrant_ext_name }}: {{ $internship->encadrant_ext_tel }},
+                            {{ $internship->encadrant_ext_mail }}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col s12 m4 l4">
+                    <div class="row">
+                        <a href="{!! route('home') !!}" class="waves-effect white waves-blue blue-text btn">Retour a la page
+                            d'accueil</a>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
-@endisset
+        </div>
+    @endisset
 
 @endsection
 

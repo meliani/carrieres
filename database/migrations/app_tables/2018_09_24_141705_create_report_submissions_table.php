@@ -23,7 +23,7 @@ class CreatereportSubmissionsTable extends Migration
             $table->string('telephone');
             $table->text('titre_rapport');
             $table->string('entreprise');
-            $table->string('ville');
+            $table->string('city');
             $table->date('date_debut');
             $table->date('date_fin');
             $table->string('nom_responsable_stage');

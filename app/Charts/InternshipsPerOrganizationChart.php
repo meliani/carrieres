@@ -16,10 +16,10 @@ class InternshipsPerOrganizationChart implements ChartFactory
     public function chart(): Chart
     {
 
-        //get the total count of registred internships grouped by raison_sociale on the same table
-        $internships = \App\Models\School\Internship\Internship::selectRaw('count(*) as count, raison_sociale')
-            ->groupBy('raison_sociale')
-            ->orderBy('raison_sociale')
+        //get the total count of registred internships grouped by organization_name on the same table
+        $internships = \App\Models\School\Internship\Internship::selectRaw('count(*) as count, organization_name')
+            ->groupBy('organization_name')
+            ->orderBy('organization_name')
             // ->limit(10)
             ->get();
 
@@ -29,7 +29,7 @@ class InternshipsPerOrganizationChart implements ChartFactory
         // chart's title
         $chart = (new Chart)
             ->title('Stages PFE Par Entreprise')
-            ->labels($internships->pluck('raison_sociale')->toArray())
+            ->labels($internships->pluck('organization_name')->toArray())
             ->options([
                 'responsive' => true,
                 'maintainAspectRatio' => false,

@@ -12,8 +12,8 @@
 
 <!-- Raison Sociale Field -->
 <div class="form-group">
-    {!! Form::label('raison_sociale', 'Raison Sociale:') !!}
-    <p>{!! $offresDeStages->raison_sociale !!}</p>
+    {!! Form::label('organization_name', 'Raison Sociale:') !!}
+    <p>{!! $offresDeStages->organization_name !!}</p>
 </div>
 
 <!-- Lieu De Stage Field -->
@@ -61,7 +61,7 @@
 <!-- Document Offre Field -->
 <div class="form-group">
     {!! Form::label('document_offre', 'Document Offre:') !!}
-    <p>{!! Html::link(config('offers_storage_path').$offresDeStages->document_offre) !!}</p>
+    <p>{!! Html::link(config('offers_storage_path') . $offresDeStages->document_offre) !!}</p>
 </div>
 
 <!-- Created At Field -->
@@ -75,4 +75,3 @@
     {!! Form::label('updated_at', 'Updated At:') !!}
     <p>{!! $offresDeStages->updated_at !!}</p>
 </div>
-

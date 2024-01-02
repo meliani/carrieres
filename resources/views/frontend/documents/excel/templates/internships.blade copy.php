@@ -40,7 +40,7 @@ $students = \App\Models\Profile\Person::Where('program_id','3')
         </td>
         <td class="sub strong">{{ $student->full_name }}</td>
         <td>{{ ( !empty($student['option_text'])? $student['option_text']:'' ) }}</td>
-        <td class="strong">{{ $student->internship['raison_sociale'] }}</td>
+        <td class="strong">{{ $student->internship['organization_name'] }}</td>
         <td class="sub">{{  $student->internship['intitule'] }}</td>
         <td>{{ isset($student->internship->created_at) ? $student->internship['created_at']->format('d M Y'):'' }}</td>
         <td>{{ isset($student->internship->date_debut) ?  $student->internship['date_debut']->format('d/m/Y'):'' }}</td>   

@@ -11,10 +11,10 @@ class UpdateCorrectCityInInternshipsTable extends Migration
      */
     public function up()
     {
-        $internships = DB::table('internships')->select('id', 'ville')->get();
+        $internships = DB::table('internships')->select('id', 'city')->get();
 
         foreach ($internships as $internship) {
-            $correctCity = $this->findCorrectCity($internship->ville);
+            $correctCity = $this->findCorrectCity($internship->city);
             DB::table('internships')->where('id', $internship->id)->update(['correct_city' => $correctCity]);
         }
     }

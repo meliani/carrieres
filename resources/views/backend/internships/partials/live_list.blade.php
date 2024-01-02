@@ -65,8 +65,8 @@
                             @isset($internship->id)
                             </td>
                             <td class="strong">
-                                {{ isset($internship->raison_sociale) ? str_limit($internship->raison_sociale, 30) : '' }}
-                                <p class="blue-text">{{ isset($internship->pays) ? $internship->pays : '' }}</p>
+                                {{ isset($internship->organization_name) ? str_limit($internship->organization_name, 30) : '' }}
+                                <p class="blue-text">{{ isset($internship->country) ? $internship->country : '' }}</p>
 
                             </td>
                             {{-- Internship title --}}
@@ -129,12 +129,12 @@
                                 @endif
                             </td>
                             <td class="center">
-                                  <span class="tooltipped" data-delay="100" data-tooltip="{{ $internship->notes_tip }}"
-                                      data-badge-caption="">
-                                      <a href="{{ url('~/internships/projects/add', $internship->id) }}"><i
-                                              class="material-icons orange-text">how_to_reg</i></a>
-                                  </span>
-                          </td>
+                                <span class="tooltipped" data-delay="100" data-tooltip="{{ $internship->notes_tip }}"
+                                    data-badge-caption="">
+                                    <a href="{{ url('~/internships/projects/add', $internship->id) }}"><i
+                                            class="material-icons orange-text">how_to_reg</i></a>
+                                </span>
+                            </td>
                         @endisset
                     @endisset
                 </tr>

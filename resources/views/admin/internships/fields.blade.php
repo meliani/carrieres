@@ -1,7 +1,7 @@
 <!-- Raison Sociale Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('raison_sociale', 'Raison Sociale:') !!}
-    {!! Form::text('raison_sociale', null, ['class' => 'form-control']) !!}
+    {!! Form::label('organization_name', 'Raison Sociale:') !!}
+    {!! Form::text('organization_name', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Adresse Field -->
@@ -12,14 +12,14 @@
 
 <!-- Ville Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('ville', 'Ville:') !!}
-    {!! Form::text('ville', null, ['class' => 'form-control']) !!}
+    {!! Form::label('city', 'Ville:') !!}
+    {!! Form::text('city', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Pays Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('pays', 'Pays:') !!}
-    {!! Form::text('pays', null, ['class' => 'form-control']) !!}
+    {!! Form::label('country', 'Pays:') !!}
+    {!! Form::text('country', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Parrain Titre Field -->

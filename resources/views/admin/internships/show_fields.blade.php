@@ -6,8 +6,8 @@
 
 <!-- Raison Sociale Field -->
 <div class="form-group">
-    {!! Form::label('raison_sociale', 'Raison Sociale:') !!}
-    <p>{!! $internships->raison_sociale !!}</p>
+    {!! Form::label('organization_name', 'Raison Sociale:') !!}
+    <p>{!! $internships->organization_name !!}</p>
 </div>
 
 <!-- Adresse Field -->
@@ -18,14 +18,14 @@
 
 <!-- Ville Field -->
 <div class="form-group">
-    {!! Form::label('ville', 'Ville:') !!}
-    <p>{!! $internships->ville !!}</p>
+    {!! Form::label('city', 'Ville:') !!}
+    <p>{!! $internships->city !!}</p>
 </div>
 
 <!-- Pays Field -->
 <div class="form-group">
-    {!! Form::label('pays', 'Pays:') !!}
-    <p>{!! $internships->pays !!}</p>
+    {!! Form::label('country', 'Pays:') !!}
+    <p>{!! $internships->country !!}</p>
 </div>
 
 <!-- Parrain Titre Field -->
@@ -171,4 +171,3 @@
     {!! Form::label('deleted_at', 'Deleted At:') !!}
     <p>{!! $internships->deleted_at !!}</p>
 </div>
-

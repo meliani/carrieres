@@ -6,8 +6,8 @@
 
 <!-- Raison Sociale Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('raison_sociale', 'Raison Sociale:') !!}
-    {!! Form::text('raison_sociale', null, ['class' => 'form-control']) !!}
+    {!! Form::label('organization_name', 'Raison Sociale:') !!}
+    {!! Form::text('organization_name', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Lieu De Stage Field -->
@@ -54,28 +54,28 @@
 
 <!-- is valid Field -->
 <div class="form-group col-sm-6">
-        {!! Form::label('is_valid', 'Publier l\'offre:') !!}
-        {{ Form::select('is_valid',[1 => 'oui',null => 'non'],null,array('class'=>'form-control','id'=>'is_valid')) }}
+    {!! Form::label('is_valid', 'Publier l\'offre:') !!}
+    {{ Form::select('is_valid', [1 => 'oui', null => 'non'], null, ['class' => 'form-control', 'id' => 'is_valid']) }}
 </div>
 <!-- status Field -->
 <div class="form-group col-sm-6">
-        {!! Form::label('status', 'Archiver :') !!}
-        {{ Form::select('status',[-1 => 'oui',null => 'non'],null,array('class'=>'form-control','id'=>'status')) }}
+    {!! Form::label('status', 'Archiver :') !!}
+    {{ Form::select('status', [-1 => 'oui', null => 'non'], null, ['class' => 'form-control', 'id' => 'status']) }}
 </div>
 <!-- applyable Field -->
 <div class="form-group col-sm-6">
-        {!! Form::label('applyable', 'Type candidature :') !!}
-        {{ Form::select('applyable',[null => 'A travers carrières',0 => 'Directe'],null,array('class'=>'form-control','id'=>'applyable')) }}
+    {!! Form::label('applyable', 'Type candidature :') !!}
+    {{ Form::select('applyable', [null => 'A travers carrières', 0 => 'Directe'], null, ['class' => 'form-control', 'id' => 'applyable']) }}
 </div>
 <!-- expire_at Field -->
 <div class="form-group col-sm-6">
-        {!! Form::label('expire_at', 'Expire le :') !!}
-        {{ Form::date('expire_at',null,array('class'=>'form-control','id'=>'applyable')) }}
+    {!! Form::label('expire_at', 'Expire le :') !!}
+    {{ Form::date('expire_at', null, ['class' => 'form-control', 'id' => 'applyable']) }}
 </div>
 <!-- Document Offre Field -->
 <div class="form-group col-sm-6">
-        {!! Form::label('document_offre', 'Attacher un document') !!}
-        {!! Form::file('document_offre') !!}
+    {!! Form::label('document_offre', 'Attacher un document') !!}
+    {!! Form::file('document_offre') !!}
 </div>
 <div class="clearfix"></div>
 

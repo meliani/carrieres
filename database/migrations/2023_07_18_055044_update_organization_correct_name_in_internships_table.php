@@ -12,10 +12,10 @@ class UpdateOrganizationCorrectNameInInternshipsTable extends Migration
      */
     public function up()
     {
-        $internships = DB::table('internships')->select('id', 'raison_sociale')->get();
+        $internships = DB::table('internships')->select('id', 'organization_name')->get();
 
         foreach ($internships as $internship) {
-            $correctName = $this->findCorrectName($internship->raison_sociale);
+            $correctName = $this->findCorrectName($internship->organization_name);
             $correctName = implode(
                 ' ',
                 array_map(

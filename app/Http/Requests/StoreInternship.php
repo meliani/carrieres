@@ -24,10 +24,10 @@ class StoreInternship extends FormRequest
     public function rules()
     {
         return [
-            'raison_sociale' => 'required|max:191',
+            'organization_name' => 'required|max:191',
             'adresse' => 'required|max:191',
-            'ville' => 'required|max:191',
-            'pays' => 'required|max:191',
+            'city' => 'required|max:191',
+            'country' => 'required|max:191',
             'intitule' => 'required|max:65535',
             'descriptif' => 'required|max:65535',
             'keywords' => 'required|max:65535',
@@ -53,15 +53,15 @@ class StoreInternship extends FormRequest
             'is_valid' => 'nullable',
             'status' => 'nullable',
             'internal_adviser_id' => 'nullable',
-            'internal_adviser_name' => 'nullable'
+            'internal_adviser_name' => 'nullable',
         ];
     }
 
     public function attributes()
     {
-    return [
-        'email' => 'adresse email',
-        
-    ];
+        return [
+            'email' => 'adresse email',
+
+        ];
     }
 }

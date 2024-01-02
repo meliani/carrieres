@@ -16,7 +16,7 @@ class CreateInternshipOffersTable extends Migration
         Schema::create('internship_offers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('nom_responsable');
-            $table->string('raison_sociale');
+            $table->string('organization_name');
             $table->string('lieu_de_stage');
             $table->string('fonction')->nullable();
             $table->string('telephone')->nullable();

@@ -9,7 +9,7 @@ return [
     'lm_helper' => 'Attacher une lettre de motivation generale.',
     'photo_helper' => 'Attacher une photo recente',
     'document_offre' => 'Partager un document a votre offre',
-    'raison_sociale' => 'Raison sociale de l\'entreprise',
+    'organization_name' => 'Raison sociale de l\'entreprise',
     'nom_responsable' => 'Votre nom ou le nom de la personne qui prendra en charge le stagiaire',
     'mots_cles' => 'Mots clés / Keywords',
 

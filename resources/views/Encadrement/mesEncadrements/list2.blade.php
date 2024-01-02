@@ -1,15 +1,14 @@
-
 <div class="row center">
-        <h4 class="header light center blue-text text-lighten-1">Encadrant 2</h4>
-        </div>
+    <h4 class="header light center blue-text text-lighten-1">Encadrant 2</h4>
+</div>
 
-    <div class="center">
-        {{ $encadrements2->links('vendor.pagination.default') }}
-    </div>
+<div class="center">
+    {{ $encadrements2->links('vendor.pagination.default') }}
+</div>
 
-    <div class="container col s12 m12">
-        <table class="responsive-table highlight scale-transition scale-in">
-            <thead>
+<div class="container col s12 m12">
+    <table class="responsive-table highlight scale-transition scale-in">
+        <thead>
             <tr>
                 <th width="10%">Etudiant</th>
                 <th width="10%">Raison sociale</th>
@@ -18,32 +17,32 @@
                 <th width="20%">Titre du PFE</th>
                 <th width="10%">Affecté le</th>
             </tr>
-            </thead>
-            <tbody>
+        </thead>
+        <tbody>
             @foreach ($encadrements2 as $pfe)
-            <tr>
-                <td>{{ $pfe->studentName }}</td>
-                <td>{{ $pfe->raison_sociale }}</td>
-                <td>{{ $pfe->ville }}, {{ $pfe->pays }}</td>
-                <td>
-                <ul>
-                    <li>
-                    {{ $pfe->encadrant_ext_nom }}
-                    {{ $pfe->encadrant_ext_prenom }}
-                    </li>
-                    <li>{{ $pfe->encadrant_ext_tel }}</li>
-                    <li>{{ $pfe->encadrant_ext_mail }}</li>
-                </ul>
-                </td>
-                <td>{{ $pfe->intitule }}</td>
-                <td>{{ $pfe->created_at->format('d M Y') }}</td>
-            </tr>
+                <tr>
+                    <td>{{ $pfe->studentName }}</td>
+                    <td>{{ $pfe->organization_name }}</td>
+                    <td>{{ $pfe->city }}, {{ $pfe->country }}</td>
+                    <td>
+                        <ul>
+                            <li>
+                                {{ $pfe->encadrant_ext_nom }}
+                                {{ $pfe->encadrant_ext_prenom }}
+                            </li>
+                            <li>{{ $pfe->encadrant_ext_tel }}</li>
+                            <li>{{ $pfe->encadrant_ext_mail }}</li>
+                        </ul>
+                    </td>
+                    <td>{{ $pfe->intitule }}</td>
+                    <td>{{ $pfe->created_at->format('d M Y') }}</td>
+                </tr>
             @endforeach
-            </tbody>
-        </table>
-        </div>
+        </tbody>
+    </table>
+</div>
 
 
-    <div class="center">
-        {{ $encadrements2->links('vendor.pagination.default') }}
-    </div>
+<div class="center">
+    {{ $encadrements2->links('vendor.pagination.default') }}
+</div>

@@ -24,8 +24,8 @@
                     <div class="card-panel">
                         <h5 class="blue-text lighten-5"><i class="small material-icons blue-text">business</i> Entreprise et
                             lieu</h5>
-                        <p>{{ $internship->raison_sociale }}</p>
-                        <p>{{ $internship->adresse }},{{ $internship->ville }}, {{ $internship->pays }} </p>
+                        <p>{{ $internship->organization_name }}</p>
+                        <p>{{ $internship->adresse }},{{ $internship->city }}, {{ $internship->country }} </p>
                     </div>
                     <div class="card-panel">
                         <h5 class="blue-text lighten-5"><i class="small material-icons blue-text">business</i> Dates</h5>
@@ -48,7 +48,8 @@
                             {{ $internship->encadrant_ext_fonction }} au sein de l'entreprise d'accueil.</p>
                     </div>
                     <div class="card-panel">
-                        <h5 class="blue-text lighten-5"><i class="small material-icons blue-text">business</i> {{ __('Additional contacts') }}
+                        <h5 class="blue-text lighten-5"><i class="small material-icons blue-text">business</i>
+                            {{ __('Additional contacts') }}
                         </h5>
                         <p>{{ $internship->parrain_name }}: {{ $internship->parrain_tel }}, {{ $internship->parrain_mail }}
                         </p>

@@ -22,7 +22,7 @@
         "inIndex": true
     },
     {
-        "name": "raison_sociale",
+        "name": "organization_name",
         "dbType": "string",
         "htmlType": "text",
         "validations": "required",

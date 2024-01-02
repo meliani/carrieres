@@ -1,7 +1,7 @@
 <?php
 
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
 
 class CreateInternshipsTable extends Migration
 {
@@ -14,10 +14,10 @@ class CreateInternshipsTable extends Migration
     {
         Schema::create('internships', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('raison_sociale');
+            $table->string('organization_name');
             $table->string('adresse');
-            $table->string('ville');
-            $table->string('pays');
+            $table->string('city');
+            $table->string('country');
             $table->string('parrain_titre');
             $table->string('parrain_nom');
             $table->string('parrain_prenom');
@@ -38,15 +38,15 @@ class CreateInternshipsTable extends Migration
             $table->integer('foreign')->nullable();
             $table->integer('remuneration')->nullable();
             $table->integer('load')->nullable();
-            $table->integer('user_id')->unsigned()->nullable();            
-            $table->integer('nbr_advisors')->unsigned()->nullable();            
+            $table->integer('user_id')->unsigned()->nullable();
+            $table->integer('nbr_advisors')->unsigned()->nullable();
 
             $table->timestamps();
 
             $table->softDeletes();
             $table->foreign('user_id')->references('id')->on('users')
-            ->onDelete('restrict')
-            ->onUpdate('restrict');
+                ->onDelete('restrict')
+                ->onUpdate('restrict');
 
         });
     }

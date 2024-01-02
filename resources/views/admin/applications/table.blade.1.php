@@ -14,10 +14,10 @@
                 <tbody>
                 @foreach($applications as $application)
                         <tr>
-                        <td>{{ $application->offreDeStage()->pluck('raison_sociale') }}</td>
+                        <td>{{ $application->offreDeStage()->pluck('organization_name') }}</td>
                         <td>{{ $application->offreDeStage()->pluck('intitule_sujet') }}</td>
                         <td>{{ $application->user()->pluck('name') }}</td>
-                        <td>{{ $application->offreDeStage()->pluck('raison_sociale') }}</td>
+                        <td>{{ $application->offreDeStage()->pluck('organization_name') }}</td>
                         <td></td>
                         </tr>
                 @endforeach

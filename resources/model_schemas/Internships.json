@@ -11,7 +11,7 @@
         "inIndex": false
     },
     {
-        "name": "raison_sociale",
+        "name": "organization_name",
         "dbType": "string",
         "htmlType": "text",
         "validations": "required",
@@ -33,7 +33,7 @@
         "inIndex": true
     },
     {
-        "name": "ville",
+        "name": "city",
         "dbType": "string",
         "htmlType": "text",
         "validations": "required",
@@ -44,7 +44,7 @@
         "inIndex": true
     },
     {
-        "name": "pays",
+        "name": "country",
         "dbType": "string",
         "htmlType": "text",
         "validations": "required",

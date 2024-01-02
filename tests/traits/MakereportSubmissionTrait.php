@@ -1,15 +1,15 @@
 <?php
 
-use Faker\Factory as Faker;
 use App\Models\Admin\reportSubmission;
 use App\Repositories\Admin\reportSubmissionRepository;
+use Faker\Factory as Faker;
 
 trait MakereportSubmissionTrait
 {
     /**
      * Create fake instance of reportSubmission and save it in database
      *
-     * @param array $reportSubmissionFields
+     * @param  array  $reportSubmissionFields
      * @return reportSubmission
      */
     public function makereportSubmission($reportSubmissionFields = [])
@@ -17,13 +17,14 @@ trait MakereportSubmissionTrait
         /** @var reportSubmissionRepository $reportSubmissionRepo */
         $reportSubmissionRepo = App::make(reportSubmissionRepository::class);
         $theme = $this->fakereportSubmissionData($reportSubmissionFields);
+
         return $reportSubmissionRepo->create($theme);
     }
 
     /**
      * Get fake instance of reportSubmission
      *
-     * @param array $reportSubmissionFields
+     * @param  array  $reportSubmissionFields
      * @return reportSubmission
      */
     public function fakereportSubmission($reportSubmissionFields = [])
@@ -34,7 +35,7 @@ trait MakereportSubmissionTrait
     /**
      * Get fake data of reportSubmission
      *
-     * @param array $postFields
+     * @param  array  $postFields
      * @return array
      */
     public function fakereportSubmissionData($reportSubmissionFields = [])
@@ -48,7 +49,7 @@ trait MakereportSubmissionTrait
             'email_autre' => $fake->word,
             'titre_rapport' => $fake->text,
             'entreprise' => $fake->word,
-            'ville' => $fake->word,
+            'city' => $fake->word,
             'nom_responsable_stage' => $fake->word,
             'email_responsable' => $fake->word,
             'doc_rapport' => $fake->text,
@@ -56,7 +57,7 @@ trait MakereportSubmissionTrait
             'doc_convention' => $fake->text,
             'doc_attestation' => $fake->text,
             'created_at' => $fake->word,
-            'updated_at' => $fake->word
+            'updated_at' => $fake->word,
         ], $reportSubmissionFields);
     }
 }

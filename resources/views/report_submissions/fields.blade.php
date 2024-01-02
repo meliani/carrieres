@@ -1,10 +1,10 @@
 <!-- titre parrain Field -->
 <div class="form-group col-sm-6">
-<label>Type de stage (*)</label>
-<select class="form-control form-control-sm" name="type_stage">
-    <option value="stage ouvrier">Stage ouvrier</option>
-    <option value="stage technique">Stage technique</option>
-</select>
+    <label>Type de stage (*)</label>
+    <select class="form-control form-control-sm" name="type_stage">
+        <option value="stage ouvrier">Stage ouvrier</option>
+        <option value="stage technique">Stage technique</option>
+    </select>
 </div>
 <div class="clearfix"></div>
 
@@ -55,8 +55,8 @@
 
 <!-- Ville Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('ville', 'Ville (*) :') !!}
-    {!! Form::text('ville', null, ['class' => 'form-control']) !!}
+    {!! Form::label('city', 'Ville (*) :') !!}
+    {!! Form::text('city', null, ['class' => 'form-control']) !!}
 </div>
 
 
@@ -76,26 +76,26 @@
 
 
 <div class='col-sm-6'>
-        <div class='col-sm-6'>
-            <div class="form-group">
-                    <label>Date de début (*) :</label>
-                <div class='input-group date' id='date_debut'>
-                    <input type='text' name='date_debut' class="form-control" placeholder='AAAA-MM-JJ'/>
-                    <span class="input-group-addon">
-                        <span class="glyphicon glyphicon-calendar"></span>
-                    </span>
-                </div>
-            </div>
-        </div>
-        <script type="text/javascript">
-            $(function () {
-                $('.date').datetimepicker();
-            });
-        </script>
-    
     <div class='col-sm-6'>
         <div class="form-group">
-                <label>Date de fin (*) :</label>
+            <label>Date de début (*) :</label>
+            <div class='input-group date' id='date_debut'>
+                <input type='text' name='date_debut' class="form-control" placeholder='AAAA-MM-JJ' />
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function() {
+            $('.date').datetimepicker();
+        });
+    </script>
+
+    <div class='col-sm-6'>
+        <div class="form-group">
+            <label>Date de fin (*) :</label>
             <div class='input-group date' id='date_fin'>
                 <input type='text' name='date_fin' class="form-control" placeholder='AAAA-MM-JJ' />
                 <span class="input-group-addon">
@@ -105,13 +105,13 @@
         </div>
     </div>
     <script type="text/javascript">
-        $(function () {
+        $(function() {
             $('#date_fin').datetimepicker();
         });
     </script>
 </div>
-    
-    <div class="clearfix"></div>
+
+<div class="clearfix"></div>
 
 <!-- Doc Rapport Field -->
 <div class="form-group col-sm-4">
@@ -120,7 +120,10 @@
 </div>
 <!-- Doc Convention Field -->
 <div class="form-group col-sm-4">
-    {!! Form::label('doc_convention', 'Convention de stage dûment signée par l\'entreprise, le représentant de l\'INPT et l\'élève ingénieur (*) :') !!}
+    {!! Form::label(
+        'doc_convention',
+        'Convention de stage dûment signée par l\'entreprise, le représentant de l\'INPT et l\'élève ingénieur (*) :',
+    ) !!}
     {!! Form::file('doc_convention') !!}
 </div>
 <!-- Doc Attestation Field -->
@@ -130,19 +133,22 @@
 </div>
 <div class="clearfix"></div>
 <div class="form-group col-sm-12">
-<p>
-Dans une deuxième étape, seuls les élèves ingénieurs ayant remis une version électronique pourront remettre le dossier complet de leur stage. 
-Le dossier de stage doit être remis avant le <b>Jeudi 15 Novembre 2018 à 15H00.</b> Il doit être composé de :
-</p>
-<ul>
-<li>Rapport du stage version papier (identique à la version numérique),</li>
-<li>Attestation de stage (copie + originale qui vous sera retournée) ;</li>
-<li>Fiche d’évaluation de l’entreprise (remise sous plis cacheté). Cette fiche peut être transmise par fax ou par mail à entreprise@inpt.ac.ma</li>
-</ul>
-<p>
-Il appartient à l’élève-ingénieur de faire le nécessaire pour que son dossier soit complet lors de la remise du dossier du stage.
-Le non-respect des délais ci-dessus entraine le non validation du stage.
-</p>
+    <p>
+        Dans une deuxième étape, seuls les élèves ingénieurs ayant remis une version électronique pourront remettre le
+        dossier complet de leur stage.
+        Le dossier de stage doit être remis avant le <b>Jeudi 15 Novembre 2018 à 15H00.</b> Il doit être composé de :
+    </p>
+    <ul>
+        <li>Rapport du stage version papier (identique à la version numérique),</li>
+        <li>Attestation de stage (copie + originale qui vous sera retournée) ;</li>
+        <li>Fiche d’évaluation de l’entreprise (remise sous plis cacheté). Cette fiche peut être transmise par fax ou
+            par mail à entreprise@inpt.ac.ma</li>
+    </ul>
+    <p>
+        Il appartient à l’élève-ingénieur de faire le nécessaire pour que son dossier soit complet lors de la remise du
+        dossier du stage.
+        Le non-respect des délais ci-dessus entraine le non validation du stage.
+    </p>
 </div>
 <!-- Submit Field -->
 <div class="form-group col-sm-12">

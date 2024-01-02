@@ -4,50 +4,50 @@
             <td>
                 {!! $internship->defense_at->format('d/m/Y') !!}
             </td>
-           <td>
-               {!! $internship->defense_start_time !!}
+            <td>
+                {!! $internship->defense_start_time !!}
             </td>
-           <td>
-            Amphi {!! $internship->classroom_id !!}
+            <td>
+                Amphi {!! $internship->classroom_id !!}
             </td>
-           <td>
+            <td>
                 <p>
                     ID PFE : {!! $internship->student->pin !!}
-                    {!! isset($internship->binome)?'.'.$internship->binome->pin:'' !!}
+                    {!! isset($internship->binome) ? '.' . $internship->binome->pin : '' !!}
                 </p>
                 <p>
                     Option : {!! $internship->student->option_text !!}
                 </p>
                 <p>
-                    Entreprise : {!! $internship->raison_sociale !!}
+                    Entreprise : {!! $internship->organization_name !!}
                 </p>
                 <p>
                     Intitulé : {!! $internship->intitule !!}
                 </p>
                 <p>
                     Elève : {!! $internship->student->full_name !!}
-                    {!! isset($internship->binome)?','.$internship->binome->name:'' !!}
+                    {!! isset($internship->binome) ? ',' . $internship->binome->name : '' !!}
                 </p>
-    @isset($internship->adviser->adviser1)
-    <p>Encadrant 1 : 
-        {!! $internship->adviser->adviser1->name !!}</p>
-    @endisset
-    @isset($internship->adviser->adviser2)
-    <p>Encadrant 2 : 
-    {!! $internship->adviser->adviser2->name !!}</p>
-    @endisset
-    @isset($internship->adviser->exami1)
-    <p>Examinateur 1 : 
-    {!! $internship->adviser->exami1->name !!}</p>
-    @endisset
-    @isset($internship->adviser->exami2)
-    <p>Examinateur 2 : 
-    {!! $internship->adviser->exami2->name !!}</p>
-    @endisset
-    @isset($internship->adviser->exami3)
-    <p>Examinateur 3 : 
-    {!! $internship->adviser->exami3->name !!}</p>
-    @endisset
+                @isset($internship->adviser->adviser1)
+                    <p>Encadrant 1 :
+                        {!! $internship->adviser->adviser1->name !!}</p>
+                @endisset
+                @isset($internship->adviser->adviser2)
+                    <p>Encadrant 2 :
+                        {!! $internship->adviser->adviser2->name !!}</p>
+                @endisset
+                @isset($internship->adviser->exami1)
+                    <p>Examinateur 1 :
+                        {!! $internship->adviser->exami1->name !!}</p>
+                @endisset
+                @isset($internship->adviser->exami2)
+                    <p>Examinateur 2 :
+                        {!! $internship->adviser->exami2->name !!}</p>
+                @endisset
+                @isset($internship->adviser->exami3)
+                    <p>Examinateur 3 :
+                        {!! $internship->adviser->exami3->name !!}</p>
+                @endisset
 
             </td>
             <td>
