@@ -79,8 +79,8 @@
     <div class='col-sm-6'>
         <div class="form-group">
             <label>Date de début (*) :</label>
-            <div class='input-group date' id='date_debut'>
-                <input type='text' name='date_debut' class="form-control" placeholder='AAAA-MM-JJ' />
+            <div class='input-group date' id='starting_at'>
+                <input type='text' name='starting_at' class="form-control" placeholder='AAAA-MM-JJ' />
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
@@ -96,8 +96,8 @@
     <div class='col-sm-6'>
         <div class="form-group">
             <label>Date de fin (*) :</label>
-            <div class='input-group date' id='date_fin'>
-                <input type='text' name='date_fin' class="form-control" placeholder='AAAA-MM-JJ' />
+            <div class='input-group date' id='ending_at'>
+                <input type='text' name='ending_at' class="form-control" placeholder='AAAA-MM-JJ' />
                 <span class="input-group-addon">
                     <span class="glyphicon glyphicon-calendar"></span>
                 </span>
@@ -106,7 +106,7 @@
     </div>
     <script type="text/javascript">
         $(function() {
-            $('#date_fin').datetimepicker();
+            $('#ending_at').datetimepicker();
         });
     </script>
 </div>

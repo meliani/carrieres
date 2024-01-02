@@ -78,9 +78,9 @@
                     </td>
                     <td>{{ isset($student->internship->updated_at) ? $student->internship->updated_at->format('d/m/Y') : '' }}
                     </td>
-                    <td>{{ isset($student->internship->date_debut) ? $student->internship->date_debut->format('d/m/Y') : '' }}
+                    <td>{{ isset($student->internship->starting_at) ? $student->internship->starting_at->format('d/m/Y') : '' }}
                     </td>
-                    <td>{{ isset($student->internship->date_fin) ? $student->internship->date_fin->format('d/m/Y') : '' }}
+                    <td>{{ isset($student->internship->ending_at) ? $student->internship->ending_at->format('d/m/Y') : '' }}
                     </td>
                     <td>{{ $student->internship->duree }}</td>
                     <td>{{ $student->internship->parrain_nom }} {{ $student->internship->parrain_prenom }}</td>

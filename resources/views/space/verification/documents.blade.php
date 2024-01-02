@@ -54,8 +54,8 @@
                     <div class="collapsible-header"><i class="material-icons">access_time</i><b>Durée: </b>
                         {{ $person->internship->duration_in_months }}</div>
                     {{-- display and format date debut and date fin to human readable using months as granularity --}}
-                    <div class="collapsible-body"><span> {{ $person->internship->date_debut->format('d/m/Y') }} au
-                            {{ $person->internship->date_fin->format('d/m/Y') }}</span></div>
+                    <div class="collapsible-body"><span> {{ $person->internship->starting_at->format('d/m/Y') }} au
+                            {{ $person->internship->ending_at->format('d/m/Y') }}</span></div>
                 </li>
                 <li>
                     <div class="collapsible-header"><i class="material-icons">laptop_mac</i><b>Intitulé: </b>

@@ -43,8 +43,8 @@ $students = \App\Models\Profile\Person::Where('program_id', '3')
         <td class="strong">{{ $student->internship['organization_name'] }}</td>
         <td class="sub">{{  $student->internship['title'] }}</td>
         <td>{{ isset($student->internship->created_at) ? $student->internship['created_at']->format('d M Y'):'' }}</td>
-        <td>{{ isset($student->internship->date_debut) ?  $student->internship['date_debut']->format('d/m/Y'):'' }}</td>   
-        <td>{{ isset($student->internship->date_fin) ?  $student->internship['date_fin']->format('d/m/Y'):'' }}</td>   
+        <td>{{ isset($student->internship->starting_at) ?  $student->internship['starting_at']->format('d/m/Y'):'' }}</td>   
+        <td>{{ isset($student->internship->ending_at) ?  $student->internship['ending_at']->format('d/m/Y'):'' }}</td>   
         <td class="sub">{{  $student->internship['duree'] }}</td>
         <td>{{ isset($student->internship->defense_at) ?  $student->internship->defense_at->format('d/m/Y'):'' }}</td>   
         <td>{{ isset($student->internship->time_slot_id) ?  $student->internship->time_slot_id:'' }}</td>   

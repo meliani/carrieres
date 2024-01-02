@@ -786,9 +786,9 @@ $internship = user()->student->internship;
                 class="tm30">&nbsp;: Modalit&eacute;s du stage</span></strong></h5>
     <p class="Normal tm53"><strong><span class="tm32">P&eacute;riode de stage&nbsp;: </span></strong><span
             class="tm33">Le stage aura lieu du</span><strong><span class="tm32"> </span><span
-                class="tm34">{{ $internship->date_debut->format('d/m/Y') }}</span><span class="tm32">
+                class="tm34">{{ $internship->starting_at->format('d/m/Y') }}</span><span class="tm32">
             </span></strong><span class="tm33">au</span><strong><span class="tm32"> </span><span
-                class="tm34">{{ $internship->date_fin->format('d/m/Y') }}</span><span
+                class="tm34">{{ $internship->ending_at->format('d/m/Y') }}</span><span
                 class="tm32">.</span></strong></p>
     <p class="Normal tm54"><span class="tm33">Un avenant &agrave; la convention pourra &eacute;ventuellement
             &ecirc;tre &eacute;tabli en cas de prolongation de stage faite &agrave; la demande de l&#8217;entreprise et

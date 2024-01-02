@@ -242,8 +242,8 @@ $internship = user()->student->internship;
             dur&eacute;e du stage est fix&eacute;e &agrave; </font>
         <font size="2" style="font-size: 11pt"><b>{{ $internship->duree }}</b></font>
         <font size="2" style="font-size: 11pt">, du
-            <b>{{ $internship->date_debut->format('d/m/Y') }}</b>
-            au <b>{{ $internship->date_fin->format('d/m/Y') }}.</b>
+            <b>{{ $internship->starting_at->format('d/m/Y') }}</b>
+            au <b>{{ $internship->ending_at->format('d/m/Y') }}.</b>
         </font>
     </p>
     <h3 class="western"><a name="_ritn9hpt2ay1"></a>Article 4</h3>

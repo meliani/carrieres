@@ -33,8 +33,8 @@ class CreateInternshipsTable extends Migration
             $table->string('title');
             $table->text('description');
             $table->string('keywords');
-            $table->date('date_debut');
-            $table->date('date_fin');
+            $table->date('starting_at');
+            $table->date('ending_at');
             $table->integer('foreign')->nullable();
             $table->integer('remuneration')->nullable();
             $table->integer('load')->nullable();

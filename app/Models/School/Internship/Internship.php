@@ -59,8 +59,8 @@ class Internship extends Model
         'title',
         'description',
         'keywords',
-        'date_debut',
-        'date_fin',
+        'starting_at',
+        'ending_at',
         'abroad',
         'remuneration',
         'currency',
@@ -88,8 +88,8 @@ class Internship extends Model
 
     //protected $dateFormat = 'm/d/Y';
     protected $casts = [
-        'date_debut' => 'date',
-        'date_fin' => 'date',
+        'starting_at' => 'date',
+        'ending_at' => 'date',
         'defense_at' => 'date',
         'defense_start_time' => 'time:H:i',
         'defense_end_time' => 'time:H:i',
@@ -156,16 +156,16 @@ class Internship extends Model
 
     public function getDureeAttribute()
     {
-        //return $this->date_fin->diffForHumans($this->date_debut);
-        //return $this->date_fin->longAbsoluteDiffForHumans($this->date_debut,null,7);
-        return $this->date_fin->diffInWeeks($this->date_debut).' semaines';
+        //return $this->ending_at->diffForHumans($this->starting_at);
+        //return $this->ending_at->longAbsoluteDiffForHumans($this->starting_at,null,7);
+        return $this->ending_at->diffInWeeks($this->starting_at).' semaines';
     }
 
     public function getDurationInMonthsAttribute()
     {
-        //return $this->date_fin->diffForHumans($this->date_debut);
-        //return $this->date_fin->longAbsoluteDiffForHumans($this->date_debut,null,7);
-        return $this->date_fin->diffInMonths($this->date_debut).' mois';
+        //return $this->ending_at->diffForHumans($this->starting_at);
+        //return $this->ending_at->longAbsoluteDiffForHumans($this->starting_at,null,7);
+        return $this->ending_at->diffInMonths($this->starting_at).' mois';
     }
 
     public function getNotesTipAttribute()

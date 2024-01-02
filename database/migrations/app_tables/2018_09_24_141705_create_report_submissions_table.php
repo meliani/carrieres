@@ -5,7 +5,6 @@ use Illuminate\Database\Schema\Blueprint;
 
 class CreatereportSubmissionsTable extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -24,8 +23,8 @@ class CreatereportSubmissionsTable extends Migration
             $table->text('titre_rapport');
             $table->string('entreprise');
             $table->string('city');
-            $table->date('date_debut');
-            $table->date('date_fin');
+            $table->date('starting_at');
+            $table->date('ending_at');
             $table->string('nom_responsable_stage');
             $table->string('email_responsable')->nullable();
             $table->text('doc_rapport');

@@ -36,8 +36,8 @@
                     </div>
                     <div class="card-panel">
                         <h5 class="blue-text lighten-5"><i class="small material-icons blue-text">business</i> Dates</h5>
-                        <p>Date debut de stage : {{ $internship->date_debut->format('d M Y') }}</p>
-                        <p>Date fin de stage : {{ $internship->date_fin->format('d M Y') }}</p>
+                        <p>Date debut de stage : {{ $internship->starting_at->format('d M Y') }}</p>
+                        <p>Date fin de stage : {{ $internship->ending_at->format('d M Y') }}</p>
                     </div>
                     <div class="card-panel">
                         <h5 class="blue-text lighten-5"><i class="small material-icons blue-text">business</i> Rémuneration et

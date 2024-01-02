@@ -120,14 +120,14 @@
 
 <!-- Date Debut Field -->
 <div class="form-group">
-    {!! Form::label('date_debut', 'Date Debut:') !!}
-    <p>{!! $internships->date_debut !!}</p>
+    {!! Form::label('starting_at', 'Date Debut:') !!}
+    <p>{!! $internships->starting_at !!}</p>
 </div>
 
 <!-- Date Fin Field -->
 <div class="form-group">
-    {!! Form::label('date_fin', 'Date Fin:') !!}
-    <p>{!! $internships->date_fin !!}</p>
+    {!! Form::label('ending_at', 'Date Fin:') !!}
+    <p>{!! $internships->ending_at !!}</p>
 </div>
 
 <!-- Foreign Field -->

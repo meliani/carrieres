@@ -162,14 +162,14 @@
 
 <!-- Date Debut Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('date_debut', 'Date Debut:') !!}
-    {!! Form::date('date_debut', null, ['class' => 'form-control']) !!}
+    {!! Form::label('starting_at', 'Date Debut:') !!}
+    {!! Form::date('starting_at', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Date Fin Field -->
 <div class="form-group col-sm-6">
-    {!! Form::label('date_fin', 'Date Fin:') !!}
-    {!! Form::date('date_fin', null, ['class' => 'form-control']) !!}
+    {!! Form::label('ending_at', 'Date Fin:') !!}
+    {!! Form::date('ending_at', null, ['class' => 'form-control']) !!}
 </div>
 
 <!-- Foreign Field -->

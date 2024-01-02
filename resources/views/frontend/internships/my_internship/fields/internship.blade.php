@@ -49,7 +49,7 @@ $required = 'required';
     ) }}
     {{ Form::textGroup(
         [
-            'name' => 'date_debut',
+            'name' => 'starting_at',
             'value',
             'label' => 'Date début',
             'placeholder',
@@ -63,7 +63,7 @@ $required = 'required';
     ) }}
     {{ Form::textGroup(
         [
-            'name' => 'date_fin',
+            'name' => 'ending_at',
             'value',
             'label' => 'Date fin',
             'placeholder',

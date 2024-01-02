@@ -308,7 +308,7 @@
         "inIndex": true
     },
     {
-        "name": "date_debut",
+        "name": "starting_at",
         "dbType": "date",
         "htmlType": "date",
         "validations": "required",
@@ -319,7 +319,7 @@
         "inIndex": true
     },
     {
-        "name": "date_fin",
+        "name": "ending_at",
         "dbType": "date",
         "htmlType": "date",
         "validations": "required",

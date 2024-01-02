@@ -1507,9 +1507,9 @@ $internship = user()->student->internship;
                 {{ config('school.current.branches.' . $internship->student->filiere_text . '.full_title') }}
             </span></strong><span class="tm89">, </span></p>
     <p class="tm42 tm82"><strong><span class="tm87"></span></strong><span class="tm89">Pour la p&eacute;riode du
-        </span><strong><span class="tm90">{{ $internship->date_debut->format('d/m/Y') }}</span></strong><span
+        </span><strong><span class="tm90">{{ $internship->starting_at->format('d/m/Y') }}</span></strong><span
             class="tm89">&nbsp;au</span><strong><span class="tm95"> </span><span
-                class="tm90">{{ $internship->date_fin->format('d/m/Y') }}</span></strong><span class="tm89">, sous
+                class="tm90">{{ $internship->ending_at->format('d/m/Y') }}</span></strong><span class="tm89">, sous
             la responsabilit&eacute; de&nbsp;:</span></p>
     <p class="tm44 tm82"><strong><span class="tm87"></span></strong><span class="tm96">- </span><span
             class="tm89">Encadrant Externe&nbsp;: </span><strong><span
