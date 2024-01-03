@@ -46,7 +46,7 @@ class Person extends baseModel implements HasMedia
     'abroad_school',
     'year_id',
     'is_active',
-    'model_status_id'
+    // 'model_status_id'
     ];
     protected $casts = [
         'created_at'=> 'datetime',

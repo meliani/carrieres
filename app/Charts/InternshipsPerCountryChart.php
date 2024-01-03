@@ -20,7 +20,7 @@ class InternshipsPerCountryChart implements ChartFactory
         $internships = \App\Models\School\Internship\Internship::selectRaw('count(*) as count, internships.country')
             ->join('people', 'internships.student_id', '=', 'people.id')
             // ->where('internships.created_at', '>', Carbon::now()->subYear())
-            ->Where('people.model_status_id', '=', '1')
+            // ->Where('people.model_status_id', '=', '1')
             ->groupBy('internships.country')
             ->orderBy('internships.country')
             ->get();

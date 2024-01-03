@@ -65,7 +65,7 @@ class myInternshipController extends BaseController
         
         $internship->year_id = config('school.current.year_id');
 
-        $internship->model_status_id = config('school.current.model_status.prod');
+        // $internship->model_status_id = config('school.current.model_status.prod');
 
         if(isset($request->action)){
             $internship->is_valid = 1;

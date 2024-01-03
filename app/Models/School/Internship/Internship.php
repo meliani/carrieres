@@ -72,7 +72,7 @@ class Internship extends Model
         'student_id',
         'year_id',
         'is_valid',
-        'model_status_id',
+        // 'model_status_id',
         'status',
         'procedure_achieved_at',
         'pedagogic_validation_date',

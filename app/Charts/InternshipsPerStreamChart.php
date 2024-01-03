@@ -19,7 +19,7 @@ class InternshipsPerStreamChart implements ChartFactory
         $internships = \App\Models\School\Internship\Internship::selectRaw('count(*) as count, people.filiere_text')
             ->join('people', 'internships.student_id', '=', 'people.id')
             // ->where('internships.created_at', '>', Carbon::now()->subYear())
-            ->Where('people.model_status_id', '=', '1')
+            // ->Where('people.model_status_id', '=', '1')
             ->groupBy('people.filiere_text')
             //order by count desc and limit to 10
             ->orderBy('count', 'desc')
