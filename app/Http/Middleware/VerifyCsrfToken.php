@@ -14,5 +14,6 @@ class VerifyCsrfToken extends Middleware
     protected $except = [
         'livewire/*',
         'v23/calendar',
+        'backend/*',
         ];
 }
