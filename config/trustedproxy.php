@@ -15,7 +15,7 @@ return [
      * of your proxy (e.g. if using ELB or similar).
      *
      */
-    'proxies' => null, // [<ip addresses>,], '*'
+    // 'proxies' => null, // [<ip addresses>,], '*'
 
     /*
      * To trust one or more specific proxies that connect
@@ -27,7 +27,7 @@ return [
      * Or, to trust all proxies that connect
      * directly to your server, use a "*"
      */
-     # 'proxies' => '*',
+     'proxies' => '*',
 
     /*
      * Which headers to use to detect proxy related data (For, Host, Proto, Port)
