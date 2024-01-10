@@ -143,3 +143,6 @@ Route::get('PlanningPFE', 'Frontend\IframeController@PlanningPFE');
 Route::get('lesjeudis', 'Frontend\IframeController@PlanningJeudis');
 Route::get('submit_offer', 'Frontend\Internship\InternOfferController@create', $internship_type = 2);
 /****************************************** EOF PUBLIC LINKS ********************************************************************/
+
+
+Route::get('programCoordinator', fn() => redirect()->away('https://carrieres.inpt.ac.ma/backend/programCoordinator'));
