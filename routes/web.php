@@ -146,4 +146,4 @@ Route::get('submit_offer', 'Frontend\Internship\InternOfferController@create', $
 
 
 Route::get('programCoordinator', fn() => redirect()->away('https://carrieres.inpt.ac.ma/backend/programCoordinator'));
-Route::get('admin', fn() => redirect()->away('https://carrieres.inpt.ac.ma/backend/admin'));
+Route::get('Administration', fn() => redirect()->away('https://carrieres.inpt.ac.ma/backend/Administration'));
