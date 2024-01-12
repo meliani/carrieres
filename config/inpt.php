@@ -297,7 +297,7 @@ return [
 'LAGHOUAOUTA YOUNESS'=>'LAGHOUAOUTA YOUNESS',
 'AIT MANSOUR ASMAE'=>'AIT MANSOUR ASMAE',
 'AIT OUALHAJ OMAR'=>'AIT OUALHAJ OMAR',
-
+'LAHSEN-CHERIF Iyad' => 'LAHSEN-CHERIF Iyad',
     ],
     'currencies_crafted' => [
         'MAD' => 'Dirham marocain',
