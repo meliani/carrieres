@@ -69,7 +69,7 @@ class myInternshipController extends BaseController
 
         if(isset($request->action)){
             $internship->is_valid = 1;
-            $internship->status = 'Anounced';
+            $internship->status = 'Announced';
         }
         $internship->save();
         //flash()->success('Votre déclaration a été bien enregistrée.');
