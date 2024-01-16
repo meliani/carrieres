@@ -26,7 +26,7 @@ class StoreOfferRequest extends FormRequest
         return [
         'id' => 'nullable',
         'year_id' => 'nullable',
-        'program_id' => 'nullable',
+        'current_year' => 'nullable',
         'organization_name' => 'nullable',
         'country' => 'nullable',
         'internship_type' => 'nullable',

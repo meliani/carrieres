@@ -17,15 +17,15 @@ class InternshipsTotalsChart implements ChartFactory
     {
 
         //get the total count of registred internships per program using student relationship
-        $internships = \App\Models\School\Internship\Internship::selectRaw('count(*) as count, program_id')
+        $internships = \App\Models\School\Internship\Internship::selectRaw('count(*) as count, current_year')
             ->join('people', 'internships.student_id', '=', 'people.id')
             // ->Where('people.model_status_id', '=', '1')
-            ->groupBy('program_id')
-            ->orderBy('program_id')
+            ->groupBy('current_year')
+            ->orderBy('current_year')
             ->get();
             //make chart with data from internships
         $chart = (new Chart)
-            ->labels($internships->pluck('program_id')->toArray())
+            ->labels($internships->pluck('current_year')->toArray())
             ->options([
                 'responsive' => true,
                 'maintainAspectRatio' => false,

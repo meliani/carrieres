@@ -40,7 +40,7 @@ class TeamController extends Controller
     public function create()
     {
         // return view('team created, add participants ?');
-        // $students = Student::where('program_id','=',user()->student->program_id)->get('id','first_name');
+        // $students = Student::where('current_year','=',user()->student->current_year)->get('id','first_name');
         // return view('frontend.teams.create',['students'=>$students]);
     }
     public function join($team_uuid) :view

@@ -15,12 +15,12 @@ class InternshipsPerStreamChart implements ChartFactory
     public function chart(): Chart
     {
 
-        //get the total count of registred internships grouped by filiere_text on the same table
-        $internships = \App\Models\School\Internship\Internship::selectRaw('count(*) as count, people.filiere_text')
+        //get the total count of registred internships grouped by program on the same table
+        $internships = \App\Models\School\Internship\Internship::selectRaw('count(*) as count, people.program')
             ->join('people', 'internships.student_id', '=', 'people.id')
             // ->where('internships.created_at', '>', Carbon::now()->subYear())
             // ->Where('people.model_status_id', '=', '1')
-            ->groupBy('people.filiere_text')
+            ->groupBy('people.program')
             //order by count desc and limit to 10
             ->orderBy('count', 'desc')
             // ->limit(10)
@@ -31,7 +31,7 @@ class InternshipsPerStreamChart implements ChartFactory
         // chart's title
         $chart = (new Chart)
             ->title('Stages par filière')
-            ->labels($internships->pluck('filiere_text')->toArray())
+            ->labels($internships->pluck('program')->toArray())
             ->options([
                 'responsive' => true,
                 'maintainAspectRatio' => false,

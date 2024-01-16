@@ -755,7 +755,7 @@ $internship = user()->student->internship;
                 {{ $internship->student->full_name }}</span><span class="tm32">, </span></strong><span
             class="tm33">&eacute;tudiant(e) de la fili&egrave;re</span><span class="tm33"> </span><strong><span
                 class="tm34">
-                {{ config('school.current.branches.' . $internship->student->filiere_text . '.full_title') }}
+                {{ config('school.current.branches.' . $internship->student->program . '.full_title') }}
             </span></strong><span class="tm33"> </span><span class="tm33"> de l&#8217;Institut National des Postes
             et T&eacute;l&eacute;communications (INPT)
         </span><strong><span class="tm32"> </span></strong>

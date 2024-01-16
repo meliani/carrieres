@@ -17,7 +17,7 @@ class DefensesExport implements FromView
         ->whereHas('internship', 
         function ($query) {
             $query->where('year_id','=',current_year_id())
-            ->where('graduated_at','=',null)->where('program_id','=','3');
+            ->where('graduated_at','=',null)->where('current_year','=','3');
         })->get();
         return view('frontend.documents.excel.templates.internships',compact('students'));
     }

@@ -1507,7 +1507,7 @@ $internship = user()->student->internship;
         </span><strong><span class="tm90"> </span></strong><span class="tm89">&eacute;l&egrave;ve ing&eacute;nieur
             de la fili&egrave;re : </span><strong>
             <span class="tm90">
-                {{ config('school.current.branches.' . $internship->student->filiere_text . '.full_title') }}
+                {{ config('school.current.branches.' . $internship->student->program . '.full_title') }}
             </span></strong><span class="tm89">,
             de l’Institut National des Postes et Télécommunications (INPT) de Rabat,
             en échange académique à l’Ecole
@@ -1537,8 +1537,8 @@ $internship = user()->student->internship;
                 class="tm90">{{ $internship->encadrant_ext_mail }}</span><span class="tm91">.</span></strong></p>
     <p class="tm44 tm82"><strong><span class="tm87"></span></strong><span class="tm96">- </span><span
             class="tm89">Coordonnateur de la fili&egrave;re&nbsp;: </span><strong><span class="tm90">
-                {{ config('school.current.branches.' . $internship->student->filiere_text . '.cf_title') ?? '' }}
-                {{ config('school.current.branches.' . $internship->student->filiere_text . '.cf_name') ?? '. . . . . . . . . . . . . . . . . . .' }}
+                {{ config('school.current.branches.' . $internship->student->program . '.cf_title') ?? '' }}
+                {{ config('school.current.branches.' . $internship->student->program . '.cf_name') ?? '. . . . . . . . . . . . . . . . . . .' }}
             </span></strong></p>
     <p class="tm47 tm82 tm97"><span class="tm94"></span><span class="tm89">Le stage portera sur le sujet
             suivant&nbsp;:</span><strong><span class="tm91"> </span><span

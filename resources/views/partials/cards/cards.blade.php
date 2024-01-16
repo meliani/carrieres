@@ -9,7 +9,7 @@
     @if($person->active())
         @include('partials.cards.profile')
     @endif
-    @if($person->program_id>0)
+    @if($person->current_year>0)
         @include('partials.cards.stage')
     @endif
     {{-- @include('partials.cards.recommandation') --}}

@@ -48,7 +48,7 @@ class InternsTable extends Component
             $query->where('student_id','=', "%$this->search%")
             ->orWhere('last_name','LIKE' , "%{$this->search}%")
             ->orWhere('first_name','LIKE' , "%{$this->search}%")
-            ->orWhere('filiere_text','LIKE' , "%{$this->search}%");
+            ->orWhere('program','LIKE' , "%{$this->search}%");
         })->latest()->get(); //->take(200)
     }
     public function render()

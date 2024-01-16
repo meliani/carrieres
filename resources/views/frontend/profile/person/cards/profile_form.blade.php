@@ -24,7 +24,7 @@
     'disabled' => 'disabled',
 ], $errors) }}
 {{ Form::textGroup([
-    'name' => 'filiere_text',
+    'name' => 'program',
     'value' ,
     'label' => __('labels.stream'),
     'placeholder' ,

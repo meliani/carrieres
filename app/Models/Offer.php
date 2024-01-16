@@ -21,7 +21,7 @@ class Offer extends Model
     public $fillable = [
         'id',
         'year_id',
-        'program_id',
+        'current_year',
         'organization_name',
         'country',
         'internship_type',
@@ -59,7 +59,7 @@ class Offer extends Model
     protected $casts = [
     //     'id' => 'string',
     //     'year_id' => 'string',
-    //     'program_id' => 'string',
+    //     'current_year' => 'string',
     //     'organization_name' => 'string',
     //     'internship_type' => 'string',
     //     'responsible_fullname' => 'string',

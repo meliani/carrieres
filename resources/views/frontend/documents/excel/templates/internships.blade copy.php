@@ -1,6 +1,6 @@
 <?php
 //$students = \App\Models\School\Internship::where('scholar_year','2018-2019')->with('people')->get();
-$students = \App\Models\Profile\Person::Where('program_id', '3')
+$students = \App\Models\Profile\Person::Where('current_year', '3')
     ->with('internship')->get();
 
 //$students = $students->people();

@@ -6,7 +6,7 @@
     {{ $student->full_name }}
     </td>
     <td>
-    {{ $student->program_id ?? 'NA' }}
+    {{ $student->current_year ?? 'NA' }}
     </td>
     <td>
     {{ $student->report->company_name }}

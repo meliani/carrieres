@@ -17,9 +17,9 @@
                     <td class="strong">{{ $student->pin }}</td>
                     <td>
                         <div class="sub strong">{{ $student->full_name }}</div>
-                        @if ($student['filiere_text'])
+                        @if ($student['program'])
                             <span class="new badge blue lighten-3 white-text"
-                                data-badge-caption="{{ !empty($student->filiere_text) ? $student->filiere_text : '' }}">
+                                data-badge-caption="{{ !empty($student->program) ? $student->program : '' }}">
                             </span>
                         @endif
                         @if (isset($student->internship->id))

@@ -14,15 +14,15 @@ class Dashboard extends BaseController
     {
         // $count['internships']=Project::count();
         $count['internships']=Internship::where('is_valid',1)->count();
-        $count['internships.ine3']=Student::where('program_id',3)
+        $count['internships.ine3']=Student::where('current_year',3)
         ->doesntHave('internship')->count();
-        $count['internships.mobility']=Student::where('program_id',3)->where('is_mobility',1)
+        $count['internships.mobility']=Student::where('current_year',3)->where('is_mobility',1)
         ->doesntHave('internship')->count();
         $count['students']=Student::count();
         $count['students.actual']=Student::count();
-        $count['students.ine1']=Student::where('program_id',1)->count();
-        $count['students.ine2']=Student::where('program_id',2)->count();
-        $count['students.ine3']=Student::where('program_id',3)->count();
+        $count['students.ine1']=Student::where('current_year',1)->count();
+        $count['students.ine2']=Student::where('current_year',2)->count();
+        $count['students.ine3']=Student::where('current_year',3)->count();
         
         return view('backend.dashboard',compact('count'));
     }

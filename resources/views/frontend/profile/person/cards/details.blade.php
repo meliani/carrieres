@@ -13,8 +13,8 @@
                     <h6 class='header5 blue-grey-text textlighten-5'>
                         <p>Vous êtes en
 
-                            <b>{{ trans_choice('labels.profile.years', user()->person->program_id) }}</b>, filière
-                            <b>{{ user()->person->filiere_text }}</b>
+                            <b>{{ trans_choice('labels.profile.years', user()->person->current_year) }}</b>, filière
+                            <b>{{ user()->person->program }}</b>
                             @if (user()->person->is_mobility)
                                 @lang('newlife.profile.mobility')
                             @endif

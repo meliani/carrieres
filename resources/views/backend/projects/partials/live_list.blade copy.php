@@ -52,7 +52,7 @@
                             <p>
                                 <span class="new badge orange lighten-1 white-text" data-badge-caption=""
                                     onclick="copyToClipboard('#filiere{{ $internship->student->id }}')"
-                                    id="filiere{{ $internship->student->id }}">{{ $internship->student->filiere_text }}
+                                    id="filiere{{ $internship->student->id }}">{{ $internship->student->program }}
                             </p>
 
                             @isset($internship->binome)

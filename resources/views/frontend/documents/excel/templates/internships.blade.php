@@ -52,7 +52,7 @@
                     {!! isset($student->internship->binome) ? '.' . $student->internship->binome_user_id : '' !!}
                 </td>
                 <td class="sub strong">{{ $student->full_name }}</td>
-                <td>{{ isset($student->filiere_text) ? $student->filiere_text : '' }}</td>
+                <td>{{ isset($student->program) ? $student->program : '' }}</td>
                 <td>{{ $student->email_perso }}</td>
                 <td>{{ $student->phone }}</td>
                 <td>{{ $student->cv }}</td>
@@ -61,7 +61,7 @@
                 <td>{{ $student->is_mobility }}</td>
                 <td>{{ $student->abroad_school }}</td>
                 <td>{{ $student->is_active }}</td>
-                <td>{{ $student->program_id }}</td>
+                <td>{{ $student->current_year }}</td>
 
                 {{-- INternship fields --}}
                 @isset($student->internship->id)

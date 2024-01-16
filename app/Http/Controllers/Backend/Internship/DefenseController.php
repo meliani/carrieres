@@ -18,7 +18,7 @@ class DefenseController extends BaseController
     {
         //$collection = Defense::paginate();.
         $collection = Internship::latest()->whereHas('student', function ($query) {
-            $query->where('program_id', '=', 3);
+            $query->where('current_year', '=', 3);
         })->get();
 
         return view('backend.internships.defenses.plannings.general.index',compact('collection'));
