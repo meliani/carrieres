@@ -6,7 +6,7 @@
         <div class = "row">
             {{ Form::selectGroup(
                 [
-                    'name' => 'gender_id',
+                    'name' => 'title',
                     'value',
                     'label' => 'Civilité',
                     'placeholder',

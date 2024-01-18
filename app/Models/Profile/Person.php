@@ -28,7 +28,7 @@ class Person extends baseModel implements HasMedia
 
     public $fillable = [ 	
     'id',
-    'gender_id',
+    'title',
     'pin',
     'full_name',
     'first_name',
@@ -75,9 +75,9 @@ class Person extends baseModel implements HasMedia
    public function getTitleAttribute()
 	{
 
-        if($this->attributes['gender_id']==0)
+        if($this->attributes['title']==0)
 		return "Mme";
-        elseif($this->attributes['gender_id']==1)
+        elseif($this->attributes['title']==1)
 		return "M.";
         else
 		return "Mme/M.";
