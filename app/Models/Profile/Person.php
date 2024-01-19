@@ -75,9 +75,9 @@ class Person extends baseModel implements HasMedia
    public function getTitleAttribute()
 	{
 
-        if($this->attributes['title']==0)
+        if($this->attributes['title']=='Mrs')
 		return "Mme";
-        elseif($this->attributes['title']==1)
+        elseif($this->attributes['title']=='Mr')
 		return "M.";
         else
 		return "Mme/M.";
