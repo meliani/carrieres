@@ -27,7 +27,7 @@ class renderController extends Controller
     public function recommendation_letter(){
         $pdf = app('snappy.pdf.wrapper');
 
-        $pdf->loadView('frontend.documents.pdf.templates.program_id_'.user()->student->current_year.'.pdfLettreRecommendation')
+        $pdf->loadView('frontend.documents.pdf.templates.'.user()->student->current_year.'.pdfLettreRecommendation')
         ->setOption('margin-top', '25mm')
         ->setOption('margin-bottom', '29mm')
         ->setOption('margin-left', '10mm')
@@ -50,7 +50,7 @@ class renderController extends Controller
         /** Some lines for testing purposes */
         //return PDF::loadFile('file:///C:/Users/Cosmos/Desktop/projects/newlife/documents/Convention Stage Ouvrier/ConventionStageOuvrier.html')->inline('github.pdf');
         //$pdf->loadView('frontend.documents.pdfConvention')
-        $pdf->loadView('frontend.documents.pdf.templates.program_id_'.user()->student->current_year.'.contenuConvention')
+        $pdf->loadView('frontend.documents.pdf.templates.'.user()->student->current_year.'.contenuConvention')
         ->setOption('margin-top', '25mm')
         ->setOption('margin-bottom', '29mm')
         ->setOption('margin-left', '10mm')
@@ -71,7 +71,7 @@ class renderController extends Controller
     public function conventionFrance(){
         $pdf = app('snappy.pdf.wrapper');
 
-        $pdf->loadView('frontend.documents.pdf.templates.program_id_'.user()->student->current_year.'.contenuConventionFrance')
+        $pdf->loadView('frontend.documents.pdf.templates.'.user()->student->current_year.'.contenuConventionFrance')
         ->setOption('margin-top', '25mm')
         ->setOption('margin-bottom', '29mm')
         ->setOption('margin-left', '10mm')
@@ -88,7 +88,7 @@ class renderController extends Controller
     public function conventionMobilityAutre(){
         $pdf = app('snappy.pdf.wrapper');
 
-        $pdf->loadView('frontend.documents.pdf.templates.program_id_'.user()->student->current_year.'.contenuConventionMobiliteAutre')
+        $pdf->loadView('frontend.documents.pdf.templates.'.user()->student->current_year.'.contenuConventionMobiliteAutre')
         ->setOption('margin-top', '25mm')
         ->setOption('margin-bottom', '29mm')
         ->setOption('margin-left', '10mm')
@@ -105,7 +105,7 @@ class renderController extends Controller
     public function conventionMobilityFrance(){
         $pdf = app('snappy.pdf.wrapper');
 
-        $pdf->loadView('frontend.documents.pdf.templates.program_id_'.user()->student->current_year.'.contenuConventionMobilityFrance')
+        $pdf->loadView('frontend.documents.pdf.templates.'.user()->student->current_year.'.contenuConventionMobilityFrance')
         ->setOption('margin-top', '25mm')
         ->setOption('margin-bottom', '29mm')
         ->setOption('margin-left', '10mm')
