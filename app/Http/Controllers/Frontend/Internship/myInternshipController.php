@@ -3,10 +3,9 @@
 namespace App\Http\Controllers\Frontend\Internship;
 
 use App\Http\Controllers\Frontend\BaseController;
+use App\Http\Requests\StoreInternshipPFE;
 use App\Models\School\Internship\Internship;
 use Illuminate\Http\Request;
-use App\Http\Requests\StoreInternshipPFE;
-
 
 class myInternshipController extends BaseController
 {
@@ -19,6 +18,7 @@ class myInternshipController extends BaseController
     {
         //
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -26,11 +26,13 @@ class myInternshipController extends BaseController
      */
     public function clone()
     {
-        if(!is_null(request('id'))){
-        $internship = Internship::find(request('id'));
-        return view('frontend.internships.my_internship.create',compact('internship'));
+        if (! is_null(request('id'))) {
+            $internship = Internship::find(request('id'));
+
+            return view('frontend.internships.my_internship.create', compact('internship'));
         }
     }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -39,10 +41,11 @@ class myInternshipController extends BaseController
     public function create()
     {
         $internship = Internship::firstOrNew(['student_id' => user()->id]);
-        if($internship->is_valid == 1)
-        return view('frontend.documents.index',compact('internship'));
-        else
-        return view('frontend.internships.my_internship.create',compact('internship'));
+        if ($internship->is_valid == 1) {
+            return view('frontend.documents.index', compact('internship'));
+        } else {
+            return view('frontend.internships.my_internship.create', compact('internship'));
+        }
     }
 
     /**
@@ -52,7 +55,7 @@ class myInternshipController extends BaseController
      * @return \Illuminate\Http\Response
      */
     public function store(StoreInternshipPFE $request)
-    {   
+    {
         //dump($request);
 
         $intern = $request->validated();
@@ -62,20 +65,22 @@ class myInternshipController extends BaseController
         //$internship = new Internship($intern);
         $internship->student()->associate(user()->id);
         // $internship->groupes()->attach(request('binome_student_id'));
-        
+
         $internship->year_id = config('school.current.year_id');
 
         // $internship->model_status_id = config('school.current.model_status.prod');
         $internship->status = 'Draft';
 
-        if(isset($request->action)){
+        if (isset($request->action)) {
+            $internship->announced_at = now();
             $internship->is_valid = 1;
             $internship->status = 'Announced';
         }
         $internship->save();
+
         //flash()->success('Votre déclaration a été bien enregistrée.');
         return back()
-        ->with('message', 'Votre déclaration a été bien enregistrée.');
+            ->with('message', 'Votre déclaration a été bien enregistrée.');
     }
 
     /**
@@ -84,10 +89,9 @@ class myInternshipController extends BaseController
      * @param  \App\Internship  $internship
      * @return \Illuminate\Http\Response
      */
-    
     public function show(Internship $internship)
     {
-        return view('frontend.internships.my_internship.show',compact('internship'));
+        return view('frontend.internships.my_internship.show', compact('internship'));
     }
 
     /**
