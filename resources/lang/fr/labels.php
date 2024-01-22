@@ -5,7 +5,7 @@
 return [
     'first_name' => 'Prenom',
     'last_name' => 'Nom',
-    'email_perso' =>'Votre E-mail personnel',
+    'email_perso' => 'Votre E-mail personnel',
     'phone' => 'Votre numéro de téléphone portable',
     'cv' => 'CV professionnel',
     'lm' => 'Lettre de motivation',
@@ -16,7 +16,7 @@ return [
     'lm_helper' => 'Lien vers votre lettre de motivation générale',
     'photo_helper' => 'Lien vers votre photo professionnelle',
     'stream' => 'filière',
-        'profile' => [
-            'years' => '{1} Première année|{2} Deuxième année|{3} Troisième année',
-        ],
+    'profile' => [
+        'years' => '{FirstYear} Première année|{SencondYear} Deuxième année|{ThirdYear} Troisième année',
+    ],
 ];
