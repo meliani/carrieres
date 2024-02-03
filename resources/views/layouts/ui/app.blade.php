@@ -20,6 +20,7 @@
     @yield('css')
     @yield('page-css')
     @stack('endofhead')
+    @livewireStyles
 </head>
 
 <body>
@@ -30,6 +31,8 @@
 
     <main>
         @include('partials.messages.messages')
+        {{-- include $slot if isset --}}
+        {{ $slot ?? '' }}
         @yield('content')
     </main>
 
@@ -76,6 +79,7 @@
     --}}
 
     @stack('endofbody-scripts')
+    @livewireScripts
 </body>
 
 </html>

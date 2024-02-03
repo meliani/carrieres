@@ -1,7 +1,9 @@
 <?php
 $type=array_get($params,'type','text');
 ?>
-<div class = "input-field 
+
+wire:model="{{array_get($params,'wiremodel')}}"
+<div id="{{ array_get($params,'id','') }}" wire:model="{{ array_get($params,'wiremodel','') }}" class = "input-field 
     col 
     {{-- s{{ array_get($params,'cols',6)*2 }} --}}
     m{{ array_get($params,'cols',6) }}
