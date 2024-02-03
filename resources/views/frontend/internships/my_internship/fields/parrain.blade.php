@@ -13,7 +13,7 @@ $required = 'required';
     'helper' => '',
     'required' => $required,
     'cols' => 3,
-    'data' => ['1'=>'Mr','0'=>'Mme']
+    'data' => ['Mr'=>'Mr','Mrs'=>'Mme']
 ], $errors) }}
 {{ Form::textGroup([
     'name' => 'parrain_nom',

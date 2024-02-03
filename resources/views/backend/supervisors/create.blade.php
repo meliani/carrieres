@@ -1,1 +1,0 @@
-{{-- with $project/$team variable, create project supervisor and reviewer --}}

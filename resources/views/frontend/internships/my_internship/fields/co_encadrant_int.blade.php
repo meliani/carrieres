@@ -12,7 +12,7 @@ $required = '';
     'helper' => 'Civilité du co-encadrant interne',
     'required' => $required,
     'cols' => 3,
-    'data' => ['1'=>'Mr','0'=>'Mme']
+    'data' => ['Mr'=>'Mr','Mrs'=>'Mme']
 ], $errors) }}
 {{ Form::textGroup([
     'name' => 'co_encadrant_int_nom',

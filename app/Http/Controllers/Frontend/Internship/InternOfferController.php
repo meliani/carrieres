@@ -29,7 +29,7 @@ class InternOfferController extends Controller
     {
         //$offres = Offer::published()->valid()->year()->actual()->paginate();
         $offers = Offer::Where('year_id',config('school.current.year_id'))
-        ->Where('is_valid',1)
+        // ->Where('is_valid',1)
         ->Where('status',1)
         ->get();
 

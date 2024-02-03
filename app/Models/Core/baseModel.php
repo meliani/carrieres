@@ -22,9 +22,9 @@ class baseModel extends Model
     /* Common methods */
     static function getTitle($gender)
 	{
-        if($gender==1)
+        if($gender=='Mr')
         return "M.";
-        elseif($gender==0)
+        elseif($gender=='Mrs')
         return "Mme";
         else
         return "Mme/M.";

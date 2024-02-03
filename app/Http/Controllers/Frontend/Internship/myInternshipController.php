@@ -41,10 +41,17 @@ class myInternshipController extends BaseController
     public function create()
     {
         $internship = Internship::firstOrNew(['student_id' => user()->id]);
-        if ($internship->is_valid == 1) {
-            return view('frontend.documents.index', compact('internship'));
-        } else {
+        if ($internship->status === 'Draft') {
             return view('frontend.internships.my_internship.create', compact('internship'));
+        } 
+        elseif ($internship->status === 'Announced') {
+            return view('frontend.documents.index', compact('internship'));
+        }
+        elseif ($internship->status === 'Signed'){
+            return view('frontend.documents.signed', compact('internship'));
+        }
+        else {
+            return view('frontend.documents.index', compact('internship'));
         }
     }
 
@@ -61,19 +68,13 @@ class myInternshipController extends BaseController
         $intern = $request->validated();
         $internship = Internship::firstOrCreate(['student_id' => user()->id]);
         $internship->fill($intern);
-        //$internship = Internship::firstOrCreate(['student_id' => user()->id]);
-        //$internship = new Internship($intern);
         $internship->student()->associate(user()->id);
-        // $internship->groupes()->attach(request('binome_student_id'));
-
         $internship->year_id = config('school.current.year_id');
-
-        // $internship->model_status_id = config('school.current.model_status.prod');
         $internship->status = 'Draft';
 
         if (isset($request->action)) {
             $internship->announced_at = now();
-            $internship->is_valid = 1;
+            // $internship->is_valid = 1;
             $internship->status = 'Announced';
         }
         $internship->save();

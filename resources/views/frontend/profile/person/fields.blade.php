@@ -15,7 +15,7 @@
                     'helper' => '',
                     'required' => 'required',
                     'cols' => 6,
-                    'data' => ['0' => 'Mme', '1' => 'M.'],
+                    'data' => ['Mrs' => 'Mme', 'Mr' => 'M.'],
                 ],
                 $errors,
             ) }}

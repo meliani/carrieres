@@ -10,7 +10,7 @@
         'helper' => 'Civilité de l\'encadrant interne',
         'required' => $required,
         'cols' => 3,
-        'data' => ['1' => 'Mr', '0' => 'Mme'],
+        'data' => ['Mr' => 'Mr', 'Mrs' => 'Mme'],
     ],
     $errors,
 ) }}

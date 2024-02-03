@@ -13,7 +13,7 @@ class Dashboard extends BaseController
     public function __invoke()
     {
         // $count['internships']=Project::count();
-        $count['internships']=Internship::where('is_valid',1)->count();
+        $count['internships']=Internship::count();
         $count['internships.ine3']=Student::where('current_year',3)
         ->doesntHave('internship')->count();
         $count['internships.mobility']=Student::where('current_year',3)->where('is_mobility',1)
