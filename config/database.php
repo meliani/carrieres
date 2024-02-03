@@ -53,6 +53,24 @@ return [
             'strict' => false,
             'engine' => null,
         ],
+        // backend connection
+        'backend' => [
+            'driver' => 'mysql',
+            'host' => env('BACKEND_DB_HOST'),
+            'port' => env('BACKEND_DB_PORT'),
+            'database' => env('BACKEND_DB_DATABASE'),
+            'username' => env('BACKEND_DB_USERNAME'),
+            'password' => env('BACKEND_DB_PASSWORD'),
+            'unix_socket' => env('BACKEND_DB_SOCKET'),
+            'charset' => 'utf8mb4',
+            'collation' => 'utf8mb4_unicode_ci',
+            'prefix' => '',
+            'strict' => false,
+            'engine' => null,
+        ],
+        
+
+
 
         'pgsql' => [
             'driver' => 'pgsql',
