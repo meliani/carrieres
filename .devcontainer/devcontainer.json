@@ -1,0 +1,8 @@
+{
+    "name": "PHP Dev Container",
+    "image": "jkaninda/laravel-php-fpm:latest",
+    "settings": { 
+        "terminal.integrated.shell.linux": "/bin/bash"
+    },
+    "extensions": ["felixfbecker.php-intellisense"]
+}
