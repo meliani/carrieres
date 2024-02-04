@@ -1,8 +1,8 @@
 {
-    "name": "PHPNODE",
+    "name": "Carrières",
     "dockerComposeFile": "docker-compose.yaml",
     "service": "dev",
-    "workspaceFolder": "/workspace",
+    "workspaceFolder": "/workspaces/carrieres",
     "shutdownAction": "stopCompose",
     "customizations": {
         "vscode": {
