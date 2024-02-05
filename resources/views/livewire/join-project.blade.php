@@ -1,8 +1,9 @@
-<x-guest-layout>
+<div>
+{{-- <x-guest-layout>
     <x-slot name="header">
         <x-banner-dialog />
 
-    </x-slot>
+    </x-slot> --}}
 <div>
     {{-- student should choose a project from a list with internships->student->name prop --}}
 <form wire:submit.prevent="joinProject">
@@ -37,8 +38,10 @@
 </form>
 </div>
 
-    @push('endofbody')
+{{--     @push('endofbody')
         @liveCalendarScripts
     @endpush
-
-</x-guest-layout>
+ --}}
+{{-- </x-guest-layout>
+ --}}
+</div>

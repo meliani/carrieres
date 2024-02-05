@@ -7,5 +7,5 @@
             <input class="input input-bordered w-24 md:w-auto" type="text" placeholder="Search" />
         </div>
     </div>
-    <x-daisy.language-switcher-dropdown />
+    {{-- <x-daisy.language-switcher-dropdown /> --}}
 </div>
