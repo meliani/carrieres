@@ -1,26 +1,27 @@
 <?php
-$type=array_get($params,'type','text');
+$type = array_get($params, 'type', 'text');
 ?>
 
-wire:model="{{array_get($params,'wiremodel')}}"
-<div id="{{ array_get($params,'id','') }}" wire:model="{{ array_get($params,'wiremodel','') }}" class = "input-field 
+<div id="{{ array_get($params, 'id', '') }}" wire:model="{{ array_get($params, 'wiremodel', '') }}"
+    class = "input-field 
     col 
     {{-- s{{ array_get($params,'cols',6)*2 }} --}}
-    m{{ array_get($params,'cols',6) }}
+    m{{ array_get($params, 'cols', 6) }}
     {{-- l{{ array_get($params,'cols',6)/1.5 }} --}}
     ">
-    <i class="material-icons blue-text prefix">{{ array_get($params,'icon') }}</i>
+    <i class="material-icons blue-text prefix">{{ array_get($params, 'icon') }}</i>
 
-    {!! Form::select(array_get($params,'name'),
-    //[ null => array_get($params,'null', null) ] +
-    array_get($params,'data')) !!}
-    {!! Form::label(array_get($params,'name'), array_get($params,'label')) !!}
+    {!! Form::select(
+        array_get($params, 'name'),
+        //[ null => array_get($params,'null', null) ] +
+        array_get($params, 'data'),
+    ) !!}
+    {!! Form::label(array_get($params, 'name'), array_get($params, 'label')) !!}
 
-    <span class="helper-text" 
-    {{ $errors->has(array_get($params,'name')?'data-error='.
-    $errors->first(array_get($params,'name')):'') }} 
-    data-success="Parfait !">
-    {{ array_get($params,'helper') }}
+    <span class="helper-text"
+        {{ $errors->has(array_get($params, 'name') ? 'data-error=' . $errors->first(array_get($params, 'name')) : '') }}
+        data-success="Parfait !">
+        {{ array_get($params, 'helper') }}
     </span>
 
 </div>
