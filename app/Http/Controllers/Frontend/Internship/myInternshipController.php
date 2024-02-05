@@ -5,7 +5,6 @@ namespace App\Http\Controllers\Frontend\Internship;
 use App\Http\Controllers\Frontend\BaseController;
 use App\Http\Requests\StoreInternshipPFE;
 use App\Models\School\Internship\Internship;
-use Illuminate\Http\Request;
 
 class myInternshipController extends BaseController
 {
@@ -43,15 +42,12 @@ class myInternshipController extends BaseController
         $internship = Internship::firstOrNew(['student_id' => user()->id]);
         if ($internship->status === 'Draft') {
             return view('frontend.internships.my_internship.create', compact('internship'));
-        } 
-        elseif ($internship->status === 'Announced') {
+        } elseif ($internship->status === 'Announced') {
             return view('frontend.documents.index', compact('internship'));
-        }
-        elseif ($internship->status === 'Signed'){
+        } elseif ($internship->status === 'Signed') {
             return view('frontend.documents.signed', compact('internship'));
-        }
-        else {
-            return view('frontend.documents.index', compact('internship'));
+        } else {
+            return view('frontend.internships.my_internship.create', compact('internship'));
         }
     }
 
