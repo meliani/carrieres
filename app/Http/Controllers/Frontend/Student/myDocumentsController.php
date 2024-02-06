@@ -77,7 +77,7 @@ class myDocumentsController extends Controller
 
             if (user()->student->hasMedia('internship')) {
                 $this->documents = user()->student->getMedia('internship');
-                if (user()->student->internship->is_valid == 0)
+                if (user()->student->internship->status === 'Draft' || !user()->student->internship->status)
                     return view('frontend.documents.partials.fillforms');
 
                 return view('frontend.documents.index', ['documents' => $this->documents]);
