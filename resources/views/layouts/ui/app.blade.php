@@ -20,7 +20,7 @@
     @yield('css')
     @yield('page-css')
     @stack('endofhead')
-    @livewireStyles
+    {{-- @livewireStyles --}}
 </head>
 
 <body>
@@ -79,7 +79,7 @@
     --}}
 
     @stack('endofbody-scripts')
-    @livewireScripts
+    {{-- @livewireScripts --}}
 </body>
 
 </html>
