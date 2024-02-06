@@ -12,7 +12,7 @@ class Event extends Model
      * @var array
      */
     protected $fillable = [
-        'id', 'current_year', 'name', 'slug', 'title', 'detail','date', 'hour', 'rsvp_mandatory', 'rsvp_deadline'
+        'id', 'level', 'name', 'slug', 'title', 'detail', 'date', 'hour', 'rsvp_mandatory', 'rsvp_deadline',
     ];
 
     /**
@@ -36,9 +36,9 @@ class Event extends Model
      * @var array
      */
     protected $casts = [
-        'created_at'=> 'datetime',
-        'updated_at'=> 'datetime',
-        'date'=> 'datetime',    
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'date' => 'datetime',
     ];
 
     /**
@@ -49,15 +49,13 @@ class Event extends Model
         return $this->belongsTo(\App\Models\School\Program::class);
     }
 
-
     /**
      * Get the Students for the Event.
      */
     public function students()
     {
         return $this->belongsToMany(\App\Models\Profile\Student::class,
-        'event_student',
-        'user_id','user_id');
+            'event_student',
+            'user_id', 'user_id');
     }
-
 }

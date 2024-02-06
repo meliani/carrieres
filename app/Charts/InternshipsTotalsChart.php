@@ -2,7 +2,6 @@
 
 namespace App\Charts;
 
-use Carbon\Carbon;
 use Fidum\ChartTile\Charts\Chart;
 use Fidum\ChartTile\Contracts\ChartFactory;
 
@@ -17,15 +16,15 @@ class InternshipsTotalsChart implements ChartFactory
     {
 
         //get the total count of registred internships per program using student relationship
-        $internships = \App\Models\School\Internship\Internship::selectRaw('count(*) as count, current_year')
+        $internships = \App\Models\School\Internship\Internship::selectRaw('count(*) as count, level')
             ->join('people', 'internships.student_id', '=', 'people.id')
             // ->Where('people.model_status_id', '=', '1')
-            ->groupBy('current_year')
-            ->orderBy('current_year')
+            ->groupBy('level')
+            ->orderBy('level')
             ->get();
-            //make chart with data from internships
+        //make chart with data from internships
         $chart = (new Chart)
-            ->labels($internships->pluck('current_year')->toArray())
+            ->labels($internships->pluck('level')->toArray())
             ->options([
                 'responsive' => true,
                 'maintainAspectRatio' => false,

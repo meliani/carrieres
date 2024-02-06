@@ -61,7 +61,7 @@
                 <td>{{ $student->is_mobility }}</td>
                 <td>{{ $student->abroad_school }}</td>
                 <td>{{ $student->is_active }}</td>
-                <td>{{ $student->current_year }}</td>
+                <td>{{ $student->level }}</td>
 
                 {{-- INternship fields --}}
                 @isset($student->internship->id)

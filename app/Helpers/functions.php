@@ -3,27 +3,26 @@
 use App\Http\Controllers\Core\Documents\UploaderController as Uploader;
 use App\Models\School\Year;
 
-if (!function_exists('app_name')) {
+if (! function_exists('app_name')) {
     function app_name()
     {
         return config('app.name');
     }
 }
 
-if (! function_exists('user'))
-{
+if (! function_exists('user')) {
     function user($parameter = null)
     {
-        if(!\Auth::check()) {
+        if (! \Auth::check()) {
             return null;
         }
-        if($parameter) {
+        if ($parameter) {
             return \Auth::user()->$parameter;
         }
+
         return \Auth::user();
     }
 }
-
 
 /**
  * Store a newly created resource in storage.
@@ -31,28 +30,25 @@ if (! function_exists('user'))
  * 'var_name' =>'cv',
  * 'upload_path' => 'uploads/students/CVs'
  * ]);
- * 
+ *
  * @param  \Illuminate\Http\Request  $request
  * $request : request var
- * @param  Array  $parameters
+ * @param  array  $parameters
  * var_name : form file variable name
  * upload_path : where to store files
- * 
  * @return \Illuminate\Http\Response
  */
-if (! function_exists('upload'))
-{
+if (! function_exists('upload')) {
 
-    function upload($request,$parameters)
+    function upload($request, $parameters)
     {
-        return new Uploader($request,[
-            'var_name' =>$parameters['var_name'],
-            'upload_path' => $parameters['upload_path']
-            ]);
+        return new Uploader($request, [
+            'var_name' => $parameters['var_name'],
+            'upload_path' => $parameters['upload_path'],
+        ]);
     }
 }
-if (! function_exists('this_year'))
-{
+if (! function_exists('this_year')) {
 
     function this_year()
     {
@@ -60,10 +56,9 @@ if (! function_exists('this_year'))
     }
 }
 
-if (! function_exists('current_year_id'))
-{
+if (! function_exists('level_id')) {
 
-    function current_year_id()
+    function level_id()
     {
         return Year::latest()->first()->id;
     }

@@ -18,10 +18,10 @@ class DefenseController extends BaseController
     {
         //$collection = Defense::paginate();.
         $collection = Internship::latest()->whereHas('student', function ($query) {
-            $query->where('current_year', '=', 3);
+            $query->where('level', '=', 3);
         })->get();
 
-        return view('backend.internships.defenses.plannings.general.index',compact('collection'));
+        return view('backend.internships.defenses.plannings.general.index', compact('collection'));
     }
 
     /**
@@ -37,7 +37,6 @@ class DefenseController extends BaseController
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -70,7 +69,6 @@ class DefenseController extends BaseController
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @param  \App\Models\School\Defense  $defense
      * @return \Illuminate\Http\Response
      */

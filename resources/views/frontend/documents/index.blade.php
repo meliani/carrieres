@@ -28,7 +28,7 @@
                     @endforeach
                 @endif
             </li>
-            @if (user()->student->current_year == 'ThirdYear')
+            @if (user()->student->level == 'ThirdYear')
                 @if (user()->student->is_mobility != 1)
                     @includeWhen(user()->student->internship->country != 'France',
                         'frontend.documents.partials.buttons.global')

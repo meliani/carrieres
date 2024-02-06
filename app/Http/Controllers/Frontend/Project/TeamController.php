@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers\Frontend\Project;
 
-use App\Models\School\Project\Team;
 use App\Http\Controllers\Frontend\BaseController as Controller;
 use App\Models\Profile\Student;
-use Illuminate\Support\Str;
-
+use App\Models\School\Project\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class TeamController extends Controller
 {
@@ -26,7 +25,7 @@ class TeamController extends Controller
         //$team = Team::findOrFail('team_uuid','=',$team->uuid)->with('students','internship');
 
         // the relation internship should handle the logic of the project view
-        // that means we need to flag the team founder to keep 
+        // that means we need to flag the team founder to keep
         // the project informations always linked with one record from database
 
         return view('frontend.teams.index');
@@ -40,15 +39,18 @@ class TeamController extends Controller
     public function create()
     {
         // return view('team created, add participants ?');
-        // $students = Student::where('current_year','=',user()->student->current_year)->get('id','first_name');
+        // $students = Student::where('level','=',user()->student->level)->get('id','first_name');
         // return view('frontend.teams.create',['students'=>$students]);
     }
-    public function join($team_uuid) :view
+
+    public function join($team_uuid): view
     {
         $student = Student::findOrFail(Auth::user()->id);
         //student who joins gonna have the same uuid and his id
         Team::create($team_uuid, $student_id);
+
         return view('you joined the team $team_uuid');
+
         return view('frontend.teams.join');
 
     }
@@ -56,7 +58,6 @@ class TeamController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -64,7 +65,8 @@ class TeamController extends Controller
         //here the team gonna be created with it's uuid
         $student = Student::findOrFail(Auth::user()->id);
 
-        Team::createOrFail(Str::Uuid(),$student_id);    
+        Team::createOrFail(Str::Uuid(), $student_id);
+
         return view('team created, add participants ?');
 
     }
@@ -72,7 +74,6 @@ class TeamController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\School\Project\Team  $team
      * @return \Illuminate\Http\Response
      */
     public function show(Team $team)
@@ -83,7 +84,6 @@ class TeamController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\School\Project\Team  $team
      * @return \Illuminate\Http\Response
      */
     public function edit(Team $team)
@@ -94,8 +94,6 @@ class TeamController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\School\Project\Team  $team
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Team $team)
@@ -106,7 +104,6 @@ class TeamController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\School\Project\Team  $team
      * @return \Illuminate\Http\Response
      */
     public function destroy(Team $team)
