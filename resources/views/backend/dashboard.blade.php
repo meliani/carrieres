@@ -1,21 +1,21 @@
 @extends('layouts.ui.app')
 
-@section('title', ' | '.'Staff Dashboard')
+@section('title', ' | ' . 'Staff Dashboard')
 
 @section('users_buttons')
     @include(Button::user_buttons())
-@endsection  
+@endsection
 
 @section('content')
     @include('backend.partials.status')
 
     <div class="container">
         <div class="row">
-            @include('backend.partials.cards.internships')
-            @include('backend.partials.cards.students')
+            {{-- @include('backend.partials.cards.internships')
+            @include('backend.partials.cards.students') --}}
 
         </div>
-    </div>    
+    </div>
 @endsection
 
 @section('floating-buttons')

@@ -12,7 +12,7 @@ class DefensesExport implements FromView
     public function view(): View
     {
         // Internship::with('people');
-        $students = Student::with('internship.binome')
+        $students = Student::with('internship')
             ->whereHas('internship',
                 function ($query) {
                     $query->where('year_id', '=', level_id())
