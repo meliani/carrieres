@@ -14,7 +14,9 @@ class Person extends baseModel implements HasMedia
 {
     use InteractsWithMedia;
 
-    protected $table = 'people';
+    protected $connection = 'backend';
+
+    protected $table = 'students';
 
     protected $primaryKey = 'id';
 
