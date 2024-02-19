@@ -9,7 +9,7 @@ return [
     'available_locales' => [
         'English' => 'en',
         'French' => 'fr',
-      ],
+    ],
     /*
     |--------------------------------------------------------------------------
     | Application Name
@@ -158,7 +158,7 @@ return [
     */
 
     'providers' => [
-                /*
+        /*
          * Laravel Framework Service Providers...
          */
         Illuminate\Auth\AuthServiceProvider::class,
@@ -207,9 +207,6 @@ return [
         App\Providers\HelperServicerProvider::class,
         App\Providers\FormGroupServiceProvider::class,
 
-        Amranidev\ScaffoldInterface\ScaffoldInterfaceServiceProvider::class,
-        Lab404\Impersonate\ImpersonateServiceProvider::class,
-        Khsing\World\WorldServiceProvider::class,
         // Amranidev\Ajaxis\AjaxisServiceProvider::class,
         // Pusher\Laravel\PusherServiceProvider::class,
     ],
@@ -270,7 +267,7 @@ return [
         'Form' => Collective\Html\FormFacade::class,
         'Html' => Collective\Html\HtmlFacade::class,
         // 'Html' => Spatie\Html\Facades\Html::class,
- 
+
         //'Flash'     => Laracasts\Flash\Flash::class,
         //'DataTables' => Yajra\DataTables\Facades\DataTables::class,
         'PDF' => Barryvdh\Snappy\Facades\SnappyPdf::class,
