@@ -14,7 +14,7 @@ class Person extends baseModel implements HasMedia
 {
     use InteractsWithMedia;
 
-    protected $connection = 'backend';
+    protected $connection = 'backend_database';
 
     protected $table = 'students';
 

@@ -16,7 +16,7 @@ class Internship extends Model
     use FormAccessible;
     use SoftDeletes;
 
-    protected $connection = 'backend';
+    protected $connection = 'backend_database';
 
     protected $table = 'internships';
 

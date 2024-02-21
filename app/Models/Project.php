@@ -2,23 +2,19 @@
 
 namespace App\Models;
 
-use App\Enum\ProjectRoleEnum;
+use App\Enums;
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasOneThrough;
 use Illuminate\Database\Eloquent\Relations\HasOne;
-use Illuminate\Database\Eloquent\Relations\HasManyThrough;
-use App\Enums;
 
 class Project extends Model
 {
     // use HasFactory;
     // use HasUuids;
-    protected $connection = 'backend';
+    protected $connection = 'backend_database';
+
     protected $fillable = [
         'id_pfe',
         'title',
@@ -31,20 +27,25 @@ class Project extends Model
         'pending',
         'binome_id',
     ];
+
     public $cast = [
         'start_date' => 'datetime',
         'end_date' => 'datetime',
         'status' => Enums\ProjectStatus::class,
     ];
+
     public function internships(): HasMany
     {
         return $this->hasMany(Internship::class);
     }
+
     public function internship(): HasOne
     {
         return $this->hasOne(Internship::class)->latestOfMany();
     }
-    public function jury() {
+
+    public function jury()
+    {
         return $this->hasOne(Jury::class);
     }
 }

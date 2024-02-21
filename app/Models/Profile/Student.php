@@ -14,7 +14,7 @@ class Student extends Model implements HasMedia
 {
     use InteractsWithMedia;
 
-    protected $connection = 'backend';
+    protected $connection = 'backend_database';
 
     protected $table = 'careers_backend.students';
 

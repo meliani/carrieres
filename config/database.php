@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('DB_CONNECTION', 'mysql'),
+    'default' => env('DB_CONNECTION', 'frontend_database'),
 
     /*
     |--------------------------------------------------------------------------
@@ -39,7 +39,7 @@ return [
             'prefix' => '',
         ],
 
-        'mysql' => [
+        'frontend_database' => [
             'driver' => 'mysql',
             'host' => env('DB_HOST', '127.0.0.1'),
             'port' => env('DB_PORT', '3306'),
@@ -54,7 +54,7 @@ return [
             'engine' => null,
         ],
         // backend connection
-        'backend' => [
+        'backend_database' => [
             'driver' => 'mysql',
             'host' => env('BACKEND_DB_HOST'),
             'port' => env('BACKEND_DB_PORT'),

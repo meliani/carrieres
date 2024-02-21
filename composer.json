@@ -24,7 +24,6 @@
         "livewire/livewire": "^3.0",
         "maatwebsite/excel": "^3.1",
         "ohseesoftware/laravel-vite-manifest": "^1.2",
-        "protoqol/prequel": "^1.23",
         "rap2hpoutre/laravel-log-viewer": "^2.0",
         "revolution/laravel-google-sheets": "^6.2",
         "simplesoftwareio/simple-qrcode": "^4.0",
