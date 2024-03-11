@@ -1,22 +1,23 @@
 <?php
+
 // use App\Http\Livewire\JoinProject;
 
-Route::get('join-project','\App\Http\Livewire\JoinProject');
+// Route::get('join-project','\App\Http\Livewire\JoinProject');
 Route::get('/home', 'HomeController@index')->name('home');
 /* locale selector */
 Route::get('language/{locale}', function ($locale) {
     app()->setLocale($locale);
     session()->put('locale', $locale);
-    return redirect()->back();
-    });
 
+    return redirect()->back();
+});
 
 Route::get('welcome', function () {
     return view('welcome');
-    })->name('welcome');
+})->name('welcome');
 Route::get('/', function () {
     return view('welcome');
-    });
+});
 
 Auth::routes();
 
@@ -24,11 +25,11 @@ Route::middleware(['auth', 'Admin'])->group(function () {
     // charts dashboard routes and related uri
     Route::get('/charts-dashboard', 'ChartsController@showDashboard');
     Route::get('/charts-dashboard/{uri}', 'ChartsController@showDashboard');
-    
+
     // Route::view('extractions', 'extractions.index')->name('extractions');
     Route::get('extractions', 'ExportsController@index')->name('extractions');
 
-    Route::namespace ('Admin')->group(function () {
+    Route::namespace('Admin')->group(function () {
         Route::prefix('admin')->group(function () {
             Route::get('applications', ['as' => 'admin.applications.index', 'uses' => 'applicationsController@index']);
         });
@@ -53,20 +54,19 @@ Route::get('Activation', ['as' => 'person.activate', 'uses' => 'Frontend\Profile
 Route::resource('Authentic', 'Core\authenticDocumentController');
 Route::get('url/{v}/{url}', 'Core\UrlController');
 
-Route::
-    namespace('Backend')
+Route::namespace('Backend')
     ->name('backend.')
     ->group(function () {
         Route::prefix('~')->group(function () {
             Route::get('Dashboard', 'Dashboard');
             Route::resource('init', 'InitController');
 
-            Route::namespace ('User')->group(function () {
+            Route::namespace('User')->group(function () {
                 Route::resource('users', 'UserController');
                 Route::resource('roles', 'RoleController');
                 Route::resource('permissions', 'PermissionController');
             });
-            Route::namespace ('Internship')->group(function () {
+            Route::namespace('Internship')->group(function () {
                 Route::resource('defenses', 'DefenseController');
                 Route::resource('plannings', 'PlanningsController');
                 Route::resource('internships', 'InternshipController');
@@ -87,7 +87,7 @@ Route::
                     Route::put('add_note/{internship_id}', 'NoteController@update');
                 });
             });
-            Route::namespace ('Project')->group(function () {
+            Route::namespace('Project')->group(function () {
                 Route::resource('projects', 'ProjectController');
             });
         });
@@ -99,15 +99,15 @@ Route::namespace('Frontend')
         // Route::resource('calendar', 'PlanningController');
         // Route::namespace('Team')->controller('teams', 'TeamsController');
         Route::namespace('Project')
-        ->group(function () {
-            Route::resource('teams', TeamController::class);
-        });
-        Route::namespace ('Student')
+            ->group(function () {
+                Route::resource('teams', TeamController::class);
+            });
+        Route::namespace('Student')
             ->prefix('students')
             ->group(function () {
-                    Route::get('myDocuments/', 'myDocumentsController@index');
-                });
-        Route::namespace ('Internship')->group(function () {
+                Route::get('myDocuments/', 'myDocumentsController@index');
+            });
+        Route::namespace('Internship')->group(function () {
             Route::resource('internships', 'myInternshipController');
             Route::prefix('internships')->group(function () {
                 Route::resource('offers', 'InternOfferController');
@@ -124,19 +124,17 @@ Route::get('myApplications', 'Frontend\Internship\internshipApplicationControlle
 /****************************************** USER MENU END ********************************************************************/
 Route::get('Checkpoint', 'Auth\CheckpointController');
 
-Route::
-    namespace ('Frontend\Profile')->middleware(['auth'])
+Route::namespace('Frontend\Profile')->middleware(['auth'])
     ->group(function () {
         Route::resource('person', 'PersonController');
         Route::get('profile/activation', 'PersonController@activate');
     });
 
-Route::
-    namespace ('Backend\User')
+Route::namespace('Backend\User')
     ->group(function () {
 
     });
-    
+
 /****************************************** PUBLIC LINKS ********************************************************************/
 // Route::get('PlanningPFE', 'Frontend\IframeController@PlanningPFE');
 /* Route::get('PlanningPFE', fn() => redirect()->away('https://carrieres.inpt.ac.ma/v23/calendar'));
@@ -146,6 +144,5 @@ Route::get('lesjeudis', 'Frontend\IframeController@PlanningJeudis');
 Route::get('submit_offer', 'Frontend\Internship\InternOfferController@create', $internship_type = 2);
 /****************************************** EOF PUBLIC LINKS ********************************************************************/
 
-
-Route::get('programCoordinator', fn() => redirect()->away('https://carrieres.inpt.ac.ma/backend/programCoordinator'));
-Route::get('Administration', fn() => redirect()->away('https://carrieres.inpt.ac.ma/backend/Administration'));
+Route::get('programCoordinator', fn () => redirect()->away('https://carrieres.inpt.ac.ma/backend/programCoordinator'));
+Route::get('Administration', fn () => redirect()->away('https://carrieres.inpt.ac.ma/backend/Administration'));

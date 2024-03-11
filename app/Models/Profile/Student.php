@@ -6,13 +6,18 @@ use App\Models\School\Internship\Internship;
 //use Spatie\MediaLibrary\Models\Media;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
+use Illuminate\Notifications\Notifiable;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Spatie\MediaLibrary\MediaCollections\Models\Media;
+use Spatie\Permission\Traits\HasRoles;
 
 class Student extends Model implements HasMedia
 {
+    // use \App\Traits\Auth\CanResetPassword;
+    use HasRoles;
     use InteractsWithMedia;
+    use Notifiable;
 
     protected $connection = 'backend_database';
 
@@ -25,6 +30,8 @@ class Student extends Model implements HasMedia
 
     public $fillable = [
         'id',
+        'name',
+        'email', 'password',
         'title',
         'pin',
         'full_name',
@@ -48,6 +55,10 @@ class Student extends Model implements HasMedia
     protected $casts = [
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
+    ];
+
+    protected $hidden = [
+        'password', 'remember_token',
     ];
 
     public static function boot()
