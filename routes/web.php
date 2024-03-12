@@ -3,7 +3,7 @@
 // use App\Http\Livewire\JoinProject;
 
 // Route::get('join-project','\App\Http\Livewire\JoinProject');
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('home', 'HomeController@index')->name('home');
 /* locale selector */
 Route::get('language/{locale}', function ($locale) {
     app()->setLocale($locale);
