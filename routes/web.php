@@ -15,17 +15,13 @@ Route::get('language/{locale}', function ($locale) {
 Route::get('welcome', function () {
     return view('welcome');
 })->name('welcome');
-Route::get('/', function () {
+Route::get('', function () {
     return view('welcome');
 });
 
 Auth::routes();
 
 Route::middleware(['auth', 'Admin'])->group(function () {
-    // charts dashboard routes and related uri
-    Route::get('/charts-dashboard', 'ChartsController@showDashboard');
-    Route::get('/charts-dashboard/{uri}', 'ChartsController@showDashboard');
-
     // Route::view('extractions', 'extractions.index')->name('extractions');
     Route::get('extractions', 'ExportsController@index')->name('extractions');
 
