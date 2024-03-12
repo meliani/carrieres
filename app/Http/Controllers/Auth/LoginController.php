@@ -3,9 +3,8 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use App\Models\Profile\Person;
-use App\Http\Controllers\Auth\CheckpointController as Checkpoint;
+use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
 {
@@ -29,13 +28,14 @@ class LoginController extends Controller
      */
     //protected $redirectTo = '/home';
 
-    public function redirectTo(){
+    public function redirectTo()
+    {
         $person = Person::find(user()->id);
 
-            if(user()->can('Administer roles & permissions'))
-            return '/~/Dashboard';
-            else
-            return '/home';
+        // if(user()->can('Administer roles & permissions'))
+        // return '/~/Dashboard';
+        // else
+        return '/home';
 
     }
 

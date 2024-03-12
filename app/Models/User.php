@@ -18,9 +18,9 @@ class User extends Authenticatable
     use HasRoles;
     use Notifiable;
 
-    protected $connection = 'backend_database';
+    protected $connection = 'frontend_database';
 
-    protected $table = 'students';
+    protected $table = 'users';
 
     protected $fillable = [
         'name', 'email', 'password',
