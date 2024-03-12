@@ -44,9 +44,7 @@ Route::middleware(['auth', 'Admin'])->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::resource('mesEncadrements', 'mesEncadrementsController');
     Route::get('pfeEncadrements/downloadExcel/{type}', 'StagesController@downloadExcel')->middleware(['Teacher']);
-    Route::resource('Encadrements/mesEncadrements', 'Encadrement\EncadrementsController');
 });
 
 Route::get('Activation', ['as' => 'person.activate', 'uses' => 'Frontend\Profile\PersonController@activate'])->middleware(['auth']);
