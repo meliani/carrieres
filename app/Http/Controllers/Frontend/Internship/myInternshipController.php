@@ -45,7 +45,7 @@ class myInternshipController extends BaseController
         } elseif ($internship->status === 'Announced') {
             return view('frontend.documents.index', compact('internship'));
         } elseif ($internship->status === 'Signed') {
-            return view('frontend.documents.signed', compact('internship'));
+            return view('frontend.documents.index', compact('internship'));
         } else {
             return view('frontend.internships.my_internship.create', compact('internship'));
         }
