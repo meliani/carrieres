@@ -7,14 +7,14 @@ return [
     'external_relation_entity_full_name' => 'INPT/DASRE',
     'time_limits' => [
         'min_debut_pfe' => '01-01-2024',
-        'max_debut_pfe' => '31-11-2024',// then was '15-03-2023', // was 19-01-2023
+        'max_debut_pfe' => '31-11-2025', // then was '15-03-2023', // was 19-01-2023
 
-        'max_fin_pfe' => '15-07-2024',
+        'max_fin_pfe' => '15-07-2025',
         'ouverture_plateforme' => '15-11-2023',
     ],
     'academic_year' => '2023-2024',
     'year_id' => '7',
-    'signature' =>[
+    'signature' => [
         'signing_person_id' => 1,
         'signing_title' => '',
         'signing_name' => '………………………………',
@@ -29,7 +29,7 @@ return [
     'model_status' => [
         'test' => -1,
         'prod' => 1,
-        'archive' => 2
+        'archive' => 2,
     ],
     'branches' => [
         'AMOA' => [
@@ -57,7 +57,7 @@ return [
             'cf_name' => 'Oussama EL ISSATI',
             'full_title' => 'Systèmes Embraqués et Services Numériques',
         ],
-        "SMART-ICT" => [
+        'SMART-ICT' => [
             'cf_title' => 'M.',
             'cf_name' => 'EL KHADIMI AHMED',
             'full_title' => 'Ingénierie Smart  ICT« Smart Information & Communication Technology Engineering »',
@@ -67,20 +67,19 @@ return [
             'cf_name' => 'Abdeslam EN-NOUAARY',
             'full_title' => 'Ingénierie des Systèmes Ubiquitaires et Distribués – Cloud et IoT (SUD)',
         ],
-        
 
     ],
     'defense' => [
-        'rooms' => ['1'=>'Amphi 1','2'=>'Amphi 2','3'=>'Amphi 3'],
+        'rooms' => ['1' => 'Amphi 1', '2' => 'Amphi 2', '3' => 'Amphi 3'],
         'time_slots' => [
-            '1'=>'09h00-10h30',
-            '2'=>'10h30-12h00',
-            '3'=>'14h00-15h30',
-            '4'=>'14h30-16h00',
-            '5'=>'15h00-16h30',
-            '6'=>'15h30-17h00',
-            '7'=>'16h00-17h30',
-        ]
+            '1' => '09h00-10h30',
+            '2' => '10h30-12h00',
+            '3' => '14h00-15h30',
+            '4' => '14h30-16h00',
+            '5' => '15h00-16h30',
+            '6' => '15h30-17h00',
+            '7' => '16h00-17h30',
+        ],
     ],
 
 ];
