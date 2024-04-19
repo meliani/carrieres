@@ -2,22 +2,16 @@
 
 namespace App\Models;
 
-use Filament\Notifications\Notification;
-use Illuminate\Auth\Access\AuthorizationException;
-use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Support\Facades\Gate;
-use \App\Enums;
-use App\Casts\TitleCast;
-use App\Casts\StatusCast;
-use App\Models\Project;
-use Filament\Widgets\StatsOverviewWidget\Stat;
+use App\Enums;
+use App\Models\Core\baseModel as Model;
 // use Illuminate\Database\Eloquent\Model;
 use App\Models\Profile\Student;
-
-use App\Models\Core\baseModel as Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Internship extends Model
 {
+    protected $connection = 'backend_database';
+
     use SoftDeletes;
 
     protected static function boot()
@@ -78,7 +72,8 @@ class Internship extends Model
         'partnership_status',
         'observations',
     ];
-        protected $casts = [
+
+    protected $casts = [
         // 'title' => Title::class,
         'status' => Enums\Status::class,
 
@@ -98,12 +93,12 @@ class Internship extends Model
     ];
     /* Validate function to be exexuted only by SuperAdministrator Administrator ProgramCoordinator */
 
-
     public function changeStatus($status)
     {
-            $this->status = $status;
-            $this->save();
+        $this->status = $status;
+        $this->save();
     }
+
     public function students()
     {
         return $this->hasMany(Student::class);
