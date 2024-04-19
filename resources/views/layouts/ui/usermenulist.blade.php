@@ -1,4 +1,4 @@
-@role('Admin')
+{{-- @role('Admin')
 <?php $menu = App\Models\Core\Menu::active()
         ->admin()
         ->get(); ?>
@@ -14,19 +14,21 @@
 @endif
 @endforeach
 <li class="divider"></li>
-@endrole
-@can('see advisors')
-<?php $menu = App\Models\Core\Menu::active()
-        ->prof()
-        ->get(); ?>
+@endrole --}}
+{{-- @can('see advisors')
+@php
+$menu = App\Models\Core\Menu::active()
+->prof()
+->get();
+@endphp
 @foreach ($menu as $item)
 <li class="{!! Request::is($item->url) ? 'active' : '' !!}">
     <a href="{!! url($item->url) !!}">{{ $item->name }}</a>
 </li>
 @endforeach
 <li class="divider"></li>
-@endcan
-@role('Etudiant')
+@endcan --}}
+{{-- @role('Etudiant') --}}
 <?php $menu = App\Models\Core\Menu::active()
         ->student()
         ->get(); ?>
@@ -35,7 +37,7 @@
     <a href="{!! url($item->url) !!}">{{ $item->name }}</a>
 </li>
 @endforeach
-@endrole
+{{-- @endrole --}}
 @guest
 <li class="{{ Request::is('login*') ? 'active' : '' }}"><a class="blue-grey-text text-darken-1"
         href="{{ route('login') }}">Login</a></li>

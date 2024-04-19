@@ -1,8 +1,8 @@
 @section('buttons')
-@role('Admin')
+{{-- @role('Admin')
 <a href="{{ route('offers.create') }}" class="left btn-floating btn-large halfway-fab waves-effect waves-light white">
   <i class="tiny material-icons blue-grey-text textlighten-5">add</i></a>
-@endrole
+@endrole --}}
 @endsection
 {{-- dd($offersDeStages) --}}
 @if(!isset($offers))

@@ -18,9 +18,9 @@ class User extends Authenticatable
     use HasRoles;
     use Notifiable;
 
-    protected $connection = 'frontend_database';
+    protected $connection = 'backend_database';
 
-    protected $table = 'users';
+    protected $table = 'students';
 
     protected $fillable = [
         'name', 'email', 'password',
@@ -44,9 +44,14 @@ class User extends Authenticatable
         'full_name',
     ];
 
+    public function getNameAttribute()
+    {
+        return $this->attributes['first_name'].' '.$this->attributes['last_name'];
+    }
+
     public function getFullNameAttribute()
     {
-        return $this->attributes['name'];
+        return $this->attributes['first_name'].' '.$this->attributes['last_name'];
     }
     /*     public static function getProfessors()
         {
