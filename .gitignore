@@ -17,5 +17,4 @@ yarn-error.log
 /storage/backups/*.sql
 /public/files
 /public/internOffers_attachments
-/_archive_files
-/_archive_files/*
+/dev_docs
