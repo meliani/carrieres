@@ -12,6 +12,8 @@ class Internship extends Model
 {
     protected $connection = 'backend_database';
 
+    protected $table = 'apprenticeship';
+
     use SoftDeletes;
 
     protected static function boot()
