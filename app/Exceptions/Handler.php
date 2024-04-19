@@ -2,10 +2,9 @@
 
 namespace App\Exceptions;
 
-use Session;
 use Illuminate\Auth\AuthenticationException;
-
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
+use Session;
 use Throwable;
 
 class Handler extends ExceptionHandler
@@ -38,7 +37,6 @@ class Handler extends ExceptionHandler
     /**
      * Report or log an exception.
      *
-     * @param  \Throwable  $exception
      * @return void
      *
      * @throws \Throwable
@@ -52,19 +50,16 @@ class Handler extends ExceptionHandler
      * Render an exception into an HTTP response.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Throwable  $exception
      * @return \Symfony\Component\HttpFoundation\Response
      *
      * @throws \Throwable
      */
     public function render($request, Throwable $exception)
     {
-        if($exception instanceof \PDOException)
-        {
+        if ($exception instanceof \PDOException) {
             $dbCode = trim($exception->getCode());
             //Codes specific to mysql errors
-            switch ($dbCode)
-            {
+            switch ($dbCode) {
                 case 23000:
                     $errorMessage = __('Duplicate entry not allowed !');
                     // $errorMessage = $exception->getMessage();
@@ -72,15 +67,19 @@ class Handler extends ExceptionHandler
                     break;
                 default:
                     $errorMessage = 'Database communication error !';
-                    $errorMessage = $exception->getMessage();
-                    if(app()->isLocal())
+                    // $errorMessage = $exception->getMessage();
+                    if (app()->isLocal()) {
                         return parent::render($request, $exception);
+                    }
             }
             // return response()->view('errors.pdo', [], 500);
-            Session::flash('message', $errorMessage); 
+
+            Session::flash('message', $errorMessage);
             Session::flash('alert-class', 'error');
+
             return back();
         }
+
         return parent::render($request, $exception);
     }
 
@@ -88,7 +87,6 @@ class Handler extends ExceptionHandler
      * Convert an authentication exception into an unauthenticated response.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \Illuminate\Auth\AuthenticationException  $exception
      * @return \Illuminate\Http\Response
      */
     protected function unauthenticated($request, AuthenticationException $exception)
